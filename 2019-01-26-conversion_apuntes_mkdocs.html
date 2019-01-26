@@ -1511,11 +1511,13 @@
         $ mkdocs new eduardofilo.mkdocs
         $ cd eduardofilo.mkdocs</li>
 <li>Copio los directorios con los contenidos del sitio Jekyll (<code>cursos</code>, <code>desarrollo</code>, <code>images</code>, <code>proyectos</code>, <code>sistemas</code> y <code>varios</code>) al directorio <code>docs</code>.</li>
-<li>Configuro el fichero <code>mkdocs.yml</code> con el siguiente contenido:
+<li>
+<p>Configuro el fichero <code>mkdocs.yml</code> con el siguiente contenido:
         # Project information
         site_name: Apuntes de eduardofilo
         site_description: Apuntes varios sobre algunas de las cosas que necesito recordar, principalmente sobre Desarrollo y         Sistemas.
-        site_author: Eduardo Moreno Lamana<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+        site_author: Eduardo Moreno Lamana</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -1603,22 +1605,24 @@ markdown_extensions:
 </pre></div>
 </td></tr></table>
 
-<ol>
-<li>Copio todos los ficheros del directorio <code>_posts</code> de Jekyll al directorio <code>docs</code>.</li>
-<li>Modifico cada uno de los posts que allí hay de la siguiente manera:</li>
+</li>
+<li>
+<p>Copio todos los ficheros del directorio <code>_posts</code> de Jekyll al directorio <code>docs</code>.</p>
+</li>
+<li>Modifico cada uno de los posts que allí hay de la siguiente manera:<ol>
 <li>Retiro los delimitadores del YAML, es decir los tres guiones que hay al principio y al final del bloque.</li>
 <li>Retiro las propiedad <code>layout</code> y <code>published</code> y añado una llamada <code>summary</code>.</li>
+</ol>
+</li>
 <li>Genero estructura de navegación en bloque <code>nav:</code> al final de <code>mkdocs.yml</code></li>
 <li>Creo fichero <code>CNAME</code> dentro del directorio <code>docs</code> con el nombre del dominio personalizado.</li>
 <li>Creo repositorio en GitHub con nombre <code>eduardofilo.github.io</code>.</li>
 <li>Creo copia de trabajo del repsitorio anterior:
-    $ cd ~/git
-    $ git clone git@github.com:eduardofilo/eduardofilo.github.io.git</li>
+        $ cd ~/git
+        $ git clone git@github.com:eduardofilo/eduardofilo.github.io.git</li>
 <li>Finalmente publico el sitio ejecutando el siguiente comando desde el directorio de trabajo del repositorio anterior:
-    $ cd ~/git/eduardofilo.github.io
-    $ mkdocs gh-deploy --config-file ../eduardofilo.mkdocs/mkdocs.yml --remote-branch master</li>
-</ol>
-</li>
+        $ cd ~/git/eduardofilo.github.io
+        $ mkdocs gh-deploy --config-file ../eduardofilo.mkdocs/mkdocs.yml --remote-branch master</li>
 </ol>
 <p>Falta crear un RSS con el <a href="http://apuntes.eduardofilo.es/feed.xml">feed</a> que generaba Jekyll antiguamente.</p>
                 
