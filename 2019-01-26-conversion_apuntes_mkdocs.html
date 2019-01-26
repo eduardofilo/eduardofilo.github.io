@@ -1512,11 +1512,7 @@
         $ cd eduardofilo.mkdocs</li>
 <li>Copio los directorios con los contenidos del sitio Jekyll (<code>cursos</code>, <code>desarrollo</code>, <code>images</code>, <code>proyectos</code>, <code>sistemas</code> y <code>varios</code>) al directorio <code>docs</code>.</li>
 <li>
-<p>Configuro el fichero <code>mkdocs.yml</code> con el siguiente contenido:
-        # Project information
-        site_name: Apuntes de eduardofilo
-        site_description: Apuntes varios sobre algunas de las cosas que necesito recordar, principalmente sobre Desarrollo y         Sistemas.
-        site_author: Eduardo Moreno Lamana</p>
+<p>Configuro el fichero <code>mkdocs.yml</code> con el siguiente contenido:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -1559,7 +1555,17 @@
 40
 41
 42
-43</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># Repository
+43
+44
+45
+46
+47
+48</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># Project information
+site_name: Apuntes de eduardofilo
+site_description: Apuntes varios sobre algunas de las cosas que necesito recordar, principalmente sobre Desarrollo y         Sistemas.
+site_author: Eduardo Moreno Lamana
+
+# Repository
 repo_name: &#39;eduardofilo.mkdocs&#39;
 repo_url: https://github.com/eduardofilo/eduardofilo.mkdocs
 
@@ -1617,12 +1623,24 @@ markdown_extensions:
 <li>Genero estructura de navegación en bloque <code>nav:</code> al final de <code>mkdocs.yml</code></li>
 <li>Creo fichero <code>CNAME</code> dentro del directorio <code>docs</code> con el nombre del dominio personalizado.</li>
 <li>Creo repositorio en GitHub con nombre <code>eduardofilo.github.io</code>.</li>
-<li>Creo copia de trabajo del repsitorio anterior:
-        $ cd ~/git
-        $ git clone git@github.com:eduardofilo/eduardofilo.github.io.git</li>
-<li>Finalmente publico el sitio ejecutando el siguiente comando desde el directorio de trabajo del repositorio anterior:
-        $ cd ~/git/eduardofilo.github.io
-        $ mkdocs gh-deploy --config-file ../eduardofilo.mkdocs/mkdocs.yml --remote-branch master</li>
+<li>
+<p>Creo copia de trabajo del repsitorio anterior:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~/git
+$ git clone git@github.com:eduardofilo/eduardofilo.github.io.git
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Finalmente publico el sitio ejecutando el siguiente comando desde el directorio de trabajo del repositorio anterior:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~/git/eduardofilo.github.io
+$ mkdocs gh-deploy --config-file ../eduardofilo.mkdocs/mkdocs.yml --remote-branch master
+</pre></div>
+</td></tr></table>
+
+</li>
 </ol>
 <p>Falta crear un RSS con el <a href="http://apuntes.eduardofilo.es/feed.xml">feed</a> que generaba Jekyll antiguamente.</p>
                 
