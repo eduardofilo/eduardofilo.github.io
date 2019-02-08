@@ -2594,7 +2594,11 @@ $ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtuale
 <h2 id="idioms">Idioms<a class="headerlink" href="#idioms" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Retorno seguro del primer elemento de una lista: <code>return (get_list()[:1] or [None])[0]</code></li>
+<li>Valor predeterminado en caso de que <code>variable</code> sea None: <code>return variable or 0</code></li>
 <li>Acceso seguro al atributo de un objeto: <code>getattr(object, name[, default])</code> La función <a href="https://docs.python.org/3/library/functions.html#getattr">getattr</a> nos permite indicar un valor predeterminado si un objeto no tiene el atributo que buscamos. Funciona también si el objeto es None, lo que nos permite acceder de forma segura a un objeto cuando no sabemos si existe.</li>
+<li>Suma de una propiedad de una lista de objetos: <code>suma = sum(logro.puntos for logro in logros_totales)</code></li>
+<li>Suma de una propiedad de una lista de objetos: <code>suma = sum(list(map(lambda x: x.puntos, logros_totales)))</code></li>
+<li>Operador ternario: <code>valor_cuando_true if condición else valor_cuando_false</code></li>
 </ul>
 <h2 id="snippets">Snippets<a class="headerlink" href="#snippets" title="Permanent link">&para;</a></h2>
 <ul>
