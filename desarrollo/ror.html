@@ -2090,31 +2090,31 @@
 </ul>
 </li>
 <li>Instalar RubyGems bajándolo de <a href="http://rubygems.org/pages/download">aquí</a> y siguiendo las instrucciones de instalación de esa misma página.</li>
-<li>Instalar Bundler:<ul>
-<li><code>sudo gem install bundler</code></li>
-</ul>
-</li>
-<li>Instalación de Rails:<ul>
-<li><code>sudo gem install rails</code></li>
-</ul>
-</li>
-<li>Instalar passenger (el propio instalador da instrucciones sobre los paquetes necesarios):<ul>
-<li><code>sudo gem install passenger</code></li>
-</ul>
-</li>
-<li>Instalar el módulo en Apache:<ul>
-<li><code>sudo passenger-install-apache2-module</code></li>
-</ul>
-</li>
+<li>Instalar Bundler:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo gem install bundler
+</pre></div>
+</td></tr></table></li>
+<li>Instalación de Rails:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo gem install rails
+</pre></div>
+</td></tr></table></li>
+<li>Instalar passenger (el propio instalador da instrucciones sobre los paquetes necesarios):
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo gem install passenger
+</pre></div>
+</td></tr></table></li>
+<li>Instalar el módulo en Apache:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo passenger-install-apache2-module
+</pre></div>
+</td></tr></table></li>
 <li>Tal y como indica la salida del comando anterior, hay que habilitar el módulo recién instalado por medio de la configuración de Apache. Se puede hacer añadiendo los dos siguientes ficheros:</li>
 </ol>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#/etc/apache2/mods-available/passenger.load
 LoadModule passenger_module /usr/lib/ruby/gems/1.9.1/gems/passenger-3.0.19/ext/apache2/mod_passenger.so
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#/etc/apache2/mods-available/passenger.conf
 PassengerRoot /usr/lib/ruby/gems/1.9.1/gems/passenger-3.0.19
@@ -2124,12 +2124,12 @@ PassengerRuby /usr/bin/ruby1.9.1
 
 <p>(las rutas contenidas en los ficheros anteriores dependerán de la instalación; la salida del comando que instala el módulo nos indica los valores correctos).</p>
 <p>Finalmente hay que habilitar el módulo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo a2enmod passenger
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo a2enmod passenger
 </pre></div>
 </td></tr></table>
 
 <p>Y reiniciamos Apache:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo service apache2 restart
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo service apache2 restart
 </pre></div>
 </td></tr></table>
 
@@ -2145,27 +2145,27 @@ PassengerRuby /usr/bin/ruby1.9.1
 </ul>
 </li>
 <li>Instalar RubyGems bajándolo de <a href="http://rubygems.org/pages/download">aquí</a> y siguiendo las instrucciones de instalación de esa misma página.</li>
-<li>Instalar Bundler:<ul>
-<li><code>sudo gem install bundler</code></li>
-</ul>
-</li>
-<li>Instalación de Rails:<ul>
-<li><code>sudo gem install rails</code></li>
-</ul>
-</li>
+<li>Instalar Bundler:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo gem install bundler
+</pre></div>
+</td></tr></table></li>
+<li>Instalación de Rails:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo gem install rails
+</pre></div>
+</td></tr></table></li>
 <li>Instalar passenger siguiendo <a href="http://www.modrails.com/documentation/Users%20guide%20Apache.html#install_on_debian_ubuntu">esta guía</a>. Recomienda instalarlo con los paquetes de la distribución. A continuación se indica un resumen de los pasos.</li>
-<li>Instalar la clave PGP del repositorio que vamos a añadir:<ul>
-<li><code>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7</code></li>
-</ul>
-</li>
+<li>Instalar la clave PGP del repositorio que vamos a añadir:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
+</pre></div>
+</td></tr></table></li>
 <li>Instalar el siguiente paquete:<ul>
 <li><code>apt-transport-https</code></li>
 </ul>
 </li>
-<li>Crear el fichero <code>/etc/apt/sources.list.d/passenger.list</code> con el siguiente contenido:<ul>
-<li><code>deb https://oss-binaries.phusionpassenger.com/apt/passenger saucy main</code></li>
-</ul>
-</li>
+<li>Crear el fichero <code>/etc/apt/sources.list.d/passenger.list</code> con el siguiente contenido:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">deb</span> <span class="s">https://oss-binaries.phusionpassenger.com/apt/passenger</span> <span class="kp">saucy</span> <span class="kp">main</span>
+</pre></div>
+</td></tr></table></li>
 <li>Actualizar el repositorio e instalar el siguiente paquete:<ul>
 <li><code>libapache2-mod-passenger</code></li>
 </ul>
@@ -2181,14 +2181,14 @@ PassengerRuby /usr/bin/ruby1.9.1
 <p>Los métodos definidos en los módulos Helper (<code>app/helpers/&lt;controller&gt;_helper.rb</code>) son visibles en las vistas por defecto. Para que estén disponibles en los controllers hay que hacer un <code>include</code>. Si lo hacemos en el controller base (<code>ApplicationController</code>) estará disponibles en todos los controllers dado que éstos heredan de <code>ApplicationController</code>.</p>
 <h3 id="mejora-en-rendimiento-en-desarrollo">Mejora en rendimiento en Desarrollo<a class="headerlink" href="#mejora-en-rendimiento-en-desarrollo" title="Permanent link">&para;</a></h3>
 <p>Rails 3.1 introdujo el concepto del <a href="http://guides.rubyonrails.org/asset_pipeline.html">asset pipeline</a>. Desafortunadamente esto causa problemas de rendimiento en el entorno de desarrollo. Para mejorarlo se puede utilizar la tarea de precompilador siguiente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rake assets:precompile:nondigest
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rake assets:precompile:nondigest
 </pre></div>
 </td></tr></table>
 
 <p>Esto provoca que los cambios en los ficheros asset no sean incluidos automáticamente cuando recargamos la página. Para forzar su refresco hay que volver a ejecutar el comando anterior.</p>
 <h3 id="borrado-de-assets">Borrado de assets<a class="headerlink" href="#borrado-de-assets" title="Permanent link">&para;</a></h3>
 <p>Rails proporciona la siguiente tarea de precompilador que borrará el directorio <code>public/assets</code>, cosa que puede resultar útil antes de un commit.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rake assets:clean
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rake assets:clean
 </pre></div>
 </td></tr></table>
 
@@ -2203,31 +2203,31 @@ PassengerRuby /usr/bin/ruby1.9.1
 <li><code>bundle update &lt;paquete&gt;</code>: Actualiza el paquete.</li>
 </ul>
 <h3 id="muestra-el-mapa-de-rutas">Muestra el mapa de rutas<a class="headerlink" href="#muestra-el-mapa-de-rutas" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rake routes
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rake routes
 </pre></div>
 </td></tr></table>
 
 <h3 id="muestra-todas-las-tareas">Muestra todas las tareas<a class="headerlink" href="#muestra-todas-las-tareas" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rake -T
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rake -T
 </pre></div>
 </td></tr></table>
 
 <h3 id="instalacion-de-gem">Instalación de gem<a class="headerlink" href="#instalacion-de-gem" title="Permanent link">&para;</a></h3>
 <p>Tras la instalación de un gem generalmente hay que instalar y ejecutar las migraciones de base de datos con los siguientes comandos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rake railties:install:migrations
 $ rake db:migrate
 </pre></div>
 </td></tr></table>
 
 <p>Para instalar una versión específica de una gem hay que añadir el argumento <code>--version</code>, como por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ gem install --version <span class="s1">&#39;3.0.13&#39;</span> passenger
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ gem install --version <span class="s1">&#39;3.0.13&#39;</span> passenger
 </pre></div>
 </td></tr></table>
 
 <h3 id="activar-modo-debug">Activar modo debug<a class="headerlink" href="#activar-modo-debug" title="Permanent link">&para;</a></h3>
 <p>Instalar primero la gem <code>debugger</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo gem install debugger
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo gem install debugger
 </pre></div>
 </td></tr></table>
 
@@ -2242,24 +2242,24 @@ $ rake db:migrate
 
 <p>Insertar en el código una llamada a <code>debugger</code> en el punto del código donde queramos que se detenga la ejecución.</p>
 <p>Finalmente para arrancar el servidor en modo debug:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rails s --debugger
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rails s --debugger
 </pre></div>
 </td></tr></table>
 
 <p>Lo anterior sirve para depurar sobre Webrick. Para hacerlo bajo Passenger seguir las instrucciones de este <a href="http://chrisadams.me.uk/2009/04/28/how-to-set-up-a-debugger-with-mod_railspassenger/">post</a> (con la ayuda de <a href="http://stackoverflow.com/questions/10678779/debugging-rails-with-passenger-and-apache">este otro</a>). De forma resumida consiste en ejecutar:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> &lt;app_root&gt;
 $ sudo gem install ruby-debug19
 </pre></div>
 </td></tr></table>
 
 <p>Generar un task con:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rails g task myapplication restart
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rails g task myapplication restart
 </pre></div>
 </td></tr></table>
 
 <p>Añadir lo siguiente al final del fichero <code>config/environments/development.rb</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2274,24 +2274,24 @@ $ sudo gem install ruby-debug19
 </td></tr></table>
 
 <p>Ejecutar:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rake myapplication:restart <span class="nv">DEBUG</span><span class="o">=</span><span class="nb">true</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rake myapplication:restart <span class="nv">DEBUG</span><span class="o">=</span><span class="nb">true</span>
 </pre></div>
 </td></tr></table>
 
 <p>Y una vez que hagamos una request para que se reinicie la aplicación ejecutar:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rdebug -c
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rdebug -c
 </pre></div>
 </td></tr></table>
 
 <h3 id="generacion-de-un-modelo">Generación de un modelo<a class="headerlink" href="#generacion-de-un-modelo" title="Permanent link">&para;</a></h3>
 <p>El siguiente comando creará un modelo para una entidad además de la migration correspondiente en la base de datos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rails g model spree/product_layout name:string view:string description:text
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rails g model spree/product_layout name:string view:string description:text
 </pre></div>
 </td></tr></table>
 
 <h3 id="path-helpers">Path Helpers<a class="headerlink" href="#path-helpers" title="Permanent link">&para;</a></h3>
 <p>Dada la siguiente definición de resources anidados:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">resources</span> <span class="ss">:magazines</span> <span class="k">do</span>
   <span class="n">resources</span> <span class="ss">:ads</span>
@@ -2300,19 +2300,19 @@ $ sudo gem install ruby-debug19
 </td></tr></table>
 
 <p>Alternativamente al uso de los path helpers habituales, cuando se pasa como argumento un objeto se puede dejar a Rails que decida automáticamente el path helper necesario, es decir las siguientes líneas serán equivalentes:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&lt;</span><span class="sx">%= link_to &quot;Ad details&quot;, magazine_ad_path(@magazine, @ad) %&gt;</span>
 <span class="sx">&lt;%=</span> <span class="n">link_to</span> <span class="s2">&quot;Ad details&quot;</span><span class="p">,</span> <span class="n">url_for</span><span class="p">(</span><span class="o">[</span><span class="vi">@magazine</span><span class="p">,</span> <span class="vi">@ad</span><span class="o">]</span><span class="p">)</span> <span class="o">%&gt;</span>
 </pre></div>
 </td></tr></table>
 
 <p>En helpers como <code>link_to</code> podemos indicar simplemente los objetos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&lt;%=</span> <span class="n">link_to</span> <span class="s2">&quot;Ad details&quot;</span><span class="p">,</span> <span class="o">[</span><span class="vi">@magazine</span><span class="p">,</span> <span class="vi">@ad</span><span class="o">]</span> <span class="o">%&gt;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&lt;%=</span> <span class="n">link_to</span> <span class="s2">&quot;Ad details&quot;</span><span class="p">,</span> <span class="o">[</span><span class="vi">@magazine</span><span class="p">,</span> <span class="vi">@ad</span><span class="o">]</span> <span class="o">%&gt;</span>
 </pre></div>
 </td></tr></table>
 
 <p>O si queremos enlazar directamente a la <code>magazine</code> en lugar de un array pasaremos directamente el objeto padre:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&lt;%=</span> <span class="n">link_to</span> <span class="s2">&quot;Magazine details&quot;</span><span class="p">,</span> <span class="vi">@magazine</span> <span class="o">%&gt;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&lt;%=</span> <span class="n">link_to</span> <span class="s2">&quot;Magazine details&quot;</span><span class="p">,</span> <span class="vi">@magazine</span> <span class="o">%&gt;</span>
 </pre></div>
 </td></tr></table>
 
@@ -2341,7 +2341,7 @@ $ sudo gem install ruby-debug19
 <h3 id="relacion-entre-modelos">Relación entre modelos<a class="headerlink" href="#relacion-entre-modelos" title="Permanent link">&para;</a></h3>
 <p>Estos serían los pasos para establecer una relación 1:n entre dos modelos preexistentes. Se basa en <a href="http://guides.rubyonrails.org/association_basics.html#creating-foreign-keys-for-belongs_to-associations">este apartado</a> de las Rails Guides.</p>
 <p>Partimos de los modelos <code>Spree::Product</code> de la gem <code>spree_core</code> y el modelo <code>Spree::ProductLayout</code> propio de nuestra aplicación. La relación será un <code>belongs_to</code> de Product a ProductLayout, es decir un n:1. Empezamos añadiendo la relación al modelo Product. Como es una entidad de una gem lo haremos con un fichero decorator:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">#app/models/spree/product_decorator.rb</span>
@@ -2352,12 +2352,12 @@ $ sudo gem install ruby-debug19
 </td></tr></table>
 
 <p>A continuación generamos un migration para añadir el campo que establece la relación en la tabla que mantiene el modelo Product:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rails g migration AddProductLayoutRelationToProducts
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rails g migration AddProductLayoutRelationToProducts
 </pre></div>
 </td></tr></table>
 
 <p>Ahora lo editamos para incorporar el campo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2376,40 +2376,40 @@ $ sudo gem install ruby-debug19
 </td></tr></table>
 
 <p>Finalmente ejecutamos el migrate:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rake db:migrate
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rake db:migrate
 </pre></div>
 </td></tr></table>
 
 <h3 id="inspeccionar-la-definicion-de-un-metodo">Inspeccionar la definición de un método<a class="headerlink" href="#inspeccionar-la-definicion-de-un-metodo" title="Permanent link">&para;</a></h3>
 <p>Si queremos averiguar en qué módulo se encuentra definido un método ejecutamos en consola IRB lo siguiente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">puts</span> <span class="no">Objeto</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="ss">:metodo</span><span class="p">)</span><span class="o">.</span><span class="n">source_location</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">puts</span> <span class="no">Objeto</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="ss">:metodo</span><span class="p">)</span><span class="o">.</span><span class="n">source_location</span>
 </pre></div>
 </td></tr></table>
 
 <p>o</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">puts</span> <span class="no">Objeto</span><span class="o">.</span><span class="n">instance_method</span><span class="p">(</span><span class="ss">:metodo</span><span class="p">)</span><span class="o">.</span><span class="n">source_location</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">puts</span> <span class="no">Objeto</span><span class="o">.</span><span class="n">instance_method</span><span class="p">(</span><span class="ss">:metodo</span><span class="p">)</span><span class="o">.</span><span class="n">source_location</span>
 </pre></div>
 </td></tr></table>
 
 <p>Sustituyendo "Objeto" y "metodo" por lo que corresponda. <a href="http://www.jonathanleighton.com/articles/2012/finding-methods/">Fuente</a>.</p>
 <p>Si se trata de un helper partimos de <code>helper</code>, por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">helper</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="ss">:tab</span><span class="p">)</span><span class="o">.</span><span class="n">source_location</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">helper</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="ss">:tab</span><span class="p">)</span><span class="o">.</span><span class="n">source_location</span>
 </pre></div>
 </td></tr></table>
 
 <h3 id="listar-gems-instalados">Listar gems instalados<a class="headerlink" href="#listar-gems-instalados" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ gem list --local
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ gem list --local
 </pre></div>
 </td></tr></table>
 
 <p>Si queremos sólo las versiones de una gem, de <code>rails</code> por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ gem list --local rails
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ gem list --local rails
 </pre></div>
 </td></tr></table>
 
 <h3 id="generar-el-api-de-rails">Generar el API de rails<a class="headerlink" href="#generar-el-api-de-rails" title="Permanent link">&para;</a></h3>
 <p>Para tener en local la versión actualizada del API de rails:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rails new dummy_app
 $ <span class="nb">cd</span> dummy_app
@@ -2420,7 +2420,7 @@ $ bundle <span class="nb">exec</span> rake doc:rails
 <p>Luego mover el subdirectorio <code>doc/api/index.html</code> a donde nos interese y borrar la dummy_app.</p>
 <h3 id="rubygems-documentation">RubyGems Documentation<a class="headerlink" href="#rubygems-documentation" title="Permanent link">&para;</a></h3>
 <p>Para visualizar la documentación de todas las gems instaladas en el sistema ejecutar:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ gem server
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ gem server
 </pre></div>
 </td></tr></table>
 
@@ -2428,7 +2428,7 @@ $ bundle <span class="nb">exec</span> rake doc:rails
 <h3 id="problema-con-el-encoding-de-algunas-fuentes-en-utf-8">Problema con el encoding de algunas fuentes en UTF-8<a class="headerlink" href="#problema-con-el-encoding-de-algunas-fuentes-en-utf-8" title="Permanent link">&para;</a></h3>
 <p>Al incorporar el gem <a href="https://github.com/picazoH/spree_sermepa">spree_sermepa</a> se produjo el problema descrito <a href="https://github.com/carlhuda/bundler/issues/1570">aquí</a>.</p>
 <p>Hay varias formas de solucionarlo. Una es añadir:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">if</span> <span class="no">RUBY_VERSION</span> <span class="o">=~</span> <span class="sr">/1.9/</span>
@@ -2451,7 +2451,7 @@ $ bundle <span class="nb">exec</span> rake doc:rails
 
 <h3 id="downgrade-de-rubygems">Downgrade de Rubygems<a class="headerlink" href="#downgrade-de-rubygems" title="Permanent link">&para;</a></h3>
 <p>Tras actualizar a la versión 2.0.3 de Rubygems empecé a tener problemas a la hora de hacer <code>bundle install</code>. Aunque me pedía el password de root luego se producían errores de permisos en los directorios donde se almacenan las gems. La solución fue volver a una versión anterior de Rubygems. En concreto la misma que había en ese momento en el servidor de DinaHosting, es decir la 1.8.23. Se hizo con el siguiente comando:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo gem update --system <span class="m">1</span>.8.23
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo gem update --system <span class="m">1</span>.8.23
 </pre></div>
 </td></tr></table>
 
@@ -2462,35 +2462,35 @@ $ bundle <span class="nb">exec</span> rake doc:rails
 </td></tr></table>
 
 <p>Instalando las gemas en el home del usuario se soluciona el error:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle install --deployment
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle install --deployment
 </pre></div>
 </td></tr></table>
 
 <p>Esto instala las gem's en el directorio <code>vendor/bundle</code>.</p>
 <h3 id="especificar-entorno">Especificar entorno<a class="headerlink" href="#especificar-entorno" title="Permanent link">&para;</a></h3>
 <p>Para especificar el entorno en una tarea <code>rake</code> añadir al final de la orden <code>RAILS_ENV=&lt;entorno&gt;</code>. Por ejemplo para desarrollo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rake routes <span class="nv">RAILS_ENV</span><span class="o">=</span>development
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rake routes <span class="nv">RAILS_ENV</span><span class="o">=</span>development
 </pre></div>
 </td></tr></table>
 
 <p>Con el script <code>rails</code>, depende. Si se quiere arrancar la consola añadir al final el entorno sin más. Por ejemplo para desarrollo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rails c development
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rails c development
 </pre></div>
 </td></tr></table>
 
 <p>Si se quiere arrancar el servidor Webrick añadir el entorno por medio de la opción <code>-e</code>. Por ejemplo para desarrollo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rails s -e development
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rails s -e development
 </pre></div>
 </td></tr></table>
 
 <h3 id="desinstalacion-de-todas-las-gems">Desinstalación de todas las gems<a class="headerlink" href="#desinstalacion-de-todas-las-gems" title="Permanent link">&para;</a></h3>
 <p>Con el siguiente comando:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ gem list <span class="p">|</span> cut -d<span class="s2">&quot; &quot;</span> -f1 <span class="p">|</span> xargs gem uninstall -aIx
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ gem list <span class="p">|</span> cut -d<span class="s2">&quot; &quot;</span> -f1 <span class="p">|</span> xargs gem uninstall -aIx
 </pre></div>
 </td></tr></table>
 
 <p>Posteriormente habrá que volver a instalar Bundler y el resto de gems. Para ello:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo gem install bundler
 $ <span class="nb">cd</span> &lt;proyecto&gt;
@@ -2553,30 +2553,30 @@ $ bundle install
 </table>
 <h3 id="ejecutar-una-version-concreta-de-rails">Ejecutar una versión concreta de rails<a class="headerlink" href="#ejecutar-una-version-concreta-de-rails" title="Permanent link">&para;</a></h3>
 <p>Si tenemos instaladas varias versiones del gem de rails, para forzar que se utilice el script <code>rails</code> de una versión concreta, pondremos la versión de la siguiente forma:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rails _3.2.13_ -v
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rails _3.2.13_ -v
 </pre></div>
 </td></tr></table>
 
 <p>De forma que si por ejemplo queremos generar un nuevo proyecto con la versión 3.2.13 haremos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rails _3.2.13_ new nueva_app
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rails _3.2.13_ new nueva_app
 </pre></div>
 </td></tr></table>
 
 <h3 id="ejecutar-una-version-concreta-de-spree">Ejecutar una versión concreta de spree<a class="headerlink" href="#ejecutar-una-version-concreta-de-spree" title="Permanent link">&para;</a></h3>
 <p>Si tenemos instaladas varias versiones del gem de spree, para forzar que se utilice el script <code>spree</code> de una versión concreta, pondremos la versión de la siguiente forma:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ spree _1.3.3_ -v
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ spree _1.3.3_ -v
 </pre></div>
 </td></tr></table>
 
 <p>De forma que si por ejemplo queremos hacer la instalación dentro de una aplicación rails nueva con la versión 1.3.3 de Spree haremos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ spree _1.3.3_ install
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ spree _1.3.3_ install
 </pre></div>
 </td></tr></table>
 
 <h3 id="diagramas-erd">Diagramas ERD<a class="headerlink" href="#diagramas-erd" title="Permanent link">&para;</a></h3>
 <p>A continuación se indica el comando para obtener una serie de diagramas ERD interesantes. La documentación de todos los parámetros de ERD está <a href="http://rails-erd.rubyforge.org/customise.html">aquí</a>.</p>
 <p>Modelado de producto en Spree:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rake erd <span class="nv">attributes</span><span class="o">=</span>foreign_keys <span class="nv">only</span><span class="o">=</span><span class="s2">&quot;Spree::Product,Spree::OptionType,Spree::OptionValue,Spree::Variant,Spree::ProductOptionType&quot;</span> <span class="nv">title</span><span class="o">=</span><span class="s1">&#39;Productos&#39;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rake erd <span class="nv">attributes</span><span class="o">=</span>foreign_keys <span class="nv">only</span><span class="o">=</span><span class="s2">&quot;Spree::Product,Spree::OptionType,Spree::OptionValue,Spree::Variant,Spree::ProductOptionType&quot;</span> <span class="nv">title</span><span class="o">=</span><span class="s1">&#39;Productos&#39;</span>
 </pre></div>
 </td></tr></table>
                 

@@ -1548,23 +1548,19 @@
 </ul>
 <h2 id="codificacion-de-la-pagina">Codificación de la página<a class="headerlink" href="#codificacion-de-la-pagina" title="Permanent link">&para;</a></h2>
 <ul>
-<li>La codificación de caracteres que se usa para enviar la página al navegador se ajusta en el fichero globals.php añadiendo la siguiente linea:</li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="x">header( &#39;Content-Type: text/html; charset=UTF-8&#39;);</span>
+<li>La codificación de caracteres que se usa para enviar la página al navegador se ajusta en el fichero globals.php añadiendo la siguiente linea:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="x">header( &#39;Content-Type: text/html; charset=UTF-8&#39;);</span>
 </pre></div>
-</td></tr></table>
-
-<ul>
-<li>La codificación que se informa en la sección header del código fuente html de la página se ajusta en el fichero language/spanish.php en la linea que dice:</li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="x">DEFINE(&#39;_ISO&#39;,&#39;charset=utf-8&#39;);</span>
+</td></tr></table></li>
+<li>La codificación que se informa en la sección header del código fuente html de la página se ajusta en el fichero language/spanish.php en la linea que dice:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="x">DEFINE(&#39;_ISO&#39;,&#39;charset=utf-8&#39;);</span>
 </pre></div>
-</td></tr></table>
-
+</td></tr></table></li>
+</ul>
 <p>Ver comentario de Mitsurugi en <a href="http://www.joomlaspanish.org/foros/showthread.php?t=261&amp;page=3">este foro</a>.</p>
 <h2 id="allow_url_fopen-desactivado">allow_url_fopen desactivado<a class="headerlink" href="#allow_url_fopen-desactivado" title="Permanent link">&para;</a></h2>
 <p>Para el problema del eWeather del tipo (<a href="http://www.joomlaspanish.org/foros/showthread.php?t=5412">fuente</a>):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">Warning</span><span class="o">:</span> <span class="n">file_get_contents</span><span class="o">():</span> <span class="n">URL</span> <span class="n">file</span><span class="o">-</span><span class="n">access</span> <span class="k">is</span> <span class="n">disabled</span> <span class="k">in</span> <span class="n">the</span> <span class="n">server</span> <span class="n">configuration</span> <span class="k">in</span> <span class="sr">/(lo que sea)/includes/domit/x</span><span class="n">ml_domit_parser</span><span class="o">.</span><span class="na">php</span> <span class="n">on</span> <span class="n">line</span> <span class="mi">1645</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">Warning</span><span class="o">:</span> <span class="n">file_get_contents</span><span class="o">():</span> <span class="n">URL</span> <span class="n">file</span><span class="o">-</span><span class="n">access</span> <span class="k">is</span> <span class="n">disabled</span> <span class="k">in</span> <span class="n">the</span> <span class="n">server</span> <span class="n">configuration</span> <span class="k">in</span> <span class="sr">/(lo que sea)/includes/domit/x</span><span class="n">ml_domit_parser</span><span class="o">.</span><span class="na">php</span> <span class="n">on</span> <span class="n">line</span> <span class="mi">1645</span>
 </pre></div>
 </td></tr></table>
 
@@ -1573,9 +1569,8 @@
 <li>Localizar el archivo que está en la carpeta donde esté alojado el Joomla en la siguiente ruta: /includes/domit/xml_domit_parser.php</li>
 <li>Editarlo e ir a la linea 1645</li>
 <li>En esa linea pone: return file_get_contents($filename);</li>
-<li>Eliminamos la línea y ponemos esto en su lugar:</li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<li>Eliminamos la línea y ponemos esto en su lugar:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -1589,9 +1584,7 @@
 <span class="x">return curl_exec($ch);</span>
 <span class="x">curl_close($ch);</span>
 </pre></div>
-</td></tr></table>
-
-<ul>
+</td></tr></table></li>
 <li>Guardamos el archivo y lo subimos al servidor sustituyendo al antiguo.</li>
 </ul>
                 

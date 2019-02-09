@@ -1637,12 +1637,12 @@
 <p><img alt="Alimentación Raspberry" src="/images/posts/crankshaft_raspberry_alimentacion2.jpg" /></p>
 <p>Para que el circuito Car Switch y la Raspberry Pi se comuniquen, además de situar los dos cables de pin, hay que instalar un script en el sistema de la Raspberry para que monitorice el pin que le informa del estado del contacto del coche. El sistema que instalamos en uno de los primeros apartados (Crankshaft) está basado en Raspbian, así que se puede instalar el script siguiendo las instrucciones correspondientes a este sistema en la sección "Installing the script" de la página <a href="http://mausberrycircuits.com/pages/car-setup">Car Setup</a>.</p>
 <p>También se puede instalar manualmente copiando el script en la ruta <code>/etc/switch.sh</code>, dándole permisos de ejecución y añadiendo lo siguiente al final del fichero <code>/etc/rc.local</code> (justo antes del <code>exit 0</code>) para que se ejecute en el arranque:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>/etc/switch.sh &amp;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>/etc/switch.sh &amp;
 </pre></div>
 </td></tr></table>
 
 <p>El script es éste:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4

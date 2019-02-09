@@ -2846,7 +2846,7 @@
 </ul>
 <h4 id="eliminacion-servicio-oneplus-system-service">Eliminación servicio <code>OnePlus System Service</code><a class="headerlink" href="#eliminacion-servicio-oneplus-system-service" title="Permanent link">&para;</a></h4>
 <p>Este servicio recopila información privada como <a href="https://www.teknofilo.com/oneplus-responde-a-las-acusaciones-de-espiar-a-sus-usuarios/amp/">ha reconocido la propia OnePlus</a>. La forma de desinstalarlo es abriendo una shell por ADB y ejecutando un comando:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ./adb shell
 OnePlus5:/ $ pm uninstall -k --user <span class="m">0</span> net.oneplus.odm
@@ -2855,7 +2855,7 @@ Success
 </td></tr></table>
 
 <p>Previamente se recomienda hacer un backup de este paquete por si tras desinstalarlo el sistema queda inestable. Esto lo podemos hacer localizando el directorio del apk con <a href="https://play.google.com/store/apps/details?id=bg.projectoria.appinspector">App Inspector</a> y lanzando el siguiente comando:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ./adb pull &lt;ruta&gt;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ./adb pull &lt;ruta&gt;
 </pre></div>
 </td></tr></table>
 
@@ -2970,7 +2970,7 @@ XXX lo cambias por el MNC de tu operador, e YYY por el MCC. En el caso de Simyo 
 </ul>
 <h3 id="htc-desire">HTC Desire<a class="headerlink" href="#htc-desire" title="Permanent link">&para;</a></h3>
 <p>Los datos originales del HBOOT de un Desire sin manipular eran:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -3016,7 +3016,7 @@ Aug 10 2010,17:52:18
 </ul>
 <h3 id="sony-xperia-t">Sony Xperia T<a class="headerlink" href="#sony-xperia-t" title="Permanent link">&para;</a></h3>
 <h4 id="menu-de-servicio">Menú de servicio<a class="headerlink" href="#menu-de-servicio" title="Permanent link">&para;</a></h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>*#*#7378423#*#*
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>*#*#7378423#*#*
 </pre></div>
 </td></tr></table>
 
@@ -3104,7 +3104,7 @@ Aug 10 2010,17:52:18
 <h4 id="desactivar-fast-dormancy-pepephone-mcc-214-mnc-06">Desactivar fast-dormancy (pepephone MCC= 214, MNC= 06)<a class="headerlink" href="#desactivar-fast-dormancy-pepephone-mcc-214-mnc-06" title="Permanent link">&para;</a></h4>
 <p>In /system/etc/fast-dormancy/fd_custm_conf.txt replace the 0s with your MNC and MCC from your APN setting.</p>
 <h4 id="solucion-al-problema-de-permisos-de-la-memoria-interna-fuente">Solucion al problema de permisos de la memoria interna (<a href="http://forum.xda-developers.com/showthread.php?t=2794704">fuente</a>)<a class="headerlink" href="#solucion-al-problema-de-permisos-de-la-memoria-interna-fuente" title="Permanent link">&para;</a></h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ su
@@ -3116,7 +3116,7 @@ Aug 10 2010,17:52:18
 
 <h3 id="sony-xperia-u">Sony Xperia U<a class="headerlink" href="#sony-xperia-u" title="Permanent link">&para;</a></h3>
 <h4 id="menu-de-servicio_1">Menú de servicio<a class="headerlink" href="#menu-de-servicio_1" title="Permanent link">&para;</a></h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>*#*#7378423#*#*
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>*#*#7378423#*#*
 </pre></div>
 </td></tr></table>
 
@@ -3362,7 +3362,7 @@ Aug 10 2010,17:52:18
 <li><code>am start -a android.intent.action.MAIN -n com.android.settings/.Settings</code></li>
 </ol>
 <h3 id="montar-system-en-rw">Montar system en rw:<a class="headerlink" href="#montar-system-en-rw" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># mount -o remount,rw /system</span>

@@ -1566,7 +1566,7 @@
 <h2 id="empaquetado-de-roms-mame">Empaquetado de ROMs MAME<a class="headerlink" href="#empaquetado-de-roms-mame" title="Permanent link">&para;</a></h2>
 <p>Primero hay que localizar los ficheros que componen la ROM. Hay varios tipos (explicados <a href="https://github.com/retropie/retropie-setup/wiki/Managing-ROMs#step-5--rebuild-a-rom-set">aquí</a>). Una forma de ir a lo seguro es localizar sus piezas gracias a los hash SHA1 que se pueden encontrar en los ficheros <a href="https://github.com/retropie/retropie-setup/wiki/Managing-ROMs#quick-reference">.DAT</a> y luego hacer un paquete ZIP sin compresión.</p>
 <p>Para generar un archivo ZIP con compresión nula en Linux, se consigue por ejemplo con el siguiente comando lanzado desde el directorio donde se encuentren los ficheros que queremos empaquetar:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>zip -0 rom.zip *
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>zip -0 rom.zip *
 </pre></div>
 </td></tr></table>
 
@@ -1588,22 +1588,28 @@
 <li>Introducir el disco en la unidad de CD-ROM.</li>
 <li>
 <p>Localizar el dispositivo del CD-ROM:</p>
-<p><code>bash
-sudo cdrdao scanbus</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo cdrdao scanbus
+</pre></div>
+</td></tr></table>
+
 </li>
 <li>
 <p>Desmontar el dispositivo sin expulsar el disco (suponemos que el comando anterior indica que el dispositivo es <code>/dev/sr0</code>):</p>
-<p><code>bash
-sudo umount /dev/sr0</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo umount /dev/sr0
+</pre></div>
+</td></tr></table>
+
 </li>
 <li>
 <p>Hacer el backup:</p>
-<p><code>bash
-cdrdao read-cd --device /dev/sr0 --driver generic-mmc-raw --read-raw --datafile nombre_juego.bin nombre_juego.toc</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cdrdao read-cd --device /dev/sr0 --driver generic-mmc-raw --read-raw --datafile nombre_juego.bin nombre_juego.toc
+</pre></div>
+</td></tr></table>
+
 </li>
 </ol>
 <p>Con esto obtendremos dos ficheros. En algunas ocasiones nos puede interesar más el fichero <code>cue</code> equivalente al <code>toc</code>. En ese caso convertirlo así:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>toc2cue nombre_juego.toc nombre_juego.cue
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>toc2cue nombre_juego.toc nombre_juego.cue
 </pre></div>
 </td></tr></table>
                 

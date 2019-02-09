@@ -1632,12 +1632,12 @@
 <p><img alt="Raspberry sobre PCB impresora" src="/images/posts/octoprint.jpg" /></p>
 <h2 id="desactivacion-de-bt-y-activacion-de-puerto-serie">Desactivación de BT y activación de puerto serie<a class="headerlink" href="#desactivacion-de-bt-y-activacion-de-puerto-serie" title="Permanent link">&para;</a></h2>
 <p>La Raspberry Pi Zero W (en Raspberry Pi 3 sucede lo mismo) trae un adaptador Bluetooth que tanto en la distribución Raspbian como en la imágen OctoPi utilizada está conectado precisamente a los pines #08 y #10 a los que hemos conectado el puerto serie de la impresora. Antes de continuar necesitamos liberar esta conexión. Para ello debemos editar el fichero <code>config.txt</code> que hay en la partición <code>boot</code> y añadir (al final por ejemplo) lo siguiente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>dtoverlay=pi3-miniuart-bt
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>dtoverlay=pi3-miniuart-bt
 </pre></div>
 </td></tr></table>
 
 <p>Esto podemos hacerlo sin necesidad de arrancar el sistema, montando la microSD en el ordenador. Para el siguiente paso sí necesitamos arrancar el sistema de la tarjeta en la Raspberry. Una vez estemos en la consola (por SSH o conectando una pantalla/teclado/ratón de alguna manera), ejecutaremos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo raspi-config
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo raspi-config
 </pre></div>
 </td></tr></table>
 

@@ -1960,19 +1960,19 @@
 <h2 id="ejecucion-servidor-en-raspberry-pi-yo-odroid-c1">Ejecución Servidor en Raspberry Pi y/o ODROID-C1<a class="headerlink" href="#ejecucion-servidor-en-raspberry-pi-yo-odroid-c1" title="Permanent link">&para;</a></h2>
 <h3 id="comandos-para-arrancarlo">Comandos para arrancarlo<a class="headerlink" href="#comandos-para-arrancarlo" title="Permanent link">&para;</a></h3>
 <h4 id="raspberry-pi">Raspberry Pi<a class="headerlink" href="#raspberry-pi" title="Permanent link">&para;</a></h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo java -Xms256M -Xmx496M -jar /home/mine/spigot/spigot.jar nogui
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo java -Xms256M -Xmx496M -jar /home/mine/spigot/spigot.jar nogui
 </pre></div>
 </td></tr></table>
 
 <h4 id="raspberry-pi-2-o-odroid-c1">Raspberry Pi 2 o ODROID-C1<a class="headerlink" href="#raspberry-pi-2-o-odroid-c1" title="Permanent link">&para;</a></h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo java -Xms512M -Xmx768M -jar /home/mine/spigot/spigot.jar nogui
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo java -Xms512M -Xmx768M -jar /home/mine/spigot/spigot.jar nogui
 </pre></div>
 </td></tr></table>
 
 <h3 id="settings-aconsejadas">Settings aconsejadas<a class="headerlink" href="#settings-aconsejadas" title="Permanent link">&para;</a></h3>
 <p>(<a href="http://www.raspberrypi.org/forums/viewtopic.php?t=27889">Fuente</a>)</p>
 <p><em>server.properties</em></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2049,14 +2049,14 @@ player-idle-timeout=0
 </td></tr></table>
 
 <p><em>bukkit.yml</em></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">settings</span><span class="o">:</span>
   <span class="n">allow</span><span class="o">-</span><span class="n">end</span><span class="o">:</span> <span class="kc">false</span> <span class="err">#</span><span class="n">Desactiva</span> <span class="n">el</span> <span class="n">End</span> <span class="o">(</span><span class="n">http</span><span class="o">://</span><span class="n">minecraft</span><span class="o">.</span><span class="na">gamepedia</span><span class="o">.</span><span class="na">com</span><span class="o">/</span><span class="n">The_End</span><span class="o">)</span>
 </pre></div>
 </td></tr></table>
 
 <p><em>spigot.yml</em></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>world-settings:
   default:
@@ -2065,7 +2065,7 @@ player-idle-timeout=0
 </td></tr></table>
 
 <p><em>plugins/WorldBorder/config.yml</em></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2168,7 +2168,7 @@ worlds:
 </ul>
 <h3 id="montaje-de-un-mundo-plano-para-talleres">Montaje de un mundo plano para talleres<a class="headerlink" href="#montaje-de-un-mundo-plano-para-talleres" title="Permanent link">&para;</a></h3>
 <p>Antes de empezar paramos el servidor. Generamos un mundo nuevo cambiando lo siguiente en <code>server.properties</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2198,7 +2198,7 @@ force-gamemode=true #Fuerza la configuración del servidor a cada jugador
 <li><a href="http://dev.bukkit.org/bukkit-plugins/worldborder/">WorldBorder</a></li>
 </ul>
 <p>Arrancamos el servidor. Por medio de comandos lo modelamos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2238,7 +2238,7 @@ time set 6000 # Pone el reloj al mediodía # Fijamos el reloj al mediodía
 <p><img alt="Bloques Minecraft 2" src="/images/pages/minecraft_blocks2.png" /></p>
 <h3 id="instalacion-mineos-en-odroid-c1">Instalación MineOS en ODROID-C1<a class="headerlink" href="#instalacion-mineos-en-odroid-c1" title="Permanent link">&para;</a></h3>
 <p>Como requerimiento previo, tendremos que tener instalado el JDK de Java, preferiblemente a partir de la versión 8. Aparte de eso, ejecutar los siguientes comandos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4

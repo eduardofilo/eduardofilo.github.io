@@ -1627,38 +1627,38 @@
                 
                 <h1 id="svn">SVN<a class="headerlink" href="#svn" title="Permanent link">&para;</a></h1>
 <h2 id="diferencia-entre-dos-revisiones-distintas-n-y-m-del-mismo-fichero-con-ruta-path">Diferencia entre dos revisiones distintas (N y M) del mismo fichero (con ruta <code>Path</code>)<a class="headerlink" href="#diferencia-entre-dos-revisiones-distintas-n-y-m-del-mismo-fichero-con-ruta-path" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn diff -r N:M Path
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn diff -r N:M Path
 </pre></div>
 </td></tr></table>
 
 <h2 id="limpiar-meta-informacion-svn-en-una-copia-de-trabajo">Limpiar meta-información SVN en una copia de trabajo<a class="headerlink" href="#limpiar-meta-informacion-svn-en-una-copia-de-trabajo" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rm -rf <span class="sb">`</span>find . -type d -name .svn<span class="sb">`</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rm -rf <span class="sb">`</span>find . -type d -name .svn<span class="sb">`</span>
 </pre></div>
 </td></tr></table>
 
 <p>En algunos sistemas lo anterior no funciona bien si los directorios tienen espacios en el nombre. Usar en este caso:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ find . -type d -name .svn -exec rm -rf <span class="s1">&#39;{}&#39;</span> <span class="se">\;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ find . -type d -name .svn -exec rm -rf <span class="s1">&#39;{}&#39;</span> <span class="se">\;</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="informacion-sobre-la-copia-de-trabajo">Información sobre la copia de trabajo<a class="headerlink" href="#informacion-sobre-la-copia-de-trabajo" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn info
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn info
 </pre></div>
 </td></tr></table>
 
 <h2 id="redireccionar-una-copia-de-trabajo-tras-movimiento-de-repositorio">Redireccionar una copia de trabajo tras movimiento de repositorio<a class="headerlink" href="#redireccionar-una-copia-de-trabajo-tras-movimiento-de-repositorio" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn switch --relocate FROM TO <span class="o">[</span>Path copia trabajo<span class="o">]</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn switch --relocate FROM TO <span class="o">[</span>Path copia trabajo<span class="o">]</span>
 </pre></div>
 </td></tr></table>
 
 <p>Por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>edumoreno@walqa347:~/NetBeansProjects/MobileDesktopDemo$ svn switch --relocate svn+ssh://eduardo.moreno@172.22.1.63/var/lib/subversion/ims/MobileDesktopDemo  svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/MobileDesktopDemo .
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>edumoreno@walqa347:~/NetBeansProjects/MobileDesktopDemo$ svn switch --relocate svn+ssh://eduardo.moreno@172.22.1.63/var/lib/subversion/ims/MobileDesktopDemo  svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/MobileDesktopDemo .
 </pre></div>
 </td></tr></table>
 
 <h2 id="creacion-de-un-proyecto-nuevo-en-un-repositorio">Creación de un proyecto nuevo en un repositorio<a class="headerlink" href="#creacion-de-un-proyecto-nuevo-en-un-repositorio" title="Permanent link">&para;</a></h2>
 <p>Vamos a mostrarlo con el ejemplo del proyecto <code>CCM</code> dentro de la ruta <code>svn.servidor.com/var/lib/subversion/ims</code>, siendo la ruta de la copia de trabajo <code>/home/edumoreno/NetBeansProjects/CCM</code>.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn mkdir svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM -m <span class="s2">&quot;Creación directorio.&quot;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn mkdir svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM -m <span class="s2">&quot;Creación directorio.&quot;</span>
 </pre></div>
 </td></tr></table>
 
@@ -1669,14 +1669,14 @@
 <li><code>CCM/nbproject/private</code></li>
 </ul>
 <p>Una vez eliminados o movidos hacemos el import:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> /home/edumoreno/NetBeansProjects/CCM
 $ svn import . svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM -m <span class="s2">&quot;Import inicial.&quot;</span>
 </pre></div>
 </td></tr></table>
 
 <p>Ahora habría que hacer un checkout de lo que se ha subido para obtener la meta-información del repositorio:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> /home/edumoreno/NetBeansProjects
 $ rm -rf CCM
@@ -1691,7 +1691,7 @@ $ svn checkout svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/
 <li>nbproject/private</li>
 </ul>
 <p>Esto en teoría se puede hacer con los siguientes comandos, pero aun no se ha probado:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -1705,7 +1705,7 @@ $ svn commit -m <span class="s2">&quot;Ignoramos una serie de directorios del pr
 
 <p>(Nota: El retorno de carro que hay al final del primer comando <code>svn propset</code> es intencionado)</p>
 <p>Si por algún motivo los directorios hubieran entrado por descuido en el repositorio, habría que borrarlos tanto en el servidor como en local, ya que aunque se haya establecido la propiedad svn:ignore, se seguirían sincronizando:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -1723,12 +1723,12 @@ $ svn commit -m <span class="s2">&quot;Eliminamos una serie de directorios del p
 
 <h2 id="creacion-de-un-branch">Creación de un branch<a class="headerlink" href="#creacion-de-un-branch" title="Permanent link">&para;</a></h2>
 <p>Para crear el branch simplemente hay que hacer una copia del trunk sin salir del repositorio. Para ello utilizar el siguiente comando:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn copy -m <span class="s2">&quot;Creación de branch b1_svg.&quot;</span> svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/trunk/ svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn copy -m <span class="s2">&quot;Creación de branch b1_svg.&quot;</span> svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/trunk/ svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/
 </pre></div>
 </td></tr></table>
 
 <p>Luego si se desea trabajar en el branch recién creado habrá que bajar una copia de trabajo con el comando siguiente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>edumoreno@walqa347:~$ <span class="nb">cd</span> ~/NetBeansProjects/
 edumoreno@walqa347:~/NetBeansProjects$ svn checkout svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/ CCM_b1_svg
 </pre></div>
@@ -1737,46 +1737,46 @@ edumoreno@walqa347:~/NetBeansProjects$ svn checkout svn+ssh://eduardo.moreno@svn
 <h2 id="merge-con-el-trunk">Merge con el trunk<a class="headerlink" href="#merge-con-el-trunk" title="Permanent link">&para;</a></h2>
 <p>Cuando llegue el momento de hacer el merge, habrá que proceder de la siguiente forma. Como punto de partida necesitaremos una copia de trabajo del trunk:</p>
 <p>Averiguamos la revisión en que construimos el branch. Esto se puede conseguir haciendo un log con la opción <code>--stop-on-copy</code> (que detiene la salida del comando en cuanto se detecta que la rama fue copiada o renombrada). Así, la entrada más antigua muestra lo que buscamos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn log -v --stop-on-copy svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/<span class="p">|</span>tail
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn log -v --stop-on-copy svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/<span class="p">|</span>tail
 </pre></div>
 </td></tr></table>
 
 <p>Averiguamos la última revisión que contiene cambios en el branch:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn log -v --stop-on-copy svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/<span class="p">|</span>head
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn log -v --stop-on-copy svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/<span class="p">|</span>head
 </pre></div>
 </td></tr></table>
 
 <p>Nos situamos en el directorio de la copia de trabajo correspondiente al trunk y hacemos <code>update</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>edumoreno@walqa347:~$ <span class="nb">cd</span> ~/NetBeansProjects/CCM
 edumoreno@walqa347:~/NetBeansProjects/CCM$ svn update
 </pre></div>
 </td></tr></table>
 
 <p>Antes de hacer el <code>merge</code> se puede simular, es decir, lanzarlo sin que aplique los cambios y que sólo muestre lo que va a hacer, incorporando la opción <code>--dry-run</code>. El comando sería:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn merge --dry-run -r <span class="m">549</span>:634 svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn merge --dry-run -r <span class="m">549</span>:634 svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/
 </pre></div>
 </td></tr></table>
 
 <p>Una vez que estemos seguros hacemos el <code>merge</code> indicando la release inicial del branch como origen del intervalo de releases:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn merge -r <span class="m">549</span>:634 svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn merge -r <span class="m">549</span>:634 svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/
 </pre></div>
 </td></tr></table>
 
 <p>Resolvemos manualmente los conflictos que inevitablemente existirán.</p>
 <p>Hacemos el commit en el trunk de los cambios del branch recién incorporados:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn commit -m <span class="s2">&quot;Merge de los cambios r549:634 del branch &#39;b1_svg&#39; sobre el trunk.&quot;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn commit -m <span class="s2">&quot;Merge de los cambios r549:634 del branch &#39;b1_svg&#39; sobre el trunk.&quot;</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="analisis-de-diferencias-ante-un-conflicto">Análisis de diferencias ante un conflicto<a class="headerlink" href="#analisis-de-diferencias-ante-un-conflicto" title="Permanent link">&para;</a></h2>
 <p>Para listar los ficheros que tienen conflictos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn status<span class="p">|</span>grep <span class="s2">&quot;^C&quot;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn status<span class="p">|</span>grep <span class="s2">&quot;^C&quot;</span>
 </pre></div>
 </td></tr></table>
 
 <p>Para listar los ficheros diferenciales de un conflicto:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls -l &lt;fichero_base&gt;*
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls -l &lt;fichero_base&gt;*
 </pre></div>
 </td></tr></table>
 
@@ -1788,18 +1788,18 @@ edumoreno@walqa347:~/NetBeansProjects/CCM$ svn update
 <li><code>&lt;fichero_base&gt;.izquierda-fusion.rMMMM</code>: Versión común a ambas ramas, es decir, el punto del tiempo en que empezaron a diferenciarse</li>
 </ul>
 <p>Para obtener una descripción de las diferencias habidas sobre la rama destino (normalmente el trunk):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ diff &lt;fichero_base&gt;.izquierda-fusion.rMMMM &lt;fichero_base&gt;.copia-de-trabajo
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ diff &lt;fichero_base&gt;.izquierda-fusion.rMMMM &lt;fichero_base&gt;.copia-de-trabajo
 </pre></div>
 </td></tr></table>
 
 <p>Para obtener una descripción de las diferencias habidas sobre la rama origen (normalmente el branch):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ diff &lt;fichero_base&gt;.izquierda-fusion.rMMMM &lt;fichero_base&gt;.derecha-fusion.rNNNN
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ diff &lt;fichero_base&gt;.izquierda-fusion.rMMMM &lt;fichero_base&gt;.derecha-fusion.rNNNN
 </pre></div>
 </td></tr></table>
 
 <h2 id="borrado-de-la-rama">Borrado de la rama<a class="headerlink" href="#borrado-de-la-rama" title="Permanent link">&para;</a></h2>
 <p>Si una vez hecho el merge no se va a continuar trabajando en el branch, se puede considerar su borrado. Esto se hace con la simple orden siguiente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn delete svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ svn delete svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/
 </pre></div>
 </td></tr></table>
                 

@@ -2139,7 +2139,7 @@
 <h2 id="actualizacion-de-raring-a-saucy">Actualización de raring a saucy<a class="headerlink" href="#actualizacion-de-raring-a-saucy" title="Permanent link">&para;</a></h2>
 <p>Apache cambia de versión de 2.2 a 2.4. <a href="http://tfountain.co.uk/blog/2013/10/18/fixing-apache-ubuntu-13-10">Aquí</a> encontré solución a los problemas que eso supuso.</p>
 <h2 id="recursos-graficos">Recursos gráficos<a class="headerlink" href="#recursos-graficos" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2163,21 +2163,21 @@
 <ul>
 <li>Instalar un <a href="http://medibuntu.org/repository.php">repositorio no oficial</a> que contiene los codecs:</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo -E wget --output-document<span class="o">=</span>/etc/apt/sources.list.d/medibuntu.list http://www.medibuntu.org/sources.list.d/<span class="k">$(</span>lsb_release -cs<span class="k">)</span>.list <span class="o">&amp;&amp;</span> sudo apt-get --quiet update <span class="o">&amp;&amp;</span> sudo apt-get --yes --quiet --allow-unauthenticated install medibuntu-keyring <span class="o">&amp;&amp;</span> sudo apt-get --quiet update
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo -E wget --output-document<span class="o">=</span>/etc/apt/sources.list.d/medibuntu.list http://www.medibuntu.org/sources.list.d/<span class="k">$(</span>lsb_release -cs<span class="k">)</span>.list <span class="o">&amp;&amp;</span> sudo apt-get --quiet update <span class="o">&amp;&amp;</span> sudo apt-get --yes --quiet --allow-unauthenticated install medibuntu-keyring <span class="o">&amp;&amp;</span> sudo apt-get --quiet update
 </pre></div>
 </td></tr></table>
 
 <ul>
 <li>Instalar el codificador y los codecs:</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo aptitude install ffmpeg libavcodec-extra-53
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo aptitude install ffmpeg libavcodec-extra-53
 </pre></div>
 </td></tr></table>
 
 <ul>
 <li>Codificar el video:</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ffmpeg -i EspacioMudejar.wmv -s qcif -vcodec h263 -acodec libfaac -ac <span class="m">1</span> -ar <span class="m">8000</span> -r <span class="m">25</span> -ab <span class="m">32</span> -strict experimental -y EspacioMudejar.3gp
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ffmpeg -i EspacioMudejar.wmv -s qcif -vcodec h263 -acodec libfaac -ac <span class="m">1</span> -ar <span class="m">8000</span> -r <span class="m">25</span> -ab <span class="m">32</span> -strict experimental -y EspacioMudejar.3gp
 </pre></div>
 </td></tr></table>
 
@@ -2189,21 +2189,21 @@
 </ul>
 <h2 id="convertir-ape-a-wav">Convertir APE a WAV<a class="headerlink" href="#convertir-ape-a-wav" title="Permanent link">&para;</a></h2>
 <p>Los ficheros .ape con que se distribuyen algunos CD's se puede convertir a WAV para poder quemarlo a un CD (con un fichero .cue que normalmente acompaña al .ape se puede quemar directamente con el Burn del Mac por ejemplo) instalando el paquete <code>ffmpeg</code> y ejecutando el siguiente comando:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ffmpeg -i fichero.ape fichero.wav
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ffmpeg -i fichero.ape fichero.wav
 </pre></div>
 </td></tr></table>
 
 <p>Hay que acordarse de sustituir dentro del fichero .cue la referencia al fichero original .ape por el nuevo .wav.</p>
 <h2 id="convertir-flac-a-wav">Convertir FLAC a WAV<a class="headerlink" href="#convertir-flac-a-wav" title="Permanent link">&para;</a></h2>
 <p>Los ficheros .flac con que se distribuyen algunos CD's se puede convertir a WAV para poder quemarlo a un CD (con un fichero .cue que normalmente acompaña al .flac se puede quemar directamente con el Burn del Mac por ejemplo) instalando el paquete <code>flac</code> y ejecutando el siguiente comando:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ flac -d fichero.flac
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ flac -d fichero.flac
 </pre></div>
 </td></tr></table>
 
 <p>Hay que acordarse de sustituir dentro del fichero .cue la referencia al fichero original .flac por el nuevo .wav.</p>
 <h2 id="restaurar-panel-gnome">Restaurar panel Gnome<a class="headerlink" href="#restaurar-panel-gnome" title="Permanent link">&para;</a></h2>
 <p>(<a href="http://www.google.com/url?q=http%3A%2F%2Fsuperuser.com%2Fquestions%2F129320%2Fhow-do-i-restore-the-default-applets-to-gnomes-notification-area&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGUVYnYCoUfrVCGX5tIHc5UWBNeDw">fuente 1</a>; <a href="http://www.google.com/url?q=http%3A%2F%2Fwww.watchingthenet.com%2Frestore-panels-in-ubuntu-back-to-their-default-settings.html&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHAEFYUaK7ztqIKEgF563uoWWTHBw">fuente 2</a>)</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ gconftool --recursive-unset /apps/panel
 $ rm -rf ~/.gconf/apps/panel
@@ -2213,7 +2213,7 @@ $ pkill gnome-panel
 
 <h2 id="concatenar-pdfs">Concatenar PDF's<a class="headerlink" href="#concatenar-pdfs" title="Permanent link">&para;</a></h2>
 <p>Con <code>pdftk</code> programa en linea de comando para procesar ficheros PDF. Está para casi todas las plataformas.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo aptitude search pdftk
@@ -2224,7 +2224,7 @@ $ sudo aptitude install pdftk
 </td></tr></table>
 
 <p>Concatenar todos los archivos facilmente que tengas en una carpeta:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pdftk carpeta_con_todos_ficheros/*.pdf cat output fichero_concatenado.pdf
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pdftk carpeta_con_todos_ficheros/*.pdf cat output fichero_concatenado.pdf
 </pre></div>
 </td></tr></table>
 
@@ -2232,7 +2232,7 @@ $ sudo aptitude install pdftk
 <h2 id="apod">APOD<a class="headerlink" href="#apod" title="Permanent link">&para;</a></h2>
 <p>Programa para descargar y ajustar como fondo de escritorio la imagen astronómica del día de la web <a href="http://apod.nasa.gov/apod/">APOD</a>. Es necesario que se encuentre Python instalado en el sistema.</p>
 <p>Instalar el siguiente script en algún lugar:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2399,7 +2399,7 @@ def DoAPOD<span class="o">()</span>:
 </td></tr></table>
 
 <p>Por último programar una tarea en cron para ejecutar el script con el usuario al que queramos que se aplique el fondo de escritorio. Por ejemplo introduciendo la siguiente línea en <code>/etc/crontab</code> para que se ejecute a las 10 de la mañana:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>00 10   * * *   edumoreno       /home/edumoreno/.apod/apod
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>00 10   * * *   edumoreno       /home/edumoreno/.apod/apod
 </pre></div>
 </td></tr></table>
 
@@ -2407,22 +2407,22 @@ def DoAPOD<span class="o">()</span>:
 <h2 id="instalar-oracle-java">Instalar Oracle Java<a class="headerlink" href="#instalar-oracle-java" title="Permanent link">&para;</a></h2>
 <p>(Fuentes: <a href="http://www.guia-ubuntu.org/index.php?title=Java#Desde_la_web_de_Java">1</a> y <a href="http://www.webupd8.org/2011/09/how-to-install-oracle-java-7-jdk-in.html">2</a>)</p>
 <p>Movemos la carpeta creada después de la instalación (llamada <code>jre1.7.0_05</code> en este ejemplo) a una ruta más apropiada:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo mv jre1.7.0_05 /usr/lib/jvm
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo mv jre1.7.0_05 /usr/lib/jvm
 </pre></div>
 </td></tr></table>
 
 <p>Establecemos el nuevo Java como una de las "alternativas de java":</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo update-alternatives --install <span class="s2">&quot;/usr/bin/java&quot;</span> <span class="s2">&quot;java&quot;</span> <span class="s2">&quot;/usr/lib/jvm/jre1.7.0_05/bin/java&quot;</span> <span class="m">1</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo update-alternatives --install <span class="s2">&quot;/usr/bin/java&quot;</span> <span class="s2">&quot;java&quot;</span> <span class="s2">&quot;/usr/lib/jvm/jre1.7.0_05/bin/java&quot;</span> <span class="m">1</span>
 </pre></div>
 </td></tr></table>
 
 <p>Ahora establecemos la "nueva alternativa" como la real de Java. Este paso hace que la versión de Oracle sea la usada por defecto:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo update-alternatives --set java /usr/lib/jvm/jre1.7.0_05/bin/java
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo update-alternatives --set java /usr/lib/jvm/jre1.7.0_05/bin/java
 </pre></div>
 </td></tr></table>
 
 <p>Para comprobar si tenemos la versión 1.7.0, tecleamos en la terminal:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ java -version
@@ -2433,55 +2433,55 @@ Java HotSpot<span class="o">(</span>TM<span class="o">)</span> <span class="m">6
 </td></tr></table>
 
 <p>Para ver cómo ha quedado el estado de las alternativas:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ update-alternatives --config java
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ update-alternatives --config java
 </pre></div>
 </td></tr></table>
 
 <p>Para ver físicamente cómo han quedado las alternativas relativas a <code>java</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls -l /etc/alternatives/java*
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls -l /etc/alternatives/java*
 </pre></div>
 </td></tr></table>
 
 <p>Si nos interesa borrar alguna de las alternativas (por ejemplo una para <code>java</code>):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo update-alternatives --remove java /usr/lib/jvm/jdk1.8.0_20/bin/java
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo update-alternatives --remove java /usr/lib/jvm/jdk1.8.0_20/bin/java
 </pre></div>
 </td></tr></table>
 
 <p>Hay un PPA para poder instalar el JDK más fácilmente. Se pueden ver las instrucciones <a href="http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html">aquí</a>.</p>
 <h2 id="reparacion-del-sistema-de-archivos-cuando-se-pone-en-modo-solo-lectura">Reparación del sistema de archivos cuando se pone en modo "sólo lectura"<a class="headerlink" href="#reparacion-del-sistema-de-archivos-cuando-se-pone-en-modo-solo-lectura" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo fsck
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo fsck
 </pre></div>
 </td></tr></table>
 
 <h2 id="descarga-de-un-video-incrustado-en-un-reproductor-flash">Descarga de un vídeo incrustado en un reproductor Flash<a class="headerlink" href="#descarga-de-un-video-incrustado-en-un-reproductor-flash" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.youtube.com/watch?v=8PuUnQCS7DQ">Fuente</a></p>
 <p>Hacer captura Wireshark. Filtrar los paquetes RTMP con el filtro: "rtmpt". Localizar en los paquetes RTMP los comandos Handshake o Invoke la base de la url, lo que está en una propiedad llamada "tcUrl". Por ejemplo en un vídeo de Antena3 de F1 esta propiedad valía:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>rtmp://antena3tvfs.fplive.net/antena3mediateca
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>rtmp://antena3tvfs.fplive.net/antena3mediateca
 </pre></div>
 </td></tr></table>
 
 <p>Luego localizar el fichero en concreto. Suele estar en otro paquete y está relacionado con el comando "play". En el caso del ejemplo anterior salía:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mp4</span><span class="o">:</span><span class="n">mp_series1</span><span class="sr">/f1cms/gestorf1/videos/517/</span><span class="n">VIDEOS_20130512_1315517</span><span class="o">.</span><span class="na">mp4</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mp4</span><span class="o">:</span><span class="n">mp_series1</span><span class="sr">/f1cms/gestorf1/videos/517/</span><span class="n">VIDEOS_20130512_1315517</span><span class="o">.</span><span class="na">mp4</span>
 </pre></div>
 </td></tr></table>
 
 <p>Unir las dos piezas para construir la URL completa:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>rtmp://antena3tvfs.fplive.net/antena3mediateca/mp_series1/f1cms/gestorf1/videos/517/VIDEOS_20130512_1315517.mp4
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>rtmp://antena3tvfs.fplive.net/antena3mediateca/mp_series1/f1cms/gestorf1/videos/517/VIDEOS_20130512_1315517.mp4
 </pre></div>
 </td></tr></table>
 
 <p>Descargar el stream con el comando "rtmpdump":</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rtmpdump -r <span class="s2">&quot;rtmp://antena3tvfs.fplive.net/antena3mediateca/mp_series1/f1cms/gestorf1/videos/517/VIDEOS_20130512_1315517.mp4&quot;</span> -o archivo.mp4
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rtmpdump -r <span class="s2">&quot;rtmp://antena3tvfs.fplive.net/antena3mediateca/mp_series1/f1cms/gestorf1/videos/517/VIDEOS_20130512_1315517.mp4&quot;</span> -o archivo.mp4
 </pre></div>
 </td></tr></table>
 
 <p>En ocasiones se produce el error siguiente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">WARNING</span><span class="o">:</span> <span class="n">Received</span> <span class="n">FLV</span> <span class="n">packet</span> <span class="n">before</span> <span class="n">play</span><span class="o">()!</span> <span class="n">Ignoring</span><span class="o">.</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">WARNING</span><span class="o">:</span> <span class="n">Received</span> <span class="n">FLV</span> <span class="n">packet</span> <span class="n">before</span> <span class="n">play</span><span class="o">()!</span> <span class="n">Ignoring</span><span class="o">.</span>
 </pre></div>
 </td></tr></table>
 
 <p>En estos casos utilizar el siguiente comando que separa las dos porciones de la URL:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rtmpdump -r <span class="s2">&quot;rtmp://alacarta.aragontelevision.es/vod&quot;</span> -y <span class="s2">&quot;mp4:/_archivos/videos/web/15288/15288.mp4&quot;</span> -o archivo.flv
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rtmpdump -r <span class="s2">&quot;rtmp://alacarta.aragontelevision.es/vod&quot;</span> -y <span class="s2">&quot;mp4:/_archivos/videos/web/15288/15288.mp4&quot;</span> -o archivo.flv
 </pre></div>
 </td></tr></table>
 
@@ -2491,7 +2491,7 @@ Java HotSpot<span class="o">(</span>TM<span class="o">)</span> <span class="m">6
 <li>Paquete play =&gt; valor = stream_normal_abt</li>
 </ul>
 <p>Así pues la URL final será: <code>rtmp://aragontvlivefs.fplive.net/aragontvlive-live/stream_normal_abt</code> y el comando de descarga:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rtmpdump -v -r <span class="s2">&quot;rtmp://aragontvlivefs.fplive.net/aragontvlive-live/stream_normal_abt&quot;</span> -o archivo.mp4
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rtmpdump -v -r <span class="s2">&quot;rtmp://aragontvlivefs.fplive.net/aragontvlive-live/stream_normal_abt&quot;</span> -o archivo.mp4
 </pre></div>
 </td></tr></table>
 
@@ -2503,19 +2503,19 @@ Java HotSpot<span class="o">(</span>TM<span class="o">)</span> <span class="m">6
 <li><a href="https://gitorious.org/hls-player#more">http live streaming player</a></li>
 </ul>
 <p>Las carreras de Formula1 últimamente son emitidas en el formato HLS. Para descargar una carrera empezar haciendo una captura con Wireshark desde el momento en que se le da al Play hasta que se empieza a ver parte del vídeo (esperando que terminen los anuncios). Luego filtrar en Wireshark con la siguiente expresión:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>http.request.uri contains &quot;playlist.m3u8&quot;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>http.request.uri contains &quot;playlist.m3u8&quot;
 </pre></div>
 </td></tr></table>
 
 <p>Localizar la URL de descarga del fichero playlist.m3u8. Por ejemplo podría ser:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>http://geodeswowa3player.antena3.com/vcg/_definst_/mp4:assets3/2013/10/26/E6941C5D-2A9F-414B-B3FF-01FAC33073C4/sigra.mp4/playlist.m3u8?pulse=assets3%2F2013%2F10%2F26%2FE6941C5D-2A9F-414B-B3FF-01FAC33073C4%2F%7C1382835190%7Cb23df1201096fc1cc490427e05307f70
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>http://geodeswowa3player.antena3.com/vcg/_definst_/mp4:assets3/2013/10/26/E6941C5D-2A9F-414B-B3FF-01FAC33073C4/sigra.mp4/playlist.m3u8?pulse=assets3%2F2013%2F10%2F26%2FE6941C5D-2A9F-414B-B3FF-01FAC33073C4%2F%7C1382835190%7Cb23df1201096fc1cc490427e05307f70
 </pre></div>
 </td></tr></table>
 
 <h2 id="compresion-batch-de-videos">Compresión batch de vídeos<a class="headerlink" href="#compresion-batch-de-videos" title="Permanent link">&para;</a></h2>
 <p>Instalar el cliente de linea de comando de <a href="http://handbrake.fr/downloads.php">Handbrake</a>.</p>
 <p>Dependiendo de la extensión habrá que cambiar el <code>ls</code> inicial. Los vídeos de salida son MP4, por lo que si la extensión inicial no es esa, habrá que cambiarla en los ficheros finales.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mkdir comp
 $ ls *.mp4 <span class="p">|</span> awk <span class="s1">&#39;{print &quot;HandBrakeCLI -Z Normal -i &quot;$0&quot; -o comp/&quot;$0}&#39;</span> <span class="p">|</span> sh
 </pre></div>
@@ -2527,35 +2527,35 @@ $ ls *.mp4 <span class="p">|</span> awk <span class="s1">&#39;{print &quot;HandB
 <h2 id="split-de-videos">Split de vídeos<a class="headerlink" href="#split-de-videos" title="Permanent link">&para;</a></h2>
 <p>(<a href="http://askubuntu.com/questions/35605/splitting-an-mp4-file">Fuente</a>)</p>
 <p>Con el siguiente comando:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ffmpeg -acodec copy -vcodec copy -ss <span class="m">00</span>:00:00 -t <span class="m">00</span>:04:09 -i archivo3.mp4 p1.mp4
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ffmpeg -acodec copy -vcodec copy -ss <span class="m">00</span>:00:00 -t <span class="m">00</span>:04:09 -i archivo3.mp4 p1.mp4
 </pre></div>
 </td></tr></table>
 
 <p>Donde el valor de la opción -ss es el instante de inicio en hh:mm:ss y el valor de -t es la longitud en hh:mm:ss</p>
 <p>Desde hace unas versiones de Ubuntu, <code>ffmpeg</code> no está disponible. Su sustituto es <code>avconv</code>, compatible la mayoría de las veces. No admite sin embargo la opción de copiar el codec de audio y vídeo. Hay que especificarlo. Una lista de encoders soportados se puede obtener ejecutando:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ avconv -encoders
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ avconv -encoders
 </pre></div>
 </td></tr></table>
 
 <h2 id="redimensionado-de-imagenes-en-lote">Redimensionado de imágenes en lote<a class="headerlink" href="#redimensionado-de-imagenes-en-lote" title="Permanent link">&para;</a></h2>
 <p>Ajustar a 200 px de ancho manteniendo el ratio:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ convert <span class="s1">&#39;*.jpg[200x]&#39;</span> resized%03d.png
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ convert <span class="s1">&#39;*.jpg[200x]&#39;</span> resized%03d.png
 </pre></div>
 </td></tr></table>
 
 <p>Ajustar a 200 px de alto manteniendo el ratio:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ convert <span class="s1">&#39;*.jpg[x200]&#39;</span> resized%03d.png
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ convert <span class="s1">&#39;*.jpg[x200]&#39;</span> resized%03d.png
 </pre></div>
 </td></tr></table>
 
 <h2 id="redimensionado-de-fotos-en-lote">Redimensionado de fotos en lote<a class="headerlink" href="#redimensionado-de-fotos-en-lote" title="Permanent link">&para;</a></h2>
 <p>Por ejemplo a 1080 de alto dentro de un directorio llamado resized:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ convert <span class="s1">&#39;*.jpg[x1080]&#39;</span> resized/%03d.jpg
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ convert <span class="s1">&#39;*.jpg[x1080]&#39;</span> resized/%03d.jpg
 </pre></div>
 </td></tr></table>
 
 <p>En ocasiones, si hay varios miles de fotos, se puede llenar la memoria. En este caso hacer la conversión con el siguiente comando, que trata las imágenes una a una:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2571,7 +2571,7 @@ $ <span class="k">for</span> i in *.jpg<span class="p">;</span> <span class="k">
 
 <h2 id="renombrado-de-archivos-en-lote">Renombrado de archivos en lote<a class="headerlink" href="#renombrado-de-archivos-en-lote" title="Permanent link">&para;</a></h2>
 <p>Por ejemplo una serie de archivos jpg:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2587,13 +2587,13 @@ $ <span class="k">for</span> i in *.jpg<span class="p">;</span> <span class="k">
 
 <h2 id="montaje-de-video-stopmotion-a-partir-de-fotos">Montaje de vídeo StopMotion a partir de fotos<a class="headerlink" href="#montaje-de-video-stopmotion-a-partir-de-fotos" title="Permanent link">&para;</a></h2>
 <p>A 10fps por ejemplo (<a href="http://www.dototot.com/compile-stop-motion-animation-image-sequence-avconv/">Fuente</a>):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ avconv -f image2 -r <span class="m">10</span> -i %04d.jpg -vf <span class="nv">scale</span><span class="o">=</span><span class="m">1440</span>:1080 -r:v <span class="m">10</span> -c:v libx264 -qp <span class="m">0</span> -preset veryslow -an <span class="s2">&quot;video.mkv&quot;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ avconv -f image2 -r <span class="m">10</span> -i %04d.jpg -vf <span class="nv">scale</span><span class="o">=</span><span class="m">1440</span>:1080 -r:v <span class="m">10</span> -c:v libx264 -qp <span class="m">0</span> -preset veryslow -an <span class="s2">&quot;video.mkv&quot;</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="configurar-wireshark-para-poder-capturar-con-usuarios-no-root">Configurar Wireshark para poder capturar con usuarios no-root<a class="headerlink" href="#configurar-wireshark-para-poder-capturar-con-usuarios-no-root" title="Permanent link">&para;</a></h2>
 <p>Ejecutar lo siguiente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo dpkg-reconfigure wireshark-common
 $ sudo usermod -a -G wireshark &lt;usuario&gt;
 </pre></div>
@@ -2613,29 +2613,29 @@ $ sudo usermod -a -G wireshark &lt;usuario&gt;
 <h2 id="montar-imagen-de-disco-o-particion">Montar imagen de disco o partición<a class="headerlink" href="#montar-imagen-de-disco-o-particion" title="Permanent link">&para;</a></h2>
 <p>Usando <code>kpartx</code> explicado <a href="http://www.forensicswiki.org/wiki/Mounting_Disk_Images#To_mount_a_disk_image_on_Linux">aquí</a>.</p>
 <h2 id="screencast">Screencast<a class="headerlink" href="#screencast" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ avconv -f x11grab -r <span class="m">25</span> -s 910x550 -i :0.0 -vcodec huffyuv screencast.avi
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ avconv -f x11grab -r <span class="m">25</span> -s 910x550 -i :0.0 -vcodec huffyuv screencast.avi
 </pre></div>
 </td></tr></table>
 
 <h2 id="gestion-de-modulos">Gestión de módulos<a class="headerlink" href="#gestion-de-modulos" title="Permanent link">&para;</a></h2>
 <h3 id="anadir-un-modulo-al-kernel">Añadir un módulo al kernel<a class="headerlink" href="#anadir-un-modulo-al-kernel" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo modprobe &lt;modulo&gt;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo modprobe &lt;modulo&gt;
 </pre></div>
 </td></tr></table>
 
 <p>Si se quiere añadir de forma permanente, es decir, de forma automática en el arranque, se incorpora el nombre del módulo al fichero <code>/etc/modules</code>.</p>
 <p>Cuando el módulo que se carga es un driver de un dispositivo, el kernel envía un evento al subsistema <code>udev</code>. La monitorización de estos mensajes se puede hacer teniendo abierto un terminal con el siguiente comando lanzado (<a href="https://wiki.ubuntu.com/Kernel/Firmware">fuente</a>):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ udevadm monitor --property
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ udevadm monitor --property
 </pre></div>
 </td></tr></table>
 
 <h3 id="listado-de-modulos">Listado de módulos<a class="headerlink" href="#listado-de-modulos" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ lsmod
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ lsmod
 </pre></div>
 </td></tr></table>
 
 <h3 id="informacion-de-un-modulo">Información de un módulo<a class="headerlink" href="#informacion-de-un-modulo" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ modinfo &lt;modulo&gt;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ modinfo &lt;modulo&gt;
 </pre></div>
 </td></tr></table>
 
@@ -2653,7 +2653,7 @@ $ sudo usermod -a -G wireshark &lt;usuario&gt;
 <li><code>~/.bash_profile</code></li>
 </ul>
 <h2 id="poner-barras-de-scroll-normales">Poner barras de scroll normales<a class="headerlink" href="#poner-barras-de-scroll-normales" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>gsettings <span class="nb">set</span> com.canonical.desktop.interface scrollbar-mode normal
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>gsettings <span class="nb">set</span> com.canonical.desktop.interface scrollbar-mode normal
 </pre></div>
 </td></tr></table>
 
@@ -2661,7 +2661,7 @@ $ sudo usermod -a -G wireshark &lt;usuario&gt;
 <p>Instalar los paquetes <code>sni-qt</code> y <code>sni-qt:i386</code>.</p>
 <h2 id="workrave-en-tray">Workrave en tray<a class="headerlink" href="#workrave-en-tray" title="Permanent link">&para;</a></h2>
 <p><a href="https://sourceforge.net/p/workrave/mailman/message/30722930/">Fuente</a></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>gsettings <span class="nb">set</span> com.canonical.Unity.Panel systray-whitelist <span class="s2">&quot;[&#39;all&#39;]&quot;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>gsettings <span class="nb">set</span> com.canonical.Unity.Panel systray-whitelist <span class="s2">&quot;[&#39;all&#39;]&quot;</span>
 </pre></div>
 </td></tr></table>
                 

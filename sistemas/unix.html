@@ -2008,7 +2008,7 @@
 </ul>
 <h2 id="alias-ssh">Alias SSH<a class="headerlink" href="#alias-ssh" title="Permanent link">&para;</a></h2>
 <p>Para asimilar un identificador a una pareja user@host, editar el fichero <code>~/.ssh/config</code> y añadir un bloque como el siguiente (<a href="http://collectiveidea.com/blog/archives/2011/02/04/how-to-ssh-aliases/">fuente</a>):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Host example
   HostName example.com
@@ -2018,7 +2018,7 @@
 
 <h2 id="tunel-de-un-puerto-remoto-por-ssh">Tunel de un puerto remoto por SSH<a class="headerlink" href="#tunel-de-un-puerto-remoto-por-ssh" title="Permanent link">&para;</a></h2>
 <p>(<a href="http://www.revsys.com/writings/quicktips/ssh-tunnel.html">Fuente</a>) Para conducir el tráfico hasta un host:puerto remoto canalizándolo por un tunel seguro, se puede utilizar el comando <code>ssh</code>. Por ejemplo, vamos a tunelizar una conexión contra el puerto telnet de la máquina remota <code>telnet.example.com</code> por medio del usuario <code>ssh-user</code> para tenerlo disponible en el puerto 2000 local de nuestra máquina:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ssh -f ssh-user@telnet.example.com -L 2000:telnet.example.com:23 -N
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ssh -f ssh-user@telnet.example.com -L 2000:telnet.example.com:23 -N
 </pre></div>
 </td></tr></table>
 
@@ -2116,7 +2116,7 @@ There are screens on:
 </li>
 </ol>
 <h2 id="buqueda-de-ficheros-que-contienen-una-cadena">Búqueda de ficheros que contienen una cadena<a class="headerlink" href="#buqueda-de-ficheros-que-contienen-una-cadena" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2141,12 +2141,12 @@ fgrep <span class="s2">&quot;[cadena a buscar]&quot;</span> <span class="nv">$fi
 </td></tr></table>
 
 <p>En realidad el script anterior hace lo mismo que el simple comando siguiente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ fgrep -rl <span class="s2">&quot;[cadena a buscar]&quot;</span> .
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ fgrep -rl <span class="s2">&quot;[cadena a buscar]&quot;</span> .
 </pre></div>
 </td></tr></table>
 
 <h2 id="ajustes-de-permisos-a-ficheros-y-directorios-por-separado">Ajustes de permisos a ficheros y directorios por separado<a class="headerlink" href="#ajustes-de-permisos-a-ficheros-y-directorios-por-separado" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="c1">#Para los ficheros:</span>
@@ -2158,7 +2158,7 @@ $ find . -type d -exec chmod <span class="m">775</span> <span class="o">{}</span
 
 <h2 id="renombrado-de-ficheros-de-mayusculas-a-minusculas">Renombrado de ficheros de mayúsculas a minúsculas<a class="headerlink" href="#renombrado-de-ficheros-de-mayusculas-a-minusculas" title="Permanent link">&para;</a></h2>
 <p>(<a href="http://aptgetanarchy.org/node/75">Fuente</a>)</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2172,7 +2172,7 @@ mv <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quo
 
 <h2 id="redireccion-de-salidas">Redirección de salidas<a class="headerlink" href="#redireccion-de-salidas" title="Permanent link">&para;</a></h2>
 <p>Para redirigir ambas salidas de un programa (estandar y error) hacer lo siguiente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ COMANDO &gt; FICHERO_O_DISPOSITIVO <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ COMANDO &gt; FICHERO_O_DISPOSITIVO <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 </pre></div>
 </td></tr></table>
 
@@ -2196,7 +2196,7 @@ mv <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quo
 </ul>
 <h2 id="solucion-al-problema-de-los-alias-alternatives-de-java6-en-ubuntu">Solución al problema de los alias (alternatives) de Java6 en Ubuntu<a class="headerlink" href="#solucion-al-problema-de-los-alias-alternatives-de-java6-en-ubuntu" title="Permanent link">&para;</a></h2>
 <p>Los paquetes de Java 6 (1.6) en Ubuntu tienen problemas a la hora de ajustar los alias en /etc/alternatives cuando antes ha estado instalada otra versión (1.5 por ejemplo). Se puede forzar la generación de los alias mediante las siguientes ordenes:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ update-java-alternatives --list
 $ sudo update-java-alternatives --set <span class="o">[</span>elegir el identificador de la lista que muestra el comando anterior<span class="o">]</span>
 </pre></div>
@@ -2206,7 +2206,7 @@ $ sudo update-java-alternatives --set <span class="o">[</span>elegir el identifi
 <p><a href="http://lucas.olea.org/Manuales-LuCAS/doc-unixsec/unixsec-html/node56.html">Manual de LuCAS</a></p>
 <h2 id="autentificacion-automatica-por-ssh">Autentificación automática por SSH<a class="headerlink" href="#autentificacion-automatica-por-ssh" title="Permanent link">&para;</a></h2>
 <p>Conseguiremos que la autentificación del cliente se haga por medio de una pareja de claves privada/pública en lugar de con identificador de usuario/password. Primero generamos la pareja de claves pública-privada ejecutando en el cliente <code>ssh-keygen</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2227,7 +2227,7 @@ xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx user@machine
 </td></tr></table>
 
 <p>Las claves se almacenan por defecto en <code>~/.ssh/</code>, quedando el directorio así:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2241,7 +2241,7 @@ total <span class="m">12</span>
 
 <p>Los ficheros <code>id_rsa</code> e <code>id_rsa.pub</code> contienen respectivamente las claves privada y pública. El fichero <code>known_hosts</code> contiene la lista de las claves públicas de las máquinas reconocidas.</p>
 <p>Ahora se debe copiar la clave pública al servidor, al fichero <code>~/.ssh/authorized_keys</code>. Para ello se utiliza el comando ssh-copy-id:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ssh-copy-id -i ~/.ssh/id_rsa.pub user@machine1
 $ ssh-copy-id -i ~/.ssh/id_rsa.pub user@machine2
 </pre></div>
@@ -2250,14 +2250,14 @@ $ ssh-copy-id -i ~/.ssh/id_rsa.pub user@machine2
 <p><code>ssh-copy-id</code> es un script que se conecta a la máquina y copia el archivo (indicado por la opción <code>-i</code>) en <code>~/.ssh/authorized_keys</code>, y ajusta los permisos a los valores adecuados.</p>
 <p>Si no se dispone del programa <code>ssh-copy-id</code> se puede realizar una copia manual a la máquina remota del fichero conteniendo la clave pública (por ejemplo usando <code>scp</code> o <code>sftp</code>) y añadir su contenido al fichero <code>~/.ssh/authorized_keys</code>.</p>
 <p>Ahora la conexión debería funcionar sin necesidad de introducir la clave. Si no es así es posible que sea un problema de permisos en los ficheros. Los permisos correctos deben ser similares a estos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ chmod go-w ~ ~/.ssh
 $ chmod <span class="m">600</span> ~/.ssh/authorized_keys
 </pre></div>
 </td></tr></table>
 
 <p>La conexión SSH se realizará indicando el fichero con la clave privada como argumento de la siguiente forma:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ssh -i ~/.ssh/id_rsa user@machine
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ssh -i ~/.ssh/id_rsa user@machine
 </pre></div>
 </td></tr></table>
 
@@ -2267,19 +2267,19 @@ $ chmod <span class="m">600</span> ~/.ssh/authorized_keys
 <ul>
 <li>Vaya al subdirectorio de complementos, situado dentro del directorio de instalación de Mozilla.</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> <span class="sb">`</span>&lt;directorio de instalación de Mozilla&gt;<span class="sb">`</span>/plugins  <span class="c1"># Normalmente /usr/lib/firefox/plugins</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> <span class="sb">`</span>&lt;directorio de instalación de Mozilla&gt;<span class="sb">`</span>/plugins  <span class="c1"># Normalmente /usr/lib/firefox/plugins</span>
 </pre></div>
 </td></tr></table>
 
 <p>o</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> <span class="sb">`</span>&lt;home del usuario&gt;<span class="sb">`</span>/.mozilla/plugins
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> <span class="sb">`</span>&lt;home del usuario&gt;<span class="sb">`</span>/.mozilla/plugins
 </pre></div>
 </td></tr></table>
 
 <ul>
 <li>En el directorio actual, cree un vínculo simbólico al archivo del JRE ns7/libjavaplugin_oji.so. Escriba:</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ln -s <span class="sb">`</span>&lt;directorio de instalación del JRE&gt;<span class="sb">`</span>/plugin/i386/ns7/libjavaplugin_oji.so
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ln -s <span class="sb">`</span>&lt;directorio de instalación del JRE&gt;<span class="sb">`</span>/plugin/i386/ns7/libjavaplugin_oji.so
 </pre></div>
 </td></tr></table>
 
@@ -2295,18 +2295,18 @@ $ chmod <span class="m">600</span> ~/.ssh/authorized_keys
 </ul>
 <h2 id="error-error-while-loading-shared-libraries">Error "error while loading shared libraries: ..."<a class="headerlink" href="#error-error-while-loading-shared-libraries" title="Permanent link">&para;</a></h2>
 <p>Runtime error. The linker hasn't found your libraries. Either they are not installed properly or the linker doesn't know where they are (most probably in <code>/usr/local/lib</code>). To get your linker to update its list of libraries type:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ldconfig /usr/local/lib
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ldconfig /usr/local/lib
 </pre></div>
 </td></tr></table>
 
 <p>or as a temporary measure:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="s2">&quot;/usr/local/lib&quot;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="s2">&quot;/usr/local/lib&quot;</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="compartir-ficheros-con-samba">Compartir ficheros con Samba<a class="headerlink" href="#compartir-ficheros-con-samba" title="Permanent link">&para;</a></h2>
 <p>Aparte de instalar y configurar Samba (fichero <code>/etc/samba/smb.conf</code>) hay que dar de alta los usuarios UNIX que se usarán a través de Samba y asignarles un password para el acceso por el mismo. Esto se hace con el comando:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo smbpasswd -a usuario
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo smbpasswd -a usuario
 </pre></div>
 </td></tr></table>
 
@@ -2317,7 +2317,7 @@ $ chmod <span class="m">600</span> ~/.ssh/authorized_keys
 NOTA: El presente procedimiento da por hecho que se hayan realizado las configuraciones necesarias en el nuevo servidor.</p>
 <p>Primero, lo que debe respaldarse es la lista de usuarios con su respectiva contraseña.
 El archivo <code>/etc/passwd</code> contiene las cuentas de los usuarios en el sistema bajo el siguiente formato de ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2336,7 +2336,7 @@ El archivo <code>/etc/passwd</code> contiene las cuentas de los usuarios en el s
 </td></tr></table>
 
 <p>Como se observa, el segundo campo respectivo al hash de la contraseña no se muestra. La contraseña se encuentra en el archivo <code>/etc/shadow</code></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2355,7 +2355,7 @@ nitsuga3:$1$635CQht0$rFIbilzKqfc1zStqeOwlk/:13496:2:45:7:::
 </td></tr></table>
 
 <p>Se procederá a unir el usuario con su contraseña utilizando el comando <code>pwunconv</code> para “desactivar” el shadow, quedando así las contraseñas en el archivo passwd.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2379,7 +2379,7 @@ nitsuga3:$1$635CQht0$rFIbilzKqfc1zStqeOwlk/:502:502::/home/nitsuga3:/bin/bash
 
 <h3 id="depuracion-de-etcpasswd">Depuración de /etc/passwd<a class="headerlink" href="#depuracion-de-etcpasswd" title="Permanent link">&para;</a></h3>
 <p>Se copiará el archivo <code>/etc/passwd</code> a uno de trabajo <code>/etc/passwd.migracion</code>. Ahora se editará el archivo y se quitarán todos los usuarios propios del sistema (root, usuarios de demonios, etcétera) dejando sólo los usuarios que van a ser autenticados.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>nitsuga:$1$QwPqN0Vc$dn9OIyE3HQUh5W4Yh/.aQ.:500:500::/home/nitsuga:/bin/bash
 nitsuga2:$1$635CQht0$rFIbilzKqfc1zStqeOwlk/:501:501::/home/nitsuga2:/bin/bash
@@ -2388,7 +2388,7 @@ nitsuga3:$1$635CQht0$rFIbilzKqfc1zStqeOwlk/:502:502::/home/nitsuga2:/bin/bash
 </td></tr></table>
 
 <p>También se copiará el archivo <code>/etc/group</code> a <code>/etc/group.migracion</code></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2409,7 +2409,7 @@ nitsuga3:$1$635CQht0$rFIbilzKqfc1zStqeOwlk/:502:502::/home/nitsuga2:/bin/bash
 </td></tr></table>
 
 <p>Y se editará para dejar sólo los grupos de los usuarios:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">nitsuga</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="mi">500</span><span class="o">:</span>
 <span class="n">nitsuga2</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="mi">501</span><span class="o">:</span>
@@ -2418,7 +2418,7 @@ nitsuga3:$1$635CQht0$rFIbilzKqfc1zStqeOwlk/:502:502::/home/nitsuga2:/bin/bash
 </td></tr></table>
 
 <p>Ahora se respaldará el home de los usuarios, suponiendo que se encuentra bajo el directorio/home, se hará lo siguiente desde raíz (/):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>[root@localhost /]# tar -cpzvf home.tgz home/
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>[root@localhost /]# tar -cpzvf home.tgz home/
 </pre></div>
 </td></tr></table>
 
@@ -2431,7 +2431,7 @@ nitsuga3:$1$635CQht0$rFIbilzKqfc1zStqeOwlk/:502:502::/home/nitsuga2:/bin/bash
 <li>f = especifica el archivo a crear (para este caso home.tgz)</li>
 </ul>
 <p>Ahora bien, se realizará la transferencia de los archivos home.tgz, passwd.migracion y group.migracion al nuevo servidor:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2445,7 +2445,7 @@ nitsuga3:$1$635CQht0$rFIbilzKqfc1zStqeOwlk/:502:502::/home/nitsuga2:/bin/bash
 
 <p>Una vez en el nuevo servidor se deberá verificar que no se repitan tanto los UID como los GID entre los dos servidores.
 Se realizará:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2463,53 +2463,53 @@ Se realizará:</p>
 <li>Incorporar el usuario que nos interesa al grupo <code>sudo</code> del sistema</li>
 <li>Situar al final del fichero de configuración <code>/etc/sudoers</code> lo siguiente:</li>
 </ol>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nf">%sudo</span> <span class="n">ALL</span><span class="o">=</span><span class="nl">NOPASSWD</span><span class="p">:</span> <span class="n">ALL</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nf">%sudo</span> <span class="n">ALL</span><span class="o">=</span><span class="nl">NOPASSWD</span><span class="p">:</span> <span class="n">ALL</span>
 </pre></div>
 </td></tr></table>
 
 <p>Hay que fijarse que la linea anterior normalmente ya aparece en el fichero pero comentada con una almohadilla. Se puede aprovechar la linea quitando el carácter almohadilla del principio, pero hay que tener en cuenta que no es suficiente con eso. Hay que mover la linea al final del fichero ya que las lineas siguientes pueden sobreescribir su efecto.</p>
 <p><strong>Importante</strong>: La edición del fichero <code>/etc/sudoers</code> sólo se puede hacer con el comando <code>visudo</code>. Este comando hay que lanzarlo con <code>sudo</code> a su vez, por lo que se hará de la siguiente forma:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo visudo
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo visudo
 </pre></div>
 </td></tr></table>
 
 <h2 id="proxy-http-en-consola">Proxy HTTP en consola<a class="headerlink" href="#proxy-http-en-consola" title="Permanent link">&para;</a></h2>
 <p>Setting up proxy at Firefox do not have effects at console, which means your wget, ssh, apt-get, yum etc do not access through the proxy you set at Firfox browser. To setup http proxy at console, you can do as bellow, assume the proxy IP is 219.93.2.113 and port 3128:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">export</span> <span class="nv">http_proxy</span><span class="o">=</span><span class="s1">&#39;http://219.93.2.113:3128/&#39;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">export</span> <span class="nv">http_proxy</span><span class="o">=</span><span class="s1">&#39;http://219.93.2.113:3128/&#39;</span>
 </pre></div>
 </td></tr></table>
 
 <p>Remember, you have to specified http://, and to know more about export, check out HERE.
 To clear your http proxy and use back yours, do this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">export</span> <span class="nv">http_proxy</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">export</span> <span class="nv">http_proxy</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="convertir-nombres-de-ficheros-de-iso-a-utf-8">Convertir nombres de ficheros de ISO a UTF-8<a class="headerlink" href="#convertir-nombres-de-ficheros-de-iso-a-utf-8" title="Permanent link">&para;</a></h2>
 <p>Al migrar una web, o al copiar un sistema de archivos, te puedes encontrar con nombres de ficheros en otras codificaciones de caracteres. Mediante el siguiente comando transformaríamos los nombres de ficheros desde ISO-8869-1 a UTF-8:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ convmv -r -f ISO-8859-1 -t UTF-8  --notest *
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ convmv -r -f ISO-8859-1 -t UTF-8  --notest *
 </pre></div>
 </td></tr></table>
 
 <h2 id="backup-de-un-filesystem">Backup de un FileSystem<a class="headerlink" href="#backup-de-un-filesystem" title="Permanent link">&para;</a></h2>
 <p>Backup:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ dd <span class="k">if</span><span class="o">=</span>/dev/hdx <span class="p">|</span> gzip &gt; /path/to/image.gz
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ dd <span class="k">if</span><span class="o">=</span>/dev/hdx <span class="p">|</span> gzip &gt; /path/to/image.gz
 </pre></div>
 </td></tr></table>
 
 <p>Restauración:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ gzip -dc /path/to/image.gz <span class="p">|</span> dd <span class="nv">of</span><span class="o">=</span>/dev/hdx
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ gzip -dc /path/to/image.gz <span class="p">|</span> dd <span class="nv">of</span><span class="o">=</span>/dev/hdx
 </pre></div>
 </td></tr></table>
 
 <h2 id="montar-un-fichero-img">Montar un fichero .img<a class="headerlink" href="#montar-un-fichero-img" title="Permanent link">&para;</a></h2>
 <p>(<a href="http://www.linuxquestions.org/questions/linux-general-1/how-to-mount-img-file-882386/">Fuente</a>). Primero hay que averiguar el offset de la partición que queremos montar:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>fdisk -l /ruta/fichero.img
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>fdisk -l /ruta/fichero.img
 </pre></div>
 </td></tr></table>
 
 <p>Esto nos mostrará el tamaño del bloque y el bloque de comienzo de la partición. Por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2536,28 +2536,28 @@ RetroPie.img2        124928 7744511  7619584  3,6G 83 Linux
 <p>El offset se calculará multiplicando el bloque de comienzo por el tamaño de bloque. En el ejemplo, para la segunda partición:</p>
 <p>offset = 124928 * 512 = 63963136</p>
 <p>Por tanto el comando para montar será:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo mount -o loop,offset=63963136 RetroPie.img /mnt/tmp
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo mount -o loop,offset=63963136 RetroPie.img /mnt/tmp
 </pre></div>
 </td></tr></table>
 
 <h2 id="manipulacion-de-pdfs">Manipulación de PDFs<a class="headerlink" href="#manipulacion-de-pdfs" title="Permanent link">&para;</a></h2>
 <p>División en múltiples ficheros (uno por página):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pdftk largepdfile.pdf burst
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pdftk largepdfile.pdf burst
 </pre></div>
 </td></tr></table>
 
 <p>Fusión de varios ficheros en uno:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pdftk *.pdf cat output onelargepdfile.pdf
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pdftk *.pdf cat output onelargepdfile.pdf
 </pre></div>
 </td></tr></table>
 
 <h2 id="obtener-hash-md5-de-una-cadena">Obtener hash MD5 de una cadena<a class="headerlink" href="#obtener-hash-md5-de-una-cadena" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">echo</span> -n <span class="s2">&quot;&lt;cadena&gt;&quot;</span><span class="p">|</span>md5sum
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">echo</span> -n <span class="s2">&quot;&lt;cadena&gt;&quot;</span><span class="p">|</span>md5sum
 </pre></div>
 </td></tr></table>
 
 <h2 id="system-mysql-backup-script">System + MySQL backup script<a class="headerlink" href="#system-mysql-backup-script" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4

@@ -1619,60 +1619,48 @@
 <h3 id="cambios-recientes">Cambios recientes<a class="headerlink" href="#cambios-recientes" title="Permanent link">&para;</a></h3>
 <p>Se puede añadir al menú de herramientas el enlace "Cambios recientes" haciendo lo siguiente:</p>
 <ul>
-<li>Añadir las siguientes lineas al fichero <code>$DOKU_BASE/lib/tpl/monobook/context.php</code>:</li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<li>Añadir las siguientes lineas al fichero <code>$DOKU_BASE/lib/tpl/monobook/context.php</code>:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;recent&#39;][&#39;href&#39;] = DOKU_BASE.&quot;doku.php?do=recent&quot;;</span>
 <span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;recent&#39;][&#39;text&#39;] = $lang[&#39;monobook_recent&#39;];</span>
 <span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;recent&#39;][&#39;rel&#39;] = &quot;nofollow&quot;;</span>
 </pre></div>
-</td></tr></table>
-
-<ul>
-<li>Inmediatamente antes de la linea (en la versión de 2007-10-03 es la linea #354):</li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;whatlinkshere&#39;][&#39;href&#39;] = DOKU_BASE.&quot;doku.php?id=&quot;.$ID.&quot;&amp;amp;do=backlink&quot;;</span>
+</td></tr></table></li>
+<li>Inmediatamente antes de la linea (en la versión de 2007-10-03 es la linea #354):
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;whatlinkshere&#39;][&#39;href&#39;] = DOKU_BASE.&quot;doku.php?id=&quot;.$ID.&quot;&amp;amp;do=backlink&quot;;</span>
 </pre></div>
-</td></tr></table>
-
-<ul>
-<li>Añadir la linea siguiente al fichero <code>$DOKU_BASE/lib/tpl/monobook/lang/es/lang.php</code>:</li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="x">$lang[&#39;monobook_recent&#39;] = &quot;Cambios recientes&quot;;</span>
+</td></tr></table></li>
+<li>Añadir la linea siguiente al fichero <code>$DOKU_BASE/lib/tpl/monobook/lang/es/lang.php</code>:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="x">$lang[&#39;monobook_recent&#39;] = &quot;Cambios recientes&quot;;</span>
 </pre></div>
-</td></tr></table>
-
+</td></tr></table></li>
+</ul>
 <h3 id="indice">Índice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h3>
 <p>Se puede añadir al menú de herramientas el enlace "Índice" haciendo lo siguiente:</p>
 <ul>
-<li>Añadir las siguientes lineas al fichero <code>$DOKU_BASE/lib/tpl/monobook/context.php</code>:</li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<li>Añadir las siguientes lineas al fichero <code>$DOKU_BASE/lib/tpl/monobook/context.php</code>:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;index&#39;][&#39;href&#39;] = DOKU_BASE.&quot;doku.php?do=index&quot;;</span>
 <span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;index&#39;][&#39;text&#39;] = $lang[&#39;monobook_index&#39;];</span>
 <span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;index&#39;][&#39;rel&#39;] = &quot;nofollow&quot;;</span>
 </pre></div>
-</td></tr></table>
-
-<ul>
-<li>Inmediatamente antes de la linea (en la versión de 2007-10-03 es la linea #354):</li>
+</td></tr></table></li>
+<li>Inmediatamente antes de la linea (en la versión de 2007-10-03 es la linea #354):
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;whatlinkshere&#39;][&#39;href&#39;] = DOKU_BASE.&quot;doku.php?id=&quot;.$ID.&quot;&amp;amp;do=backlink&quot;;</span>
+</pre></div>
+</td></tr></table></li>
+<li>Añadir la linea siguiente al fichero <code>$DOKU_BASE/lib/tpl/monobook/lang/es/lang.php</code>:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="x">$lang[&#39;monobook_index&#39;] = &quot;Índice&quot;;</span>
+</pre></div>
+</td></tr></table></li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;whatlinkshere&#39;][&#39;href&#39;] = DOKU_BASE.&quot;doku.php?id=&quot;.$ID.&quot;&amp;amp;do=backlink&quot;;</span>
-</pre></div>
-</td></tr></table>
-
-<p>*Añadir la linea siguiente al fichero <code>$DOKU_BASE/lib/tpl/monobook/lang/es/lang.php</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="x">$lang[&#39;monobook_index&#39;] = &quot;Índice&quot;;</span>
-</pre></div>
-</td></tr></table>
-
 <h3 id="logo">Logo<a class="headerlink" href="#logo" title="Permanent link">&para;</a></h3>
 <p>El logo que aparece arriba a la izquierda es el fichero <code>logo.png</code> que se encuentra en el directorio <code>$DOKU_BASE/lib/tpl/monobook/user</code>. El icono que aparece en la barra de dirección del navegador es el fichero <code>favicon.ico</code> del mismo directorio.</p>
 <h2 id="backup-automatico">Backup automático<a class="headerlink" href="#backup-automatico" title="Permanent link">&para;</a></h2>
 <p>Programar diariamente el script siguiente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4

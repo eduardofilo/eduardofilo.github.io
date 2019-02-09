@@ -1440,14 +1440,14 @@
                 
                 <p><img alt="KODI Logo" src="/images/posts/kodi-logo.png" /></p>
 <p>Activamos repositorio multiverse (desde Synaptic) para tener acceso a los firmwares no libres. Actualizamos la base de datos del repositorio e instalamos el paquete <code>linux-firmware-nonfree</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo apt-get update
 $ sudo apt-get install linux-firmware-nonfree
 </pre></div>
 </td></tr></table>
 
 <p>Con esto conseguimos instalar el firmware <code>xc3028-v27.fw</code> en <code>/lib/firmware</code>. Como alternativa dejamos descrito el siguiente <a href="http://www.linuxtv.org/wiki/index.php/Xceive_XC3028/XC2028#How_to_Obtain_the_Firmware">procedimiento</a>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -1464,7 +1464,7 @@ $ rm extract_xc3028.pl hcw85bda.sys HVR-12x0-14x0-17x0_1_25_25271_WHQL.zip xc302
 <p>También se puede localizar aquí el <a href="https://github.com/OpenELEC/dvb-firmware/blob/master/firmware/xc3028-v27.fw">binario</a></p>
 <p>Parece que mi stick "Pinnacle Systems, Inc. PCTV 330e" necesita un par de ficheros de firmware más que no están incluidos en el paquete <code>linux-firmware-nonfree</code>. Se trata de los ficheros <code>drxd-a2-1.1.fw</code> y <code>drxd-b1-1.1.fw</code> que podemos obtener de <a href="http://kernellabs.com/firmware/drxd/">aquí</a>. Copiamos pues esos dos ficheros a <code>/lib/firmware</code>.</p>
 <p>Instalamos Tvheadend:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ curl http://apt.tvheadend.org/repo.gpg.key <span class="p">|</span> sudo apt-key add -

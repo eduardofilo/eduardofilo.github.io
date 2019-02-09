@@ -2452,7 +2452,7 @@
 <h3 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h3>
 <h4 id="apache">Apache<a class="headerlink" href="#apache" title="Permanent link">&para;</a></h4>
 <p>Para ocultar el script de inicio (<code>index.php</code>) de la URL se puede configurar un fichero <code>.htaccess</code> como sigue:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2471,7 +2471,7 @@ RewriteRule . index.php
 <h3 id="fundamentos">Fundamentos<a class="headerlink" href="#fundamentos" title="Permanent link">&para;</a></h3>
 <h4 id="development-mode">Development mode<a class="headerlink" href="#development-mode" title="Permanent link">&para;</a></h4>
 <p>En el fichero index.php el modo DEBUG se ajusta en la linea siguiente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;YII_DEBUG&#39;</span><span class="p">)</span> <span class="k">or</span> <span class="nb">define</span><span class="p">(</span><span class="s1">&#39;YII_DEBUG&#39;</span><span class="p">,</span><span class="k">true</span><span class="p">);</span>
 </pre></div>
@@ -2479,7 +2479,7 @@ RewriteRule . index.php
 
 <p>Ponerlo a <code>false</code> en Producción (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.entry">fuente</a>).</p>
 <p>El componente <code>log</code> admite como una de las rutas de log la clase <code>CWebLogRoute</code> que muestra un log detallado de la ejecución de la página en la parte inferior de la misma. Para activarlo incluir la clase en el array de <code>routes</code> del componente <code>log</code>, por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2512,7 +2512,7 @@ RewriteRule . index.php
 <p>Poner a <code>false</code> el parámetro <code>enableParamLogging</code> del componente <code>db</code> en el fichero de configuración de la aplicación.</p>
 <h4 id="application">Application<a class="headerlink" href="#application" title="Permanent link">&para;</a></h4>
 <p>Si no se especifica, el controlador predeterminado de una aplicación se llama "site" (SiteController), pero se puede especificar así en el fichero de configuración de la aplicación (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.application#application-configuration">fuente</a>):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
@@ -2540,7 +2540,7 @@ RewriteRule . index.php
 <h4 id="view">View<a class="headerlink" href="#view" title="Permanent link">&para;</a></h4>
 <p>La ruta de las vistas es relativa al directorio <code>&lt;AppRoot&gt;/protected/views</code> (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.view">fuente</a>).</p>
 <p>Dentro de las vistas se puede acceder al controller mediante <code>$this</code>. Adicionalmente se pueden pasar variables concretas desde el controller al invocar la vista de la siguiente manera:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2577,7 +2577,7 @@ RewriteRule . index.php
 <ul>
 <li>Utilizar notación camelCase.</li>
 <li>Comenzar las clases con una letra mayúscula. La letra <code>C</code> se usa en las clases del framework =&gt; Se recomienda utilizar otra (<code>T</code> por ejemplo).</li>
-<li>Comenzar las variables privadas de clase con underscore (_).</li>
+<li>Comenzar las variables privadas de clase con underscore.</li>
 <li>Terminar las clases controller con <code>Controller</code>.</li>
 <li>Dentro de una clase controller, los métodos de action comenzarlos con <code>action</code>.</li>
 <li>Terminar las clases de action con <code>Action</code>.</li>
@@ -2593,7 +2593,7 @@ RewriteRule . index.php
 <h4 id="creando-el-modelo">Creando el Modelo<a class="headerlink" href="#creando-el-modelo" title="Permanent link">&para;</a></h4>
 <h5 id="validacion">Validación<a class="headerlink" href="#validacion" title="Permanent link">&para;</a></h5>
 <p>Las reglas de validación se definen en la función <code>rules()</code> del Model componiendo un array en el que cada elemento se define como sigue:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="k">array</span><span class="p">(</span><span class="s1">&#39;ListaAtributos&#39;</span><span class="p">,</span> <span class="s1">&#39;Validador&#39;</span><span class="p">,</span> <span class="s1">&#39;on&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;ListaEscenarios&#39;</span><span class="p">,</span> <span class="o">...</span><span class="nx">opciones</span> <span class="nx">adicionales</span><span class="p">)</span>
 </pre></div>
@@ -2604,7 +2604,7 @@ RewriteRule . index.php
 <ul>
 <li><code>Validador</code> puede ser el nombre de un método de la clase Modelo. El método tiene que tener la siguiente forma:</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2624,7 +2624,7 @@ RewriteRule . index.php
 </ul>
 <h5 id="asignacion-de-atributos">Asignación de atributos<a class="headerlink" href="#asignacion-de-atributos" title="Permanent link">&para;</a></h5>
 <p>Las asignaciones de atributos entre formulario y modelo se pueden hacer en bloque por medio de la función de PHP <code>$_POST[&lt;clase_modelo&gt;]</code>. Sólo se asignan los atributos considerados seguros, es decir los que tienen asociada una regla de validación. Hay que tener en cuenta que las reglas de validación se pueden asociar a escenarios por lo que se asignarán unos atributos u otros según el escenario declarado al instanciar el modelo. Por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2652,7 +2652,7 @@ RewriteRule . index.php
 <p>Una vez que la validación se ha hecho, los posibles errores se almacenan en el propio modelo. Se pueden obtener con las funciones <code>CModel::getErrors()</code> (devuelve todos los errores) y <code>CModel::getError()</code> (devuelve sólo el primero).</p>
 <h4 id="recogiendo-varios-modelos-a-la-vez">Recogiendo varios modelos a la vez<a class="headerlink" href="#recogiendo-varios-modelos-a-la-vez" title="Permanent link">&para;</a></h4>
 <p>Para recoger varios modelos o registros de un tipo simultáneamente (o entrada tabular) necesitamos crear o rellenar un array de instancias del modelo, dependiendo de si queremos insertar o modificar registros. Luego recogeremos los datos de entrada del usuario de la variable <code>$_POST</code> y los asignaremos a cada modelo. Cuando recogíamos un solo modelo hacíamos <code>$_POST[&lt;clase_modelo&gt;]</code>, ahora haremos <code>$_POST[&lt;clase_modelo&gt;][$i]</code>. El action de modificación tendrá el siguiente aspecto:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2691,7 +2691,7 @@ RewriteRule . index.php
 </td></tr></table>
 
 <p>y la vista incluirá algo como:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2744,9 +2744,8 @@ RewriteRule . index.php
 <li>queryScalar(): Devuelve el primer campo del primer registro del resultado de la consulta. Útil para una consulta tipo count.</li>
 </ul>
 </li>
-<li>CDbDataReader: Representa un conjunto de registros que se lee sólo hacia adelante resultado de una consulta. Normalmente el objeto se recorre ejecutando sucesivamente el método <code>read()</code> hasta que devuelve <code>false</code>. A continuación se muestran tres formas de extraer los datos de CDbDataReader:</li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<li>CDbDataReader: Representa un conjunto de registros que se lee sólo hacia adelante resultado de una consulta. Normalmente el objeto se recorre ejecutando sucesivamente el método <code>read()</code> hasta que devuelve <code>false</code>. A continuación se muestran tres formas de extraer los datos de CDbDataReader:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2762,12 +2761,9 @@ RewriteRule . index.php
 <span class="c1">// retrieving all rows at once in a single array</span>
 <span class="nv">$rows</span><span class="o">=</span><span class="nv">$dataReader</span><span class="o">-&gt;</span><span class="na">readAll</span><span class="p">();</span>
 </pre></div>
-</td></tr></table>
-
-<ul>
-<li>CDbTransaction: Representa una transacción en la base de datos. A continuación se muestra una estructura típica transaccional con este objeto:</li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+</td></tr></table></li>
+<li>CDbTransaction: Representa una transacción en la base de datos. A continuación se muestra una estructura típica transaccional con este objeto:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2789,11 +2785,11 @@ RewriteRule . index.php
     <span class="nv">$transaction</span><span class="o">-&gt;</span><span class="na">rollBack</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
-</td></tr></table>
-
+</td></tr></table></li>
+</ul>
 <h5 id="binding-de-parametros">Binding de parámetros<a class="headerlink" href="#binding-de-parametros" title="Permanent link">&para;</a></h5>
 <p>Para evitar ataques de inyección de SQL y para mejorar el rendimiento de consultas que se repiten habitualmente, se recomienda parametrizar las consultas con los métodos <code>CDbCommand::bindParam()</code> y <code>CDbCommand::bindValue()</code>. Ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2819,7 +2815,7 @@ RewriteRule . index.php
 
 <h5 id="binding-de-variables">Binding de variables<a class="headerlink" href="#binding-de-variables" title="Permanent link">&para;</a></h5>
 <p>Se pueden asociar variables PHP a columnas de una query de manera que tomen valor automáticamente cada vez que leamos el siguiente registro. Por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2847,7 +2843,7 @@ RewriteRule . index.php
 <h5 id="creando-registros">Creando registros<a class="headerlink" href="#creando-registros" title="Permanent link">&para;</a></h5>
 <p>Simplemente creando un objeto AR, asignando valores a sus propiedades y llamando al método <code>CActiveRecord::save()</code>.</p>
 <p>Para asignar expresiones SQL a algunos de los campos o propiedades de los objetos AR, hay que utilizar el objero <code>CDbExpression</code>, por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
@@ -2859,7 +2855,7 @@ RewriteRule . index.php
 
 <h5 id="recuperando-registros">Recuperando registros<a class="headerlink" href="#recuperando-registros" title="Permanent link">&para;</a></h5>
 <p>Para recuperar un solo registro tenemos los métodos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2873,7 +2869,7 @@ RewriteRule . index.php
 
 <p>Si no se encuentra ningún registro, el resultado será <code>null</code>.</p>
 <p>Para recuperar varios registros tenemos los métodos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2886,7 +2882,7 @@ RewriteRule . index.php
 </td></tr></table>
 
 <p>Adicionalmente existen los siguientes métodos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
@@ -2899,7 +2895,7 @@ RewriteRule . index.php
 <p>En todos los casos, en lugar de la pareja de strings <code>$condition</code> y <code>$params</code>, podemos entregar un objeto de tipo <code>CDbCriteria</code> más cosas además de una cláusula WHERE. Alternativamente a pasar un <code>CDbCriteria</code> podemos pasar un array con las propiedades de permitan construir este objeto dinámicamente.</p>
 <h5 id="actualizando-registros">Actualizando registros<a class="headerlink" href="#actualizando-registros" title="Permanent link">&para;</a></h5>
 <p>Modificando un AR recién obtenido y guardando se producirá una actualización en base de datos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
@@ -2912,7 +2908,7 @@ RewriteRule . index.php
 <p>Cuando se guarda (método <code>save()</code>) se invoca automáticamente la validación (a no ser que se pase el argumento false).</p>
 <p>Si el registro es nuevo se hará un insert en lugar de un update. Se puede interrogar al modelo si estamos en uno u otro caso por medio del método <code>CActiveRecord::isNewRecord()</code>.</p>
 <p>Se puede actualizar un AR que no se haya cargado previamente con los siguientes métodos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
@@ -2924,7 +2920,7 @@ RewriteRule . index.php
 
 <h5 id="borrando-registros">Borrando registros<a class="headerlink" href="#borrando-registros" title="Permanent link">&para;</a></h5>
 <p>Para borrar un solo registro utilizar el método <code>delete()</code> sobre una instancia AR obtenida previamente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="nv">$post</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">findByPk</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span> <span class="c1">// localizamos el registro</span>
@@ -2933,7 +2929,7 @@ RewriteRule . index.php
 </td></tr></table>
 
 <p>También se pueden borrar registros sin cargarlos previamente con los siguientes métodos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">deleteAll</span><span class="p">(</span><span class="nv">$condition</span><span class="p">,</span><span class="nv">$params</span><span class="p">);</span>       <span class="c1">// borra las filas que se ajusten a la condición especificada</span>
@@ -2955,7 +2951,7 @@ RewriteRule . index.php
 </ul>
 <h5 id="usando-transacciones">Usando transacciones<a class="headerlink" href="#usando-transacciones" title="Permanent link">&para;</a></h5>
 <p>Cada instancia AR contiene una propiedad llamada <code>dbConnection</code> que soporta transacciones de la siguiente forma:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2987,7 +2983,7 @@ RewriteRule . index.php
 
 <h5 id="named-scopes">Named scopes<a class="headerlink" href="#named-scopes" title="Permanent link">&para;</a></h5>
 <p>Un named scope representa un criterio de búsqueda al que le asignamos un nombre y que puede ser combinado con otros named scopes para refinar una búsqueda de AR's. Se declaran en el método <code>CActiveRecord::scopes()</code> como pares nombre-criterio de filtrado. Por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -3020,14 +3016,14 @@ RewriteRule . index.php
 </td></tr></table>
 
 <p>La declaración de cada named scope se corresponde con un array que sirve para inicializar un objeto CDbCriteria. Una vez definidos se pueden combinar en las sentencias de búsqueda como por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="nv">$posts</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">published</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">recently</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
 </pre></div>
 </td></tr></table>
 
 <p>Deben usarse siempre sobre métodos class-level, es decir partiendo de <code>ModelName::model()-&gt;</code>, no directamente de <code>ModelName::</code>. Si se quieren parametrizar hay que definirlos como métodos class-level autónomos en lugar de configurarlos en el array de <code>CActiveRecord::scopes</code>. Por ejemplo para parametrizar el named scope <code>recently</code> definido previamente se haría:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -3046,14 +3042,14 @@ RewriteRule . index.php
 </td></tr></table>
 
 <p>Luego podríamos llamar:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="nv">$posts</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">published</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">recently</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
 </pre></div>
 </td></tr></table>
 
 <p>Se puede definir un named scope predeterminado. De esta forma será aplicado automáticamente en todas las consultas. Para ello se define en el método <code>CActiveRecord::defaultScope</code> sin darle nombre como sí había que hacer en <code>CActiveRecord::scopes</code>. Por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -3085,7 +3081,7 @@ RewriteRule . index.php
 <li>MANY_MANY: Si la relación entre las tablas A y B es many-to-many. Se necesita una tabla intermedia que descomponga la relación en dos relaciones 1:n con la tabla intermedia (C). En el ejemplo A=tbl_post, B=tbl_category y C=tbl_post_category.</li>
 </ul>
 <p>Estas relaciones se declaran en el método <code>CActiveRecord::relations()</code> definiendo un array en el que cada elemento representa una relación de la siguiente forma:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="s1">&#39;VarName&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;RelationType&#39;</span><span class="p">,</span> <span class="s1">&#39;ClassName&#39;</span><span class="p">,</span> <span class="s1">&#39;ForeignKey&#39;</span><span class="p">,</span> <span class="o">...</span><span class="nx">opciones</span> <span class="nx">adicionales</span><span class="p">)</span>
 </pre></div>
@@ -3093,7 +3089,7 @@ RewriteRule . index.php
 
 <p>donde <code>VarName</code> es el nombre de la relación, <code>RelationType</code> indica el tipo de relación (se pueden aprovechar las siguientes constantes: <code>self::BELONGS_TO</code>, <code>self::HAS_ONE</code>, <code>self::HAS_MANY</code> y <code>self::MANY_MANY</code>), <code>ClassName</code> es el nombre de la clase AR con que se está estableciendo la relación y <code>ForeignKey</code> indica la foreign key implicada en la relación. Las opciones adicionales se explicarán en la sección <a href="#opciones-de-consultas-relacionales">Opciones de consultas relacionales</a>.</p>
 <p>A continuación se definen las relaciones en los modelos User y Post:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -3143,14 +3139,14 @@ RewriteRule . index.php
 
 <h5 id="consultas-relacionales">Consultas relacionales<a class="headerlink" href="#consultas-relacionales" title="Permanent link">&para;</a></h5>
 <p>Por defecto se aplica el sistema <em>lazy loading</em> en los campos de un modelo que se refieren a una relación. Para forzar un <em>eager loading</em> hay que preceder los métodos de búsqueda con el método <code>with()</code>. Por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="nv">$posts</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;author&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
 </pre></div>
 </td></tr></table>
 
 <p>Se pueden especificar varios nombres de relaciones separados por comas en el método <code>with()</code> o pasarle un <code>CDbCriteria::with</code> al método de búsqueda. Por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -3170,7 +3166,7 @@ RewriteRule . index.php
 
 <h5 id="consultas-relacionales-sin-obtener-los-modelos-relacionados">Consultas relacionales sin obtener los modelos relacionados<a class="headerlink" href="#consultas-relacionales-sin-obtener-los-modelos-relacionados" title="Permanent link">&para;</a></h5>
 <p>En ocasiones nos interesa hacer una consulta usando una relación pero no queremos los datos de los propios modelos relacionados. Por ejemplo si quisiéramos los usuarios que tienen post's en estado published=1, pero no los post's en sí, podríamos hacer lo siguiente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -3213,7 +3209,7 @@ RewriteRule . index.php
 <li>through</li>
 </ul>
 <p>Ejemplo de uso:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -3239,7 +3235,7 @@ RewriteRule . index.php
 
 <h5 id="desambiguacion-de-columnas">Desambiguación de columnas<a class="headerlink" href="#desambiguacion-de-columnas" title="Permanent link">&para;</a></h5>
 <p>En una consulta relacional con AR, el alias para la tabla primaria es <code>t</code>, mientras que el alias de la tabla relacionada se corresponde con el nombre de la relación. Por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
@@ -3255,7 +3251,7 @@ RewriteRule . index.php
 <p>Existe una opción que permite elegir entre dos métodos para realizar consultas <em>eager loading</em>. Se trata de la opción <code>together</code> que determina si se realizará una única consulta con el join de las tablas relacionadas (más rendimiento) o una consulta por cada tabla (menos información redundante). Consultar <a href="http://www.yiiframework.com/doc/guide/1.1/en/database.arr#relational-query-performance">documentación completa</a>.</p>
 <h5 id="consulta-estadistica">Consulta estadística<a class="headerlink" href="#consulta-estadistica" title="Permanent link">&para;</a></h5>
 <p>Existe un tipo de relación especializado en obtener datos estadísticos entre tablas. Sólo se puede aplicar sobre tablas relacionadas con <code>HAS_MANY</code> y <code>MANY_MANY</code> y el tipo de relación se designa con <code>self::STAT</code>. Por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -3291,21 +3287,21 @@ RewriteRule . index.php
 </ul>
 <h5 id="consulta-relacional-con-named-scopes">Consulta relacional con named scopes<a class="headerlink" href="#consulta-relacional-con-named-scopes" title="Permanent link">&para;</a></h5>
 <p>Se pueden combinar las consultas relacionales con los <em>named scopes</em> aplicando estos últimos tanto sobre la tabla principal como sobre las relacionadas. En el primer caso se haría combinando <em>named scopes</em> y consulta relacional en cadena de la siguiente forma:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="nv">$posts</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">published</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">recently</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;comments&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
 </pre></div>
 </td></tr></table>
 
 <p>Aplicar <em>named scopes</em> a los modelos relacionados se hace indicandolos detrás de la relación separándolos con ":". Por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="nv">$posts</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;comments:recently:approved&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
 </pre></div>
 </td></tr></table>
 
 <p>Los <em>named scopes</em> pueden forzarse en la propia declaración de la relación del siguiente modo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -3326,7 +3322,7 @@ RewriteRule . index.php
 </td></tr></table>
 
 <p>Si los <em>named scopes</em> del objeto relacionados admiten parámetros, pueden pasarse en la consulta relacional de la siguiente forma:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -3350,7 +3346,7 @@ RewriteRule . index.php
 
 <h5 id="consulta-relacional-con-through">Consulta relacional con through<a class="headerlink" href="#consulta-relacional-con-through" title="Permanent link">&para;</a></h5>
 <p>Se definen así:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="s1">&#39;comments&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span><span class="nx">self</span><span class="o">::</span><span class="na">HAS_MANY</span><span class="p">,</span><span class="s1">&#39;Comment&#39;</span><span class="p">,</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;key1&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;key2&#39;</span><span class="p">),</span><span class="s1">&#39;through&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;posts&#39;</span><span class="p">)</span>
 </pre></div>
@@ -3365,7 +3361,7 @@ RewriteRule . index.php
 <p>Para ilustrar el caso HAS_MANY se utilizará el siguiente modelo de datos:
 <img alt="has_many_through.png" src="/images/pages/has_many_through.png" /></p>
 <p>Por ejemplo, para obtener los usuarios de un grupo en concreto:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -3390,7 +3386,7 @@ RewriteRule . index.php
 </td></tr></table>
 
 <p>Un caso más complicado sería obtener todos los comentarios de todos los usuarios de un grupo en concreto. Se lograría añadiendo a las relaciones anteriores la siguiente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
@@ -3403,7 +3399,7 @@ RewriteRule . index.php
 <p>Una variante del <code>HAS_MANY through</code> es cuando el modelo origen y destino es el mismo. Por ejemplo, dado el siguiente modelo de datos:
 <img alt="through_self.png" src="/images/pages/through_self.png" /></p>
 <p>Podríamos definir las siguientes relaciones:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -3436,7 +3432,7 @@ RewriteRule . index.php
 </td></tr></table>
 
 <p>De manera que podríamos obtener los alumnos que son enseñados por un profesor (alumnos y profesor son ambos usuarios):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="nv">$teacher</span><span class="o">=</span><span class="nx">User</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">findByPk</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
@@ -3447,7 +3443,7 @@ RewriteRule . index.php
 <p>Para ilustrar el caso de <code>HAS_ONE through</code> nos basaremos en:
 <img alt="has_one_through.png" src="/images/pages/has_one_through.png" /></p>
 <p>Por ejemplo, obtener la dirección de un usuario cuando ésta está relacionada con el usuario por medio de un profile:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -3478,7 +3474,7 @@ RewriteRule . index.php
 <p><code>Yii:app()</code> Sirve como almacén central de ajustes de configuración a nivel de aplicación (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.application">fuente</a>).</p>
 <h5 id="anadir-jquery">Añadir jQuery<a class="headerlink" href="#anadir-jquery" title="Permanent link">&para;</a></h5>
 <p>Añadir jQuery a una página. Código visto en un action, pero también se podría insertar directamente en la vista en que vaya a ser necesario:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="c1">// Adding jQuery to the view page.</span>

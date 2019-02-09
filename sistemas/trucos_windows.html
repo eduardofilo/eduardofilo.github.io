@@ -1724,7 +1724,7 @@
                 <h1 id="trucos-windows">Trucos Windows<a class="headerlink" href="#trucos-windows" title="Permanent link">&para;</a></h1>
 <h2 id="acelerar-la-exploracion-de-equipos-en-red-e-incrementar-el-rendimiento-general">Acelerar la exploración de equipos en red e incrementar el rendimiento general<a class="headerlink" href="#acelerar-la-exploracion-de-equipos-en-red-e-incrementar-el-rendimiento-general" title="Permanent link">&para;</a></h2>
 <p>Borrar la clave siguiente (<a href="http://www.pc-soluciones.com.ar/acelerarequiposenredxp.htm">fuente</a>):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RemoteComputer\NameSpace\{D6277990-4C6A-11CF-8D87-00AA0060F5BF}
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RemoteComputer\NameSpace\{D6277990-4C6A-11CF-8D87-00AA0060F5BF}
 </pre></div>
 </td></tr></table>
 
@@ -1746,7 +1746,7 @@
 <h2 id="sustituir-archivos-en-uso-en-windows-xp">Sustituir archivos en uso en Windows XP<a class="headerlink" href="#sustituir-archivos-en-uso-en-windows-xp" title="Permanent link">&para;</a></h2>
 <p>"inuse.exe” es una herramienta que antaño formaba parte del kit de recursos de Windows 2000, y que con la liberación de Windows XP Microsoft ha decidido ponerla a disposición de forma gratuita.<br />
 Su cometido es permitir la sustitución de archivos que estén en uso por parte del Sistema Operativo y que de otra manera no podrían ser sustituidos. Su sintaxis es:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>INUSE origen destino /y
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>INUSE origen destino /y
 </pre></div>
 </td></tr></table>
 
@@ -1770,7 +1770,7 @@ Esta utilidad junto a todas las del kit de recursos de Windows 2000 se puede obt
 </ol>
 <h2 id="evitar-colapsos-de-conexion-de-red">Evitar colapsos de conexión de red<a class="headerlink" href="#evitar-colapsos-de-conexion-de-red" title="Permanent link">&para;</a></h2>
 <p>Activar el servicio "Programador de paquetes QoS". Se puede configurar el valor de reserva de ancho de banda con:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>gpedit.msc / Configuración del equipo / Plantillas administrativas /
 Red / Programador de paquetes QoS / Limitar ancho de banda reservado
 </pre></div>
@@ -1782,7 +1782,7 @@ Red / Programador de paquetes QoS / Limitar ancho de banda reservado
 <li>Arrancar con la consola de reparación del CD de instalación.</li>
 <li>Copiar los archivos del registro de la versión de instalación:</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -1797,7 +1797,7 @@ copy c:\windows\repair\default c:\windows\system32\config\default
 <ul>
 <li>Con esta configuración se puede arrancar en Modo a Prueba de Fallos. Elegir un conjunto de archivos de un punto de restauración en la ruta:</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>C:\System Volume Information\_restore{27BBF476-A824-438F-93A9-39BC37483C34}\RPn\Snapshot
 (el ClassID y el n de RPn son variables)
 </pre></div>
@@ -1806,7 +1806,7 @@ copy c:\windows\repair\default c:\windows\system32\config\default
 <ul>
 <li>Copiar los siguientes ficheros a una carpeta accesible como C:\Windows\tmp renombrándolos como se indica:</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -1838,49 +1838,49 @@ _REGISTRY_MACHINE_SAM -&gt; sam
 <ul>
 <li>Mostrar lista de procesos con servicios asociados:</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>tasklist /svc
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>tasklist /svc
 </pre></div>
 </td></tr></table>
 
 <ul>
 <li>Lista de conexiones con PID de procesos asociados:</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>netstat -aon
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>netstat -aon
 </pre></div>
 </td></tr></table>
 
 <ul>
 <li>Eliminar unidades de red:</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>net use /d A:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>net use /d A:
 </pre></div>
 </td></tr></table>
 
 <ul>
 <li>Añadir unidades de red:</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>net use A: \\Servidor\Directorio
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>net use A: \\Servidor\Directorio
 </pre></div>
 </td></tr></table>
 
 <ul>
 <li>Muestra la diferencia de hora del sistema con un servidor NTP externo:</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>w32tm /stripchart /computer:es.pool.ntp.org /samples:3 /dataonly
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>w32tm /stripchart /computer:es.pool.ntp.org /samples:3 /dataonly
 </pre></div>
 </td></tr></table>
 
 <ul>
 <li>Utilidad de configuración del sistema (WinXP):</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>msconfig
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>msconfig
 </pre></div>
 </td></tr></table>
 
 <h2 id="bloqueo-y-desbloqueo-del-registro">Bloqueo y desbloqueo del Registro<a class="headerlink" href="#bloqueo-y-desbloqueo-del-registro" title="Permanent link">&para;</a></h2>
 <p>Para deshabilitarlo, accedemos al registro, nos situamos en HKEY_CURENT_USER/Software/Microsoft/Windows/CurrentVersion/Policies/System. En la parte de la derecha creamos un nuevo valor DWORD y le damos el nombre DisableRegistryTools, otorgándole el 1 para deshabilitar las funciones de edición del Registro.<br />
 Una vez realizada esta operación, nadie podrá acceder a él hasta que no lo volvamos a activar. Para habilitarlo, abrimos un editor de texto y escribimos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Windows Registry Editor Version 5.00
 <span class="na">[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\system] &quot;DisableRegistryTools&quot;</span><span class="o">=</span><span class="nv">dword</span><span class="p">:</span><span class="m">00000000</span>
 </pre></div>
@@ -1889,7 +1889,7 @@ Una vez realizada esta operación, nadie podrá acceder a él hasta que no lo vo
 <p>Ahora, guardamos el archivo con el nombre unlock.reg y, a partir de ese momento, cuando queramos activar el Registro de Windows, después de haberlo deshabilitado, sólo tendremos que hacer doble clic sobre el archivo que acabamos de crear.</p>
 <h2 id="escritorio-remoto-editar-registro-con-comandos">Escritorio Remoto / Editar registro con comandos<a class="headerlink" href="#escritorio-remoto-editar-registro-con-comandos" title="Permanent link">&para;</a></h2>
 <p>La funcionalidad "Escritorio Remoto" se encuentra desactivada por defecto. Se puede activar editando el registro del ordenador que nos interese. Esto se puede hacer remotamente por medio del siguiente comando:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>reg add \\[NombreEquipo]\HKLM\SYSTEM\CurrentControlSet\Services\PolicyAgent /V EnableRemoteMgmt /T REG_DWORD /F /D 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>reg add \\[NombreEquipo]\HKLM\SYSTEM\CurrentControlSet\Services\PolicyAgent /V EnableRemoteMgmt /T REG_DWORD /F /D 1
 </pre></div>
 </td></tr></table>
 
@@ -1897,7 +1897,7 @@ Una vez realizada esta operación, nadie podrá acceder a él hasta que no lo vo
 <p>En estos ficheros se almacena la selección de directorios/ficheros que entran en el backup. Hay que respetar el formato que les da la utilidad cuando los genera. Es texto Unicode, pero si se edita con Notepad no queda exactamente en el formato esperado y luego aparece en el log el error "No se encontró el archivo de selección...". Una forma de conseguirlo es editando con Notepad, guardando en formato "Codificación: Unicode" y luego usar un editor hexadecimal para eliminar los dos primeros bytes que se incluyen con este formato.</p>
 <h2 id="procesos-de-inicio">Procesos de inicio<a class="headerlink" href="#procesos-de-inicio" title="Permanent link">&para;</a></h2>
 <p>En las siguientes rutas del registro:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -1914,18 +1914,18 @@ HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce
 </td></tr></table>
 
 <p>En el caso de Windows 98 y Windows ME será necesario revisar también en los 2 archivos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>WIN.INI
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>WIN.INI
 </pre></div>
 </td></tr></table>
 
 <p>Son las entradas que inician con "run=" o "load="</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SYSTEM.INI
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SYSTEM.INI
 </pre></div>
 </td></tr></table>
 
 <p>Son las entradas que inician con "shell=" . Hay que tener en cuenta que la única entrada legal es shell=Explorer.exe y que algún virus podría agregar una línea del tipo shell=Explorer.exe %Windows% ombredelviruse.exe</p>
 <p>Otro lugar donde se debería revisar son las carpetas de los programas de inicio que por ejemplo en Windows XP serán:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>C:\Documents and Settings\tucuenta\Menú Inicio\Programas\Inicio
 
@@ -1934,7 +1934,7 @@ C:\Documents and Settings\All Users\Menú Inicio\Programas\Inicio
 </td></tr></table>
 
 <p>y en Windows 98 será:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>C:\Windows\Menú Inicio\Programas\Inicio
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>C:\Windows\Menú Inicio\Programas\Inicio
 </pre></div>
 </td></tr></table>
 

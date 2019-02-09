@@ -1565,24 +1565,24 @@
 <p>Allí localizamos el archivo .xml correspondiente al canal, lo editamos y ponemos a <code>false</code> la propiedad <code>active</code>.</p>
 <h2 id="mapeo-de-teclas-del-mando-a-distancia">Mapeo de teclas del mando a distancia<a class="headerlink" href="#mapeo-de-teclas-del-mando-a-distancia" title="Permanent link">&para;</a></h2>
 <p>En ocasiones alguna de las teclas del mando deja de funcionar. A mi me ha ocurrido varias veces con la tecla Back. Con el tiempo se soluciona solo (algunas veces reiniciar ayuda pero no siempre). Desconozco el mecanismo que estropea el mapeo de esta tecla, pero la solución es modificar el fichero <code>/storage/.kodi/userdata/keymaps/remote.xml</code>. En él, dentro de la sección <code>&lt;keymap&gt;&lt;global&gt;&lt;remote&gt;</code>, cuando deja de funcionar la tecla back me encuentro:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&amp;</span><span class="nt">lt</span><span class="o">;</span><span class="nt">back</span><span class="o">&amp;</span><span class="nt">gt</span><span class="o">;</span><span class="nt">RunScript</span><span class="o">(</span><span class="nt">special</span><span class="o">://</span><span class="nt">userdata</span><span class="o">/</span><span class="nt">keymaps</span><span class="o">/</span><span class="nt">test</span><span class="p">.</span><span class="nc">py</span><span class="o">)&amp;</span><span class="nt">lt</span><span class="o">;/</span><span class="nt">back</span><span class="o">&amp;</span><span class="nt">gt</span><span class="o">;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;back&gt;</span>RunScript(special://userdata/keymaps/test.py)<span class="nt">&lt;/back&gt;</span>
 </pre></div>
 </td></tr></table>
 
 <p>La solución es reponer el valor:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>&amp;lt;back&amp;gt;Back&amp;lt;/back&amp;gt;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;back&gt;</span>Back<span class="nt">&lt;/back&gt;</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="scrap-manual-de-una-serie">Scrap manual de una serie<a class="headerlink" href="#scrap-manual-de-una-serie" title="Permanent link">&para;</a></h2>
 <p>Si al intentar forzar el contenido de una carpeta con una serie, no nos localiza la serie y ésta está dada de alta en TheTVDB (me ocurrió por ejemplo con <a href="http://thetvdb.com/?tab=series&amp;id=290587&amp;lid=16">Ramón y Cajal</a>), incluir un fichero en la raíz del directorio de la serie con el nombre <code>tvshow.nfo</code> y el siguiente contenido (<a href="http://kodi.wiki/view/NFO_files/TV_shows#Video_.nfo_files_containing_a_URL">fuente</a>):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">http</span><span class="o">://</span><span class="nt">thetvdb</span><span class="p">.</span><span class="nc">com</span><span class="o">/</span><span class="nt">index</span><span class="p">.</span><span class="nc">php</span><span class="o">?</span><span class="nt">tab</span><span class="o">=</span><span class="nt">series</span><span class="o">&amp;</span><span class="nt">amp</span><span class="o">;</span><span class="nt">id</span><span class="o">=</span><span class="nt">290587</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>http://thetvdb.com/index.php?tab=series&amp;id=290587
 </pre></div>
 </td></tr></table>
 
 <h2 id="script-autoarranque-para-reproducir-una-lista">Script autoarranque para reproducir una lista<a class="headerlink" href="#script-autoarranque-para-reproducir-una-lista" title="Permanent link">&para;</a></h2>
 <p>Situar en la ruta <code>.kodi/userdata/</code> un fichero con el nombre <code>autoexec.py</code>. Allí insertar el código:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4

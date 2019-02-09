@@ -1646,7 +1646,7 @@
 <p>Para el montaje seguir el PDF incluido en la raíz del repositorio GitHub (en el momento de escribir este artículo era la <a href="https://github.com/OttoDIY/DIY/blob/master/OttoDIY_InstructionsManual_V07.pdf">versión 07</a>).</p>
 <h2 id="calibracion">Calibración<a class="headerlink" href="#calibracion" title="Permanent link">&para;</a></h2>
 <p>Cargar el siguiente programa para averiguar los ajustes de trim para cuadrar el robot:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -1740,7 +1740,7 @@
 
 <p>Por medio de ensayo/error identificar los valores de <code>TRIM_RR</code>, <code>TRIM_RL</code>, <code>TRIM_YR</code> y <code>TRIM_YL</code> que hacen que las cuatro articulaciones queden perfectamente cuadradas. Cuando se consiga, descomentar la línea que contiene el comando <code>Otto.saveTrimsOnEEPROM();</code> y ejecutar una vez más para que se almacenen los valores en la EEPROM. A partir de entonces, todos los sketches que utilicen la librería Otto y que inicialicen ese objeto por medio de la función <code>init</code> poniendo <code>true</code> en el quinto argumento, cargarán estos valores de la calibración de la EEPROM y por tanto comenzarán con el robot bien encuadrado.</p>
 <p>En el repositorio hay sketches que no se basan en la librería Otto sino que gestionan los servos directamente. En estos casos la gestión del trim también se hará directamente, ya que desafortunadamente las posiciones de los trim en la EEPROM no coinciden con los que hace la librería Otto, para evitar tener que regrabar sus valores en la EEPROM cada vez que pasemos de un tipo a otro de sketch. Por ejemplo en el sketch Otto_smooth_criminal, que no utiliza la librería Otto, los trim se leen de la EEPROM en orden inverso. Por tanto, será mejor desactivar su lectura y escribir los valores de trim directamente en el código. Así:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -1756,7 +1756,7 @@
 
 <h2 id="programacion">Programación<a class="headerlink" href="#programacion" title="Permanent link">&para;</a></h2>
 <p>De entre los varios sketches de ejemplo que vienen en el repositorio, el más práctico para empezar a hacer una programación personalizada de Otto es el <code>Otto_BASIC</code>. En los comentarios que hay al principio se describen las funciones básicas de la librería Otto:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -1809,7 +1809,7 @@
 </td></tr></table>
 
 <p>En <code>setup</code> se hace una inicialización básica de la librería Otto y se emite un sonido por el buzzer. Luego en el <code>loop</code> se ha programado una sencilla función para que Otto camine hacia delante hasta que localice un obstáculo a menos de 15cm y dé unos pasos hacia atrás y gire.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -1838,7 +1838,7 @@
 </td></tr></table>
 
 <p>Es útil aprovechar la funcionalidad del sensor de distancia para disparar el comportamiento de Otto que queremos programar. En otro caso todo lo que programemos dentro de la función <code>loop</code> se ejecutará sin parar. Así por ejemplo, imitando la función <code>obstacleMode</code>, un ejemplo de <code>loop</code> en el que haremos que cuando pongamos la mano delante, Otto avance un par de pasos, haga el moonwalk hacia la derecha, dé un pequeño salto y se detenga ejecutando el gesto de victoria sería:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4

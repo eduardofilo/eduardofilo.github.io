@@ -2280,19 +2280,19 @@
 </ul>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
 <p>Instalamos el paquete <code>mysql-server</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ apt-get install mysql-server
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ apt-get install mysql-server
 </pre></div>
 </td></tr></table>
 
 <p>En caso de no haberlo configurado durante la instalación del paquete, ajustar el password de root con el comando:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysql -u root
 mysql&gt; SET PASSWORD FOR <span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;localhost&quot; = PASSWORD(&#39;</span>new_password<span class="err">&#39;</span><span class="o">)</span><span class="p">;</span>
 </pre></div>
 </td></tr></table>
 
 <p>Por defecto sólo podemos entrar con el usuario root en local. Para permitir el acceso remoto ejecutar el siguiente comando:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysql -u root -p
@@ -2313,7 +2313,7 @@ mysql&gt; <span class="nb">exit</span>
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2333,7 +2333,7 @@ mysql&gt;
 
 <h2 id="trabajando-con-bases-de-datos">Trabajando con Bases de Datos<a class="headerlink" href="#trabajando-con-bases-de-datos" title="Permanent link">&para;</a></h2>
 <h3 id="creacion-de-bbdd">Creación de BBDD<a class="headerlink" href="#creacion-de-bbdd" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">irontec_db</span><span class="p">;</span>
 <span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">1</span> <span class="k">row</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">03</span> <span class="n">sec</span><span class="p">)</span>
 </pre></div>
@@ -2341,14 +2341,14 @@ mysql&gt;
 
 <h3 id="seleccion-de-bbdd">Selección de BBDD<a class="headerlink" href="#seleccion-de-bbdd" title="Permanent link">&para;</a></h3>
 <p>Cambiar o elegir base de datos a utilizar:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">USE</span> <span class="n">irontec_db</span><span class="p">;</span>
 <span class="k">Database</span> <span class="n">changed</span>
 </pre></div>
 </td></tr></table>
 
 <p>Ver la base de datos seleccionada:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2365,7 +2365,7 @@ mysql&gt;
 </td></tr></table>
 
 <h3 id="eliminacion-de-bbdd">Eliminación de BBDD<a class="headerlink" href="#eliminacion-de-bbdd" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">DROP</span> <span class="k">DATABASE</span> <span class="n">irontec_db</span><span class="p">;</span>
 <span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="k">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">60</span> <span class="n">sec</span><span class="p">)</span>
 </pre></div>
@@ -2374,28 +2374,28 @@ mysql&gt;
 <h2 id="trabajando-con-usuarios-privilegios">Trabajando con Usuarios / Privilegios<a class="headerlink" href="#trabajando-con-usuarios-privilegios" title="Permanent link">&para;</a></h2>
 <h3 id="creacion-de-usuarios">Creación de Usuarios<a class="headerlink" href="#creacion-de-usuarios" title="Permanent link">&para;</a></h3>
 <p>Usuarios con <strong>todos</strong> los privilegios:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="n">irontec_db</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="n">irontec_user_allpriv</span><span class="o">@</span><span class="n">localhost</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;irontec_pass&#39;</span><span class="p">;</span>
 <span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="k">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">14</span> <span class="n">sec</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
 <p>Usuarios <strong>sin privilegios</strong> (solo introduce el usuario en la tabla <code>mysql.user</code>):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">GRANT</span> <span class="k">USAGE</span> <span class="k">ON</span> <span class="n">irontec_db</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="n">irontec_user_nopriv</span><span class="o">@</span><span class="n">localhost</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;irontec_pass&#39;</span><span class="p">;</span>
 <span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="k">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span> <span class="n">sec</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
 <p>Usuarios con privilegios de <strong>solo lectura</strong> en registros:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">GRANT</span> <span class="k">SELECT</span> <span class="k">ON</span> <span class="n">irontec_db</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="n">irontec_user_ro</span><span class="o">@</span><span class="n">localhost</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;irontec_pass&#39;</span><span class="p">;</span>
 <span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="k">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">02</span> <span class="n">sec</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
 <p>Usuarios con priligegios de <strong>solo inserción o modificación</strong> de registros:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">GRANT</span> <span class="k">INSERT</span><span class="p">,</span><span class="k">UPDATE</span> <span class="k">on</span> <span class="n">irontec_db</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="n">irontec_user_wo</span><span class="o">@</span><span class="n">localhost</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;irontec_pass&#39;</span><span class="p">;</span>
 <span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="k">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span> <span class="n">sec</span><span class="p">)</span>
 </pre></div>
@@ -2403,7 +2403,7 @@ mysql&gt;
 
 <h3 id="seleccion-de-usuarios">Selección de Usuarios<a class="headerlink" href="#seleccion-de-usuarios" title="Permanent link">&para;</a></h3>
 <p>Ver el usuario con el que se está trabajando:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2420,7 +2420,7 @@ mysql&gt;
 </td></tr></table>
 
 <h3 id="visualizacion-de-privilegios-de-usuarios">Visualización de Privilegios de Usuarios<a class="headerlink" href="#visualizacion-de-privilegios-de-usuarios" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2439,7 +2439,7 @@ mysql&gt;
 </td></tr></table>
 
 <h3 id="eliminacion-de-usuarios">Eliminación de Usuarios<a class="headerlink" href="#eliminacion-de-usuarios" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2480,7 +2480,7 @@ mysql&gt;
 <p><a href="http://dev.mysql.com/doc/mysql/en/column-types.html">Referencia manual MySQL</a></p>
 <h3 id="creacion-tablas">Creación Tablas<a class="headerlink" href="#creacion-tablas" title="Permanent link">&para;</a></h3>
 <h4 id="myisam">MyISAM<a class="headerlink" href="#myisam" title="Permanent link">&para;</a></h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2517,7 +2517,7 @@ mysql&gt;
 </td></tr></table>
 
 <h4 id="innodb">InnoDB<a class="headerlink" href="#innodb" title="Permanent link">&para;</a></h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2559,7 +2559,7 @@ mysql&gt;
 
 <h3 id="visualizacion-tablas">Visualización Tablas<a class="headerlink" href="#visualizacion-tablas" title="Permanent link">&para;</a></h3>
 <p>Tablas contenidas en una Base de Datos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2578,7 +2578,7 @@ mysql&gt;
 </td></tr></table>
 
 <p>Estructura de una tabla:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2603,18 +2603,18 @@ mysql&gt;
 </td></tr></table>
 
 <p>Estado de todas las tablas:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">show</span> <span class="k">table</span> <span class="n">status</span><span class="p">;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">show</span> <span class="k">table</span> <span class="n">status</span><span class="p">;</span>
 </pre></div>
 </td></tr></table>
 
 <h3 id="modificacion-tablas">Modificación Tablas<a class="headerlink" href="#modificacion-tablas" title="Permanent link">&para;</a></h3>
 <p><a href="http://dev.mysql.com/doc/mysql/en/alter-table.html">Referencia manual MySQL</a></p>
 <h4 id="anadir-un-nuevo-campo">Añadir un nuevo campo<a class="headerlink" href="#anadir-un-nuevo-campo" title="Permanent link">&para;</a></h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mysql&amp;gt; ALTER TABLE [database.]tabla ADD campo_nuevo tipo AFTER campo_viejo;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="p">[</span><span class="k">database</span><span class="p">.]</span><span class="n">tabla</span> <span class="k">ADD</span> <span class="n">campo_nuevo</span> <span class="n">tipo</span> <span class="k">AFTER</span> <span class="n">campo_viejo</span><span class="p">;</span>
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">presupuestos</span> <span class="k">ADD</span> <span class="n">adjunto</span> <span class="nb">BLOB</span> <span class="k">AFTER</span> <span class="n">fecha</span> <span class="p">;</span>
 <span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="k">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">06</span> <span class="n">sec</span><span class="p">)</span>
@@ -2623,22 +2623,22 @@ mysql&gt;
 </td></tr></table>
 
 <h4 id="cambiar-el-nombre-de-una-tabla">Cambiar el nombre de una tabla<a class="headerlink" href="#cambiar-el-nombre-de-una-tabla" title="Permanent link">&para;</a></h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mysql&amp;gt; ALTER TABLE [database.]tabla RENAME tabla_nueva;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="p">[</span><span class="k">database</span><span class="p">.]</span><span class="n">tabla</span> <span class="k">RENAME</span> <span class="n">tabla_nueva</span><span class="p">;</span>
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">presupuestos</span> <span class="k">RENAME</span> <span class="n">proyectos</span><span class="p">;</span>
 <span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="k">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">03</span> <span class="n">sec</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
 <h4 id="cambiar-el-tipo-de-dato-de-un-campo">Cambiar el tipo de dato de un campo<a class="headerlink" href="#cambiar-el-tipo-de-dato-de-un-campo" title="Permanent link">&para;</a></h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mysql&amp;gt; ALTER TABLE [database.]tabla CHANGE campo campo nuevo_tipo;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="p">[</span><span class="k">database</span><span class="p">.]</span><span class="n">tabla</span> <span class="n">CHANGE</span> <span class="n">campo</span> <span class="n">campo</span> <span class="n">nuevo_tipo</span><span class="p">;</span>
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">presupuestos</span> <span class="n">CHANGE</span> <span class="n">asunto</span> <span class="n">asunto</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
 <span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="k">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">23</span> <span class="n">sec</span><span class="p">)</span>
@@ -2647,11 +2647,11 @@ mysql&gt;
 </td></tr></table>
 
 <h4 id="eliminar-un-campo-existente">Eliminar un campo existente<a class="headerlink" href="#eliminar-un-campo-existente" title="Permanent link">&para;</a></h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mysql&amp;gt; ALTER TABLE [database.]tabla DROP campo;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="p">[</span><span class="k">database</span><span class="p">.]</span><span class="n">tabla</span> <span class="k">DROP</span> <span class="n">campo</span><span class="p">;</span>
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">presupuestos</span> <span class="k">DROP</span> <span class="n">adjunto</span><span class="p">;</span>
 <span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="k">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">05</span> <span class="n">sec</span><span class="p">)</span>
@@ -2660,11 +2660,11 @@ mysql&gt;
 </td></tr></table>
 
 <h3 id="eliminacion-tablas">Eliminación Tablas<a class="headerlink" href="#eliminacion-tablas" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mysql&amp;gt; DROP TABLE [database.]tabla;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">DROP</span> <span class="k">TABLE</span> <span class="p">[</span><span class="k">database</span><span class="p">.]</span><span class="n">tabla</span><span class="p">;</span>
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">presupuestos</span><span class="p">;</span>
 <span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="k">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">44</span> <span class="n">sec</span><span class="p">)</span>
 </pre></div>
@@ -2673,42 +2673,42 @@ mysql&gt;
 <h2 id="trabajando-con-registros">Trabajando con Registros<a class="headerlink" href="#trabajando-con-registros" title="Permanent link">&para;</a></h2>
 <p><strong>Nota:</strong> Si no se indica la Base de Datos a la que una tabla hace referencia, es necesario seleccionar previamente dicha BBDD (<code>use database</code>).</p>
 <h3 id="consultas">Consultas<a class="headerlink" href="#consultas" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mysql&amp;gt; SELECT campo1,campo2,.. FROM [database.]tabla;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">campo1</span><span class="p">,</span><span class="n">campo2</span><span class="p">,..</span> <span class="k">FROM</span> <span class="p">[</span><span class="k">database</span><span class="p">.]</span><span class="n">tabla</span><span class="p">;</span>
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">proyectos</span><span class="p">;</span>
 <span class="n">Empty</span> <span class="k">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">10</span> <span class="n">sec</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
 <h3 id="insercion-de-datos">Inserción de datos<a class="headerlink" href="#insercion-de-datos" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mysql&amp;gt; INSERT INTO [database.]tabla (campo1,campo2,..) VALUES (&#39;valor_campo1&#39;,&#39;valor_campo2&#39;,..);
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="p">[</span><span class="k">database</span><span class="p">.]</span><span class="n">tabla</span> <span class="p">(</span><span class="n">campo1</span><span class="p">,</span><span class="n">campo2</span><span class="p">,..)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;valor_campo1&#39;</span><span class="p">,</span><span class="s1">&#39;valor_campo2&#39;</span><span class="p">,..);</span>
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">presupuestos</span> <span class="p">(</span><span class="n">empresa</span><span class="p">,</span><span class="n">asunto</span><span class="p">,</span><span class="n">precio</span><span class="p">,</span><span class="n">fecha</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;UPV&#39;</span><span class="p">,</span><span class="s1">&#39;Formación GNU/Linux&#39;</span><span class="p">,</span><span class="s1">&#39;600&#39;</span><span class="p">,</span><span class="s1">&#39;2005-07-01&#39;</span><span class="p">);</span>
 <span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">1</span> <span class="k">row</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
 <h3 id="modificacion-de-datos">Modificación de datos<a class="headerlink" href="#modificacion-de-datos" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mysql&amp;gt; UPDATE [database.]tabla SET campo1=&#39;valor_nuevo_campo1&#39;,campo2=&#39;valor_nuevo_campo2&#39; WHERE condición;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">UPDATE</span> <span class="p">[</span><span class="k">database</span><span class="p">.]</span><span class="n">tabla</span> <span class="k">SET</span> <span class="n">campo1</span><span class="o">=</span><span class="s1">&#39;valor_nuevo_campo1&#39;</span><span class="p">,</span><span class="n">campo2</span><span class="o">=</span><span class="s1">&#39;valor_nuevo_campo2&#39;</span> <span class="k">WHERE</span> <span class="n">condición</span><span class="p">;</span>
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">UPDATE</span> <span class="n">presupuestos</span> <span class="k">SET</span> <span class="n">empresa</span><span class="o">=</span><span class="s1">&#39;UPV/EHU&#39;</span> <span class="k">WHERE</span> <span class="n">empresa</span><span class="o">=</span><span class="s1">&#39;UPV&#39;</span><span class="p">;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">UPDATE</span> <span class="n">presupuestos</span> <span class="k">SET</span> <span class="n">empresa</span><span class="o">=</span><span class="s1">&#39;UPV/EHU&#39;</span> <span class="k">WHERE</span> <span class="n">empresa</span><span class="o">=</span><span class="s1">&#39;UPV&#39;</span><span class="p">;</span>
 </pre></div>
 </td></tr></table>
 
 <h3 id="eliminacion-de-datos">Eliminación de datos<a class="headerlink" href="#eliminacion-de-datos" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mysql&amp;gt; DELETE FROM [database.]tabla WHERE condición;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">DELETE</span> <span class="k">FROM</span> <span class="p">[</span><span class="k">database</span><span class="p">.]</span><span class="n">tabla</span> <span class="k">WHERE</span> <span class="n">condición</span><span class="p">;</span>
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">presupuestos</span> <span class="k">WHERE</span> <span class="n">id</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">;</span>
 <span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">1</span> <span class="k">row</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">04</span> <span class="n">sec</span><span class="p">)</span>
 </pre></div>
@@ -2717,7 +2717,7 @@ mysql&gt;
 <h2 id="trabajando-con-mysql">Trabajando con MySQL<a class="headerlink" href="#trabajando-con-mysql" title="Permanent link">&para;</a></h2>
 <h3 id="variables-de-sistema">Variables de Sistema<a class="headerlink" href="#variables-de-sistema" title="Permanent link">&para;</a></h3>
 <p>Ver variables de sistema:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2783,7 +2783,7 @@ mysql&gt;
 
 <h3 id="utf8-por-defecto">UTF8 por defecto<a class="headerlink" href="#utf8-por-defecto" title="Permanent link">&para;</a></h3>
 <p>Como cabrea tener bases de datos en latin1 y cosas así que siempre dan problemas al cambiarlas de servidor o de versión de BDD, o con los programas. Cuando aprendes eso empiezas a configurar todo en UTF8, el apache, el mysql, las locales del sistema, etc...</p>
-<p>Y cada vez que creas una BDD en mysql este se empeña en ponerte "latin1" o "unicode_swedish_ci" ¿Swedish? ¿Que es esto? ¿Un rollo chovinusta?</p>
+<p>Y cada vez que creas una BDD en mysql este se empeña en ponerte "latin1" o "unicode_swedish_ci" ¿Swedish? ¿Que es esto? ¿Un rollo chovinista?</p>
 <p>Después para cada tabla, incomprensiblemente, también tienes que especificar que es "utf8_unicode_ci".</p>
 <p>Para evitar esto lo que podemos hacer es configurar mysql añadiendo estas líneas en la sección <strong>[mysqld]</strong> de <code>/etc/mysql/my.cnf</code>:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -2851,27 +2851,27 @@ character_set_server=utf8
 <p>Programa incluído en el paquete <code>mysql-client</code></p>
 <p><a href="http://dev.mysql.com/doc/mysql/en/mysqldump.html">Referencia manual MySQL</a></p>
 <p>Backup de todas las bases de datos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysqldump --opt -d -h host --all-databases --user<span class="o">=</span>root --password<span class="o">=</span>contraseña &gt; backup_irontec_mysql.sql
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysqldump --opt -d -h host --all-databases --user<span class="o">=</span>root --password<span class="o">=</span>contraseña &gt; backup_irontec_mysql.sql
 </pre></div>
 </td></tr></table>
 
 <p>Para cargar un backup hecho previamente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysql -h host --user<span class="o">=</span>root --password<span class="o">=</span>contraseña &lt; backup_irontec_mysql.sql
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysql -h host --user<span class="o">=</span>root --password<span class="o">=</span>contraseña &lt; backup_irontec_mysql.sql
 </pre></div>
 </td></tr></table>
 
 <p>Backup de una base de datos (<code>database</code>):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysqldump --opt -d -h host --user<span class="o">=</span>root --password<span class="o">=</span>contraseña database &gt; backup_irontec_mysql.sql
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysqldump --opt -d -h host --user<span class="o">=</span>root --password<span class="o">=</span>contraseña database &gt; backup_irontec_mysql.sql
 </pre></div>
 </td></tr></table>
 
 <p>Backup de una lista de tablas (<code>t1</code>, <code>t2</code>) de una base de datos (<code>database</code>):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysqldump --opt -d -h host --user<span class="o">=</span>root --password<span class="o">=</span>contraseña database t1 t2 &gt; backup_irontec_mysql.sql
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysqldump --opt -d -h host --user<span class="o">=</span>root --password<span class="o">=</span>contraseña database t1 t2 &gt; backup_irontec_mysql.sql
 </pre></div>
 </td></tr></table>
 
 <p>Para cargar un backup hecho previamente sobre una base de datos concreta:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysql -h host --user<span class="o">=</span>root --password<span class="o">=</span>contraseña database &lt; backup_irontec_mysql.sql
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysql -h host --user<span class="o">=</span>root --password<span class="o">=</span>contraseña database &lt; backup_irontec_mysql.sql
 </pre></div>
 </td></tr></table>
 
@@ -2879,7 +2879,7 @@ character_set_server=utf8
 <h2 id="bcps">BCPs<a class="headerlink" href="#bcps" title="Permanent link">&para;</a></h2>
 <p>El comando equivalente al <code>bcp</code> de otros gestores es <code>mysqlimport</code>. <a href="http://dev.mysql.com/doc/refman/5.0/es/mysqlimport.html">Aquí</a> está la página de ayuda del comando.</p>
 <p>Un ejemplo de uso sería:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysqlimport -h localhost -u adw -p -v -L --delete adw keywords.csv
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysqlimport -h localhost -u adw -p -v -L --delete adw keywords.csv
 </pre></div>
 </td></tr></table>
 
@@ -2890,7 +2890,7 @@ character_set_server=utf8
 </td></tr></table>
 
 <p>El mismo efecto se consigue con la siguiente query:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2903,26 +2903,26 @@ character_set_server=utf8
 </td></tr></table>
 
 <p>Para que el cliente acepte la opción <code>LOCAL</code> debe ser ejecutado con la opción <code>--local-infile</code>, por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysql -h localhost --local-infile -u adw -p adw
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysql -h localhost --local-infile -u adw -p adw
 </pre></div>
 </td></tr></table>
 
 <h2 id="otras-herramientas">Otras Herramientas<a class="headerlink" href="#otras-herramientas" title="Permanent link">&para;</a></h2>
 <h3 id="mysqladmin">mysqladmin<a class="headerlink" href="#mysqladmin" title="Permanent link">&para;</a></h3>
 <p>Para cambiar la contraseña del usuario root:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysqladmin -u root password <span class="sb">`</span><span class="p">&amp;</span>lt<span class="p">;</span>nueva_password<span class="p">&amp;</span>gt<span class="p">;</span><span class="sb">`</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysqladmin -u root password <span class="sb">`</span>&lt;nueva_password&gt;<span class="sb">`</span>
 </pre></div>
 </td></tr></table>
 
 <p>Muestra las variables del gestor:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysqladmin -u root -p variables
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysqladmin -u root -p variables
 </pre></div>
 </td></tr></table>
 
 <h2 id="solucion-de-problemas">Solución de problemas<a class="headerlink" href="#solucion-de-problemas" title="Permanent link">&para;</a></h2>
 <h3 id="tabla-de-schrodinger">Tabla de Schrödinger<a class="headerlink" href="#tabla-de-schrodinger" title="Permanent link">&para;</a></h3>
 <p>La única forma de solucionar un caso de <a href="http://stackoverflow.com/questions/10538908/schrodingers-mysql-table-exists-yet-it-does-not">tablas de Schrödingers</a> fue purgando la instalación de MySQL y borrando el directorio de datos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo dpkg --purge mysql-server-5.5 mysql-server-core-5.5 mysql-server
 $ sudo mv /var/lib/mysql /var/lib/mysql.bak
@@ -2931,7 +2931,7 @@ $ sudo apt-get install mysql-server-5.5 mysql-server-core-5.5 mysql-server
 </td></tr></table>
 
 <p>Otra forma menos agresiva fue encontrada <a href="http://www.randombugs.com/linux/crash-innodb-table.html">aquí</a> y consiste en borrar los ficheros siguientes con el servidor parado y luego arrancarlo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2946,7 +2946,7 @@ $ sudo service mysql start
 <p>La última vez que sucedió borré todas las tablas. Ver si borrando estos ficheros en cuanto ocurre se restituyen todas las tablas.</p>
 <h3 id="informacion-en-error">Información en error<a class="headerlink" href="#informacion-en-error" title="Permanent link">&para;</a></h3>
 <p>Para tener más información de un error, si es sobre tablas InnoDB, se puede lanzar el siguiente comando:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">SHOW</span> <span class="kp">ENGINE</span> <span class="n">INNODB</span> <span class="n">STATUS</span><span class="p">;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">SHOW</span> <span class="kp">ENGINE</span> <span class="n">INNODB</span> <span class="n">STATUS</span><span class="p">;</span>
 </pre></div>
 </td></tr></table>
 

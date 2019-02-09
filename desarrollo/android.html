@@ -2017,7 +2017,7 @@
 </td></tr></table>
 
 <p>Incluimos un diseño xml de ejemplo para que puedas iniciarte por los senderos de la creación de mapas:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2042,7 +2042,7 @@
 
 <h2 id="logcat-filtrado">Logcat filtrado<a class="headerlink" href="#logcat-filtrado" title="Permanent link">&para;</a></h2>
 <p>Ejemplo de una expresión de filtrado que suprime (silencia) todos los mensajes de log excepto los que tienen el tag "ActivityManager" con una prioridad Info o superior, y los que tienen el tag "MyApp" con una prioridad Debug o superior:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ adb logcat ActivityManager:I MyApp:D *:S
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ adb logcat ActivityManager:I MyApp:D *:S
 </pre></div>
 </td></tr></table>
 
@@ -2058,16 +2058,16 @@
 </ul>
 <h2 id="dumpsys-y-dumpstate">Dumpsys y Dumpstate<a class="headerlink" href="#dumpsys-y-dumpstate" title="Permanent link">&para;</a></h2>
 <p>Hace un volcado de los datos del sistema. Viene bien para encontrar componentes instalados (Aplicaciones, ContentProvider's, etc.):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ adb shell dumpsys
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ adb shell dumpsys
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ adb shell dumpstate
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ adb shell dumpstate
 </pre></div>
 </td></tr></table>
 
 <h2 id="buscar-callerid">Buscar CallerID<a class="headerlink" href="#buscar-callerid" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2089,7 +2089,7 @@
 <li>URI's de tipo item: Apuntan a un registro concreto de una tabla, por ejemplo un RawContact.</li>
 </ul>
 <h3 id="uri-de-la-tabla-raiz-contacts">URI de la tabla raíz Contacts<a class="headerlink" href="#uri-de-la-tabla-raiz-contacts" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">android.net.Uri</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">android.provider.ContactsContract</span><span class="o">;</span>
@@ -2098,7 +2098,7 @@
 </td></tr></table>
 
 <h3 id="uri-de-la-subtabla-rawcontacts">URI de la subtabla RawContacts<a class="headerlink" href="#uri-de-la-subtabla-rawcontacts" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">android.net.Uri</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">android.provider.ContactsContract</span><span class="o">;</span>
@@ -2107,7 +2107,7 @@
 </td></tr></table>
 
 <h3 id="uri-de-la-subtabla-data">URI de la subtabla Data<a class="headerlink" href="#uri-de-la-subtabla-data" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">android.net.Uri</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">android.provider.ContactsContract</span><span class="o">;</span>
@@ -2116,7 +2116,7 @@
 </td></tr></table>
 
 <h3 id="uri-de-la-subtabla-data-solo-con-los-registros-de-un-rawcontact-concreto">URI de la subtabla Data sólo con los registros de un RawContact concreto<a class="headerlink" href="#uri-de-la-subtabla-data-solo-con-los-registros-de-un-rawcontact-concreto" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">android.net.Uri</span><span class="o">;</span>
@@ -2128,7 +2128,7 @@
 
 <h3 id="obtener-id-a-partir-de-una-uri-de-tipo-item">Obtener ID a partir de una URI de tipo item<a class="headerlink" href="#obtener-id-a-partir-de-una-uri-de-tipo-item" title="Permanent link">&para;</a></h3>
 <p>Por ejemplo el método para insertar un RawContact devuelve una URI de tipo item (no tabla). Para obtener el ID de dicho elemento podemos usar algunas funciones que hay en la clase ''android.content.ContentUris''.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">android.content.ContentUris</span><span class="o">;</span>
 <span class="kt">long</span> <span class="n">rawContactId</span> <span class="o">=</span> <span class="n">ContentUris</span><span class="o">.</span><span class="na">parseId</span><span class="o">(</span><span class="n">rawContactUri</span><span class="o">);</span>
 </pre></div>
@@ -2136,7 +2136,7 @@
 
 <h3 id="obtener-la-uri-de-tipo-item-de-un-elemento-concreto-a-partir-de-la-tabla">Obtener la URI de tipo item de un elemento concreto a partir de la tabla<a class="headerlink" href="#obtener-la-uri-de-tipo-item-de-un-elemento-concreto-a-partir-de-la-tabla" title="Permanent link">&para;</a></h3>
 <p>Por ejemplo tenemos el ID de un elemento y queremos una URI para él.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">android.net.Uri</span><span class="o">;</span>
@@ -2174,7 +2174,7 @@
 </tbody>
 </table>
 <h2 id="obtener-el-id-de-un-recurso-en-el-contentprovider-de-audio-externo">Obtener el ID de un recurso en el ContentProvider de audio externo<a class="headerlink" href="#obtener-el-id-de-un-recurso-en-el-contentprovider-de-audio-externo" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2199,7 +2199,7 @@
 </td></tr></table>
 
 <h2 id="insercion-de-un-rawcontact-de-tipo-vndseccontactphone">Inserción de un RawContact de tipo "vnd.sec.contact.phone"<a class="headerlink" href="#insercion-de-un-rawcontact-de-tipo-vndseccontactphone" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2274,7 +2274,7 @@
 </td></tr></table>
 
 <h2 id="extraer-el-nombre-el-numero-y-la-foto-de-los-contacts-de-tipo-vndseccontactphone">Extraer el nombre, el número y la foto de los Contacts de tipo "vnd.sec.contact.phone"<a class="headerlink" href="#extraer-el-nombre-el-numero-y-la-foto-de-los-contacts-de-tipo-vndseccontactphone" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2387,7 +2387,7 @@
 </td></tr></table>
 
 <h2 id="borrado-de-los-contactos-de-un-tipo">Borrado de los contactos de un tipo<a class="headerlink" href="#borrado-de-los-contactos-de-un-tipo" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">Uri</span> <span class="n">rawContacts</span> <span class="o">=</span> <span class="n">ContactsContract</span><span class="o">.</span><span class="na">RawContacts</span><span class="o">.</span><span class="na">CONTENT_URI</span><span class="o">;</span>
@@ -2398,7 +2398,7 @@
 </td></tr></table>
 
 <h2 id="borrado-de-un-contacto">Borrado de un contacto<a class="headerlink" href="#borrado-de-un-contacto" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">Uri</span> <span class="n">rawContacts</span> <span class="o">=</span> <span class="n">ContactsContract</span><span class="o">.</span><span class="na">RawContacts</span><span class="o">.</span><span class="na">CONTENT_URI</span><span class="o">;</span>
 <span class="n">Uri</span> <span class="n">rawContactUri</span> <span class="o">=</span> <span class="n">ContentUris</span><span class="o">.</span><span class="na">withAppendedId</span><span class="o">(</span><span class="n">ContactsContract</span><span class="o">.</span><span class="na">RawContacts</span><span class="o">.</span><span class="na">CONTENT_URI</span><span class="o">,</span> <span class="mi">13</span><span class="o">);</span>
@@ -2407,7 +2407,7 @@
 </td></tr></table>
 
 <h2 id="actualizar-el-nombre-de-un-contacto">Actualizar el nombre de un contacto<a class="headerlink" href="#actualizar-el-nombre-de-un-contacto" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2424,7 +2424,7 @@
 </td></tr></table>
 
 <h2 id="insercion-de-un-rawcontact-de-tipo-vndseccontactphone_1">Inserción de un RawContact de tipo "vnd.sec.contact.phone"<a class="headerlink" href="#insercion-de-un-rawcontact-de-tipo-vndseccontactphone_1" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2464,7 +2464,7 @@
 
 <h2 id="insercion-de-un-rawcontact-de-tipo-vndseccontactphone_2">Inserción de un RawContact de tipo "vnd.sec.contact.phone"<a class="headerlink" href="#insercion-de-un-rawcontact-de-tipo-vndseccontactphone_2" title="Permanent link">&para;</a></h2>
 <p>Igual que antes pero hecho con el sistema de operaciones por lotes de los ContentProvider's.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2521,7 +2521,7 @@
 </td></tr></table>
 
 <h2 id="localizar-un-launcher-que-no-sea-el-nuestro">Localizar un Launcher que no sea el nuestro<a class="headerlink" href="#localizar-un-launcher-que-no-sea-el-nuestro" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2558,7 +2558,7 @@
 </td></tr></table>
 
 <h2 id="obtener-un-authtoken-de-un-account">Obtener un authToken de un Account<a class="headerlink" href="#obtener-un-authtoken-de-un-account" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4

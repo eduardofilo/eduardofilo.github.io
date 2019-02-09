@@ -1662,15 +1662,26 @@ sudo apt-get upgrade
 </pre></div>
 </td></tr></table>
 
-<p>5.1. Extendemos la partición a toda la SD (opción: <code>1 Expand Filesystem</code>).</p>
-<p>5.2. Ajustar el Timezone (opción <code>5 Internationalisation Options &gt; I2 Change Timezone</code>). Realmente no es necesario, pero me gusta ver fechas coherentes cuando manipulo el sistema.</p>
-<p>5.3. Ajustar los locales (opción <code>5 Internationalisation Options &gt; I1 Change Locale</code>). Yo por ejemplo elijo <code>en_GB.UTF-8</code>. Es importante que todas las variables que aparecen al ejecutar el comando <code>locale</code> tengan valor correcto e igual en todas ellas. Tras hacer los ajustes es necesario reiniciar, ya que se gestionan mediante variables de entorno de sesión. Tras hacerlo volver a comprobar con el comando <code>locale</code>. Si alguna de las variables sigue con un valor incorrecto (suele ocurrir en LANG, LANGUAGE y LC_ALL), usar el siguiente comando e ir comprobando con sucesivos reinicios hasta que todas las variables tengan el mismo locale:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    sudo update-locale LC_ALL=&quot;en_GB.UTF-8&quot;
+<ol>
+<li>
+<p>Extendemos la partición a toda la SD (opción: <code>1 Expand Filesystem</code>).</p>
+</li>
+<li>
+<p>Ajustar el Timezone (opción <code>5 Internationalisation Options &gt; I2 Change Timezone</code>). Realmente no es necesario, pero me gusta ver fechas coherentes cuando manipulo el sistema.</p>
+</li>
+<li>
+<p>Ajustar los locales (opción <code>5 Internationalisation Options &gt; I1 Change Locale</code>). Yo por ejemplo elijo <code>en_GB.UTF-8</code>. Es importante que todas las variables que aparecen al ejecutar el comando <code>locale</code> tengan valor correcto e igual en todas ellas. Tras hacer los ajustes es necesario reiniciar, ya que se gestionan mediante variables de entorno de sesión. Tras hacerlo volver a comprobar con el comando <code>locale</code>. Si alguna de las variables sigue con un valor incorrecto (suele ocurrir en LANG, LANGUAGE y LC_ALL), usar el siguiente comando e ir comprobando con sucesivos reinicios hasta que todas las variables tengan el mismo locale:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo update-locale <span class="nv">LC_ALL</span><span class="o">=</span><span class="s2">&quot;en_GB.UTF-8&quot;</span>
 </pre></div>
-</td></tr></table>
-
-<p>5.4. Desactivamos el Overscan (opción <code>9 Advanced Options &gt; A1 Overscan</code>, respondiendo "No").</p>
-<p>5.5. Forzamos el audio a través del jack 3,5mm (opción <code>9 Advanced Options &gt; A8 Audio</code>, respondiendo "1 Force 3.5mm").</p>
+</td></tr></table></p>
+</li>
+<li>
+<p>Desactivamos el Overscan (opción <code>9 Advanced Options &gt; A1 Overscan</code>, respondiendo "No").</p>
+</li>
+<li>
+<p>Forzamos el audio a través del jack 3,5mm (opción <code>9 Advanced Options &gt; A8 Audio</code>, respondiendo "1 Force 3.5mm").</p>
+</li>
+</ol>
 </li>
 </ol>
 <h2 id="instalacion-de-retropie-setup">Instalación de RetroPie-Setup<a class="headerlink" href="#instalacion-de-retropie-setup" title="Permanent link">&para;</a></h2>
@@ -1740,7 +1751,7 @@ sudo install fbcp /usr/local/bin/fbcp
 
 </li>
 <li>
-<p>Reconfiguramos la consola para que se vea bien en la pequeña PiTFT (Elegimos las opciones "UTF-8", "Guess optimal character set", "Terminus" y "6x12 (framebuffer only)."):</p>
+<p>Reconfiguramos la consola para que se vea bien en la pequeña PiTFT (Elegimos las opciones <code>UTF-8</code>, <code>Guess optimal character set</code>, <code>Terminus</code> y <code>6x12 (framebuffer only).</code>):</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo dpkg-reconfigure console-setup
 </pre></div>
 </td></tr></table>
@@ -1905,7 +1916,7 @@ sudo mv retrogame /usr/local/bin
 </li>
 <li>
 <p>Añadir lo siguiente al final de <code>/etc/rc.local</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>/usr/local/bin/retrogame &amp;amp;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>/usr/local/bin/retrogame <span class="p">&amp;</span>
 </pre></div>
 </td></tr></table>
 
@@ -1923,7 +1934,7 @@ snd-bcm2835
 </li>
 <li>
 <p>Sustituir el contenido del fichero <code>/opt/retropie/configs/all/emulationstation/es_input.cfg</code> por:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -1940,24 +1951,24 @@ snd-bcm2835
 15
 16
 17
-18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>&amp;lt;?xml version=&quot;1.0&quot;?&amp;gt;
-&amp;lt;inputList&amp;gt;
-  &amp;lt;inputAction type=&quot;onfinish&quot;&amp;gt;
-    &amp;lt;command&amp;gt;/opt/retropie/supplementary/emulationstation/scripts/inputconfiguration.sh&amp;lt;/command&amp;gt;
-  &amp;lt;/inputAction&amp;gt;
-  &amp;lt;inputConfig type=&quot;keyboard&quot; deviceName=&quot;Keyboard&quot; deviceGUID=&quot;-1&quot;&amp;gt;
-    &amp;lt;input name=&quot;a&quot; type=&quot;key&quot; id=&quot;1073742048&quot; value=&quot;1&quot; /&amp;gt;
-    &amp;lt;input name=&quot;b&quot; type=&quot;key&quot; id=&quot;1073742050&quot; value=&quot;1&quot; /&amp;gt;
-    &amp;lt;input name=&quot;down&quot; type=&quot;key&quot; id=&quot;1073741905&quot; value=&quot;1&quot; /&amp;gt;
-    &amp;lt;input name=&quot;left&quot; type=&quot;key&quot; id=&quot;1073741904&quot; value=&quot;1&quot; /&amp;gt;
-    &amp;lt;input name=&quot;pagedown&quot; type=&quot;key&quot; id=&quot;120&quot; value=&quot;1&quot; /&amp;gt;
-    &amp;lt;input name=&quot;pageup&quot; type=&quot;key&quot; id=&quot;122&quot; value=&quot;1&quot; /&amp;gt;
-    &amp;lt;input name=&quot;right&quot; type=&quot;key&quot; id=&quot;1073741903&quot; value=&quot;1&quot; /&amp;gt;
-    &amp;lt;input name=&quot;select&quot; type=&quot;key&quot; id=&quot;32&quot; value=&quot;1&quot; /&amp;gt;
-    &amp;lt;input name=&quot;start&quot; type=&quot;key&quot; id=&quot;13&quot; value=&quot;1&quot; /&amp;gt;
-    &amp;lt;input name=&quot;up&quot; type=&quot;key&quot; id=&quot;1073741906&quot; value=&quot;1&quot; /&amp;gt;
-  &amp;lt;/inputConfig&amp;gt;
-&amp;lt;/inputList&amp;gt;
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;inputList&gt;</span>
+  <span class="nt">&lt;inputAction</span> <span class="na">type=</span><span class="s">&quot;onfinish&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;command&gt;</span>/opt/retropie/supplementary/emulationstation/scripts/inputconfiguration.sh<span class="nt">&lt;/command&gt;</span>
+  <span class="nt">&lt;/inputAction&gt;</span>
+  <span class="nt">&lt;inputConfig</span> <span class="na">type=</span><span class="s">&quot;keyboard&quot;</span> <span class="na">deviceName=</span><span class="s">&quot;Keyboard&quot;</span> <span class="na">deviceGUID=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;a&quot;</span> <span class="na">type=</span><span class="s">&quot;key&quot;</span> <span class="na">id=</span><span class="s">&quot;1073742048&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;b&quot;</span> <span class="na">type=</span><span class="s">&quot;key&quot;</span> <span class="na">id=</span><span class="s">&quot;1073742050&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;down&quot;</span> <span class="na">type=</span><span class="s">&quot;key&quot;</span> <span class="na">id=</span><span class="s">&quot;1073741905&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;left&quot;</span> <span class="na">type=</span><span class="s">&quot;key&quot;</span> <span class="na">id=</span><span class="s">&quot;1073741904&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;pagedown&quot;</span> <span class="na">type=</span><span class="s">&quot;key&quot;</span> <span class="na">id=</span><span class="s">&quot;120&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;pageup&quot;</span> <span class="na">type=</span><span class="s">&quot;key&quot;</span> <span class="na">id=</span><span class="s">&quot;122&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;right&quot;</span> <span class="na">type=</span><span class="s">&quot;key&quot;</span> <span class="na">id=</span><span class="s">&quot;1073741903&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;select&quot;</span> <span class="na">type=</span><span class="s">&quot;key&quot;</span> <span class="na">id=</span><span class="s">&quot;32&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;start&quot;</span> <span class="na">type=</span><span class="s">&quot;key&quot;</span> <span class="na">id=</span><span class="s">&quot;13&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;up&quot;</span> <span class="na">type=</span><span class="s">&quot;key&quot;</span> <span class="na">id=</span><span class="s">&quot;1073741906&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/inputConfig&gt;</span>
+<span class="nt">&lt;/inputList&gt;</span>
 </pre></div>
 </td></tr></table>
 

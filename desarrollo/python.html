@@ -2299,12 +2299,12 @@
 </ul>
 <h2 id="entorno-django">Entorno Django<a class="headerlink" href="#entorno-django" title="Permanent link">&para;</a></h2>
 <p>Para tener un entorno aislado (sin depender con los paquetes y versiones del sistema), instalar primero <code>pip</code> de Python3. Se puede hacer instalando el paquete <code>python3-pip</code> de Ubuntu, pero dado que interesa actualizar a la última versión, es mejor instalarlo de forma independiente bajando el script <code>get-pip.py</code> de <a href="https://pip.pypa.io/en/stable/installing/">aquí</a> ejecutándolo así:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo python3 get-pip.py
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo python3 get-pip.py
 </pre></div>
 </td></tr></table>
 
 <p>Después ejecutar en terminal:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo pip3 install virtualenv
@@ -2352,18 +2352,18 @@ $ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtuale
 </ol>
 <h2 id="creacion-de-proyecto-django">Creación de proyecto Django<a class="headerlink" href="#creacion-de-proyecto-django" title="Permanent link">&para;</a></h2>
 <p>Desde el directorio donde queremos que se cree ejecutamos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ django-admin startproject project01
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ django-admin startproject project01
 </pre></div>
 </td></tr></table>
 
 <h2 id="creacion-de-aplicacion-django">Creación de aplicación Django<a class="headerlink" href="#creacion-de-aplicacion-django" title="Permanent link">&para;</a></h2>
 <p>Desde el directorio del proyecto (donde se encuentre el fichero <code>manage.py</code>) ejecutamos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ python manage.py startapp app01
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ python manage.py startapp app01
 </pre></div>
 </td></tr></table>
 
 <p>Para incorporar los modelos de la nueva aplicación al mantenimiento automático que proporciona el módulo <code>admin</code> de Django, hay que incorporar al fichero <code>project01/settings.py</code> lo siguiente en la sección <code>INSTALLED_APPS</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2384,17 +2384,17 @@ $ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtuale
 </td></tr></table>
 
 <p>Luego ejecutamos el siguiente comando para generar las migraciones a partir de los modelos definidos en la app:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ python manage.py makemigrations app01
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ python manage.py makemigrations app01
 </pre></div>
 </td></tr></table>
 
 <p>Finalmente ejecutamos las migraciones propiamente dichas:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ python manage.py migrate
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ python manage.py migrate
 </pre></div>
 </td></tr></table>
 
 <p>Para poder utilizar el módulo <code>admin</code> de Django, hay que crear al menos un usuario:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ python manage.py createsuperuser
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ python manage.py createsuperuser
 </pre></div>
 </td></tr></table>
 
@@ -2405,7 +2405,7 @@ $ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtuale
 <li><a href="https://simpleisbetterthancomplex.com/tutorial/2018/01/18/how-to-implement-multiple-user-types-with-django.html">How to Implement Multiple User Types with Django</a></li>
 </ul>
 <p>Creamos el modelo así:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">AbstractUser</span>
@@ -2421,7 +2421,7 @@ $ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtuale
 </td></tr></table>
 
 <p>Si no queremos perder los formularios especiales de la aplicación <code>admin</code> para el modelo original, además hay que personalizar la clase <code>UserAdmin</code> de la siguiente forma:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2437,27 +2437,27 @@ $ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtuale
 
 <h2 id="gestion-de-migraciones">Gestión de migraciones<a class="headerlink" href="#gestion-de-migraciones" title="Permanent link">&para;</a></h2>
 <p>Una vez generadas las migraciones, si queremos obtener el código SQL a que equivalen hay que ejecutar el comando (en el ejemploo solicitamos el código correspondiente a la migración <code>0008</code>):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ python manage.py sqlmigrate app01 0008
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ python manage.py sqlmigrate app01 0008
 </pre></div>
 </td></tr></table>
 
 <p>Para situarnos en un punto concreto de la serie de migraciones (deshaciendo por tanto las posteriores cuyos ficheros se podrán borrar):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ python manage.py migrate app01 0010
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ python manage.py migrate app01 0010
 </pre></div>
 </td></tr></table>
 
 <p>Para mostrar los nombres de todas las migraciones (si no ponemos el nombre al final se muestran las de todo el sitio):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ python manage.py showmigrations app01
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ python manage.py showmigrations app01
 </pre></div>
 </td></tr></table>
 
 <p>Para deshacer todas las migraciones:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ python manage.py migrate app01 zero
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ python manage.py migrate app01 zero
 </pre></div>
 </td></tr></table>
 
 <p>Para crear una migración vacía que podremos utilizar para hacer transferencias de datos (ver ejemplo <a href="https://stackoverflow.com/questions/2224410/django-data-migration-when-changing-a-field-to-manytomany?rq=1">aquí</a>):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ python manage.py makemigrations app01 --empty
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>(djangodev) $ python manage.py makemigrations app01 --empty
 </pre></div>
 </td></tr></table>
 
@@ -2465,18 +2465,22 @@ $ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtuale
 <ul>
 <li>
 <p>Con tuplas (no se puede cambiar el orden de los parámetros):</p>
-<p><code>python
-"%s parte de %s la cadena" % (var1, var2)</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> parte de </span><span class="si">%s</span><span class="s2"> la cadena&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
 </li>
 <li>
 <p>Con diccionario (se puede cambiar el orden de los parámetros):</p>
-<p><code>python
-"%(par1)s parte de %(par2)s la cadena" % {'par1': var1, 'par2': var2}</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="s2">&quot;</span><span class="si">%(par1)s</span><span class="s2"> parte de </span><span class="si">%(par2)s</span><span class="s2"> la cadena&quot;</span> <span class="o">%</span> <span class="p">{</span><span class="s1">&#39;par1&#39;</span><span class="p">:</span> <span class="n">var1</span><span class="p">,</span> <span class="s1">&#39;par2&#39;</span><span class="p">:</span> <span class="n">var2</span><span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
 </li>
 </ul>
 <h2 id="directorio-instalacion-django">Directorio instalación Django<a class="headerlink" href="#directorio-instalacion-django" title="Permanent link">&para;</a></h2>
 <p>Para averiguar dónde están los ficheros de Django, ejecutar el siguiente comando:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">(</span><span class="n">djangodev</span><span class="p">)</span> <span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import django; print(django.__path__)&quot;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">(</span><span class="n">djangodev</span><span class="p">)</span> <span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import django; print(django.__path__)&quot;</span>
 </pre></div>
 </td></tr></table>
 
@@ -2531,7 +2535,7 @@ $ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtuale
 <p>La más sencilla. Sólo necesita definir la propiedad <code>template_name</code> apuntando a la plantilla. Para añadir datos al contexto (esto funciona en todas las view classes) se puede definir la función <code>get_context_data</code> (ver ejemplo e apartado <code>Passing variables to the template</code> <a href="https://hellowebbooks.com/news/introduction-to-class-based-views/">aquí</a>)</p>
 <h4 id="redirectview">RedirectView<a class="headerlink" href="#redirectview" title="Permanent link">&para;</a></h4>
 <p>Se puede usar tal cual para definir redirecciones en los ficheros <code>url.py</code>. Por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
@@ -2552,7 +2556,7 @@ $ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtuale
 <h3 id="genericas-para-edicion-de-modelos">Genéricas para edición de modelos<a class="headerlink" href="#genericas-para-edicion-de-modelos" title="Permanent link">&para;</a></h3>
 <p>Permiten personalizar las vistas típicas del mantenimiento de un modelo (creación, actualización y borrado). Documentadas <a href="https://docs.djangoproject.com/es/1.11/ref/class-based-views/generic-editing/">aquí</a>.</p>
 <p>En cualquiera de las cuatro siguientes clases, en la plantilla incluiremos los tags HTML para el formulario (no se generan automáticamente porque la página podría contener varios formularios o por si no estamos generando HTML). Se suele hacer algo así:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="s2">&quot;{% csrf_token &quot;</span> <span class="cp">}}</span>%}
@@ -2615,7 +2619,7 @@ $ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtuale
 </li>
 </ul>
 <h3 id="filtro-en-listview">Filtro en ListView<a class="headerlink" href="#filtro-en-listview" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2700,7 +2704,7 @@ $ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtuale
 <h2 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h2>
 <h3 id="log-a-fichero">Log a fichero<a class="headerlink" href="#log-a-fichero" title="Permanent link">&para;</a></h3>
 <p>Configurar un logger en el fichero de settings correspondiente añadiendo esto:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2739,7 +2743,7 @@ $ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtuale
 </td></tr></table>
 
 <p>En el módulo donde queramos obtener log, añadir al principio lo siguiente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
 
@@ -2748,19 +2752,19 @@ $ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtuale
 </td></tr></table>
 
 <p>Y dentro de la función donde queramos emitir algo al log:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;lo que sea&#39;</span><span class="p">)</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;lo que sea&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
 <h3 id="log-a-consola">Log a consola<a class="headerlink" href="#log-a-consola" title="Permanent link">&para;</a></h3>
 <p>Si sólo queremos imprimir en consola una traza rápida, es más fácil escribiendo simplemente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;lo que sea&#39;</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;lo que sea&#39;</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
 <h3 id="traza-de-queries-a-consola">Traza de queries a consola<a class="headerlink" href="#traza-de-queries-a-consola" title="Permanent link">&para;</a></h3>
 <p>Configurar el siguiente logger en el fichero de settings correspondiente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2806,7 +2810,7 @@ $ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtuale
 
 <h2 id="pip">pip<a class="headerlink" href="#pip" title="Permanent link">&para;</a></h2>
 <h3 id="instalacion-version-especifica">Instalación versión específica<a class="headerlink" href="#instalacion-version-especifica" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pip install <span class="nv">Django</span><span class="o">==</span><span class="m">1</span>.11.6
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pip install <span class="nv">Django</span><span class="o">==</span><span class="m">1</span>.11.6
 </pre></div>
 </td></tr></table>
 
@@ -2816,7 +2820,7 @@ $ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtuale
 <li><a href="https://robots.thoughtbot.com/how-to-manage-your-python-projects-with-pipenv">How to manage your Python projects with Pipenv</a></li>
 </ul>
 <h3 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo -H pip install pipenv
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo -H pip install pipenv
 </pre></div>
 </td></tr></table>
 
@@ -2898,25 +2902,17 @@ $ pipenv shell
 </ul>
 <h3 id="procedimiento">Procedimiento<a class="headerlink" href="#procedimiento" title="Permanent link">&para;</a></h3>
 <ol>
-<li>
-<p>Instalamos Vue-CLI en la máquina de desarrollo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<li>Instalamos Vue-CLI en la máquina de desarrollo:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo npm install -g @vue/cli
 sudo npm install -g @vue/cli-init
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Generamos el scaffolding para vue y webpack ejecutando lo siguiente desde el directorio que queremos que contenga el proyecto (en el ejemplo lo llamaremos <code>vue_test</code>):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>vue init webpack vue_test
+</td></tr></table></li>
+<li>Generamos el scaffolding para vue y webpack ejecutando lo siguiente desde el directorio que queremos que contenga el proyecto (en el ejemplo lo llamaremos <code>vue_test</code>):
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>vue init webpack vue_test
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Durante la generación del proyecto se nos hacen las siguientes preguntas:</p>
-<ol>
+</td></tr></table></li>
+<li>Durante la generación del proyecto se nos hacen las siguientes preguntas:<ol>
 <li>Vue build: Elegimos <code>Runtime + Compiler</code></li>
 <li>Install vue-router?: Elegimos <code>Y</code></li>
 <li>Use ESLint to lint your code?: n</li>
@@ -2925,27 +2921,20 @@ sudo npm install -g @vue/cli-init
 <li>Should we run <code>npm install</code> for you after the project has been created?: Yes, use NPM</li>
 </ol>
 </li>
-<li>
-<p>Generamos el scaffolding para Django:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd vue_test/
+<li>Generamos el scaffolding para Django:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> vue_test/
 django-admin startproject vue_test .
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Instalamos el plugin de webpack <code>webpack-bundle-tracker</code> y el módulo Django <code>django-webpack-loader</code> (con pipenv):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+</td></tr></table></li>
+<li>Instalamos el plugin de webpack <code>webpack-bundle-tracker</code> y el módulo Django <code>django-webpack-loader</code> (con pipenv):
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>npm install --save-dev webpack-bundle-tracker
 pipenv install django-webpack-loader
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Añadimos <code>webpack_loader</code> a las aplicaciones Django:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+</td></tr></table></li>
+<li>Añadimos <code>webpack_loader</code> a las aplicaciones Django:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2955,12 +2944,9 @@ INSTALLED_APPS = [
 #...
 ]
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Configurar webpack para que use <code>BundleTracker</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+</td></tr></table></li>
+<li>Configurar webpack para que use <code>BundleTracker</code>:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2976,15 +2962,10 @@ module.exports = {
   ],
 }
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Definir las rutas estáticas:</p>
-<ul>
-<li>
-<p>Configuración webpack:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+</td></tr></table></li>
+<li>Definir las rutas estáticas:<ul>
+<li>Configuración webpack:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -3010,12 +2991,9 @@ module.exports = {
   }
 }
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Configuración Django:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+</td></tr></table></li>
+<li>Configuración Django:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -3043,14 +3021,11 @@ WEBPACK_LOADER = {
     }
 }
 </pre></div>
-</td></tr></table>
-
-</li>
+</td></tr></table></li>
 </ul>
 </li>
-<li>
-<p>Configuración webpack para que resuelva los ficheros estáticos desde <code>/static</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<li>Configuración webpack para que resuelva los ficheros estáticos desde <code>/static</code>:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -3066,12 +3041,9 @@ module.exports = {
     },
 }
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Configuración del Hot Reload:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+</td></tr></table></li>
+<li>Configuración del Hot Reload:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -3085,34 +3057,32 @@ devServer: {
   // ...
 }
 </pre></div>
-</td></tr></table>
-
-</li>
+</td></tr></table></li>
 </ol>
 <p>Los contenidos estáticos se servirán desde uno y otro entorno de la siguiente forma:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="x">&amp;lt;!-- in a Django template --&amp;gt;</span>
-<span class="x">&amp;lt;img src=&quot;</span><span class="cp">{{</span> <span class="s2">&quot;{% static &#39;logo.png&#39; &quot;</span> <span class="cp">}}</span><span class="x">%}&quot;&amp;gt;</span>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">&lt;!-- in a Django template --&gt;</span>
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{{ &quot;</span><span class="err">{%</span> <span class="na">static</span> <span class="err">&#39;</span><span class="na">logo</span><span class="err">.</span><span class="na">png</span><span class="err">&#39;</span> <span class="err">&quot;</span> <span class="err">}}%}&quot;</span><span class="p">&gt;</span>
 
-<span class="x">&amp;lt;!-- in a Vue component --&amp;gt;</span>
-<span class="x">&amp;lt;img src=&quot;~__STATIC__/logo.png&quot;&amp;gt;</span>
+<span class="c">&lt;!-- in a Vue component --&gt;</span>
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;~__STATIC__/logo.png&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table>
 
 <p>Finalmente, para servir los contenidos cliente en desarrollo hay que ejecutar:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd vue-test
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> vue-test
 npm run dev
 </pre></div>
 </td></tr></table>
 
 <p>Y para servir los contenidos del backend:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd vue-test
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> vue-test
 pipenv shell
 python manage.py runserver
 </pre></div>

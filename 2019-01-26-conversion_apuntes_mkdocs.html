@@ -428,6 +428,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#enlaces-documentacion" title="Enlaces documentación" class="md-nav__link">
+    Enlaces documentación
+  </a>
+  
+</li>
+      
       
       
       
@@ -1484,6 +1491,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#enlaces-documentacion" title="Enlaces documentación" class="md-nav__link">
+    Enlaces documentación
+  </a>
+  
+</li>
+      
       
       
       
@@ -1510,24 +1524,38 @@
 <ol>
 <li>Renombro el antiguo repositorio construido con Jekyll de <code>eduardofilo.github.io</code> a <code>eduardofilo.jekyll</code> para dejar libre el repositorio que contendrá el nuevo sitio.</li>
 <li>Creo directorio:
-        $ mkdir ~/git/eduardofilo.mkdocs
-        $ cd ~/git/eduardofilo.mkdocs</li>
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mkdir ~/git/eduardofilo.mkdocs
+$ <span class="nb">cd</span> ~/git/eduardofilo.mkdocs
+</pre></div>
+</td></tr></table></li>
 <li>Creo entorno Python3 con pipenv:
-        $ pipenv install --three</li>
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pipenv install --three
+</pre></div>
+</td></tr></table></li>
 <li>Instalo mkdocs, el tema <a href="https://squidfunk.github.io/mkdocs-material/">Material</a> y algunas <a href="https://squidfunk.github.io/mkdocs-material/extensions/admonition/">extensiones</a>:
-        $ pipenv install mkdocs pygments mkdocs-material</li>
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pipenv install mkdocs pygments mkdocs-material
+</pre></div>
+</td></tr></table></li>
 <li>Instalo versión beta de módulo pyyaml por un aviso de seguridad que da GitHub sobre la versión 3.13 que se instala normalmente. Para ello añado lo siguiente al fichero <code>Pipfile</code> en la sección <code>[packages]</code>. Tras ello ejecuto <code>pipenv install</code>:
-        pyyaml = "&gt;=4.2b1"</li>
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pyyaml = &quot;&gt;=4.2b1&quot;
+</pre></div>
+</td></tr></table></li>
 <li>Arranco shell en el entorno:
-        $ pipenv shell</li>
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pipenv shell
+</pre></div>
+</td></tr></table></li>
 <li>Creo el proyecto mkdocs desde el directorio anterior:
-        $ cd ..
-        $ mkdocs new eduardofilo.mkdocs
-        $ cd eduardofilo.mkdocs</li>
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ..
+$ mkdocs new eduardofilo.mkdocs
+$ <span class="nb">cd</span> eduardofilo.mkdocs
+</pre></div>
+</td></tr></table></li>
 <li>Copio los directorios con los contenidos del sitio Jekyll (<code>cursos</code>, <code>desarrollo</code>, <code>images</code>, <code>proyectos</code>, <code>sistemas</code> y <code>varios</code>) al directorio <code>docs</code>.</li>
-<li>
-<p>Configuro el fichero <code>mkdocs.yml</code> con el siguiente contenido:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<li>Configuro el fichero <code>mkdocs.yml</code> con el siguiente contenido:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -1574,7 +1602,8 @@
 45
 46
 47
-48</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># Project information
+48
+49</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># Project information
 site_name: Apuntes de eduardofilo
 site_description: Apuntes varios sobre algunas de las cosas que necesito recordar, principalmente sobre Desarrollo y         Sistemas.
 site_author: Eduardo Moreno Lamana
@@ -1597,6 +1626,7 @@ theme:
     palette:
         primary: &#39;deep orange&#39;
         accent: &#39;amber&#39;
+
 
 # Customization
 extra:
@@ -1623,12 +1653,8 @@ markdown_extensions:
         permalink: True
     - admonition
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Copio todos los ficheros del directorio <code>_posts</code> de Jekyll al directorio <code>docs</code>.</p>
-</li>
+</td></tr></table></li>
+<li>Copio todos los ficheros del directorio <code>_posts</code> de Jekyll al directorio <code>docs</code>.</li>
 <li>Modifico cada uno de los posts que allí hay de la siguiente manera:<ol>
 <li>Retiro los delimitadores del YAML, es decir los tres guiones que hay al principio y al final del bloque.</li>
 <li>Retiro las propiedad <code>layout</code> y <code>published</code> y añado una llamada <code>summary</code>.</li>
@@ -1637,26 +1663,25 @@ markdown_extensions:
 <li>Genero estructura de navegación en bloque <code>nav:</code> al final de <code>mkdocs.yml</code></li>
 <li>Creo fichero <code>CNAME</code> dentro del directorio <code>docs</code> con el nombre del dominio personalizado.</li>
 <li>Creo repositorio en GitHub con nombre <code>eduardofilo.github.io</code>.</li>
-<li>
-<p>Creo copia de trabajo del repsitorio anterior:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<li>Creo copia de trabajo del repsitorio anterior:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~/git
 $ git clone git@github.com:eduardofilo/eduardofilo.github.io.git
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Finalmente publico el sitio ejecutando el siguiente comando desde el directorio de trabajo del repositorio anterior (hay que recordar que para que funcione el comando <code>mkdocs</code> hay que haber iniciado el entorno virtual antes con <code>pipenv shell</code> desde el directorio <code>~/git/eduardofilo.mkdocs</code>):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+</td></tr></table></li>
+<li>Finalmente publico el sitio ejecutando el siguiente comando desde el directorio de trabajo del repositorio anterior (hay que recordar que para que funcione el comando <code>mkdocs</code> hay que haber iniciado el entorno virtual antes con <code>pipenv shell</code> desde el directorio <code>~/git/eduardofilo.mkdocs</code>):
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~/git/eduardofilo.github.io
 $ mkdocs gh-deploy --config-file ../eduardofilo.mkdocs/mkdocs.yml --remote-branch master
 </pre></div>
-</td></tr></table>
-
-</li>
+</td></tr></table></li>
 </ol>
 <p>Falta crear un RSS con el <a href="http://apuntes.eduardofilo.es/feed.xml">feed</a> que generaba Jekyll antiguamente.</p>
+<h2 id="enlaces-documentacion">Enlaces documentación<a class="headerlink" href="#enlaces-documentacion" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://squidfunk.github.io/mkdocs-material/extensions/admonition/">Extensiones de Material for MkDocs</a></li>
+<li><a href="https://squidfunk.github.io/mkdocs-material/extensions/pymdown/">Extensiones de MyMdonw</a></li>
+</ul>
                 
                   
                 

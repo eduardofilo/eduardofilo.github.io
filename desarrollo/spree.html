@@ -1735,7 +1735,7 @@
 <h2 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h2>
 <h3 id="override-de-preferencias">Override de preferencias<a class="headerlink" href="#override-de-preferencias" title="Permanent link">&para;</a></h3>
 <p>Crear el fichero <code>config/initializers/spree_config.rb</code> y hacer un set de las propiedades. Por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -1755,7 +1755,7 @@
 <p>Las preferencias ajustadas de esta forma acaban en la base de datos en la tabla <code>spree_preferences</code>. Si se quita alguna de las lineas anteriores, hay que eliminar el registro correspondiente para que deje de hacer efecto. En ocasiones no es suficiente con esto, ya que también puede influir el hecho de que algunas queries son cacheadas. En ese caso hay que borrar el directorio <code>tmp/cache</code>.</p>
 <h3 id="actualizacion-de-version">Actualización de versión<a class="headerlink" href="#actualizacion-de-version" title="Permanent link">&para;</a></h3>
 <p>Cuando aparezca una nueva versión de Spree y se quiera actualizar hay que proceder como sigue:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle update spree
 $ bundle <span class="nb">exec</span> rake railties:install:migrations
@@ -1774,7 +1774,7 @@ $ bundle <span class="nb">exec</span> rake db:migrate
 <h3 id="instalacion-de-version-20">Instalación de versión 2.0<a class="headerlink" href="#instalacion-de-version-20" title="Permanent link">&para;</a></h3>
 <p>El instalador de las últimas versiones no es del todo redondo (al menos en el momento de escribir esto) y da algunos errores. Para superarlos hay que proceder como sigue.</p>
 <p>Ejecutar en consola lo siguiente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rails new spapp
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rails new spapp
 </pre></div>
 </td></tr></table>
 
@@ -1784,7 +1784,7 @@ $ bundle <span class="nb">exec</span> rake db:migrate
 </td></tr></table>
 
 <p>Ejecutamos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> spapp
 $ spree install
 </pre></div>
@@ -1800,7 +1800,7 @@ gem &#39;spree_auth_devise&#39;, :github =&amp;gt; &#39;spree/spree_auth_devise&
 </td></tr></table>
 
 <p>Finalmente de nuevo ejecutamos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle install
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle install
 </pre></div>
 </td></tr></table>
 
@@ -1811,14 +1811,14 @@ gem &#39;spree_auth_devise&#39;, :github =&amp;gt; &#39;spree/spree_auth_devise&
 <li>Usando el override que permite configurar el ActionMailer en el backend</li>
 </ol>
 <p>Para el primer tipo empezamos poniendo las siguientes preferencias en el fichero <code>config/initializers/spree.rb</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">config</span><span class="o">.</span><span class="n">override_actionmailer_config</span> <span class="o">=</span> <span class="kp">false</span>
 <span class="n">config</span><span class="o">.</span><span class="n">mails_from</span> <span class="o">=</span> <span class="s2">&quot;origen@mail.com&quot;</span>
 </pre></div>
 </td></tr></table>
 
 <p>Luego añadimos lo siguiente en el fichero de configuración del entorno, por ejemplo en development sería <code>config/environments/development.rb</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -1839,18 +1839,18 @@ gem &#39;spree_auth_devise&#39;, :github =&amp;gt; &#39;spree/spree_auth_devise&
 </td></tr></table>
 
 <p>En teoría con esto sería suficiente, pero en las primeras pruebas hechas, sólo funcionó con la versión 2.5.3 de la gem <code>mail</code>, por lo que hubo que especificarla en el Gemfile:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">gem</span> <span class="s1">&#39;mail&#39;</span><span class="p">,</span> <span class="s1">&#39;2.5.3&#39;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">gem</span> <span class="s1">&#39;mail&#39;</span><span class="p">,</span> <span class="s1">&#39;2.5.3&#39;</span>
 </pre></div>
 </td></tr></table>
 
 <p>La última versión de <code>mail</code> es la 2.5.4 que será la que normalmente esté instalada. Para hacer el downgrade hay que ejecutar desde el directorio de nuestro proyecto:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle update mail
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle update mail
 </pre></div>
 </td></tr></table>
 
 <p>En posteriores versiones de las gemas ya funcionaba con la versión 2.5.4 de <code>mail</code> por lo que dejó de ser necesario hacer este apaño.</p>
 <p>Para el segundo tipo de configuración empezamos poniendo las siguientes preferencias en el fichero <code>config/initializers/spree.rb</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">config</span><span class="o">.</span><span class="n">override_actionmailer_config</span> <span class="o">=</span> <span class="kp">true</span>
 <span class="n">config</span><span class="o">.</span><span class="n">mails_from</span> <span class="o">=</span> <span class="s2">&quot;origen@mail.com&quot;</span>
 </pre></div>
@@ -1862,7 +1862,7 @@ gem &#39;spree_auth_devise&#39;, :github =&amp;gt; &#39;spree/spree_auth_devise&
 <p><img alt="Conf con DH" src="/images/pages/conf_dh.png" title="Configuración con DinaHosting" /></p>
 <h3 id="configuracion-segun-entorno">Configuración según entorno<a class="headerlink" href="#configuracion-segun-entorno" title="Permanent link">&para;</a></h3>
 <p>Si queremos ajustar algunas preferencias en el initializer <code>config/initializers/spree.rb</code> de manera que su valor dependa del environment, podemos hacer lo siguiente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -1884,7 +1884,7 @@ gem &#39;spree_auth_devise&#39;, :github =&amp;gt; &#39;spree/spree_auth_devise&
 
 <h3 id="resetear-base-de-datos">Resetear base de datos<a class="headerlink" href="#resetear-base-de-datos" title="Permanent link">&para;</a></h3>
 <p>Si queremos comenzar de nuevo en lo que respecta a la base de datos, se puede hacer fácilmente con el siguiente comando:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rake db:reset
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ bundle <span class="nb">exec</span> rake db:reset
 </pre></div>
 </td></tr></table>
 

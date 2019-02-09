@@ -1685,19 +1685,19 @@
 </ul>
 <h2 id="reempaquetar-un-jar">Reempaquetar un jar<a class="headerlink" href="#reempaquetar-un-jar" title="Permanent link">&para;</a></h2>
 <p>Para re-enlatar un jar que hemos explotado para retocar su contendido, hay que ejecutar el siguiente comando desde el directorio raíz donde descomprimimos el jar original:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ jar cvf nombre.jar *
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ jar cvf nombre.jar *
 </pre></div>
 </td></tr></table>
 
 <h2 id="contar-lineas">Contar lineas<a class="headerlink" href="#contar-lineas" title="Permanent link">&para;</a></h2>
 <p>Para contar las lineas de un proyecto, lanzar desde la raíz del proyecto ( el directorio src/java de un proyecto NetBeans, por ejemplo):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ find . -name <span class="s2">&quot;*.java&quot;</span> <span class="p">|</span> xargs wc -l
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ find . -name <span class="s2">&quot;*.java&quot;</span> <span class="p">|</span> xargs wc -l
 </pre></div>
 </td></tr></table>
 
 <h2 id="imprimir-callstack">Imprimir callstack<a class="headerlink" href="#imprimir-callstack" title="Permanent link">&para;</a></h2>
 <p>Para averiguar la pila de llamadas de funciones que nos permiten llegar a la ejecución del punto que estamos revisando. Viene muy bien cuando la ejecución implica llamadas JNI ya que esa parte del código suele quedar oculta en una librería nativa (.so o .dll).</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">for</span> <span class="o">(</span><span class="n">StackTraceElement</span> <span class="n">ste</span> <span class="o">:</span> <span class="n">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getStackTrace</span><span class="o">())</span> <span class="o">{</span>
     <span class="n">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="n">ste</span><span class="o">);</span>
@@ -1707,7 +1707,7 @@
 
 <h2 id="iterar-un-map">Iterar un Map<a class="headerlink" href="#iterar-un-map" title="Permanent link">&para;</a></h2>
 <p>Para el caso de un <code>Map&lt;String, String&gt;</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -1755,7 +1755,7 @@
 <li>CONSOLE imprimirá los mensajes en la consola por líneas (%m%n).</li>
 <li>LOGFILE añadirá (append) los mensajes a un fichero (aplicacion.log), reservando los primeros 4 caracteres para los milisegundos en que se generó el mensaje (%-4r), entre corchetes quién generó el mensaje ( [%t]), cinco espacios para la prioridad del mensaje (%-5p), la categoría del mensaje (%c) y finalmente el propio mensaje junto con un retorno de carro (%m%n).</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -1809,12 +1809,11 @@ log4j.appender.LOGFILE.layout.ConversionPattern=%-4r [%t] %-5p %c - %m%n
 
 <p>Para el caso de utilizar PatternLayout, la definición de las piezas de información que se pueden incorporar al patrón se encuentra en <a href="http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/PatternLayout.html">esta página</a>.</p>
 <p>Si se desea únicamente log de las clases pertenecientes a un paquete (es una forma de evitar los logs del servidor de aplicación en una aplicación J2EE), se indica de añadiendo esta línea:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">log4j</span><span class="o">.</span><span class="na">logger</span><span class="o">.&lt;</span><span class="n">paquete</span><span class="o">&gt;=&lt;</span><span class="n">nivel_de_trazas</span><span class="o">&gt;</span>
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">log4j</span><span class="o">.</span><span class="na">logger</span><span class="o">.&lt;</span><span class="n">paquete</span><span class="o">&gt;=&lt;</span><span class="n">nivel_de_trazas</span><span class="o">&gt;</span>
 </pre></div>
 </td></tr></table>
-
-<p>por ejemplo:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">log4j</span><span class="o">.</span><span class="na">logger</span><span class="o">.</span><span class="na">es</span><span class="o">.</span><span class="na">eduardofilo</span><span class="o">.</span><span class="na">ccm</span><span class="o">=</span><span class="n">DEBUG</span>
+por ejemplo:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">log4j</span><span class="o">.</span><span class="na">logger</span><span class="o">.</span><span class="na">es</span><span class="o">.</span><span class="na">eduardofilo</span><span class="o">.</span><span class="na">ccm</span><span class="o">=</span><span class="n">DEBUG</span>
 </pre></div>
 </td></tr></table>
                 

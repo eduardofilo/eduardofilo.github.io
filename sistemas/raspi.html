@@ -2032,7 +2032,7 @@
 <h2 id="comandos-utiles">Comandos útiles<a class="headerlink" href="#comandos-utiles" title="Permanent link">&para;</a></h2>
 <h3 id="comprobar-asignaciones-de-cliente-no-ip">Comprobar asignaciones de cliente No-IP<a class="headerlink" href="#comprobar-asignaciones-de-cliente-no-ip" title="Permanent link">&para;</a></h3>
 <p>Las asignaciones dejan marca en el log <code>syslog</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2049,12 +2049,12 @@ Oct <span class="m">16</span> <span class="m">13</span>:15:25 raspi-git noip2<sp
 </td></tr></table>
 
 <h3 id="utilidad-de-configuracion">Utilidad de configuración<a class="headerlink" href="#utilidad-de-configuracion" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo raspi-config
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo raspi-config
 </pre></div>
 </td></tr></table>
 
 <h3 id="backup-de-la-sd-comprimiendo-al-vuelo">Backup de la SD (comprimiendo al vuelo)<a class="headerlink" href="#backup-de-la-sd-comprimiendo-al-vuelo" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2077,7 +2077,7 @@ $ unzip -p Rpi_8gb_backup.zip <span class="p">|</span> pv <span class="p">|</spa
 </td></tr></table>
 
 <p>Para hacer un backup parcial los cálculos se harían así. Primero sacamos los datos de la estructura de la tarjeta con <code>fdisk</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2108,7 +2108,7 @@ Dispositivo    Inicio Comienzo    Final Sectores Tamaño Id Tipo
 
 <p>Por tanto en este caso copiaremos 3797 bloques para cubrir esos 15550464 sectores.</p>
 <h3 id="backup-de-la-sd-comprimiendo-al-vuelo-y-diviendo-en-trozos-el-fichero-resultante">Backup de la SD (comprimiendo al vuelo y diviendo en trozos el fichero resultante)<a class="headerlink" href="#backup-de-la-sd-comprimiendo-al-vuelo-y-diviendo-en-trozos-el-fichero-resultante" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="c1">#Backup:</span>
@@ -2119,12 +2119,12 @@ $ cat Rpi_8gb_backup.img.gz.part_* <span class="p">|</span> gunzip -c <span clas
 </td></tr></table>
 
 <h3 id="control-de-progreso-durante-flasheo">Control de progreso durante flasheo<a class="headerlink" href="#control-de-progreso-durante-flasheo" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo pkill -USR1 -n -x dd
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo pkill -USR1 -n -x dd
 </pre></div>
 </td></tr></table>
 
 <p>Como alternativa se puede instalar el comando <code>dcfldd</code> para sustituir a <code>dd</code>, con lo que obtendremos una indicación del progreso de la copia. <code>dcfldd</code> informa cada 256 bloques escritos por defecto. Para que lo haga con más frecuencia hay que pasarle la opción <code>statusinterval</code> de esta forma:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="c1">#Backup:</span>
 $ sudo dcfldd <span class="nv">statusinterval</span><span class="o">=</span><span class="m">10</span> <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="p">|</span> gzip -9 - &gt; Rpi_8gb_backup.img.gz
 </pre></div>
@@ -2132,7 +2132,7 @@ $ sudo dcfldd <span class="nv">statusinterval</span><span class="o">=</span><spa
 
 <h3 id="gestion-de-la-swap">Gestión de la SWAP<a class="headerlink" href="#gestion-de-la-swap" title="Permanent link">&para;</a></h3>
 <p>Para redimensionar la Swap predeterminada (fichero de 100MB en <code>/var/swap</code>):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo nano /etc/dphys-swapfile
 $ sudo dphys-swapfile setup
@@ -2141,27 +2141,27 @@ $ sudo dphys-swapfile swapon
 </td></tr></table>
 
 <p>Para consultar el estado de la swap:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ swapon -s
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ swapon -s
 </pre></div>
 </td></tr></table>
 
 <p>Para dejar de usar swap:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo swapoff -a
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo swapoff -a
 </pre></div>
 </td></tr></table>
 
 <p>Para activar la swap tal y como está definida en ''/etc/fstab'':</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo swapon -a
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo swapon -a
 </pre></div>
 </td></tr></table>
 
 <p>Para activar swap con un fichero en concreto:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo swapon /var/swap
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo swapon /var/swap
 </pre></div>
 </td></tr></table>
 
 <h3 id="escaneo-de-raspberry-pis-en-red">Escaneo de Raspberry Pi's en red<a class="headerlink" href="#escaneo-de-raspberry-pis-en-red" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ arp -a <span class="p">|</span> grep b8:27:eb
 $ sudo nmap -PR -sP <span class="m">192</span>.168.1.0/24 <span class="p">|</span> fgrep -B <span class="m">2</span> <span class="s2">&quot;Raspberry&quot;</span>
 </pre></div>
@@ -2186,7 +2186,7 @@ $ sudo nmap -PR -sP <span class="m">192</span>.168.1.0/24 <span class="p">|</spa
 <h2 id="seguridad">Seguridad<a class="headerlink" href="#seguridad" title="Permanent link">&para;</a></h2>
 <h3 id="ssh">SSH<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h3>
 <p>Editar el fichero <code>/etc/ssh/sshd_config</code> y modificar/añadir las siguientes líneas (<a href="http://blog.zoogon.net/2013/01/protegiendo-un-poco-nuestra-raspberry.html">fuente</a>):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PermitRootLogin no
@@ -2215,7 +2215,7 @@ AllowUsers edumoreno
 <p>Crear un fichero vacío con nombre <code>ssh</code> en partición boot.</p>
 <h3 id="conexion-a-punto-de-acceso-wifi">Conexión a punto de acceso Wifi<a class="headerlink" href="#conexion-a-punto-de-acceso-wifi" title="Permanent link">&para;</a></h3>
 <p>Crear un fichero con nombre <code>wpa_supplicant.conf</code> en partición boot con el siguiente contenido:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2237,7 +2237,7 @@ network={
 
 <h3 id="ip-estatica">IP estática<a class="headerlink" href="#ip-estatica" title="Permanent link">&para;</a></h3>
 <p>Primero averiguamos el nombre del interfaz al que queremos poner la IP estática consultando <code>ifconfig</code>. Luego editamos <code>/etc/dhcpcd.conf</code> y al final añadimos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kr">interface</span> <span class="o">&lt;</span><span class="nx">nombre_interfaz</span><span class="o">&gt;</span>
@@ -2288,43 +2288,30 @@ network={
 <h4 id="clic-secundario">Clic secundario<a class="headerlink" href="#clic-secundario" title="Permanent link">&para;</a></h4>
 <p>Para conseguir emular el clic derecho del ratón procedemos como sigue (fuentes: <a href="https://maker-tutorials.com/en/raspberry-ri-touch-screen-setup-right-click-with-twofing/">1</a> y <a href="https://www.diskiopi.com/forum/viewtopic.php?id=30">2</a>):</p>
 <ol>
-<li>
-<p>Instalamos los siguientes paquetes:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo apt-get update <span class="p">&amp;</span>amp<span class="p">;&amp;</span>amp<span class="p">;</span> sudo apt-get install build-essential libx11-dev libxtst-dev libxi-dev x11proto-randr-dev libxrandr-dev xserver-xorg-input-evdev xinput-calibrator
+<li>Instalamos los siguientes paquetes:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get install build-essential libx11-dev libxtst-dev libxi-dev x11proto-randr-dev libxrandr-dev xserver-xorg-input-evdev xinput-calibrator
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Descargamos el código de twofing y lo extraemos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+</td></tr></table></li>
+<li>Descargamos el código de twofing y lo extraemos:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ wget http://plippo.de/dwl/twofing/twofing-0.1.2.tar.gz
 $ tar -xvzf twofing-0.1.2.tar.gz
 $ <span class="nb">cd</span> twofing-0.1.2
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Compilamos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ make <span class="p">&amp;</span>amp<span class="p">;&amp;</span>amp<span class="p">;</span> sudo make install
+</td></tr></table></li>
+<li>Compilamos:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ make <span class="o">&amp;&amp;</span> sudo make install
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Creamos el fichero <code>/etc/udev/rules.d/70-touchscreen-ilitek.rules</code> con el siguiente contenido:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+</td></tr></table></li>
+<li>Creamos el fichero <code>/etc/udev/rules.d/70-touchscreen-ilitek.rules</code> con el siguiente contenido:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SUBSYSTEMS==&quot;usb&quot;,ACTION==&quot;add&quot;,KERNEL==&quot;event*&quot;,ATTRS{idVendor}==&quot;222a&quot;,ATTRS{idProduct}==&quot;0001&quot;,SYMLINK+=&quot;twofingtouch&quot;,RUN+=&quot;/bin/chmod a+r /dev/twofingtouch&quot;
 KERNEL==&quot;event*&quot;,ATTRS{name}==&quot;ILITEK Multi-Touch-V3000&quot;,SYMLINK+=&quot;twofingtouch&quot;,RUN+=&quot;/bin/chmod a+r /dev/twofingtouch&quot;
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Creamos el fichero <code>/usr/share/X11/xorg.conf.d/90-touchinput.conf</code> con el siguiente contenido:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+</td></tr></table></li>
+<li>Creamos el fichero <code>/usr/share/X11/xorg.conf.d/90-touchinput.conf</code> con el siguiente contenido:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2344,19 +2331,13 @@ Option &quot;EmulateThirdButtonTimeout&quot; &quot;750&quot;
 Option &quot;EmulateThirdButtonMoveThreshold&quot; &quot;30&quot;
 EndSection
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Creamos el fichero <code>/etc/udev/rules.d/ 99-input-tagging.rules</code> con el siguiente contenido:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ACTION==&quot;add&quot;, KERNEL==&quot;event*&quot;, SUBSYSTEM==&quot;input&quot;, TAG+=&quot;systemd&quot;, , ENV{SYSTEMD_ALIAS}+=&quot;/sys/subsystem/input/devices/$env{ID_SERIAL}&quot;
+</td></tr></table></li>
+<li>Creamos el fichero <code>/etc/udev/rules.d/ 99-input-tagging.rules</code> con el siguiente contenido:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ACTION==&quot;add&quot;, KERNEL==&quot;event*&quot;, SUBSYSTEM==&quot;input&quot;, TAG+=&quot;systemd&quot;, , ENV{SYSTEMD_ALIAS}+=&quot;/sys/subsystem/input/devices/$env{ID_SERIAL}&quot;
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Creamos el fichero <code>~/.config/autostart/twofing.desktop</code> con el siguiente contenido:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+</td></tr></table></li>
+<li>Creamos el fichero <code>~/.config/autostart/twofing.desktop</code> con el siguiente contenido:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -2366,9 +2347,7 @@ EndSection
 <span class="na">Exec</span><span class="o">=</span><span class="s">twofing</span>
 <span class="na">StartupNotify</span><span class="o">=</span><span class="s">false</span>
 </pre></div>
-</td></tr></table>
-
-</li>
+</td></tr></table></li>
 </ol>
                 
                   
