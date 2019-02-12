@@ -1331,6 +1331,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pulsador-encendidoapagado" title="Pulsador encendido/apagado" class="md-nav__link">
+    Pulsador encendido/apagado
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pi-top" title="Pi-top" class="md-nav__link">
     Pi-top
   </a>
@@ -1810,6 +1817,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pulsador-encendidoapagado" title="Pulsador encendido/apagado" class="md-nav__link">
+    Pulsador encendido/apagado
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pi-top" title="Pi-top" class="md-nav__link">
     Pi-top
   </a>
@@ -2167,6 +2181,13 @@ $ sudo nmap -PR -sP <span class="m">192</span>.168.1.0/24 <span class="p">|</spa
 </pre></div>
 </td></tr></table>
 
+<h2 id="pulsador-encendidoapagado">Pulsador encendido/apagado<a class="headerlink" href="#pulsador-encendidoapagado" title="Permanent link">&para;</a></h2>
+<p>Existe una configuración accesible mediante un <a href="https://github.com/raspberrypi/firmware/blob/master/boot/overlays/README">Device Tree overlay</a> que permite arrancar y parar el sistema controladamente con un pulsador entre los pines #5 (GPIO03 o SCL) y GND. Para que funcione hay que añadir lo siguiente al fichero <code>/boot/config.txt</code>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>dtoverlay=gpio-shutdown
+</pre></div>
+</td></tr></table>
+
+<p><a href="https://www.stderr.nl/Blog/Hardware/RaspberryPi/PowerButton.html">Aquí</a> se documenta en profundidad.</p>
 <h2 id="pi-top">Pi-top<a class="headerlink" href="#pi-top" title="Permanent link">&para;</a></h2>
 <h3 id="enlaces_1">Enlaces<a class="headerlink" href="#enlaces_1" title="Permanent link">&para;</a></h3>
 <ul>
