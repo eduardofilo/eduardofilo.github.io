@@ -1749,6 +1749,13 @@ sleep <span class="m">1</span>
 </ul>
 <p>En el listado anterior hemos indicado los pines del GPIO de Raspberry con su nombre, no con su número (una confusión muy habitual). En la siguiente imágen los nombres están en el exterior del rectángulo rojo y los números en el interior (rodeados a su vez por un círculo).</p>
 <p><img alt="Raspberry Pi GPIO Layout Model B+" src="/images/posts/Raspberry-Pi-GPIO-Layout-Model-B-Plus.png" /></p>
+<p>La instalación del script se hizo desde un ordenador con Linux montando la tarjeta en el sistema. Para hacerlo sobre el propio Crankshaft en ejecución hay que tener en cuenta que en las últimas versiones la microSD está montada en modo de sólo lectura para evitar corrupciones de la misma durante apagados repentinos. Para montar en modo escritura hay que ejecutar uno de estos dos comandos en función de la partición que queramos modificar:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>crankshaft filesystem boot unlock
+crankshaft filesystem system unlock
+</pre></div>
+</td></tr></table>
+
 <h2 id="montaje-de-raspberry-pi-sobre-pantalla">Montaje de Raspberry Pi sobre pantalla<a class="headerlink" href="#montaje-de-raspberry-pi-sobre-pantalla" title="Permanent link">&para;</a></h2>
 <p>La pantalla que utilizaremos tiene un soporte para la Raspberry Pi en la parte trasera. Atornillaremos los separadores y colocaremos el cable de cinta que une la pantalla con el conector Display de la Raspberry. Falta colocar unos cables de pin para alimentar y comunicar la pantalla con la Raspberry, cosa que se puede hacer con simples cables de pin hembra-hembra (que de hecho vienen con la pantalla). Para evitar desconexiones por las vibraciones de la marcha del coche, en lugar de utilizar los cables de pin preparé un pequeño cable con un par de tiras de pin hembra (una simple para el lado de la pantalla y otra doble para el lado de la Raspberry). El resultado es más compacto y seguro y tiene este aspecto:</p>
 <p><img alt="Cable pantalla" src="/images/posts/crankshaft_cable_pantalla1.jpg" /></p>
