@@ -1297,6 +1297,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#configuracion-de-fichero-de-log" title="Configuración de fichero de log" class="md-nav__link">
+    Configuración de fichero de log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadiendo-modulos-python-al-sistema" title="Añadiendo módulos Python al sistema" class="md-nav__link">
+    Añadiendo módulos Python al sistema
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2319,6 +2333,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#configuracion-de-fichero-de-log" title="Configuración de fichero de log" class="md-nav__link">
+    Configuración de fichero de log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadiendo-modulos-python-al-sistema" title="Añadiendo módulos Python al sistema" class="md-nav__link">
+    Añadiendo módulos Python al sistema
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3203,6 +3231,34 @@ $ curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/mast
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo systemctl disable jupyterhub.service 
 $ sudo systemctl disable traefik.service 
+</pre></div>
+</td></tr></table>
+
+</li>
+</ol>
+<h3 id="configuracion-de-fichero-de-log">Configuración de fichero de log<a class="headerlink" href="#configuracion-de-fichero-de-log" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Añadimos lo siguiente al final del fichero <code>/opt/tljh/hub/lib/python3.6/site-packages/tljh/jupyterhub_config.py</code>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>c.JupyterHub.extra_log_file = &#39;/var/log/jupyterhub.log&#39;
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Reiniciamos el servicio:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo systemctl restart jupyterhub.service
+</pre></div>
+</td></tr></table>
+
+</li>
+</ol>
+<h3 id="anadiendo-modulos-python-al-sistema">Añadiendo módulos Python al sistema<a class="headerlink" href="#anadiendo-modulos-python-al-sistema" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Abrir una terminal en Jupyter con un usuario admin.</li>
+<li>
+<p>Ejecutar:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo -E pip install &lt;paquete&gt;
 </pre></div>
 </td></tr></table>
 
