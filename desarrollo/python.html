@@ -1268,6 +1268,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#instalacion-de-jupyterhub" title="Instalación de JupyterHub" class="md-nav__link">
+    Instalación de JupyterHub
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enlaces_3" title="Enlaces" class="md-nav__link">
+    Enlaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#niveles-de-instalacion" title="Niveles de instalación" class="md-nav__link">
+    Niveles de instalación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-the-littlest-jupyterhub" title="Instalación The Littlest JupyterHub" class="md-nav__link">
+    Instalación The Littlest JupyterHub
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -2256,6 +2290,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#instalacion-de-jupyterhub" title="Instalación de JupyterHub" class="md-nav__link">
+    Instalación de JupyterHub
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enlaces_3" title="Enlaces" class="md-nav__link">
+    Enlaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#niveles-de-instalacion" title="Niveles de instalación" class="md-nav__link">
+    Niveles de instalación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-the-littlest-jupyterhub" title="Instalación The Littlest JupyterHub" class="md-nav__link">
+    Instalación The Littlest JupyterHub
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -3090,6 +3158,56 @@ python manage.py runserver
 
 <p>Cuando hagamos <code>npm run build</code> todo lo gestionado por webpack se compilará dentro del directorio <code>dist</code>.</p>
 <p>La documentación de webpack se encuentra <a href="https://vuejs-templates.github.io/webpack">aquí</a>.</p>
+<h2 id="instalacion-de-jupyterhub">Instalación de JupyterHub<a class="headerlink" href="#instalacion-de-jupyterhub" title="Permanent link">&para;</a></h2>
+<h3 id="enlaces_3">Enlaces<a class="headerlink" href="#enlaces_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/jupyterhub/jupyterhub-deploy-docker">jupyterhub-deploy-docker</a></li>
+<li><a href="https://www.dataquest.io/blog/docker-data-science/">Docker for Data Science: Running a Dockerized Jupyter Server</a></li>
+<li><a href="https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/">28 Jupyter Notebook tips, tricks, and shortcuts</a></li>
+<li><a href="https://www.dataquest.io/blog/jupyter-notebook-tutorial/">Jupyter Notebook for Beginners: A Tutorial</a></li>
+<li><a href="https://nbgrader.readthedocs.io/en/stable/">nbgrader</a></li>
+</ul>
+<h3 id="niveles-de-instalacion">Niveles de instalación<a class="headerlink" href="#niveles-de-instalacion" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://the-littlest-jupyterhub.readthedocs.io/en/latest/">Pequeña - Paquetes sistema</a></li>
+<li><a href="https://opendreamkit.org/2018/10/17/jupyterhub-docker/">Media - Docker</a></li>
+<li><a href="https://zero-to-jupyterhub.readthedocs.io/en/latest/">Grande - Kubernetes</a></li>
+</ul>
+<h3 id="instalacion-the-littlest-jupyterhub">Instalación The Littlest JupyterHub<a class="headerlink" href="#instalacion-the-littlest-jupyterhub" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Instalación de dependencias y JupyterHub:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo apt-get install python3 git curl
+$ curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master/bootstrap/bootstrap.py <span class="p">|</span> sudo -E python3 - --admin niubit
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Configuración de puerto de Traefik en:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>/opt/tljh/state/traefik.toml
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Reinicio de <code>traefik</code>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo systemctl restart traefik.service
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Si queremos detener el servicio hay que desactivar los dos siguientes:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo systemctl disable jupyterhub.service 
+$ sudo systemctl disable traefik.service 
+</pre></div>
+</td></tr></table>
+
+</li>
+</ol>
                 
                   
                 
