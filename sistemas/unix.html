@@ -1529,6 +1529,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#instalaciondesinstalacion-de-scripts-sysvupstart" title="Instalación/desinstalación de scripts SysV/Upstart" class="md-nav__link">
+    Instalación/desinstalación de scripts SysV/Upstart
+  </a>
+  
+</li>
+      
       
       
       
@@ -1935,6 +1942,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalaciondesinstalacion-de-scripts-sysvupstart" title="Instalación/desinstalación de scripts SysV/Upstart" class="md-nav__link">
+    Instalación/desinstalación de scripts SysV/Upstart
+  </a>
   
 </li>
       
@@ -2725,6 +2739,44 @@ ncftp -u<span class="s2">&quot;</span><span class="nv">$FTPU</span><span class="
 <ul>
 <li><a href="http://www.cgsecurity.org/wiki/TestDisk_Paso_A_Paso">TestDisk Paso A Paso</a></li>
 <li><a href="https://linoxide.com/linux-how-to/recovery-data-corrupt-formatted-usb-flash-using-photorec/">How to Recover Data from Corrupt / formatted USB Flash using Photorec</a></li>
+</ul>
+<h2 id="instalaciondesinstalacion-de-scripts-sysvupstart">Instalación/desinstalación de scripts SysV/Upstart<a class="headerlink" href="#instalaciondesinstalacion-de-scripts-sysvupstart" title="Permanent link">&para;</a></h2>
+<p>Los scripts del serivicio deberán tener una cabecera especial que indique cómo deben comportarse en cada nivel de ejecución. Por ejemplo éste es el que tiene MySQL:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#</span>
+<span class="c1">### BEGIN INIT INFO</span>
+<span class="c1"># Provides:          mysql</span>
+<span class="c1"># Required-Start:    $remote_fs $syslog</span>
+<span class="c1"># Required-Stop:     $remote_fs $syslog</span>
+<span class="c1"># Should-Start:      $network $time</span>
+<span class="c1"># Should-Stop:       $network $time</span>
+<span class="c1"># Default-Start:     2 3 4 5</span>
+<span class="c1"># Default-Stop:      0 1 6</span>
+<span class="c1"># Short-Description: Start and stop the mysql database server daemon</span>
+<span class="c1"># Description:       Controls the main MySQL database server daemon &quot;mysqld&quot;</span>
+<span class="c1">#                    and its wrapper script &quot;mysqld_safe&quot;.</span>
+<span class="c1">### END INIT INFO</span>
+<span class="c1">#</span>
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>Instalar: <code>sudo update-rc.d servicio defaults</code></li>
+<li>Desinstalar: <code>sudo update-rc.d -f servicio remove</code></li>
 </ul>
                 
                   
