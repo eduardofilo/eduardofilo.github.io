@@ -1536,6 +1536,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gestion-de-servicios-systemd" title="Gestión de servicios Systemd" class="md-nav__link">
+    Gestión de servicios Systemd
+  </a>
+  
+</li>
+      
       
       
       
@@ -1948,6 +1955,13 @@
         <li class="md-nav__item">
   <a href="#instalaciondesinstalacion-de-scripts-sysvupstart" title="Instalación/desinstalación de scripts SysV/Upstart" class="md-nav__link">
     Instalación/desinstalación de scripts SysV/Upstart
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-servicios-systemd" title="Gestión de servicios Systemd" class="md-nav__link">
+    Gestión de servicios Systemd
   </a>
   
 </li>
@@ -2775,8 +2789,23 @@ ncftp -u<span class="s2">&quot;</span><span class="nv">$FTPU</span><span class="
 </td></tr></table>
 
 <ul>
-<li>Instalar: <code>sudo update-rc.d servicio defaults</code></li>
-<li>Desinstalar: <code>sudo update-rc.d -f servicio remove</code></li>
+<li>Instalar: <code>sudo update-rc.d SERVICE defaults</code></li>
+<li>Desinstalar: <code>sudo update-rc.d -f SERVICE remove</code></li>
+</ul>
+<h2 id="gestion-de-servicios-systemd">Gestión de servicios Systemd<a class="headerlink" href="#gestion-de-servicios-systemd" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>systemctl start SERVICE</code> - Use it to start a service. Does not persist after reboot</li>
+<li><code>systemctl stop SERVICE</code> - Use it to stop a service. Does not persist after reboot</li>
+<li><code>systemctl restart SERVICE</code> - Use it to restart a service</li>
+<li><code>systemctl reload SERVICE</code> - If the service supports it, it will reload the config files related to it without interrupting any process that is using the service.</li>
+<li><code>systemctl status SERVICE</code> - Shows the status of a service. Tells whether a service is currently running.</li>
+<li><code>systemctl enable SERVICE</code> - Turns the service on, on the next reboot or on the next start event. It persists after reboot.</li>
+<li><code>systemctl disable SERVICE</code> - Turns the service off on the next reboot or on the next stop event. It persists after reboot.</li>
+<li><code>systemctl is-enabled SERVICE</code> - Check if a service is currently configured to start or not on the next reboot.</li>
+<li><code>systemctl is-active SERVICE</code> - Check if a service is currently active.</li>
+<li><code>systemctl show SERVICE</code> - Show all the information about the service.</li>
+<li><code>systemctl mask SERVICE</code> - Completely disable a service by linking it to <code>/dev/null</code>; you cannot start the service manually or enable the service.</li>
+<li><code>systemctl unmask SERVICE</code> - Removes the link to <code>/dev/null</code> and restores the ability to enable and or manually start the service.</li>
 </ul>
                 
                   
