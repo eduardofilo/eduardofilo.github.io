@@ -1272,13 +1272,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#actualizacion-firmware" title="Actualización firmware" class="md-nav__link">
-    Actualización firmware
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#configuracion-desde-cero" title="Configuración desde cero" class="md-nav__link">
     Configuración desde cero
   </a>
@@ -1288,6 +1281,13 @@
         <li class="md-nav__item">
   <a href="#configuracion-de-protonvpn" title="Configuración de ProtonVPN" class="md-nav__link">
     Configuración de ProtonVPN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actualizacion-firmware" title="Actualización firmware" class="md-nav__link">
+    Actualización firmware
   </a>
   
 </li>
@@ -1516,13 +1516,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#actualizacion-firmware" title="Actualización firmware" class="md-nav__link">
-    Actualización firmware
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#configuracion-desde-cero" title="Configuración desde cero" class="md-nav__link">
     Configuración desde cero
   </a>
@@ -1532,6 +1525,13 @@
         <li class="md-nav__item">
   <a href="#configuracion-de-protonvpn" title="Configuración de ProtonVPN" class="md-nav__link">
     Configuración de ProtonVPN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actualizacion-firmware" title="Actualización firmware" class="md-nav__link">
+    Actualización firmware
   </a>
   
 </li>
@@ -1564,41 +1564,6 @@
 <li><a href="https://forum.openwrt.org/t/xiaomi-wifi-router-3g-18-06-x-feedback-and-help/19840">Xiaomi Wifi Router 3G - 18.06.X / feedback and help</a>: Hilo del foro OpenWRT sobre el firmware 18.06 en el Xiaomi MiWiFi 3G router.</li>
 <li><a href="https://tutorials.technology/tutorials/44-things-to-do-after-installing-linux-LEDE-17_01.html">Things to do after installing Linux LEDE 17.01</a></li>
 </ul>
-<h2 id="actualizacion-firmware">Actualización firmware<a class="headerlink" href="#actualizacion-firmware" title="Permanent link">&para;</a></h2>
-<p>Siguiendo <a href="https://elblogdelazaro.gitlab.io/articles/openwrt-actualizar-firmware/">este artículo</a>:</p>
-<ol>
-<li>Bajar el paquete pinchando uno de los enlaces siguientes según si se desea la versión de desarrollo o la estable de la <a href="https://openwrt.org/toh/hwdata/xiaomi/xiaomi_miwifi_3g">página de soporte del router en OpenWRT</a>:<ul>
-<li>Estable: Firmware OpenWrt Upgrade URL</li>
-<li>Desarrollo: Firmware OpenWrt snapshot Upgrade URL</li>
-</ul>
-</li>
-<li>En el interfaz web (Luci) acudir a la ruta <code>System &gt; Backup / Flash Firmware</code>.</li>
-<li>En la sección <code>Flash new firmware image</code> pulsar el botón <code>Examinar...</code> y seleccionar el fichero .tar bajado en el punto anterior.</li>
-<li>Pulsar el botón <code>Flash image...</code>.</li>
-<li>En la siguiente página confirmar el flasheo comprobando si se quiere los checksums.</li>
-<li>
-<p>Cuando termine el proceso habremos perdido los paquetes adicionales. Instalarlos conectando por SSH y ejecutando los siguientes comandos:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># opkg update
-# opkg install luci
-# opkg install luci-ssl
-# /etc/init.d/uhttpd start
-# /etc/init.d/uhttpd enable
-</pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Si se desea la interfaz en español (no se aconseja), instalar también:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># opkg install luci-i18n-base-es
-</pre></div>
-</td></tr></table>
-
-</li>
-</ol>
 <h2 id="configuracion-desde-cero">Configuración desde cero<a class="headerlink" href="#configuracion-desde-cero" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
@@ -1798,6 +1763,20 @@
 <li>Pulsar el botón <code>Save &amp; Apply</code>.</li>
 </ol>
 <p>Para mantener acceso desde el exterior de la red, estudiar <a href="https://www.reddit.com/r/ProtonVPN/comments/7npcjd/newbie_to_vpn_trying_to_use_rdp/">este artículo</a>.</p>
+<h2 id="actualizacion-firmware">Actualización firmware<a class="headerlink" href="#actualizacion-firmware" title="Permanent link">&para;</a></h2>
+<p>Siguiendo <a href="https://elblogdelazaro.gitlab.io/articles/openwrt-actualizar-firmware/">este artículo</a>:</p>
+<ol>
+<li>Bajar el paquete pinchando uno de los enlaces siguientes según si se desea la versión de desarrollo o la estable de la <a href="https://openwrt.org/toh/hwdata/xiaomi/xiaomi_miwifi_3g">página de soporte del router en OpenWRT</a>:<ul>
+<li>Estable: Firmware OpenWrt Upgrade URL</li>
+<li>Desarrollo: Firmware OpenWrt snapshot Upgrade URL</li>
+</ul>
+</li>
+<li>En el interfaz web (Luci) acudir a la ruta <code>System &gt; Backup / Flash Firmware</code>.</li>
+<li>En la sección <code>Flash new firmware image</code> pulsar el botón <code>Examinar...</code> y seleccionar el fichero .tar bajado en el punto anterior.</li>
+<li>Pulsar el botón <code>Flash image...</code>.</li>
+<li>En la siguiente página confirmar el flasheo comprobando si se quiere los checksums.</li>
+<li>Cuando termine el proceso habremos perdido los paquetes adicionales. También los ajustes hechos al usuario adicional (como el directorio home) por lo que seguramente habrá que repasar la mayoría de los ajustes hechos durante la <a href="#configuracion-desde-cero">configuración desde cero</a>.</li>
+</ol>
                 
                   
                 
