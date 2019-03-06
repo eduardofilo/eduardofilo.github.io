@@ -2020,7 +2020,6 @@
 <li><code>sudo blkid</code>: Lista los dispositivos de bloques (discos) disponibles en el sistema.</li>
 <li><code>sudo nmap -sP 192.168.1.0/24</code>: Descubrir todos los equipos presentes en la red <code>192.168.1.0</code>.</li>
 <li><code>sudo netstat -lp --inet</code>: Puertos de red abiertos y procesos asociados.</li>
-<li><code>sudo usermod -a -G groupName userName</code>: Añade el usuario userName ya existente al grupo groupName.</li>
 <li><code>sudo dd if=/dev/zero of=/dev/mmcblk0</code>: Formateo de una tarjeta de memoria (en realidad vale para cualquier dispositivo de almacenamiento).</li>
 <li><code>sudo tcpdump -s 0 -i ppp0 -w trafico.pcap</code>: Captura de tráfico por el interfaz ppp0.</li>
 <li><code>iptables -L -n</code>: Listar reglas iptables.</li>
@@ -2033,6 +2032,10 @@
 <li><code>mplayer -vo caca MovieName.avi</code>: Reproduce un vídeo en consola con ascii. Para verlo en blanco y negro sustituir <code>caca</code> por <code>aa</code>.</li>
 <li><code>sudo traceroute -4T -p 22 192.168.1.203</code>: Comprobar la traza hasta alcanzar un determinado puerto en una determinada máquina.</li>
 <li><code>dig @8.8.8.8 -t any eduardofilo.es</code>: Query DNS de los registros de cualquier tipo a través del servidor <code>8.8.8.8</code> al dominio <code>eduardofilo.es</code>.</li>
+<li>Gestión de usuarios:</li>
+<li><code>sudo adduser userName</code>: Añade usuario creando home.</li>
+<li><code>sudo usermod -a -G groupName userName</code>: Añade el usuario userName ya existente al grupo groupName ya existente.</li>
+<li><code>sudo userdel -r userName</code>: Borra el usuario eliminando su home.</li>
 </ul>
 <h2 id="alias-ssh">Alias SSH<a class="headerlink" href="#alias-ssh" title="Permanent link">&para;</a></h2>
 <p>Para asimilar un identificador a una pareja user@host, editar el fichero <code>~/.ssh/config</code> y añadir un bloque como el siguiente (<a href="http://collectiveidea.com/blog/archives/2011/02/04/how-to-ssh-aliases/">fuente</a>):</p>
