@@ -1082,6 +1082,18 @@
 
 
   <li class="md-nav__item">
+    <a href="docker.html" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="email.html" title="e-mail" class="md-nav__link">
       e-mail
     </a>
@@ -1483,6 +1495,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspi-camera" title="Raspi Camera" class="md-nav__link">
+    Raspi Camera
+  </a>
   
 </li>
       
@@ -1972,6 +1991,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#raspi-camera" title="Raspi Camera" class="md-nav__link">
+    Raspi Camera
+  </a>
+  
+</li>
+      
       
       
       
@@ -2370,6 +2396,48 @@ EndSection
 </pre></div>
 </td></tr></table></li>
 </ol>
+<h2 id="raspi-camera">Raspi Camera<a class="headerlink" href="#raspi-camera" title="Permanent link">&para;</a></h2>
+<p>La documentación de la librería picamera en Python está <a href="https://picamera.readthedocs.io/en/release-1.10/index.html">aquí</a>. Concretamente las recetas para hacer la foto están <a href="https://picamera.readthedocs.io/en/release-1.10/recipes1.html">aquí</a>.</p>
+<p>Por ejemplo, para hacer fotos que luego vayan a formar parte de un timelapse:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">picamera</span>
+<span class="kn">import</span> <span class="nn">datetime</span> <span class="kn">as</span> <span class="nn">dt</span>
+
+<span class="k">with</span> <span class="n">picamera</span><span class="o">.</span><span class="n">PiCamera</span><span class="p">()</span> <span class="k">as</span> <span class="n">camera</span><span class="p">:</span>
+    <span class="n">camera</span><span class="o">.</span><span class="n">resolution</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1280</span><span class="p">,</span> <span class="mi">720</span><span class="p">)</span>
+    <span class="n">camera</span><span class="o">.</span><span class="n">framerate</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="c1"># calentamiento/enfoque de la camara</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1"># fijamos valores para que salga mejor el timelapse</span>
+    <span class="n">camera</span><span class="o">.</span><span class="n">shutter_speed</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">exposure_speed</span>
+    <span class="n">camera</span><span class="o">.</span><span class="n">exposure_mode</span> <span class="o">=</span> <span class="s1">&#39;off&#39;</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">awb_gains</span>
+    <span class="n">camera</span><span class="o">.</span><span class="n">awb_mode</span> <span class="o">=</span> <span class="s1">&#39;off&#39;</span>
+    <span class="n">camera</span><span class="o">.</span><span class="n">awb_gains</span> <span class="o">=</span> <span class="n">g</span>
+    <span class="n">camera</span><span class="o">.</span><span class="n">annotate_background</span> <span class="o">=</span> <span class="n">picamera</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="n">camera</span><span class="o">.</span><span class="n">annotate_text</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">_%H%M.jpg&quot;</span><span class="p">)</span>
+    <span class="n">camera</span><span class="o">.</span><span class="n">capture</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 
