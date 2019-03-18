@@ -1116,6 +1116,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#instalacion" title="Instalación" class="md-nav__link">
+    Instalación
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-docker-ce" title="Instalación de Docker CE" class="md-nav__link">
+    Instalación de Docker CE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-docker-compose-httpsdocsdockercomcomposeinstall" title="Instalación de Docker compose (https://docs.docker.com/compose/install/)" class="md-nav__link">
+    Instalación de Docker compose (https://docs.docker.com/compose/install/)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-portainer" title="Instalación Portainer" class="md-nav__link">
+    Instalación Portainer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#comandos" title="Comandos" class="md-nav__link">
     Comandos
   </a>
@@ -1569,6 +1603,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#instalacion" title="Instalación" class="md-nav__link">
+    Instalación
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-docker-ce" title="Instalación de Docker CE" class="md-nav__link">
+    Instalación de Docker CE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-docker-compose-httpsdocsdockercomcomposeinstall" title="Instalación de Docker compose (https://docs.docker.com/compose/install/)" class="md-nav__link">
+    Instalación de Docker compose (https://docs.docker.com/compose/install/)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-portainer" title="Instalación Portainer" class="md-nav__link">
+    Instalación Portainer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#comandos" title="Comandos" class="md-nav__link">
     Comandos
   </a>
@@ -1656,6 +1724,22 @@
 <li><a href="https://ugeek.github.io/blog/post/2019-02-03-instalar-docker-en-raspberry-pi-con-raspbian.html">Instalación en Raspberry según uGeek</a></li>
 <li><a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/">Instalación en Ubuntu de versión Community Edition</a></li>
 </ul>
+<h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
+<h3 id="instalacion-de-docker-ce">Instalación de Docker CE<a class="headerlink" href="#instalacion-de-docker-ce" title="Permanent link">&para;</a></h3>
+<p>$ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+$ sudo echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable" | sudo tee /etc/apt/sources.list.d/docker.list
+$ sudo apt-get update
+$ sudo apt-get install docker-ce
+$ sudo systemctl enable docker
+$ sudo systemctl start docker
+$ sudo groupadd docker
+$ sudo usermod -aG docker $USER</p>
+<h3 id="instalacion-de-docker-compose-httpsdocsdockercomcomposeinstall">Instalación de Docker compose (https://docs.docker.com/compose/install/)<a class="headerlink" href="#instalacion-de-docker-compose-httpsdocsdockercomcomposeinstall" title="Permanent link">&para;</a></h3>
+<p>$ sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+$ sudo chmod +x /usr/local/bin/docker-compose</p>
+<h3 id="instalacion-portainer">Instalación Portainer<a class="headerlink" href="#instalacion-portainer" title="Permanent link">&para;</a></h3>
+<p>Cerrar y volver a abrir la consola para que se aplique el último cambio del bloque anterior.</p>
+<p>$ docker run -d --name=Portainer --restart=always -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer</p>
 <h2 id="comandos">Comandos<a class="headerlink" href="#comandos" title="Permanent link">&para;</a></h2>
 <h3 id="list-docker-cli-commands">List Docker CLI commands<a class="headerlink" href="#list-docker-cli-commands" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
