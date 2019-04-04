@@ -2739,6 +2739,8 @@ $ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtuale
 <li>Suma de una propiedad de una lista de objetos: <code>suma = sum(logro.puntos for logro in logros_totales)</code></li>
 <li>Suma de una propiedad de una lista de objetos: <code>suma = sum(list(map(lambda x: x.puntos, logros_totales)))</code></li>
 <li>Operador ternario: <code>valor_cuando_true if condición else valor_cuando_false</code></li>
+<li><a href="https://www.pythonforbeginners.com/basics/list-comprehensions-in-python">List comprehensions</a>: <code>new_list = [expression(i) for i in old_list if filter(i)]</code></li>
+<li>Filtro de los elementos de una lista que contienen un fragmento de cadena, por ejemplo las constantes de <code>pygame</code> que empiezan por <code>K_</code>: <code>filter(lambda x:'K_' in x, dir(pygame))</code></li>
 </ul>
 <h2 id="snippets">Snippets<a class="headerlink" href="#snippets" title="Permanent link">&para;</a></h2>
 <ul>
@@ -2753,6 +2755,7 @@ $ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtuale
 <li>Valor predeterminado: <code>{{ "{{ elemento_de_context|default_if_none:'Valor predeterminado' " }}}}</code></li>
 </ul>
 </li>
+<li>Agregar elementos a un diccionario de listas creando las claves si no existen (<a href="https://stackoverflow.com/questions/12905999/python-dict-how-to-create-key-or-append-an-element-to-key">fuente</a>):<code>dic.setdefault(key,[]).append(value)</code></li>
 </ul>
 <h3 id="filtro-en-listview">Filtro en ListView<a class="headerlink" href="#filtro-en-listview" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1

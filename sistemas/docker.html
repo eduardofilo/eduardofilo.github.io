@@ -1205,6 +1205,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#crear-volume-para-persistir-informacion" title="Crear volume para persistir información" class="md-nav__link">
+    Crear volume para persistir información
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#montar-un-contenedor-ubuntu-para-aislar-aplicaciones" title="Montar un contenedor Ubuntu para aislar aplicaciones" class="md-nav__link">
     Montar un contenedor Ubuntu para aislar aplicaciones
   </a>
@@ -1692,6 +1699,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#crear-volume-para-persistir-informacion" title="Crear volume para persistir información" class="md-nav__link">
+    Crear volume para persistir información
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#montar-un-contenedor-ubuntu-para-aislar-aplicaciones" title="Montar un contenedor Ubuntu para aislar aplicaciones" class="md-nav__link">
     Montar un contenedor Ubuntu para aislar aplicaciones
   </a>
@@ -1827,6 +1841,19 @@ $ docker update --restart<span class="o">=</span>no &lt;hash&gt;                
 </pre></div>
 </td></tr></table>
 
+<h2 id="crear-volume-para-persistir-informacion">Crear volume para persistir información<a class="headerlink" href="#crear-volume-para-persistir-informacion" title="Permanent link">&para;</a></h2>
+<p>Para poder recrear el contenedor sin perder la información que haya podido generar, conviene montar los distintos directorios que queremos conservar en volúmenes.</p>
+<ol>
+<li>
+<p>Crear volumen:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker volume create mi_volumen
+</pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>Posteriormente incluir en el comando de arranque del contenedor <code>-v mi_volumen:ruta_en_contenedor</code> donde <code>ruta_en_contenedor</code> será la ruta dentro del contenedor que queremos "delegar" al volumen.</p>
+</li>
+</ol>
 <h2 id="montar-un-contenedor-ubuntu-para-aislar-aplicaciones">Montar un contenedor Ubuntu para aislar aplicaciones<a class="headerlink" href="#montar-un-contenedor-ubuntu-para-aislar-aplicaciones" title="Permanent link">&para;</a></h2>
 <ol>
 <li>

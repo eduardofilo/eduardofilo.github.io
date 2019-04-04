@@ -2553,13 +2553,18 @@ $ ls *.mp4 <span class="p">|</span> awk <span class="s1">&#39;{print &quot;HandB
 <h2 id="split-de-videos">Split de vídeos<a class="headerlink" href="#split-de-videos" title="Permanent link">&para;</a></h2>
 <p>(<a href="http://askubuntu.com/questions/35605/splitting-an-mp4-file">Fuente</a>)</p>
 <p>Con el siguiente comando:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ffmpeg -acodec copy -vcodec copy -ss <span class="m">00</span>:00:00 -t <span class="m">00</span>:04:09 -i archivo3.mp4 p1.mp4
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ffmpeg -acodec copy -vcodec copy -ss <span class="m">00</span>:00:00 -t <span class="m">00</span>:04:09 -i archivo_original.mp4 archivo_recortado.mp4
 </pre></div>
 </td></tr></table>
 
 <p>Donde el valor de la opción -ss es el instante de inicio en hh:mm:ss y el valor de -t es la longitud en hh:mm:ss</p>
-<p>Desde hace unas versiones de Ubuntu, <code>ffmpeg</code> no está disponible. Su sustituto es <code>avconv</code>, compatible la mayoría de las veces. No admite sin embargo la opción de copiar el codec de audio y vídeo. Hay que especificarlo. Una lista de encoders soportados se puede obtener ejecutando:</p>
+<p>Durante un tiempo en Ubuntu, <code>ffmpeg</code> no estuvo disponible. Su sustituto fue <code>avconv</code>, compatible la mayoría de las veces. No admitía sin embargo la opción de copiar el codec de audio y vídeo. Había que especificarlo. Una lista de encoders soportados se puede obtener ejecutando:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ avconv -encoders
+</pre></div>
+</td></tr></table>
+
+<p>Un par de codecs comprobados que suelen dar buen resultados son h264 y aac:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ffmpeg -acodec aac -vcodec h264 -ss <span class="m">01</span>:07:38 -t <span class="m">00</span>:01:14 -i archivo_original.mp4 archivo_recortado.mp4
 </pre></div>
 </td></tr></table>
 
