@@ -1532,7 +1532,7 @@
 <p><img alt="Regina Pong" src="/images/posts/regina_pong.jpg" /></p>
 <p>Investigando la modificación para conseguir una salida de vídeo compuesto encontré que la consola está basada en el chip <a href="https://en.wikipedia.org/wiki/AY-3-8500">AY-3-8500</a> de General Instruments:</p>
 <p><img alt="AY-3-8500" src="/images/posts/regina_pong_ay-3-8500.jpg" /></p>
-<p>Este chip tiene una historia interesante. Fue todo un éxito en la época y es prácticamente seguro encontrar uno de estos chips (o sus clones) o alguna de sus evoluciones en todas las consolas de juegos tipo Pong de finales de los 70. El fabricante produjo tantas unidades del chip que, aunque no se fabrica desde entonces, aún hoy es posible conseguirlo nuevo. He conseguido un par para montar un par de unidades desde cero dado que el esquemático es extremadamente sencillo y aparece en la <a href="/files/posts/GI-Games-reference-circuits-1978.pdf">documentación del integrado</a>.</p>
+<p>Este chip tiene una historia interesante. Fue todo un éxito en la época y es prácticamente seguro encontrar uno de estos chips, sus clones o alguna de sus evoluciones en cualquier consola de juegos tipo Pong de finales de los 70. El fabricante produjo tantas unidades que, aunque no se fabrica desde entonces, aún hoy es posible encontrarlo nuevo. He conseguido un par para montar alguna unidad desde cero dado que el esquemático es extremadamente sencillo y aparece en la <a href="/files/posts/GI-Games-reference-circuits-1978.pdf">documentación del integrado</a>.</p>
 <p><img alt="AY-3-8500 pinout" src="/images/posts/regina_pong_ay-3-8500_pinout.jpg" /></p>
 <p><img alt="Pong esquemático" src="/images/posts/regina_pong_esquematico.jpg" /></p>
 <p>La señal de vídeo en el patillaje del chip aparece descompuesta en los siguientes 5 pines:</p>
@@ -1546,7 +1546,7 @@
 <p>Esto es así porque existía la opción de incorporar un coprocesador de video que permitía colorear los distintos componentes de la salida (los jugadores, la bola y el resto del campo). El esquemático anterior corresponde a la versión sin este coprocesador y por tanto se limita a sumar las cuatro salidas (sin contar la señal de sync) con una puerta lógica OR de cuatro entradas (<a href="https://upload.wikimedia.org/wikipedia/commons/f/f8/4072_Pinout.svg">4072</a>). La placa de mi unidad sin embargo difiere del esquemático oficial. Observo que no existe el integrado 4072 con las puertas OR de cuatro entradas:</p>
 <p><img alt="Regina placa 1" src="/images/posts/regina_pong_placa1.jpg" /></p>
 <p><img alt="Regina placa 2" src="/images/posts/regina_pong_placa2.jpg" /></p>
-<p>En su lugar se utilizan los cuatro diodos que marco en la segunda foto. Realmente los diodos son equivalentes a la puerta OR. Una vez localizadas las señales implicadas, era cuestión de localizar el circuito que las llevara hasta una señal de vídeo compuesto estándar. Realmente hay poco más que hacer que sumarlas y normalizarlas hasta los niveles que se esperan en una señal de este tipo. Al haber tantas consolas en el mercado es fácil encontrar varias versiones del circuito necesario realizados por otros aficionados. Pongo alguno enlaces a continuación:</p>
+<p>En su lugar se utilizan los cuatro diodos que marco en la segunda foto. Realmente los diodos son equivalentes a la puerta OR. Una vez localizadas las señales implicadas, era cuestión de localizar el circuito que las llevara hasta una señal de vídeo compuesto estándar. Hay poco más que hacer que sumarlas y normalizarlas hasta los niveles que se esperan en una señal de este tipo. Al haber tantas consolas en el mercado es fácil encontrar varias versiones del circuito necesario realizados por otros aficionados. Pongo alguno enlaces a continuación:</p>
 <ul>
 <li><a href="https://mrpjevans.com/binatone-composite-mod/">Breathing New (Composite) Life Into a Binatone Pong Console</a></li>
 <li><a href="https://www.petervis.com/gallery/Toys_and_Games/binatone-tv-master-mk-4-composite-video-mod/binatone-tv-master-mk-4-composite-video-mod.html">Binatone TV Master MK 4 Composite Video Mod</a></li>
@@ -1583,6 +1583,9 @@
 <p><img alt="Placa pegada" src="/images/posts/regina_pong_final.jpg" /></p>
 <p>Además de los componentes para el circuito de modificación, adquirí también <a href="https://www.aliexpress.com/item/10PCS-WH148-Potentiometer-Kit-Single-Joint-B1K-2K-5K-10K-20K-50K-100K-250K-500K-1M/32908524525.html">potenciómetros de 1MΩ</a> para sustituir los que llevan los mandos. El resultado:</p>
 <iframe width="853" height="480" src="https://www.youtube.com/embed/OedojdkP4_E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>Al conocer el proyecto un amigo me ha pasado su consola de aquella época para realizar una modificación equivalente. Abriéndola encuentro que efectivamente está basada en el mismo integrado, aunque ésta parece montada con mejores componentes y sí incluye el integrado con las puertas OR para el sumado de las salidas de vídeo del chip:</p>
+<p><img alt="Teletenis" src="/images/posts/regina_pong_teletenis_jorge.jpg" /></p>
                 
                   
                 
