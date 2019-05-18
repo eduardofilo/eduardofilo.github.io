@@ -868,6 +868,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#borrar-ultimo-commit" title="Borrar último commit" class="md-nav__link">
+    Borrar último commit
+  </a>
+  
+</li>
+      
       
       
       
@@ -1627,6 +1634,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#borrar-ultimo-commit" title="Borrar último commit" class="md-nav__link">
+    Borrar último commit
+  </a>
+  
+</li>
+      
       
       
       
@@ -2026,6 +2040,14 @@ $ <span class="nb">cd</span> tutorial/es/
 $ gitbook epub ./ ./tutorial.epub
 </pre></div>
 </td></tr></table>
+
+<h2 id="borrar-ultimo-commit">Borrar último commit<a class="headerlink" href="#borrar-ultimo-commit" title="Permanent link">&para;</a></h2>
+<p>Para borrar el último commit cuando aún no lo hemos publicado (push) hacer lo siguiente (<a href="http://aprendegit.com/como-deshacer-el-ultimo-commit-en-git/">fuente</a>):</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git reset --hard HEAD~1
+</pre></div>
+</td></tr></table>
+
+<p>Con esto conseguimos que el puntero del branch apunte al commit anterior al HEAD actual. Es importante que el commit que vayamos a borrar sólo esté en nuestro repositorio. Si ya ha sido propagado a otros repositorios, será mejor deshacer los cambios mediante otro commit.</p>
                 
                   
                 
