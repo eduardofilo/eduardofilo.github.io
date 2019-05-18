@@ -1346,6 +1346,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#queries-complejas" title="Queries complejas" class="md-nav__link">
+    Queries complejas
+  </a>
+  
+</li>
+      
       
       
       
@@ -2415,6 +2422,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#queries-complejas" title="Queries complejas" class="md-nav__link">
+    Queries complejas
+  </a>
+  
+</li>
+      
       
       
       
@@ -3353,6 +3367,9 @@ $ sudo systemctl disable traefik.service
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1m;ERROR</span><span class="se">\033</span><span class="s2">[0m Algo ha salido mal.&quot;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
+
+<h2 id="queries-complejas">Queries complejas<a class="headerlink" href="#queries-complejas" title="Permanent link">&para;</a></h2>
+<p>Los parámetros que aplicamos al método <a href="https://docs.djangoproject.com/en/1.11/topics/db/queries/#retrieving-specific-objects-with-filters">filter</a> se aplican con un <code>and</code> entre ellos a la query resultante. Para hacer queries más complejas (con <code>and</code> y <code>or</code> con prioridades establecidas con paréntesis) hay que utilizar los <a href="https://docs.djangoproject.com/en/1.11/topics/db/queries/#complex-lookups-with-q-objects">objetos Q</a>.</p>
                 
                   
                 
