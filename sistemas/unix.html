@@ -1625,6 +1625,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#montaje-de-carpeta-compartida-samba-en-etcfstab" title="Montaje de carpeta compartida samba en /etc/fstab" class="md-nav__link">
+    Montaje de carpeta compartida samba en /etc/fstab
+  </a>
+  
+</li>
+      
       
       
       
@@ -2024,6 +2031,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#montaje-de-carpeta-compartida-samba-en-etcfstab" title="Montaje de carpeta compartida samba en /etc/fstab" class="md-nav__link">
+    Montaje de carpeta compartida samba en /etc/fstab
+  </a>
+  
+</li>
+      
       
       
       
@@ -2277,10 +2291,10 @@ mv <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quo
 </ol>
 <h2 id="mysql">MySQL<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Acceso: mysql -u root -p</li>
-<li>Listar bases de datos: show databases;</li>
-<li>Abrir una base de datos: use [NombreBBDD];</li>
-<li>Listar tablas: show tables</li>
+<li>Acceso: <code>mysql -u root -p</code></li>
+<li>Listar bases de datos: <code>show databases;</code></li>
+<li>Abrir una base de datos: <code>use [NombreBBDD];</code></li>
+<li>Listar tablas: <code>show tables;</code></li>
 </ul>
 <h2 id="ficheros-de-configuracion-importantes">Ficheros de configuración importantes<a class="headerlink" href="#ficheros-de-configuracion-importantes" title="Permanent link">&para;</a></h2>
 <ul>
@@ -2871,6 +2885,18 @@ ncftp -u<span class="s2">&quot;</span><span class="nv">$FTPU</span><span class="
 <li><code>systemctl mask SERVICE</code> - Completely disable a service by linking it to <code>/dev/null</code>; you cannot start the service manually or enable the service.</li>
 <li><code>systemctl unmask SERVICE</code> - Removes the link to <code>/dev/null</code> and restores the ability to enable and or manually start the service.</li>
 </ul>
+<h2 id="montaje-de-carpeta-compartida-samba-en-etcfstab">Montaje de carpeta compartida samba en /etc/fstab<a class="headerlink" href="#montaje-de-carpeta-compartida-samba-en-etcfstab" title="Permanent link">&para;</a></h2>
+<p>Crear un fichero <code>/home/usuario/.smbcredentials</code> con el siguiente contenido:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>user=usuario
+password=password
+</pre></div>
+</td></tr></table>
+
+<p>Añadir la siguiente línea a <code>/etc/fstab</code>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>192.168.1.100/carpeta_compartida /home/usuario/punto_montaje cifs uid=usuario,gid=usuario,credentials=/home/usuario/.smbcredentials,iocharset=utf8,sec=ntlmv2,file_mode=0664,dir_mode=0775 0 0
+</pre></div>
+</td></tr></table>
                 
                   
                 

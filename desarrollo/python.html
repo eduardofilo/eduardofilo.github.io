@@ -1156,6 +1156,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#template-filters" title="Template filters" class="md-nav__link">
+    Template filters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#snippets" title="Snippets" class="md-nav__link">
     Snippets
   </a>
@@ -2256,6 +2263,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#template-filters" title="Template filters" class="md-nav__link">
+    Template filters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#snippets" title="Snippets" class="md-nav__link">
     Snippets
   </a>
@@ -2818,6 +2832,18 @@ $ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtuale
 <li><a href="https://www.pythonforbeginners.com/basics/list-comprehensions-in-python">List comprehensions</a>: <code>new_list = [expression(i) for i in old_list if filter(i)]</code></li>
 <li>Filtro de los elementos de una lista que contienen un fragmento de cadena, por ejemplo las constantes de <code>pygame</code> que empiezan por <code>K_</code>: <code>filter(lambda x:'K_' in x, dir(pygame))</code></li>
 <li>Switch/case: Se suele utilizar un diccionario como se explica <a href="https://stackoverflow.com/questions/60208/replacements-for-switch-statement-in-python">aquí</a>.</li>
+</ul>
+<h2 id="template-filters">Template filters<a class="headerlink" href="#template-filters" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>{{ variable|default_if_none:"" }}</code>: Muestra el texto pasado como argumento si <code>variable</code> vale <code>None</code>.</li>
+<li><code>{{ variable|default:"" }}</code>: Muestra el texto pasado como argumento si <code>variable</code> es evaluada como False (cadena vacía, lista vacía, etc.).</li>
+<li><code>{{ variable_date|date:"d-M" }}</code>: Formatea una variable de tipo <code>date</code>.</li>
+<li><code>{{ variable_list_string|join:", " }}</code>: Concatena una lista de strings.</li>
+<li><code>{{ variable_string|urlencode }}</code>: Codifica una string para que sea segura en una URL.</li>
+<li><code>{{ variable_string|unicode_decode }}</code>: Decodifica un string en unicode.</li>
+<li><code>{{ variable_string|safe }}</code>: Genera los caracteres para poder interpretar el string como HTML en lugar de escaparlos como se haría normalmente.</li>
+<li><code>{{ variable_list|length }}</code>: Número de elementos de la lista.</li>
+<li><code>{{ variable_int|add:1 }}</code>: Añade 1 a la variable entera.</li>
 </ul>
 <h2 id="snippets">Snippets<a class="headerlink" href="#snippets" title="Permanent link">&para;</a></h2>
 <ul>
