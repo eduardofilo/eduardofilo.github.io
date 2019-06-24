@@ -2855,9 +2855,8 @@ $ python manage.py runserver <span class="m">0</span>.0.0.0:8000
 
 <h2 id="anadir-campo-a-modelo-intermedio-manytomany">Añadir campo a modelo intermedio ManyToMany<a class="headerlink" href="#anadir-campo-a-modelo-intermedio-manytomany" title="Permanent link">&para;</a></h2>
 <ol>
-<li>
-<p>Partimos por ejemplo de:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<li>Partimos por ejemplo de:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2869,36 +2868,28 @@ $ python manage.py runserver <span class="m">0</span>.0.0.0:8000
 10
 11
 12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">#</span> <span class="nx">Taller</span>
-<span class="kr">class</span> <span class="nx">Taller</span><span class="p">(</span><span class="nx">models</span><span class="p">.</span><span class="nx">Model</span><span class="p">)</span><span class="o">:</span>
-    <span class="nx">nombre</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">CharField</span><span class="p">(</span><span class="nx">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nx">blank</span><span class="o">=</span><span class="nx">False</span><span class="p">)</span>
-    <span class="nx">tema</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">CharField</span><span class="p">(</span><span class="nx">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nx">blank</span><span class="o">=</span><span class="nx">False</span><span class="p">)</span>
-    <span class="nx">descripcion</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">TextField</span><span class="p">(</span><span class="nx">_</span><span class="p">(</span><span class="s1">&#39;descripción&#39;</span><span class="p">),</span> <span class="nx">blank</span><span class="o">=</span><span class="nx">False</span><span class="p">)</span>
-    <span class="nx">unidades</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">ManyToManyField</span><span class="p">(</span><span class="s1">&#39;Unidad&#39;</span><span class="p">,</span> <span class="nx">blank</span><span class="o">=</span><span class="nx">True</span><span class="p">)</span>
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Taller</span>
+<span class="k">class</span> <span class="nc">Taller</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">nombre</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">tema</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">descripcion</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s1">&#39;descripción&#39;</span><span class="p">),</span> <span class="n">blank</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">unidades</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span><span class="s1">&#39;Unidad&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-    <span class="nx">def</span> <span class="nx">__str__</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span><span class="o">:</span>
-        <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">nombre</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span>
 
-    <span class="kr">class</span> <span class="nx">Meta</span>:
-        <span class="kt">verbose_name_plural</span> <span class="o">=</span> <span class="nx">_</span><span class="p">(</span><span class="s2">&quot;talleres&quot;</span><span class="p">)</span>
-        <span class="nx">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">]</span>
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;talleres&quot;</span><span class="p">)</span>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">]</span>
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Primero averiguamos el nombre de la tabla intermedia que se creó automáticamente cuando se añadió el campo <code>unidades</code> al modelo <code>Taller</code>. En este caso era: <code>lms_taller_unidades</code>. Hacemos backup:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysqldump --opt -h localhost --user<span class="o">=</span>usuario --password<span class="o">=</span>contraseña database lms_taller_unidades <span class="p">&amp;</span>gt<span class="p">;</span> backup_lms_taller_unidades.sql
+</td></tr></table></li>
+<li>Primero averiguamos el nombre de la tabla intermedia que se creó automáticamente cuando se añadió el campo <code>unidades</code> al modelo <code>Taller</code>. En este caso era: <code>lms_taller_unidades</code>. Hacemos backup:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysqldump --opt -h localhost --user<span class="o">=</span>usuario --password<span class="o">=</span>contraseña database lms_taller_unidades &gt; backup_lms_taller_unidades.sql
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Borramos o mejor comentamos el campo <code>unidades</code> de <code>Taller</code> y generamos migraciones y las aplicamos, lo que borrará la tabla.</p>
-</li>
-<li>
-<p>Creamos el objeto intermedio:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+</td></tr></table></li>
+<li>Borramos o mejor comentamos el campo <code>unidades</code> de <code>Taller</code> y generamos migraciones y las aplicamos, lo que borrará la tabla.</li>
+<li>Creamos el objeto intermedio:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2909,25 +2900,22 @@ $ python manage.py runserver <span class="m">0</span>.0.0.0:8000
  9
 10
 11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">#</span> <span class="nx">TallerUnidades</span>
-<span class="kr">class</span> <span class="nx">TallerUnidades</span><span class="p">(</span><span class="nx">models</span><span class="p">.</span><span class="nx">Model</span><span class="p">)</span><span class="o">:</span>
-    <span class="nx">taller</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">ForeignKey</span><span class="p">(</span><span class="s1">&#39;Taller&#39;</span><span class="p">,</span> <span class="nx">on_delete</span><span class="o">=</span><span class="nx">models</span><span class="p">.</span><span class="nx">CASCADE</span><span class="p">)</span>
-    <span class="nx">unidad</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">ForeignKey</span><span class="p">(</span><span class="s1">&#39;Unidad&#39;</span><span class="p">,</span> <span class="nx">on_delete</span><span class="o">=</span><span class="nx">models</span><span class="p">.</span><span class="nx">CASCADE</span><span class="p">)</span>
-    <span class="nx">position</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">PositiveSmallIntegerField</span><span class="p">(</span><span class="kc">null</span><span class="o">=</span><span class="nx">True</span><span class="p">)</span>
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># TallerUnidades</span>
+<span class="k">class</span> <span class="nc">TallerUnidades</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">taller</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;Taller&#39;</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">unidad</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;Unidad&#39;</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">position</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveSmallIntegerField</span><span class="p">(</span><span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-    <span class="kr">class</span> <span class="nx">Meta</span>:
-        <span class="kt">db_table</span> <span class="o">=</span> <span class="s1">&#39;lms_taller_unidades&#39;</span>
-        <span class="nx">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">]</span>
-        <span class="nx">verbose_name</span> <span class="o">=</span> <span class="s2">&quot;unidad&quot;</span>
-        <span class="nx">verbose_name_plural</span> <span class="o">=</span> <span class="s2">&quot;unidades&quot;</span>
-        <span class="nx">unique_together</span> <span class="o">=</span> <span class="p">((</span><span class="s2">&quot;taller&quot;</span><span class="p">,</span> <span class="s2">&quot;unidad&quot;</span><span class="p">),)</span>
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;lms_taller_unidades&#39;</span>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">]</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s2">&quot;unidad&quot;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s2">&quot;unidades&quot;</span>
+        <span class="n">unique_together</span> <span class="o">=</span> <span class="p">((</span><span class="s2">&quot;taller&quot;</span><span class="p">,</span> <span class="s2">&quot;unidad&quot;</span><span class="p">),)</span>
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Reestablecemos la relación ManyToMany a través del objeto intermedio:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+</td></tr></table></li>
+<li>Reestablecemos la relación ManyToMany a través del objeto intermedio:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2939,33 +2927,27 @@ $ python manage.py runserver <span class="m">0</span>.0.0.0:8000
 10
 11
 12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">#</span> <span class="nx">Taller</span>
-<span class="kr">class</span> <span class="nx">Taller</span><span class="p">(</span><span class="nx">models</span><span class="p">.</span><span class="nx">Model</span><span class="p">)</span><span class="o">:</span>
-    <span class="nx">nombre</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">CharField</span><span class="p">(</span><span class="nx">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nx">blank</span><span class="o">=</span><span class="nx">False</span><span class="p">)</span>
-    <span class="nx">tema</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">CharField</span><span class="p">(</span><span class="nx">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nx">blank</span><span class="o">=</span><span class="nx">False</span><span class="p">)</span>
-    <span class="nx">descripcion</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">TextField</span><span class="p">(</span><span class="nx">_</span><span class="p">(</span><span class="s1">&#39;descripción&#39;</span><span class="p">),</span> <span class="nx">blank</span><span class="o">=</span><span class="nx">False</span><span class="p">)</span>
-    <span class="nx">unidades</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">ManyToManyField</span><span class="p">(</span><span class="s1">&#39;Unidad&#39;</span><span class="p">,</span> <span class="nx">through</span><span class="o">=</span><span class="s1">&#39;TallerUnidades&#39;</span><span class="p">)</span>
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Taller</span>
+<span class="k">class</span> <span class="nc">Taller</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">nombre</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">tema</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">descripcion</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s1">&#39;descripción&#39;</span><span class="p">),</span> <span class="n">blank</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">unidades</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span><span class="s1">&#39;Unidad&#39;</span><span class="p">,</span> <span class="n">through</span><span class="o">=</span><span class="s1">&#39;TallerUnidades&#39;</span><span class="p">)</span>
 
-    <span class="nx">def</span> <span class="nx">__str__</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span><span class="o">:</span>
-        <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">nombre</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span>
 
-    <span class="kr">class</span> <span class="nx">Meta</span>:
-        <span class="kt">verbose_name_plural</span> <span class="o">=</span> <span class="nx">_</span><span class="p">(</span><span class="s2">&quot;talleres&quot;</span><span class="p">)</span>
-        <span class="nx">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">]</span>
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;talleres&quot;</span><span class="p">)</span>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">]</span>
 </pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Creamos migraciones y las aplicamos.</p>
-</li>
-<li>Cargamos el backup de la tabla:<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mysql -h localhost --user=usuario --password=contraseña database &amp;lt; backup_lms_taller_unidades.sql
-</pre></div>
-</td></tr></table>
-
-</li>
+</td></tr></table></li>
+<li>Creamos migraciones y las aplicamos.</li>
+<li>Cargamos el backup de la tabla:
+    <code>bash
+    $ mysql -h localhost --user=usuario --password=contraseña database &lt; backup_lms_taller_unidades.sql</code>
+Si hemos utilizado el campo ManyToMany en el objeto Admin del modelo principal veremos errores como los siguientes:</li>
 </ol>
-<p>Si hemos utilizado el campo ManyToMany en el objeto Admin del modelo principal veremos errores como los siguientes:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ERRORS:
 &lt;class &#39;lms.admin.TallerAdmin&#39;&gt;: (admin.E013) The value of &#39;fields&#39; cannot include the ManyToManyField &#39;unidades&#39;, because that field manually specifies a relationship model.
