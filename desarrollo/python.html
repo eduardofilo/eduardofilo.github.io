@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -44,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.3020aac5.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
       
       
         
@@ -55,7 +55,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.01ccdecf.js"></script>
+      <script src="../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -68,9 +68,6 @@
     
       <link rel="manifest" href="../manifest.webmanifest">
     
-    
-    
-      
     
     
   </head>
@@ -129,19 +126,22 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            <span class="md-header-nav__topic">
-              Apuntes de eduardofilo
-            </span>
-            <span class="md-header-nav__topic">
-              Python/Django
-            </span>
+            
+              <span class="md-header-nav__topic">
+                Apuntes de eduardofilo
+              </span>
+              <span class="md-header-nav__topic">
+                Python/Django
+              </span>
+            
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -164,6 +164,7 @@
     </div>
   </div>
 </div>
+          
         
       </div>
       
@@ -174,18 +175,20 @@
 
   
 
-<a href="https://github.com/eduardofilo/eduardofilo.mkdocs/" title="Ir al repositorio" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
+
+  <a href="https://github.com/eduardofilo/eduardofilo.mkdocs/" title="Ir al repositorio" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      eduardofilo.mkdocs
     </div>
-  
-  <div class="md-source__repository">
-    eduardofilo.mkdocs
-  </div>
-</a>
+  </a>
+
           </div>
         </div>
       
@@ -365,18 +368,20 @@
 
   
 
-<a href="https://github.com/eduardofilo/eduardofilo.mkdocs/" title="Ir al repositorio" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
+
+  <a href="https://github.com/eduardofilo/eduardofilo.mkdocs/" title="Ir al repositorio" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      eduardofilo.mkdocs
     </div>
-  
-  <div class="md-source__repository">
-    eduardofilo.mkdocs
-  </div>
-</a>
+  </a>
+
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1008,6 +1013,13 @@
         <li class="md-nav__item">
   <a href="#ejemplo-de-creacion-de-entorno-django-desde-cero" title="Ejemplo de creación de entorno Django desde cero" class="md-nav__link">
     Ejemplo de creación de entorno Django desde cero
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anadir-campo-a-modelo-intermedio-manytomany" title="Añadir campo a modelo intermedio ManyToMany" class="md-nav__link">
+    Añadir campo a modelo intermedio ManyToMany
   </a>
   
 </li>
@@ -2166,6 +2178,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#anadir-campo-a-modelo-intermedio-manytomany" title="Añadir campo a modelo intermedio ManyToMany" class="md-nav__link">
+    Añadir campo a modelo intermedio ManyToMany
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#personalizacion-del-modelo-user" title="Personalización del modelo User" class="md-nav__link">
     Personalización del modelo User
   </a>
@@ -2588,7 +2607,6 @@
 <h3 id="aprendizaje">Aprendizaje<a class="headerlink" href="#aprendizaje" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="http://docs.python-guide.org/en/latest/intro/learning/">The Hitchhiker's Guide to Python</a></li>
-<li><a href="https://stackoverflow.com/questions/26348260/alter-model-to-add-through-relationship-to-order-a-manytomany-field-django-1">Alter model to add “through” relationship to order a ManytoMany field</a></li>
 <li><a href="https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html">How to Reset Migrations</a></li>
 <li><a href="https://books.agiliq.com/projects/django-admin-cookbook/en/latest/index.html">Django Admin Cookbook</a></li>
 <li><a href="https://stackoverflow.com/questions/2224410/django-data-migration-when-changing-a-field-to-manytomany?rq=1">Django data migration when changing a field to ManyToMany</a>: Cuando queremos cambiar de un modelo ForeignKey a ManyToMany.</li>
@@ -2835,6 +2853,126 @@ $ python manage.py runserver <span class="m">0</span>.0.0.0:8000
 </pre></div>
 </td></tr></table>
 
+<h2 id="anadir-campo-a-modelo-intermedio-manytomany">Añadir campo a modelo intermedio ManyToMany<a class="headerlink" href="#anadir-campo-a-modelo-intermedio-manytomany" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Partimos por ejemplo de:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">#</span> <span class="nx">Taller</span>
+<span class="kr">class</span> <span class="nx">Taller</span><span class="p">(</span><span class="nx">models</span><span class="p">.</span><span class="nx">Model</span><span class="p">)</span><span class="o">:</span>
+    <span class="nx">nombre</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">CharField</span><span class="p">(</span><span class="nx">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nx">blank</span><span class="o">=</span><span class="nx">False</span><span class="p">)</span>
+    <span class="nx">tema</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">CharField</span><span class="p">(</span><span class="nx">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nx">blank</span><span class="o">=</span><span class="nx">False</span><span class="p">)</span>
+    <span class="nx">descripcion</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">TextField</span><span class="p">(</span><span class="nx">_</span><span class="p">(</span><span class="s1">&#39;descripción&#39;</span><span class="p">),</span> <span class="nx">blank</span><span class="o">=</span><span class="nx">False</span><span class="p">)</span>
+    <span class="nx">unidades</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">ManyToManyField</span><span class="p">(</span><span class="s1">&#39;Unidad&#39;</span><span class="p">,</span> <span class="nx">blank</span><span class="o">=</span><span class="nx">True</span><span class="p">)</span>
+
+    <span class="nx">def</span> <span class="nx">__str__</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span><span class="o">:</span>
+        <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">nombre</span>
+
+    <span class="kr">class</span> <span class="nx">Meta</span>:
+        <span class="kt">verbose_name_plural</span> <span class="o">=</span> <span class="nx">_</span><span class="p">(</span><span class="s2">&quot;talleres&quot;</span><span class="p">)</span>
+        <span class="nx">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Primero averiguamos el nombre de la tabla intermedia que se creó automáticamente cuando se añadió el campo <code>unidades</code> al modelo <code>Taller</code>. En este caso era: <code>lms_taller_unidades</code>. Hacemos backup:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysqldump --opt -h localhost --user<span class="o">=</span>usuario --password<span class="o">=</span>contraseña database lms_taller_unidades <span class="p">&amp;</span>gt<span class="p">;</span> backup_lms_taller_unidades.sql
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Borramos o mejor comentamos el campo <code>unidades</code> de <code>Taller</code> y generamos migraciones y las aplicamos, lo que borrará la tabla.</p>
+</li>
+<li>
+<p>Creamos el objeto intermedio:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">#</span> <span class="nx">TallerUnidades</span>
+<span class="kr">class</span> <span class="nx">TallerUnidades</span><span class="p">(</span><span class="nx">models</span><span class="p">.</span><span class="nx">Model</span><span class="p">)</span><span class="o">:</span>
+    <span class="nx">taller</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">ForeignKey</span><span class="p">(</span><span class="s1">&#39;Taller&#39;</span><span class="p">,</span> <span class="nx">on_delete</span><span class="o">=</span><span class="nx">models</span><span class="p">.</span><span class="nx">CASCADE</span><span class="p">)</span>
+    <span class="nx">unidad</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">ForeignKey</span><span class="p">(</span><span class="s1">&#39;Unidad&#39;</span><span class="p">,</span> <span class="nx">on_delete</span><span class="o">=</span><span class="nx">models</span><span class="p">.</span><span class="nx">CASCADE</span><span class="p">)</span>
+    <span class="nx">position</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">PositiveSmallIntegerField</span><span class="p">(</span><span class="kc">null</span><span class="o">=</span><span class="nx">True</span><span class="p">)</span>
+
+    <span class="kr">class</span> <span class="nx">Meta</span>:
+        <span class="kt">db_table</span> <span class="o">=</span> <span class="s1">&#39;lms_taller_unidades&#39;</span>
+        <span class="nx">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">]</span>
+        <span class="nx">verbose_name</span> <span class="o">=</span> <span class="s2">&quot;unidad&quot;</span>
+        <span class="nx">verbose_name_plural</span> <span class="o">=</span> <span class="s2">&quot;unidades&quot;</span>
+        <span class="nx">unique_together</span> <span class="o">=</span> <span class="p">((</span><span class="s2">&quot;taller&quot;</span><span class="p">,</span> <span class="s2">&quot;unidad&quot;</span><span class="p">),)</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Reestablecemos la relación ManyToMany a través del objeto intermedio:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">#</span> <span class="nx">Taller</span>
+<span class="kr">class</span> <span class="nx">Taller</span><span class="p">(</span><span class="nx">models</span><span class="p">.</span><span class="nx">Model</span><span class="p">)</span><span class="o">:</span>
+    <span class="nx">nombre</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">CharField</span><span class="p">(</span><span class="nx">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nx">blank</span><span class="o">=</span><span class="nx">False</span><span class="p">)</span>
+    <span class="nx">tema</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">CharField</span><span class="p">(</span><span class="nx">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nx">blank</span><span class="o">=</span><span class="nx">False</span><span class="p">)</span>
+    <span class="nx">descripcion</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">TextField</span><span class="p">(</span><span class="nx">_</span><span class="p">(</span><span class="s1">&#39;descripción&#39;</span><span class="p">),</span> <span class="nx">blank</span><span class="o">=</span><span class="nx">False</span><span class="p">)</span>
+    <span class="nx">unidades</span> <span class="o">=</span> <span class="nx">models</span><span class="p">.</span><span class="nx">ManyToManyField</span><span class="p">(</span><span class="s1">&#39;Unidad&#39;</span><span class="p">,</span> <span class="nx">through</span><span class="o">=</span><span class="s1">&#39;TallerUnidades&#39;</span><span class="p">)</span>
+
+    <span class="nx">def</span> <span class="nx">__str__</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span><span class="o">:</span>
+        <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">nombre</span>
+
+    <span class="kr">class</span> <span class="nx">Meta</span>:
+        <span class="kt">verbose_name_plural</span> <span class="o">=</span> <span class="nx">_</span><span class="p">(</span><span class="s2">&quot;talleres&quot;</span><span class="p">)</span>
+        <span class="nx">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Creamos migraciones y las aplicamos.</p>
+</li>
+<li>Cargamos el backup de la tabla:<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mysql -h localhost --user=usuario --password=contraseña database &amp;lt; backup_lms_taller_unidades.sql
+</pre></div>
+</td></tr></table>
+
+</li>
+</ol>
+<p>Si hemos utilizado el campo ManyToMany en el objeto Admin del modelo principal veremos errores como los siguientes:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ERRORS:
+&amp;lt;class &#39;lms.admin.TallerAdmin&#39;&amp;gt;: (admin.E013) The value of &#39;fields&#39; cannot include the ManyToManyField &#39;unidades&#39;, because that field manually specifies a relationship model.
+</pre></div>
+</td></tr></table>
+
+<p>No habrá más remedio que dejar de mostrar el campo directamente con los widgets ManyToMany y pasar a utilizar Inlines.</p>
 <h2 id="personalizacion-del-modelo-user">Personalización del modelo User<a class="headerlink" href="#personalizacion-del-modelo-user" title="Permanent link">&para;</a></h2>
 <p>Es recomendable cuando se empieza un proyecto, sustituir la gestión del modelo User por uno propio, ya que si se quiere hacer más adelante con la aplicación ya en marcha, es muy complicada la migración entre tablas. Un par de buenos artículos sobre el tema son:</p>
 <ul>
@@ -3636,6 +3774,7 @@ $ sudo systemctl disable traefik.service
           Material for MkDocs</a>
       </div>
       
+        
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
@@ -3651,13 +3790,14 @@ $ sudo systemctl disable traefik.service
     
   </div>
 
+      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.267712eb.js"></script>
+      <script src="../assets/javascripts/application.b41f3d20.js"></script>
       
         
         
@@ -3675,6 +3815,9 @@ $ sudo systemctl disable traefik.service
         
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+    
       
     
   </body>
