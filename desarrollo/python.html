@@ -2944,10 +2944,11 @@ $ python manage.py runserver <span class="m">0</span>.0.0.0:8000
 </td></tr></table></li>
 <li>Creamos migraciones y las aplicamos.</li>
 <li>Cargamos el backup de la tabla:
-    <code>bash
-    $ mysql -h localhost --user=usuario --password=contraseña database &lt; backup_lms_taller_unidades.sql</code>
-Si hemos utilizado el campo ManyToMany en el objeto Admin del modelo principal veremos errores como los siguientes:</li>
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mysql -h localhost --user<span class="o">=</span>usuario --password<span class="o">=</span>contraseña database &lt; backup_lms_taller_unidades.sql
+</pre></div>
+</td></tr></table></li>
 </ol>
+<p>Si hemos utilizado el campo ManyToMany en el objeto Admin del modelo principal veremos errores como los siguientes:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ERRORS:
 &lt;class &#39;lms.admin.TallerAdmin&#39;&gt;: (admin.E013) The value of &#39;fields&#39; cannot include the ManyToManyField &#39;unidades&#39;, because that field manually specifies a relationship model.
