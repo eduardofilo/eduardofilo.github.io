@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
     
     
       
@@ -44,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="assets/stylesheets/application.3020aac5.css">
       
-        <link rel="stylesheet" href="assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -55,7 +55,7 @@
       
     
     
-      <script src="assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="assets/javascripts/modernizr.01ccdecf.js"></script>
     
     
       
@@ -68,6 +68,9 @@
     
       <link rel="manifest" href="manifest.webmanifest">
     
+    
+    
+      
     
     
   </head>
@@ -126,22 +129,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Apuntes de eduardofilo
-              </span>
-              <span class="md-header-nav__topic">
-                2018-10-20 Octoprint en Anet A8
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Apuntes de eduardofilo
+            </span>
+            <span class="md-header-nav__topic">
+              2018-10-20 Octoprint en Anet A8
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -164,7 +164,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -175,20 +174,18 @@
 
   
 
-
-  <a href="https://github.com/eduardofilo/eduardofilo.mkdocs/" title="Ir al repositorio" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      eduardofilo.mkdocs
+<a href="https://github.com/eduardofilo/eduardofilo.mkdocs/" title="Ir al repositorio" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
           </div>
         </div>
       
@@ -366,20 +363,18 @@
 
   
 
-
-  <a href="https://github.com/eduardofilo/eduardofilo.mkdocs/" title="Ir al repositorio" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      eduardofilo.mkdocs
+<a href="https://github.com/eduardofilo/eduardofilo.mkdocs/" title="Ir al repositorio" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1707,7 +1702,7 @@
 <p><img alt="Raspberry sobre PCB impresora" src="/images/posts/octoprint.jpg" /></p>
 <h2 id="desactivacion-de-bt-y-activacion-de-puerto-serie">Desactivación de BT y activación de puerto serie<a class="headerlink" href="#desactivacion-de-bt-y-activacion-de-puerto-serie" title="Permanent link">&para;</a></h2>
 <p>La Raspberry Pi Zero W (en Raspberry Pi 3 sucede lo mismo) trae un adaptador Bluetooth que tanto en la distribución Raspbian como en la imágen OctoPi utilizada está conectado precisamente a los pines #08 y #10 a los que hemos conectado el puerto serie de la impresora. Antes de continuar necesitamos liberar esta conexión. Para ello debemos editar el fichero <code>config.txt</code> que hay en la partición <code>boot</code> y añadir (al final por ejemplo) lo siguiente:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>dtoverlay=pi3-miniuart-bt
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>dtoverlay=pi3-disable-bt
 </pre></div>
 </td></tr></table>
 
@@ -1798,7 +1793,6 @@
           Material for MkDocs</a>
       </div>
       
-        
   <div class="md-footer-social">
     <link rel="stylesheet" href="assets/fonts/font-awesome.css">
     
@@ -1814,14 +1808,13 @@
     
   </div>
 
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="assets/javascripts/application.b41f3d20.js"></script>
+      <script src="assets/javascripts/application.267712eb.js"></script>
       
         
         
@@ -1839,9 +1832,6 @@
         
       
       <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
-      
-    
-    
       
     
   </body>

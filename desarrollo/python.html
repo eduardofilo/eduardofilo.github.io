@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
     
     
       
@@ -44,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.3020aac5.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -55,7 +55,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../assets/javascripts/modernizr.01ccdecf.js"></script>
     
     
       
@@ -68,6 +68,9 @@
     
       <link rel="manifest" href="../manifest.webmanifest">
     
+    
+    
+      
     
     
   </head>
@@ -126,22 +129,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Apuntes de eduardofilo
-              </span>
-              <span class="md-header-nav__topic">
-                Python/Django
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Apuntes de eduardofilo
+            </span>
+            <span class="md-header-nav__topic">
+              Python/Django
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -164,7 +164,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -175,20 +174,18 @@
 
   
 
-
-  <a href="https://github.com/eduardofilo/eduardofilo.mkdocs/" title="Ir al repositorio" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      eduardofilo.mkdocs
+<a href="https://github.com/eduardofilo/eduardofilo.mkdocs/" title="Ir al repositorio" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
           </div>
         </div>
       
@@ -368,20 +365,18 @@
 
   
 
-
-  <a href="https://github.com/eduardofilo/eduardofilo.mkdocs/" title="Ir al repositorio" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      eduardofilo.mkdocs
+<a href="https://github.com/eduardofilo/eduardofilo.mkdocs/" title="Ir al repositorio" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1223,8 +1218,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#snippets" title="Snippets" class="md-nav__link">
-    Snippets
+  <a href="#snippets-python" title="Snippets Python" class="md-nav__link">
+    Snippets Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snippets-django" title="Snippets Django" class="md-nav__link">
+    Snippets Django
   </a>
   
     <nav class="md-nav">
@@ -2383,8 +2385,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#snippets" title="Snippets" class="md-nav__link">
-    Snippets
+  <a href="#snippets-python" title="Snippets Python" class="md-nav__link">
+    Snippets Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snippets-django" title="Snippets Django" class="md-nav__link">
+    Snippets Django
   </a>
   
     <nav class="md-nav">
@@ -3170,7 +3179,7 @@ $ python manage.py runserver <span class="m">0</span>.0.0.0:8000
 <ul>
 <li><code>{{ variable|default_if_none:"" }}</code>: Muestra el texto pasado como argumento si <code>variable</code> vale <code>None</code>.</li>
 <li><code>{{ variable|default:"" }}</code>: Muestra el texto pasado como argumento si <code>variable</code> es evaluada como False (cadena vacía, lista vacía, etc.).</li>
-<li><code>{{ variable_date|date:"d-M" }}</code>: Formatea una variable de tipo <code>date</code>.</li>
+<li><code>{{ variable_date|date:"Y-m-d" }}</code>: Formatea una variable de tipo <code>date</code>. Lista de opciones de formato <a href="https://docs.djangoproject.com/en/2.2/ref/templates/builtins/#date">aquí</a>.</li>
 <li><code>{{ variable_list_string|join:", " }}</code>: Concatena una lista de strings.</li>
 <li><code>{{ variable_string|urlencode }}</code>: Codifica una string para que sea segura en una URL.</li>
 <li><code>{{ variable_string|unicode_decode }}</code>: Decodifica un string en unicode.</li>
@@ -3178,20 +3187,34 @@ $ python manage.py runserver <span class="m">0</span>.0.0.0:8000
 <li><code>{{ variable_list|length }}</code>: Número de elementos de la lista.</li>
 <li><code>{{ variable_int|add:1 }}</code>: Añade 1 a la variable entera.</li>
 </ul>
-<h2 id="snippets">Snippets<a class="headerlink" href="#snippets" title="Permanent link">&para;</a></h2>
+<h2 id="snippets-python">Snippets Python<a class="headerlink" href="#snippets-python" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Servidor HTTP en el directorio actual: <code>python -m SimpleHTTPServer 8080</code></li>
+<li>Convertir un set en un list ordenado: <code>una_lista = sorted(un_set, key=lambda x: x.position)</code></li>
+<li>Agregar elementos a un diccionario de listas creando las claves si no existen (<a href="https://stackoverflow.com/questions/12905999/python-dict-how-to-create-key-or-append-an-element-to-key">fuente</a>):<code>dic.setdefault(key,[]).append(value)</code></li>
+<li><a href="https://stackoverflow.com/a/311655">Formateo de fechas</a>:<ul>
+<li>Predeterminado: la función de conversión a cadena devuelve la fecha en formato ISO: <code>str(datetime.datetime(2008, 11, 22, 19, 53, 42))</code> devuelve <code>2008-11-22 19:53:42</code></li>
+<li>Función de impresión con formato: para el resto de formatos utilizar <code>strftime()</code>. Consultar <a href="http://strftime.org/">aquí</a> los códigos de formato.</li>
+</ul>
+</li>
+</ul>
+<h2 id="snippets-django">Snippets Django<a class="headerlink" href="#snippets-django" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Colección completa de objetos de un modelo: <code>Unidad.objects.all()</code></li>
 <li>Colección completa de objetos de un modelo ordenada: <code>Unidad.objects.all().order_by('nombre')</code></li>
 <li>Colección filtrada de objetos de un modelo: <code>Actividad.objects.filter(fecha__year=2017)</code></li>
 <li>Filtro OR (es necesario hacer <code>from django.db.models import Q</code>): <code>GrupoUnidades.objects.filter(Q(pausada=True) | Q(fecha_fin__isnull=False))</code></li>
 <li>Instancia concreta de un objeto: <code>Unidad.objects.get(pk=3)</code></li>
-<li>Servidor HTTP en el directorio actual: <code>python -m SimpleHTTPServer 8080</code></li>
-<li>Convertir un set en un list ordenado: <code>una_lista = sorted(un_set, key=lambda x: x.position)</code></li>
-<li>Template filters:<ul>
-<li>Valor predeterminado: <code>{{ "{{ elemento_de_context|default_if_none:'Valor predeterminado' " }}}}</code></li>
-</ul>
-</li>
-<li>Agregar elementos a un diccionario de listas creando las claves si no existen (<a href="https://stackoverflow.com/questions/12905999/python-dict-how-to-create-key-or-append-an-element-to-key">fuente</a>):<code>dic.setdefault(key,[]).append(value)</code></li>
+<li>Unión de recordsets y distinct:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">grupos</span> <span class="o">=</span> <span class="n">Grupo</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">none</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">curso</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">curso_set</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+    <span class="n">grupos</span> <span class="o">=</span> <span class="n">grupos</span> <span class="o">|</span> <span class="n">curso</span><span class="o">.</span><span class="n">grupo_set</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="n">grupos</span> <span class="o">=</span> <span class="n">grupos</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></li>
 </ul>
 <h3 id="filtro-en-listview">Filtro en ListView<a class="headerlink" href="#filtro-en-listview" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
@@ -3757,7 +3780,6 @@ $ sudo systemctl disable traefik.service
           Material for MkDocs</a>
       </div>
       
-        
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
@@ -3773,14 +3795,13 @@ $ sudo systemctl disable traefik.service
     
   </div>
 
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../assets/javascripts/application.267712eb.js"></script>
       
         
         
@@ -3798,9 +3819,6 @@ $ sudo systemctl disable traefik.service
         
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
-      
-    
-    
       
     
   </body>
