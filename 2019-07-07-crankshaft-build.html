@@ -1550,8 +1550,10 @@
 <li>
 <p>Actualizo la librería de paquetes e instalo algunos necesarios:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo apt-get update
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo apt-get update
 $ sudo apt-get install -y libboost-all-dev libusb-1.0.0-dev libssl-dev cmake libprotobuf-dev protobuf-c-compiler protobuf-compiler
+$ sudo apt-get install -y libqt5multimedia5 libqt5multimedia5-plugins libqt5multimediawidgets5 qtmultimedia5-dev libqt5bluetooth5 libqt5bluetooth5-bin qtconnectivity5-dev pulseaudio librtaudio-dev librtaudio5a
 </pre></div>
 </td></tr></table>
 
@@ -1581,11 +1583,7 @@ $ make
 <p>Instalo algunos paquetes necesarios para compilar <code>ilclient</code>:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo apt-get install -y libqt5multimedia5 libqt5multimedia5-plugins libqt5multimediawidgets5 qtmultimedia5-dev libqt5bluetooth5 libqt5bluetooth5-bin qtconnectivity5-dev pulseaudio librtaudio-dev librtaudio5a
-Instalo paquetes libraspberrypi sque contiene código de ilclient
-$ sudo apt-get install libraspberrypi-doc libraspberrypi-dev
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo apt-get install libraspberrypi-doc libraspberrypi-dev
 $ <span class="nb">cd</span> /opt/vc/src/hello_pi/libs/ilclient
 $ make
 </pre></div>
