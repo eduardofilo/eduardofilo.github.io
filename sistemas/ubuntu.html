@@ -1709,6 +1709,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#localizar-paquete-que-contiene-un-fichero" title="Localizar paquete que contiene un fichero" class="md-nav__link">
+    Localizar paquete que contiene un fichero
+  </a>
+  
+</li>
+      
       
       
       
@@ -2198,6 +2205,13 @@
         <li class="md-nav__item">
   <a href="#configuracion-de-gedit" title="Configuración de gedit" class="md-nav__link">
     Configuración de gedit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localizar-paquete-que-contiene-un-fichero" title="Localizar paquete que contiene un fichero" class="md-nav__link">
+    Localizar paquete que contiene un fichero
   </a>
   
 </li>
@@ -2816,6 +2830,32 @@ gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>gsettings set org.gnome.gedit.preferences.editor wrap-mode &#39;word&#39;
 </pre></div>
 </td></tr></table>
+
+<h2 id="localizar-paquete-que-contiene-un-fichero">Localizar paquete que contiene un fichero<a class="headerlink" href="#localizar-paquete-que-contiene-un-fichero" title="Permanent link">&para;</a></h2>
+<p>(<a href="https://www.cyberciti.biz/faq/equivalent-of-rpm-qf-command/">Fuente</a>)</p>
+<ol>
+<li>
+<p>Instalar <code>apt-file</code>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo apt-get install apt-file
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Actualizar su base de datos:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo apt-file update
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Hacer la búsqueda:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ apt-file search &lt;fichero_con_ruta&gt;
+</pre></div>
+</td></tr></table>
+
+</li>
+</ol>
                 
                   
                 
