@@ -530,6 +530,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#actualizacion-2019-07-07" title="Actualización 2019-07-07" class="md-nav__link">
+    Actualización 2019-07-07
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actualizacion-2019-07-22" title="Actualización 2019-07-22" class="md-nav__link">
+    Actualización 2019-07-22
+  </a>
+  
+</li>
+      
       
       
       
@@ -1676,6 +1690,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#actualizacion-2019-07-07" title="Actualización 2019-07-07" class="md-nav__link">
+    Actualización 2019-07-07
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actualizacion-2019-07-22" title="Actualización 2019-07-22" class="md-nav__link">
+    Actualización 2019-07-22
+  </a>
+  
+</li>
+      
       
       
       
@@ -1914,6 +1942,10 @@ crankshaft filesystem system unlock
 <p>La solución consistió en imprimir las piezas en ABS. Fue mucho más difícil de imprimir, pero ciertamente este material tiene ventajas como poder lijar la pieza (y así hacer desaparecer el estriado del cambio de capa) y por supuesto resistir sin problemas el calor que se acumula al exponer el coche al sol durante horas. El resultado de la segunda versión en ABS lijado.</p>
 <p><img alt="Resultado ABS" src="/images/posts/crankshaft_resultado2.jpg" /></p>
 <p>Se ofrecen dos versiones del marco, una en una pieza y otra en dos que luego habrá que pegar, ya que es una pieza ancha que puede no entrar en muchas camas de impresoras 3D (como fue mi caso). La sujección del marco se hará por medio de unos pocos puntos de cinta de doble cara.</p>
+<h2 id="actualizacion-2019-07-07">Actualización 2019-07-07<a class="headerlink" href="#actualizacion-2019-07-07" title="Permanent link">&para;</a></h2>
+<p>Tras una actualización de los Google Play Services a principios de julio de 2019, la respuesta táctil de la pantalla durante la ejecución de OpenAuto dejó de funcionar. Está reportado como <a href="https://github.com/opencardev/crankshaft/issues/352">issue #352</a> en el repositorio de Crankshaft. En <a href="/2019-07-07-crankshaft-build.html">este post</a> se ofrece una posibilidad para superar el problema hasta que aparezca una release que integre la solución.</p>
+<h2 id="actualizacion-2019-07-22">Actualización 2019-07-22<a class="headerlink" href="#actualizacion-2019-07-22" title="Permanent link">&para;</a></h2>
+<p>Tras unos 9 meses de uso sin problemas, el módulo Car switch de Mausberry Circuits ha dejado de funcionar. Ha coincidido con varios días en que he tenido quitada la Raspberry y la pantalla (por el problema con Crankshaft comentado en la actualización anterior). Desconozco si habrá tenido alguna influencia, pero parece demasiada casualidad. El problema está en el circuito impreso que integra el controlador. El módulo transformador de 12V a 5V funciona bien, por lo que hasta que piense una solución mejor he retirado el controlador y alimentado la Raspberry directamente con el módulo transformador tomando los 12V de la línea de contacto. De esta forma cuando se quita el contacto, la Raspberry se apaga abrúptamente, pero en teoría el sistema está montado en sólo lectura por lo que no debería haber problemas.</p>
                 
                   
                 
