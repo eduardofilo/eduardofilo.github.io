@@ -1851,6 +1851,13 @@ $ git log --stat
 </pre></div>
 </td></tr></table>
 
+<p>Ficheros modificados en un branch:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git diff --name-status master..sip-economy
+$ git diff --stat master..sip-economy
+</pre></div>
+</td></tr></table>
+
 <p>Log indicando los commits que afectan a un fichero (<a href="http://stackoverflow.com/questions/3701404/list-all-commits-for-a-specific-file">fuente</a>):</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git log --follow filename
 </pre></div>

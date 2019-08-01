@@ -2148,6 +2148,7 @@
 <li><code>wget -q -O - url</code>: Hace la request de la URL sin emitir trazas (-q = no verbose) y redireccionando la response a la salida estándar (-O -).</li>
 <li><code>route -n</code>: Muestra la tabla de rutas con IP's en lugar de con nombres.</li>
 <li><code>cat /etc/resolv.conf</code>: Muestra el gateway en uso.</li>
+<li><code>nmcli dev show &lt;adaptador_red&gt;</code>: Muestra los parámetros de la conexión de red (IP, gateway, DNS's, etc.).</li>
 <li><code>ldd &lt;binario&gt;</code>: Indica las librerías que usa el binario.</li>
 <li><code>exiftool -AllDates='2010:08:08 15:35:33' -overwrite_original photo.jpg</code>: Actualiza todas las fechas dentro de la metainformación de un JPG.</li>
 <li><code>exiftool -all= photo.jpg</code>: Borrar toda la metainformación de una foto (por cuestiones de privacidad antes de subirla a un sitio por ejemplo).</li>
@@ -2161,6 +2162,9 @@
 </ul>
 </li>
 <li><code>sudo stat /proc/1/exe</code>: Nos da pistas de si el sistema funciona sobre SysV, Upstart o Systemd (<a href="https://unix.stackexchange.com/questions/196166/how-to-find-out-if-a-system-uses-sysv-upstart-or-systemd-initsystem">fuente</a>).</li>
+<li><code>stty &lt; /dev/port</code>: (sustituir <code>port</code> por lo que corresponda) Interroga el puerto para encontrar sus parámetros de conexión.</li>
+<li><code>recode ISO-8859-15/CR-LF..UTF8 fichero.txt</code>: Recodifica un fichero de texto del formato habitual en Windows a UTF-8.</li>
+<li><code>find . ! -type d -name "*.txt" -exec recode ISO-8859-15/CR-LF..UTF8 {} \;</code>: Recodifica todos los ficheros de texto de un directorio del formato habitual en Windows a UTF-8.</li>
 </ul>
 <h2 id="alias-ssh">Alias SSH<a class="headerlink" href="#alias-ssh" title="Permanent link">&para;</a></h2>
 <p>Para asimilar un identificador a una pareja user@host, editar el fichero <code>~/.ssh/config</code> y añadir un bloque como el siguiente (<a href="http://collectiveidea.com/blog/archives/2011/02/04/how-to-ssh-aliases/">fuente</a>):</p>
