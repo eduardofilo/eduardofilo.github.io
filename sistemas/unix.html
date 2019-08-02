@@ -1658,6 +1658,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mini-servidor-http" title="Mini servidor HTTP" class="md-nav__link">
+    Mini servidor HTTP
+  </a>
+  
+</li>
+      
       
       
       
@@ -2084,6 +2091,13 @@
         <li class="md-nav__item">
   <a href="#montaje-de-carpeta-compartida-samba-en-etcfstab" title="Montaje de carpeta compartida samba en /etc/fstab" class="md-nav__link">
     Montaje de carpeta compartida samba en /etc/fstab
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-servidor-http" title="Mini servidor HTTP" class="md-nav__link">
+    Mini servidor HTTP
   </a>
   
 </li>
@@ -2949,6 +2963,22 @@ password=password
 
 <p>Añadir la siguiente línea a <code>/etc/fstab</code>:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>192.168.1.100/carpeta_compartida /home/usuario/punto_montaje cifs uid=usuario,gid=usuario,credentials=/home/usuario/.smbcredentials,iocharset=utf8,sec=ntlmv2,file_mode=0664,dir_mode=0775 0 0
+</pre></div>
+</td></tr></table>
+
+<h2 id="mini-servidor-http">Mini servidor HTTP<a class="headerlink" href="#mini-servidor-http" title="Permanent link">&para;</a></h2>
+<p><a href="http://acme.com/software/thttpd/">Web oficial</a></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ wget http://www.acme.com/software/thttpd/thttpd-2.29.tar.gz
+$ tar xzvf thttpd-2.29.tar.gz
+$ <span class="nb">cd</span> thttpd-2.29/
+$ ./configure
+$ make
+$ sudo ./thttpd -d &lt;directorio_root&gt;
 </pre></div>
 </td></tr></table>
                 
