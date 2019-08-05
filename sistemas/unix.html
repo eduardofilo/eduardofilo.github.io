@@ -1665,6 +1665,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#montado-de-unidades-de-red-con-autofs" title="Montado de unidades de red con autofs" class="md-nav__link">
+    Montado de unidades de red con autofs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nfs" title="NFS" class="md-nav__link">
+    NFS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smbcifs" title="SMB/CIFS" class="md-nav__link">
+    SMB/CIFS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -2099,6 +2126,33 @@
   <a href="#mini-servidor-http" title="Mini servidor HTTP" class="md-nav__link">
     Mini servidor HTTP
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#montado-de-unidades-de-red-con-autofs" title="Montado de unidades de red con autofs" class="md-nav__link">
+    Montado de unidades de red con autofs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nfs" title="NFS" class="md-nav__link">
+    NFS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smbcifs" title="SMB/CIFS" class="md-nav__link">
+    SMB/CIFS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2982,6 +3036,88 @@ $ make
 $ sudo ./thttpd -d &lt;directorio_root&gt;
 </pre></div>
 </td></tr></table>
+
+<h2 id="montado-de-unidades-de-red-con-autofs">Montado de unidades de red con autofs<a class="headerlink" href="#montado-de-unidades-de-red-con-autofs" title="Permanent link">&para;</a></h2>
+<h3 id="nfs">NFS<a class="headerlink" href="#nfs" title="Permanent link">&para;</a></h3>
+<p>(<a href="http://www.instructables.com/id/Reduce-overhead-due-to-network-drive-on-Raspberry-/">Fuente</a>)</p>
+<ol>
+<li>
+<p>Instalar paquetes:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo apt-get install autofs nfs-common
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Añadir lo siguiente al final del fichero <code>/etc/auto.master</code>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>/home/usuario/red   /etc/auto.red
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Crear fichero <code>/etc/auto.red</code> con el siguiente contenido (cambiar rw por ro si se desea acceso de sólo lectura):</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>montaje  -fstype=nfs4,rw 192.168.1.100:/path/directory
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Crear enlaces a los directorios montados con autofs:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~
+$ ln -s /home/usuario/red/montaje montaje
+</pre></div>
+</td></tr></table>
+
+</li>
+</ol>
+<h3 id="smbcifs">SMB/CIFS<a class="headerlink" href="#smbcifs" title="Permanent link">&para;</a></h3>
+<p>(<a href="https://serverfault.com/questions/219615/mount-cifs-share-with-autofs">Fuente</a>)</p>
+<ol>
+<li>
+<p>Instalar paquetes:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo apt-get install autofs smbclient cifs-utils
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Añadir lo siguiente al final del fichero <code>/etc/auto.master</code>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>/home/usuario/red /etc/auto.red --timeout=600
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Crear fichero <code>/etc/auto.red</code> con el siguiente contenido:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>montaje  -fstype=cifs,rw,noperm,netbiosname=<span class="cp">${</span><span class="n">HOST</span><span class="cp">}</span>,credentials=/home/usuario/.smbcredentials  ://192.168.1.100/carpeta_compartida
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Crear fichero <code>/home/usuario/.smbcredentials</code> con el siguiente contenido:</p>
+<p><code>username=&lt;usuario&gt;
+   password=&lt;password&gt;</code></p>
+</li>
+<li>
+<p>Proteger el fichero:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ chmod <span class="m">600</span> /home/usuario/.smbcredentials
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Crear enlaces a los directorios montados con autofs:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~
+$ ln -s /home/usuario/red/montaje montaje
+</pre></div>
+</td></tr></table>
+
+</li>
+</ol>
                 
                   
                 
