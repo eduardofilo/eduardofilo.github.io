@@ -1554,35 +1554,47 @@
                   <h1>2019-07-07 Compilación OpenAuto para solucionar touch screen</h1>
                 
                 <p>Tras una reciente actualización de los Google Play Services de Android, ha dejado de funcionar el touch screen en <a href="/2018-10-19-crankshaft.html">Crankshaft</a>. Parece ser que el problema tiene que ver con el uso de la librería <a href="https://developers.google.com/protocol-buffers/">Protocol Buffers</a>, que ha pasado a ser más estricto en esta última versión de los Play Services y parece que no se había implementado de forma rigurosa en OpenAuto.</p>
-<p>En <a href="https://github.com/opencardev/crankshaft/issues/352">este hilo</a> de los foros de Crankshaft se habla sobre el tema.</p>
+<p><a href="https://github.com/opencardev/crankshaft/issues/352">Esta es la issue</a> de Crankshaft donde se trata el tema.</p>
 <p>La solución pasa por compilar un fork de OpenAuto que uno de los usuarios ha preparado. A continuación se describe el paso a paso para hacer la compilación. El punto de partida es una instalación de la <a href="https://github.com/opencardev/crankshaft/releases">última versión de Crankshaft</a> en el momento de escribir esto (la <code>NG Alpha-5 2019-06-08</code>).</p>
 <ol>
 <li>Activamos modo DEV (necesario por lo menos para que el sistema se monte en modo lectura/escritura) montando la SD en el ordenador y cambiando el parámetro <code>DEV_MODE</code> a 1 (<code>DEV_MODE=1</code>) en el fichero <code>/boot/crankshaft/crankshaft_env.sh</code>. (<a href="https://github.com/opencardev/crankshaft/wiki/Dev-Mode-and-Debug-Mode">fuente</a>)</li>
-<li>Monto la microSD, arranco, averiguo la IP (con Fing por ejemplo) y conecto por SSH (user: pi; pwd: raspberry).</li>
+<li>Montamos la microSD, arrancamos, averiguamos la IP (con Fing por ejemplo) y conectamos por SSH (user: pi; pwd: raspberry).</li>
 <li>
-<p>Actualizo la librería de paquetes e instalo algunos necesarios:</p>
+<p>Actualizamos la librería de paquetes e instalamos algunos necesarios:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo apt-get update
-$ sudo apt-get install -y libboost-all-dev libusb-1.0.0-dev libssl-dev cmake libprotobuf-dev protobuf-c-compiler protobuf-compiler
-$ sudo apt-get install -y libqt5multimedia5 libqt5multimedia5-plugins libqt5multimediawidgets5 qtmultimedia5-dev libqt5bluetooth5 libqt5bluetooth5-bin qtconnectivity5-dev pulseaudio librtaudio-dev librtaudio5a
+$ sudo apt-get upgrade
+$ sudo apt-get install -y libboost-all-dev libusb-1.0.0-dev cmake libprotobuf-dev protobuf-c-compiler protobuf-compiler librtaudio-dev
 </pre></div>
 </td></tr></table>
 
 </li>
 <li>
-<p>Bajo el fork de <a href="https://github.com/abraha2d/aasdk">aasdk</a> de <a href="https://github.com/abraha2d">abraha2d</a> y compilo:</p>
+<p>Bajamos el branch <code>development</code>del fork de <a href="https://github.com/abraha2d/aasdk">aasdk</a> de <a href="https://github.com/abraha2d">abraha2d</a>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~
+$ git clone -b development https://github.com/abraha2d/aasdk.git
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>(OPCIONAL) En el momento de escribir esta guía compilé el commit <code>361380e7d74ddeaf17afd8cd89882001bb62c77e</code>. Si nuevos commits provocan problemas, hacer el siguiente checkout:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> aasdk
+$ git checkout 361380e7d74ddeaf17afd8cd89882001bb62c77e
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Compilamos aasdk:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~
-$ wget --no-check-certificate https://github.com/abraha2d/aasdk/archive/development.zip
-$ unzip development.zip
-$ mv aasdk-development/ aasdk
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~
 $ mkdir aasdk_build
 $ <span class="nb">cd</span> aasdk_build
 $ cmake -DCMAKE_BUILD_TYPE<span class="o">=</span>Release ../aasdk
@@ -1592,7 +1604,7 @@ $ make
 
 </li>
 <li>
-<p>Instalo algunos paquetes necesarios para compilar <code>ilclient</code>:</p>
+<p>Instalamos algunos paquetes necesarios para compilar <code>ilclient</code>:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo apt-get install -y libraspberrypi-doc libraspberrypi-dev
@@ -1603,19 +1615,31 @@ $ make
 
 </li>
 <li>
-<p>Bajo el fork de <a href="https://github.com/abraha2d/openauto">openauto</a> de <a href="https://github.com/abraha2d">abraha2d</a> y compilo:</p>
+<p>Bajamos el branch <code>crankshaft-ng</code> del fork de <a href="https://github.com/abraha2d/openauto">openauto</a> de <a href="https://github.com/abraha2d">abraha2d</a>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~
+$ git clone -b crankshaft-ng https://github.com/abraha2d/openauto.git
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>(OPCIONAL) En el momento de escribir esta guía compilé el commit <code>d56417bfd6b2af9beacb104f8659aea8bff94a72</code>. Si nuevos commits provocan problemas, hacer el siguiente checkout:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> openauto
+$ git checkout d56417bfd6b2af9beacb104f8659aea8bff94a72
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Compilamos openauto:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
 5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~
-$ wget --no-check-certificate https://github.com/abraha2d/openauto/archive/crankshaft-ng.zip
-$ unzip crankshaft-ng.zip
-$ mv openauto-crankshaft-ng/ openauto
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~
 $ mkdir openauto_build
 $ <span class="nb">cd</span> openauto_build
 $ sudo apt-get install -y libtag1-dev libblkid-dev
@@ -1626,7 +1650,7 @@ $ make
 
 </li>
 <li>
-<p>Sustituyo el binario compilado por el de la distribución Crankshaft:</p>
+<p>Sustituimos el binario compilado por el de la distribución Crankshaft:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo cp /home/pi/openauto/bin/autoapp /usr/local/bin/autoapp
 </pre></div>
 </td></tr></table>
