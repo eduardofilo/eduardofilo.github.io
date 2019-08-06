@@ -263,6 +263,8 @@
         
       
         
+      
+        
   
   
     <li class="md-tabs__item">
@@ -391,6 +393,18 @@
   <li class="md-nav__item">
     <a href="../index.html" title="Blog" class="md-nav__link">
       Blog
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../2019-08-06-django_site.html" title="2019-08-06 Creación de un sitio Django desde cero" class="md-nav__link">
+      2019-08-06 Creación de un sitio Django desde cero
     </a>
   </li>
 
@@ -678,13 +692,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-25" type="checkbox" id="nav-25">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-26" type="checkbox" id="nav-26">
     
-    <label class="md-nav__link" for="nav-25">
+    <label class="md-nav__link" for="nav-26">
       Cursos
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-25">
+      <label class="md-nav__title" for="nav-26">
         Cursos
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -714,13 +728,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-26" type="checkbox" id="nav-26">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-27" type="checkbox" id="nav-27">
     
-    <label class="md-nav__link" for="nav-26">
+    <label class="md-nav__link" for="nav-27">
       Desarrollo
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-26">
+      <label class="md-nav__title" for="nav-27">
         Desarrollo
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -978,13 +992,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-27" type="checkbox" id="nav-27">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-28" type="checkbox" id="nav-28">
     
-    <label class="md-nav__link" for="nav-27">
+    <label class="md-nav__link" for="nav-28">
       Electrónica
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-27">
+      <label class="md-nav__title" for="nav-28">
         Electrónica
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1062,13 +1076,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-28" type="checkbox" id="nav-28">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-29" type="checkbox" id="nav-29">
     
-    <label class="md-nav__link" for="nav-28">
+    <label class="md-nav__link" for="nav-29">
       Proyectos
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-28">
+      <label class="md-nav__title" for="nav-29">
         Proyectos
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1124,13 +1138,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-29" type="checkbox" id="nav-29" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-30" type="checkbox" id="nav-30" checked>
     
-    <label class="md-nav__link" for="nav-29">
+    <label class="md-nav__link" for="nav-30">
       Sistemas
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-29">
+      <label class="md-nav__title" for="nav-30">
         Sistemas
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1787,13 +1801,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-30" type="checkbox" id="nav-30">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-31" type="checkbox" id="nav-31">
     
-    <label class="md-nav__link" for="nav-30">
+    <label class="md-nav__link" for="nav-31">
       Varios
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-30">
+      <label class="md-nav__title" for="nav-31">
         Varios
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2766,7 +2780,47 @@ $ sudo usermod -a -G wireshark &lt;usuario&gt;
 <li><code>/etc/rc.local</code>: This script is executed at the end of each multiuser runlevel.</li>
 </ul>
 <h2 id="montar-imagen-de-disco-o-particion">Montar imagen de disco o partición<a class="headerlink" href="#montar-imagen-de-disco-o-particion" title="Permanent link">&para;</a></h2>
-<p>Usando <code>kpartx</code> explicado <a href="http://www.forensicswiki.org/wiki/Mounting_Disk_Images#To_mount_a_disk_image_on_Linux">aquí</a>.</p>
+<p>(<a href="http://www.forensicswiki.org/wiki/Mounting_Disk_Images#To_mount_a_disk_image_on_Linux">Fuente</a>)</p>
+<ol>
+<li>
+<p>Averiguar la estructura de las particiones:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ fdisk -l Rpi_8gb_wheezy_backup.img
+Disco Rpi_8gb_wheezy_backup.img: <span class="m">7</span>,5 GiB, <span class="m">8068792320</span> bytes, <span class="m">15759360</span> sectores
+Unidades: sectores de <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytes
+Tamaño de sector <span class="o">(</span>lógico/físico<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+Tamaño de E/S <span class="o">(</span>mínimo/óptimo<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+Tipo de etiqueta de disco: dos
+Identificador del disco: 0x000981cb
+
+Dispositivo                Inicio Comienzo    Final Sectores Tamaño Id Tipo
+Rpi_8gb_wheezy_backup.img1            <span class="m">8192</span>   <span class="m">122879</span>   <span class="m">114688</span>    56M  c W95 FAT32 <span class="o">(</span>LBA<span class="o">)</span>
+Rpi_8gb_wheezy_backup.img2          <span class="m">122880</span> <span class="m">15759359</span> <span class="m">15636480</span>   <span class="m">7</span>,5G <span class="m">83</span> Linux
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Calcular el offset multiplicando el sector de comienzo de la partición por el tamaño del sector:</p>
+<p>122880 * 512 = 62914560</p>
+</li>
+<li>
+<p>Montar:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo mount -t ext4 -o loop,offset<span class="o">=</span><span class="m">62914560</span>,ro,noexec Rpi_8gb_wheezy_backup.img mnt
+</pre></div>
+</td></tr></table>
+
+</li>
+</ol>
 <h2 id="screencast">Screencast<a class="headerlink" href="#screencast" title="Permanent link">&para;</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ avconv -f x11grab -r <span class="m">25</span> -s 910x550 -i :0.0 -vcodec huffyuv screencast.avi
 </pre></div>
