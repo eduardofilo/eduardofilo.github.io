@@ -1472,6 +1472,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pokes" title="POKEs" class="md-nav__link">
+    POKEs
+  </a>
+  
+</li>
+      
       
       
       
@@ -1630,6 +1637,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pokes" title="POKEs" class="md-nav__link">
+    POKEs
+  </a>
+  
+</li>
+      
       
       
       
@@ -1676,6 +1690,30 @@
 <li>Cambio de modo de vídeo: Scroll Lock</li>
 <li>Huevo de pascua: Pulsar <code>:</code> (o SYMBOL SHIFT+Z) durante los 2 primeros segundos tras el arranque o tras hacer master reset (Ctrl-Alt-BkSpace).</li>
 </ul>
+<h2 id="pokes">POKEs<a class="headerlink" href="#pokes" title="Permanent link">&para;</a></h2>
+<p>(<a href="http://uto.speccy.org/zxunofaq.html#megafaq">Fuente</a>)</p>
+<ol>
+<li>Arrancar con la ROM "cargandoleches".</li>
+<li>
+<p>Con esa ROM no se pueden cargar juegos con el menú de NMI así que hay que usar comandos de ESXDOS, después de hacer BREAK al arracar la ROM. Para cargar taps hay que acceder al directorio donde estén usando así:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>.<span class="k">cd</span> <span class="s">&lt;directorio&gt;</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Luego cargar el juego así:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="na">.tapein</span> <span class="err">&lt;</span><span class="no">nombre</span> <span class="no">del</span> <span class="no">fichero</span> <span class="no">tap</span><span class="err">&gt;</span>
+<span class="nf">LOAD</span> <span class="err">&quot;&quot;</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Una vez cargado el juego, pulsar NMI. Saldrá arriba a la izquierda un recuadro donde primero hay que escribir la dirección del POKE (lo que va antes de la coma), pulsar enter, y después teclear el valor del POKE (lo que va detrás de la coma). Para terminar simplemente pulsar enter en lugar de escribir la dirección y volverá al juego ya pokeado.</p>
+</li>
+</ol>
                 
                   
                 
