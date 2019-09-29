@@ -1850,20 +1850,37 @@
 </ul>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
 <h3 id="instalacion-de-docker-ce">Instalación de Docker CE<a class="headerlink" href="#instalacion-de-docker-ce" title="Permanent link">&para;</a></h3>
-<p>$ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-$ sudo echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable" | sudo tee /etc/apt/sources.list.d/docker.list
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="p">|</span> sudo apt-key add -
+$ sudo <span class="nb">echo</span> <span class="s2">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/docker.list
 $ sudo apt-get update
 $ sudo apt-get install docker-ce
-$ sudo systemctl enable docker
+$ sudo systemctl <span class="nb">enable</span> docker
 $ sudo systemctl start docker
 $ sudo groupadd docker
-$ sudo usermod -aG docker $USER</p>
+$ sudo usermod -aG docker <span class="nv">$USER</span>
+</pre></div>
+</td></tr></table>
+
 <h3 id="instalacion-de-docker-compose-httpsdocsdockercomcomposeinstall">Instalación de Docker compose (https://docs.docker.com/compose/install/)<a class="headerlink" href="#instalacion-de-docker-compose-httpsdocsdockercomcomposeinstall" title="Permanent link">&para;</a></h3>
-<p>$ sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-$ sudo chmod +x /usr/local/bin/docker-compose</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo curl -L <span class="s2">&quot;https://github.com/docker/compose/releases/download/1.23.2/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&quot;</span> -o /usr/local/bin/docker-compose
+$ sudo chmod +x /usr/local/bin/docker-compose
+</pre></div>
+</td></tr></table>
+
 <h3 id="instalacion-portainer">Instalación Portainer<a class="headerlink" href="#instalacion-portainer" title="Permanent link">&para;</a></h3>
 <p>Cerrar y volver a abrir la consola para que se aplique el último cambio del bloque anterior.</p>
-<p>$ docker run -d --name=Portainer --restart=always -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker run -d --name<span class="o">=</span>Portainer --restart<span class="o">=</span>always -p <span class="m">9000</span>:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
+</pre></div>
+</td></tr></table>
+
 <h2 id="comandos">Comandos<a class="headerlink" href="#comandos" title="Permanent link">&para;</a></h2>
 <h3 id="list-docker-cli-commands">List Docker CLI commands<a class="headerlink" href="#list-docker-cli-commands" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
@@ -1927,7 +1944,8 @@ $ docker container ls -aq
 18
 19
 20
-21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker build -t friendlyhello .                     <span class="c1"># Create image using this directory&#39;s Dockerfile</span>
+21
+22</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker build -t friendlyhello .                     <span class="c1"># Create image using this directory&#39;s Dockerfile</span>
 $ docker run -p <span class="m">4000</span>:80 friendlyhello                 <span class="c1"># Run &quot;friendlyname&quot; mapping port 4000 to 80</span>
 $ docker run -d -p <span class="m">4000</span>:80 friendlyhello              <span class="c1"># Same thing, but in detached mode</span>
 $ docker container ls                                 <span class="c1"># List all running containers</span>
@@ -1948,6 +1966,7 @@ $ docker run username/repository:tag                  <span class="c1"># Run ima
 $ docker <span class="nb">exec</span> -it &lt;hash&gt; bash                         <span class="c1"># Shell en un contenedor</span>
 $ docker update --restart<span class="o">=</span>always &lt;hash&gt;               <span class="c1"># Añadir opción de reinicio a un contenedor que ya está creado</span>
 $ docker update --restart<span class="o">=</span>no &lt;hash&gt;                   <span class="c1"># Quitar opción de reinicio a un contenedor que ya está creado</span>
+$ docker port &lt;hash&gt;                                  <span class="c1"># Muestra el mapeo de puertos del contenedor</span>
 </pre></div>
 </td></tr></table>
 
