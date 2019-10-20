@@ -1058,6 +1058,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../electronica/modulos.html" title="Módulos" class="md-nav__link">
+      Módulos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../electronica/stm32.html" title="STM32" class="md-nav__link">
       STM32
     </a>
@@ -1877,10 +1889,20 @@ $ sudo chmod +x /usr/local/bin/docker-compose
 
 <h3 id="instalacion-portainer">Instalación Portainer<a class="headerlink" href="#instalacion-portainer" title="Permanent link">&para;</a></h3>
 <p>Cerrar y volver a abrir la consola para que se aplique el último cambio del bloque anterior.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker run -d --name<span class="o">=</span>Portainer --restart<span class="o">=</span>always -p <span class="m">9000</span>:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
+<ol>
+<li>
+<p>Crear un directorio para almacenar la configuración:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo mkdir /etc/config/portainer
 </pre></div>
-</td></tr></table>
-
+</td></tr></table></p>
+</li>
+<li>
+<p>Ejecutar el comando:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker run -d --name<span class="o">=</span>Portainer --restart<span class="o">=</span>always -p <span class="m">9000</span>:9000 -v /etc/config/portainer:/data -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
+</pre></div>
+</td></tr></table></p>
+</li>
+</ol>
 <h2 id="comandos">Comandos<a class="headerlink" href="#comandos" title="Permanent link">&para;</a></h2>
 <h3 id="list-docker-cli-commands">List Docker CLI commands<a class="headerlink" href="#list-docker-cli-commands" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
