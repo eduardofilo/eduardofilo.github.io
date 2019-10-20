@@ -1743,7 +1743,7 @@
                 
                 <h1 id="modulos">Módulos<a class="headerlink" href="#modulos" title="Permanent link">&para;</a></h1>
 <h2 id="si5351-clock-generator">SI5351 Clock Generator<a class="headerlink" href="#si5351-clock-generator" title="Permanent link">&para;</a></h2>
-<p>Generador de señal de reloj entre 8KHz y 150MHz configurable por I2C. Compatible con 5V y 3.3V. Los niveles de señal se adecúan al de alimentación, por tanto para utilizar la misma tensión de alimentación que luego queremos que se utilice en la comunicación I2C. El reloj de salida es de 3V.</p>
+<p>Generador de señal de reloj entre 8KHz y 160MHz configurable por I2C. Compatible con 5V y 3.3V. Los niveles de señal se adecúan al de alimentación, por tanto para utilizar la misma tensión de alimentación que luego queremos que se utilice en la comunicación I2C. El reloj de salida es de 3V.</p>
 <h3 id="enlaces">Enlaces<a class="headerlink" href="#enlaces" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://learn.adafruit.com/adafruit-si5351-clock-generator-breakout/overview">Adafruit Si5351 Clock Generator Breakout</a></li>
@@ -1839,16 +1839,16 @@
 <p>A continuación vemos algunos ejemplos.</p>
 <h5 id="8mhz">8MHz<a class="headerlink" href="#8mhz" title="Permanent link">&para;</a></h5>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">clockgen</span><span class="p">.</span><span class="n">setupPLL</span><span class="p">(</span><span class="n">SI5351_PLL_A</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="n">clockgen</span><span class="p">.</span><span class="n">setupMultisynth</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SI5351_PLL_A</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">clockgen</span><span class="p">.</span><span class="n">setupPLL</span><span class="p">(</span><span class="n">SI5351_PLL_A</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">clockgen</span><span class="p">.</span><span class="n">setupMultisynth</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SI5351_PLL_A</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </td></tr></table>
 
 <h5 id="1mhz">1MHz<a class="headerlink" href="#1mhz" title="Permanent link">&para;</a></h5>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">clockgen</span><span class="p">.</span><span class="n">setupPLL</span><span class="p">(</span><span class="n">SI5351_PLL_A</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="n">clockgen</span><span class="p">.</span><span class="n">setupMultisynth</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SI5351_PLL_A</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">clockgen</span><span class="p">.</span><span class="n">setupPLL</span><span class="p">(</span><span class="n">SI5351_PLL_A</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">clockgen</span><span class="p">.</span><span class="n">setupMultisynth</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SI5351_PLL_A</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 <span class="n">clockgen</span><span class="p">.</span><span class="n">setupRdiv</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SI5351_R_DIV_8</span><span class="p">);</span>
 </pre></div>
 </td></tr></table>
