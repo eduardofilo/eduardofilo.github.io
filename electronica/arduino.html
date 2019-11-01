@@ -1045,6 +1045,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#programacion-de-attiny85" title="Programación de ATtiny85" class="md-nav__link">
+    Programación de ATtiny85
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cambiar-el-reloj" title="Cambiar el reloj" class="md-nav__link">
+    Cambiar el reloj
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cargar-un-sketch" title="Cargar un sketch" class="md-nav__link">
+    Cargar un sketch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1628,6 +1655,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#programacion-de-attiny85" title="Programación de ATtiny85" class="md-nav__link">
+    Programación de ATtiny85
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cambiar-el-reloj" title="Cambiar el reloj" class="md-nav__link">
+    Cambiar el reloj
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cargar-un-sketch" title="Cargar un sketch" class="md-nav__link">
+    Cargar un sketch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1652,6 +1706,35 @@
 <p>Se puede utilizar muy fácilmente un Arduino como adaptador USB-UART sin más que puentear el pin de reset (RST) a GND. En ese caso conectar los pines RX, TX (sin cruzar) y GND hacia el dispositivo que queramos conectar.</p>
 <p>En caso de que el dispositivo con el que conectemos trabaje a 3.3V (como Raspberry Pi por ejemplo), es necesario montar un divisor de tensión en la línea RX tal y como se ve en <a href="https://oscarliang.com/raspberry-pi-and-arduino-connected-serial-gpio/">este artículo</a> (en el artículo las líneas RX/TX sí que están cruzadas porque se conecta el puerto UART al microcontrolador Atmel, no al adaptador USB):</p>
 <p><img alt="arduino-raspberry-pi-serial-connect" src="/images/pages/arduino-raspberry-pi-serial-connect-schematics.jpg" /></p>
+<h2 id="programacion-de-attiny85">Programación de ATtiny85<a class="headerlink" href="#programacion-de-attiny85" title="Permanent link">&para;</a></h2>
+<p>El MC ATtiny85 no lleva el bootloader de Arduino que escucha por el puerto serie adaptado a USB ya que ni tiene puerto serie hardware ni suele estar acompañado por el adaptador USB. La única forma de programarlo es por <a href="https://en.wikipedia.org/wiki/In-system_programming">ISP</a> o mediante un programador de MC adecuado. Esto se puede hacer desde un Arduino (basado en ATmega328p) con el sketch "Arduino ISP" cargado.</p>
+<p>Antes de empezar necesitamos cargar en el Arduino IDE las definiciones de placa para soportar ATtiny85 (y algunos de sus hermanos pequeños). Para ello proceder como sigue (<a href="http://highlowtech.org/?p=1695">fuente</a>):</p>
+<ol>
+<li>Abrimos el Arduino IDE y nos vamos a la ventana de Preferencias (<code>Archivo &gt; Preferencias</code>).</li>
+<li>En la ventana que aparece introducimos la siguiente URL en el campo <code>Gestor de URLs Adicionales de Tarjetas</code>: https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json</li>
+<li>Pulsamos <code>OK</code>.</li>
+<li>Abrimos el Gestor de tarjetas (<code>Herramientas &gt; Placa &gt; Gestor de tarjetas...</code>).</li>
+<li>Localizamos el módulo <code>attiny by David A. Mellis</code> y lo instalamos.</li>
+</ol>
+<p>Los pasos para el montaje son los siguientes:</p>
+<ol>
+<li>Cargamos en el Arduino el sketch "Arduino ISP" que hay en ejemplos.</li>
+<li>Colocamos un condensador de 10μF entre el pin RESET del Arduino y GND.</li>
+<li>Cableamos entre el ATtiny85 y el Arduino de la siguiente manera:
+    <img alt="arduino-attiny85-connetion" src="/images/pages/attiny85-arduino-isp.png" /></li>
+<li>Configuramos el Arduino IDE con los siguientes parámetros:<ul>
+<li>Placa: ATtiny25/45/85</li>
+<li>Procesador: ATtiny85</li>
+<li>Clock: Internal 8 MHz</li>
+<li>Programador: Arduino as ISP</li>
+</ul>
+</li>
+</ol>
+<p>A partir de aquí hay varias cosas que podemos hacer.</p>
+<h4 id="cambiar-el-reloj">Cambiar el reloj<a class="headerlink" href="#cambiar-el-reloj" title="Permanent link">&para;</a></h4>
+<p>El ajuste del reloj que va a utilizar el MC es muy importante. Necesitamos conocerla para que el MC responda cuando queramos comunicarnos con él para cargarle un programa. Si en algún momento lo configuramos para que utilice reloj externo, tendremos que conectar uno entre los pines PB3 y PB4 siguiendo el datasheet. El ajuste del reloj se hace cambiando los fuse bits de 3 bytes especiales del MC. Esto desde el Arduino IDE se hace con el comando "Quemar Bootloader" que no hace otra cosa que cambiar estos fuse bits. De fábrica el ATtiny85 viene con el reloj interno de 1MHz configurado. Conviene cambiarlo inicialmente a 8MHz ya que es una configuración más potente (aunque también consumirá más). En caso de cometer algún error configurando los fuse bits y tener problemas para comunicar con el MC, se puede usar un <a href="/electronica/modulos.html#attiny-high-voltage-programmer">programador de alto voltaje</a> para forzar el cambio de los fusebits.</p>
+<h4 id="cargar-un-sketch">Cargar un sketch<a class="headerlink" href="#cargar-un-sketch" title="Permanent link">&para;</a></h4>
+<p>Simplemente utilizaremos el botón para subir el sketch que tengamos abierto en el Arduino IDE.</p>
                 
                   
                 
