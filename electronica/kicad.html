@@ -1712,31 +1712,80 @@
 <ol>
 <li>
 <p>Crear la siguiente estructura de directorios al crear un nuevo proyecto:</p>
-<p><code>mi_proyecto
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mi_proyecto
  ↳3d_models     // .STEP and .WRL model files for all footprints
  ↳datasheets    // data sheets for components used
  ↳gerber        // final production files
  ↳images        // SVG images and 3D board renders
  ↳lib_sch       // schematic symbols
  ↳lib_fp.pretty // footprints
- ↳pdf           // schematics, board layouts, dimension drawings</code></p>
+ ↳pdf           // schematics, board layouts, dimension drawings
+</pre></div>
+</td></tr></table>
+
 </li>
 <li>
 <p>Conforme se va editando un esquemático, KiCAD va incorporando todos los símbolos utilizados (procedentes de las librerías de la aplicación y de las creadas para el proyecto) a una librería de backup llamada "mi_proyecto-cache.lib". Una vez que el esquemático esté completo, copiar dicha librería al directorio <code>lib_sch</code>, renombrándola para quitar el sufijo <code>-cache</code> del nombre, es decir quedando <code>lib_sch/mi_proyecto.lib</code>.</p>
 </li>
 <li>
 <p>En el editor del esquemático abrir el comando de menú <code>Preferencias &gt; Administrar librerías de símbolos...</code>, seleccionar la pestaña <code>Librerías específicas del proyecto</code> y añadir la librería que hemos copiado en el paso anterior por medio del botón con forma de carpeta (<code>Add existing library to table</code>). De esta forma nunca perderemos los símbolos utilizados durante la creación del esquema (se podrían modificar al actualizar las librerías del programa):</p>
-<p><img alt="lib_sch" src="/images/pages/kicad_lib_sch.png" />)</p>
+<p><img alt="lib_sch" src="/images/pages/kicad/lib_sch.png" /></p>
 </li>
 </ol>
 <h2 id="cheatsheet">Cheatsheet<a class="headerlink" href="#cheatsheet" title="Permanent link">&para;</a></h2>
+<p>En general KiCad se utiliza con atajos de teclado. Para obtener los atajos de teclado que sirven en una de las aplicaciones, pulsar <code>Ctrl+F1</code>.</p>
 <ol>
 <li>Crear proyecto:<ol>
 <li>Desde la ventana principal del programa, <code>File &gt; New &gt; Project...</code></li>
 </ol>
 </li>
 <li>Diseñar símbolo:<ol>
-<li>Abrir el programa <code>Schematic Layout Editor (eeschema)</code>: <img alt="icon_eeschema" src="/images/pages/kicad_icon_eeschema.ico" /></li>
+<li>Abrir el programa <code>Symbol Editor</code>: <img src="/images/pages/kicad/add_component.svg" width="30"/></li>
+<li>Crear una nueva librería con el comando <code>File &gt; New library...</code> en el directorio <code>lib_sch</code>.</li>
+<li>En el popup <code>Add To Library Table</code> que aparece seleccionar la opción <code>Project</code>.</li>
+<li>Pulsar el botón <code>Create new symbol</code>: <img src="/images/pages/kicad/add_component.svg" width="30"/></li>
+<li>Se nos preguntará por la librería donde incorporarlo. Seleccionar la que acabamos de crear (aparecerá al final).</li>
+<li>Rellenar el cuadro <code>Symbol Properties</code>. Fundamentalmente tenemos que dar un nombre para el componente.</li>
+<li>Crear el símbolo del componente utilizando fundamentalmente los siguientes atajos de teclado:<ul>
+<li><code>M</code>: Mover objeto.</li>
+<li><code>P</code>: Crear pin. El círculo al final de la línea representa el punto donde se hará la conexión. <img src="/images/pages/kicad/add_pin.svg" width="30"/></li>
+<li><code>Supr</code>: Eliminar objeto.</li>
+</ul>
+</li>
+<li>Decorar el símbolo con las herramientas de dibujo.</li>
+<li>Guardar los cambios. <img src="/images/pages/kicad/save.svg" width="30"/></li>
+</ol>
+</li>
+<li>Diseñar esquemático:<ol>
+<li>Abrir el programa <code>Schematic Layout Editor (eeschema)</code>: <img src="/images/pages/kicad/icon_eeschema.svg" width="30"/></li>
+<li>Añadir los símbolos que van a componer el esquemático con la ayuda de los siguientes atajos:<ul>
+<li><code>A</code>: Añadir símbolo. <img src="/images/pages/kicad/add_component.svg" width="30"/></li>
+<li><code>P</code>: Añadir fuente de alimentación o masa. <img src="/images/pages/kicad/add_power.svg" width="30"/></li>
+<li><code>C</code>: Copiar símbolo.</li>
+</ul>
+</li>
+<li>Una vez que tengamos todos los símbolos a la vista los reorganizaremos y cablearemos con los siguientes atajos de teclado:<ul>
+<li><code>M</code>: Mover objeto (rompe las conexiones).</li>
+<li><code>G</code>: Arrastrar objeto (mantiene las conexiones).</li>
+<li><code>R</code>: Rotar objeto.</li>
+<li><code>E</code>: Editar propiedades del objeto como Referencia (<code>U</code>), Valor (<code>V</code>) o Footprint (<code>F</code>).</li>
+<li><code>W</code>: Conexión entre símbolos. <img src="/images/pages/kicad/add_line.svg" width="30"/></li>
+<li><code>K</code>: Terminar el trazado de una conexión.</li>
+<li><code>Q</code>: Añadir no conexión.</li>
+<li><code>L</code>: Añadir etiqueta de red. <img src="/images/pages/kicad/add_line_label.svg" width="30"/></li>
+<li><code>I</code>: Añadir polilínea. <img src="/images/pages/kicad/add_dashed_line.svg" width="30"/></li>
+<li><code>T</code>: Añadir texto.</li>
+</ul>
+</li>
+<li>Dar valores a los componentes que lo necesiten (Resistencias, Condesadores, Diodos, etc.) con el atajo <code>V</code> o <code>E</code>.</li>
+<li>Dar nombre a los componentes. Se puede hacer automáticamente con la herramienta de anotación a la que se accede con el botón <img src="/images/pages/kicad/annotate.svg" width="30"/> de la barra superior.</li>
 </ol>
 </li>
 </ol>
@@ -1756,11 +1805,11 @@ git clone git@github.com:KiCad/kicad-packages3D.git
 </li>
 <li>
 <p>Configurar el repositorio recien bajado como la nueva ruta de la librería <code>KISYS3DMOD</code> (originalmente la ruta es <code>/usr/share/kicad/modules/packages3d/</code>):</p>
-<p><img alt="KISYS3DMOD path" src="/images/pages/kicad_configure_KISYS3DMOD_path.png" />)</p>
+<p><img alt="KISYS3DMOD path" src="/images/pages/kicad/configure_KISYS3DMOD_path.png" />)</p>
 </li>
 <li>
 <p>En Pcbnew editar las propiedades de las huellas y en la solapa <code>Opciones 3D</code> añadir la ruta del modelo 3D o ajustarla si es que existe.</p>
-<p><img alt="Opciones 3D propiedades huella" src="/images/pages/kicad_opciones_3d_propiedades_huella.png" />)</p>
+<p><img alt="Opciones 3D propiedades huella" src="/images/pages/kicad/opciones_3d_propiedades_huella.png" />)</p>
 </li>
 <li>
 <p>Abrir el menú <code>Ver &gt; Visor 3D</code>.</p>
