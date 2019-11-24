@@ -1826,8 +1826,31 @@
 <li>En el popup que aparece seleccionar el fichero que hemos generado en el punto 3 anterior.</li>
 <li>Pulsar el botón <code>Update PCB</code>.</li>
 <li>Cerrar el popup y hacer clic sobre la PCB para colocar las huellas.</li>
-<li>Utilizando los atajos <code>M</code> y <code>R</code> recolocar todos los componentes como más convenga.
-?. Cambios en esquemático y propagación.</li>
+<li>Utilizando los atajos <code>M</code> y <code>R</code> recolocar todos los componentes como más convenga.</li>
+<li>Ocultar las etiquetas que no interesen, pulsando <code>E</code> sobre ellas y desmarcando el check <code>Visible</code>.</li>
+<li>Dibujar el perfil de la PCB con las herramientas de dibujo en la capa <code>Edge.Cuts</code>.</li>
+<li>Rutear haciendo uso de los siguientes atajos de teclado:<ul>
+<li><code>X</code>: Añadir pista.</li>
+<li><code>V</code>: Añadir vía.</li>
+<li><code>D</code>: Arrastrar pista.</li>
+</ul>
+</li>
+<li>Crear las zonas rellenas de cobre (normalmente para las <em>nets</em> +5V y GND):<ol>
+<li>Seleccionar la herramienta <code>Add filled zones</code>. <img src="/images/pages/kicad/add_zone.svg" width="30"/></li>
+<li>Delimitar una superficie que englobe la parte de la PCB que queremos rellenar de cobre. Al pinchar el primer vértice aparecerá una ventana en la que tendremos que indicar las propiedades de la zona a rellnar donde indicaremos la <em>net</em> y la capa de cobre.</li>
+</ol>
+</li>
+<li>Ejecutar las DRC pulsando el botón <code>Perform design rules check</code>. <img src="/images/pages/kicad/drc.svg" width="30"/></li>
+</ol>
+</li>
+<li>Exportar Gerber:<ol>
+<li>Pulsar el botón <code>Plot (HPGL, Postscript, or GERBER format)</code>. <img src="/images/pages/kicad/plot.svg" width="30"/></li>
+<li>En la ventana que aparece, seleccionar las capas que queremos incluir e indicar el directorio <code>gerber</code> del proyecto.</li>
+<li>Pulsar el botón <code>Plot</code>.</li>
+<li>Pulsar el botón <code>Generate Drill Files</code> y en la nueva ventana que aparece encima pulsar el botón <code>Generate Drill File</code>.</li>
+</ol>
+</li>
+<li>Cambios en esquemático y propagación:<ol>
 <li>Hacer el cambio en <code>Schematic Layout Editor (eeschema)</code>.</li>
 <li>Dar nombre a los nuevos componentes. Se puede hacer automáticamente con la herramienta de anotación a la que se accede con el botón <img src="/images/pages/kicad/annotate.svg" width="30"/> de la barra superior.</li>
 <li>Volver a <code>Schematic Layout Editor (eeschema)</code> y pulsar el botón <code>Update PCB from schematic</code>. <img src="/images/pages/kicad/annotate.svg" width="30"/></li>
@@ -1835,7 +1858,16 @@
 </ol>
 </li>
 </ol>
-<p>@@@@ Fuente de iconos: /home/edumoreno/Descargas/kicad-5.1.4/bitmaps_png/sources</p>
+<p>Las capas más importantes son:</p>
+<ul>
+<li><code>F.Cu</code>: Capa superior de cobre. Atajo de teclado: <code>RePag</code>.</li>
+<li><code>B.Cu</code>: Capa inferior de cobre. Atajo de teclado: <code>AvPag</code>.</li>
+<li><code>Edge.Cuts</code>: Perfil de corte de la PCB.</li>
+<li><code>F.SilkS</code>: Silkscreen superior o capa donde se representan los símbolos y textos de los componentes habitualmente en blanco.</li>
+<li><code>B.SilkS</code>: Silkscreen inferior.</li>
+<li><code>F.Mask</code>: Máscara de soldado superior, habitualmente en verde.</li>
+<li><code>B.Mask</code>: Máscara de soldado inferior.</li>
+</ul>
 <h2 id="generacion-modelo-3d-de-la-placa">Generación modelo 3D de la placa<a class="headerlink" href="#generacion-modelo-3d-de-la-placa" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
