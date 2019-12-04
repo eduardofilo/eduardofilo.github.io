@@ -1847,18 +1847,19 @@
 </table>
 <h2 id="puntos-de-montaje">Puntos de montaje<a class="headerlink" href="#puntos-de-montaje" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>/usr/local</code>: Monta el directorio <code>local</code> de la segunda partición de la SD interna.</li>
-<li><code>/media/data/apps</code>: Monta el directorio <code>apps</code> de la segunda partición de la SD interna.</li>
-<li><code>/media/sdcard</code>: Monta la SD externa.</li>
+<li><code>/boot</code>: Monta la primera partición de la SD interna.</li>
+<li><code>/media/data</code>: Monta la segunda partición de la SD interna.</li>
+<li><code>/media/sdcard</code>: : Monta la primera partición de la SD externa.</li>
 </ul>
 <h2 id="directorios-importantes">Directorios importantes<a class="headerlink" href="#directorios-importantes" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>/media/home</code>: Configuraciones. En realidad es un enlace simbólico de <code>/usr/local/home</code>. Contiene cosas como:<ul>
-<li><code>/media/home/.pcsx4all/memcards</code>: Ficheros <code>.mcr</code> (compatibles con los <code>.srm</code> del PCSXReARMed) de las memory cards.</li>
-<li><code>/media/home/.pcsx4all/sstates</code>: States.</li>
+<li><code>/media/data/local/home</code>: Configuraciones. Contiene cosas como:<ul>
+<li><code>/media/data/local/home/.pcsx4all/memcards</code>: Ficheros <code>.mcr</code> (compatibles con los <code>.srm</code> del PCSXReARMed) de las memory cards.</li>
+<li><code>/media/data/local/home/.pcsx4all/sstates</code>: States.</li>
 </ul>
 </li>
 <li><code>/media/data/apps</code>: Aplicaciones (<code>.opk</code>) instaladas en la tarjeta interna.</li>
+<li><code>/media/data/ROMS</code>: ROMS de emuladores instaladas en la tarjeta interna (en v1.7 no viene este directorio).</li>
 </ul>
 <h2 id="guardar-partida-en-mame-x">Guardar partida en MAME X<a class="headerlink" href="#guardar-partida-en-mame-x" title="Permanent link">&para;</a></h2>
 <ul>
