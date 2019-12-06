@@ -1251,6 +1251,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#flash-de-sd-interna" title="Flash de SD interna" class="md-nav__link">
+    Flash de SD interna
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#controles" title="Controles" class="md-nav__link">
     Controles
   </a>
@@ -1265,8 +1272,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#directorios-importantes" title="Directorios importantes" class="md-nav__link">
-    Directorios importantes
+  <a href="#directorios-interesantes" title="Directorios interesantes" class="md-nav__link">
+    Directorios interesantes
   </a>
   
 </li>
@@ -1737,6 +1744,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#flash-de-sd-interna" title="Flash de SD interna" class="md-nav__link">
+    Flash de SD interna
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#controles" title="Controles" class="md-nav__link">
     Controles
   </a>
@@ -1751,8 +1765,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#directorios-importantes" title="Directorios importantes" class="md-nav__link">
-    Directorios importantes
+  <a href="#directorios-interesantes" title="Directorios interesantes" class="md-nav__link">
+    Directorios interesantes
   </a>
   
 </li>
@@ -1806,6 +1820,12 @@
 </ul>
 </li>
 </ul>
+<h2 id="flash-de-sd-interna">Flash de SD interna<a class="headerlink" href="#flash-de-sd-interna" title="Permanent link">&para;</a></h2>
+<p>Desde Linux, habiendo descomprimido el fichero <code>.img</code> previamente:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo dd <span class="k">if</span><span class="o">=</span>RG-350_BASE_v1.7_171119.img <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M
+</pre></div>
+</td></tr></table>
+
 <h2 id="controles">Controles<a class="headerlink" href="#controles" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1851,7 +1871,7 @@
 <li><code>/media/data</code>: Monta la segunda partición de la SD interna.</li>
 <li><code>/media/sdcard</code>: : Monta la primera partición de la SD externa.</li>
 </ul>
-<h2 id="directorios-importantes">Directorios importantes<a class="headerlink" href="#directorios-importantes" title="Permanent link">&para;</a></h2>
+<h2 id="directorios-interesantes">Directorios interesantes<a class="headerlink" href="#directorios-interesantes" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>/media/data/local/home</code>: Configuraciones. Contiene cosas como:<ul>
 <li><code>/media/data/local/home/.pcsx4all/memcards</code>: Ficheros <code>.mcr</code> (compatibles con los <code>.srm</code> del PCSXReARMed) de las memory cards.</li>
@@ -1860,6 +1880,10 @@
 </li>
 <li><code>/media/data/apps</code>: Aplicaciones (<code>.opk</code>) instaladas en la tarjeta interna.</li>
 <li><code>/media/data/ROMS</code>: ROMS de emuladores instaladas en la tarjeta interna (en v1.7 no viene este directorio).</li>
+<li><code>/usr/share/gmenu2x/sections/</code>: Aplicaciones y lanzadores de comandos en las distintas secciones del menú. Por ejemplo:<ul>
+<li><code>/usr/share/gmenu2x/sections/settings/50_system_info</code>: Ejecuta en <code>dialog</code> el comando <code>/usr/bin/system_info</code> que muestra información del sistema.</li>
+</ul>
+</li>
 </ul>
 <h2 id="guardar-partida-en-mame-x">Guardar partida en MAME X<a class="headerlink" href="#guardar-partida-en-mame-x" title="Permanent link">&para;</a></h2>
 <ul>
