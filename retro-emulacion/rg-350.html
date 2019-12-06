@@ -1272,8 +1272,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#directorios-interesantes" title="Directorios interesantes" class="md-nav__link">
-    Directorios interesantes
+  <a href="#directoriosficheros-interesantes" title="Directorios/Ficheros interesantes" class="md-nav__link">
+    Directorios/Ficheros interesantes
   </a>
   
 </li>
@@ -1765,8 +1765,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#directorios-interesantes" title="Directorios interesantes" class="md-nav__link">
-    Directorios interesantes
+  <a href="#directoriosficheros-interesantes" title="Directorios/Ficheros interesantes" class="md-nav__link">
+    Directorios/Ficheros interesantes
   </a>
   
 </li>
@@ -1865,25 +1865,71 @@
 </tbody>
 </table>
 <h2 id="puntos-de-montaje">Puntos de montaje<a class="headerlink" href="#puntos-de-montaje" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>/boot</code>: Monta la primera partición de la SD interna.</li>
-<li><code>/media/data</code>: Monta la segunda partición de la SD interna.</li>
-<li><code>/media/sdcard</code>: : Monta la primera partición de la SD externa.</li>
-</ul>
-<h2 id="directorios-interesantes">Directorios interesantes<a class="headerlink" href="#directorios-interesantes" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>/media/data/local/home</code>: Configuraciones. Contiene cosas como:<ul>
-<li><code>/media/data/local/home/.pcsx4all/memcards</code>: Ficheros <code>.mcr</code> (compatibles con los <code>.srm</code> del PCSXReARMed) de las memory cards.</li>
-<li><code>/media/data/local/home/.pcsx4all/sstates</code>: States.</li>
-</ul>
-</li>
-<li><code>/media/data/apps</code>: Aplicaciones (<code>.opk</code>) instaladas en la tarjeta interna.</li>
-<li><code>/media/data/ROMS</code>: ROMS de emuladores instaladas en la tarjeta interna (en v1.7 no viene este directorio).</li>
-<li><code>/usr/share/gmenu2x/sections/</code>: Aplicaciones y lanzadores de comandos en las distintas secciones del menú. Por ejemplo:<ul>
-<li><code>/usr/share/gmenu2x/sections/settings/50_system_info</code>: Ejecuta en <code>dialog</code> el comando <code>/usr/bin/system_info</code> que muestra información del sistema.</li>
-</ul>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Directorio</th>
+<th align="left">Elemento montado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>/boot</code></td>
+<td align="left">Primera partición de la SD interna</td>
+</tr>
+<tr>
+<td align="left"><code>/media/data</code></td>
+<td align="left">Segunda partición de la SD interna</td>
+</tr>
+<tr>
+<td align="left"><code>/media/sdcard</code></td>
+<td align="left">Primera partición de la SD externa</td>
+</tr>
+</tbody>
+</table>
+<h2 id="directoriosficheros-interesantes">Directorios/Ficheros interesantes<a class="headerlink" href="#directoriosficheros-interesantes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Directorio</th>
+<th align="left">Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>/media/data/local/home/</code></td>
+<td align="left">Configuraciones. Enlace simbólico desde <code>/media/home</code></td>
+</tr>
+<tr>
+<td align="left"><code>/media/data/local/home/.pcsx4all/memcards/</code></td>
+<td align="left">Ficheros <code>.mcr</code> (compatibles con los <code>.srm</code> del PCSXReARMed) de las memory cards del emulador PCSX4All</td>
+</tr>
+<tr>
+<td align="left"><code>/media/data/local/home/.pcsx4all/sstates/</code></td>
+<td align="left">Save States del emulador PCSX4All</td>
+</tr>
+<tr>
+<td align="left"><code>/media/data/apps/</code></td>
+<td align="left">Aplicaciones (<code>.opk</code>) instaladas en la tarjeta interna</td>
+</tr>
+<tr>
+<td align="left"><code>/media/data/ROMS/</code></td>
+<td align="left">ROMS de emuladores instaladas en la tarjeta interna (en v1.7 no viene este directorio)</td>
+</tr>
+<tr>
+<td align="left"><code>/usr/share/gmenu2x/sections/</code></td>
+<td align="left">Aplicaciones y lanzadores de comandos en las distintas secciones del menú</td>
+</tr>
+<tr>
+<td align="left"><code>/var/log/messages</code></td>
+<td align="left">Logs del sistema</td>
+</tr>
+<tr>
+<td align="left"><code>/proc/</code></td>
+<td align="left">Ficheros asociados a procesos en ejecución como <code>cpuinfo</code> que muestra información sobre el procesador</td>
+</tr>
+</tbody>
+</table>
 <h2 id="guardar-partida-en-mame-x">Guardar partida en MAME X<a class="headerlink" href="#guardar-partida-en-mame-x" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Guardar: <code>START + Izquierda</code> luego seleccionar casilla de guardado (por letras, hay 29) y pulsar A.</li>
