@@ -1109,6 +1109,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#footprints-interesantes" title="Footprints interesantes" class="md-nav__link">
+    Footprints interesantes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#generacion-modelo-3d-de-la-placa" title="Generación modelo 3D de la placa" class="md-nav__link">
     Generación modelo 3D de la placa
   </a>
@@ -1744,6 +1751,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#footprints-interesantes" title="Footprints interesantes" class="md-nav__link">
+    Footprints interesantes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#generacion-modelo-3d-de-la-placa" title="Generación modelo 3D de la placa" class="md-nav__link">
     Generación modelo 3D de la placa
   </a>
@@ -1864,17 +1878,7 @@
 <li>Dar nombre a los componentes. Se puede hacer automáticamente con la herramienta de anotación a la que se accede con el botón <img src="/images/pages/kicad/annotate.svg" width="30"/> de la barra superior.</li>
 </ol>
 </li>
-<li>Asociar símbolos del esquemático con huellas PCB ejecutando CvPCB. <img src="/images/pages/kicad/cvpcb.svg" width="30"/>. Aprovechar los botones de filtrado, sobre todo <code>Filter footprint list using a partial name or a pattern</code>. Algunos footprints habituales:<ul>
-<li>Resistencia 1/4W P=10,16mm: <code>Resistors_ThroughHole:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</code></li>
-<li>Condensador cerámico 100nF P=2,54mm: <code>Capacitors_ThroughHole:C_Disc_D3.0mm_W1.6mm_P2.50mm</code></li>
-<li>LED D=5mm: <code>LEDs:LED_D5.0mm</code></li>
-<li>USB micro-B: <code>Connect:USB_Micro-B</code></li>
-<li>Transistor TO-92: <code>TO_SOT_Packages_THT:TO-92_Inline_Wide</code></li>
-<li>Switch horizontal: <code>Buttons_Switches_ThroughHole:SW_CuK_OS102011MA1QN1_SPDT_Angled</code></li>
-<li>Tactile button 6mm: <code>Buttons_Switches_ThroughHole:SW_PUSH_6mm</code></li>
-<li>Zócalo 8 pin (ATtiny85): <code>Housing_DIP:DIP-8_W7.62mm</code></li>
-</ul>
-</li>
+<li>Asociar símbolos del esquemático con huellas PCB ejecutando CvPCB. <img src="/images/pages/kicad/cvpcb.svg" width="30"/>. Aprovechar los botones de filtrado, sobre todo <code>Filter footprint list using a partial name or a pattern</code>.</li>
 <li>Diseñar las huellas que no se encuentren en la librería:<ol>
 <li>Abrir el programa <code>Footprint Editor</code>. <img src="/images/pages/kicad/new_footprint.svg" width="30"/></li>
 <li>Crear una nueva librería con el comando <code>File &gt; New Library...</code> en el directorio <code>lib_fp.pretty</code>.</li>
@@ -1945,6 +1949,18 @@
 <li><code>B.SilkS</code>: Silkscreen inferior.</li>
 <li><code>F.Mask</code>: Máscara de soldado superior, habitualmente en verde.</li>
 <li><code>B.Mask</code>: Máscara de soldado inferior.</li>
+</ul>
+<h2 id="footprints-interesantes">Footprints interesantes<a class="headerlink" href="#footprints-interesantes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Resistencia 1/4W P=10,16mm: <code>Resistors_ThroughHole:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</code></li>
+<li>Condensador cerámico 100nF P=2,54mm: <code>Capacitors_ThroughHole:C_Disc_D3.0mm_W1.6mm_P2.50mm</code></li>
+<li>LED D=5mm: <code>LEDs:LED_D5.0mm</code></li>
+<li>USB micro-B: <code>Connect:USB_Micro-B</code></li>
+<li>Transistor TO-92: <code>TO_SOT_Packages_THT:TO-92_Inline_Wide</code></li>
+<li>Switch horizontal: <code>Buttons_Switches_ThroughHole:SW_CuK_OS102011MA1QN1_SPDT_Angled</code></li>
+<li>Tactile button 6mm: <code>Buttons_Switches_ThroughHole:SW_PUSH_6mm</code></li>
+<li><a href="https://lcsc.com/product-detail/Others_C-K-PTS645VM832LFS_C285530.html">Tactile button horizontal</a>: <code>Button_Switch_THT/SW_Tactile_SPST_Angled_PTS645Vx83-2LFS</code></li>
+<li>Zócalo 8 pin (ATtiny85): <code>Housing_DIP:DIP-8_W7.62mm</code></li>
 </ul>
 <h2 id="generacion-modelo-3d-de-la-placa">Generación modelo 3D de la placa<a class="headerlink" href="#generacion-modelo-3d-de-la-placa" title="Permanent link">&para;</a></h2>
 <p>Es recomendable instalar los paquetes recomendados con apt cuando se instala KiCad. Se puede hacer con la siguiente opción en el comando de instalación:</p>
