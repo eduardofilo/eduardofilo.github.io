@@ -1935,6 +1935,7 @@
 <li>Port: Un juego concreto normalmente un clásico de PC, un remake o juego indie (homebrew). En la RG350 tendrán forma de OPK.</li>
 <li>Emulador: Virtualiza una máquina que puede ejecutar varios juegos/ROMS. En cualquier máquina emuladora como la RG-350 tendrán distintas formas (.bin, .zip, .iso, .pbp, .smc, .nes, .sms, hasta el infinito).</li>
 </ul>
+<p>Las BIOS son unos ficheros parecidos a las ROMs que a diferencia de éstas están siempre presentes en la máquina. Los emuladores o bien incorporan una reimplementación (como el HLE de Pcsx4all) o bien es necesario que las pongamos nosotros. Aún en ese primer caso es conveniente utilizar la BIOS original. Si no la incluyen los emuladores es porque son código propietario del fabricante de la máquina, lo que impediría la libre distribución del emulador. Lo mismo que sucede con las ROMs</p>
 <h2 id="flash-de-sd-interna">Flash de SD interna<a class="headerlink" href="#flash-de-sd-interna" title="Permanent link">&para;</a></h2>
 <p>Desde Linux, habiendo descomprimido el fichero <code>.img</code> previamente:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo dd <span class="k">if</span><span class="o">=</span>RG-350_BASE_v1.7_171119.img <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M
