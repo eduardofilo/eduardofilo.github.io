@@ -1251,8 +1251,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#emuladores-juegos-ports-roms-aplicaciones" title="Emuladores? Juegos? Ports? ROMS? Aplicaciones?" class="md-nav__link">
-    Emuladores? Juegos? Ports? ROMS? Aplicaciones?
+  <a href="#emuladores-juegos-ports-roms-aplicaciones-bios" title="Emuladores? Juegos? Ports? ROMS? Aplicaciones? BIOS?" class="md-nav__link">
+    Emuladores? Juegos? Ports? ROMS? Aplicaciones? BIOS?
   </a>
   
 </li>
@@ -1765,8 +1765,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#emuladores-juegos-ports-roms-aplicaciones" title="Emuladores? Juegos? Ports? ROMS? Aplicaciones?" class="md-nav__link">
-    Emuladores? Juegos? Ports? ROMS? Aplicaciones?
+  <a href="#emuladores-juegos-ports-roms-aplicaciones-bios" title="Emuladores? Juegos? Ports? ROMS? Aplicaciones? BIOS?" class="md-nav__link">
+    Emuladores? Juegos? Ports? ROMS? Aplicaciones? BIOS?
   </a>
   
 </li>
@@ -1873,7 +1873,7 @@
 </li>
 <li><a href="https://github.com/retrogamehandheld/RG-350">Documentación SOC, HDMI y drivers Windows</a></li>
 </ul>
-<h2 id="emuladores-juegos-ports-roms-aplicaciones">Emuladores? Juegos? Ports? ROMS? Aplicaciones?<a class="headerlink" href="#emuladores-juegos-ports-roms-aplicaciones" title="Permanent link">&para;</a></h2>
+<h2 id="emuladores-juegos-ports-roms-aplicaciones-bios">Emuladores? Juegos? Ports? ROMS? Aplicaciones? BIOS?<a class="headerlink" href="#emuladores-juegos-ports-roms-aplicaciones-bios" title="Permanent link">&para;</a></h2>
 <p>Básicamente todo son aplicaciones (OPKs normalmente). Dentro del OPK en un fichero se le dice al lanzador en qué categoría debe mostrarse. Básicamente las secciones que se ven y que se recorren con L1 y R1:</p>
 <ul>
 <li>Applications</li>
@@ -1881,12 +1881,11 @@
 <li>Games</li>
 <li>Settings</li>
 </ul>
-<p>Los ports son los que aparecen en Games. Nada impide que un emulador aparezca dentro de Games, pero todo el mundo pone las cosas siguiendo esta organización.</p>
-<p>Un port es una aplicación que ejecuta un juego cualquiera. Normalmente un clásico del que se dispone del código y que alguien ha compilado para la RG-350. Luego están los remakes hechos por aficionados o homebrew.</p>
+<p>Los ports son los que aparecen en Games. Nada impide que un emulador aparezca dentro de Games, pero todo el mundo pone las cosas siguiendo esta organización. Un port es una aplicación que ejecuta un juego cualquiera. Normalmente un clásico del que se dispone del código y que alguien ha compilado para la RG-350. Luego están los remakes hechos por aficionados o homebrew.</p>
 <p>Un emulador es una aplicación, normalmente también de código abierto que alguien ha compilado también para la RG-350. El emulador no contiene el código de ningún juego en concreto ni la BIOS de la máquina que emula. En teoría esto permite la libre distribución de los emuladores. Un emulador simula por software (virtualiza) un sistema que normalmente puede ejecutar códigos de juegos distintos que venían en cartucho, CD, un chip de memoria, tarjeta de memoria, etc. Son las ROMs.</p>
 <p>En resumen:</p>
 <ul>
-<li>Port: Un juego concreto normalmente un clásico de PC, un remake o juego indie (homebrew). En la RG350 tendrán forma de OPK.</li>
+<li>Port: Un juego concreto normalmente un clásico de PC, un remake, juego indie o homebrew. En la RG350 tendrán forma de OPK.</li>
 <li>Emulador: Virtualiza una máquina que puede ejecutar varios juegos/ROMS. En cualquier máquina emuladora como la RG-350 tendrán distintas formas (.bin, .zip, .iso, .pbp, .smc, .nes, .sms, hasta el infinito).</li>
 </ul>
 <p>Las BIOS son unos ficheros parecidos a las ROMs que a diferencia de éstas están siempre presentes en la máquina. Es decir, así como las ROMs son código particular de cada juego, que digamos entra y sale de la máquina (cuando cambias el CD o cartucho), la BIOS también es código pero permanente de la máquina. Está guardado en un chip y contiene el código que se ejecuta cuando arranca la máquina (los menús de lanzamiento de juegos por ejemplo en consolas avanzadas) y librerías que utilizan los desarrolladores para hacer los juegos más fáciles de programar.</p>
@@ -2134,8 +2133,8 @@
 </table>
 <h2 id="particularidades-juegos">Particularidades juegos:<a class="headerlink" href="#particularidades-juegos" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Metal Gear Solid PS1: Desactivar HLE en el emulador y BIOS 1001.</li>
-<li>Final Fantasy VIII, IX y algunos juegos europeos: Necesitan parche anticopy o poner el archivo .sbi correspondiente a cada cd en el mismo directorio y con el mismo nombre.</li>
+<li>Metal Gear Solid PS1: Desactivar HLE en el emulador y seleccionar BIOS <code>scph1001.bin</code>. <a href="https://replayers.org/bios-files/">BIOS de sistemas</a></li>
+<li>Final Fantasy VIII, IX y algunos juegos europeos: Necesitan parche anticopy o poner el archivo <code>.sbi</code> correspondiente a cada cd en el mismo directorio y con el mismo nombre. <a href="http://psxdatacenter.com/sbifiles.html">Ficheros SBI</a></li>
 </ul>
                 
                   
