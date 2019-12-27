@@ -1951,17 +1951,77 @@
 <li><code>B.Mask</code>: Máscara de soldado inferior.</li>
 </ul>
 <h2 id="footprints-interesantes">Footprints interesantes<a class="headerlink" href="#footprints-interesantes" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Resistencia 1/4W P=10,16mm: <code>Resistors_ThroughHole:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</code></li>
-<li>Condensador cerámico 100nF P=2,54mm: <code>Capacitors_ThroughHole:C_Disc_D3.0mm_W1.6mm_P2.50mm</code></li>
-<li>LED D=5mm: <code>LEDs:LED_D5.0mm</code></li>
-<li>USB micro-B: <code>Connect:USB_Micro-B</code></li>
-<li>Transistor TO-92: <code>TO_SOT_Packages_THT:TO-92_Inline_Wide</code></li>
-<li>Switch horizontal: <code>Buttons_Switches_ThroughHole:SW_CuK_OS102011MA1QN1_SPDT_Angled</code></li>
-<li>Tactile button 6mm: <code>Buttons_Switches_ThroughHole:SW_PUSH_6mm</code></li>
-<li><a href="https://lcsc.com/product-detail/Others_C-K-PTS645VM832LFS_C285530.html">Tactile button horizontal</a>: <code>Button_Switch_THT/SW_Tactile_SPST_Angled_PTS645Vx83-2LFS</code></li>
-<li>Zócalo 8 pin (ATtiny85): <code>Housing_DIP:DIP-8_W7.62mm</code></li>
-</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Componente</th>
+<th align="left">Enlace compra</th>
+<th align="left">Footprint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Resistencia 1/4W P=10,16mm</td>
+<td align="left"></td>
+<td align="left"><code>Resistors_ThroughHole:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</code></td>
+</tr>
+<tr>
+<td align="left">Condensador cerámico 100nF P=2,54mm</td>
+<td align="left"></td>
+<td align="left"><code>Capacitors_ThroughHole:C_Disc_D3.0mm_W1.6mm_P2.50mm</code></td>
+</tr>
+<tr>
+<td align="left">LED D=5mm</td>
+<td align="left"></td>
+<td align="left"><code>LEDs:LED_D5.0mm</code></td>
+</tr>
+<tr>
+<td align="left">USB micro-B</td>
+<td align="left"><a href="https://lcsc.com/product-detail/USB-Connectors_Amphenol-ICC-10118194-0001LF_C132563.html">LCSC</a></td>
+<td align="left"><code>Connect:USB_Micro-B</code></td>
+</tr>
+<tr>
+<td align="left">Lector microSD</td>
+<td align="left"><a href="https://lcsc.com/product-detail/Card-Sockets-Connectors_HRS-Hirose_DM3AT-SF-PEJM5_HRS-Hirose-HRS-DM3AT-SF-PEJM5_C114218.html">LCSC</a></td>
+<td align="left"><code>Connector_Card:microSD_HC_Hirose_DM3AT-SD-PEJMS</code></td>
+</tr>
+<tr>
+<td align="left">Lector microSD</td>
+<td align="left"><a href="https://lcsc.com/product-detail/Card-Sockets-Connectors_Korean-Hroparts-Elec-TF-04A_C145799.html">LCSC</a></td>
+<td align="left"><code>Connector_Card:microSD_HC_Wuerth_693072010801</code></td>
+</tr>
+<tr>
+<td align="left">Lector microSD</td>
+<td align="left"><a href="https://lcsc.com/product-detail/Card-Sockets-Connectors_XUNPU-TF-104_C266612.html">LCSC</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Transistor TO-92</td>
+<td align="left"></td>
+<td align="left"><code>TO_SOT_Packages_THT:TO-92_Inline_Wide</code></td>
+</tr>
+<tr>
+<td align="left">Switch horizontal</td>
+<td align="left"><a href="https://lcsc.com/product-detail/Toggle-Switches_SHOU-HAN-SK12D07VG4_C393937.html">LCSC</a></td>
+<td align="left"><code>Buttons_Switches_ThroughHole:SW_CuK_OS102011MA1QN1_SPDT_Angled</code></td>
+</tr>
+<tr>
+<td align="left">Tactile button horizontal</td>
+<td align="left"><a href="https://lcsc.com/product-detail/Others_C-K-PTS645VM832LFS_C285530.html">LCSC</a></td>
+<td align="left"><code>Button_Switch_THT/SW_Tactile_SPST_Angled_PTS645Vx83-2LFS</code></td>
+</tr>
+<tr>
+<td align="left">Tactile button 6mm</td>
+<td align="left"></td>
+<td align="left"><code>Buttons_Switches_ThroughHole:SW_PUSH_6mm</code></td>
+</tr>
+<tr>
+<td align="left">Zócalo 8 pin (ATtiny85)</td>
+<td align="left"></td>
+<td align="left"><code>Housing_DIP:DIP-8_W7.62mm</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="generacion-modelo-3d-de-la-placa">Generación modelo 3D de la placa<a class="headerlink" href="#generacion-modelo-3d-de-la-placa" title="Permanent link">&para;</a></h2>
 <p>Es recomendable instalar los paquetes recomendados con apt cuando se instala KiCad. Se puede hacer con la siguiente opción en el comando de instalación:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo apt install --install-recommends kicad
