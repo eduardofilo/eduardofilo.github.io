@@ -2856,7 +2856,7 @@ $ <span class="k">for</span> i in *.jpg<span class="p">;</span> <span class="k">
 
 <h2 id="montaje-de-video-stopmotion-a-partir-de-fotos">Montaje de vídeo StopMotion a partir de fotos<a class="headerlink" href="#montaje-de-video-stopmotion-a-partir-de-fotos" title="Permanent link">&para;</a></h2>
 <p>A 10fps por ejemplo (<a href="http://www.dototot.com/compile-stop-motion-animation-image-sequence-avconv/">Fuente</a>):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ avconv -f image2 -r <span class="m">10</span> -i %04d.jpg -vf <span class="nv">scale</span><span class="o">=</span><span class="m">1440</span>:1080 -r:v <span class="m">10</span> -c:v libx264 -qp <span class="m">0</span> -preset veryslow -an <span class="s2">&quot;video.mkv&quot;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ffmpeg -f image2 -r <span class="m">10</span> -i %04d.jpg -vf <span class="nv">scale</span><span class="o">=</span><span class="m">1440</span>:1080 -r:v <span class="m">10</span> -c:v libx264 -qp <span class="m">0</span> -preset veryslow -an <span class="s2">&quot;video.mkv&quot;</span>
 </pre></div>
 </td></tr></table>
 
