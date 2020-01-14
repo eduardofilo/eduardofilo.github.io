@@ -3135,8 +3135,8 @@ ncftp -u<span class="s2">&quot;</span><span class="nv">$FTPU</span><span class="
 <h2 id="creacion-de-servicios-systemd">Creación de servicios Systemd<a class="headerlink" href="#creacion-de-servicios-systemd" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Crear un archivo en <code>/lib/systemd/system/</code> con el nombre del servicio y la extensión <code>.system</code>.</li>
-<li>Insertar el siguiente contenido:</li>
-</ol>
+<li>
+<p>Insertar el siguiente contenido:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -3167,18 +3167,27 @@ ncftp -u<span class="s2">&quot;</span><span class="nv">$FTPU</span><span class="
 </pre></div>
 </td></tr></table>
 
-<ol>
+</li>
 <li>
 <p>Activar el nuevo servicio:</p>
-<p>$ sudo systemctl enable mi_servicio.service</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo systemctl <span class="nb">enable</span> mi_servicio.service
+</pre></div>
+</td></tr></table>
+
 </li>
 <li>
 <p>Para no esperar al reinicio, arrancar manualmente el servicio:</p>
-<p>$ sudo systemctl start mi_servicio.service</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo systemctl start mi_servicio.service
+</pre></div>
+</td></tr></table>
+
 </li>
 <li>
 <p>Para comprobar si el servicio se inicia correctamente:</p>
-<p>$ sudo systemctl status mi_servicio.service</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo systemctl status mi_servicio.service
+</pre></div>
+</td></tr></table>
+
 </li>
 </ol>
 <h2 id="gestion-de-servicios-systemd">Gestión de servicios Systemd<a class="headerlink" href="#gestion-de-servicios-systemd" title="Permanent link">&para;</a></h2>
