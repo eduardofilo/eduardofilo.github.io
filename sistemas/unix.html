@@ -1794,6 +1794,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#creacion-de-servicios-systemd" title="Creación de servicios Systemd" class="md-nav__link">
+    Creación de servicios Systemd
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#gestion-de-servicios-systemd" title="Gestión de servicios Systemd" class="md-nav__link">
     Gestión de servicios Systemd
   </a>
@@ -2229,6 +2236,13 @@
         <li class="md-nav__item">
   <a href="#instalaciondesinstalacion-de-scripts-sysvupstart" title="Instalación/desinstalación de scripts SysV/Upstart" class="md-nav__link">
     Instalación/desinstalación de scripts SysV/Upstart
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-servicios-systemd" title="Creación de servicios Systemd" class="md-nav__link">
+    Creación de servicios Systemd
   </a>
   
 </li>
@@ -3118,6 +3132,55 @@ ncftp -u<span class="s2">&quot;</span><span class="nv">$FTPU</span><span class="
 <li>Instalar: <code>sudo update-rc.d SERVICE defaults</code></li>
 <li>Desinstalar: <code>sudo update-rc.d -f SERVICE remove</code></li>
 </ul>
+<h2 id="creacion-de-servicios-systemd">Creación de servicios Systemd<a class="headerlink" href="#creacion-de-servicios-systemd" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Crear un archivo en <code>/lib/systemd/system/</code> con el nombre del servicio y la extensión <code>.system</code>.</li>
+<li>Insertar el siguiente contenido:</li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">Nombre del servicio</span>
+<span class="na">Wants</span><span class="o">=</span><span class="s">network-online.target</span>
+<span class="na">After</span><span class="o">=</span><span class="s">network-online.target</span>
+
+<span class="k">[Service]</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">simple</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/bin/bash /home/usuario/script_arranque.sh</span>
+<span class="na">Restart</span><span class="o">=</span><span class="s">on-abort</span>
+<span class="na">User</span><span class="o">=</span><span class="s">usuario</span>
+<span class="na">Group</span><span class="o">=</span><span class="s">usuario</span>
+
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</pre></div>
+</td></tr></table>
+
+<ol>
+<li>
+<p>Activar el nuevo servicio:</p>
+<p>$ sudo systemctl enable mi_servicio.service</p>
+</li>
+<li>
+<p>Para no esperar al reinicio, arrancar manualmente el servicio:</p>
+<p>$ sudo systemctl start mi_servicio.service</p>
+</li>
+<li>
+<p>Para comprobar si el servicio se inicia correctamente:</p>
+<p>$ sudo systemctl status mi_servicio.service</p>
+</li>
+</ol>
 <h2 id="gestion-de-servicios-systemd">Gestión de servicios Systemd<a class="headerlink" href="#gestion-de-servicios-systemd" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>systemctl start SERVICE</code> - Use it to start a service. Does not persist after reboot</li>
