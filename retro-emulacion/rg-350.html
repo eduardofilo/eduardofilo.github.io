@@ -2245,7 +2245,7 @@
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>/boot</code></td>
+<td align="left"><code>/media/system</code></td>
 <td align="left">Primera partición de la SD interna</td>
 </tr>
 <tr>
@@ -2307,6 +2307,14 @@
 <td align="left"><code>/media/data/local/sbin/frontend_start</code></td>
 <td align="left">Lanzador frontend</td>
 </tr>
+<tr>
+<td align="left"><code>/media/home</code></td>
+<td align="left">Enlace simbólico de <code>/media/data/local/home</code></td>
+</tr>
+<tr>
+<td align="left"><code>/usr/local</code></td>
+<td align="left">Enlacce simbólico de <code>/media/data/local</code></td>
+</tr>
 </tbody>
 </table>
 <h2 id="bios">BIOS<a class="headerlink" href="#bios" title="Permanent link">&para;</a></h2>
@@ -2323,31 +2331,31 @@
 <tr>
 <td align="left">Atari Lynx</td>
 <td align="left">Handy</td>
-<td align="left"><code>/usr/local/home/.handy</code></td>
+<td align="left"><code>/media/data/local/home/.handy</code></td>
 <td align="left"><code>lynxboot.img</code></td>
 </tr>
 <tr>
 <td align="left">Gameboy</td>
 <td align="left">Gambatte</td>
-<td align="left"><code>/usr/local/home/.gambatte/bios/</code></td>
+<td align="left"><code>/media/data/local/home/.gambatte/bios/</code></td>
 <td align="left"><code>gb_bios.bin</code></td>
 </tr>
 <tr>
 <td align="left">Gameboy Color</td>
 <td align="left">Gambatte</td>
-<td align="left"><code>/usr/local/home/.gambatte/bios/</code></td>
+<td align="left"><code>/media/data/local/home/.gambatte/bios/</code></td>
 <td align="left"><code>gbc_bios.bin</code></td>
 </tr>
 <tr>
 <td align="left">Gameboy Advance</td>
 <td align="left">Gpsp</td>
-<td align="left"><code>/usr/local/home/.gpsp/</code></td>
+<td align="left"><code>/media/data/local/home/.gpsp/</code></td>
 <td align="left"><code>gba_bios.bin</code></td>
 </tr>
 <tr>
 <td align="left">MegaCD</td>
 <td align="left">Picodrive</td>
-<td align="left"><code>/usr/local/home/.picodrive/</code></td>
+<td align="left"><code>/media/data/local/home/.picodrive/</code></td>
 <td align="left"><code>bios_CD_E.bin</code>; <code>bios_CD_J.bin</code>; <code>bios_CD_U.bin</code></td>
 </tr>
 <tr>
@@ -2359,13 +2367,13 @@
 <tr>
 <td align="left">PC-Engine CD</td>
 <td align="left">Temper</td>
-<td align="left"><code>/usr/local/home/.Temper/syscards/</code></td>
+<td align="left"><code>/media/data/local/home/.Temper/syscards/</code></td>
 <td align="left"><code>syscard3.pce</code></td>
 </tr>
 <tr>
 <td align="left">PlayStation</td>
 <td align="left">Pcsx4all</td>
-<td align="left"><code>/usr/local/home/.pcsx4all/bios/</code></td>
+<td align="left"><code>/media/data/local/home/.pcsx4all/bios/</code></td>
 <td align="left"><code>psxonpsp660.bin</code>; <code>scph1001.bin</code>; <code>scph5500.bin</code>; <code>scph5501.bin</code>; <code>scph5502.bin</code></td>
 </tr>
 </tbody>
@@ -2377,7 +2385,7 @@
 </ul>
 <h2 id="solucion-de-problemas">Solución de problemas<a class="headerlink" href="#solucion-de-problemas" title="Permanent link">&para;</a></h2>
 <h4 id="corrupcion-de-lanzador">Corrupción de lanzador<a class="headerlink" href="#corrupcion-de-lanzador" title="Permanent link">&para;</a></h4>
-<p>En ocasiones no se muestra correctamente el icono de una aplicación, o no apunta a donde debería. Puede suceder cuando hay dos OPK's con el mismo nombre en la SD interna y externa, y se borra uno de ellos por ejemplo. Para resetear la información, entrar en la sección donde esté el problema dentro de el directorio <code>/usr/local/home/.gmenu2x/sections</code> y borrar el nombre de la aplicación problemática. Lo que hay allí no es la aplicación en sí sino un fichero tipo <code>.desktop</code> con metainformación (icono, descripción, etc.).</p>
+<p>En ocasiones no se muestra correctamente el icono de una aplicación, o no apunta a donde debería. Puede suceder cuando hay dos OPK's con el mismo nombre en la SD interna y externa, y se borra uno de ellos por ejemplo. Para resetear la información, entrar en la sección donde esté el problema dentro de el directorio <code>/media/data/local/home/.gmenu2x/sections</code> y borrar el nombre de la aplicación problemática. Lo que hay allí no es la aplicación en sí sino un fichero tipo <code>.desktop</code> con metainformación (icono, descripción, etc.).</p>
 <h2 id="previews-de-roms-en-gmenu2x">Previews de ROMs en Gmenu2x<a class="headerlink" href="#previews-de-roms-en-gmenu2x" title="Permanent link">&para;</a></h2>
 <p>Seguir los pasos de <a href="/2020-01-11-rg350_scraper.html">este post</a>.</p>
                 
