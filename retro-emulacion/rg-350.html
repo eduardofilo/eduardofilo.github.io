@@ -1414,6 +1414,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#backup-de-home" title="Backup de home" class="md-nav__link">
+    Backup de home
+  </a>
+  
+</li>
+      
       
       
       
@@ -2003,6 +2010,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#backup-de-home" title="Backup de home" class="md-nav__link">
+    Backup de home
+  </a>
+  
+</li>
+      
       
       
       
@@ -2388,6 +2402,19 @@
 <p>En ocasiones no se muestra correctamente el icono de una aplicación, o no apunta a donde debería. Puede suceder cuando hay dos OPK's con el mismo nombre en la SD interna y externa, y se borra uno de ellos por ejemplo. Para resetear la información, entrar en la sección donde esté el problema dentro de el directorio <code>/media/data/local/home/.gmenu2x/sections</code> y borrar el nombre de la aplicación problemática. Lo que hay allí no es la aplicación en sí sino un fichero tipo <code>.desktop</code> con metainformación (icono, descripción, etc.).</p>
 <h2 id="previews-de-roms-en-gmenu2x">Previews de ROMs en Gmenu2x<a class="headerlink" href="#previews-de-roms-en-gmenu2x" title="Permanent link">&para;</a></h2>
 <p>Seguir los pasos de <a href="/2020-01-11-rg350_scraper.html">este post</a>.</p>
+<h2 id="backup-de-home">Backup de home<a class="headerlink" href="#backup-de-home" title="Permanent link">&para;</a></h2>
+<p>El directorio <code>/home/data/local/home</code> pertenece a la tarjeta interna y es de los más importantes puesto que es donde la mayoría (por no decir todos) los programas (emuladores, ports, aplicaciones) guardan sus ajustes (como los savestates de los emuladores o las memory cards de pcsx4all). Cuando flasheamos la tarjeta interna (con las opciones 2 y 3 del apartado <a href="#opciones-para-actualizar-el-firmware-rg350-rogue-cfw">Opciones para actualizar el firmware RG350-ROGUE-CFW</a>) el contenido de este directorio se pierde. Una idea sería hacer un respaldo del mismo en la tarjeta externa (que no se altera durante el flasheo) y luego restaurarlo.</p>
+<p>Podemos hacer el backup lanzando un comando de terminal ya sea conectando por SSH o utilizando una aplicación de terminal (como <code>ST-SDL</code>). El comando para realizar el backup es:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>tar -cf /media/sdcard/home_backup.tar -C /media/data/local home
+</pre></div>
+</td></tr></table>
+
+<p>Para restaurar:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>tar -xf /media/sdcard/home_backup.tar -C /media/data/local
+</pre></div>
+</td></tr></table>
+
+<p>El comando no es sensible a la ruta, es decir puede lanzarse desde cualquier directorio y genera el fichero <code>home_backup.tar</code> en la raíz de la tarjeta externa (ruta <code>/media/sdcard/</code> en el sistema de la consola).</p>
                 
                   
                 
