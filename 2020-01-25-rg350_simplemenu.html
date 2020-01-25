@@ -482,6 +482,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#previews" title="Previews" class="md-nav__link">
+    Previews
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#controles" title="Controles" class="md-nav__link">
     Controles
   </a>
@@ -1807,6 +1814,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#previews" title="Previews" class="md-nav__link">
+    Previews
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#controles" title="Controles" class="md-nav__link">
     Controles
   </a>
@@ -1960,6 +1974,78 @@
 <ul>
 <li><a href="/files/posts/sections.cfg">sections.cfg</a></li>
 </ul>
+<h2 id="previews">Previews<a class="headerlink" href="#previews" title="Permanent link">&para;</a></h2>
+<p>SimpleMenu soporta previsualización de las ROMs. Para que aparezcan hay que hacer dos cosas.</p>
+<p>Primero colocar las imágenes con el mismo nombre que las ROMs pero con extensión <code>.png</code> en un directorio al mismo nivel que las ROMs de nombre <code>media</code>. Por ejemplo la previsualización de la ROM <code>/media/sdcard/roms/GB/DKLAND.gb</code> iría en <code>/media/sdcard/roms/GB/media/DKLAND.png</code>.</p>
+<p>Lo segundo que hay que hacer es activar la visualización de las miniaturas. Para ello hay que pulsar la tecla <code>Y</code>. Volviéndola a pulsar volvemos al menú normal.</p>
+<p>Desafortunadamente el directorio necesario para las previsualizaciones no es el mismo que necesita Gmenu2x (<code>.previews</code>). Dado que tenemos el código de SimpleMenu, se podría modificar para utilizar la misma ruta que Gmenu2x y compilarlo, pero de momento he optado por duplicar el directorio. En mi caso lo hice con la siguiente sesión de terminal por SSH:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>RG350:/media/sdcard/roms # find . -name .previews
+./FBA/.previews
+./GBA/.previews
+./PCE/.previews
+./GGSMS/SMS/.previews
+./GGSMS/GG/.previews
+./FC/.previews
+./WSC/.previews
+./CPC/.previews
+./SFC/.previews
+./PS/.previews
+./GBGBC/GBC/.previews
+./GBGBC/GB/.previews
+./MD/.previews
+./NGP/.previews
+./ZX/.previews
+RG350:/media/sdcard/roms # cp -r ./FBA/.previews ./FBA/media
+RG350:/media/sdcard/roms # cp -r ./GBA/.previews ./GBA/media
+RG350:/media/sdcard/roms # cp -r ./PCE/.previews ./PCE/media
+RG350:/media/sdcard/roms # cp -r ./GGSMS/SMS/.previews ./GGSMS/SMS/media
+RG350:/media/sdcard/roms # cp -r ./GGSMS/GG/.previews ./GGSMS/GG/media
+RG350:/media/sdcard/roms # cp -r ./FC/.previews ./FC/media
+RG350:/media/sdcard/roms # cp -r ./WSC/.previews ./WSC/media
+RG350:/media/sdcard/roms # cp -r ./CPC/.previews ./CPC/media
+RG350:/media/sdcard/roms # cp -r ./SFC/.previews ./SFC/media
+RG350:/media/sdcard/roms # cp -r ./PS/.previews ./PS/media
+RG350:/media/sdcard/roms # cp -r ./GBGBC/GBC/.previews ./GBGBC/GBC/media
+RG350:/media/sdcard/roms # cp -r ./GBGBC/GB/.previews ./GBGBC/GB/media
+RG350:/media/sdcard/roms # cp -r ./MD/.previews ./MD/media
+RG350:/media/sdcard/roms # cp -r ./NGP/.previews ./NGP/media
+RG350:/media/sdcard/roms # cp -r ./ZX/.previews ./ZX/media
+</pre></div>
+</td></tr></table>
+
+<p>El resultado:</p>
+<iframe width="853" height="480" src="https://www.youtube.com/embed/EXagaiHvR2w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 <h2 id="controles">Controles<a class="headerlink" href="#controles" title="Permanent link">&para;</a></h2>
 <p>La página de documentación de controles es <a href="https://github.com/fgl82/simplemenu/wiki/Controls">ésta</a>, pero resulta un poco confusa, por lo que se listan a continuación:</p>
 <table>
@@ -1992,7 +2078,7 @@
 </tr>
 <tr>
 <td align="left"><code>Y</code></td>
-<td align="left">Alterna entre modo menú y modo preview (desconozco dónde se buscan las previews)</td>
+<td align="left">Alterna entre modo menú y modo preview</td>
 </tr>
 <tr>
 <td align="left"><code>A</code></td>
