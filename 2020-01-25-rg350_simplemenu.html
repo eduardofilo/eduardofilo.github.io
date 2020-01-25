@@ -448,6 +448,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#arranque" title="Arranque" class="md-nav__link">
+    Arranque
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-lanzador-predeterminado" title="Como lanzador predeterminado" class="md-nav__link">
+    Como lanzador predeterminado
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desde-gmenu2x" title="Desde Gmenu2x" class="md-nav__link">
+    Desde Gmenu2x
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuracion" title="Configuración" class="md-nav__link">
     Configuración
   </a>
@@ -1746,6 +1773,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#arranque" title="Arranque" class="md-nav__link">
+    Arranque
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-lanzador-predeterminado" title="Como lanzador predeterminado" class="md-nav__link">
+    Como lanzador predeterminado
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desde-gmenu2x" title="Desde Gmenu2x" class="md-nav__link">
+    Desde Gmenu2x
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuracion" title="Configuración" class="md-nav__link">
     Configuración
   </a>
@@ -1784,23 +1838,18 @@
 <p>Se ilustra a continuación el proceso de instalación y configuración del launcher SimpleMenu para RG350. Advertir que este launcher está todavía en un proceso inicial de desarrollo y exige una configuración muy manual y tediosa.</p>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Bajar los dos ficheros siguientes de la lista de assets de la release:<ul>
+<li>Bajar el fichero siguiente de la lista de assets de la release:<ul>
 <li><a href="https://github.com/fgl82/simplemenu/releases/download/3.0/SimpleMenu.3.0.-.RG-350.-.2019-01-16.zip">SimpleMenu.3.0.-.RG-350.-.2019-01-16.zip</a></li>
-<li><a href="https://github.com/fgl82/simplemenu/releases/download/3.0/frontend_start">frontend_start</a></li>
 </ul>
 </li>
 <li>Copiar los dos ficheros bajados a la raíz de la microSD externa descomprimiendo el primero de forma que su contenido quede en un directorio de nombre <code>SimpleMenu</code>.</li>
 <li>
 <p>Una vez montada en la RG350, la ruta del directorio donde hemos descomprimido se encuentra en <code>/media/sdcard/SimpleMenu</code>. Debe quedar como se ve en el pantallazo:</p>
-<p><img alt="copia SimpleMenu 1" src="/images/posts/simplemenu_screenshot001.png" /></p>
+<p><img alt="SimpleMenu 1" src="/images/posts/simplemenu_screenshot001.png" /></p>
 </li>
 <li>
 <p>Copiar el directorio <code>SimpleMenu</code> a la ruta <code>/media/data</code> que pertenece a la microSD interna:</p>
-<p><img alt="copia SimpleMenu 2" src="/images/posts/simplemenu_screenshot002.png" /></p>
-</li>
-<li>
-<p>Copiar el fichero <code>frontend_start</code> a la ruta <code>/media/data/local/sbin</code>:</p>
-<p><img alt="copia SimpleMenu 3" src="/images/posts/simplemenu_screenshot003.png" /></p>
+<p><img alt="SimpleMenu 2" src="/images/posts/simplemenu_screenshot002.png" /></p>
 </li>
 <li>
 <p>Si existía de una instalación anterior borrar el directorio <code>/usr/local/home/.simplemenu</code> ya que parece que el formato de los ajustes que aquí se almacenan ha cambiado respecto de las versiones anteriores.</p>
@@ -1809,9 +1858,7 @@
 <p>Hacer ejecutables algunos de los ficheros instalados. Desafortunadamente DinguxCmdr no nos ayuda en este caso. Tendremos que ejecutar los siguientes comandos desde consola, ya sea por SSH o utilizando una aplicación de terminal como <code>ST-SDL</code>:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># chmod +x /media/data/local/sbin/frontend_start
-# chmod +x /media/data/SimpleMenu/simplemenu
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># chmod +x /media/data/SimpleMenu/simplemenu
 # chmod +x /media/data/SimpleMenu/scripts/reset_fb
 # chmod +x /media/data/SimpleMenu/invoker.dge
 </pre></div>
@@ -1819,6 +1866,43 @@
 
 </li>
 </ol>
+<h2 id="arranque">Arranque<a class="headerlink" href="#arranque" title="Permanent link">&para;</a></h2>
+<p>Tenemos dos opciones para utilizar este lanzador, convertirlo en el lanzador predeterminado o abrirlo desde Gmenu2x. Vamos a ver cómo configurar las dos situaciones:</p>
+<h4 id="como-lanzador-predeterminado">Como lanzador predeterminado<a class="headerlink" href="#como-lanzador-predeterminado" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Bajar el fichero siguiente de la lista de assets de la release:</p>
+<ul>
+<li><a href="https://github.com/fgl82/simplemenu/releases/download/3.0/SimpleMenu.3.0.-.RG-350.-.2019-01-16.zip">SimpleMenu.3.0.-.RG-350.-.2019-01-16.zip</a></li>
+<li><a href="https://github.com/fgl82/simplemenu/releases/download/3.0/frontend_start">frontend_start</a></li>
+</ul>
+</li>
+<li>
+<p>Copiar el fichero <code>frontend_start</code> a la ruta <code>/media/data/local/sbin</code>:</p>
+<p><img alt="SimpleMenu 3" src="/images/posts/simplemenu_screenshot003.png" /></p>
+</li>
+<li>
+<p>Hacer ejecutables el fichero instalado. Desafortunadamente DinguxCmdr no nos ayuda en este caso. Tendremos que ejecutar el siguiente comando desde consola, ya sea por SSH o utilizando una aplicación de terminal como <code>ST-SDL</code>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># chmod +x /media/data/local/sbin/frontend_start
+</pre></div>
+</td></tr></table>
+
+</li>
+</ol>
+<h4 id="desde-gmenu2x">Desde Gmenu2x<a class="headerlink" href="#desde-gmenu2x" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Acudir a la sección <code>Applications</code> de Gmenu2x.</li>
+<li>
+<p>Pulsar <code>Select</code> y seleccionar <code>Add link in applications</code>:</p>
+<p><img alt="SimpleMenu 6" src="/images/posts/simplemenu_screenshot006.png" /></p>
+</li>
+<li>
+<p>En el explorador de ficheros seleccionar la ruta <code>/media/data/SimpleMenu/simplemenu</code>:</p>
+<p><img alt="SimpleMenu 7" src="/images/posts/simplemenu_screenshot007.png" /></p>
+</li>
+</ol>
+<p>A partir de entonces debería aparecer <code>simplemenu</code> como una nueva aplicación que podremos lanzar manualmente:</p>
+<p><img alt="SimpleMenu 8" src="/images/posts/simplemenu_screenshot008.png" /></p>
 <h2 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h2>
 <p>De serie SimpleMenu trae una configuración con varias secciones preconfiguradas, pero como simplemente apunta de forma estática a las rutas de los distintos emuladores y ROMs, es seguro que nos va a tocar ajustar esta configuración a lo que nosotros tengamos instalado en la consola.</p>
 <p>El fichero clave es el que se encontrará en la ruta <code>/usr/local/home/.simplemenu/sections.cfg</code> una vez que hayamos ejecutado SimpleMenu al menos una vez (reiniciando después de haber hecho la <a href="#instalacion">Instalación</a> por ejemplo). Lo mejor será transferirlo al ordenador de alguna manera (pasándolo a la tarjeta externa con DinguxCmdr si no se conoce otra forma más directa) y editarlo allí con un editor que soporte los retornos de carro y la codificación utilizada habitualmente en sistemas Linux (como <a href="https://notepad-plus-plus.org/">Notepad++</a>).</p>
@@ -1870,9 +1954,9 @@
 <li><code>romExts</code>: Extensiones de los ficheros que se incluirán en el listado de ROMs.</li>
 </ul>
 <p>El resultado en SimpleMenu será éste:</p>
-<p><img alt="copia SimpleMenu 4" src="/images/posts/simplemenu_screenshot004.png" /></p>
+<p><img alt="SimpleMenu 4" src="/images/posts/simplemenu_screenshot004.png" /></p>
 <p>En caso de que necesitemos Gmenu2x para lanzar o configurar algo, podremos encontrarlo en la sección APPS:</p>
-<p><img alt="copia SimpleMenu 5" src="/images/posts/simplemenu_screenshot005.png" /></p>
+<p><img alt="SimpleMenu 5" src="/images/posts/simplemenu_screenshot005.png" /></p>
 <h2 id="controles">Controles<a class="headerlink" href="#controles" title="Permanent link">&para;</a></h2>
 <p>La página de documentación de controles es <a href="https://github.com/fgl82/simplemenu/wiki/Controls">ésta</a>, pero resulta un poco confusa, por lo que se listan a continuación:</p>
 <table>
