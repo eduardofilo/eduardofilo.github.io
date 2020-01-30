@@ -1848,15 +1848,19 @@
                 
                   <h1>2020-01-25 RG350 SimpleMenu</h1>
                 
-                <p><img alt="SimpleMenu" src="/images/posts/simplemenu.png" /></p>
+                <div class="admonition info">
+<p class="admonition-title">Actualización 2020-01-30</p>
+<p>Se modifica el artículo para que las instrucciones correspondan a la nueva versión 3.1.</p>
+</div>
+<p><img alt="SimpleMenu" src="/images/posts/simplemenu.png" /></p>
 <p>Se ilustra a continuación el proceso de instalación y configuración del launcher SimpleMenu para RG350. Advertir que este launcher está todavía en un proceso inicial de desarrollo y exige una configuración muy manual y tediosa.</p>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Bajar el fichero siguiente de la lista de assets de la release:<ul>
-<li><a href="https://github.com/fgl82/simplemenu/releases/download/3.0/SimpleMenu.3.0.-.RG-350.-.2019-01-16.zip">SimpleMenu.3.0.-.RG-350.-.2019-01-16.zip</a></li>
+<li><a href="https://github.com/fgl82/simplemenu/releases/download/3.1/SimpleMenu.3.1.-.RG350.-.2020.28.01.zip">SimpleMenu.3.1.-.RG350.-.2020.28.01.zip</a></li>
 </ul>
 </li>
-<li>Copiarlo a la raíz de la microSD externa y descomprimirlo de forma que su contenido quede en un directorio de nombre <code>SimpleMenu</code>.</li>
+<li>Copiarlo a la raíz de la microSD externa y descomprimirlo de forma que su contenido quede en un directorio de nombre <code>SimpleMenu</code>. Si hacemos esto desde la propia consola por SSH tener en cuenta que el comando <code>unzip</code> extrae el contenido del ZIP al mismo nivel donde se encuentra éste. Por tanto, crear antes el directorio <code>SimpleMenu</code>, mover dentro el ZIP y descomprimirlo allí.</li>
 <li>
 <p>Montar la microSD externa en la RG350 y arrancar. La ruta del directorio donde hemos descomprimido se encuentra en <code>/media/sdcard/SimpleMenu</code>:</p>
 <p><img alt="SimpleMenu 1" src="/images/posts/simplemenu_screenshot001.png" /></p>
@@ -1866,7 +1870,7 @@
 <p><img alt="SimpleMenu 2" src="/images/posts/simplemenu_screenshot002.png" /></p>
 </li>
 <li>
-<p>Si existía de una instalación anterior, borrar el directorio <code>/usr/local/home/.simplemenu</code> ya que parece que el formato de los ajustes que aquí se almacenan ha cambiado respecto de las versiones anteriores.</p>
+<p>Entre las versiones de la rama 3.x los ficheros de configuración son compatibles. Si teníamos instalada una versión anterior a la 3.0 habrá que borrar el directorio <code>/usr/local/home/.simplemenu</code> ya que el formato de los ajustes que aquí se almacenan cambió completamente en esa versión.</p>
 </li>
 <li>
 <p>Hacer ejecutables algunos de los ficheros instalados. Desafortunadamente DinguxCmdr no nos ayuda en este caso. Tendremos que ejecutar los siguientes comandos desde consola, ya sea por SSH o utilizando una aplicación de terminal como <code>ST-SDL</code>:</p>
@@ -1885,7 +1889,7 @@
 <h4 id="como-lanzador-predeterminado">Como lanzador predeterminado<a class="headerlink" href="#como-lanzador-predeterminado" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Bajar el fichero siguiente de la lista de assets de la release:<ul>
-<li><a href="https://github.com/fgl82/simplemenu/releases/download/3.0/frontend_start">frontend_start</a></li>
+<li><a href="https://github.com/fgl82/simplemenu/releases/download/3.1/frontend_start">frontend_start</a></li>
 </ul>
 </li>
 <li>Copiarlo a la raíz de la microSD externa.</li>
@@ -1974,11 +1978,15 @@
 <ul>
 <li><a href="/files/posts/sections.cfg">sections.cfg</a></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Aviso</p>
+<p>Si queremos modificar el fichero <code>sections.cfg</code>, SimpleMenu no puede encontrarse en ejecución. No sirve lanzar Gmenu2x porque SimpleMenu seguirá vivo como proceso padre de éste. Habrá que o bien reiniciar la consola si tenemos configurado el <a href="#desde-gmenu2x">arranque manual</a> o bien deshacer temporalmente el <a href="#como-lanzador-predeterminado">arranque automático</a>. Si matamos el proceso con <code>kill</code> por SSH la consola se apagará.</p>
+</div>
 <h2 id="previews">Previews<a class="headerlink" href="#previews" title="Permanent link">&para;</a></h2>
 <p>SimpleMenu soporta previsualización de las ROMs. Para que aparezcan hay que hacer dos cosas.</p>
 <p>Primero colocar las imágenes con el mismo nombre que las ROMs pero con extensión <code>.png</code> en un directorio al mismo nivel que las ROMs de nombre <code>media</code>. Por ejemplo la previsualización de la ROM <code>/media/sdcard/roms/GB/DKLAND.gb</code> iría en <code>/media/sdcard/roms/GB/media/DKLAND.png</code>.</p>
 <p>Lo segundo que hay que hacer es activar la visualización de las miniaturas. Para ello hay que pulsar la tecla <code>Y</code>. Volviéndola a pulsar volvemos al menú normal.</p>
-<p>Desafortunadamente el directorio necesario para las previsualizaciones no es el mismo que necesita Gmenu2x (<code>.previews</code>). Dado que tenemos el código de SimpleMenu, se podría modificar para utilizar la misma ruta que Gmenu2x y compilarlo, pero de momento he optado por duplicar el directorio. En mi caso lo hice con la siguiente sesión de terminal por SSH:</p>
+<p>Desafortunadamente el directorio necesario para las previsualizaciones no es el mismo que necesita Gmenu2x (<code>.previews</code>). Si alguien tiene el entorno para compilarlo, el sitio donde está definido el directorio es la linea 130 del fichero <a href="https://github.com/fgl82/simplemenu/blob/UNIVERSAL/simplemenu/src/logic/screen.c">simplemenu/src/logic/screen.c</a>. De momento he optado por duplicar el directorio. En mi caso lo hice con la siguiente sesión de terminal por SSH:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2044,7 +2052,7 @@ RG350:/media/sdcard/roms # cp -r ./ZX/.previews ./ZX/media
 </td></tr></table>
 
 <p>El resultado:</p>
-<iframe width="853" height="480" src="https://www.youtube.com/embed/AMTcyc7sXO0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="853" height="480" src="https://www.youtube.com/embed/5bD8v_8Q0CE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <h2 id="controles">Controles<a class="headerlink" href="#controles" title="Permanent link">&para;</a></h2>
 <p>La página de documentación de controles es <a href="https://github.com/fgl82/simplemenu/wiki/Controls">ésta</a>, pero resulta un poco confusa porque mezcla varias máquinas, por lo que se listan a continuación de forma explícita los controles para RG350:</p>
