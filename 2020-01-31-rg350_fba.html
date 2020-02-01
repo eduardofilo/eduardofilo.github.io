@@ -470,6 +470,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bios-neogeo" title="BIOS NeoGeo" class="md-nav__link">
+    BIOS NeoGeo
+  </a>
+  
+</li>
+      
       
       
       
@@ -1799,6 +1806,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bios-neogeo" title="BIOS NeoGeo" class="md-nav__link">
+    BIOS NeoGeo
+  </a>
+  
+</li>
+      
       
       
       
@@ -1983,7 +1997,7 @@
 </pre></div>
 </td></tr></table>
 
-<p>Como estamos hablando de 5807 ROMs en la versión 44 de FBA, naturalmente no podemos preparar las imágenes una a una. O bien conseguimos un pack de previews (el que busca encuentra) o bien las intentamos preparar nosotros mismos con un <a href="/2020-01-11-rg350_scraper.html">Scrapper</a>.</p>
+<p>Como estamos hablando de 5807 ROMs en la versión 44 de FBA, naturalmente no podemos preparar las imágenes una a una. O bien conseguimos un pack de previews (el que busca encuentra) o bien las intentamos preparar nosotros mismos con un <a href="/2020-01-11-rg350_scraper.html">Scrapper</a>. Si optamos por esto último, las imágenes las tenemos que generar con un tamaño de 192x112 pixeles, es decir sin mantener la relación de aspecto.</p>
 <p>Vamos a suponer que ya disponemos de un directorio con todas esas imágenes preparadas. Vamos a ver cómo instalarlo.</p>
 <ol>
 <li>Partimos del directorio con las imagenes en nuestro ordenador. Renombrarlo como <code>previews</code>.</li>
@@ -2004,6 +2018,10 @@
 </ol>
 <p>Si todo ha ido bien, tras salir de DinguxCmdr (tecla <code>Y</code> y comando <code>Quit</code>), al abrir FBA empezaremos a ver esto:</p>
 <p><img alt="Previews" src="/images/posts/fba_previews.gif" /></p>
+<h2 id="bios-neogeo">BIOS NeoGeo<a class="headerlink" href="#bios-neogeo" title="Permanent link">&para;</a></h2>
+<p>Como muchos emuladores, algunas de las máquinas que emula FBA necesitan las BIOS que existían en la placa, por ejemplo NeoGeo. Hay que por tanto conseguir esta BIOS (el que busca encuentra) y copiarla al mismo direcotio donde están las ROMs, es decir, siguiendo el ejemplo de todo el artículo, en mi caso sería <code>/media/sdcard/roms/FBA</code>. La BIOS de NeoGeo en realidad consiste en un conjunto de ficheros comprimidos en uno de nombre <code>neogeo.zip</code>.</p>
+<p>Existe una BIOS modificada para NeoGeo llamada UNIBIOS con la que al abrir un juego de esta máquina y pulsar <code>Select+Start</code> aparece un menú de cheats. También se puede cambiar la región y los idiomas de los juegos.</p>
+<p><img alt="Cheats" src="/images/posts/fba_cheats.png" /></p>
                 
                   
                 
