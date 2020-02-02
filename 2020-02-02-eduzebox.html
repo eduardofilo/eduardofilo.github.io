@@ -108,6 +108,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#diseno" tabindex="1" class="md-skip">
+        Saltar a contenido
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -1713,6 +1717,63 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Tabla de contenidos</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#diseno" title="Diseño" class="md-nav__link">
+    Diseño
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#construccion" title="Construcción" class="md-nav__link">
+    Construcción
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flash-de-juegos" title="Flash de juegos" class="md-nav__link">
+    Flash de juegos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fusebits" title="Fusebits" class="md-nav__link">
+    Fusebits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#juegos" title="Juegos" class="md-nav__link">
+    Juegos
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -1724,22 +1785,49 @@
                   <h1>2020-02-02 EdUzebox</h1>
                 
                 <p><img alt="Uzebox" src="/images/posts/uzebox_logo.gif" /></p>
-<p>Para que la placa aparezca en el Arduino IDE, instalar las que proporciona el proyecto MightyCore que incluye el ATmega644:</p>
+<h2 id="diseno">Diseño<a class="headerlink" href="#diseno" title="Permanent link">&para;</a></h2>
+<p>KiCad</p>
+<h2 id="construccion">Construcción<a class="headerlink" href="#construccion" title="Permanent link">&para;</a></h2>
+<p>Montaje SMD y demás</p>
+<h2 id="flash-de-juegos">Flash de juegos<a class="headerlink" href="#flash-de-juegos" title="Permanent link">&para;</a></h2>
+<p>A la hora de flashear los juegos hay dos posibilidades:</p>
 <ol>
-<li>Abrir Arduino IDE.</li>
-<li>Abrir el menú <code>File &gt; Preferences</code>.</li>
-<li>
-<p>Introducir la siguiente URL en <code>Additional Boards Manager URLs</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>https://mcudude.github.io/MightyCore/package_MCUdude_MightyCore_index.json
+<li>Flashear el <code>.hex</code> con el bootloader que permite cargar los juegos desde la SD.</li>
+<li>Flashear el <code>.hex</code> de un juego concreto.</li>
+</ol>
+<p>Naturalmente la primera opción es la más conveniente, pero en ese caso tendremos que conseguir la versión de los juegos en formato <code>.uze</code> que es la que el bootloader sabe manejar.</p>
+<p>El bootloader podemos encontrarlo en el post inicial de <a href="http://uzebox.org/forums/viewtopic.php?f=3&amp;t=520">este hilo</a> de los foros. En concreto la última versión en el momento de escribir este artículo era: <a href="http://uzebox.org/forums/download/file.php?id=2044&amp;sid=17ded19d5583c1780e48905a3dc26ced">Bootloader_0_4_5.hex</a></p>
+<p>A continuación se detalla el proceso de flasheo desde Linux (supongo que desde Windows resultará muy similar). Lo he realizado utilizando un Arduino UNO (clónico) como programador para lo que hay que cargarle el sketch <code>ArduinoISP</code>:</p>
+<ol>
+<li>Necesitamos tener instalado el Arduino IDE para poder acceder a la herramienta p <code>avrdude</code>.</li>
+</ol>
+<p>Instalo avrdude</p>
+<p>sudo apt install avrdude</p>
+<p>Cargo ArduinoISP en el UNO</p>
+<p>Colocamos un condensador de 10μF entre el pin RESET del Arduino y GND.</p>
+<p>Cableo:</p>
+<ul>
+<li>RESET -&gt; 10</li>
+<li>MOSI -&gt; 11</li>
+<li>MISO -&gt; 12</li>
+<li>SCK -&gt; 13</li>
+<li>Vcc -&gt; V5</li>
+<li>GND -&gt; GND</li>
+</ul>
+<p><img alt="ISP" src="/images/posts/eduzebox_isp.png" /></p>
+<h2 id="fusebits">Fusebits<a class="headerlink" href="#fusebits" title="Permanent link">&para;</a></h2>
+<p>Utilizando <a href="http://www.engbedded.com/fusecalc">esta calculadora de fusebits</a> calculo que efectivamente los valores correctos son:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>-U lfuse:w:0xfe:m -U hfuse:w:0xd2:m -U efuse:w:0xff:m
 </pre></div>
 </td></tr></table>
 
-</li>
-<li>
-<p>Abrir el menú <code>Tools &gt; Board &gt; Boards Manager...</code>.</p>
-</li>
-<li>Buscar la entrada correspondiente a MightyCore e instalarla.</li>
-</ol>
+<p>http://uzebox.org/wiki/ATmega644_Fuse_Settings</p>
+<h2 id="juegos">Juegos<a class="headerlink" href="#juegos" title="Permanent link">&para;</a></h2>
+<p>El directorio de juegos podemos encontrarlo en <a href="http://uzebox.org/wiki/index.php?title=Games_and_Demos">este enlace</a> del <a href="http://uzebox.org/wiki/Main_Page">wiki</a>. Allí por cada juego se nos suele proporcionar el código y el binario en dos formatos:</p>
+<ul>
+<li><code>.hex</code>: Para flasheo directo.</li>
+<li><code>.uze</code>: Para carga desde SD si se ha flasheado el bootloader.</li>
+</ul>
                 
                   
                 
