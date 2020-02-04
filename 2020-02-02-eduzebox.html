@@ -108,7 +108,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#diseno" tabindex="1" class="md-skip">
+      <a href="#diseno-version-propia" tabindex="1" class="md-skip">
         Saltar a contenido
       </a>
     
@@ -1729,8 +1729,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#diseno" title="Diseño" class="md-nav__link">
-    Diseño
+  <a href="#diseno-version-propia" title="Diseño versión propia" class="md-nav__link">
+    Diseño versión propia
   </a>
   
 </li>
@@ -1785,8 +1785,19 @@
                   <h1>2020-02-02 EdUzebox</h1>
                 
                 <p><img alt="Uzebox" src="/images/posts/uzebox_logo.gif" /></p>
-<h2 id="diseno">Diseño<a class="headerlink" href="#diseno" title="Permanent link">&para;</a></h2>
-<p>KiCad</p>
+<p>En la pasada edición de <a href="http://www.retrozaragoza.com/">RetroZaragoza</a> me llamó la atención una consolita que alguien llevó montada sobre una breadboard. Al volver a casa investigué y me decidí a fabricar una ya que el proyecto era perfecto para poner a prueba el aprendizaje que había hecho con el diseñador de circuitos <a href="/electronica/kicad.html">KiCad</a>.</p>
+<p>El proyecto original tiene como nombre <a href="http://belogic.com/uzebox/index.asp">Uzebox</a> y es una consola de videojuegos basado en un microcontrolador de la amplia familia AVR de Atmel, en concreto el ATmega644. El creador es un tal Uze que explica muy bien el origen del proyecto en la sección <a href="http://belogic.com/uzebox/howitsmade.htm">Description</a> de la página. La máquina resultante tiene una potencia y estilo muy similar a la de los clásicos microordenadores de 8 bits con los que me inicié en la informática en los 80. Aquí puede verse un ejemplo del estilo de los juegos que puede ejecutar:</p>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/MLRDHJLdvdI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>El proyecto es de hardware y software libre, con una amplia y activa comunidad alrededor del <a href="http://uzebox.org/forums/index.php">foro oficial</a>. La documentación es extensa y de calidad, tanto a nivel de hardware como de software, lo que terminó de convencerme de que merecía la pena.</p>
+<h2 id="diseno-version-propia">Diseño versión propia<a class="headerlink" href="#diseno-version-propia" title="Permanent link">&para;</a></h2>
+<p>Existen multitud de <a href="http://uzebox.org/wiki/Homemade_Uzeboxes_%26_derived_projects">clones</a> referenciados en el propio wiki oficial. El mejor documentado naturalmente es el oficial, pero tiene el inconveniente de que está orientado al mercado americano y por tanto la salida de vídeo es NTSC. Además utiliza un chip (el AD725) para mezclar la señal RGB que sale del microcontrolador, lo que es un desperdicio porque en Europa los televisores disponen de entrada para esta señal y es de mucha mejor calidad que la de vídeo compuesto o S-video que se expone en la Uzebox original.</p>
+<p>Tras un análisis de las opciones existentes decidí diseñar mi propia placa, inspirándome en los esquemáticos de los proyectos <a href="http://uzebox.org/wiki/Homemade_Uzeboxes_%26_derived_projects#EUzebox">EUzebox</a> y el del español Doragasu <a href="http://uzebox.org/wiki/Homemade_Uzeboxes_%26_derived_projects#Doragasu.27s_RgbUzebox">RgbUzebox</a>. Imprimí ambos esquemáticos junto al de la Uzebox original y cerré un diseño propio, éste:</p>
+<p><img alt="Esquemático EdUzebox" src="/images/posts/eduzebox_esquematico.png" /></p>
+<p>Aunque este tipo de proyectos suelen realizarse con componentes de tipo THT, por considerarse más accesibles, me apetecía adentrarme en el mundo SMD, así que decidí utilizar muchos componentes de este tipo. La placa resulta más pequeña, sobre todo optando por la versión SMD del microcontrolador (utilicé la versión TQFP), y francamente, una vez dado el paso tiene más ventajas que inconvenientes (precio de componentes, espacio, aspecto final, retrabajo, es decir sustitución o recolocación de componentes).</p>
+<p>El aspecto de la placa según un render que hace el propio KiCad es el siguiente (faltan algunos componentes de los que tuve que hacer yo la huella ya que no existía en las librerías):</p>
+<p><img alt="PCB EdUzebox" src="/images/posts/eduzebox_pcb.png" /></p>
+<p>Todos los archivos del proyecto KiCad pueden encontrarse en este repositorio: <a href="https://github.com/eduardofilo/eduzebox">https://github.com/eduardofilo/eduzebox</a></p>
 <h2 id="construccion">Construcción<a class="headerlink" href="#construccion" title="Permanent link">&para;</a></h2>
 <p>Montaje SMD y demás</p>
 <h2 id="flash-de-juegos">Flash de juegos<a class="headerlink" href="#flash-de-juegos" title="Permanent link">&para;</a></h2>

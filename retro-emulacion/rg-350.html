@@ -2707,6 +2707,11 @@
 </pre></div>
 </td></tr></table>
 
+<p>En caso de querer excluir algún directorio concreto que ocupe mucho y que tengamos respaldado por otro lado (por ejemplo si tuviéramos las ROMs allí), utilizar el parámetro <code>--exclude</code>. Vamos a ver cómo se excluirían por ejemplo las imágenes de previsualización de FBA:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>tar -cf /media/sdcard/home_backup.tar -C /media/data/local --exclude<span class="o">=</span>home/.fba/previews home
+</pre></div>
+</td></tr></table>
+
 <p>Para restaurar:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>tar -xf /media/sdcard/home_backup.tar -C /media/data/local
 </pre></div>
