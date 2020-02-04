@@ -1740,6 +1740,33 @@
     Construcción
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encargar-pcbs" title="Encargar PCBs" class="md-nav__link">
+    Encargar PCBs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encargar-componentes" title="Encargar componentes" class="md-nav__link">
+    Encargar componentes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparar-herramientas-smd" title="Preparar herramientas SMD" class="md-nav__link">
+    Preparar herramientas SMD
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1799,7 +1826,36 @@
 <p><img alt="PCB EdUzebox" src="/images/posts/eduzebox_pcb.png" /></p>
 <p>Todos los archivos del proyecto KiCad pueden encontrarse en este repositorio: <a href="https://github.com/eduardofilo/eduzebox">https://github.com/eduardofilo/eduzebox</a></p>
 <h2 id="construccion">Construcción<a class="headerlink" href="#construccion" title="Permanent link">&para;</a></h2>
-<p>Montaje SMD y demás</p>
+<p>En la construcción podemos distinguir las siguientes etapas:</p>
+<ol>
+<li>Encargar PCBs</li>
+<li>Encargar componentes</li>
+<li>Preparar herramientas SMD</li>
+<li>Montaje final</li>
+</ol>
+<p>Vamos a detallarlas por separado.</p>
+<h4 id="encargar-pcbs">Encargar PCBs<a class="headerlink" href="#encargar-pcbs" title="Permanent link">&para;</a></h4>
+<p>A partir del proyecto KiCad se generan los ficheros Gerber. Pueden encontrarse en el directorio <a href="https://github.com/eduardofilo/eduzebox/tree/master/gerber">gerber</a> del repositorio. También se publican comprimidos en ZIP en los assets de cada <a href="https://github.com/eduardofilo/eduzebox/releases/">release</a>.</p>
+<p>Hoy en día existen muchos servicios de prototipado de PCBs que encajan sobradamente en las dimensiones y calidades necesarias para la placa diseñada. Algunos ejemplos:</p>
+<ul>
+<li><a href="https://jlcpcb.com/">JLCPCB</a>: 2€ por 5 PCBs de hasta 10x10cm y 2 capas. Los gastos de envío rondan los 7€.</li>
+<li><a href="https://www.nextpcb.com/">NextPCB</a>: $0 por 5 PCBs de hasta 10x10cm y 2 capas. Los gastos de envío son $9.</li>
+<li><a href="https://www.seeedstudio.com/fusion_pcb.html">Seeed Studio</a></li>
+<li><a href="https://www.pcbway.com/">PCBWay</a>: $5 por 5 PCBs de hasta 10x10cm y 2 capas.</li>
+</ul>
+<p>Yo hasta ahora he utilizado siempre <a href="https://jlcpcb.com/">JLCPCB</a> y las placas han llegado siempre sin defectos y tardado en llegar lo acordado. El proceso de encargar las placas (las 5 del pedido mínimo) consiste únicamente en subir el fichero <a href="https://github.com/eduardofilo/eduzebox/releases/download/v2/gerber.zip">gerber.zip</a> a la página de <a href="https://jlcpcb.com/quote">pedido</a> ya que las opciones predeterminadas que ofrece el fabricante son perfectas. Sólo queda esperar alrededor de 20 días hasta recibir una caja dentro de la cual encontramos esto:</p>
+<p><img alt="PCB EdUzebox" src="/images/posts/eduzebox_pcb_real.jpg" /></p>
+<h4 id="encargar-componentes">Encargar componentes<a class="headerlink" href="#encargar-componentes" title="Permanent link">&para;</a></h4>
+<p>Antes de pensar en comprar los componentes hay que resolver la tarea de organizar la lista de materiales o como se suele llamar la BOM (Bill Of Materials). En realidad gran parte del trabajo fue hecho durante la fase de diseño con KiCad, ya que en la fase de creación de la PCB a partir del esquemático, es necesario seleccionar la huella o footprint de cada componente. Es en ese momento cuando conviene realizar la investigación del mercado para averiguar si vamos a tener disponibilidad de todos los componentes en el formato que nos interesa. Puede ocurrir que tengamos ya el componente en casa o que encontremos uno que nos convenga y del que no exista la huella en las librería de KiCad. Es por ejemplo lo que me ocurrió con los conectores de los mandos de SNES. El conector que se utilizaba en todos los montajes de Uzebox que analicé tenía los pines rectos y yo sin embargo acabé comprando unos con los pines acodados. <a href="https://es.aliexpress.com/item/32828768824.html">Éste</a>:</p>
+<p><img alt="SNES Connector" src="/images/posts/eduzebox_snes_connector.jpg" /></p>
+<p>En estos casos lo que hay que hacer es diseñar nuestra propia huella o footprint (el proceso se detalla en el punto 5 del <a href="/electronica/kicad.html#workflow">workflow de KiCad</a>).</p>
+<p>En la hoja LibreOffice incluida en los assets de cada release se detalla la <a href="https://github.com/eduardofilo/eduzebox/releases/download/v2/bom.ods">lista de materiales</a> junto con los enlaces que utilicé para comprarlos. Como puede verse la mayoría de los componentes los adquirí en <a href="https://lcsc.com/">LCSC</a> que es una empresa del mismo grupo que JLCPCB. En Aliexpress sale más barato adquirir componentes sueltos, pero cuando se trata de pedir numerosos componentes distintos, conviene que alguien nos los envíe en un solo paquete como hace LCSC. En el pedido, de los componentes más sencillos como resistencias y condensadores pedí 100 unidades y de los más complejos como el ATmega644p, el lector de microSD o el cristal 5 ó 10 unidades. El pedido completo que me permite fabricar 5 consolas con envío includo fue de 43,60€. Y si quisiera fabricar 95 más sólo habría que pedir el ATmega644p, los conectores (SNES y Euroconector), cristal y lector de microSD.</p>
+<p><img alt="Pedido componentes" src="/images/posts/eduzebox_pedido_componentes.jpg" /></p>
+<p>En la hoja de la <a href="https://github.com/eduardofilo/eduzebox/releases/download/v2/bom.ods">BOM</a> falta el enlace de compra del regulador de tensión 7805 porque ya lo tenía por casa. Por ejemplo serviría <a href="https://es.aliexpress.com/item/32892570189.html">éste</a>.</p>
+<h4 id="preparar-herramientas-smd">Preparar herramientas SMD<a class="headerlink" href="#preparar-herramientas-smd" title="Permanent link">&para;</a></h4>
+<p>Como comentaba anteriormente, incorporé al proyecto desde un principio el reto añadido de que parte de él se realizara con componentes SMD. Esto requería adquirir nuevas herramientas y habilidades. La verdad es que aunque prefiero leer a ver vídeos de YouTube para aprender cosas, en este caso YouTube resulta insuperable. Por ejemplo:</p>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/99uU-gc-bck" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 <h2 id="flash-de-juegos">Flash de juegos<a class="headerlink" href="#flash-de-juegos" title="Permanent link">&para;</a></h2>
 <p>A la hora de flashear los juegos hay dos posibilidades:</p>
 <ol>
