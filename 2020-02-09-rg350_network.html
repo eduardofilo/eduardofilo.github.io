@@ -1917,21 +1917,27 @@ nameserver 208.67.220.220
 </ol>
 <p>Los pasos 1 y 2 no son permanentes en el sistema, por lo que cuando reiniciemos se perderán. Si queremos que se mantengan entre reinicios habrá que escribirlos en un script que se ejecute durante el arranque (por ejemplo añadiéndolos en <code>/etc/rc.local</code>).</p>
 <p>Ya podremos hacer cosas como ésta:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>RG350:/media/data/local/home # ping www.google.es
-PING www.google.es (216.58.211.35): 56 data bytes
-64 bytes from 216.58.211.35: seq=0 ttl=54 time=146.436 ms
-64 bytes from 216.58.211.35: seq=1 ttl=54 time=170.940 ms
-^C
---- www.google.es ping statistics ---
-2 packets transmitted, 2 packets received, 0% packet loss
-round-trip min/avg/max = 146.436/158.688/170.940 ms
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>RG350:/media/data/local/home # wget apuntes.eduardofilo.es
+--2020-02-09 02:31:03--  http://apuntes.eduardofilo.es/
+Resolving apuntes.eduardofilo.es... 185.199.108.153, 185.199.109.153, 185.199.110.153, ...
+Connecting to apuntes.eduardofilo.es|185.199.108.153|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 45544 (44K) [text/html]
+Saving to: &#39;index.html&#39;
+
+100%[============================================================================================================&gt;] 45,544       130KB/s   in 0.3s
+
+2020-02-09 02:31:05 (130 KB/s) - &#39;index.html&#39; saved [45544/45544]
 </pre></div>
 </td></tr></table>
 
