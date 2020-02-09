@@ -1538,6 +1538,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#corrupcion-de-archivos-de-texto" title="Corrupción de archivos de texto" class="md-nav__link">
+    Corrupción de archivos de texto
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2248,6 +2255,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#corrupcion-de-archivos-de-texto" title="Corrupción de archivos de texto" class="md-nav__link">
+    Corrupción de archivos de texto
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2787,6 +2801,12 @@
 <li><code>X</code>: Carga el último sistema de archivos (rootfs) que funcionó correctamente.</li>
 <li><code>X+Y</code>: Carga el último sistema (kernel+rootfs) que funcionó correctamente.</li>
 </ul>
+<h4 id="corrupcion-de-archivos-de-texto">Corrupción de archivos de texto<a class="headerlink" href="#corrupcion-de-archivos-de-texto" title="Permanent link">&para;</a></h4>
+<p>Linux y Windows utilizan distintos sistemas para codificar los retornos de carro de los ficheros de texto. Si creamos o editamos uno de estos ficheros y luego lo transferimos a la RG350, dependiendo del uso que vaya a tener ese fichero podría no funcionar. Unos ficheros especialmente sensibles son los scripts como el que determina el lanzador de aplicacione predeterminado, es decir <code>/media/data/local/sbin/frontend_start</code>. Para reconvertir los ficheros de texto del formato de Windows al de Linux existe una pequeña utilidad llamada <code>dos2unix</code>. Para utilizarla tenemos que conectar con la RG350 por SSH para tener acceso a una terminal o utilizar la aplicación de terminal <code>ST-SDL</code>. Desde uno de estos terminales ejecutaremos:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>RG350:/media/data/local/home <span class="c1"># dos2unix fichero_a_convertir.txt</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="backup-de-home">Backup de home<a class="headerlink" href="#backup-de-home" title="Permanent link">&para;</a></h2>
 <p>El directorio <code>/home/data/local/home</code> pertenece a la tarjeta interna y es de los más importantes puesto que es donde la mayoría (por no decir todos) los programas (emuladores, ports, aplicaciones) guardan sus ajustes (como los savestates de los emuladores o las memory cards de pcsx4all). Cuando flasheamos la tarjeta interna (con las opciones 2 y 3 del apartado <a href="#opciones-para-actualizar-el-firmware-rg350-rogue-cfw">Opciones para actualizar el firmware RG350-ROGUE-CFW</a>) el contenido de este directorio se pierde. Una idea sería hacer un respaldo del mismo en la tarjeta externa (que no se altera durante el flasheo) y luego restaurarlo.</p>
 <p>Podemos hacer el backup lanzando un comando de terminal ya sea conectando por SSH o utilizando una aplicación de terminal (como <code>ST-SDL</code>). El comando para realizar el backup es:</p>

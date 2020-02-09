@@ -1770,6 +1770,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#boxart" title="Boxart" class="md-nav__link">
+    Boxart
+  </a>
+  
+</li>
+      
       
       
       
@@ -1793,7 +1800,11 @@
                 
                 <p><img alt="EmulationStation" src="/images/posts/emulationstation.png" /></p>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
-<p>Bajo: https://rs97.bitgala.xyz/RG-350/localpack/extra_emulators/EmulationStation%20RG-350%20(Configured).zip</p>
+<p>Bajo:</p>
+<ul>
+<li>https://rs97.bitgala.xyz/RG-350/localpack/extra_emulators/EmulationStation%20RG-350%20(Configured).zip</li>
+<li>https://github.com/ManuelSch81/RG350-EmulationStation_configured</li>
+</ul>
 <p>Copio <code>Internal SD Card/emulationstation.opk</code> a <code>/media/data/apps</code></p>
 <p>$ cd Internal\ SD\ Card/
 $ scp emulationstation.opk root@10.1.1.2:/media/data/apps</p>
@@ -1802,7 +1813,7 @@ $ scp emulationstation.opk root@10.1.1.2:/media/data/apps</p>
 $ scp -r * root@10.1.1.2:/usr/local/home/.emulationstation</p>
 <p>Editar fichero <code>/usr/local/home/.emulationstation/es_systems.cfg</code>. Las distintas extensiones se añaden separadas por espacio.</p>
 <h2 id="arranque">arranque<a class="headerlink" href="#arranque" title="Permanent link">&para;</a></h2>
-<p>Para que se arranque por defecto, editar fichero `` con el siguiente contenido:</p>
+<p>Para que se arranque por defecto, crear si no existe el fichero <code>/media/data/local/sbin/frontend_start</code> o modificarlo con el siguiente contenido:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1829,7 +1840,51 @@ $ scp -r * root@10.1.1.2:/usr/local/home/.emulationstation</p>
 </pre></div>
 </td></tr></table>
 
-<p>Carpeta <code>boxart</code> con las previsualizaciones de las ROMs en cada carpeta de ROMs.</p>
+<h2 id="boxart">Boxart<a class="headerlink" href="#boxart" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Extraer la tarjeta externa de la RG350 y montarla con un adaptador o lector en el PC.</li>
+<li>Descargar <a href="https://github.com/Universal-Rom-Tools/Universal-XML-Scraper/releases">Universal XML Scraper V2</a> y ejecutar.</li>
+<li>En la especie de asistente que aparece seleccionar <code>Recalbox</code> como Sistema Operativo:</li>
+</ol>
+<p>Pantallazo</p>
+<ol>
+<li>En la segunda pantalla del asistente seleccionar el tipo de previsualización que más nos guste.</li>
+</ol>
+<p>Pantallazo</p>
+<ol>
+<li>Lo siguiente es localizar la ruta de las ROMs. Seleccionaremos <code>Localy</code> y acto seguido localizamos el diretorio <code>roms</code> de la tarjeta montada en el punto 1.</li>
+</ol>
+<p>Pantallazo</p>
+<ol>
+<li>Nos pregunta si estamos registrados en ScreenScraper. Si en el pasado seguimos los pasos del <a href="/2020-01-11-rg350_scraper.html">artículo sobre este servicio</a>, ya tendremos la cuenta creada. Si no, nos permite continuar sin cuenta.</li>
+</ol>
+<p>Pantallazo</p>
+<ol>
+<li>Por último aparece una última pantalla de confirmación para inciar el scraping.</li>
+</ol>
+<p>Pantallazo</p>
+<ol>
+<li>Al comenzar se nos preguntará por el sistema del que queremos hacer el scraping.</li>
+</ol>
+<p>Pantallazo</p>
+<ol>
+<li>
+<p>Por último pulsamos el botón <code>Scrape</code> en la ventana principal.</p>
+</li>
+<li>
+<p>Tras un tiempo durante el cual se generarán y bajarán las previsualizaciones, cerraremos el programa. En ese momento veremos que junto a las ROMs del sistema seleccionado se habrán creado dos cosas:</p>
+<ul>
+<li>Un directorio llamado <code>downloaded_images</code> que contendrá las imágenes.</li>
+<li>Un fichero llamado <code>gamelist.xml</code> con la metainformación y las rutas de las imágenes asociadas a cada ROM.</li>
+</ul>
+</li>
+<li>
+<p>Editamos el fichero <code>gamelist.xml</code> y sustituimos todas las ocurrencias del directorio <code>downloaded_images</code> por <code>boxart</code>.</p>
+</li>
+<li>
+<p>Copiamos todas las imágenes generadas por Universal XML Scraper a un directorio de nombre <code>boxart</code></p>
+</li>
+</ol>
 <p>Ver esta serie de videos: https://www.youtube.com/channel/UC8c9cH_XB7JMEGInq1-LWLg/videos</p>
                 
                   
