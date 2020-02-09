@@ -108,6 +108,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#instalacion" tabindex="1" class="md-skip">
+        Saltar a contenido
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -1741,6 +1745,42 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Tabla de contenidos</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion" title="Instalación" class="md-nav__link">
+    Instalación
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arranque" title="arranque" class="md-nav__link">
+    arranque
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -1752,6 +1792,7 @@
                   <h1>2020-01-26 RG350 EmulationStation</h1>
                 
                 <p><img alt="EmulationStation" src="/images/posts/emulationstation.png" /></p>
+<h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
 <p>Bajo: https://rs97.bitgala.xyz/RG-350/localpack/extra_emulators/EmulationStation%20RG-350%20(Configured).zip</p>
 <p>Copio <code>Internal SD Card/emulationstation.opk</code> a <code>/media/data/apps</code></p>
 <p>$ cd Internal\ SD\ Card/
@@ -1759,16 +1800,37 @@ $ scp emulationstation.opk root@10.1.1.2:/media/data/apps</p>
 <p>Copio el contenido de <code>Internal SD Card/data</code> a <code>/usr/local/home/.emulationstation</code></p>
 <p>$ cd data
 $ scp -r * root@10.1.1.2:/usr/local/home/.emulationstation</p>
-<p>Editar fichero <code>/usr/local/home/.emulationstation/es_systems.cfg</code></p>
-<hr />
+<p>Editar fichero <code>/usr/local/home/.emulationstation/es_systems.cfg</code>. Las distintas extensiones se añaden separadas por espacio.</p>
+<h2 id="arranque">arranque<a class="headerlink" href="#arranque" title="Permanent link">&para;</a></h2>
+<p>Para que se arranque por defecto, editar fichero `` con el siguiente contenido:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/sh</span>
+<span class="k">if</span> <span class="o">[</span> -f /media/data/apps/emulationstation.opk <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="c1"># start EmulationStation as default launcher</span>
+    /usr/bin/opkrun /media/data/apps/emulationstation.opk
+    <span class="c1"># when emulationstation quits -&gt; we start gmenu2x</span>
+    /usr/bin/gmenu2x
+
+<span class="k">elif</span> <span class="o">[</span> -f /media/data/apps/gmenunx.opk <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    /usr/bin/opkrun -m default.gcw0.desktop /media/data/apps/gmenunx.opk
+<span class="k">else</span>
+    /usr/bin/gmenu2x
+<span class="k">fi</span>
+</pre></div>
+</td></tr></table>
+
 <p>Carpeta <code>boxart</code> con las previsualizaciones de las ROMs en cada carpeta de ROMs.</p>
 <p>Ver esta serie de videos: https://www.youtube.com/channel/UC8c9cH_XB7JMEGInq1-LWLg/videos</p>
-<p>Para tener conexión:</p>
-<p>En PC:</p>
-<p>echo 1 &gt; /proc/sys/net/ipv4/ip_forward
-iptables -t nat -A POSTROUTING -s 10.1.1.252/2 -o wlan0 -j SNAT --to 192.168.33.154
-Añadir el fichero <code>/usr/local/etc/resolv.conf</code> con el siguiente contenido:
-    nameserver  8.8.8.8</p>
                 
                   
                 
