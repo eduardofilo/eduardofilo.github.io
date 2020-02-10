@@ -1764,6 +1764,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configuracion" title="Configuración" class="md-nav__link">
+    Configuración
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#arranque" title="arranque" class="md-nav__link">
     arranque
   </a>
@@ -1801,17 +1808,38 @@
                 <p><img alt="EmulationStation" src="/images/posts/emulationstation.png" /></p>
 <p>En este artículo vamos a ver cómo instalar y configurar el frontend EmulationStation en la RG350.</p>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
-<p>Bajo:</p>
-<ul>
-<li>https://rs97.bitgala.xyz/RG-350/localpack/extra_emulators/EmulationStation%20RG-350%20(Configured).zip</li>
-<li>https://github.com/ManuelSch81/RG350-EmulationStation_configured</li>
-</ul>
-<p>Copio <code>Internal SD Card/emulationstation.opk</code> a <code>/media/data/apps</code></p>
-<p>$ cd Internal\ SD\ Card/
-$ scp emulationstation.opk root@10.1.1.2:/media/data/apps</p>
-<p>Copio el contenido de <code>Internal SD Card/data</code> a <code>/usr/local/home/.emulationstation</code></p>
-<p>$ cd data
-$ scp -r * root@10.1.1.2:/usr/local/home/.emulationstation</p>
+<p>Empezamos por la instalación. Desgraciadamente además de copiar un OPK como habitualmente, hay que mover unos cuantos ficheros a una ruta de la tarjeta interna. A continuación los detalles paso a paso (las operaciones de copiado de ficheros se muestran con DinguxCmdr por ser accesible para todo el mundo, pero naturalmente se pueden hacer por FTP o SSH):</p>
+<ol>
+<li>Bajar <a href="https://github.com/ManuelSch81/RG350-EmulationStation_configured/archive/master.zip">este archivo</a> y descomprimirlo.</li>
+<li>Dentro veremos el directorio <code>Internal SD Card</code> (el resto no los utilizaremos para nada) que hay que copiar a la tarjeta externa de la consola (montándola en el PC con un adaptador o lector de tarjetas o por FTP).</li>
+<li>Desmontar la SD del PC para devolverla a la ranura externa de la consola.</li>
+<li>
+<p>Abrir DinguxCmdr. Moverse por la estructura de ficheros hasta localizar a la izquierda la ruta <code>/media/sdcard/Internal SD Card</code> y a la derecha <code>/media/sdcard/apps</code>. La ruta de la derecha es donde vamos a instalar el OPK. En este caso hemos indicado la ruta de los OPKs que se leen de la tarjeta externa. Alternativamente se puede utilizar la ruta <code>/media/data/apps</code> si se prefiere instalar en la interna:</p>
+<p><img alt="EmulationStation Instalación 1" src="/images/posts/emulationstation_install1.png" /></p>
+</li>
+<li>
+<p>Seleccionar el fichero <code>emulationstation.opk</code> en el panel izquierdo y pulsar <code>X</code>. En el menú que aparece seleccionar <code>Copy &gt;</code> y confirmar con <code>A</code>:</p>
+<p><img alt="EmulationStation Instalación 2" src="/images/posts/emulationstation_install2.png" /></p>
+</li>
+<li>
+<p>Seleccionar el directorio <code>data</code> en el panel izquierdo y pulsar <code>X</code>. En el menú que aparece seleccionar <code>Rename</code> y confirmar con <code>A</code>. Nos aparecerá un teclado virtual con el que lo renombraremos a <code>.emulationstation</code> (ojo al punto inicial). Para borrar utilizamos <code>Y</code> y para escribir seleccionamos la letra o el punto con la cruceta y confirmamos con <code>A</code>. Terminamos seleecionando <code>OK</code>:</p>
+<p><img alt="EmulationStation Instalación 3" src="/images/posts/emulationstation_install3.png" /></p>
+</li>
+<li>
+<p>Cambiar en el panel derecho la ruta a <code>/media/data/local/home</code>:</p>
+<p><img alt="EmulationStation Instalación 4" src="/images/posts/emulationstation_install4.png" /></p>
+</li>
+<li>
+<p>Seleccionar en el panel izquierdo el directorio que hemos renombrado en el paso 6 y pulsar <code>X</code>. En el menú que aparece seleccionar <code>Copy &gt;</code> y confirmar con <code>A</code>:</p>
+<p><img alt="EmulationStation Instalación 5" src="/images/posts/emulationstation_install5.png" /></p>
+</li>
+<li>
+<p>Finalmente salir de <code>DinguxCmdr</code> pulsando <code>Y</code> y seleccionando <code>Quit</code>:</p>
+<p><img alt="EmulationStation Instalación 6" src="/images/posts/emulationstation_install6.png" /></p>
+</li>
+</ol>
+<p>Con esto finaliza la instalación de la aplicación.</p>
+<h2 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h2>
 <p>Editar fichero <code>/usr/local/home/.emulationstation/es_systems.cfg</code>. Las distintas extensiones se añaden separadas por comas o espacios.</p>
 <h2 id="arranque">arranque<a class="headerlink" href="#arranque" title="Permanent link">&para;</a></h2>
 <p>Para que se arranque por defecto, crear si no existe el fichero <code>/media/data/local/sbin/frontend_start</code> o modificarlo con el siguiente contenido:</p>
@@ -1887,6 +1915,14 @@ $ scp -r * root@10.1.1.2:/usr/local/home/.emulationstation</p>
 </li>
 </ol>
 <p>Ver esta serie de videos: https://www.youtube.com/channel/UC8c9cH_XB7JMEGInq1-LWLg/videos</p>
+<p>Lista de Scrapers:</p>
+<ul>
+<li><a href="https://github.com/sselph/scraper">Steven Selph's Scraper</a>: <a href="https://retropie.org.uk/docs/Scraper/#steven-selphs-scraper">Instrucciones</a></li>
+<li><a href="https://github.com/muldjord/skyscraper">Lars Muldjord's Skyscraper</a>: <a href="https://retropie.org.uk/docs/Scraper/#lars-muldjords-skyscraper">Instrucciones</a></li>
+<li><a href="https://github.com/Universal-Rom-Tools/Universal-XML-Scraper">Universal XML Scraper</a></li>
+</ul>
+<p>Para generar <code>gamelist.xml</code> hay que ajustar el parámetro <code>Lista de juegos &gt; Tipo de Lista de Juego</code> a <code>EmulationStation gamelist.xml</code> y como <code>Lista de juegos &gt; Ruta absoluta de lista de juegos</code>: <code>%ROMROOTFOLDER%\gamelist.xml</code>.
+Para que se incluyan las imágenes hay que activar <code>Media &gt; Enlace a la lista de juegos</code>: <code>Enlace desde el nodo '&lt;image&gt;'</code>.</p>
                 
                   
                 
