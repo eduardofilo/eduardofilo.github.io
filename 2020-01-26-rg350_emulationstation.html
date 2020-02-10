@@ -1799,6 +1799,7 @@
                   <h1>2020-01-26 RG350 EmulationStation</h1>
                 
                 <p><img alt="EmulationStation" src="/images/posts/emulationstation.png" /></p>
+<p>En este artículo vamos a ver cómo instalar y configurar el frontend EmulationStation en la RG350.</p>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
 <p>Bajo:</p>
 <ul>
@@ -1811,7 +1812,7 @@ $ scp emulationstation.opk root@10.1.1.2:/media/data/apps</p>
 <p>Copio el contenido de <code>Internal SD Card/data</code> a <code>/usr/local/home/.emulationstation</code></p>
 <p>$ cd data
 $ scp -r * root@10.1.1.2:/usr/local/home/.emulationstation</p>
-<p>Editar fichero <code>/usr/local/home/.emulationstation/es_systems.cfg</code>. Las distintas extensiones se añaden separadas por espacio.</p>
+<p>Editar fichero <code>/usr/local/home/.emulationstation/es_systems.cfg</code>. Las distintas extensiones se añaden separadas por comas o espacios.</p>
 <h2 id="arranque">arranque<a class="headerlink" href="#arranque" title="Permanent link">&para;</a></h2>
 <p>Para que se arranque por defecto, crear si no existe el fichero <code>/media/data/local/sbin/frontend_start</code> o modificarlo con el siguiente contenido:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1

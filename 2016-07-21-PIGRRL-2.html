@@ -704,8 +704,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configurar-emulestation" title="Configurar EmuleStation" class="md-nav__link">
-    Configurar EmuleStation
+  <a href="#configurar-emulationstation" title="Configurar EmulationStation" class="md-nav__link">
+    Configurar EmulationStation
   </a>
   
 </li>
@@ -1894,8 +1894,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configurar-emulestation" title="Configurar EmuleStation" class="md-nav__link">
-    Configurar EmuleStation
+  <a href="#configurar-emulationstation" title="Configurar EmulationStation" class="md-nav__link">
+    Configurar EmulationStation
   </a>
   
 </li>
@@ -2116,8 +2116,8 @@ hdmi_cvt=320 240 60 1 0 0 0
 
 </li>
 </ol>
-<h2 id="configurar-emulestation">Configurar EmuleStation<a class="headerlink" href="#configurar-emulestation" title="Permanent link">&para;</a></h2>
-<p>Vamos a hacer que EmuleStation arranque automáticamente con el sistema.</p>
+<h2 id="configurar-emulationstation">Configurar EmulationStation<a class="headerlink" href="#configurar-emulationstation" title="Permanent link">&para;</a></h2>
+<p>Vamos a hacer que EmulationStation arranque automáticamente con el sistema.</p>
 <ol>
 <li>
 <p>Añadir lo siguiente al final del fichero <code>/etc/profile</code>:</p>
@@ -2145,7 +2145,7 @@ cd Adafruit-Retrogame
 
 </li>
 <li>
-<p>Editamos el fichero <code>~/Adafruit-Retrogame/retrogame.c</code> y sustituimos la estructura <code>ioStandard</code> que hay a partir de la línea 111 por lo que sigue. Esto hará corresponder algunas de las teclas importantes para manejar los emuladores y el propio EmuleStation con el mapeo de pulsadores del gamepad de PiGRRL 2:</p>
+<p>Editamos el fichero <code>~/Adafruit-Retrogame/retrogame.c</code> y sustituimos la estructura <code>ioStandard</code> que hay a partir de la línea 111 por lo que sigue. Esto hará corresponder algunas de las teclas importantes para manejar los emuladores y el propio EmulationStation con el mapeo de pulsadores del gamepad de PiGRRL 2:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -2288,7 +2288,7 @@ snd-bcm2835
 </li>
 </ol>
 <h2 id="fin">FIN<a class="headerlink" href="#fin" title="Permanent link">&para;</a></h2>
-<p>Sólo queda copiar algunas roms a los directorios correspondientes a cada emulador dentro de la ruta <code>/home/pi/RetroPie/roms</code>. Hasta que no lo hagamos no aparecerá la entrada correspondiente al emulador en EmuleStation. Si añadimos las roms mientras éste está en marcha (conectándonos por sFTP por ejemplo) habrá que reiniciarlo para que las encuentre.</p>
+<p>Sólo queda copiar algunas roms a los directorios correspondientes a cada emulador dentro de la ruta <code>/home/pi/RetroPie/roms</code>. Hasta que no lo hagamos no aparecerá la entrada correspondiente al emulador en EmulationStation. Si añadimos las roms mientras éste está en marcha (conectándonos por sFTP por ejemplo) habrá que reiniciarlo para que las encuentre.</p>
 <h2 id="enlaces">Enlaces:<a class="headerlink" href="#enlaces" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://learn.adafruit.com/running-opengl-based-games-and-emulators-on-adafruit-pitft-displays/overview">Running OpenGL-based Games &amp; Emulators on Adafruit PiTFT Displays</a></li>
