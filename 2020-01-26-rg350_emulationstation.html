@@ -1307,8 +1307,8 @@
 
 
   <li class="md-nav__item">
-    <a href="retro-emulacion/rg-350.html" title="RG-350" class="md-nav__link">
-      RG-350
+    <a href="retro-emulacion/rg-350.html" title="RG350" class="md-nav__link">
+      RG350
     </a>
   </li>
 
@@ -1821,13 +1821,13 @@
                 <p><img alt="EmulationStation" src="/images/posts/emulationstation.png" /></p>
 <p>En este artículo vamos a ver cómo instalar y configurar el frontend EmulationStation en la RG350.</p>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
-<p>Empezamos por la instalación. Desgraciadamente además de copiar un OPK como habitualmente, hay que mover unos cuantos ficheros a una ruta de la tarjeta interna. A continuación los detalles paso a paso (las operaciones de copiado de ficheros se muestran con DinguxCmdr por ser accesible para todo el mundo, pero naturalmente se pueden hacer por FTP o SSH):</p>
+<p>Empezamos por la instalación. Desgraciadamente además de copiar un OPK como habitualmente, hay que mover unos cuantos ficheros a una ruta de la tarjeta interna. A continuación los detalles paso a paso (las operaciones de copiado de ficheros se muestran con <code>DinguxCmdr</code> por ser accesible para todo el mundo, pero naturalmente se pueden hacer por FTP o SCP):</p>
 <ol>
-<li>Bajar <a href="https://github.com/ManuelSch81/RG350-EmulationStation_configured/archive/master.zip">este archivo</a> y descomprimirlo.</li>
-<li>Dentro veremos el directorio <code>Internal SD Card</code> (el resto no los utilizaremos para nada) que hay que copiar a la tarjeta externa de la consola (montándola en el PC con un adaptador o lector de tarjetas o por FTP).</li>
+<li>Bajar <a href="https://github.com/ManuelSch81/RG350-EmulationStation_configured/archive/master.zip">este fichero</a> y descomprimirlo.</li>
+<li>Dentro veremos el directorio <code>Internal SD Card</code> (el resto no los utilizaremos para nada) que hay que copiar a la tarjeta externa de la consola (montándola en el PC con un adaptador o lector de tarjetas o por FTP, SCP, ...).</li>
 <li>Desmontar la SD del PC para devolverla a la ranura externa de la consola.</li>
 <li>
-<p>Abrir DinguxCmdr. Moverse por la estructura de ficheros hasta localizar a la izquierda la ruta <code>/media/sdcard/Internal SD Card</code> y a la derecha <code>/media/sdcard/apps</code>. La ruta de la derecha es donde vamos a instalar el OPK. En este caso hemos indicado la ruta de los OPKs que se leen de la tarjeta externa. Alternativamente se puede utilizar la ruta <code>/media/data/apps</code> si se prefiere instalar en la interna:</p>
+<p>Abrir <code>DinguxCmdr</code>. Moverse por la estructura de ficheros hasta localizar a la izquierda la ruta <code>/media/sdcard/Internal SD Card</code> y a la derecha <code>/media/sdcard/apps</code>. La ruta de la derecha es donde vamos a instalar el OPK. En este caso hemos indicado la ruta de los OPKs que se leen de la tarjeta externa. Alternativamente se puede utilizar la ruta <code>/media/data/apps</code> si se prefiere instalar en la interna:</p>
 <p><img alt="EmulationStation Instalación 1" src="/images/posts/emulationstation_install1.png" /></p>
 </li>
 <li>
@@ -1854,8 +1854,8 @@
 <p>Con esto finaliza la instalación de la aplicación.</p>
 <h2 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h2>
 <p>Para que EmulationStation reconozca los distintos sistemas de emulación, deben estar correctamente registrados en uno de los ficheros de configuración que hemos copiado durante la instalación, concretamente el que queda en la ruta <code>/usr/local/home/.emulationstation/es_systems.cfg</code>. Desafortunadamente no hay ningún medio para hacer esta configuración automáticamente. Nos va a tocar hacerla manualmente.</p>
-<p>Estamos en una situación muy similar a la de <a href="/2020-01-25-rg350_simplemenu.html">SimpleMenu</a>. De hecho el apartado de <a href="/2020-01-25-rg350_simplemenu.html#configuracion">Configuración</a> de ese artículo, conceptualmente nos sirve aquí. Sólo cambia el formato concreto de la configuración que necesita EmulationStation. Se recomienda por tanto hacer como en el caso de <a href="/2020-01-25-rg350_simplemenu.html#configuracion">SimpleMenu</a>, es decir, transferir el fichero de configuración <code>/usr/local/home/.emulationstation/es_systems.cfg</code> al ordenador para editarlo allí con un editor que soporte directamente el formato de texto de Linux como <a href="https://notepad-plus-plus.org/">Notepad++</a>.</p>
-<p>El fichero <code>es_systems.cfg</code>, aunque no lo indique la extensión, internamente tiene formato XML. Se trata por tanto de una serie de bloques anidados que comienzan y terminan con etiquetas encerradas entre los símbolos <code>&lt;</code> y <code>&gt;</code>. El bloque raíz se define con la etiqueta <code>&lt;systemList&gt;</code> y dentro de él hay un bloque <code>&lt;system&gt;</code> para cada emulador. Dentro de este bloque ya directamente se encuentran los distintos parámetros del emulador. Como vemos la filosofía es muy similar a la del fichero de configuración de SimpleMenu, sólo que en éste último el formato del archivo no era XML, sino el que se utiliza habitualmente para los ficheros de configuración tipo <a href="https://es.wikipedia.org/wiki/INI_(extensi%C3%B3n_de_archivo)">INI</a>.</p>
+<p>Estamos en una situación muy similar a la de <a href="/2020-01-25-rg350_simplemenu.html">SimpleMenu</a>. De hecho el apartado de <a href="/2020-01-25-rg350_simplemenu.html#configuracion">Configuración</a> de ese artículo, conceptualmente nos sirve aquí. Sólo cambia el formato concreto de la configuración que necesita EmulationStation. Se recomienda por tanto hacer como en el caso de <a href="/2020-01-25-rg350_simplemenu.html#configuracion">SimpleMenu</a>, es decir, transferir el fichero de configuración <code>/usr/local/home/.emulationstation/es_systems.cfg</code> al ordenador para editarlo allí con un editor que soporte directamente el formato de texto de Linux como <a href="https://notepad-plus-plus.org/">Notepad++</a>. En realidad podemos aprovechar la copia que todavía tendremos en la tarjeta externa que hay dentro de la carpeta <code>.emulationstation</code> que renombramos durante la instalación.</p>
+<p>El fichero <code>es_systems.cfg</code>, aunque no lo indique la extensión, internamente tiene formato XML. Se trata por tanto de una serie de bloques anidados que comienzan y terminan con etiquetas encerradas entre los símbolos <code>&lt;</code> y <code>&gt;</code>. El bloque raíz se define con la etiqueta <code>&lt;systemList&gt;</code> y dentro de él hay un bloque <code>&lt;system&gt;</code> para cada emulador. Dentro de este bloque ya directamente se encuentran los distintos parámetros del emulador. Como vemos la filosofía es muy similar a la del fichero de configuración de SimpleMenu, sólo que en éste último el formato del archivo no era XML, sino el que se utiliza habitualmente para los ficheros de configuración tipo <a href="https://es.wikipedia.org/wiki/INI_(extensi%C3%B3n_de_archivo)">INI</a>. De hecho si ya tenemos SimpleMenu instalado y configurado, podemos utilizar su fichero de configuración como plantilla para transplantar todos los parámetros (que son prácticamente los mismos) a <code>es_systems.cfg</code>.</p>
 <p>Un bloque <code>&lt;system&gt;</code> de un sistema como Game Boy podría ser el siguiente:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -1887,6 +1887,7 @@
 <p>Una vez que devolvamos el fichero de configuración <code>es_systems.cfg</code> a su lugar en <code>/usr/local/home/.emulationstation</code>, el resultado en SimpleMenu será éste:</p>
 <p><img alt="EmulationStation Running 1" src="/images/posts/emulationstation_running1.png" />
 <img alt="EmulationStation Running 2" src="/images/posts/emulationstation_running2.png" /></p>
+<p>Como se ve en las fotos, al menos en mi sistema algunos de los textos se ven ligeramente distorsionados. Esto se puede solucionar o mejorar cambiando el tema. La instalación que hemos hecho lleva 4 temas preinstalados. Desafortunadamente, el que viene por defecto y que produce esos pequeños defectos gráficos es el que más recomendable me parecería si no fuera por este problema.</p>
 <p>Como punto de partida dejo aquí mi fichero de configuración que contiene la mayoría de los emuladores y la <a href="/retro-emulacion/rg-350.html#las-roms-y-su-organizacion">estructura de directorios para las ROMs</a> que se utilizan habitualmente.</p>
 <ul>
 <li><a href="/files/posts/es_systems.cfg">es_systems.cfg</a></li>
@@ -1896,9 +1897,9 @@
 <ol>
 <li>Bajar el fichero <a href="/files/posts/frontend_start">frontend_start</a>.</li>
 <li>Copiarlo a la raíz de la microSD externa.</li>
-<li>Montar la microSD externa en la RG350 y arrancar. La ruta del fichero se encuentra en <code>/media/sdcard/frontend_start</code>.</li>
+<li>Montar la microSD externa en la RG350 y arrancar. La ruta del fichero que acabamos de copiar, se encuentra en <code>/media/sdcard/frontend_start</code>.</li>
 <li>
-<p>Copiar el fichero <code>frontend_start</code> a la ruta <code>/media/data/local/sbin</code>:</p>
+<p>Abrir <code>DinguxCmdr</code>y copiar el fichero <code>frontend_start</code> a la ruta <code>/media/data/local/sbin</code>:</p>
 <p><img alt="SimpleMenu 3" src="/images/posts/simplemenu_screenshot003.png" /></p>
 </li>
 <li>
@@ -1909,6 +1910,36 @@
 
 </li>
 </ol>
+<p>Para el último paso merece la pena intentar conectar por SSH ya que las últimas versiones de Windows 10 ya incorporan el cliente de forma predeterminada. Para ello, estando la RG350 conectada por USB2 al ordenador, abrir una terminal o consola (buscando en el menú inicio o en Cortana <code>cmd</code>) y teclear lo siguiente:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ssh</span> <span class="n">root</span><span class="mf">@10.1.1.2</span>
+</pre></div>
+</td></tr></table>
+
+<p>Si nos aparece lo siguiente es que hemos conseguido abrir una terminal dentro del sistema de la RG350. Desde allí podremos ejecutar directamente el comando del punto 5 de la lista anterior.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">edumoreno</span><span class="p">@</span><span class="nl">pceduardo</span><span class="p">:</span><span class="o">~</span><span class="err">$</span> <span class="n">ssh</span> <span class="n">root</span><span class="mf">@10.1.1.2</span>
+ <span class="n">_________________________</span>
+<span class="o">&lt;</span> <span class="n">Welcome</span> <span class="n">to</span> <span class="n">ROGUE</span> <span class="n">resistance</span> <span class="o">!</span> <span class="o">&gt;</span>
+ <span class="o">-------------------------</span>
+           <span class="o">|</span>\
+        <span class="o">&lt;=--===</span><span class="err">\</span><span class="o">&gt;</span>   <span class="o">-------</span>
+          <span class="o">==</span><span class="mi">0</span><span class="o">=</span><span class="p">[]</span><span class="o">=&gt;&gt;</span>
+        <span class="o">&lt;=--===/&gt;</span>   <span class="o">-------</span>
+           <span class="o">|/</span>
+
+<span class="nl">RG350</span><span class="p">:</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">home</span> <span class="err">#</span> <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">frontend_start</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="boxart">Boxart<a class="headerlink" href="#boxart" title="Permanent link">&para;</a></h2>
 <p>Una de las funcionalidades más interesantes de EmulationStation es su capacidad para adornar la presentación del listado de ROMs con previsualizaciones de los juegos y con metainformación (fecha de publicación, compañía desarrolladora, número de jugadores, etc.). Esta funcionalidad se basa en un fichero de texto llamado <code>gamelist.xml</code> en formato XML (parecido al que hemos visto antes para la configuración de los sistemas). El fichero puede estar en varios sitios, pero la ubicación más conveniente es el propio directorio de las ROMs. Deberá haber un fichero <code>gamelist.xml</code> por sistema, es decir por directorio de ROMs.</p>
 <p>Como siempre que hablamos de este tema, interesa utilizar una herramienta que automatice el proceso, ya que normalmente tendremos muchas ROMs por cada sistema y aparte de largo y tedioso, escribir manualmente ficheros XML supone casi con toda seguridad introducir errores en su estructura. Así pues será conveniente utilizar un Scraper como los siguientes:</p>
