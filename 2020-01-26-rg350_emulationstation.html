@@ -1786,6 +1786,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#skraper" title="Skraper" class="md-nav__link">
+    Skraper
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#universal-xml-scraper" title="Universal XML Scraper" class="md-nav__link">
     Universal XML Scraper
   </a>
@@ -1900,7 +1907,7 @@
 <li>Montar la microSD externa en la RG350 y arrancar. La ruta del fichero que acabamos de copiar, se encuentra en <code>/media/sdcard/frontend_start</code>.</li>
 <li>
 <p>Abrir <code>DinguxCmdr</code>y copiar el fichero <code>frontend_start</code> a la ruta <code>/media/data/local/sbin</code>:</p>
-<p><img alt="SimpleMenu 3" src="/images/posts/simplemenu_screenshot003.png" /></p>
+<p><img alt="Copiando frontend_start" src="/images/posts/simplemenu_screenshot003.png" /></p>
 </li>
 <li>
 <p>Hacer ejecutable el fichero instalado. Desafortunadamente DinguxCmdr no nos ayuda en este caso. Tendremos que ejecutar el siguiente comando desde consola, ya sea por SSH o utilizando una aplicación de terminal como <code>ST-SDL</code>:</p>
@@ -1946,10 +1953,25 @@
 <ul>
 <li><a href="https://github.com/sselph/scraper">Steven Selph's Scraper</a>: <a href="https://retropie.org.uk/docs/Scraper/#steven-selphs-scraper">Instrucciones</a></li>
 <li><a href="https://github.com/muldjord/skyscraper">Lars Muldjord's Skyscraper</a>: <a href="https://retropie.org.uk/docs/Scraper/#lars-muldjords-skyscraper">Instrucciones</a></li>
-<li><a href="https://github.com/Universal-Rom-Tools/Universal-XML-Scraper">Universal XML Scraper</a></li>
 <li><a href="http://skraper.net/">Skraper</a></li>
+<li><a href="https://github.com/Universal-Rom-Tools/Universal-XML-Scraper">Universal XML Scraper</a></li>
 </ul>
 <p>Vamos a detallar el uso de los dos últimos para generar los ficheros <code>gamelist.xml</code> y las imágenes de previsualización de los sistemas que tengamos instalados en la consola.</p>
+<h4 id="skraper">Skraper<a class="headerlink" href="#skraper" title="Permanent link">&para;</a></h4>
+<p>Seguiremos los 8 pasos vistos en el post anterior <a href="/2020-01-11-rg350_scraper.html">RG350 Scraper</a>, añadiendo las siguientes opciones al paso 7:</p>
+<ul>
+<li>Apartado <code>Lista de juegos</code><ul>
+<li><code>Tipo de Lista de Juego</code>: <code>EmulationStation gamelist.xml</code></li>
+<li><code>Ruta absoluta de lista de juegos</code>: <code>%ROMROOTFOLDER%\gamelist.xml</code></li>
+</ul>
+</li>
+<li>Apartado <code>Media</code>:<ul>
+<li><code>Enlace a la lista de juegos</code>: <code>Enlace desde el nodo '&lt;image&gt;'</code></li>
+</ul>
+</li>
+</ul>
+<p>De esta forma, además de las imágenes en los subdirectorios <code>.previews</code> dentro de los directorios de ROMs de los sistemas (compatible por tanto en este caso con las previsualizaciones de GMenu2X), aparecerá también el fichero <code>gamelist.xml</code> que contiene la metainformación de los juegos y el enlace a las imágenes. A partir de que se incorpore el fichero <code>gamelist.xml</code> en los distintos sistemas empezaremos a ver el menú de ROMs correspondiente con la metainformación y las imágenes:</p>
+<p><img alt="EmulationStation Boxart" src="/images/posts/emulationstation_boxart.png" /></p>
 <h4 id="universal-xml-scraper">Universal XML Scraper<a class="headerlink" href="#universal-xml-scraper" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Extraer la tarjeta externa de la RG350 y montarla con un adaptador o lector en el PC.</li>
@@ -1996,8 +2018,6 @@
 </li>
 </ol>
 <p>Ver esta serie de videos: https://www.youtube.com/channel/UC8c9cH_XB7JMEGInq1-LWLg/videos</p>
-<p>Para generar <code>gamelist.xml</code> hay que ajustar el parámetro <code>Lista de juegos &gt; Tipo de Lista de Juego</code> a <code>EmulationStation gamelist.xml</code> y como <code>Lista de juegos &gt; Ruta absoluta de lista de juegos</code>: <code>%ROMROOTFOLDER%\gamelist.xml</code>.
-Para que se incluyan las imágenes hay que activar <code>Media &gt; Enlace a la lista de juegos</code>: <code>Enlace desde el nodo '&lt;image&gt;'</code>.</p>
                 
                   
                 
