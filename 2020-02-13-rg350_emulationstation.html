@@ -1983,7 +1983,7 @@
                   <h1>2020-01-26 RG350 EmulationStation</h1>
                 
                 <p><img alt="EmulationStation" src="/images/posts/emulationstation.png" /></p>
-<p>En este artículo vamos a ver cómo instalar y configurar el frontend EmulationStation en la RG350.</p>
+<p>En este artículo vamos a ver cómo instalar y configurar el frontend EmulationStation en la RG350. Comentar antes de empezar que el resultado final dependerá mucho del tiempo que invirtamos en configurarlo bien y en probar temas que queden bien en la pantalla de RG350. También aclarar que si tenemos muchos sistemas y/o ROMs, EmulationStation puede tardar un poco en arrancar. En definitiva, que no es el frontend perfecto para utilizar en RG350, aunque hay que reconocer que puede llegar a quedar bonito.</p>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
 <p>Empezamos por la instalación. Desgraciadamente además de copiar un OPK como habitualmente, hay que mover unos cuantos ficheros a una ruta de la tarjeta interna. A continuación los detalles paso a paso (las operaciones de copiado de ficheros se muestran con <code>DinguxCmdr</code> por ser accesible para todo el mundo, pero naturalmente se pueden hacer por FTP o SCP):</p>
 <ol>
@@ -2075,6 +2075,7 @@
 
 </li>
 </ol>
+<p>Tal y como está diseñado el script de arranque que acabamos de copiar, si salimos de EmulationStation (tecla <code>Start</code> y luego eligiendo <code>Quit</code> y <code>Quit EmulationStation</code>), se abrirá GMenu2X.</p>
 <p>Para el último paso merece la pena intentar conectar por SSH ya que las últimas versiones de Windows 10 ya incorporan el cliente de forma predeterminada. Para ello, estando la RG350 conectada por USB2 al ordenador, abrir una terminal o consola (buscando en el menú inicio o en Cortana <code>cmd</code>) y teclear lo siguiente:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ssh</span> <span class="n">root</span><span class="mf">@10.1.1.2</span>
 </pre></div>
@@ -2178,7 +2179,7 @@
 </ul>
 </li>
 </ol>
-<p>Podríamos pensar que renombrando el directorio <code>downloaded_images</code> por <code>.previews</code> conseguiremos que las previsualizaciones sean compatibles con GMenu2X, pero no es así porque los nombres de las imágenes incluyen el sufijo <code>-image</code>.</p>
+<p>Podríamos pensar que renombrando el directorio <code>downloaded_images</code> por <code>.previews</code> conseguiremos que las previsualizaciones sean compatibles con GMenu2X, pero no es así porque los nombres de las imágenes incluyen el sufijo <code>-image</code> antes de la extensión.</p>
 <p>Ya podemos extraer la microSD del PC y devolverla a la RG350. Ya deberíamos poder ver las previsualizaciones y la metainformación de los juegos scrapeados:</p>
 <p><img alt="EmulationStation Boxart UXS" src="/images/posts/emulationstation_boxart_uxs.png" /></p>
 <h2 id="temas">Temas<a class="headerlink" href="#temas" title="Permanent link">&para;</a></h2>
