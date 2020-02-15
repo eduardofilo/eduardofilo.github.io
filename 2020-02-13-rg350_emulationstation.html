@@ -1991,8 +1991,11 @@
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
 <p>Empezamos por la instalación. Desgraciadamente además de copiar un OPK como habitualmente, hay que mover unos cuantos ficheros a una ruta de la tarjeta interna. A continuación los detalles paso a paso (las operaciones de copiado de ficheros se muestran con <code>DinguxCmdr</code> por ser accesible para todo el mundo, pero naturalmente se pueden hacer por FTP o SCP):</p>
 <ol>
-<li>Bajar <a href="https://github.com/ManuelSch81/RG350-EmulationStation_configured/archive/master.zip">este fichero</a> y descomprimirlo.</li>
-<li>Dentro veremos el directorio <code>Internal SD Card</code> (el resto no los utilizaremos para nada) que hay que copiar a la tarjeta externa de la consola (montándola en el PC con un adaptador o lector de tarjetas o por FTP, SCP, ...).</li>
+<li>Bajar <a href="https://github.com/ManuelSch81/RG350-EmulationStation_configured/archive/master.zip">este fichero</a> y descomprimirlo. Dentro veremos un par de directorios y un README. Nos fijamos en el directorio <code>Internal SD Card</code> (el resto no los utilizaremos para nada).</li>
+<li>Abrir el directorio <code>Internal SD Card</code> y renombrar el directorio <code>data</code> que allí veremos a <code>.emulationstation</code> (si lo hacemos en Linux, el directorio desaparecerá a no ser que tengamos activa la opción de mostrar archivos ocultos).</li>
+<li>Abrir el directorio que acabamos de renombrar en el paso anterior. Dentro veremos dos directorios y algunos ficheros. Borrar el directorio <code>gamelists</code> (ya que contiene listados de ROMs que tenía el autor del repositorio en su consola, lo que hará más lenta la carga de EmulationStation).</li>
+<li>Subir un par de niveles de directorios hasta volver a tener a la vista el directorio <code>Internal SD Card</code>.</li>
+<li>Copiar este directorio a la tarjeta externa de la consola (montándola en el PC con un adaptador o lector de tarjetas o por FTP, SCP, ...).</li>
 <li>Desmontar la SD del PC para devolverla a la ranura externa de la consola.</li>
 <li>
 <p>Abrir <code>DinguxCmdr</code>. Moverse por la estructura de ficheros hasta localizar a la izquierda la ruta <code>/media/sdcard/Internal SD Card</code> y a la derecha <code>/media/sdcard/apps</code>. La ruta de la derecha es donde vamos a instalar el OPK. En este caso hemos indicado la ruta donde están los OPKs en la tarjeta externa. Alternativamente se puede utilizar la ruta donde están los OPKs en la interna que es <code>/media/data/apps</code>, si se prefiere instalar en esta tarjeta:</p>
@@ -2003,15 +2006,11 @@
 <p><img alt="EmulationStation Instalación 2" src="/images/posts/emulationstation_install2.png" /></p>
 </li>
 <li>
-<p>Seleccionar el directorio <code>data</code> en el panel izquierdo y pulsar <code>X</code>. En el menú que aparece seleccionar <code>Rename</code> y confirmar con <code>A</code>. Nos aparecerá un teclado virtual con el que lo renombraremos a <code>.emulationstation</code> (ojo al punto inicial). Para borrar utilizamos <code>Y</code> y para escribir seleccionamos la letra o el punto con la cruceta y confirmamos con <code>A</code>. Terminamos seleecionando <code>OK</code>:</p>
-<p><img alt="EmulationStation Instalación 3" src="/images/posts/emulationstation_install3.png" /></p>
-</li>
-<li>
 <p>Cambiar en el panel derecho la ruta a <code>/media/data/local/home</code>:</p>
 <p><img alt="EmulationStation Instalación 4" src="/images/posts/emulationstation_install4.png" /></p>
 </li>
 <li>
-<p>Seleccionar en el panel izquierdo el directorio que hemos renombrado en el paso 6 y pulsar <code>X</code>. En el menú que aparece seleccionar <code>Copy &gt;</code> y confirmar con <code>A</code>:</p>
+<p>Seleccionar en el panel izquierdo el directorio <code>.emulationstation</code> y pulsar <code>X</code>. En el menú que aparece seleccionar <code>Copy &gt;</code> y confirmar con <code>A</code>:</p>
 <p><img alt="EmulationStation Instalación 5" src="/images/posts/emulationstation_install5.png" /></p>
 </li>
 <li>
