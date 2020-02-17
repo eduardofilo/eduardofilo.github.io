@@ -527,6 +527,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#roms" title="ROMs" class="md-nav__link">
+    ROMs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bios-neogeo" title="BIOS NeoGeo" class="md-nav__link">
     BIOS NeoGeo
   </a>
@@ -1887,6 +1894,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#roms" title="ROMs" class="md-nav__link">
+    ROMs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bios-neogeo" title="BIOS NeoGeo" class="md-nav__link">
     BIOS NeoGeo
   </a>
@@ -1927,7 +1941,7 @@
 <p>Una vez instalado, reiniciar Gmenu2x pulsando <code>Power+Select</code> para asegurar el que aparezca:</p>
 <p><img alt="Icono FBA" src="/images/posts/fba_launcher.png" /></p>
 <h2 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h2>
-<p>La primera vez que lo abramos nos mostrará las 5807 ROMs que es capaz de reconocer, pero no nos permitirá abrirlas y las representará en rojo.</p>
+<p>La primera vez que lo abramos nos mostrará las 5807 ROMs que es capaz de reconocer (al menos en la <a href="https://github.com/nobk/fba-sdl/releases/download/r19/fba-RG350-r19-8e351b8b.opk">r19</a>), pero seguramente no nos permitirá abrirlas y las representará en rojo.</p>
 <p><img alt="Primer arranque FBA" src="/images/posts/fba_primer_arranque.png" /></p>
 <p>Si pulsamos la tecla <code>X</code> (y no la <code>Y</code> como sugiere el propio programa) veremos la ayuda en la que se explica que las ROMs que aparecen en rojo están <em>missing</em>, es decir que no han sido localizadas en la consola.</p>
 <p><img alt="Ayuda FBA" src="/images/posts/fba_help.png" /></p>
@@ -2098,6 +2112,13 @@
 </ol>
 <p>Si todo ha ido bien, tras salir de DinguxCmdr (tecla <code>Y</code> y comando <code>Quit</code>), al abrir FBA empezaremos a ver esto:</p>
 <p><img alt="Previews" src="/images/posts/fba_previews.gif" /></p>
+<h2 id="roms">ROMs<a class="headerlink" href="#roms" title="Permanent link">&para;</a></h2>
+<p>Como hemos comentado, FBA funciona en base a un romset, es decir un listado cerrado de ROMs que es capaz de ejecutar en una versión determinada. Las ROMs son identificadas haciendo cálculos con el contenido de los ficheros, de manera que si se detecta algún pequeño cambio, la ROM se descarta, apareciendo en rojo en el listado. Para lograr depurar un romset, es decir, encontrar los ficheros que falten o se detecten como inválidos, conviene utilizar un programa que nos asista en la tarea. Son los llamados ROM Managers, de los que hay varios, como por ejemplo:</p>
+<ul>
+<li><a href="https://www.romcenter.com/">Romcenter</a></li>
+<li><a href="https://mamedev.emulab.it/clrmamepro/">Clrmamepro</a></li>
+<li><a href="https://www.romvault.com/">RomVault</a></li>
+</ul>
 <h2 id="bios-neogeo">BIOS NeoGeo<a class="headerlink" href="#bios-neogeo" title="Permanent link">&para;</a></h2>
 <p>Como muchos emuladores, algunas de las máquinas que emula FBA necesitan las BIOS que existían en la placa, por ejemplo NeoGeo. Hay que por tanto conseguir esta BIOS (el que busca encuentra) y copiarla al mismo directorio donde están las ROMs, es decir, siguiendo el ejemplo de todo el artículo, en mi caso sería <code>/media/sdcard/roms/FBA</code>. La BIOS de NeoGeo en realidad consiste en un conjunto de ficheros comprimidos en uno de nombre <code>neogeo.zip</code>.</p>
 <p>Existe una BIOS modificada para NeoGeo llamada UNIBIOS con la que al abrir un juego de esta máquina y pulsar <code>Select+Start</code> aparece un menú de cheats. También se puede cambiar la región y los idiomas de los juegos.</p>
