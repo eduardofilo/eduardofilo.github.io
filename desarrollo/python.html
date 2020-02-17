@@ -1145,6 +1145,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#creacion-de-entorno-en-directorio-de-proyecto" title="Creación de entorno en directorio de proyecto" class="md-nav__link">
+    Creación de entorno en directorio de proyecto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#creacion-de-entorno-con-version-especifica-de-python-y-de-paquetes" title="Creación de entorno con versión específica de Python y de paquetes" class="md-nav__link">
     Creación de entorno con versión específica de Python y de paquetes
   </a>
@@ -2369,6 +2376,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../varios/recetas.html" title="Recetas" class="md-nav__link">
+      Recetas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../varios/viajes.html" title="Viajes" class="md-nav__link">
       Viajes
     </a>
@@ -2487,6 +2506,13 @@
           <li class="md-nav__item">
   <a href="#creacion-de-entorno-para-python3" title="Creación de entorno para Python3" class="md-nav__link">
     Creación de entorno para Python3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-entorno-en-directorio-de-proyecto" title="Creación de entorno en directorio de proyecto" class="md-nav__link">
+    Creación de entorno en directorio de proyecto
   </a>
   
 </li>
@@ -3125,6 +3151,11 @@ $ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtuale
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pipenv install --three
 $ pipenv shell
+</pre></div>
+</td></tr></table>
+
+<h3 id="creacion-de-entorno-en-directorio-de-proyecto">Creación de entorno en directorio de proyecto<a class="headerlink" href="#creacion-de-entorno-en-directorio-de-proyecto" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nv">PIPENV_VENV_IN_PROJECT</span><span class="o">=</span><span class="m">1</span> pipenv install --three
 </pre></div>
 </td></tr></table>
 
@@ -4178,8 +4209,8 @@ $ curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/mast
 <li>
 <p>Si queremos detener el servicio hay que desactivar los dos siguientes:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo systemctl disable jupyterhub.service 
-$ sudo systemctl disable traefik.service 
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo systemctl disable jupyterhub.service
+$ sudo systemctl disable traefik.service
 </pre></div>
 </td></tr></table>
 
