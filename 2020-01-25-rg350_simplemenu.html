@@ -2057,7 +2057,7 @@
 <p>SimpleMenu no arrancará hasta que hayamos realizado una <a href="#configuracion">configuración</a> funcional, cosa que hay que hacer manualmente tocando los ficheros de configuración. No se trata por tanto de una aplicación que se pueda simplemente instalar para probar.</p>
 </div>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
-<p>Desde la versión 3.2 su autor ofrece en los assets de la <a href="https://github.com/fgl82/simplemenu/releases/tag/3.3">release</a> dos formas de instalación, una empaquetado como OPK y otra manual (con los binarios y recursos en forma de ficheros convencionales).</p>
+<p>Desde la versión 3.2 su autor ofrece en los assets de la <a href="https://github.com/fgl82/simplemenu/releases/tag/3.3">release</a> dos formas de instalación, una empaquetado como OPK y otra manual (con los binarios y recursos en forma de ficheros convencionales). Vamos a ver como utilizar ambas alternativas.</p>
 <h4 id="por-medio-de-opk">Por medio de OPK<a class="headerlink" href="#por-medio-de-opk" title="Permanent link">&para;</a></h4>
 <p>La instalación consiste únicamente en copiar el OPK a una de las dos rutas que explora Gmenu2x para mostrar el lanzador, es decir:</p>
 <ul>
@@ -2103,7 +2103,7 @@
 <h4 id="como-lanzador-predeterminado">Como lanzador predeterminado<a class="headerlink" href="#como-lanzador-predeterminado" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Bajar el fichero siguiente de la lista de assets de la release:<ul>
-<li><a href="https://github.com/fgl82/simplemenu/releases/download/3.1/frontend_start">frontend_start</a></li>
+<li><a href="https://github.com/fgl82/simplemenu/releases/download/3.3/frontend_start">frontend_start</a></li>
 </ul>
 </li>
 <li>Copiarlo a la raíz de la microSD externa.</li>
@@ -2121,6 +2121,7 @@
 </li>
 </ol>
 <h4 id="desde-gmenu2x">Desde Gmenu2x<a class="headerlink" href="#desde-gmenu2x" title="Permanent link">&para;</a></h4>
+<p>Si nos hemos decantado por la <a href="#instalacion-manual">instalación manual</a> Gmenu2x no mostrará SimpleMenu entre los lanzadores. Tenemos que generar un lanzador manual como sigue:</p>
 <ol>
 <li>Acudir a la sección <code>Applications</code> de Gmenu2x.</li>
 <li>
@@ -2232,21 +2233,21 @@ media
 
 <p>Como vemos el primer y tercer parámetro son ignorados en RG350 (en principio son para modificar las frecuencias del procesador). El resto de parámetros sí los podemos modificar. Su significado es el siguiente:</p>
 <ul>
-<li>TIMEOUT: Número de segundos a partir del cual salta el salvapantallas. Cuando entre la forma de salir es pulsar <code>Power</code>.</li>
-<li>TIDY GAME NAMES: Obsoleto desde la versión 3.2.</li>
-<li>START IN PICTURE MODE: Obsoleto desde la versión 3.2.</li>
-<li>SHUTDOWN ENABLED: Si tiene el valor 1 hace que al pulsar <code>Start+Select</code> la consola se apague. Si tiene el valor 0 simplemente se cierra SimpleMenu.</li>
-<li>MEDIA FOLDER: Directorio donde se buscan las previsualizaciones de las ROMs. Interesa cambiar este valor del <code>media</code> que viene por defecto a <code>.previews</code> para que sea compatible con la ruta utilizada por Gmenu2x.</li>
+<li><code>TIMEOUT</code>: Número de segundos a partir del cual salta el salvapantallas. Cuando éste entre la forma de salir es pulsar <code>Power</code>.</li>
+<li><code>TIDY GAME NAMES</code>: Obsoleto desde la versión 3.2.</li>
+<li><code>START IN PICTURE MODE</code>: Obsoleto desde la versión 3.2.</li>
+<li><code>SHUTDOWN ENABLED</code>: Si tiene el valor <code>1</code> hace que al pulsar <code>Start+Select</code> la consola se apague. Si tiene el valor <code>0</code> simplemente se cierra SimpleMenu.</li>
+<li><code>MEDIA FOLDER</code>: Directorio donde se buscan las previsualizaciones de las ROMs. Interesa cambiar este valor del <code>media</code> que viene por defecto a <code>.previews</code> para que sea compatible con la ruta utilizada por Gmenu2x.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Aviso</p>
-<p>Si queremos modificar los ficheros de configuración, SimpleMenu no puede encontrarse en ejecución. No sirve lanzar Gmenu2x porque SimpleMenu seguirá vivo como proceso padre de éste. Habrá que o bien reiniciar la consola si tenemos configurado el <a href="#desde-gmenu2x">arranque manual</a> o bien deshacer temporalmente el <a href="#como-lanzador-predeterminado">arranque automático</a>. Si matamos el proceso con <code>kill</code> por SSH la consola se apagará.</p>
+<p>Si queremos modificar los ficheros de configuración, SimpleMenu no puede encontrarse en ejecución. No sirve lanzar Gmenu2x porque SimpleMenu seguirá vivo como proceso padre de éste. Habrá que o bien reiniciar la consola si tenemos configurado el <a href="#desde-gmenu2x">arranque manual</a> o bien deshacer temporalmente el <a href="#como-lanzador-predeterminado">arranque automático</a>. Si matamos el proceso con <code>kill</code> por SSH la consola se apagará si el parámetro <code>SHUTDOWN ENABLED</code> vale <code>1</code>.</p>
 </div>
 <h2 id="previews">Previews<a class="headerlink" href="#previews" title="Permanent link">&para;</a></h2>
 <p>SimpleMenu soporta previsualización de las ROMs. Para que aparezcan hay que hacer dos cosas:</p>
 <ol>
 <li>Colocar las imágenes con el mismo nombre que las ROMs pero con extensión <code>.png</code> en un directorio al mismo nivel que las ROMs de nombre <code>media</code>. Por ejemplo la previsualización de la ROM <code>/media/sdcard/roms/GB/DKLAND.gb</code> iría en <code>/media/sdcard/roms/GB/media/DKLAND.png</code>.</li>
-<li>Activar la visualización de las miniaturas. Para ello hay que pulsar la tecla <code>Y</code>. Volviéndola a pulsar volvemos al menú normal.</li>
+<li>Activar la visualización de las miniaturas. Para ello hay que pulsar la tecla <code>Y</code>. Volviéndola a pulsar volvemos al listado normal.</li>
 </ol>
 <p>Como hemos comentado en el apartado de <a href="#configuracion-general">Configuración general</a>, podemos modificar el directorio que se utiliza de forma predeterminada (<code>media</code>) por el <code>.previews</code> que utiliza Gmenu2x para así hacerlos compatibles y no tener que duplicar las previsualizaciones.</p>
 <p>El resultado:</p>
