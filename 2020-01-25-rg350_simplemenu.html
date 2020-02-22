@@ -515,6 +515,26 @@
     Instalación
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-medio-de-opk" title="Por medio de OPK" class="md-nav__link">
+    Por medio de OPK
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-manual" title="Instalación manual" class="md-nav__link">
+    Instalación manual
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -548,6 +568,26 @@
   <a href="#configuracion" title="Configuración" class="md-nav__link">
     Configuración
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistemas" title="Sistemas" class="md-nav__link">
+    Sistemas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-general" title="Configuración general" class="md-nav__link">
+    Configuración general
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1895,6 +1935,26 @@
     Instalación
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-medio-de-opk" title="Por medio de OPK" class="md-nav__link">
+    Por medio de OPK
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-manual" title="Instalación manual" class="md-nav__link">
+    Instalación manual
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1928,6 +1988,26 @@
   <a href="#configuracion" title="Configuración" class="md-nav__link">
     Configuración
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistemas" title="Sistemas" class="md-nav__link">
+    Sistemas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-general" title="Configuración general" class="md-nav__link">
+    Configuración general
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1967,18 +2047,34 @@
                   <h1>2020-01-25 RG350 SimpleMenu</h1>
                 
                 <div class="admonition info">
-<p class="admonition-title">Actualización 2020-01-30</p>
-<p>Se modifica el artículo para que las instrucciones correspondan a la nueva versión 3.1.</p>
+<p class="admonition-title">Actualización 2020-02-22</p>
+<p>Se modifica el artículo para que las instrucciones correspondan con la nueva <a href="https://github.com/fgl82/simplemenu/releases/tag/3.3">versión 3.3</a>.</p>
 </div>
 <p><img alt="SimpleMenu" src="/images/posts/simplemenu.png" /></p>
-<p>Se ilustra a continuación el proceso de instalación y configuración del launcher SimpleMenu para RG350. Advertir que este launcher está todavía en un proceso inicial de desarrollo y exige una configuración muy manual y tediosa.</p>
+<p>Se ilustra a continuación el proceso de instalación y configuración del launcher <a href="https://github.com/fgl82/simplemenu">SimpleMenu</a> para RG350. Advertir que este launcher está todavía en una fase inicial de desarrollo y exige una configuración muy manual y tediosa.</p>
+<div class="admonition warning">
+<p class="admonition-title">Aviso</p>
+<p>SimpleMenu no arrancará hasta que hayamos realizado una <a href="#configuracion">configuración</a> funcional, cosa que hay que hacer manualmente tocando los ficheros de configuración. No se trata por tanto de una aplicación que se pueda simplemente instalar para probar.</p>
+</div>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
+<p>Desde la versión 3.2 su autor ofrece en los assets de la <a href="https://github.com/fgl82/simplemenu/releases/tag/3.3">release</a> dos formas de instalación, una empaquetado como OPK y otra manual (con los binarios y recursos en forma de ficheros convencionales).</p>
+<h4 id="por-medio-de-opk">Por medio de OPK<a class="headerlink" href="#por-medio-de-opk" title="Permanent link">&para;</a></h4>
+<p>La instalación consiste únicamente en copiar el OPK a una de las dos rutas que explora Gmenu2x para mostrar el lanzador, es decir:</p>
+<ul>
+<li>Tarjeta interna: <code>/media/data/apps</code></li>
+<li>Tarjeta externa: <code>/media/sdcard/apps</code></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Aviso</p>
+<p>El <a href="https://github.com/fgl82/simplemenu/releases/download/3.3/SimpleMenu-RG-350.opk">OPK enlazado en los assets de la release</a>, no funciona. Falta el permiso de ejecución en un par de los ficheros que contiene. Se ofrece aquí una copia de dicho OPK con los permisos corregidos. También contiene modificado el fichero de configuración predeterminado con la ruta de las previews para que se corresponda con la misma que utiliza Gmenu2x: <a href="(/files/posts/SimpleMenu-RG-350_fixed.opk)">SimpleMenu-RG-350_fixed.opk</a></p>
+</div>
+<h4 id="instalacion-manual">Instalación manual<a class="headerlink" href="#instalacion-manual" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Bajar el fichero siguiente de la lista de assets de la release:<ul>
-<li><a href="https://github.com/fgl82/simplemenu/releases/download/3.1/SimpleMenu.3.1.-.RG350.-.2020.28.01.zip">SimpleMenu.3.1.-.RG350.-.2020.28.01.zip</a></li>
+<li><a href="https://github.com/fgl82/simplemenu/releases/download/3.3/SimpleMenu.3.3.-.RG-350.-.2020.22.02.zip">SimpleMenu.3.3.-.RG-350.-.2020.22.02</a></li>
 </ul>
 </li>
-<li>Copiarlo a la raíz de la microSD externa y descomprimirlo de forma que su contenido quede en un directorio de nombre <code>SimpleMenu</code>. Si hacemos esto desde la propia consola por SSH tener en cuenta que el comando <code>unzip</code> extrae el contenido del ZIP al mismo nivel donde se encuentra éste. Por tanto, crear antes el directorio <code>SimpleMenu</code>, mover dentro el ZIP y descomprimirlo allí.</li>
+<li>Copiarlo a la raíz de la microSD externa y descomprimirlo de forma que su contenido quede en un directorio de nombre <code>SimpleMenu</code>, es decir retirando de su nombre el sufijo <code>.3.3.-.RG-350.-.2020.22.02</code>. Si hacemos esto desde la propia consola por SSH tener en cuenta que el comando <code>unzip</code> extrae el contenido del ZIP al mismo nivel donde se encuentra éste. Por tanto, crear antes el directorio <code>SimpleMenu</code>, mover dentro el ZIP y descomprimirlo allí.</li>
 <li>
 <p>Montar la microSD externa en la RG350 y arrancar. La ruta del directorio donde hemos descomprimido se encuentra en <code>/media/sdcard/SimpleMenu</code>:</p>
 <p><img alt="SimpleMenu 1" src="/images/posts/simplemenu_screenshot001.png" /></p>
@@ -2039,7 +2135,8 @@
 <p>A partir de entonces debería aparecer <code>simplemenu</code> como una nueva aplicación que podremos lanzar manualmente:</p>
 <p><img alt="SimpleMenu 8" src="/images/posts/simplemenu_screenshot008.png" /></p>
 <h2 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h2>
-<p>De serie SimpleMenu trae una configuración con varias secciones preconfiguradas, pero como simplemente apunta de forma estática a las rutas de los distintos emuladores y ROMs, es seguro que nos va a tocar ajustar esta configuración a lo que nosotros tengamos instalado en la consola.</p>
+<p>De serie SimpleMenu trae una configuración con varias secciones preconfiguradas, pero como simplemente apunta de forma estática a las rutas de los distintos emuladores y ROMs, es seguro que nos va a tocar ajustar esta configuración a lo que nosotros tengamos instalado en la consola. De hecho hasta que no hagamos estos ajustes SimpleMenu no arrancará. Aún así interesa que lo ejecutemos al menos una vez para que se genere el directorio <code>.simplemenu</code> dentro del home de la consola para que tengamos la plantilla sobre la que empezar a modificar.</p>
+<h4 id="sistemas">Sistemas<a class="headerlink" href="#sistemas" title="Permanent link">&para;</a></h4>
 <p>El fichero clave es el que se encontrará en la ruta <code>/usr/local/home/.simplemenu/sections.cfg</code> una vez que hayamos ejecutado SimpleMenu al menos una vez. Lo mejor será transferirlo al ordenador de alguna manera (pasándolo a la tarjeta externa con DinguxCmdr si no se conoce otra forma más directa) y editarlo allí con un editor que soporte los retornos de carro y la codificación utilizada habitualmente en sistemas Linux (como <a href="https://notepad-plus-plus.org/">Notepad++</a>).</p>
 <p>En este fichero tenemos al principio la lista de secciones en la propiedad <code>consoleList</code> del apartado <code>[CONSOLES]</code>. En esta propiedad se van añadiendo las distintas secciones separadas por comas.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
@@ -2097,15 +2194,8 @@
 <ul>
 <li><a href="/files/posts/sections.cfg">sections.cfg</a></li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Aviso</p>
-<p>Si queremos modificar el fichero <code>sections.cfg</code>, SimpleMenu no puede encontrarse en ejecución. No sirve lanzar Gmenu2x porque SimpleMenu seguirá vivo como proceso padre de éste. Habrá que o bien reiniciar la consola si tenemos configurado el <a href="#desde-gmenu2x">arranque manual</a> o bien deshacer temporalmente el <a href="#como-lanzador-predeterminado">arranque automático</a>. Si matamos el proceso con <code>kill</code> por SSH la consola se apagará.</p>
-</div>
-<h2 id="previews">Previews<a class="headerlink" href="#previews" title="Permanent link">&para;</a></h2>
-<p>SimpleMenu soporta previsualización de las ROMs. Para que aparezcan hay que hacer dos cosas.</p>
-<p>Primero colocar las imágenes con el mismo nombre que las ROMs pero con extensión <code>.png</code> en un directorio al mismo nivel que las ROMs de nombre <code>media</code>. Por ejemplo la previsualización de la ROM <code>/media/sdcard/roms/GB/DKLAND.gb</code> iría en <code>/media/sdcard/roms/GB/media/DKLAND.png</code>.</p>
-<p>Lo segundo que hay que hacer es activar la visualización de las miniaturas. Para ello hay que pulsar la tecla <code>Y</code>. Volviéndola a pulsar volvemos al menú normal.</p>
-<p>Desafortunadamente el directorio necesario para las previsualizaciones no es el mismo que necesita Gmenu2x (<code>.previews</code>). Si alguien tiene el entorno para compilarlo, el sitio donde está definido el directorio es la linea 130 del fichero <a href="https://github.com/fgl82/simplemenu/blob/UNIVERSAL/simplemenu/src/logic/screen.c">simplemenu/src/logic/screen.c</a>. De momento he optado por duplicar el directorio. En mi caso lo hice con la siguiente sesión de terminal por SSH:</p>
+<h4 id="configuracion-general">Configuración general<a class="headerlink" href="#configuracion-general" title="Permanent link">&para;</a></h4>
+<p>Dentro de <code>/usr/local/home/.simplemenu</code> hay otro fichero que nos interesa modificar. Se trata del <code>config.cfg</code>. Su contenido es el siguiente por defecto:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2121,55 +2211,44 @@
 13
 14
 15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#OC VALUES (IGNORED IN RG-350)
+408
+702
+732
+#TIMEOUT
 30
-31</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>RG350:/media/sdcard/roms # find . -name .previews
-./FBA/.previews
-./GBA/.previews
-./PCE/.previews
-./GGSMS/SMS/.previews
-./GGSMS/GG/.previews
-./FC/.previews
-./WSC/.previews
-./CPC/.previews
-./SFC/.previews
-./PS/.previews
-./GBGBC/GBC/.previews
-./GBGBC/GB/.previews
-./MD/.previews
-./NGP/.previews
-./ZX/.previews
-RG350:/media/sdcard/roms # cp -r ./FBA/.previews ./FBA/media
-RG350:/media/sdcard/roms # cp -r ./GBA/.previews ./GBA/media
-RG350:/media/sdcard/roms # cp -r ./PCE/.previews ./PCE/media
-RG350:/media/sdcard/roms # cp -r ./GGSMS/SMS/.previews ./GGSMS/SMS/media
-RG350:/media/sdcard/roms # cp -r ./GGSMS/GG/.previews ./GGSMS/GG/media
-RG350:/media/sdcard/roms # cp -r ./FC/.previews ./FC/media
-RG350:/media/sdcard/roms # cp -r ./WSC/.previews ./WSC/media
-RG350:/media/sdcard/roms # cp -r ./CPC/.previews ./CPC/media
-RG350:/media/sdcard/roms # cp -r ./SFC/.previews ./SFC/media
-RG350:/media/sdcard/roms # cp -r ./PS/.previews ./PS/media
-RG350:/media/sdcard/roms # cp -r ./GBGBC/GBC/.previews ./GBGBC/GBC/media
-RG350:/media/sdcard/roms # cp -r ./GBGBC/GB/.previews ./GBGBC/GB/media
-RG350:/media/sdcard/roms # cp -r ./MD/.previews ./MD/media
-RG350:/media/sdcard/roms # cp -r ./NGP/.previews ./NGP/media
-RG350:/media/sdcard/roms # cp -r ./ZX/.previews ./ZX/media
+#CPU FREQ WHEN SLEEPING (IGNORED IN RG-350)
+200
+#TIDY GAME NAMES
+1
+#START IN PICTURE MODE
+0
+#SHUTDOWN ENABLED
+1
+#MEDIA FOLDER
+media
 </pre></div>
 </td></tr></table>
 
+<p>Como vemos el primer y tercer parámetro son ignorados en RG350 (en principio son para modificar las frecuencias del procesador). El resto de parámetros sí los podemos modificar. Su significado es el siguiente:</p>
+<ul>
+<li>TIMEOUT: Número de segundos a partir del cual salta el salvapantallas. Cuando entre la forma de salir es pulsar <code>Power</code>.</li>
+<li>TIDY GAME NAMES: Obsoleto desde la versión 3.2.</li>
+<li>START IN PICTURE MODE: Obsoleto desde la versión 3.2.</li>
+<li>SHUTDOWN ENABLED: Si tiene el valor 1 hace que al pulsar <code>Start+Select</code> la consola se apague. Si tiene el valor 0 simplemente se cierra SimpleMenu.</li>
+<li>MEDIA FOLDER: Directorio donde se buscan las previsualizaciones de las ROMs. Interesa cambiar este valor del <code>media</code> que viene por defecto a <code>.previews</code> para que sea compatible con la ruta utilizada por Gmenu2x.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Aviso</p>
+<p>Si queremos modificar los ficheros de configuración, SimpleMenu no puede encontrarse en ejecución. No sirve lanzar Gmenu2x porque SimpleMenu seguirá vivo como proceso padre de éste. Habrá que o bien reiniciar la consola si tenemos configurado el <a href="#desde-gmenu2x">arranque manual</a> o bien deshacer temporalmente el <a href="#como-lanzador-predeterminado">arranque automático</a>. Si matamos el proceso con <code>kill</code> por SSH la consola se apagará.</p>
+</div>
+<h2 id="previews">Previews<a class="headerlink" href="#previews" title="Permanent link">&para;</a></h2>
+<p>SimpleMenu soporta previsualización de las ROMs. Para que aparezcan hay que hacer dos cosas:</p>
+<ol>
+<li>Colocar las imágenes con el mismo nombre que las ROMs pero con extensión <code>.png</code> en un directorio al mismo nivel que las ROMs de nombre <code>media</code>. Por ejemplo la previsualización de la ROM <code>/media/sdcard/roms/GB/DKLAND.gb</code> iría en <code>/media/sdcard/roms/GB/media/DKLAND.png</code>.</li>
+<li>Activar la visualización de las miniaturas. Para ello hay que pulsar la tecla <code>Y</code>. Volviéndola a pulsar volvemos al menú normal.</li>
+</ol>
+<p>Como hemos comentado en el apartado de <a href="#configuracion-general">Configuración general</a>, podemos modificar el directorio que se utiliza de forma predeterminada (<code>media</code>) por el <code>.previews</code> que utiliza Gmenu2x para así hacerlos compatibles y no tener que duplicar las previsualizaciones.</p>
 <p>El resultado:</p>
 <iframe width="853" height="480" src="https://www.youtube.com/embed/5bD8v_8Q0CE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
