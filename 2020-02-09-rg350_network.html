@@ -1937,7 +1937,7 @@
 </pre></div>
 </td></tr></table>
 
-<p>Como vemos por la netmask sólo se dejan los dos últimos bits para definir direcciones, lo que sólo permite como IPs posibles las terminads en 1 y 2 (0 es la dirección de red y 3 la de broadcast).</p>
+<p>Como vemos por la netmask sólo se dejan los dos últimos bits para definir direcciones, lo que sólo permite como IPs posibles las terminadas en 1 y 2 (0 es la dirección de red y 3 la de broadcast).</p>
 <p>En lo que sigue, voy a ilustrar la situación con mi infraestructura, en la que mi PC sale a internet a través del adaptador <code>wlan0</code> con la IP <code>192.168.1.40</code>. Sustituir estos dos datos por los que corresponda.</p>
 <p><img alt="RG350 esquema de red" src="/images/posts/rg350_network.png" /></p>
 <p>Así las cosas, la RG350 no tiene salida a internet, ya que tenemos dos redes que no están interconectadas. Para conseguir salida a internet tenemos que establecer un puente entre las dos redes y configurar que se haga NAT para poder enviar los paquetes de una red a través de la otra. Es decir, en realidad tenemos que convertir el PC que hay entre la RG y la salida a internet en un router.</p>
