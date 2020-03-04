@@ -1482,6 +1482,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#bateria" title="Batería" class="md-nav__link">
+    Batería
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2239,6 +2246,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#bateria" title="Batería" class="md-nav__link">
+    Batería
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2637,6 +2651,63 @@
 </li>
 </ol>
 <p>En la opción 1, en el pantallazo, puede verse que el icono lo está cogiendo de dentro del OPK del propio emulador (el paso al interior es con el <code>#</code>). Pero se puede elegir cualquier ruta del sistema de ficheros.</p>
+<h4 id="bateria">Batería<a class="headerlink" href="#bateria" title="Permanent link">&para;</a></h4>
+<p>El puerto de carga de la RG350 es el etiquetado como USB2. Es un conector USB tipo C.</p>
+<p>Los cargadores USB tipo C son más complejos que los microUSB. Con las nuevas tecnologías de carga rápida de los móviles, el cargador no se limita a enviar corriente al dispositivo, sino que hay una negociación previa, una especie de protocolo. Fue famoso el problema de la Raspberry Pi 4 por el cual no se podía alimentar con algunos alimentadores tipo C porque identificaban a la Raspberry de forma incorrecta y luego se negaban a darle corriente. Además de todo esto, da la impresión de que la RG350 tiene una circuitería de carga muy elemental (por los distintos comportamientos que tiene el LED de carga entre los distintos usuarios).</p>
+<p>Por todos estos motivos, si hay que elegir un cargador, mejor optar por uno sencillo, no uno preparado para gestionar carga rápida por USB-C. Escoger uno de sólo 5 Voltios (los de carga rápida tienen tensión variable de hasta 12V) y entre 1 y 1.5 Amperios.</p>
+<p>Una buena opción es cargar conectandola a un PC. Los puertos USB de un PC están limitados a 500mA, lo que se puede considerar una carga lenta, lo que en realidad es saludable para la batería.</p>
+<p>La batería de la RG350 es de 3,7V y 2.5Ah. Los alimentadores USB son de 5V. Considerando la diferencia de 3,7 a 5 como la pérdida de rendimiento que hay en el proceso (aproximación burda), se pueden echar las cuentas más fácilmente. Estos serían los tiempos con cargadores de distintas intensidades:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Intensidad de carga</th>
+<th align="left">Tiempo para carga completa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2,5A</td>
+<td align="left">1 hora</td>
+</tr>
+<tr>
+<td align="left">1A</td>
+<td align="left">2,5 horas</td>
+</tr>
+<tr>
+<td align="left">500mA (PC)</td>
+<td align="left">5 horas</td>
+</tr>
+</tbody>
+</table>
+<p>Todos estos tiempos son en el peor de los casos cuando la carga necesaria sea completa.</p>
+<p>El LED de la consola informa de varios aspectos de la batería de la siguiente manera:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Estado LED</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Verde fijo</td>
+<td align="left">Consola arrancada con batería cargada</td>
+</tr>
+<tr>
+<td align="left">Parpadeo en verde</td>
+<td align="left">Batería baja</td>
+</tr>
+<tr>
+<td align="left">Rojo fijo</td>
+<td align="left">Cargando</td>
+</tr>
+<tr>
+<td align="left">Apagado</td>
+<td align="left">Carga completada (con la consola apagada)</td>
+</tr>
+</tbody>
+</table>
+<p>Algunos usuarios comentan que no llegan a ver apagarse nunca el LED rojo cuando la cargan con la consola apagada. Esto parece indicar que el circuito de carga no es muy avanzado y en ocasiones no es capaz de determinar correctamente el final de la carga. En esos casos, tener en cuenta los tiempos de carga indicados más arriba en función de la intensidad del cargador utilizado, para desconectar el cargador cuando haya pasado dicho tiempo.</p>
 <h2 id="opciones-para-actualizar-el-firmware-rg350-rogue-cfw">Opciones para actualizar el firmware RG350-ROGUE-CFW<a class="headerlink" href="#opciones-para-actualizar-el-firmware-rg350-rogue-cfw" title="Permanent link">&para;</a></h2>
 <p>Entre los assents de cada <a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/releases">release</a> encontramos tres opciones:</p>
 <ol>
