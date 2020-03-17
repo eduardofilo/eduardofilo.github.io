@@ -2757,34 +2757,41 @@ mysql&gt;
 
 <h2 id="trabajando-con-usuarios-privilegios">Trabajando con Usuarios / Privilegios<a class="headerlink" href="#trabajando-con-usuarios-privilegios" title="Permanent link">&para;</a></h2>
 <h3 id="creacion-de-usuarios">Creación de Usuarios<a class="headerlink" href="#creacion-de-usuarios" title="Permanent link">&para;</a></h3>
-<p>Usuarios con <strong>todos</strong> los privilegios:</p>
+<p>Primero creamos el usuario:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">USER</span> <span class="s1">&#39;irontec_user_allpriv&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;irontec_pass&#39;</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<p>Luego otorgamos privilegios:</p>
+<ul>
+<li>
+<p><strong>Todos</strong> los privilegios:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="n">irontec_db</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="n">irontec_user_allpriv</span><span class="o">@</span><span class="n">localhost</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;irontec_pass&#39;</span><span class="p">;</span>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="n">irontec_db</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="n">irontec_user_allpriv</span><span class="o">@</span><span class="n">localhost</span><span class="p">;</span>
 <span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="k">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">14</span> <span class="n">sec</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
-<p>Usuarios <strong>sin privilegios</strong> (solo introduce el usuario en la tabla <code>mysql.user</code>):</p>
+</li>
+<li>
+<p>Con privilegios de <strong>solo lectura</strong> en registros:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">GRANT</span> <span class="k">USAGE</span> <span class="k">ON</span> <span class="n">irontec_db</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="n">irontec_user_nopriv</span><span class="o">@</span><span class="n">localhost</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;irontec_pass&#39;</span><span class="p">;</span>
-<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="k">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span> <span class="n">sec</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
-
-<p>Usuarios con privilegios de <strong>solo lectura</strong> en registros:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">GRANT</span> <span class="k">SELECT</span> <span class="k">ON</span> <span class="n">irontec_db</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="n">irontec_user_ro</span><span class="o">@</span><span class="n">localhost</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;irontec_pass&#39;</span><span class="p">;</span>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">GRANT</span> <span class="k">SELECT</span> <span class="k">ON</span> <span class="n">irontec_db</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="n">irontec_user_ro</span><span class="o">@</span><span class="n">localhost</span><span class="p">;</span>
 <span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="k">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">02</span> <span class="n">sec</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
-<p>Usuarios con privilegios de <strong>solo inserción o modificación</strong> de registros:</p>
+</li>
+<li>
+<p>Con privilegios de <strong>solo inserción o modificación</strong> de registros:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">GRANT</span> <span class="k">INSERT</span><span class="p">,</span><span class="k">UPDATE</span> <span class="k">on</span> <span class="n">irontec_db</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="n">irontec_user_wo</span><span class="o">@</span><span class="n">localhost</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;irontec_pass&#39;</span><span class="p">;</span>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">GRANT</span> <span class="k">INSERT</span><span class="p">,</span><span class="k">UPDATE</span> <span class="k">on</span> <span class="n">irontec_db</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="n">irontec_user_wo</span><span class="o">@</span><span class="n">localhost</span><span class="p">;</span>
 <span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="k">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span> <span class="n">sec</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
+</li>
+</ul>
 <h3 id="seleccion-de-usuarios">Selección de Usuarios<a class="headerlink" href="#seleccion-de-usuarios" title="Permanent link">&para;</a></h3>
 <p>Ver el usuario con el que se está trabajando:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
