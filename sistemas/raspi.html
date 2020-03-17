@@ -1675,8 +1675,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#backup-de-la-sd-comprimiendo-al-vuelo-y-diviendo-en-trozos-el-fichero-resultante" title="Backup de la SD (comprimiendo al vuelo y diviendo en trozos el fichero resultante)" class="md-nav__link">
-    Backup de la SD (comprimiendo al vuelo y diviendo en trozos el fichero resultante)
+  <a href="#backup-de-la-sd-comprimiendo-al-vuelo-con-gzip-y-diviendo-en-trozos-el-fichero-resultante" title="Backup de la SD (comprimiendo al vuelo con gzip y diviendo en trozos el fichero resultante)" class="md-nav__link">
+    Backup de la SD (comprimiendo al vuelo con gzip y diviendo en trozos el fichero resultante)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-de-la-sd-comprimiendo-al-vuelo-con-7z-y-diviendo-en-trozos-el-fichero-resultante" title="Backup de la SD (comprimiendo al vuelo con 7z y diviendo en trozos el fichero resultante)" class="md-nav__link">
+    Backup de la SD (comprimiendo al vuelo con 7z y diviendo en trozos el fichero resultante)
   </a>
   
 </li>
@@ -2211,8 +2218,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#backup-de-la-sd-comprimiendo-al-vuelo-y-diviendo-en-trozos-el-fichero-resultante" title="Backup de la SD (comprimiendo al vuelo y diviendo en trozos el fichero resultante)" class="md-nav__link">
-    Backup de la SD (comprimiendo al vuelo y diviendo en trozos el fichero resultante)
+  <a href="#backup-de-la-sd-comprimiendo-al-vuelo-con-gzip-y-diviendo-en-trozos-el-fichero-resultante" title="Backup de la SD (comprimiendo al vuelo con gzip y diviendo en trozos el fichero resultante)" class="md-nav__link">
+    Backup de la SD (comprimiendo al vuelo con gzip y diviendo en trozos el fichero resultante)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-de-la-sd-comprimiendo-al-vuelo-con-7z-y-diviendo-en-trozos-el-fichero-resultante" title="Backup de la SD (comprimiendo al vuelo con 7z y diviendo en trozos el fichero resultante)" class="md-nav__link">
+    Backup de la SD (comprimiendo al vuelo con 7z y diviendo en trozos el fichero resultante)
   </a>
   
 </li>
@@ -2617,7 +2631,7 @@ Dispositivo    Inicio Comienzo    Final Sectores Tamaño Id Tipo
 </td></tr></table>
 
 <p>Por tanto en este caso copiaremos 3797 bloques para cubrir esos 15550464 sectores.</p>
-<h3 id="backup-de-la-sd-comprimiendo-al-vuelo-y-diviendo-en-trozos-el-fichero-resultante">Backup de la SD (comprimiendo al vuelo y diviendo en trozos el fichero resultante)<a class="headerlink" href="#backup-de-la-sd-comprimiendo-al-vuelo-y-diviendo-en-trozos-el-fichero-resultante" title="Permanent link">&para;</a></h3>
+<h3 id="backup-de-la-sd-comprimiendo-al-vuelo-con-gzip-y-diviendo-en-trozos-el-fichero-resultante">Backup de la SD (comprimiendo al vuelo con gzip y diviendo en trozos el fichero resultante)<a class="headerlink" href="#backup-de-la-sd-comprimiendo-al-vuelo-con-gzip-y-diviendo-en-trozos-el-fichero-resultante" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -2625,6 +2639,17 @@ Dispositivo    Inicio Comienzo    Final Sectores Tamaño Id Tipo
 $ sudo dcfldd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="p">|</span> pv <span class="p">|</span> gzip -9 - <span class="p">|</span> split --bytes<span class="o">=</span>2G - Rpi_8gb_backup.img.gz.part_
 $ <span class="c1">#Restauración:</span>
 $ cat Rpi_8gb_backup.img.gz.part_* <span class="p">|</span> gunzip -c <span class="p">|</span> pv <span class="p">|</span> sudo dcfldd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M
+</pre></div>
+</td></tr></table>
+
+<h3 id="backup-de-la-sd-comprimiendo-al-vuelo-con-7z-y-diviendo-en-trozos-el-fichero-resultante">Backup de la SD (comprimiendo al vuelo con 7z y diviendo en trozos el fichero resultante)<a class="headerlink" href="#backup-de-la-sd-comprimiendo-al-vuelo-con-7z-y-diviendo-en-trozos-el-fichero-resultante" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="c1">#Backup:</span>
+$ sudo dcfldd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">count</span><span class="o">=</span><span class="m">7350</span> <span class="p">|</span> pv -s 14700m <span class="p">|</span> 7z -si -v1400m a rg350_es.7z
+$ <span class="c1">#Restauración:</span>
+$ 7z e -so rg350_es.7z.001 <span class="p">|</span> pv -s 14700m <span class="p">|</span> sudo dcfldd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M
 </pre></div>
 </td></tr></table>
 
