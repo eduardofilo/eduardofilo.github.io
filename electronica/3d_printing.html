@@ -2252,8 +2252,25 @@
 <li>Copiar el directorio <code>anet</code> de <a href="https://github.com/SkyNet3D/anet-board">este proyecto</a> al directorio <code>hardware</code> de la instalación de Arduino IDE.</li>
 <li>Descargar la última versión de Marlin de su <a href="https://github.com/MarlinFirmware/Marlin">repositorio</a>.</li>
 <li>Descargar la última versión de los ficheros de configuración de las distintas impresoras de su <a href="https://github.com/MarlinFirmware/Configurations/">repositorio</a>.</li>
-<li>Sustituir los ficheros de configuración adaptados a la Anet A8 que hay en la ruta <a href="https://github.com/MarlinFirmware/Configurations/tree/import-2.0.x/config/examples/Anet/A8"><code>config/examples/Anet/A8</code></a> del repositorio de configuraciones por los que hay en <code>config</code> del repositorio de Marlin.</li>
+<li>Sustituir los ficheros de configuración adaptados a la Anet A8 que hay en la ruta <a href="https://github.com/MarlinFirmware/Configurations/tree/import-2.0.x/config/examples/Anet/A8"><code>config/examples/Anet/A8</code></a> del repositorio de configuraciones por los que hay en <code>Marlin</code> (junto al <code>.ino</code>) del repositorio de Marlin.</li>
+<li>Seleccionar la placa <code>Anet V1.0</code> y el puerto que corresponda.</li>
 <li>Compilar y flashear.</li>
+<li>En el primer arranque es posible que aparezca en pantalla el error <code>Err: EEPROM version</code>. En ese caso:<ol>
+<li>Conectar el cable USB (si se ha desconectado el puente entre el puerto serie del microcontrolador y el adaptador USB descrito [aquí], seleccionar el puerto con los jumpers).</li>
+<li>Abrir conexión serie ejecutando lo siguiente en terminal:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo screen /dev/ttyUSB0 <span class="m">115200</span> 8N1
+</pre></div>
+</td></tr></table></li>
+<li>Escribir los siguientes comandos en la consola. Hacerlo uno a uno y con un caracter retorno al final de cada uno. Lo mejor es escribirlos en un editor de texto, copiar cada linea (incluyendo el retorno) y pegarla en la consola. De esta forma se consigue que el comando sea leído como un todo y no que se vayan interpretando sus caracteres sueltos conforme vamos escribiendo:
+    <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>M502
+M500
+M501
+</pre></div>
+</td></tr></table></li>
+</ol>
+</li>
 </ol>
                 
                   
