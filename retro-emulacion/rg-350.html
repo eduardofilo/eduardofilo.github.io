@@ -2957,6 +2957,7 @@
 </tbody>
 </table>
 <h4 id="directoriosficheros-interesantes">Directorios/Ficheros interesantes<a class="headerlink" href="#directoriosficheros-interesantes" title="Permanent link">&para;</a></h4>
+<p>En <a href="https://github.com/retrogamehandheld/OpenDingux/wiki/Standard-file-locations">este documento</a> se indican rutas importantes de varios emuladores y ports populares.</p>
 <table>
 <thead>
 <tr>
@@ -2967,23 +2968,19 @@
 <tbody>
 <tr>
 <td align="left"><code>/media/data/local/home/</code></td>
-<td align="left">Configuraciones. Enlace simbólico desde <code>/media/home</code></td>
-</tr>
-<tr>
-<td align="left"><code>/media/data/local/home/.pcsx4all/</code></td>
-<td align="left">Configuraciones del emulador PCSX4All (como las memory cards, los save states o BIOS). Consultar <a href="https://github.com/retrogamehandheld/OpenDingux/wiki/Standard-file-locations">aquí</a> los directorios de datos de otras aplicaciones</td>
+<td align="left">Configuraciones de emuladores, ports y aplicaciones en general. Es el llamado Home del sistema. Enlace simbólico desde <code>/media/home</code></td>
 </tr>
 <tr>
 <td align="left"><code>/media/data/apps/</code></td>
 <td align="left">Aplicaciones (<code>.opk</code>) instaladas en la tarjeta interna</td>
 </tr>
 <tr>
-<td align="left"><code>/media/data/ROMS/</code></td>
-<td align="left">ROMS de emuladores instaladas en la tarjeta interna (en v1.7 no viene este directorio)</td>
+<td align="left"><code>/media/sdcard/apps/</code></td>
+<td align="left">Aplicaciones (<code>.opk</code>) instaladas en la tarjeta externa</td>
 </tr>
 <tr>
 <td align="left"><code>/usr/share/gmenu2x/sections/</code></td>
-<td align="left">Aplicaciones y lanzadores de comandos en las distintas secciones del menú</td>
+<td align="left">Lanzadores de las aplicaciones y settings preinstaladas en el sistema y que se copian a <code>/media/data/local/home/.gmenu2x/sections</code></td>
 </tr>
 <tr>
 <td align="left"><code>/var/log/messages</code></td>
@@ -2994,16 +2991,20 @@
 <td align="left">Ficheros asociados a procesos en ejecución como <code>cpuinfo</code> que muestra información sobre el procesador</td>
 </tr>
 <tr>
-<td align="left"><code>/media/data/local/home/.gmenu2x/</code></td>
-<td align="left">Themes</td>
+<td align="left"><code>/media/data/local/home/.gmenu2x/skins</code></td>
+<td align="left">Themes de GMenu2X</td>
 </tr>
 <tr>
-<td align="left"><code>/media/data/local/home/.gmenu2x/skins/Default/wallpapers/</code></td>
+<td align="left"><code>/media/data/local/home/.gmenu2x/skins/&lt;tema&gt;/wallpapers/</code></td>
 <td align="left">Wallpapers</td>
 </tr>
 <tr>
+<td align="left"><code>/usr/sbin/frontend_start</code></td>
+<td align="left">Lanzador de frontend predeterminado</td>
+</tr>
+<tr>
 <td align="left"><code>/media/data/local/sbin/frontend_start</code></td>
-<td align="left">Lanzador frontend</td>
+<td align="left">Lanzador de frontend personalizado</td>
 </tr>
 <tr>
 <td align="left"><code>/media/home</code></td>
@@ -3012,10 +3013,6 @@
 <tr>
 <td align="left"><code>/usr/local</code></td>
 <td align="left">Enlacce simbólico de <code>/media/data/local</code></td>
-</tr>
-<tr>
-<td align="left"><code>/media/data/local/home/.gmenu2x/skins/&lt;nombre_tema&gt;/wallpapers</code></td>
-<td align="left">Fondos de pantalla de Gmenu2x</td>
 </tr>
 </tbody>
 </table>
