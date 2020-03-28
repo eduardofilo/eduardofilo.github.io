@@ -2207,6 +2207,19 @@ selectordir=/media/data/local/home/roms/GB/
 </pre></div>
 </td></tr></table>
 
+<p>Para que el script anterior funcione, debemos modificar además el fichero <code>/media/data/pymenu/pymenu.dge</code>. En concreto modificar la línea 37 para incorporar la ruta completa del fichero <code>pymenu.sh</code>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>...
+                echo &quot;starting PyMenu&quot;
+                sh /media/data/pymenu/pymenu.sh
+                #&gt; /dev/ttyS1 2&gt; /dev/ttyS1
+...
+</pre></div>
+</td></tr></table>
+
 <h2 id="temas">Temas<a class="headerlink" href="#temas" title="Permanent link">&para;</a></h2>
 <p>PyMenu tiene un sistema de temas como EmulationStation. Se basa en unos ficheros JSON que hay en la ruta <code>/media/data/pymenu/theme/themes</code>. Internamente estos ficheros hacen referencia a recursos de imagen que pueden estar en cualquier lugar, aunque suelen estar bajo el directorio <code>/media/data/pymenu/images</code>. Por ejemplo lo siguiente es la definición del sistema GameBoy en el tema Pixel:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
