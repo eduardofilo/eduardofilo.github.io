@@ -49,7 +49,7 @@
             "previews": "/media/data/roms/GBA/.previews", 
             "screen": "default", 
             "selectionPath": "/media/data/roms/GBA/.previews", 
-            "system": "regba, gpsp", 
+            "system": "regba,gpsp", 
             "type": "emulator", 
             "useFileFilter": false, 
             "useGamelist": false, 
