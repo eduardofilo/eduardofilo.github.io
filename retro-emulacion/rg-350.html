@@ -1552,8 +1552,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#versiones-del-firmware" title="Versiones del firmware" class="md-nav__link">
-    Versiones del firmware
+  <a href="#versiones-del-firmware-base" title="Versiones del firmware BASE" class="md-nav__link">
+    Versiones del firmware BASE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flags-de-rogue" title="Flags de ROGUE" class="md-nav__link">
+    Flags de ROGUE
   </a>
   
 </li>
@@ -2337,8 +2344,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#versiones-del-firmware" title="Versiones del firmware" class="md-nav__link">
-    Versiones del firmware
+  <a href="#versiones-del-firmware-base" title="Versiones del firmware BASE" class="md-nav__link">
+    Versiones del firmware BASE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flags-de-rogue" title="Flags de ROGUE" class="md-nav__link">
+    Flags de ROGUE
   </a>
   
 </li>
@@ -2835,7 +2849,8 @@
 <li>Compresión: <code>mksquashfs directorio fichero.opk</code></li>
 </ul>
 <h2 id="cheatsheets">Cheatsheets<a class="headerlink" href="#cheatsheets" title="Permanent link">&para;</a></h2>
-<h4 id="versiones-del-firmware">Versiones del firmware<a class="headerlink" href="#versiones-del-firmware" title="Permanent link">&para;</a></h4>
+<h4 id="versiones-del-firmware-base">Versiones del firmware BASE<a class="headerlink" href="#versiones-del-firmware-base" title="Permanent link">&para;</a></h4>
+<p>En BASE no se muestra la versión del firmware (como sí hace ROGUE), por lo que hay que adivinar la versión en base a la fecha de creación:</p>
 <table>
 <thead>
 <tr>
@@ -2863,6 +2878,38 @@
 <tr>
 <td align="left">2019-11-17 (build date)</td>
 <td align="left">1.7</td>
+</tr>
+</tbody>
+</table>
+<h4 id="flags-de-rogue">Flags de ROGUE<a class="headerlink" href="#flags-de-rogue" title="Permanent link">&para;</a></h4>
+<p>Existen 5 ficheros ocultos en el directorio <code>/media/data</code> que sirven para activar varias tareas de mantenimiento/instalación inicial durante el arranque. Para reactivarlos sólo hay que borrar el fichero correspondiente que se crea al finalizar la operación:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Fichero</th>
+<th align="left">Operación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>.clean</code></td>
+<td align="left">Comprobación del sistema de ficheros.</td>
+</tr>
+<tr>
+<td align="left"><code>.linker</code></td>
+<td align="left">Instala los links para GMenu2X de los programas preinstalados.</td>
+</tr>
+<tr>
+<td align="left"><code>.partition_resized</code></td>
+<td align="left">Redimensiona la partición data de la SD interna para aprovechar todo el espacio disponible en la tarjeta.</td>
+</tr>
+<tr>
+<td align="left"><code>.reconfig</code></td>
+<td align="left">Borra algunos ficheros residuales SSH y de otros programas.</td>
+</tr>
+<tr>
+<td align="left"><code>.swapon</code></td>
+<td align="left">Crea el fichero para la memoria SWAP.</td>
 </tr>
 </tbody>
 </table>
