@@ -2078,10 +2078,13 @@
 <p>El formato del archivo es el que se utiliza habitualmente para los ficheros de configuración tipo <a href="https://es.wikipedia.org/wiki/INI_(extensi%C3%B3n_de_archivo)">INI</a>.</p>
 <p>El significado de los parámetros es:</p>
 <ul>
-<li><code>execs</code>: OPK del emulador con su ruta.</li>
-<li><code>romDirs</code>: Directorio donde se encuentran las ROMs de este sistema.</li>
+<li><code>execs</code>: OPKs emuladores del sistema con sus rutas, separados por comas.</li>
+<li><code>romDirs</code>: Directorios donde se encuentran las ROMs de este sistema, separados por comas.</li>
 <li><code>romExts</code>: Extensiones de los ficheros que se incluirán en el listado de ROMs, separadas por comas.</li>
 </ul>
+<p>Como vemos ahora puede haber varios emuladores y varios directorios de ROMs en cada sistema. En el primer caso podremos elegir el emulador a utilizar pulsando <code>Start</code> cuando esté seleccionada la ROM que queremos emular. Por ejemplo, tras añadir el emulador GPSP a la configuración de GBA podemos ver lo siguiente al pulsar <code>Start</code> en el listado de ROMs de GBA:</p>
+<p><img alt="SimpleMenu GBA1" src="/images/posts/simplemenu_gba1.png" />
+<img alt="SimpleMenu GBA2" src="/images/posts/simplemenu_gba2.png" /></p>
 <p>Una vez que devolvamos el fichero de configuración <code>sections.ini</code> a su lugar en <code>/media/data/local/home/.simplemenu</code>, ya podremos tratar de ejecutarlo para comprobar si ha cargado bien los sistemas y previews de las ROMs. Al menos en mi caso lo que me encuentro en este momento es:</p>
 <p><img alt="SimpleMenu First Launch" src="/images/posts/simplemenu_first_launch.png" /></p>
 <p>En caso de que necesitemos volver a Gmenu2x, podremos encontrarlo en la sección APPS:</p>
