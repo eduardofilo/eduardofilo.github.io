@@ -466,6 +466,33 @@
     Configuración
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problema-con-la-identificador-de-sistema" title="Problema con la Identificador de sistema" class="md-nav__link">
+    Problema con la Identificador de sistema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problema-con-determinados-emuladores" title="Problema con determinados emuladores" class="md-nav__link">
+    Problema con determinados emuladores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soporte-de-varios-emuladores" title="Soporte de varios emuladores" class="md-nav__link">
+    Soporte de varios emuladores
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1937,6 +1964,33 @@
     Configuración
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problema-con-la-identificador-de-sistema" title="Problema con la Identificador de sistema" class="md-nav__link">
+    Problema con la Identificador de sistema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problema-con-determinados-emuladores" title="Problema con determinados emuladores" class="md-nav__link">
+    Problema con determinados emuladores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soporte-de-varios-emuladores" title="Soporte de varios emuladores" class="md-nav__link">
+    Soporte de varios emuladores
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2048,7 +2102,7 @@
 </pre></div>
 </td></tr></table>
 
-<p>Los dos primeros en teoría nos permitirán calibrar el comportamiento del indicador de batería, pero en estos momentos desconozco si se tienen en cuenta estos parámetros.</p>
+<p>Los dos primeros controlan el comportamiento del indicador de batería. Según su autor los parámetros se ajustan automáticamente cargando completamente la batería y dejándo que se descargue del todo.</p>
 <p>A continuación aparece la configuración de los sistemas. Por ejemplo éste sería el bloque correspondiente a la Game Boy:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
@@ -2081,6 +2135,8 @@
 </td></tr></table>
 
 <p>Como vemos se corresponde con lo que veíamos en el pantallazo anterior. Será por tanto equivalente modificar la configuración desde el programa o desde el fichero. Con una diferencia y es que si PyMenu no encuentra un OPK compatible con la configuración del emulador correspondiente ocultará el sistema en el interfaz gráfico, por lo que no podremos configurar ese sistema desde el mismo. En estos casos no quedará más remedio que acudir al fichero de configuración. Por este motivo y porque nos permite configurar todos los sistemas a la vez, a partir de ahora la explicación supondrá que la configuración se va a hacer modificando el fichero. Para editarlo, como siempre, podemos hacerlo conectando con la consola por SSH y abriendo el fichero con <code>vi</code> o copiándolo con DinguxCmdr, FTP o SCP para editarlo desde el ordenador.</p>
+<p>A continuación menciono algunos de los problemas que tuve haciendo la configuración.</p>
+<h4 id="problema-con-la-identificador-de-sistema">Problema con la Identificador de sistema<a class="headerlink" href="#problema-con-la-identificador-de-sistema" title="Permanent link">&para;</a></h4>
 <p>La clave para que un sistema sea reconocido (y por lo tanto mostrado en PyMenu) y que luego funcione es el parámetro <code>system</code>. Esto fue lo que más me costó entender y para lo que fue necesario incluso meter logs al programa para arrojar algo de luz. Vamos a verlo por ejemplo con el caso de la Game Boy. Como vemos en la configuración anterior está definido en <code>system</code> el valor <code>gambatte</code>. Pues bien, para que el sistema Game Boy aparezca en PyMenu será comparado con dos cosas:</p>
 <ul>
 <li>El parámetro <code>Name</code> de los ficheros <code>.desktop</code> que contienen los OPKs.</li>
@@ -2137,6 +2193,36 @@ selectordir=/media/data/local/home/roms/GB/
 
 <p>Como vemos el <code>title</code> no se corresponde con el <code>Name</code> del <code>.desktop</code> dentro del OPK por el motivo mencionado de que modifiqué los nombres de los emuladores en GMenu2X. Es mejor no hacerlo para no tener que <em>abrir la lata</em> del OPK en busca del <code>.desktop</code>, pero para mi ya era tarde.</p>
 <p>En resumen, si queremos que un emulador sea reconocido en PyMenu, tenemos que averiguar el nombre original del emulador y colocarlo en el parámetro <code>system</code> del sistema correspondiente en el fichero de configuración de PyMenu.</p>
+<h4 id="problema-con-determinados-emuladores">Problema con determinados emuladores<a class="headerlink" href="#problema-con-determinados-emuladores" title="Permanent link">&para;</a></h4>
+<p>Con el emulador de Intellivision hubo un problema particular. Por algún motivo el <code>.desktop</code> que contiene el OPK no era interpretado correctamente y al intentar entrar en la lista de ROMs PyMenu se reiniciaba. Tras depurar añadiendo trazas al código Python encontré que el problema estaba en el fichero <code>default.gcw0.desktop</code>. El original contenía esto:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#!/usr/bin/env xdg-open</span>
+<span class="p">[</span><span class="n">Desktop</span> <span class="n">Entry</span><span class="p">]</span>
+<span class="n">Name</span><span class="o">=</span><span class="n">JzIntellivision</span>
+<span class="n">Type</span><span class="o">=</span><span class="n">Application</span>
+<span class="n">Exec</span><span class="o">=</span><span class="n">jzintv</span> <span class="o">%</span><span class="n">F</span>
+<span class="n">Icon</span><span class="o">=</span><span class="n">dingux</span><span class="o">-</span><span class="kt">int</span>
+<span class="n">Comment</span><span class="o">=</span><span class="n">Intellivision</span> <span class="n">emulator</span>
+<span class="cp">#Comment=Intellivision emulator</span>
+<span class="n">Terminal</span><span class="o">=</span><span class="nb">false</span>
+<span class="n">Categories</span><span class="o">=</span><span class="n">emulators</span><span class="p">;</span>
+<span class="n">Mimetype</span><span class="o">=</span><span class="n">application</span><span class="o">/</span><span class="n">octet</span><span class="o">-</span><span class="n">stream</span><span class="p">;</span>
+<span class="n">X</span><span class="o">-</span><span class="n">OD</span><span class="o">-</span><span class="n">Manual</span><span class="o">=</span><span class="n">readmegcw</span><span class="p">.</span><span class="n">txt</span>
+</pre></div>
+</td></tr></table>
+
+<p>La solución consiste en desempaquetar el OPK (con <code>unsquashfs</code>) y cambiar la <code>F</code> final del parámetro <code>Exec</code> del fichero <code>default.gcw0.desktop</code> poniéndola en minúsculas. Luego hay que volver a empaquetar en squashfs el OPK (<code>mksquashfs</code>).</p>
+<h4 id="soporte-de-varios-emuladores">Soporte de varios emuladores<a class="headerlink" href="#soporte-de-varios-emuladores" title="Permanent link">&para;</a></h4>
 <p>Una cosa buena que tiene PyMenu es que admite varios valores en este parámetro separados por comas. Así se pueden escribir varias posibilidades para dar más oportunidades a PyMenu para encontrar los emuladores. Cuando lo hacemos nos permite seleccionar el emulador que queremos utilizar para lanzar el juego. Por ejemplo si tenemos instalado ReGBA y GPSP, al pulsar <code>Start</code> en la pantalla de selección de ROMs, nos aparecerá un desplegable en el que podremos seleccionar el emulador a utilizar:</p>
 <p><img alt="PyMenu System Select" src="/images/posts/pymenu_system_select.png" /></p>
 <p>Como punto de partida dejo aquí mi fichero de configuración que contiene la mayoría de los emuladores que se utilizan habitualmente.</p>
