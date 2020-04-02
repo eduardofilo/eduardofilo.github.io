@@ -470,8 +470,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#problema-con-la-identificador-de-sistema" title="Problema con la Identificador de sistema" class="md-nav__link">
-    Problema con la Identificador de sistema
+  <a href="#problema-con-la-identificador-de-sistema-en-rogue" title="Problema con la Identificador de sistema en ROGUE" class="md-nav__link">
+    Problema con la Identificador de sistema en ROGUE
   </a>
   
 </li>
@@ -1968,8 +1968,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#problema-con-la-identificador-de-sistema" title="Problema con la Identificador de sistema" class="md-nav__link">
-    Problema con la Identificador de sistema
+  <a href="#problema-con-la-identificador-de-sistema-en-rogue" title="Problema con la Identificador de sistema en ROGUE" class="md-nav__link">
+    Problema con la Identificador de sistema en ROGUE
   </a>
   
 </li>
@@ -2102,7 +2102,7 @@
 </pre></div>
 </td></tr></table>
 
-<p>Los dos primeros controlan el comportamiento del indicador de batería. Según su autor los parámetros se ajustan automáticamente cargando completamente la batería y dejándo que se descargue del todo.</p>
+<p>Los dos primeros controlan el comportamiento del indicador de batería. Según comunicación de su autor, los parámetros se ajustan automáticamente cargando completamente la batería y dejándo que se descargue del todo.</p>
 <p>A continuación aparece la configuración de los sistemas. Por ejemplo éste sería el bloque correspondiente a la Game Boy:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
@@ -2134,16 +2134,19 @@
 </pre></div>
 </td></tr></table>
 
-<p>Como vemos se corresponde con lo que veíamos en el pantallazo anterior. Será por tanto equivalente modificar la configuración desde el programa o desde el fichero. Con una diferencia y es que si PyMenu no encuentra un OPK compatible con la configuración del emulador correspondiente ocultará el sistema en el interfaz gráfico, por lo que no podremos configurar ese sistema desde el mismo. En estos casos no quedará más remedio que acudir al fichero de configuración. Por este motivo y porque nos permite configurar todos los sistemas a la vez, a partir de ahora la explicación supondrá que la configuración se va a hacer modificando el fichero. Para editarlo, como siempre, podemos hacerlo conectando con la consola por SSH y abriendo el fichero con <code>vi</code> o copiándolo con DinguxCmdr, FTP o SCP para editarlo desde el ordenador.</p>
+<p>Como vemos se corresponde con lo que veíamos en el pantallazo anterior. Será por tanto equivalente modificar la configuración desde el programa o desde el fichero. Si PyMenu no encuentra un OPK compatible con la configuración del emulador correspondiente ocultará el sistema en el interfaz gráfico, pero podemos forzar su aparición activando la opción <code>Show All</code> en <code>General Settings</code>:</p>
+<p><img alt="PyMenu Show All" src="/images/posts/pymenu_show_all.png" /></p>
+<p>A pesar de poder configurar los sistemas desde el propio frontend, prefiero hacerlo manipulando el fichero de configuración directamente, ya que permite ajustar todos los sistemas de una vez. Para editar este fichero, como siempre, podemos hacerlo conectando con la consola por SSH para manipularlo con <code>vi</code> o copiarlo con DinguxCmdr, FTP o SCP para editarlo desde el ordenador.</p>
 <p>A continuación menciono algunos de los problemas que tuve haciendo la configuración.</p>
-<h4 id="problema-con-la-identificador-de-sistema">Problema con la Identificador de sistema<a class="headerlink" href="#problema-con-la-identificador-de-sistema" title="Permanent link">&para;</a></h4>
-<p>La clave para que un sistema sea reconocido (y por lo tanto mostrado en PyMenu) y que luego funcione es el parámetro <code>system</code>. Esto fue lo que más me costó entender y para lo que fue necesario incluso meter logs al programa para arrojar algo de luz. Vamos a verlo por ejemplo con el caso de la Game Boy. Como vemos en la configuración anterior está definido en <code>system</code> el valor <code>gambatte</code>. Pues bien, para que el sistema Game Boy aparezca en PyMenu será comparado con dos cosas:</p>
+<h4 id="problema-con-la-identificador-de-sistema-en-rogue">Problema con la Identificador de sistema en ROGUE<a class="headerlink" href="#problema-con-la-identificador-de-sistema-en-rogue" title="Permanent link">&para;</a></h4>
+<p>En principio para indicar el emulador (o emuladores, ya que como veremos luego soporta varios en cada sistema) a utilizar en un sistema determinado basta indicar el nombre completo de dicho emulador (incluyendo espacios). Esto en BASE se aplicará directamente. En ROGUE se pueden editar los nombres de los emuladores, por lo que podemos perder de vista el nombre original que es el que necesitamos, ya que PyMenu extraerá este nombre del interior del OPK que no es alterado al modificar el nombre en el GMenu2X de ROGUE. Vamos a profundizar pues un poco en la manera en que son identificados los emuladores para ayudar a entender cómo debemos configurar PyMenu en ROGUE.</p>
+<p>El parámetro donde debemos indicar el nombre original del emulador es <code>system</code>. Vamos a verlo por ejemplo con el caso de la Game Boy. Como vemos en la configuración anterior está definido en <code>system</code> el valor <code>gambatte</code>. Pues bien, para que el sistema Game Boy aparezca en PyMenu será comparado con dos cosas:</p>
 <ul>
 <li>El parámetro <code>Name</code> de los ficheros <code>.desktop</code> que contienen los OPKs.</li>
 <li>El parámetro <code>title</code> de los ficheros que hay en las distintas secciones que hay en <code>/media/data/local/home/.gmenu2x/sections</code>, a lo que PyMenu llama <em>links</em>.</li>
 </ul>
 <p>No estoy seguro, pero creo que en el caso de emuladores en los que hay que seleccionar una ROM para lanzarlo (la mayoría), sólo sirve el primero de los dos tipos. Para aplicaciones sueltas o Ports pueden servir cualquiera de los dos.</p>
-<p>Ahora viene el lío. Por una parte el fichero <code>.desktop</code> (casi siempre se llama <code>default.gcw0.desktop</code>) se encuentra enterrado en el OPK que es una especie de ZIP (en realidad una especie de imagen de sistema de ficheros). Vamos a ver por ejemplo cómo accederíamos a él siguiendo con el ejemplo de Game Boy. En mi máquina el OPK de este emulador es <code>gambatte-multi-r572u4-20200127.opk</code>. Lo descargamos al PC y ejecutamos lo siguiente (sólo sé hacerlo con Linux):</p>
+<p>Ahora la cosa se complica un poco. Por una parte el fichero <code>.desktop</code> (casi siempre se llama <code>default.gcw0.desktop</code>) se encuentra enterrado en el OPK que es una especie de ZIP (en realidad una especie de imagen de sistema de ficheros). Vamos a ver por ejemplo cómo accederíamos a él siguiendo con el ejemplo de Game Boy. En mi máquina el OPK de este emulador es <code>gambatte-multi-r572u4-20200127.opk</code>. Lo descargamos al PC y ejecutamos lo siguiente (sólo sé hacerlo con Linux):</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ unsquashfs gambatte-multi-r572u4-20200127.opk
 </pre></div>
 </td></tr></table>
@@ -2173,7 +2176,7 @@
 </pre></div>
 </td></tr></table>
 
-<p>Pues bien, el valor de <code>Name</code> será lo que tengamos que poner en el parámetro <code>system</code> de Game Boy en <code>/media/data/pymenu/config/config.json</code>. Las mayúsculas/minúsculas no son importantes ya que PyMenu convierte todo a minúsculas antes de hacer comparaciones. El problema que me encontré es que yo había modificado los nombres de los emuladores para reflejar el sistema. Por ejemplo el nombre original <code>Gambatte</code> lo había cambiado a <code>Game Boy</code>. Así, antes de entender que lo que se cogía era el <code>Name</code> dentro del <code>.desktop</code> probaba con <code>Game Boy</code> o con el nombre completo del OPK (<code>gambatte-multi-r572u4-20200127.opk</code>) sin éxito.</p>
+<p>Pues bien, el valor de <code>Name</code> será lo que tengamos que poner en el parámetro <code>system</code> de Game Boy en <code>/media/data/pymenu/config/config.json</code>. Las mayúsculas/minúsculas no son importantes ya que PyMenu convierte todo a minúsculas antes de hacer comparaciones. Como digo, en mi caso había modificado los nombres de los emuladores en GMenu2X. Por ejemplo el nombre original <code>Gambatte</code> lo había cambiado a <code>Game Boy</code>. Así, antes de entender que lo que se cogía era el <code>Name</code> dentro del <code>.desktop</code> probaba con <code>Game Boy</code> o con el nombre completo del OPK (<code>gambatte-multi-r572u4-20200127.opk</code>) sin éxito.</p>
 <p>Luego está el segundo elemento que se compara con <code>system</code>, es decir el parámetro <code>title</code> de los ficheros de las distintas secciones que hay en <code>/media/data/local/home/.gmenu2x/sections</code>, a lo que PyMenu llama <em>links</em>. Curiosamente este parámetro sí que se adapta cuando en GMenu2X cambiamos el nombre del emulador, pero como se ha comentado antes, parece que este elemento no sirve para lanzar emuladores a los que tenemos que pasarles como parámetro la ROM a ejecutar. Por ejemplo, en mi caso el <em>link</em> de Gambatte es <code>/usr/local/home/.gmenu2x/sections/emulators/gambatte-multi-r572u4-20200127_gambatte.opendinguxf</code> y su contenido:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
