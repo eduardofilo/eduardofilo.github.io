@@ -2296,6 +2296,11 @@ selectordir=/media/data/local/home/roms/GB/
 </pre></div>
 </td></tr></table>
 
+<p>Una vez instalado el script, debemos asignarle el permiso UNIX de ejecución. Para ello ejecutaremos a través de SSH o con la aplicación <code>ST-SDL</code> el siguiente comando:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># chmod +x /media/data/local/sbin/frontend_start</span>
+</pre></div>
+</td></tr></table>
+
 <p>Para que el script anterior funcione, debemos modificar además el fichero <code>/media/data/pymenu/pymenu.dge</code>. En concreto modificar la línea 37 para incorporar la ruta completa del fichero <code>pymenu.sh</code>:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
