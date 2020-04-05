@@ -2048,35 +2048,36 @@
                 
                 <p><img alt="SimpleMenu" src="/images/posts/simplemenu.png" /></p>
 <div class="admonition info">
-<p class="admonition-title">Actualización 2020-03-30</p>
-<p>Se modifica el artículo para que las instrucciones correspondan con la nueva <a href="https://github.com/fgl82/simplemenu/releases/tag/4.1">versión 4.1</a>.</p>
+<p class="admonition-title">Actualización 2020-04-05</p>
+<p>Se modifica el artículo para que las instrucciones correspondan con la nueva <a href="https://github.com/fgl82/simplemenu/releases/tag/4.2">versión 4.2</a>.</p>
 </div>
 <p>Se ilustra a continuación el proceso de instalación y configuración del launcher <a href="https://github.com/fgl82/simplemenu">SimpleMenu</a> para RG350.</p>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
-<p>La instalación consiste únicamente en copiar el <a href="https://github.com/fgl82/simplemenu/releases/download/4.1/SimpleMenu-RG-350-2020-03-29.opk">OPK</a> que ofrece su autor a una de las dos rutas que explora Gmenu2x para mostrar el lanzador, es decir:</p>
+<p>La instalación consiste únicamente en copiar el <a href="https://github.com/fgl82/simplemenu/releases/download/4.2/SimpleMenu-RG-350.opk">OPK</a> que ofrece su autor a una de las dos rutas que lee Gmenu2x para mostrar el lanzador, es decir:</p>
 <ul>
 <li>Tarjeta interna: <code>/media/data/apps</code></li>
 <li>Tarjeta externa: <code>/media/sdcard/apps</code></li>
 </ul>
-<p>Tras hacerlo aparece el lanzador en la sección <code>applications</code> de GMenu2X. Si lo abrimos en este momento, seguramente veremos que no reconoce los emuladores y ROMs que tengamos instalados. Esto es normal puesto que todavía no hemos adaptado la configuración:</p>
+<p>Tras hacerlo aparece el lanzador en la sección <code>applications</code> de GMenu2X. Si lo abrimos en este momento, seguramente veremos que no reconoce los emuladores y/o ROMs que tengamos instalados. Esto es normal puesto que todavía no hemos adaptado la configuración:</p>
 <p><img alt="SimpleMenu Launching1" src="/images/posts/simplemenu_launching1.png" />
 <img alt="SimpleMenu Launching2" src="/images/posts/simplemenu_launching2.png" /></p>
 <h2 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Aviso</p>
-<p>Las dos últimas versiones del programa han modificado el formato de los ficheros de configuración, por lo que si contábamos con una instalación de las versiones previas (2 ó 3) nos va a tocar adaptarlos, es decir no se pueden utilizar directamente ya que no son compatibles.</p>
+<p>Las dos últimas versiones del programa han modificado el formato de los ficheros de configuración, por lo que si contábamos con una instalación de las versiones previas (2 ó 3) nos va a tocar adaptarlos, es decir no se pueden utilizar directamente ya que no son compatibles. Lo mejor será renombrar el directorio <code>/media/data/local/home/.simplemenu</code> para que se vuelva a generar en el siguiente arranque y así además mantener copia de la configuración anterior para que nos sirva de plantilla para adaptar la nueva.</p>
+<p>Si se pasa de la versión 4.1 a la 4.2 también se recomienda empezar de nuevo ya que ha habido un cambio importante en la gestión del tema gráfico.</p>
 </div>
-<p>De serie SimpleMenu trae una configuración con varios sistemas preconfigurados, pero como apunta de forma estática a las rutas de los distintos emuladores y ROMs, es seguro que nos va a tocar ajustar esta configuración a lo que nosotros tengamos instalado en la consola. Aún así interesa que lo ejecutemos al menos una vez para que se genere el directorio <code>.simplemenu</code> dentro del home de la consola para que tengamos la plantilla sobre la que empezar a modificar.</p>
+<p>De serie SimpleMenu trae una configuración con varios sistemas precargados, pero como apunta de forma estática a las rutas de los distintos emuladores y ROMs, es seguro que nos va a tocar ajustar esta configuración a lo que nosotros tengamos instalado en la consola. Aún así interesa que lo ejecutemos al menos una vez para que se genere el directorio <code>.simplemenu</code> dentro del home de la consola para que tengamos la plantilla sobre la que empezar a modificar.</p>
 <h4 id="sistemas">Sistemas<a class="headerlink" href="#sistemas" title="Permanent link">&para;</a></h4>
-<p>El fichero clave es el que se encontrará en la ruta <code>/usr/local/home/.simplemenu/sections.ini</code> una vez que hayamos ejecutado SimpleMenu al menos una vez. Lo mejor será transferirlo al ordenador de alguna manera (pasándolo a la tarjeta externa con DinguxCmdr si no se conoce otra forma más directa) y editarlo allí con un editor que soporte los retornos de carro y la codificación utilizada habitualmente en sistemas Linux (como <a href="https://notepad-plus-plus.org/">Notepad++</a>).</p>
-<p>En este fichero tenemos al principio la lista de sistemas en la propiedad <code>consoleList</code> del apartado <code>[CONSOLES]</code>. En esta propiedad se van añadiendo los distintos sistemas que definiremos a continuación, separadas por comas.</p>
+<p>El fichero clave es el que se encontrará en la ruta <code>/media/data/local/home/.simplemenu/sections.ini</code> una vez que hayamos ejecutado SimpleMenu al menos una vez. A no ser que seamos expertos con el editor <code>vi</code> que podemos ejecutar por SSH, lo mejor será transferirlo al ordenador de alguna manera (pasándolo a la tarjeta externa con DinguxCmdr si no se conoce otra forma más directa) y editarlo allí con un editor que soporte los retornos de carro y la codificación utilizada habitualmente en sistemas Linux (como <a href="https://notepad-plus-plus.org/">Notepad++</a>).</p>
+<p>En este fichero tenemos al principio la lista de sistemas en la propiedad <code>consoleList</code> del apartado <code>[CONSOLES]</code>. En esta propiedad se van añadiendo los distintos sistemas que definiremos a continuación, separados por comas. Podemos <em>seleccionar</em> un subconjunto de los sistemas definidos más abajo, es decir, podemos ocultar algunos simplemente no incluyéndolos en <code>consoleList</code>.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">[CONSOLES]</span>
 <span class="na">consoleList</span> <span class="o">=</span> <span class="s">GAME BOY,GAME BOY COLOR,GAME BOY ADVANCE,GAME &amp; WATCH,NES,SNES,GAME GEAR,MASTER SYSTEM,SEGA GENESIS,PLAYSTATION,PC ENGINE,NEO GEO POCKET,CPS1,CPS2,CPS3,NEO-GEO,WONDERSWAN,ATARI 2600,ATARI 5200,ATARI 7800,ATARI LYNX,INTELLIVISION,COLECOVISION,PICO-8,GAMES,APPS</span>
 </pre></div>
 </td></tr></table>
 
-<p>Luego por cada sección tenemos un bloque como el siguiente (lo que se ve ya está ajustado a mi instalación del emulador y ROMs de Game Boy):</p>
+<p>Luego por cada sistema tenemos un bloque como el siguiente:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -2087,8 +2088,7 @@
 </pre></div>
 </td></tr></table>
 
-<p>El formato del archivo es el que se utiliza habitualmente para los ficheros de configuración tipo <a href="https://es.wikipedia.org/wiki/INI_(extensi%C3%B3n_de_archivo)">INI</a>.</p>
-<p>El significado de los parámetros es:</p>
+<p>El formato del archivo es el que se utiliza habitualmente para los ficheros de configuración tipo <a href="https://es.wikipedia.org/wiki/INI_(extensi%C3%B3n_de_archivo)">INI</a>. El significado de los parámetros es:</p>
 <ul>
 <li><code>execs</code>: OPKs de los emuladores del sistema con sus rutas, separados por comas.</li>
 <li><code>romDirs</code>: Directorios donde se encuentran las ROMs de este sistema, separados por comas.</li>
@@ -2100,19 +2100,17 @@
 <p><img alt="SimpleMenu GBA1" src="/images/posts/simplemenu_gba1.png" />
 <img alt="SimpleMenu GBA2" src="/images/posts/simplemenu_gba2.png" /></p>
 <p>En caso de que necesitemos volver a Gmenu2x, podremos encontrarlo en la sección APPS:</p>
-<p><img alt="SimpleMenu 5" src="/images/posts/simplemenu_screenshot005.png" /></p>
+<p><img alt="SimpleMenu 5" src="/images/posts/simplemenu_gmenu2x.png" /></p>
 <p>Como punto de partida dejo aquí mi fichero de configuración que contiene la mayoría de los emuladores y la <a href="/retro-emulacion/rg-350.html#las-roms-y-su-organizacion">estructura de directorios para las ROMs</a> que se utilizan habitualmente.</p>
 <ul>
 <li><a href="/files/posts/sections.ini">sections.ini</a></li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Aviso</p>
-<p>Tal y como advierte el autor de esta aplicación en la <a href="https://github.com/fgl82/simplemenu/releases/tag/4.1">página de releases</a> de su repositorio, SimpleMenu no arrancará si no existe correspondencia entre los sistemas que hayamos configurado en <code>sections.ini</code> y el fichero de definición del tema llamado <code>theme.ini</code>.</p>
-<p>Adjunto también el fichero de configuración del tema que se corresponde con el de sistemas enlazado antes: <a href="/files/posts/theme.ini">theme.ini</a></p>
-<p>Adjunto a su vez un OPK modificado que incluye los dos ficheros de configuración ya modificados y los recursos de los sistemas que he incorporado sobre la base que trae el programa: <a href="/files/posts/SimpleMenu-RG-350-2020-03-29_mod.opk">SimpleMenu-RG-350-2020-03-29_mod.opk</a></p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>La versión 4.2 de SimpleMenu es mucho más robusta respecto a defectos o carencias en la configuración tanto de los sistemas como del tema, por lo que arrancará siempre. Cuando por ejemplo no exista correspondencia de un sistema en el tema, nos mostrará el nombre del mismo en lugar de un logotipo, lo que nos servirá como indicación de que debemos incorporarlo nosotros.</p>
 </div>
 <h4 id="configuracion-general">Configuración general<a class="headerlink" href="#configuracion-general" title="Permanent link">&para;</a></h4>
-<p>Dentro de <code>/usr/local/home/.simplemenu</code> hay otro fichero que nos interesa modificar. Se trata del <code>config.ini</code>. Su contenido es el siguiente por defecto:</p>
+<p>Dentro de <code>/media/data/local/home/.simplemenu</code> hay otro fichero que nos interesa modificar. Se trata del <code>config.ini</code>. Su contenido es el siguiente por defecto:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2128,8 +2126,10 @@
 13
 14
 15
-16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">[GENERAL]</span>
+16
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">[GENERAL]</span>
 <span class="na">media_folder</span> <span class="o">=</span> <span class="s">media</span>
+<span class="na">theme</span> <span class="o">=</span> <span class="s">default</span>
 
 <span class="k">[FULLSCREEN_MODE]</span>
 <span class="na">display_footer</span> <span class="o">=</span> <span class="s">0</span>
@@ -2150,6 +2150,7 @@
 <p>Los parámetros dentro del grupo <code>[CPU]</code> son ignorados en RG350 (en principio son para modificar las frecuencias del procesador). El resto de parámetros sí los podemos modificar. Su significado es el siguiente:</p>
 <ul>
 <li><code>media_folder</code>: Directorio donde se buscan las previsualizaciones de las ROMs. Interesa cambiar este valor del <code>media</code> que viene por defecto a <code>.previews</code> para que sea compatible con la ruta utilizada por Gmenu2x.</li>
+<li><code>theme</code>: A partir de la versión 4.2 se pueden incorporar varios temas (en distintos directorios dentro de <code>/media/data/local/home/.simplemenu/themes</code>) que luego se pueden seleccionar mediante este parámetro.</li>
 <li><code>display_footer</code>: Muestra el nombre de la ROM cuando estamos en modo preview (0=No; 1=Sí).</li>
 <li><code>display_menu</code>: Muestra la lista de ROMs de una sección cuando nos desplazamos entre las ROMs en modo preview (0=No; 1=Sí).</li>
 <li><code>screen_timeout_in_seconds</code>: Número de segundos a partir del cual salta el salvapantallas. Cuando éste entre, la forma de salir es pulsar cualquier botón.</li>
@@ -2160,7 +2161,7 @@
 <h4 id="como-lanzador-predeterminado">Como lanzador predeterminado<a class="headerlink" href="#como-lanzador-predeterminado" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Bajar el fichero siguiente de la lista de assets de la release:<ul>
-<li><a href="https://github.com/fgl82/simplemenu/releases/download/4.1/frontend_start">frontend_start</a></li>
+<li><a href="https://github.com/fgl82/simplemenu/releases/download/4.2/frontend_start">frontend_start</a></li>
 </ul>
 </li>
 <li>Copiarlo a la raíz de la microSD externa.</li>
@@ -2183,7 +2184,7 @@
 <h2 id="previews">Previews<a class="headerlink" href="#previews" title="Permanent link">&para;</a></h2>
 <p>SimpleMenu soporta previsualización de las ROMs. Para que aparezcan hay que hacer dos cosas:</p>
 <ol>
-<li>Colocar las imágenes con el mismo nombre que las ROMs pero con extensión <code>.png</code> en un directorio al mismo nivel que las ROMs de nombre <code>media</code>. Por ejemplo la previsualización de la ROM <code>/media/sdcard/roms/GB/DKLAND.gb</code> iría en <code>/media/sdcard/roms/GB/media/DKLAND.png</code>.</li>
+<li>Colocar las imágenes con el mismo nombre que las ROMs pero con extensión <code>.png</code> en un directorio al mismo nivel que las ROMs cuyo nombre se corresponda con el definido en el parámetro <code>media_folder</code> del fichero de configuración <code>config.ini</code>. Inicialmente este nombre es <code>media</code>. Por ejemplo la previsualización de la ROM <code>/media/sdcard/roms/GB/DKLAND.gb</code> iría en <code>/media/sdcard/roms/GB/media/DKLAND.png</code>.</li>
 <li>Activar la visualización de las miniaturas. Para ello hay que pulsar la tecla <code>Y</code>. Volviéndola a pulsar volvemos al listado normal.</li>
 </ol>
 <p>Como hemos comentado en el apartado de <a href="#configuracion-general">Configuración general</a>, podemos modificar el directorio que se utiliza de forma predeterminada (<code>media</code>) por el <code>.previews</code> que utiliza Gmenu2x para así hacerlos compatibles y no tener que duplicar las previsualizaciones.</p>
