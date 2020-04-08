@@ -573,6 +573,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#manejo" title="Manejo" class="md-nav__link">
+    Manejo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#arranque" title="Arranque" class="md-nav__link">
     Arranque
   </a>
@@ -1985,6 +1992,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#manejo" title="Manejo" class="md-nav__link">
+    Manejo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#arranque" title="Arranque" class="md-nav__link">
     Arranque
   </a>
@@ -2048,12 +2062,12 @@
                 
                 <p><img alt="SimpleMenu" src="/images/posts/simplemenu.png" /></p>
 <div class="admonition info">
-<p class="admonition-title">Actualización 2020-04-05</p>
-<p>Se modifica el artículo para que las instrucciones correspondan con la nueva <a href="https://github.com/fgl82/simplemenu/releases/tag/4.2">versión 4.2</a>.</p>
+<p class="admonition-title">Actualización 2020-04-08</p>
+<p>Se modifica el artículo para que las instrucciones correspondan con la nueva <a href="https://github.com/fgl82/simplemenu/releases/tag/4.5">versión 4.5</a>.</p>
 </div>
 <p>Se ilustra a continuación el proceso de instalación y configuración del launcher <a href="https://github.com/fgl82/simplemenu">SimpleMenu</a> para RG350.</p>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
-<p>La instalación consiste únicamente en copiar el <a href="https://github.com/fgl82/simplemenu/releases/download/4.2/SimpleMenu-RG-350.opk">OPK</a> que ofrece su autor a una de las dos rutas que lee Gmenu2x para mostrar el lanzador, es decir:</p>
+<p>La instalación consiste únicamente en copiar el <a href="https://github.com/fgl82/simplemenu/releases/download/4.5/SimpleMenu-RG-350.opk">OPK</a> que ofrece su autor a una de las dos rutas que lee Gmenu2x para mostrar el lanzador, es decir:</p>
 <ul>
 <li>Tarjeta interna: <code>/media/data/apps</code></li>
 <li>Tarjeta externa: <code>/media/sdcard/apps</code></li>
@@ -2064,16 +2078,44 @@
 <h2 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Aviso</p>
-<p>Las dos últimas versiones del programa han modificado el formato de los ficheros de configuración, por lo que si contábamos con una instalación de las versiones previas (2 ó 3) nos va a tocar adaptarlos, es decir no se pueden utilizar directamente ya que no son compatibles. Lo mejor será renombrar el directorio <code>/media/data/local/home/.simplemenu</code> para que se vuelva a generar en el siguiente arranque y así además mantener copia de la configuración anterior para que nos sirva de plantilla para adaptar la nueva.</p>
-<p>Si se pasa de la versión 4.1 a la 4.2 también se recomienda empezar de nuevo ya que ha habido un cambio importante en la gestión del tema gráfico.</p>
+<p>Las tres últimas versiones del programa han modificado el formato de los ficheros de configuración, por lo que si contábamos con una instalación de las versiones previas (2 ó 3) nos va a tocar adaptarlos, es decir no se pueden utilizar directamente ya que no son compatibles. Lo mejor será renombrar el directorio <code>/media/data/local/home/.simplemenu</code> para que se vuelva a generar en el siguiente arranque y así además mantener copia de la configuración anterior para que nos sirva de modelo para adaptar la nueva.</p>
+<p>Entre la versión 4.1 y la 4.2 ha habido un cambio importante en la gestión del tema gráfico.</p>
+<p>Entre la versión 4.2 y la 4.5 el cambio ha sido en la división del fichero <code>sections.ini</code> en varios para agrupar las distintas máquinas por tipos.</p>
 </div>
-<p>De serie SimpleMenu trae una configuración con varios sistemas precargados, pero como apunta de forma estática a las rutas de los distintos emuladores y ROMs, es seguro que nos va a tocar ajustar esta configuración a lo que nosotros tengamos instalado en la consola. Aún así interesa que lo ejecutemos al menos una vez para que se genere el directorio <code>.simplemenu</code> dentro del home de la consola para que tengamos la plantilla sobre la que empezar a modificar.</p>
+<p>De serie SimpleMenu trae una configuración con varios sistemas precargados, pero como apunta de forma estática a las rutas de los distintos emuladores y ROMs, es casi seguro que nos va a tocar ajustar esta configuración a lo que nosotros tengamos instalado en la consola. Aún así interesa que lo ejecutemos al menos una vez para que se genere el directorio <code>.simplemenu</code> dentro del home de la consola para que tengamos la plantilla sobre la que empezar a modificar.</p>
 <h4 id="sistemas">Sistemas<a class="headerlink" href="#sistemas" title="Permanent link">&para;</a></h4>
-<p>El fichero clave es el que se encontrará en la ruta <code>/media/data/local/home/.simplemenu/sections.ini</code> una vez que hayamos ejecutado SimpleMenu al menos una vez. A no ser que seamos expertos con el editor <code>vi</code> que podemos ejecutar por SSH, lo mejor será transferirlo al ordenador de alguna manera (pasándolo a la tarjeta externa con DinguxCmdr si no se conoce otra forma más directa) y editarlo allí con un editor que soporte los retornos de carro y la codificación utilizada habitualmente en sistemas Linux (como <a href="https://notepad-plus-plus.org/">Notepad++</a>).</p>
-<p>En este fichero tenemos al principio la lista de sistemas en la propiedad <code>consoleList</code> del apartado <code>[CONSOLES]</code>. En esta propiedad se van añadiendo los distintos sistemas que definiremos a continuación, separados por comas. Podemos <em>seleccionar</em> un subconjunto de los sistemas definidos más abajo, es decir, podemos ocultar algunos simplemente no incluyéndolos en <code>consoleList</code>.</p>
+<p>Los ficheros clave son los que se encuentran en la ruta <code>/media/data/local/home/.simplemenu/section_groups</code>. Allí encontramos los siguientes ficheros (una vez que hayamos ejecutado SimpleMenu al menos una vez):</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>RG350:/media/data/local/home/.simplemenu/section_groups # ls -l
+-rw-r--r--    1 root     root           235 Jan 28 17:35 apps and games.ini
+-rw-r--r--    1 root     root         10716 Jan 28 17:35 apps and games.png
+-rw-r--r--    1 root     root           936 Jan 28 17:35 arcades.ini
+-rw-r--r--    1 root     root         14746 Jan 28 17:35 arcades.png
+-rw-r--r--    1 root     root          1889 Jan 28 17:35 consoles.ini
+-rw-r--r--    1 root     root         19669 Jan 28 17:35 consoles.png
+-rw-r--r--    1 root     root          1188 Jan 28 17:35 handhelds.ini
+-rw-r--r--    1 root     root          8626 Jan 28 17:35 handhelds.png
+-rw-r--r--    1 root     root           949 Jan 28 17:35 home computers.ini
+-rw-r--r--    1 root     root         17383 Jan 28 17:35 home computers.png
+</pre></div>
+</td></tr></table>
+
+<p>Como vemos hay una imagen y un fichero <code>.ini</code> para 5 tipos de máquinas. Esta agrupación es flexible, es decir, podemos ampliar o reducir el número de tipos a nuestro gusto. El fichero de imagen tiene que llamarse exactamente igual que el de configuración. Será lo que se vea en la pantalla al seleccionar el tipo correspondiente.</p>
+<p>A no ser que seamos expertos con el editor <code>vi</code> que podemos ejecutar por SSH, lo mejor será transferir los ficheros al ordenador de alguna manera (pasándolos a la tarjeta externa con DinguxCmdr si no se conoce otra forma más directa) y editarlos allí con un editor que soporte los retornos de carro y la codificación utilizada habitualmente en sistemas Linux (como <a href="https://notepad-plus-plus.org/">Notepad++</a>).</p>
+<p>A partir de aquí nos vamos a centrar en el tipo <code>handhelds</code> para seguir la explicación, pero todo lo que digamos se puede aplicar exactamente igual a cualquiera de los otros tipos.</p>
+<p>En el fichero <code>handhelds.ini</code> tenemos al principio la lista de sistemas en la propiedad <code>consoleList</code> del apartado <code>[CONSOLES]</code>. En esta propiedad se van añadiendo los distintos sistemas que definiremos a continuación, separados por comas. Podemos <em>seleccionar</em> un subconjunto de los sistemas definidos más abajo, es decir, podemos ocultar algunos simplemente no incluyéndolos en <code>consoleList</code>.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">[CONSOLES]</span>
-<span class="na">consoleList</span> <span class="o">=</span> <span class="s">GAME BOY,GAME BOY COLOR,GAME BOY ADVANCE,GAME &amp; WATCH,NES,SNES,GAME GEAR,MASTER SYSTEM,SEGA GENESIS,PLAYSTATION,PC ENGINE,NEO GEO POCKET,CPS1,CPS2,CPS3,NEO-GEO,WONDERSWAN,ATARI 2600,ATARI 5200,ATARI 7800,ATARI LYNX,INTELLIVISION,COLECOVISION,PICO-8,GAMES,APPS</span>
+<span class="na">consoleList</span> <span class="o">=</span><span class="s">GAME BOY,GAME BOY COLOR,GAME BOY ADVANCE,GAME &amp; WATCH,GAME GEAR,NEO GEO POCKET,WONDERSWAN,LYNX</span>
 </pre></div>
 </td></tr></table>
 
@@ -2094,20 +2136,20 @@
 <li><code>romDirs</code>: Directorios donde se encuentran las ROMs de este sistema, separados por comas.</li>
 <li><code>romExts</code>: Extensiones de los ficheros que se incluirán en el listado de ROMs, separadas por comas.</li>
 </ul>
-<p>Una vez que devolvamos el fichero de configuración <code>sections.ini</code> a su lugar en <code>/media/data/local/home/.simplemenu</code>, ya podremos tratar de ejecutarlo para comprobar si ha cargado bien los sistemas y previews de las ROMs. Al menos en mi caso lo que me encuentro en este momento es:</p>
+<p>Una vez que devolvamos los ficheros de configuración a su lugar en <code>/media/data/local/home/.simplemenu/section_groups</code>, ya podremos tratar de ejecutarlo para comprobar si ha cargado bien los sistemas y previews de las ROMs. Al menos en mi caso lo que me encuentro en este momento es:</p>
 <p><img alt="SimpleMenu First Launch" src="/images/posts/simplemenu_first_launch.png" /></p>
 <p>Como vemos en la definición de los parámetros, ahora puede haber varios emuladores y varios directorios de ROMs en cada sistema. En el primer caso podremos elegir el emulador a utilizar pulsando <code>Start</code> cuando esté seleccionada la ROM que queremos emular. Por ejemplo, tras añadir el emulador GPSP a la configuración de GBA podemos ver lo siguiente al pulsar <code>Start</code> en el listado de ROMs de GBA:</p>
 <p><img alt="SimpleMenu GBA1" src="/images/posts/simplemenu_gba1.png" />
 <img alt="SimpleMenu GBA2" src="/images/posts/simplemenu_gba2.png" /></p>
 <p>En caso de que necesitemos volver a Gmenu2x, podremos encontrarlo en la sección APPS:</p>
 <p><img alt="SimpleMenu 5" src="/images/posts/simplemenu_gmenu2x.png" /></p>
-<p>Como punto de partida dejo aquí mi fichero de configuración que contiene la mayoría de los emuladores y la <a href="/retro-emulacion/rg-350.html#las-roms-y-su-organizacion">estructura de directorios para las ROMs</a> que se utilizan habitualmente.</p>
+<p>Como punto de partida dejo aquí mis ficheros de configuración que contiene la mayoría de los emuladores y la <a href="/retro-emulacion/rg-350.html#las-roms-y-su-organizacion">estructura de directorios para las ROMs</a> que se utilizan habitualmente.</p>
 <ul>
-<li><a href="/files/posts/sections.ini">sections.ini</a></li>
+<li><a href="/files/posts/simplemenu.zip">simplemenu.zip</a></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>La versión 4.2 de SimpleMenu es mucho más robusta respecto a defectos o carencias en la configuración tanto de los sistemas como del tema, por lo que arrancará siempre. Cuando por ejemplo no exista correspondencia de un sistema en el tema, nos mostrará el nombre del mismo en lugar de un logotipo, lo que nos servirá como indicación de que debemos incorporarlo nosotros.</p>
+<p>A partir de la versión 4.2, SimpleMenu es mucho más robusto respecto a defectos o carencias en la configuración tanto de los sistemas como del tema, por lo que arrancará siempre. Cuando por ejemplo no exista correspondencia de un sistema en el tema, nos mostrará el nombre del mismo en lugar de un logotipo, lo que nos servirá como indicación de que debemos incorporarlo nosotros.</p>
 </div>
 <h4 id="configuracion-general">Configuración general<a class="headerlink" href="#configuracion-general" title="Permanent link">&para;</a></h4>
 <p>Dentro de <code>/media/data/local/home/.simplemenu</code> hay otro fichero que nos interesa modificar. Se trata del <code>config.ini</code>. Su contenido es el siguiente por defecto:</p>
@@ -2156,6 +2198,10 @@
 <li><code>screen_timeout_in_seconds</code>: Número de segundos a partir del cual salta el salvapantallas. Cuando éste entre, la forma de salir es pulsar cualquier botón.</li>
 <li><code>allow_shutdown</code>: Si tiene el valor <code>1</code> hace que al pulsar <code>Start+Select</code> la consola se apague. Si tiene el valor <code>0</code> simplemente se cierra SimpleMenu.</li>
 </ul>
+<h2 id="manejo">Manejo<a class="headerlink" href="#manejo" title="Permanent link">&para;</a></h2>
+<p>Como hemos visto durante la configuración, a partir de la versión 4.5 se pueden definir varios grupos de máquinas. Por defecto existen 5 grupos definidos por tipo de máquinas. Entramos en el modo de selección de un grupo pulsando <code>B</code>. En ese momento vemos por ejemplo:</p>
+<p><img alt="SimpleMenu Group" src="/images/posts/simplemenu_group.png" /></p>
+<p>En esta situación cambiamos de grupo pulsando <code>Arriba</code> y <code>Abajo</code> en la cruceta.</p>
 <h2 id="arranque">Arranque<a class="headerlink" href="#arranque" title="Permanent link">&para;</a></h2>
 <p>Tenemos dos opciones para utilizar este lanzador, convertirlo en el lanzador predeterminado o abrirlo desde Gmenu2x. Vamos a ver cómo configurar las dos situaciones:</p>
 <div class="admonition warning">
@@ -2193,7 +2239,7 @@
 </ol>
 <p>Como hemos comentado en el apartado de <a href="#configuracion-general">Configuración general</a>, podemos modificar el directorio que se utiliza de forma predeterminada (<code>media</code>) por el <code>.previews</code> que utiliza Gmenu2x para así hacerlos compatibles y no tener que duplicar las previsualizaciones.</p>
 <p>El resultado:</p>
-<iframe width="853" height="480" src="https://www.youtube.com/embed/353XcceEFBk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="853" height="480" src="https://www.youtube.com/embed/CcW0NGFRTCg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <h2 id="controles">Controles<a class="headerlink" href="#controles" title="Permanent link">&para;</a></h2>
 <p>La página de documentación de controles es <a href="https://github.com/fgl82/simplemenu/wiki/Controls">ésta</a>, pero resulta un poco confusa porque mezcla varias máquinas, por lo que se listan a continuación de forma explícita los controles para RG350:</p>
@@ -2201,53 +2247,90 @@
 <thead>
 <tr>
 <th align="left">Shortcut</th>
+<th align="left">Modo</th>
 <th align="left">Función</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left"><code>R1</code> / <code>L1</code></td>
-<td align="left">Cambia de sección desde la lista de ROMs. Cuando estamos en modo preview se muestra el logotipo de los sistemas</td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Cambia de sistema desde la lista de ROMs. Si está activada la previsualización de las ROMs, se mostrará el logotipo del sistema durante un segundo</td>
 </tr>
 <tr>
 <td align="left"><code>Arriba</code> / <code>Abajo</code></td>
+<td align="left">Listado de ROMs</td>
 <td align="left">Selecciona la ROM anterior/siguiente</td>
 </tr>
 <tr>
 <td align="left"><code>Izquierda</code> / <code>Derercha</code></td>
+<td align="left">Listado de ROMs</td>
 <td align="left">Avanza 10 ROMs anteriores/siguientes</td>
 </tr>
 <tr>
 <td align="left"><code>B+Izquierda</code> / <code>B+Derecha</code></td>
-<td align="left">Cambia de sección mostrando el logotipo de los sistemas</td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Cambia de sistema mostrando el logotipo de los sistemas</td>
 </tr>
 <tr>
 <td align="left"><code>B+Arriba</code> / <code>B+Abajo</code></td>
+<td align="left">Listado de ROMs</td>
 <td align="left">Pasa a la letra anterior/siguiente</td>
 </tr>
 <tr>
 <td align="left"><code>Y</code></td>
-<td align="left">Alterna entre modo menú y modo preview</td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Activa/desactiva la previsualización de las ROMs</td>
 </tr>
 <tr>
 <td align="left"><code>A</code></td>
+<td align="left">Listado de ROMs</td>
 <td align="left">Lanza la ROM seleccionada</td>
 </tr>
 <tr>
 <td align="left"><code>B+Select</code></td>
+<td align="left">Listado de ROMs</td>
 <td align="left">Lanza una ROM aleatoria</td>
 </tr>
 <tr>
-<td align="left"><code>X</code></td>
-<td align="left">Fuera de la sección Favoritos añade una ROM a la misma; Dentro de la sección Favoritos borra la ROM de la misma</td>
-</tr>
-<tr>
-<td align="left"><code>L2</code></td>
-<td align="left">Muestra la sección de Favoritos</td>
+<td align="left"><code>Select</code></td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Limpia los nombres de las ROMs retirando las variantes indicadas entre paréntesis</td>
 </tr>
 <tr>
 <td align="left"><code>Select+Start</code></td>
-<td align="left">Apaga la consola</td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Apaga la consola o cierra SimpleMenu (dependiendo del parámetro <code>allow_shutdown</code> en <code>config.ini</code>)</td>
+</tr>
+<tr>
+<td align="left"><code>X</code></td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Añade la ROM seleccionada a Favoritos</td>
+</tr>
+<tr>
+<td align="left"><code>L2</code></td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Entra en la lista de Favoritos</td>
+</tr>
+<tr>
+<td align="left"><code>X</code></td>
+<td align="left">Listado de Favoritos</td>
+<td align="left">Borra la ROM seleccionada de Favoritos</td>
+</tr>
+<tr>
+<td align="left"><code>L2</code></td>
+<td align="left">Listado de Favoritos</td>
+<td align="left">Sale de la lista de Favoritos</td>
+</tr>
+<tr>
+<td align="left"><code>B</code></td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Sube al nivel de seleción de grupos</td>
+</tr>
+<tr>
+<td align="left"><code>A</code></td>
+<td align="left">Listado de grupos</td>
+<td align="left">Entra en el grupo seleccionado</td>
 </tr>
 </tbody>
 </table>
