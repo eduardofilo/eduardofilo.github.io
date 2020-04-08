@@ -2078,11 +2078,11 @@
 <h2 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Aviso</p>
-<p>Las tres últimas versiones del programa han modificado el formato de los ficheros de configuración, por lo que si contábamos con una instalación de las versiones previas (2 ó 3) nos va a tocar adaptarlos, es decir no se pueden utilizar directamente ya que no son compatibles. Lo mejor será renombrar el directorio <code>/media/data/local/home/.simplemenu</code> para que se vuelva a generar en el siguiente arranque y así además mantener copia de la configuración anterior para que nos sirva de modelo para adaptar la nueva.</p>
+<p>Las tres últimas versiones del programa han modificado el formato de los ficheros de configuración, por lo que si contábamos con una instalación de las versiones previas (2 ó 3) nos va a tocar adaptarlos, es decir no se pueden utilizar directamente ya que no son compatibles. Lo mejor será renombrar el directorio <code>/media/data/local/home/.simplemenu</code> para que se vuelva a generar en el siguiente arranque y así además mantener copia de la configuración anterior para que nos sirva de modelo para crear la nueva.</p>
 <p>Entre la versión 4.1 y la 4.2 ha habido un cambio importante en la gestión del tema gráfico.</p>
 <p>Entre la versión 4.2 y la 4.5 el cambio ha sido en la división del fichero <code>sections.ini</code> en varios para agrupar las distintas máquinas por tipos.</p>
 </div>
-<p>De serie SimpleMenu trae una configuración con varios sistemas precargados, pero como apunta de forma estática a las rutas de los distintos emuladores y ROMs, es casi seguro que nos va a tocar ajustar esta configuración a lo que nosotros tengamos instalado en la consola. Aún así interesa que lo ejecutemos al menos una vez para que se genere el directorio <code>.simplemenu</code> dentro del home de la consola para que tengamos la plantilla sobre la que empezar a modificar.</p>
+<p>De serie SimpleMenu trae una configuración con varios sistemas precargados, pero como apunta de forma estática a las rutas de los distintos emuladores y ROMs, es casi seguro que nos va a tocar ajustar esta configuración a los que nosotros tengamos instalados en la consola. Aún así interesa que lo ejecutemos al menos una vez para que se genere el directorio <code>.simplemenu</code> dentro del home de la consola para que tengamos la plantilla sobre la que empezar a modificar.</p>
 <h4 id="sistemas">Sistemas<a class="headerlink" href="#sistemas" title="Permanent link">&para;</a></h4>
 <p>Los ficheros clave son los que se encuentran en la ruta <code>/media/data/local/home/.simplemenu/section_groups</code>. Allí encontramos los siguientes ficheros (una vez que hayamos ejecutado SimpleMenu al menos una vez):</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
@@ -2143,7 +2143,7 @@
 <img alt="SimpleMenu GBA2" src="/images/posts/simplemenu_gba2.png" /></p>
 <p>En caso de que necesitemos volver a Gmenu2x, podremos encontrarlo en la sección APPS:</p>
 <p><img alt="SimpleMenu 5" src="/images/posts/simplemenu_gmenu2x.png" /></p>
-<p>Como punto de partida dejo aquí mis ficheros de configuración que contiene la mayoría de los emuladores y la <a href="/retro-emulacion/rg-350.html#las-roms-y-su-organizacion">estructura de directorios para las ROMs</a> que se utilizan habitualmente.</p>
+<p>Como punto de partida dejo aquí mis ficheros de configuración que contienen la mayoría de los emuladores y la <a href="/retro-emulacion/rg-350.html#las-roms-y-su-organizacion">estructura de directorios para las ROMs</a> que se utilizan habitualmente.</p>
 <ul>
 <li><a href="/files/posts/simplemenu.zip">simplemenu.zip</a></li>
 </ul>
@@ -2201,7 +2201,7 @@
 <h2 id="manejo">Manejo<a class="headerlink" href="#manejo" title="Permanent link">&para;</a></h2>
 <p>Como hemos visto durante la configuración, a partir de la versión 4.5 se pueden definir varios grupos de máquinas. Por defecto existen 5 grupos definidos por tipo de máquinas. Entramos en el modo de selección de un grupo pulsando <code>B</code>. En ese momento vemos por ejemplo:</p>
 <p><img alt="SimpleMenu Group" src="/images/posts/simplemenu_group.png" /></p>
-<p>En esta situación cambiamos de grupo pulsando <code>Arriba</code> y <code>Abajo</code> en la cruceta.</p>
+<p>En esta situación cambiamos de grupo pulsando <code>Arriba</code> y <code>Abajo</code> en la cruceta, y entramos en el grupo pulsando <code>A</code>.</p>
 <h2 id="arranque">Arranque<a class="headerlink" href="#arranque" title="Permanent link">&para;</a></h2>
 <p>Tenemos dos opciones para utilizar este lanzador, convertirlo en el lanzador predeterminado o abrirlo desde Gmenu2x. Vamos a ver cómo configurar las dos situaciones:</p>
 <div class="admonition warning">
@@ -2211,7 +2211,7 @@
 <h4 id="como-lanzador-predeterminado">Como lanzador predeterminado<a class="headerlink" href="#como-lanzador-predeterminado" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Bajar el fichero siguiente de la lista de assets de la release:<ul>
-<li><a href="https://github.com/fgl82/simplemenu/releases/download/4.2/frontend_start">frontend_start</a></li>
+<li><a href="https://github.com/fgl82/simplemenu/releases/download/4.5/frontend_start">frontend_start</a></li>
 </ul>
 </li>
 <li>Copiarlo a la raíz de la microSD externa.</li>
