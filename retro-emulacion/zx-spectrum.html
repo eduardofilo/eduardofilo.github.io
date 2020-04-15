@@ -1476,6 +1476,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#flash-de-megaduino" title="Flash de MegaDuino" class="md-nav__link">
+    Flash de MegaDuino
+  </a>
+  
+</li>
+      
       
       
       
@@ -1941,6 +1948,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#flash-de-megaduino" title="Flash de MegaDuino" class="md-nav__link">
+    Flash de MegaDuino
+  </a>
+  
+</li>
+      
       
       
       
@@ -1970,6 +1984,7 @@
 <li>MEGADuino:<ul>
 <li><a href="https://github.com/merlinkv/MegaDuino_v2.5">Placa</a></li>
 <li><a href="https://github.com/merlinkv/MaxDuino_1.54M">Firmware</a></li>
+<li><a href="https://www.winuaespanol.com/phpbb3/viewtopic.php?p=5116#p5116">Tutorial programación firmware</a></li>
 <li><a href="https://www.va-de-retro.com/foros/viewtopic.php?t=5541">Probando el TZXDuino</a></li>
 <li><a href="https://www.va-de-retro.com/foros/viewtopic.php?t=8488">Probando el TSXDuino MEGA</a></li>
 <li><a href="https://www.va-de-retro.com/foros/viewtopic.php?t=8496">Tirada MegaDuino</a></li>
@@ -1988,6 +2003,39 @@
 <ul>
 <li><a href="https://volcanobytes.itch.io/the-curse-of-trasmoz">The Curse of Trasmoz</a></li>
 </ul>
+<h2 id="flash-de-megaduino">Flash de MegaDuino<a class="headerlink" href="#flash-de-megaduino" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Bajar librería <a href="https://github.com/merlinkv/MaxDuino_Libraries_for_1.54M">LiquidCrystal_I2C</a></li>
+<li>Copiar el contenido del repositorio anterior a un directorio de nombre <code>LiquidCrystal_I2C</code> y colocarlo dentro del directorio <code>libraries</code> del directorio de sketches de Arduino IDE.</li>
+<li>Instalar mediante el <strong>Gestor de Librerías</strong> la librería <code>SdFat</code> de Bill Greiman.</li>
+<li>Bajar código de <a href="https://github.com/merlinkv/MaxDuino_1.54M">repositorio</a></li>
+<li>Abrir el sketch <code>MaxDuino_1.54M.ino</code></li>
+<li>Editar la linea 178 del sketch anterior para corregir el nombre del fichero de cabecera <code>userMAXconfig.h</code> (originalmente pone <code>userMaxconfig.h</code>).</li>
+<li>
+<p>Editar el fichero <code>userMAXconfig.h</code> y descomentar las líneas siguientes:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#define OLED_SETCONTRAS   0xcf      // Override default value inside Diplay.ino, bigger to increase output current per segment
+#define OLED1306                      // Set if you are using OLED 1306 display
+#define OLED1306_128_64         // 128x64 resolution with 8 rows
+#define OLED1106_1_3            // Use this line as well if you have a 1.3&quot; OLED screen
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Seleccionar en el Arduino IDE:</p>
+<ul>
+<li>Placa: <code>Arduino Mega or Mega 2560</code></li>
+<li>Procesador: <code>ATmega2560 (Mega 2560)</code></li>
+<li>Puerto: El que corresponda</li>
+</ul>
+</li>
+<li>
+<p>Pulsar el botón <code>Subir</code>.</p>
+</li>
+</ol>
                 
                   
                 
