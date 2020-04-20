@@ -1491,9 +1491,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#megaduino" title="MegaDuino" class="md-nav__link">
+    MegaDuino
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#flash-de-megaduino" title="Flash de MegaDuino" class="md-nav__link">
     Flash de MegaDuino
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opciones-megaduino" title="Opciones MegaDuino" class="md-nav__link">
+    Opciones MegaDuino
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1963,9 +1983,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#megaduino" title="MegaDuino" class="md-nav__link">
+    MegaDuino
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#flash-de-megaduino" title="Flash de MegaDuino" class="md-nav__link">
     Flash de MegaDuino
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opciones-megaduino" title="Opciones MegaDuino" class="md-nav__link">
+    Opciones MegaDuino
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1993,6 +2033,7 @@
 <ul>
 <li><a href="http://trastero.speccy.org/cosas/JL/ampli/Amplificador.html">Amplificador sonido entrada EAR</a></li>
 <li><a href="https://retrocomputing.stackexchange.com/questions/773/loading-zx-spectrum-tape-audio-in-a-post-cassette-world">Loading ZX Spectrum tape audio in a post-cassette world</a></li>
+<li><a href="https://github.com/rcmolina/z802tzx3">z802tzx</a>: Conversor de TAP a TZX (también en modo turbo).</li>
 <li>Variantes TZXDuino:<ul>
 <li><a href="https://github.com/sadken/TZXDuino">Proyecto original</a></li>
 <li>MEGADuino:<ul>
@@ -2004,7 +2045,7 @@
 <li><a href="https://www.va-de-retro.com/foros/viewtopic.php?t=8488">Probando el TSXDuino MEGA</a></li>
 <li><a href="https://www.va-de-retro.com/foros/viewtopic.php?t=8496">Tirada MegaDuino</a></li>
 <li><a href="https://www.winuaespanol.com/phpbb3/viewtopic.php?p=5116#p5116">Tutorial programación</a></li>
-<li><a href="https://github.com/rcmolina/z802tzx3">z802tzx</a>: Conversor de TAP a TZX (también en modo turbo).</li>
+<li><a href="https://www.winuaespanol.com/phpbb3/viewtopic.php?p=5309#p5309">Fix en v2 para cargar mejor CDTs en Amstrad</a></li>
 </ul>
 </li>
 </ul>
@@ -2019,7 +2060,8 @@
 <ul>
 <li><a href="https://volcanobytes.itch.io/the-curse-of-trasmoz">The Curse of Trasmoz</a></li>
 </ul>
-<h2 id="flash-de-megaduino">Flash de MegaDuino<a class="headerlink" href="#flash-de-megaduino" title="Permanent link">&para;</a></h2>
+<h2 id="megaduino">MegaDuino<a class="headerlink" href="#megaduino" title="Permanent link">&para;</a></h2>
+<h4 id="flash-de-megaduino">Flash de MegaDuino<a class="headerlink" href="#flash-de-megaduino" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Bajar librería <a href="https://github.com/merlinkv/MaxDuino_Libraries_for_1.54M">LiquidCrystal_I2C</a></li>
 <li>Copiar el contenido del repositorio anterior a un directorio de nombre <code>LiquidCrystal_I2C</code> y colocarlo dentro del directorio <code>libraries</code> del directorio de sketches de Arduino IDE.</li>
@@ -2052,6 +2094,18 @@
 <p>Pulsar el botón <code>Subir</code>.</p>
 </li>
 </ol>
+<h4 id="opciones-megaduino">Opciones MegaDuino<a class="headerlink" href="#opciones-megaduino" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Baud: Velocidad de reproducción de los archivos <code>CAS</code> y <code>TSX</code> de MSX.</li>
+<li>Motor: Indica si el control de motor está activado/desactivado. Sólo útil para plataformas que permiten control del datasette como Amstrad, MSX y BBC Micro. En el resto de equipos nos permitirá seleccionar manualmente los bloques para programas multicarga por ejemplo.</li>
+<li>TSXCzx: Indica si la opción TSXCzxpUEFSW está activada/desactivada. Sirve para tres cosas:<ul>
+<li>Activar la carga turbo (bloques 4B) de los archivos <code>CAS</code> y <code>TSX</code> de MSX.</li>
+<li>Cambiar la polaridad de la señal de audio de los archivos de Spactrum y Amstrad.</li>
+<li>Cambiar la polaridad de la señal de audio de los archivos <code>UEF</code> de Acorn Electron y BBC Micro.</li>
+</ul>
+</li>
+<li>Skip2A: ???</li>
+</ul>
                 
                   
                 
