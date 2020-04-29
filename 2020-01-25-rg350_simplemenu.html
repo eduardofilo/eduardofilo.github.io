@@ -2021,12 +2021,12 @@
                 
                 <p><img alt="SimpleMenu" src="/images/posts/simplemenu.png" /></p>
 <div class="admonition info">
-<p class="admonition-title">Actualización 2020-04-11</p>
-<p>Se modifica el artículo para que las instrucciones correspondan con la nueva <a href="https://github.com/fgl82/simplemenu/releases/tag/5.0">versión 5.0</a>.</p>
+<p class="admonition-title">Actualización 2020-04-29</p>
+<p>Se modifica el artículo para que las instrucciones correspondan con la nueva <a href="https://github.com/fgl82/simplemenu/releases/tag/5.5">versión 5.5</a>.</p>
 </div>
 <p>Se ilustra a continuación el proceso de instalación y configuración del launcher <a href="https://github.com/fgl82/simplemenu">SimpleMenu</a> para RG350.</p>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
-<p>La instalación consiste únicamente en copiar el <a href="https://github.com/fgl82/simplemenu/releases/download/5.0/SimpleMenu-RG-350.opk">OPK</a> que ofrece su autor a una de las dos rutas que lee Gmenu2x para mostrar el lanzador, es decir:</p>
+<p>La instalación consiste únicamente en copiar el <a href="https://github.com/fgl82/simplemenu/releases/download/5.5/SimpleMenu-RG-350.opk">OPK</a> que ofrece su autor a una de las dos rutas que lee Gmenu2x para mostrar el lanzador, es decir:</p>
 <ul>
 <li>Tarjeta interna: <code>/media/data/apps</code></li>
 <li>Tarjeta externa: <code>/media/sdcard/apps</code></li>
@@ -2044,7 +2044,7 @@
 <p>Las tres últimas versiones mayores del programa han modificado el formato de los ficheros de configuración, por lo que si contábamos con una instalación de las versiones previas (2.x ó 3.x) nos va a tocar adaptarlos, es decir no se pueden utilizar directamente ya que no son compatibles. Lo mejor será renombrar el directorio <code>/media/data/local/home/.simplemenu</code> para que se vuelva a generar en el siguiente arranque y así además mantener copia de la configuración anterior para que nos sirva de modelo para crear la nueva.</p>
 <p>Entre la versión 4.1 y la 4.2 ha habido un cambio importante en la gestión del tema gráfico.</p>
 <p>Entre la versión 4.2 y la 4.5 el cambio importante ha sido en la ubicación y división del fichero <code>sections.ini</code> en varios para agrupar las distintas máquinas por tipos.</p>
-<p>Entre la versión 4.5 y 5.0 no ha habido cambios importantes en la configuración por lo que podremos mantenerla.</p>
+<p>Entre la versión 4.5 y 5.5 no ha habido cambios importantes en la configuración por lo que podremos mantenerla.</p>
 </div>
 <p>De serie SimpleMenu trae una configuración con varios sistemas precargados, pero como apunta de forma estática a las rutas de los distintos emuladores y ROMs, es casi seguro que nos va a tocar ajustar esta configuración a los que nosotros tengamos instalados en la consola. Aún así interesa que lo ejecutemos al menos una vez para que se genere el directorio <code>.simplemenu</code> dentro del home de la consola para que tengamos la plantilla sobre la que empezar a modificar.</p>
 <h4 id="sistemas">Sistemas<a class="headerlink" href="#sistemas" title="Permanent link">&para;</a></h4>
@@ -2096,6 +2096,10 @@ romExts = .gb,.gz,.zip
 <p class="admonition-title">Nota</p>
 <p>A partir de la versión 4.2, SimpleMenu es mucho más robusto respecto a defectos o carencias en la configuración tanto de los sistemas como del tema, por lo que arrancará siempre. Cuando por ejemplo no exista correspondencia de un sistema en el tema, nos mostrará el nombre del mismo en lugar de un logotipo, lo que nos servirá como indicación de que debemos incorporarlo nosotros.</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Aviso</p>
+<p>Si sustituimos los ficheros de configuración de los sistemas después de haber abierto SimpleMenu al menos una vez y hecho cambios en su configuración, es probable que éste se niegue a abrirse (volviendo inmediatamente a GMenu2X al intentarlo). En esos casos borrar el fichero <code>/media/data/local/home/.simplemenu/last_state.sav</code>.</p>
+</div>
 <h4 id="configuracion-general">Configuración general<a class="headerlink" href="#configuracion-general" title="Permanent link">&para;</a></h4>
 <p>Dentro de <code>/media/data/local/home/.simplemenu</code> hay otro fichero que nos interesa modificar. Se trata del <code>config.ini</code>.</p>
 <p>A partir de la versión 5.0 esta configuración general se puede hacer desde el propio frontend. Accedemos a ella pulsando <code>Start</code> desde el listado de ROMs de un sistema:</p>
@@ -2131,10 +2135,26 @@ sleep_speed = 200
 <li><code>allow_shutdown</code>: Antes de la versión 5.0 esta opción servía para configurar el efecto de la combinación de teclas <code>Start+Select</code> para cerrar la aplicación o apagar la consola. A partir de esta versión este comportamiento se gestiona de forma diferente como veremos dentro de poco.</li>
 </ul>
 <p>Por último comentamos las opciones del menú de settings que muestra el frontend que son independientes del fichero de configuración. Son las siguientes:</p>
-<p><img alt="SimpleMenu Settings" src="/images/posts/simplemenu_quit.png" /></p>
-<p>Confirmando este menú cerraremos SimpleMenu y regresaremos al programa desde el que lo hayamos lanzado.</p>
+<p><img alt="SimpleMenu Settings" src="/images/posts/simplemenu_settings.png" /></p>
+<p>Confirmando este menú cerraremos SimpleMenu y regresaremos al programa desde el que lo hayamos lanzado (GMenu2X habitualmente).</p>
 <p><img alt="SimpleMenu Settings" src="/images/posts/simplemenu_autohide.png" /></p>
 <p>Cuando estamos navegando entre los sistemas de un grupo, si esta opción está a <code>YES</code> el logo del sistema se verá durante un segundo antes de aparecer el listado de ROMs de ese sistema. Si está a <code>NO</code> el logo se mantendrá visible hasta que pulsemos <code>A</code> para pasar al listado de ROMs.</p>
+<p><img alt="SimpleMenu Layout" src="/images/posts/simplemenu_layout.png" /></p>
+<p>Permite seleccionar entre tres tipos de disposiciones de los listados de ROMs y sus previews. La visualización dependerá del tema activo. Por ejemplo para el tema <code>default</code> las tres disposiciones tienen el siguiente aspecto:</p>
+<ul>
+<li>
+<p>Layout SimpleMenu</p>
+<p><img alt="SimpleMenu Layout SimpleMenu" src="/images/posts/simplemenu_layout_sm.png" /></p>
+</li>
+<li>
+<p>Layout Traditional</p>
+<p><img alt="SimpleMenu Layout Traditional" src="/images/posts/simplemenu_layout_traditional.png" /></p>
+</li>
+<li>
+<p>Layout Drunken Monkey</p>
+<p><img alt="SimpleMenu Layout Drunken Monkey" src="/images/posts/simplemenu_layout_drunkenmonkey.png" /></p>
+</li>
+</ul>
 <p><img alt="SimpleMenu Settings" src="/images/posts/simplemenu_default.png" /></p>
 <p>Esta entrada del menú de settings nos permite configurar SimpleMenu como frontend predeterminado en el sistema. Cuando lo configuramos de este modo, la primera entrada del menú de settings pasa de <code>QUIT</code> a <code>SHUTDOWN</code> permitiéndonos apagar la máquina.</p>
 <p><img alt="SimpleMenu Settings" src="/images/posts/simplemenu_shutdown.png" /></p>
