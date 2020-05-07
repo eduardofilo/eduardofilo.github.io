@@ -2253,7 +2253,7 @@ key_q &quot;key 8&quot;
 <h2 id="integracion-en-frontends">Integración en frontends<a class="headerlink" href="#integracion-en-frontends" title="Permanent link">&para;</a></h2>
 <p>DOSBox se integra bien con frontends puesto que permite seleccionar el ejecutable a lanzar mediante el explorador. Se recomienda filtrar únicamente la extensión <code>.bat</code> y generar un fichero de este tipo si no existe ya entre los ficheros del juego. De esta forma sólo aparecerá una entrada para arrancar el juego (y no 4 como hemos visto en el ejemplo anterior).</p>
 <h2 id="personalizacion-de-controles-para-juegos">Personalización de controles para juegos<a class="headerlink" href="#personalizacion-de-controles-para-juegos" title="Permanent link">&para;</a></h2>
-<p>Del extenso apartado <a href="#configuracion">Configuración</a> se desprende que la principal dificultad de instalar juegos MS-DOS en DOSBox es la del mapeo de controles. Además, a pesar de que el proyecto oficial permite <a href="https://www.dosbox.com/DOSBoxManual.html#ConfigFile">cargar automáticamente un dosbox.conf desde el directorio del juego</a>, la versión para la RG350 que se encuentra habitualmente, no parece soportar esta capacidad. Sin embargo no es complicado adaptarla para que lo consiga. Simplemente incluyendo dentro del OPK el siguiente script que será el que se execute desde el fichero <code>default.gcw0.desktop</code>:</p>
+<p>Del extenso apartado <a href="#configuracion">Configuración</a> se desprende que la principal dificultad de instalar juegos MS-DOS en DOSBox es la del mapeo de controles. Además, a pesar de que el proyecto oficial permite <a href="https://www.dosbox.com/DOSBoxManual.html#ConfigFile">cargar automáticamente un dosbox.conf desde el directorio del juego</a>, la versión para la RG350 que se encuentra habitualmente, no parece soportar esta capacidad. Sin embargo no es complicado adaptarla para que lo consiga. Simplemente incluyendo dentro del OPK el siguiente script de nombre <code>set_conf.sh</code> que será el que se execute desde el fichero <code>default.gcw0.desktop</code>:</p>
 <div class="highlight"><pre><span></span><code>#!/bin/sh
 
 DIRBASE=`dirname &quot;${1}&quot;`
@@ -2266,10 +2266,10 @@ fi
 </code></pre></div>
 
 <p>En <code>default.gcw0.desktop</code> sustituiremos la línea correspondiente al <code>exec</code> por lo siguiente:</p>
-<div class="highlight"><pre><span></span><code>Exec=set_mapper.sh %f
+<div class="highlight"><pre><span></span><code>Exec=set_conf.sh %f
 </code></pre></div>
 
-<p>El OPK resultante con estos cambios, que se puede utilizar en lugar del que se distribuye habitualmente, se puede descargar desde aquí: <a href="/files/posts/dosbox/Dosbox_mapper_mod.opk">Dosbox_mapper_mod.opk</a></p>
+<p>El OPK resultante con estos cambios, que se puede utilizar en lugar del que se distribuye habitualmente, se puede descargar desde aquí: <a href="/files/posts/dosbox/Dosbox_conf_mod.opk">Dosbox_conf_mod.opk</a></p>
 <p>Con este OPK simplemente tendremos que colocar el <code>dosbox.conf</code> que queremos que aplique en el mismo directorio del juego. El mapper al que se apunte desde este fichero (parámetro <code>mapperfile</code>, recordemos) también se deberá encontrar en el directorio del juego.</p>
                 
                   
