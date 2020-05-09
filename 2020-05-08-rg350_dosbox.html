@@ -484,6 +484,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#configuracion-de-scalers" class="md-nav__link">
+    Configuración de scalers
+  </a>
+  
+</li>
+      
       
       
       
@@ -2000,6 +2007,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#configuracion-de-scalers" class="md-nav__link">
+    Configuración de scalers
+  </a>
+  
+</li>
+      
       
       
       
@@ -2244,6 +2258,7 @@ key_q &quot;key 8&quot;
 <li><a href="https://www.dosbox.com/DOSBoxManual.html">Documentación</a></li>
 <li><a href="https://www.dosbox.com/wiki/Basic_Setup_and_Installation_of_DosBox">Tutorial</a></li>
 <li><a href="https://www.dosbox.com/wiki/Dosbox.conf">dosbox.conf</a></li>
+<li><a href="https://www.emezeta.com/articulos/manual-de-dosbox-revive-juegos-antiguos">Manual de DOSBox: Revive juegos antiguos | Emezeta.COM</a></li>
 </ul>
 <h2 id="juegos">Juegos<a class="headerlink" href="#juegos" title="Permanent link">&para;</a></h2>
 <p>Los juegos para DOSBox consisten simplemente en los ficheros originales del juego sin modificar, normalmente dentro de un directorio. DOSBox soporta el montaje de imágenes de CD-ROM para los juegos que venían en este formato, pero de momento no nos vamos a complicar con eso (estudiar los enlaces indicados un poco más arriba). Una vez que tengamos los ficheros del juego en un directorio sólo tendremos que abrir el OPK desde GMenu2X y explorar hasta localizar el directorio. Por defecto se nos filtrarán los ficheros con extensiones <code>.exe</code>, <code>.com</code> y <code>.bat</code> que eran los típicos ficheros ejecutables en MS-DOS. Seleccionando el ejecutable adecuado el juego arrancará. Por ejemplo en una instalación del juego <code>Prince of Persia</code> aparecen los siguientes ficheros como ejecutables:</p>
@@ -2271,6 +2286,53 @@ fi
 
 <p>El OPK resultante con estos cambios, que se puede utilizar en lugar del que se distribuye habitualmente, se puede descargar desde aquí: <a href="/files/posts/dosbox/Dosbox_conf_mod.opk">Dosbox_conf_mod.opk</a></p>
 <p>Con este OPK simplemente tendremos que colocar el <code>dosbox.conf</code> que queremos que aplique en el mismo directorio del juego. El mapper al que se apunte desde este fichero (parámetro <code>mapperfile</code>, recordemos) también se deberá encontrar en el directorio del juego.</p>
+<h2 id="configuracion-de-scalers">Configuración de scalers<a class="headerlink" href="#configuracion-de-scalers" title="Permanent link">&para;</a></h2>
+<p>Un parámetro interesante del <code>dosbox.conf</code> es el <code>scaler</code> que se encuentra dentro de la sección <code>[render]</code>. Permite seleccionar de entre una serie de filtros para producir efectos en la pantalla (como los típicos scanlines de las teles CRT). Por ejemplo en el dosbox.conf predeterminado se ve esto:</p>
+<div class="highlight"><pre><span></span><code>[render]
+# frameskip: How many frames DOSBox skips before drawing one.
+#    aspect: Do aspect correction, if your output method doesn&#39;t support scaling this can slow things down!.
+#    scaler: Scaler used to enlarge/enhance low resolution modes. If &#39;forced&#39; is appended,
+#            then the scaler will be used even if the result might not be desired.
+#            Possible values: none, normal2x, normal3x, advmame2x, advmame3x, advinterp2x, advinterp3x, hq2x, hq3x, 2xsai, super2xsai, supereagle, tv2x, tv3x, rgb2x, rgb3x, scan2x, scan3x.
+
+frameskip=0
+aspect=false
+scaler=none
+</code></pre></div>
+
+<p>Cambiando ese parámetro se pueden conseguir los distintos efectos, aunque al probarlos se ve que no resultan de mucha utilidad en la RG350. Supongo que dependerá mucho de la resolución original del juego. Es decir, si el juego se dibuja a 320x240, la mayoría de esos scalers no tienen mucho sentido.</p>
+<p>A continuación se muestra el efecto de cada uno de los scalers sobre la pantalla de presentación del Prince of Persia que sin scaler aplicado se ve así:</p>
+<p><img alt="scaler none" src="/images/posts/dosbox/scaler_none.png" /></p>
+<p><strong>normal2x</strong>
+<img alt="scaler normal2x" src="/images/posts/dosbox/scaler_normal2x.png" /></p>
+<p><strong>advmame2x</strong>
+<img alt="scaler advmame2x" src="/images/posts/dosbox/scaler_advmame2x.png" /></p>
+<p><strong>advinterp2x</strong>
+<img alt="scaler advinterp2x" src="/images/posts/dosbox/scaler_advinterp2x.png" /></p>
+<p><strong>hq2x</strong>
+<img alt="scaler hq2x" src="/images/posts/dosbox/scaler_hq2x.png" /></p>
+<p><strong>2xsai</strong>
+<img alt="scaler 2xsai" src="/images/posts/dosbox/scaler_2xsai.png" /></p>
+<p><strong>super2xsai</strong>
+<img alt="scaler super2xsai" src="/images/posts/dosbox/scaler_super2xsai.png" /></p>
+<p><strong>supereagle</strong>
+<img alt="scaler supereagle" src="/images/posts/dosbox/scaler_supereagle.png" /></p>
+<p><strong>scaler_tv2x</strong>
+<img alt="scaler tv2x" src="/images/posts/dosbox/scaler_tv2x.png" /></p>
+<p><strong>rgb2x</strong>
+<img alt="scaler rgb2x" src="/images/posts/dosbox/scaler_rgb2x.png" /></p>
+<p><strong>scan2x</strong>
+<img alt="scaler scan2x" src="/images/posts/dosbox/scaler_scan2x.png" /></p>
+<p>Los siguientes scalers parecen no funcionar (supongo que porque será necesario que la resolución de dibujado del juego sea el triple al menos de la del juego):</p>
+<ul>
+<li>normal3x</li>
+<li>advmame3x</li>
+<li>advinterp3x</li>
+<li>hq3x</li>
+<li>tv3x</li>
+<li>rgb3x</li>
+<li>scan3x</li>
+</ul>
                 
                   
                 
