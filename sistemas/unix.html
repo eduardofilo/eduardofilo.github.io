@@ -1829,6 +1829,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#comprimir-uno-a-uno-los-ficheros-de-un-directorio" class="md-nav__link">
+    Comprimir uno a uno los ficheros de un directorio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#redireccion-de-salidas" class="md-nav__link">
     Redirección de salidas
   </a>
@@ -2288,6 +2295,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#comprimir-uno-a-uno-los-ficheros-de-un-directorio" class="md-nav__link">
+    Comprimir uno a uno los ficheros de un directorio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#redireccion-de-salidas" class="md-nav__link">
     Redirección de salidas
   </a>
@@ -2738,6 +2752,14 @@ $ find . -type d -exec chmod <span class="m">775</span> <span class="o">{}</span
 <span class="nv">g</span><span class="o">=</span><span class="sb">`</span>expr <span class="s2">&quot;xxx</span><span class="nv">$f</span><span class="s2">&quot;</span> : <span class="s1">&#39;xxx\(.*\)&#39;</span> <span class="p">|</span> tr <span class="s1">&#39;[A-Z]&#39;</span> <span class="s1">&#39;[a-z]&#39;</span><span class="sb">`</span>
 mv <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$g</span><span class="s2">&quot;</span>
 <span class="k">done</span>
+</code></pre></div>
+
+<h2 id="comprimir-uno-a-uno-los-ficheros-de-un-directorio">Comprimir uno a uno los ficheros de un directorio<a class="headerlink" href="#comprimir-uno-a-uno-los-ficheros-de-un-directorio" title="Permanent link">&para;</a></h2>
+<p>Por ejemplo ficheros de extensión <code>.gba</code>:</p>
+<div class="highlight"><pre><span></span><code>for f in *.gba; do
+file=$(basename &quot;$f&quot; .gba)
+zip &quot;${file}.zip&quot; &quot;${file}.gba&quot;
+done
 </code></pre></div>
 
 <h2 id="redireccion-de-salidas">Redirección de salidas<a class="headerlink" href="#redireccion-de-salidas" title="Permanent link">&para;</a></h2>
