@@ -1951,6 +1951,7 @@ $ docker exec -it rg350_buildroot /bin/bash
 <div class="highlight"><pre><span></span><code># cd ~
 # git clone https://github.com/tonyjih/RG350_buildroot.git
 # cd ~/RG350_buildroot
+# export BR2_EXTERNAL=board/opendingux
 # make rg350_defconfig BR2_EXTERNAL=board/opendingux
 </code></pre></div>
 
@@ -1965,8 +1966,15 @@ $ docker exec -it rg350_buildroot /bin/bash
 # board/opendingux/gcw0/make_initial_image.sh
 </code></pre></div>
 
+<p>-- Configuring incomplete, errors occurred!
+See also "/root/RG350_buildroot/output/build/apitrace-9.0/CMakeFiles/CMakeOutput.log".
+package/pkg-generic.mk:155: recipe for target '/root/RG350_buildroot/output/build/apitrace-9.0/.stamp_configured' failed
+make: *** [/root/RG350_buildroot/output/build/apitrace-9.0/.stamp_configured] Error 1</p>
 <p>Dockerfile de soarquin</p>
 <p>https://github.com/soarqin/rg350_buildroot_docker/blob/master/Dockerfile</p>
+<p>build-essential wget cpio python unzip bc mercurial subversion gcc-multilib vim</p>
+<p>autoconf automake flex</p>
+<p>autoconf automake bison flex fontconfig freetype gcc-c++ git glibc-devel glibc-devel.i686 java-1.8.0-openjdk-devel libgcc.i686 libstdc++.i686 m4 make openssl-devel patch perl-ExtUtils-MakeMaker rsync squashfs-tools</p>
                 
                   
                 
