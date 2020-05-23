@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#instalar-docker" tabindex="0" class="md-skip">
+      <a href="#instalacion-codigo-y-creacion-de-contenedor" tabindex="0" class="md-skip">
         Saltar a contenido
       </a>
     
@@ -1929,39 +1929,70 @@
                   <a href="https://github.com/eduardofilo/eduardofilo.mkdocs/edit/master/docs/2020-05-15-rg350_docker_buildroot.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="instalar-docker">Instalar Docker<a class="headerlink" href="#instalar-docker" title="Permanent link">&para;</a></h1>
+                <h1 id="instalacion-codigo-y-creacion-de-contenedor">Instalación código y creación de contenedor<a class="headerlink" href="#instalacion-codigo-y-creacion-de-contenedor" title="Permanent link">&para;</a></h1>
+<ol>
+<li>
+<p>Bajar repositorio en máquina host</p>
+<div class="highlight"><pre><span></span><code>$ git clone https://github.com/tonyjih/RG350_buildroot.git
+</code></pre></div>
+
+</li>
+<li>
+<p>Instalar Docker en máquina host</p>
 <div class="highlight"><pre><span></span><code>$ sudo apt  install docker.io
 </code></pre></div>
 
-<h1 id="crear-contenedor">Crear contenedor<a class="headerlink" href="#crear-contenedor" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code>$ docker run -it --name rg350_buildroot debian:stretch-slim
+</li>
+<li>
+<p>Si existía un contenedor previo y se quiere volver a empezar, borrar container con:</p>
+<div class="highlight"><pre><span></span><code>$ docker container ls
+$ docker container stop &lt;hash&gt;
+$ docker container rm &lt;hash&gt;
 </code></pre></div>
 
-<h1 id="conectar-con-contenedor">Conectar con contenedor<a class="headerlink" href="#conectar-con-contenedor" title="Permanent link">&para;</a></h1>
+</li>
+<li>
+<p>Crear container conectando con directorio donde está el repositorio en máquina host:</p>
+<div class="highlight"><pre><span></span><code>$ docker run -it -v /home/edumoreno/git/RG350_buildroot:/root/RG350_buildroot --name rg350_buildroot debian:stretch-slim
+</code></pre></div>
+
+</li>
+<li>
+<p>Si se pierde la conexión conectar con contenedor con:</p>
 <div class="highlight"><pre><span></span><code>$ docker start rg350_buildroot
 $ docker exec -it rg350_buildroot /bin/bash
 </code></pre></div>
 
-<h1 id="instalacion-paquetes-necesarios">Instalación paquetes necesarios<a class="headerlink" href="#instalacion-paquetes-necesarios" title="Permanent link">&para;</a></h1>
+</li>
+<li>
+<p>Instalación paquetes necesarios en el contenedor:</p>
 <div class="highlight"><pre><span></span><code># apt update
-# apt install git build-essential wget cpio python unzip bc mercurial subversion gcc-multilib vim
+# apt install git build-essential wget cpio python python3 unzip bc mercurial subversion gcc-multilib vim
 </code></pre></div>
 
-<h1 id="instalacion-buildroot">Instalación buildroot<a class="headerlink" href="#instalacion-buildroot" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code># cd ~
-# git clone https://github.com/tonyjih/RG350_buildroot.git
-# cd ~/RG350_buildroot
+</li>
+<li>
+<p>Compilar toolchain (sólo es necesario la primera vez):</p>
+<div class="highlight"><pre><span></span><code># cd ~/RG350_buildroot
 # export BR2_EXTERNAL=board/opendingux
 # make rg350_defconfig BR2_EXTERNAL=board/opendingux
 </code></pre></div>
 
-<h1 id="build-toolchain">Build toolchain<a class="headerlink" href="#build-toolchain" title="Permanent link">&para;</a></h1>
+</li>
+</ol>
+<h1 id="compilacion-de-toolchain">Compilación de toolchain<a class="headerlink" href="#compilacion-de-toolchain" title="Permanent link">&para;</a></h1>
 <div class="highlight"><pre><span></span><code># cd ~/RG350_buildroot
 # export BR2_JLEVEL=0
 # make toolchain
 </code></pre></div>
 
-<h1 id="build-image">Build image<a class="headerlink" href="#build-image" title="Permanent link">&para;</a></h1>
+<h1 id="compilacion-de-image">Compilación de image<a class="headerlink" href="#compilacion-de-image" title="Permanent link">&para;</a></h1>
+<p>Si se quiere que la imagen incluya emuladores y aplicaciones, ejecutar antes lo siguiente (sólo es necesario hacerlo una vez):</p>
+<div class="highlight"><pre><span></span><code># cd ~/RG350_buildroot
+# board/opendingux/gcw0/download_local_pack.sh
+</code></pre></div>
+
+<p>Luego cada vez que se quiera generar la imagen:</p>
 <div class="highlight"><pre><span></span><code># cd ~/RG350_buildroot
 # board/opendingux/gcw0/make_initial_image.sh
 </code></pre></div>
