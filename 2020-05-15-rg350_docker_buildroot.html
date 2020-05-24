@@ -1974,7 +1974,6 @@ $ docker exec -it rg350_buildroot /bin/bash
 <li>
 <p>Configurar Buildroot (sólo es necesario la primera vez):</p>
 <div class="highlight"><pre><span></span><code># cd ~/RG350_buildroot
-# export BR2_EXTERNAL=board/opendingux
 # make rg350_defconfig BR2_EXTERNAL=board/opendingux
 </code></pre></div>
 
@@ -1997,6 +1996,7 @@ $ docker exec -it rg350_buildroot /bin/bash
 # board/opendingux/gcw0/make_initial_image.sh
 </code></pre></div>
 
+<p>Todo el proceso de compilación genera unos 12GBs de archivos.</p>
 <p>-- Configuring incomplete, errors occurred!
 See also "/root/RG350_buildroot/output/build/apitrace-9.0/CMakeFiles/CMakeOutput.log".
 package/pkg-generic.mk:155: recipe for target '/root/RG350_buildroot/output/build/apitrace-9.0/.stamp_configured' failed
