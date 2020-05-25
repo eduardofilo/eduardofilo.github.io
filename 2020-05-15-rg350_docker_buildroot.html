@@ -1967,10 +1967,19 @@ $ docker exec -it rg350_buildroot /bin/bash
 <li>
 <p>Instalación paquetes necesarios en el contenedor:</p>
 <div class="highlight"><pre><span></span><code># apt update
-# apt install git build-essential wget cpio python python3 unzip bc mercurial subversion gcc-multilib vim ccache squashfs-tools zip gettext mtools dosfstools
+# apt install git build-essential wget cpio python python3 unzip bc mercurial subversion gcc-multilib vim ccache squashfs-tools zip gettext mtools dosfstools libncurses5-dev
 </code></pre></div>
 
 </li>
+<li>
+<p>Opcionalmente para personalizar alguna opción de Buildroot, utilizar uno de los dos siguientes comandos (sólo uno):</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code># make menuconfig
+# make nconfig
+</code></pre></div>
+
+<ol>
 <li>
 <p>Configurar Buildroot (sólo es necesario la primera vez):</p>
 <div class="highlight"><pre><span></span><code># cd ~/RG350_buildroot

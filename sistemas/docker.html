@@ -1705,6 +1705,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#crear-contenedor-y-subirlo-a-docker-hub" class="md-nav__link">
+    Crear contenedor y subirlo a Docker Hub
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#imagenes-recomendables" class="md-nav__link">
     Imágenes recomendables
   </a>
@@ -2182,6 +2189,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#crear-contenedor-y-subirlo-a-docker-hub" class="md-nav__link">
+    Crear contenedor y subirlo a Docker Hub
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#imagenes-recomendables" class="md-nav__link">
     Imágenes recomendables
   </a>
@@ -2330,6 +2344,29 @@ docker <span class="nb">exec</span> -it test-ubuntu /bin/bash
 <p>Instalar paquetes mínimos:</p>
 <div class="highlight"><pre><span></span><code>apt-get update
 apt-get install vim sudo
+</code></pre></div>
+
+</li>
+</ol>
+<h2 id="crear-contenedor-y-subirlo-a-docker-hub">Crear contenedor y subirlo a Docker Hub<a class="headerlink" href="#crear-contenedor-y-subirlo-a-docker-hub" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Crear Dockerfile</li>
+<li>Crear repositorio en Docker hub</li>
+<li>
+<p>Iniciar sesión en docker</p>
+<div class="highlight"><pre><span></span><code>$ docker login
+</code></pre></div>
+
+</li>
+<li>
+<p>Compilar imagen y etiquetarla</p>
+<div class="highlight"><pre><span></span><code>$ docker build -t eduardofilo/rg350_buildroot .
+</code></pre></div>
+
+</li>
+<li>
+<p>Subir imagen a repositorio</p>
+<div class="highlight"><pre><span></span><code>$ docker push eduardofilo/rg350_buildroot
 </code></pre></div>
 
 </li>
