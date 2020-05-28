@@ -2089,7 +2089,7 @@ $ docker build -t eduardofilo/rg350_buildroot .
 
 </li>
 <li>
-<p>Compilar el toolchain (sólo es necesario una vez; el resultado queda en el directorio <code>~/git/RG350_buildroot/output/host/usr/bin</code>; tarda 1h50m en un Intel i3-4005U y genera unos 3GBs de archivos):</p>
+<p>Compilar el toolchain (sólo es necesario una vez; el resultado queda en el directorio <code>~/git/RG350_buildroot/output/host/usr/bin</code>; por ejemplo el compilador y linker es <code>mipsel-gcw0-linux-uclibc-gcc</code>; tarda 1h50m en un Intel i3-4005U y genera unos 3GBs de archivos):</p>
 <div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
 # export BR2_JLEVEL=0
 # make toolchain
