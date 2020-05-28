@@ -2089,7 +2089,7 @@ $ docker build -t eduardofilo/rg350_buildroot .
 
 </li>
 <li>
-<p>Compilar el toolchain (sólo es necesario una vez; tarda 1h50m en un Intel i3-4005U y genera unos 3GBs de archivos):</p>
+<p>Compilar el toolchain (sólo es necesario una vez; el resultado queda en el directorio <code>~/git/RG350_buildroot/output/host/usr/bin</code>; tarda 1h50m en un Intel i3-4005U y genera unos 3GBs de archivos):</p>
 <div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
 # export BR2_JLEVEL=0
 # make toolchain
@@ -2112,7 +2112,7 @@ $ docker build -t eduardofilo/rg350_buildroot .
 
 </li>
 <li>
-<p>Compilación de imagen para flashear en SD (el fichero con la imagen resultante queda en <code>~/git/RG350_buildroot/output/images/od-imager/images/sd_image.bin</code> en la máquina host; tarda 6h en un Intel i3-4005U y genera unos 9GBs de archivos):</p>
+<p>Compilación de imagen para flashear en SD (el fichero con la imagen resultante queda en <code>~/git/RG350_buildroot/output/images/od-imager/images/sd_image.bin</code>; tarda 6h en un Intel i3-4005U y genera unos 9GBs de archivos):</p>
 <div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
 # board/opendingux/gcw0/make_initial_image.sh
 </code></pre></div>
