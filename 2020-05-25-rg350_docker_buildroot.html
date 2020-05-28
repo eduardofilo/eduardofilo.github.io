@@ -2054,7 +2054,7 @@ $ git clone https://github.com/tonyjih/RG350_buildroot.git
 </li>
 <li>
 <p>Arrancar contenedor pasando el directorio del repositorio del punto anterior como volumen:</p>
-<div class="highlight"><pre><span></span><code>$ docker run -it -v ~/git/RG350_buildroot:/root/RG350_buildroot --name RG350_buildroot eduardofilo/rg350_buildroot
+<div class="highlight"><pre><span></span><code>$ docker run -it -v ~/git:/root/git --name RG350_buildroot eduardofilo/rg350_buildroot
 </code></pre></div>
 
 </li>
@@ -2066,7 +2066,7 @@ $ cd ~/git/RG350_buildroot_docker
 $ docker build -t eduardofilo/rg350_buildroot .
 </code></pre></div>
 
-<p>Tras ejecutar el paso 3 debería quedar un prompt ejecutándose desde el entorno Debian dentro del contenedor. Como hemos conectado el directorio <code>/root/RG350_buildroot</code> del contenedor con el directorio <code>~/git/RG350_buildroot</code> de nuestra máquina, cualquier cosa que queramos modificar o recoger al final de la compilación, la podremos localizar desde cualquier explorador de archivos de nuestra máquina. Si en algún momento perdiéramos de vista la terminal ejecutándose en el entorno del contenedor, podremos recuperarla ejecutando:</p>
+<p>Tras ejecutar el paso 3 debería quedar un prompt ejecutándose desde el entorno Debian dentro del contenedor. Como hemos conectado el directorio <code>/root/git</code> del contenedor con el directorio <code>~/git</code> de nuestra máquina, cualquier cosa que queramos modificar o recoger al final de la compilación, la podremos localizar desde cualquier explorador de archivos de nuestra máquina. Si en algún momento perdiéramos de vista la terminal ejecutándose en el entorno del contenedor, podremos recuperarla ejecutando:</p>
 <div class="highlight"><pre><span></span><code>$ docker exec -it RG350_buildroot /bin/bash
 </code></pre></div>
 
@@ -2075,21 +2075,22 @@ $ docker build -t eduardofilo/rg350_buildroot .
 <ul>
 <li>
 <p><strong>OPCIONAL</strong>. Para personalizar alguna opción de Buildroot, utilizar uno de los dos comandos siguientes (sólo uno):</p>
-<div class="highlight"><pre><span></span><code># make menuconfig
+<div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
+# make menuconfig
 # make nconfig
 </code></pre></div>
 
 </li>
 <li>
 <p>Configurar Buildroot (sólo es necesario la primera vez):</p>
-<div class="highlight"><pre><span></span><code># cd ~/RG350_buildroot
+<div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
 # make rg350_defconfig BR2_EXTERNAL=board/opendingux
 </code></pre></div>
 
 </li>
 <li>
 <p>Compilar el toolchain (sólo es necesario una vez; tarda 1h50m en un Intel i3-4005U):</p>
-<div class="highlight"><pre><span></span><code># cd ~/RG350_buildroot
+<div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
 # export BR2_JLEVEL=0
 # make toolchain
 </code></pre></div>
@@ -2097,7 +2098,7 @@ $ docker build -t eduardofilo/rg350_buildroot .
 </li>
 <li>
 <p>Compilar una librería o paquete. Por ejemplo para compilar SDL y SDL_Image:</p>
-<div class="highlight"><pre><span></span><code># cd ~/RG350_buildroot
+<div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
 # export BR2_JLEVEL=0
 # make sdl sdl_image
 </code></pre></div>
@@ -2105,14 +2106,14 @@ $ docker build -t eduardofilo/rg350_buildroot .
 </li>
 <li>
 <p>Si se quiere que la imagen incluya emuladores y aplicaciones, ejecutar antes lo siguiente (sólo es necesario hacerlo una vez):</p>
-<div class="highlight"><pre><span></span><code># cd ~/RG350_buildroot
+<div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
 # board/opendingux/gcw0/download_local_pack.sh
 </code></pre></div>
 
 </li>
 <li>
 <p>Compilación de imagen para flashear en SD (el fichero con la imagen resultante queda en <code>~/git/RG350_buildroot/output/images/od-imager/images/sd_image.bin</code> en la máquina host; tarda 6h en un Intel i3-4005U):</p>
-<div class="highlight"><pre><span></span><code># cd ~/RG350_buildroot
+<div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
 # board/opendingux/gcw0/make_initial_image.sh
 </code></pre></div>
 
