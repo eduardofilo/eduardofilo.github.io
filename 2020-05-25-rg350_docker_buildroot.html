@@ -2070,8 +2070,8 @@ $ docker build -t eduardofilo/rg350_buildroot .
 <div class="highlight"><pre><span></span><code>$ docker exec -it RG350_buildroot /bin/bash
 </code></pre></div>
 
-<p>Si el comando anterior devuelve un error indicando que el contenedor está parado, podemos volver a arrancarlo con la orden:</p>
-<div class="highlight"><pre><span></span><code>$ docker run -it -v ~/git:/root/git --name RG350_buildroot eduardofilo/rg350_buildroot
+<p>Si el comando anterior devuelve un error indicando que el contenedor está parado, podemos arrancarlo antes ejecutando la orden:</p>
+<div class="highlight"><pre><span></span><code>$ docker start RG350_buildroot
 </code></pre></div>
 
 <h2 id="operacion-de-buildroot">Operación de Buildroot<a class="headerlink" href="#operacion-de-buildroot" title="Permanent link">&para;</a></h2>
