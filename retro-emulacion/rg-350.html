@@ -1757,6 +1757,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#programas-que-se-cierran" class="md-nav__link">
+    Programas que se cierran
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#particularidades-juegos" class="md-nav__link">
     Particularidades juegos
   </a>
@@ -2627,6 +2634,13 @@
           <li class="md-nav__item">
   <a href="#corrupcion-de-lanzador" class="md-nav__link">
     Corrupción de lanzador
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programas-que-se-cierran" class="md-nav__link">
+    Programas que se cierran
   </a>
   
 </li>
@@ -3623,6 +3637,12 @@
 <h2 id="solucion-de-problemas">Solución de problemas<a class="headerlink" href="#solucion-de-problemas" title="Permanent link">&para;</a></h2>
 <h4 id="corrupcion-de-lanzador">Corrupción de lanzador<a class="headerlink" href="#corrupcion-de-lanzador" title="Permanent link">&para;</a></h4>
 <p>En ocasiones no se muestra correctamente el icono de una aplicación, o no apunta a donde debería. Puede suceder cuando hay dos OPK's con el mismo nombre en la SD interna y externa, y se borra uno de ellos por ejemplo. Para resetear la información, entrar en la sección donde esté el problema dentro de el directorio <code>/media/data/local/home/.gmenu2x/sections</code> y borrar el nombre de la aplicación problemática. Lo que hay allí no es la aplicación en sí sino un fichero tipo <code>.desktop</code> con metainformación (icono, descripción, etc.).</p>
+<h4 id="programas-que-se-cierran">Programas que se cierran<a class="headerlink" href="#programas-que-se-cierran" title="Permanent link">&para;</a></h4>
+<p>En ocasiones los emuladores, aplicaciones o frontends (EmulationStation, PyMenu, SimpleMenu, etc.) cuando no están bien configurados se cierran sin dar más explicaciones al abrirlos o durante su manipulación. Para tener algo que analizar, si los hemos lanzado desde GMenu2X, podemos activar un log que nos ofrecerá la salida de error en la invocación de estos programas. Para activarla hay que entrar en los ajustes de GMenu2X y poner a ON el parámetro <code>Output logs</code> (<code>Archivos de registro de sucesos</code> si tenemos el interfaz en español):</p>
+<p><img alt="GMenu2X log 1" src="/images/pages/rg350/gmenu2x_log1.png" />
+<img alt="GMenu2X log 2" src="/images/pages/rg350/gmenu2x_log2.png" /></p>
+<p>Una vez que en el log haya algo que mostrar aparecerá un lanzador nuevo de nombre <code>Log Viewer</code> (<code>Lector de Registros de sucesos</code> si tenemos el interfaz en español) donde podremos consultar la salida de error del proceso que se ha cerrado y con suerte obtener alguna pista sobre el motivo del cierre:</p>
+<p><img alt="GMenu2X log 3" src="/images/pages/rg350/gmenu2x_log3.png" /></p>
 <h4 id="particularidades-juegos">Particularidades juegos<a class="headerlink" href="#particularidades-juegos" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>Metal Gear Solid</strong> (PS): Desactivar HLE en el emulador y seleccionar BIOS <code>scph1001.bin</code> (instrucciones <a href="#bios-de-playstation">aquí</a>). Realmente este ajuste, aunque imprescindible para MGS y otros, es recomendable en general.</li>
