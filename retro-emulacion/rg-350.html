@@ -1653,6 +1653,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#por-que-salen-los-juegos-de-gbc-en-blanco-y-negro-en-gambatte" class="md-nav__link">
+    ¿Por qué salen los juegos de GBC en blanco y negro en Gambatte?
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2542,6 +2549,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#por-que-salen-los-juegos-de-gbc-en-blanco-y-negro-en-gambatte" class="md-nav__link">
+    ¿Por qué salen los juegos de GBC en blanco y negro en Gambatte?
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3137,6 +3151,13 @@
 <h4 id="en-los-juegos-de-playstation-en-formato-cuebin-que-archivos-tengo-que-copiar-a-la-consola">En los juegos de PlayStation en formato CUE+BIN ¿qué archivos tengo que copiar a la consola?<a class="headerlink" href="#en-los-juegos-de-playstation-en-formato-cuebin-que-archivos-tengo-que-copiar-a-la-consola" title="Permanent link">&para;</a></h4>
 <p>El <code>cue</code> no es necesario si el <code>bin</code> es único. Es decir si hay un <code>bin</code> y un <code>cue</code> con copiar el <code>bin</code> a la consola es suficiente. Si hay un <code>cue</code> y por ejemplo 8 <code>bin</code> (esto puede ocurrir en los juegos que tenían pistas de audio en el CD según cómo se haya hecho el dump) entonces sí interesa copiar el <code>cue</code> y lanza el juego desde él. En esos casos lo más recomendable es empaquetar todas las pistas en <code>pbp</code> que ocupa menos y es un sólo archivo. Si se utilizan los <code>cue+bin</code> en los lanzadores aparece varias veces el mismo nombre del juego repetido tantas como ficheros <code>cue</code> y <code>bin</code> tengamos (en el ejemplo anterior 1+8=9 veces).</p>
 <p>El <code>cue</code> es una especie de directorio de las pistas que contenía el disco. De hecho es un fichero de texto que se puede leer. Si se le da sólo un <code>bin</code> el emulador se adapta y entiende que es la única pista que tiene que usar y que lo contiene todo. Como curiosidad, si el juego es de los de varias pistas y se copia sólo el primer <code>bin</code> (que solía ser la pista que contenía el código del juego) también funciona, pero entonces el juego se ejecuta sin pistas de audio.</p>
+<h4 id="por-que-salen-los-juegos-de-gbc-en-blanco-y-negro-en-gambatte">¿Por qué salen los juegos de GBC en blanco y negro en Gambatte?<a class="headerlink" href="#por-que-salen-los-juegos-de-gbc-en-blanco-y-negro-en-gambatte" title="Permanent link">&para;</a></h4>
+<p>Algunos cartuchos de Game Boy eran mixtos, es decir servían tanto para la Game Boy original como la Color. Cuando el juego se insertaba en la consola correspondiente mostraba los gráficos adecuados. En Gambatte, al ser un mismo emulador para las dos máquinas, hay que seleccionar el tipo de máquina con que queremos ejecutar la ROM mixta. El ajuste está en <code>Settings &gt; System</code>. <code>Priority DMG</code> se corresponde con la Game Boy original y <code>Priority GBC</code> con la Game Boy Color. Así pues lo más recomendable es ajustar el segundo valor. Así los juegos de la Game Boy original (extensión <code>.gb</code> normalmente) se ejecutarán en blanco y negro y los de la Game Boy Color (extensión <code>.gbc</code> normalmente) en color:</p>
+<p><img alt="Gambatte settings 1" src="/images/pages/rg350/gambatte_settings1.png" />
+<img alt="Gambatte settings 2" src="/images/pages/rg350/gambatte_settings2.png" /></p>
+<p>Como tras hacer este cambio tenemos que reiniciar el emulador, hay que hacer que el nuevo valor sea el predeterminado seleccionando <code>Save as default</code> y luego confirmando:</p>
+<p><img alt="Gambatte settings 3" src="/images/pages/rg350/gambatte_settings3.png" />
+<img alt="Gambatte settings 4" src="/images/pages/rg350/gambatte_settings4.png" /></p>
 <h2 id="opciones-para-actualizar-el-firmware-rg350-rogue-cfw">Opciones para actualizar el firmware RG350-ROGUE-CFW<a class="headerlink" href="#opciones-para-actualizar-el-firmware-rg350-rogue-cfw" title="Permanent link">&para;</a></h2>
 <p>Entre los assents de cada <a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/releases">release</a> encontramos tres opciones:</p>
 <ol>
