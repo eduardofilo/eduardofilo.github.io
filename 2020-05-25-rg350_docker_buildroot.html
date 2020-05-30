@@ -461,8 +461,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#operacion-de-buildroot" class="md-nav__link">
-    Operación de Buildroot
+  <a href="#operacion-general-de-buildroot" class="md-nav__link">
+    Operación general de Buildroot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacion-particular-de-la-distribucion-buildroot-para-rg350" class="md-nav__link">
+    Operación particular de la distribución Buildroot para RG350
   </a>
   
 </li>
@@ -1987,8 +1994,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#operacion-de-buildroot" class="md-nav__link">
-    Operación de Buildroot
+  <a href="#operacion-general-de-buildroot" class="md-nav__link">
+    Operación general de Buildroot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacion-particular-de-la-distribucion-buildroot-para-rg350" class="md-nav__link">
+    Operación particular de la distribución Buildroot para RG350
   </a>
   
 </li>
@@ -2074,37 +2088,43 @@ $ docker build -t eduardofilo/rg350_buildroot .
 <div class="highlight"><pre><span></span><code>$ docker start RG350_buildroot
 </code></pre></div>
 
-<h2 id="operacion-de-buildroot">Operación de Buildroot<a class="headerlink" href="#operacion-de-buildroot" title="Permanent link">&para;</a></h2>
-<p>Una vez que tenemos preparado el entorno podremos realizar las tareas y compilaciones previstas en el mismo. Por ejemplo en el entorno preparado por <a href="https://github.com/tonyjih/RG350_buildroot">Tonyjih</a> vemos que podemos realizar las siguientes cosas (las líneas de terminal siguientes están precedidas por <code>#</code> y no por <code>$</code> como antes porque se refieren al terminal dentro del contenedor, que se ejecuta con el usuario root del mismo):</p>
-<ul>
-<li>
-<p><strong>OPCIONAL</strong>. Para personalizar alguna opción de Buildroot, utilizar uno de los dos comandos siguientes (sólo uno):</p>
+<h2 id="operacion-general-de-buildroot">Operación general de Buildroot<a class="headerlink" href="#operacion-general-de-buildroot" title="Permanent link">&para;</a></h2>
+<p>Buildroot tiene su propia estructura y formas de operación. Vamos a empezar describiendo por encima el entorno y algunas operaciones habituales o interesantes.</p>
+<p>Buildroot se puede describir de forma resumida como un toolchain de compilación cruzada unido a un gran número de paquetes que en conjunto pueden constituir un sistema Linux completo, habitualmente para un sistema embebido. La lista de paquetes que contiene Buildroot podemos encontrarla en el directorio <a href="https://github.com/tonyjih/RG350_buildroot/tree/opendingux-2014.08/package">package</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>A partir de este punto veremos que las líneas de terminal están precedidas por <code>#</code> y no por <code>$</code> como antes porque se refieren al terminal dentro del contenedor Docker, que se ejecuta con el usuario root del mismo.</p>
+</div>
+<p>Antes de empezar cargamos la configuración para la RG350 de las <a href="https://github.com/tonyjih/RG350_buildroot/tree/opendingux-2014.08/configs">múltiples que trae Buildroot de serie</a>:</p>
+<div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
+# make rg350_defconfig BR2_EXTERNAL=board/opendingux
+</code></pre></div>
+
+<p>Si ahora queremos respasar o cambiar algo de esta configuración lo haremos por medio de una herramienta similar a la que se utiliza para configurar un kernel Linux antes de compilarlo. Para ello utilizaremos uno de los dos comandos siguientes (sólo uno):</p>
 <div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
 # make menuconfig
 # make nconfig
 </code></pre></div>
 
-</li>
-<li>
-<p>Configurar Buildroot (sólo es necesario la primera vez):</p>
-<div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
-# make rg350_defconfig BR2_EXTERNAL=board/opendingux
-</code></pre></div>
-
-</li>
-<li>
-<p>Compilar el toolchain (sólo es necesario una vez; el resultado queda en el directorio <code>~/git/RG350_buildroot/output/host/usr/bin</code>; por ejemplo el compilador y linker es <code>mipsel-gcw0-linux-uclibc-gcc</code>; tarda 1h50m en un Intel i3-4005U y genera unos 3GBs de archivos):</p>
-<div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
-# export BR2_JLEVEL=0
-# make toolchain
-</code></pre></div>
-
-</li>
+<p>A continuación describimos algunas operaciones que podemos realizar:</p>
+<ul>
 <li>
 <p>Compilar una librería o paquete. Por ejemplo para compilar SDL y SDL_Image:</p>
 <div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
 # export BR2_JLEVEL=0
 # make sdl sdl_image
+</code></pre></div>
+
+</li>
+</ul>
+<h2 id="operacion-particular-de-la-distribucion-buildroot-para-rg350">Operación particular de la distribución Buildroot para RG350<a class="headerlink" href="#operacion-particular-de-la-distribucion-buildroot-para-rg350" title="Permanent link">&para;</a></h2>
+<p>Una vez que tenemos preparado el entorno podremos realizar las tareas y compilaciones previstas en el mismo. Por ejemplo en el entorno preparado por <a href="https://github.com/tonyjih/RG350_buildroot">Tonyjih</a> vemos que podemos realizar las siguientes cosas:</p>
+<ul>
+<li>
+<p>Compilar el toolchain (sólo es necesario una vez; el resultado queda en el directorio <code>~/git/RG350_buildroot/output/host/usr/bin</code>; por ejemplo el compilador y linker es <code>mipsel-gcw0-linux-uclibc-gcc</code>; tarda 1h50m en un Intel i3-4005U y genera unos 3GBs de archivos):</p>
+<div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
+# export BR2_JLEVEL=0
+# make toolchain
 </code></pre></div>
 
 </li>

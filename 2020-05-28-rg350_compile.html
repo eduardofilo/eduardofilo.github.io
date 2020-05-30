@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#tetris-clone-for-the-rg350" tabindex="0" class="md-skip">
+      <a href="#invoker" tabindex="0" class="md-skip">
         Saltar a contenido
       </a>
     
@@ -1932,6 +1932,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#invoker" class="md-nav__link">
+    invoker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tetris-clone-for-the-rg350" class="md-nav__link">
     Tetris Clone for the RG350
   </a>
@@ -1962,7 +1969,7 @@
                 <p><img alt="OpenDingux logo" src="/images/posts/rg350_compile/logo.png" /></p>
 <p>En el <a href="/2020-05-25-rg350_docker_buildroot.html">post anterior</a> vimos cómo construir un entorno para hacer compilación cruzada para el procesador y el sistema operativo de la RG350. En este post separado vamos a ver cómo utilizar el entorno anterior para compilar algunos programas.</p>
 <p>Aclarar que este entorno es necesario para compilar código en C y C++ que es el habitual en sistemas embebidos Linux. Puede haber programas pensados para la RG350 que estén programados en otros lenguajes. Por ejemplo el frontend PyMenu está programado en Python. En ese caso no necesitamos un compilador; en todo caso algunas herramientas como el empaquetador de OPK para montar el instalador de PyMenu, pero no el compilador.</p>
-<p>Por supuesto el toolchain será imprescindible para construir una imagen completa para la consola. En el <a href="/2020-05-25-rg350_docker_buildroot.html">post anterior</a> ya se relataron los pasos para realizar esta operación. En este artículo vamos a centrarnos en la compilación de aplicaciones, ya que tiene su propia complejidad. Uno de los problemas del ambiente C es que existen multitud de gestores de proyectos y de compilación. Aquí vamos a ver algunos ejemplos habituales.</p>
+<p>Por supuesto el toolchain será imprescindible para construir una imagen completa para la consola. En el <a href="/2020-05-25-rg350_docker_buildroot.html">post anterior</a> ya se relataron los pasos para realizar esta operación. En este artículo vamos a centrarnos en la compilación de aplicaciones, ya que tiene su propia complejidad. Uno de los problemas del ambiente C es que existen multitud de gestores de proyectos y de compilación, por lo que será habitual que cada aplicación se compile de una forma particular. Aquí vamos a ver algunos ejemplos habituales.</p>
 <p>En el <a href="/2020-05-25-rg350_docker_buildroot.html">post anterior</a> se comenta que el toolchain, una vez compilado queda en el directorio <code>~/git/RG350_buildroot/output/host/usr/bin</code>. Si listamos el contenido de ese directorio veremos muchos binarios y otros tantos enlaces simbólicos para que algunos de los binarios tengan nombres habituales. Uno de los más importantes es el binario <code>toolchain-wrapper</code> que adopta múltiples nombres a través de los enlaces simbólicos:</p>
 <div class="highlight"><pre><span></span><code>$ ls -l |fgrep toolchain-wrapper
 lrwxrwxrwx 1 root root      17 may 29 00:19 mipsel-gcw0-linux-uclibc-c++ -&gt; toolchain-wrapper
@@ -1980,8 +1987,52 @@ lrwxrwxrwx 1 root root      17 may 29 00:19 mipsel-linux-gcc-5.4.0 -&gt; toolcha
 -rwxr-xr-x 1 root root   14808 may 29 00:19 toolchain-wrapper
 </code></pre></div>
 
-<p>Como vemos todos los nombres habituales del compilador de C y C++ para Linux sobre arquitectura MIPS.</p>
+<p>Como vemos, encontramos ahí todos los nombres habituales del compilador de C y C++ para Linux sobre arquitectura MIPS.</p>
 <p>Veamos pues algunos ejemplos de compilación de distintos programas.</p>
+<h2 id="invoker">invoker<a class="headerlink" href="#invoker" title="Permanent link">&para;</a></h2>
+<p>Se trata de un pequeño programa utilizado por el frontend SimpleMenu para ejecutar los emuladores.
+El código de invoker se encuentra en <a href="https://github.com/fgl82/invoker">este repositorio</a>. Al ser un programa muy pequeño y simple resulta muy educativo. Vamos a ver cómo compilarlo con nuestro recien construido toolchain paso a paso:</p>
+<ol>
+<li>
+<p>Bajamos el código dentro del directorio <code>git</code> de la máquina host que es el que tenemos conectado con el contenedor:</p>
+<div class="highlight"><pre><span></span><code>$ cd ~/git
+$ git clone https://github.com/fgl82/invoker.git
+</code></pre></div>
+
+</li>
+<li>
+<p>Editamos el fichero <code>/git/invoker/invoker/Makefile</code>. Cambiamos el parámetro <code>PLATFORM</code> en las primeras lineas para que sea <code>RG-350</code> y corregimos la ruta del compilador de nuestro toolchain en la linea 16:</p>
+<div class="highlight"><pre><span></span><code>...
+else ifeq ($(PLATFORM), RG-350)
+  CC = /root/git/RG350_buildroot/output/host/usr/bin/mipsel-gcw0-linux-uclibc-gcc
+...
+</code></pre></div>
+
+</li>
+<li>
+<p>Conectamos con el contenedor:</p>
+<div class="highlight"><pre><span></span><code>$ docker start RG350_buildroot
+$ docker exec -it RG350_buildroot /bin/bash
+</code></pre></div>
+
+</li>
+<li>
+<p>Compilamos:</p>
+<div class="highlight"><pre><span></span><code># cd ~/git/invoker/invoker
+# make
+</code></pre></div>
+
+</li>
+</ol>
+<p>Veremos los mensajes del compilador y al terminar encontraremos dos nuevos binarios:</p>
+<div class="highlight"><pre><span></span><code>root@18c6ecd1a610:~/git/invoker/invoker# ls -ltr
+total <span class="m">36</span>
+-rw-rw-r-- <span class="m">1</span> <span class="m">1000</span> <span class="m">1000</span>  <span class="m">4844</span> May <span class="m">30</span> <span class="m">20</span>:21 invoker.c
+-rw-rw-r-- <span class="m">1</span> <span class="m">1000</span> <span class="m">1000</span>  <span class="m">1685</span> May <span class="m">30</span> <span class="m">20</span>:27 Makefile
+-rw-r--r-- <span class="m">1</span> root root <span class="m">14368</span> May <span class="m">30</span> <span class="m">20</span>:28 invoker.o
+-rwxr-xr-x <span class="m">1</span> root root  <span class="m">5484</span> May <span class="m">30</span> <span class="m">20</span>:28 invoker.dge
+</code></pre></div>
+
 <h2 id="tetris-clone-for-the-rg350">Tetris Clone for the RG350<a class="headerlink" href="#tetris-clone-for-the-rg350" title="Permanent link">&para;</a></h2>
 <p>Empezamos con un port de un juego. El código podemos encontrarlo <a href="https://github.com/eduardofilo/tetris_rg350">aquí</a>. Analizando los ficheros vemos que el proyecto es de tipo <a href="https://cmake.org/">CMake</a>.</p>
 <p>Conectamos con el contenedor que contiene el toolchain:</p>
