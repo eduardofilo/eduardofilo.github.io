@@ -2166,6 +2166,13 @@ $ docker build -t eduardofilo/rg350_buildroot .
 </code></pre></div>
 
 </li>
+<li>
+<p>Generación de un OPK update para ejecutarse directamente sobre el sistema anterior (el fichero con el OPK resultante queda en <code>~/git/RG350_buildroot/output/images/rg350-update-&lt;fecha&gt;.opk</code>):</p>
+<div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
+# board/opendingux/gcw0/make_upgrade.sh
+</code></pre></div>
+
+</li>
 </ul>
 <h2 id="comandos-para-gestionar-contenedores">Comandos para gestionar contenedores<a class="headerlink" href="#comandos-para-gestionar-contenedores" title="Permanent link">&para;</a></h2>
 <p>Por último se comentan a continuación a modo de cheatsheet unos pocos comandos útiles para gestionar el contenedor que acabamos de crear:</p>
