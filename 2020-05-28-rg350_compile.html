@@ -1991,7 +1991,7 @@ lrwxrwxrwx 1 root root      17 may 29 00:19 mipsel-linux-gcc-5.4.0 -&gt; toolcha
 <p>Veamos pues algunos ejemplos de compilación de distintos programas.</p>
 <h2 id="invoker">invoker<a class="headerlink" href="#invoker" title="Permanent link">&para;</a></h2>
 <p>Se trata de un pequeño programa utilizado por el frontend SimpleMenu para ejecutar los emuladores.
-El código de invoker se encuentra en <a href="https://github.com/fgl82/invoker">este repositorio</a>. Al ser un programa muy pequeño y simple resulta muy educativo. Vamos a ver cómo compilarlo con nuestro recien construido toolchain paso a paso:</p>
+El código de invoker se encuentra en <a href="https://github.com/fgl82/invoker">este repositorio</a>. Al ser un programa muy pequeño y simple resulta muy educativo. No tiene dependencias con ninguno de los paquetes de Buildroot por lo que no será necesario compilar antes ninguno de ellos, tan sólo el toolchain. Vamos a ver cómo compilarlo con nuestro recien construido toolchain paso a paso:</p>
 <ol>
 <li>
 <p>Bajamos el código dentro del directorio <code>git</code> de la máquina host que es el que tenemos conectado con el contenedor:</p>
@@ -2034,29 +2034,17 @@ total <span class="m">36</span>
 </code></pre></div>
 
 <h2 id="tetris-clone-for-the-rg350">Tetris Clone for the RG350<a class="headerlink" href="#tetris-clone-for-the-rg350" title="Permanent link">&para;</a></h2>
-<p>Empezamos con un port de un juego. El código podemos encontrarlo <a href="https://github.com/eduardofilo/tetris_rg350">aquí</a>. Analizando los ficheros vemos que el proyecto es de tipo <a href="https://cmake.org/">CMake</a>.</p>
-<p>Conectamos con el contenedor que contiene el toolchain:</p>
+<p>Continuamos con un port de un juego. El código podemos encontrarlo <a href="https://github.com/eduardofilo/tetris_rg350">aquí</a>. Analizando los ficheros vemos que el proyecto es de tipo <a href="https://cmake.org/">CMake</a>. Vamos a ver cómo se podría compilar:</p>
+<ol>
+<li>
+<p>Bajamos el código:</p>
 <div class="highlight"><pre><span></span><code>$ cd ~/git
 $ git clone https://github.com/eduardofilo/tetris_rg350.git
-$ docker start RG350_buildroot
-$ docker exec -it RG350_buildroot /bin/bash
 </code></pre></div>
 
-<p>El programa tiene 4 módulos como dependencias, así que los tenemos que compilar previamente. Si es la primera vez tardará bastante:</p>
-<div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
-# export BR2_JLEVEL=0
-# make sdl2 sdl2_image sdl2_mixer sdl2_ttf
-</code></pre></div>
-
-<p>Editamos fichero <code>~/git/tetris_rg350/CMakeLists.txt</code> para ajustar las rutas del toolchain sustituyendo esto:</p>
-<div class="highlight"><pre><span></span><code>SET(CMAKE_C_COMPILER   &quot;/opt/gcw0-toolchain/usr/bin/mipsel-gcw0-linux-uclibc-gcc&quot;)
-SET(CMAKE_CXX_COMPILER &quot;/opt/gcw0-toolchain/usr/bin/mipsel-gcw0-linux-uclibc-g++&quot;)
-SET(CMAKE_RANLIB &quot;/opt/gcw0-toolchain/usr/bin/mipsel-gcw0-linux-uclibc-ranlib&quot;)
-SET(CMAKE_LINKER &quot;/opt/gcw0-toolchain/usr/bin/mipsel-gcw0-linux-uclibc-ld&quot;)
-SET(CMAKE_FIND_ROOT_PATH  /opt/gcw0-toolchain/usr/mipsel-gcw0-linux-uclibc/sysroot)
-</code></pre></div>
-
-<p>por esto otro:</p>
+</li>
+<li>
+<p>Editamos fichero <code>~/git/tetris_rg350/CMakeLists.txt</code> para ajustar las rutas del toolchain de esta forma:</p>
 <div class="highlight"><pre><span></span><code>SET(CMAKE_C_COMPILER   &quot;/root/git/RG350_buildroot/output/host/usr/bin/mipsel-gcw0-linux-uclibc-gcc&quot;)
 SET(CMAKE_CXX_COMPILER &quot;/root/git/RG350_buildroot/output/host/usr/bin/mipsel-gcw0-linux-uclibc-g++&quot;)
 SET(CMAKE_RANLIB &quot;/root/git/RG350_buildroot/output/host/usr/bin/mipsel-gcw0-linux-uclibc-ranlib&quot;)
@@ -2064,15 +2052,36 @@ SET(CMAKE_LINKER &quot;/root/git/RG350_buildroot/output/host/usr/bin/mipsel-gcw0
 SET(CMAKE_FIND_ROOT_PATH  /root/git/RG350_buildroot/output/host/usr/mipsel-gcw0-linux-uclibc/sysroot)
 </code></pre></div>
 
-<p>La forma en la que están construidos los ficheros CMakeLists.txt exige que la versión de cmake a utilizar sea igual o superior a la 3.13, pero nosotros tenemos 3.7. Por tanto es necesario hacer modificaciones en los CMakeLists.txt. Comentamos la última línea del fichero <code>~/git/tetris_rg350/CMakeLists.txt</code>:</p>
+</li>
+<li>
+<p>La forma en la que están construidos los ficheros <code>CMakeLists.txt</code> exige que la versión de cmake a utilizar sea igual o superior a la 3.13, pero nosotros tenemos 3.7. Por tanto es necesario hacer modificaciones en los <code>CMakeLists.txt</code>. Comentamos la última línea del fichero <code>~/git/tetris_rg350/CMakeLists.txt</code>:</p>
 <div class="highlight"><pre><span></span><code>#install(TARGETS tetris RUNTIME DESTINATION ${BIN_DIR} )
 </code></pre></div>
 
-<p>y descomentamos la última linea del <code>~/git/tetris_rg350/src/CMakeLists.txt</code>:</p>
+</li>
+<li>
+<p>Y descomentamos la última linea del <code>~/git/tetris_rg350/src/CMakeLists.txt</code>:</p>
 <div class="highlight"><pre><span></span><code>install(TARGETS tetris RUNTIME DESTINATION ${BIN_DIR} )
 </code></pre></div>
 
-<p>Compilamos:</p>
+</li>
+<li>
+<p>Conectamos con el contenedor que contiene el toolchain:</p>
+<div class="highlight"><pre><span></span><code>$ docker start RG350_buildroot
+$ docker exec -it RG350_buildroot /bin/bash
+</code></pre></div>
+
+</li>
+<li>
+<p>El programa tiene 4 paquetes como dependencias, así que los tenemos que compilar previamente. Si es la primera vez tardará bastante:</p>
+<div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
+# export BR2_JLEVEL=0
+# make sdl2 sdl2_image sdl2_mixer sdl2_ttf
+</code></pre></div>
+
+</li>
+<li>
+<p>Finalmente compilamos el programa (el binario resultante de la compilación queda en <code>~/git/tetris_rg350/build/tetris</code>):</p>
 <div class="highlight"><pre><span></span><code># cd ~/git/tetris_rg350
 # mkdir bin
 # cd ~/git/tetris_rg350/build
@@ -2080,7 +2089,16 @@ SET(CMAKE_FIND_ROOT_PATH  /root/git/RG350_buildroot/output/host/usr/mipsel-gcw0-
 # make
 </code></pre></div>
 
-<p>El binario resultante de la compilación queda en <code>~/git/tetris_rg350/build/tetris</code>.</p>
+</li>
+<li>
+<p>Sólo queda empaquetar el binario y sus recursos (gráficos, sonidos, fichero <code>.desktop</code> para el lanzador, etc.). Existe un pequeño script que lo hace por nosotros, así que lo utilizamos:</p>
+<div class="highlight"><pre><span></span><code># cd ~/git/tetris_rg350/build
+# ./make_opk.sh
+</code></pre></div>
+
+</li>
+</ol>
+<p>Si todo ha ido bien el OPK resultante se encontrará en <code>~/git/tetris_rg350/build/tetris.opk</code>. Comentar que por ejemplo el OPK compilado de esta forma no es operativo en ROGUE (seguramente por las diferencias en las versiones de las librerías SDL). Sin embargo en la imagen de sistema compilada con este mismo Buildroot funciona correctamente.</p>
                 
                   
                 
