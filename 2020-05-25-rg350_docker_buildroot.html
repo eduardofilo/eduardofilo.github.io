@@ -2106,28 +2106,52 @@ $ docker build -t eduardofilo/rg350_buildroot .
 # make nconfig
 </code></pre></div>
 
-<p>A continuación describimos algunas operaciones que podemos realizar:</p>
-<ul>
-<li>
-<p>Compilar una librería o paquete. Por ejemplo para compilar SDL y SDL_Image:</p>
-<div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
-# export BR2_JLEVEL=0
-# make sdl sdl_image
+<p>Antes de empezar a compilar cosas vamos a definir la siguiente variable de entorno que permitirá la compilación en paralelo:</p>
+<div class="highlight"><pre><span></span><code># export BR2_JLEVEL=0
 </code></pre></div>
 
-</li>
-</ul>
+<p>A continuación describimos algunas operaciones que podemos realizar:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Comando</th>
+<th align="left">Efecto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>make clean</code></td>
+<td align="left">Borra todos los ficheros generados en la compilación</td>
+</tr>
+<tr>
+<td align="left"><code>make toolchain</code></td>
+<td align="left">Genera el toolchain de compilación cruzada. El resultado queda en el directorio <code>~/git/RG350_buildroot/output/host/usr/bin</code>; tarda 1h50m en un Intel i3-4005U y genera unos 3GBs de archivos</td>
+</tr>
+<tr>
+<td align="left"><code>make &lt;paquete&gt;</code></td>
+<td align="left">Compila el paquete (de la <a href="https://github.com/tonyjih/RG350_buildroot/tree/opendingux-2014.08/package">lista de paquetes de la distribición</a>)</td>
+</tr>
+<tr>
+<td align="left"><code>make &lt;package&gt;-rebuild</code></td>
+<td align="left">Fuerza la recompilación del paquete</td>
+</tr>
+<tr>
+<td align="left"><code>make &lt;package&gt;-reconfigure</code></td>
+<td align="left">Fuerza la reconfiguración del paquete</td>
+</tr>
+<tr>
+<td align="left"><code>make &lt;package&gt;-graph-depends</code></td>
+<td align="left">Genera un gráfico del árbol de dependencias del paquete</td>
+</tr>
+<tr>
+<td align="left"><code>make all</code></td>
+<td align="left">Compila la distribución completa</td>
+</tr>
+</tbody>
+</table>
 <h2 id="operacion-particular-de-la-distribucion-buildroot-para-rg350">Operación particular de la distribución Buildroot para RG350<a class="headerlink" href="#operacion-particular-de-la-distribucion-buildroot-para-rg350" title="Permanent link">&para;</a></h2>
 <p>Una vez que tenemos preparado el entorno podremos realizar las tareas y compilaciones previstas en el mismo. Por ejemplo en el entorno preparado por <a href="https://github.com/tonyjih/RG350_buildroot">Tonyjih</a> vemos que podemos realizar las siguientes cosas:</p>
 <ul>
-<li>
-<p>Compilar el toolchain (sólo es necesario una vez; el resultado queda en el directorio <code>~/git/RG350_buildroot/output/host/usr/bin</code>; por ejemplo el compilador y linker es <code>mipsel-gcw0-linux-uclibc-gcc</code>; tarda 1h50m en un Intel i3-4005U y genera unos 3GBs de archivos):</p>
-<div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
-# export BR2_JLEVEL=0
-# make toolchain
-</code></pre></div>
-
-</li>
 <li>
 <p>Si se quiere que la imagen incluya emuladores y aplicaciones, ejecutar antes lo siguiente (sólo es necesario hacerlo una vez):</p>
 <div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
