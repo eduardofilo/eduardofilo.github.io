@@ -469,6 +469,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dinguxcmdr" class="md-nav__link">
+    DinguxCmdr
+  </a>
+  
+</li>
+      
       
       
       
@@ -2000,6 +2007,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dinguxcmdr" class="md-nav__link">
+    DinguxCmdr
+  </a>
+  
+</li>
+      
       
       
       
@@ -2046,7 +2060,7 @@ lrwxrwxrwx 1 root root      17 may 29 00:19 mipsel-linux-gcc-5.4.0 -&gt; toolcha
 <p>Veamos pues algunos ejemplos de compilación de distintos programas.</p>
 <h2 id="invoker">invoker<a class="headerlink" href="#invoker" title="Permanent link">&para;</a></h2>
 <p>Se trata de un pequeño programa utilizado por el frontend SimpleMenu para ejecutar los emuladores.
-El código de invoker se encuentra en <a href="https://github.com/fgl82/invoker">este repositorio</a>. Al ser un programa muy pequeño y simple resulta muy educativo. No tiene dependencias con ninguno de los paquetes de Buildroot por lo que no será necesario compilar antes ninguno de ellos, tan sólo el toolchain. Vamos a ver cómo compilarlo con nuestro recien construido toolchain paso a paso:</p>
+El código de invoker se encuentra en <a href="https://github.com/fgl82/invoker">este repositorio</a>. Analizando los ficheros vemos que el proyecto tiene ya hecho un sencillo Makefile. Al ser un programa muy pequeño y simple resulta muy educativo. Tampoco tiene dependencias con ninguno de los paquetes de Buildroot por lo que no será necesario compilar antes ninguno de ellos, tan sólo el toolchain. Vamos a ver cómo compilarlo con nuestro recien construido toolchain paso a paso:</p>
 <ol>
 <li>
 <p>Bajamos el código dentro del directorio <code>git</code> de la máquina host que es el que tenemos conectado con el contenedor:</p>
@@ -2154,6 +2168,38 @@ $ docker exec -it RG350_buildroot /bin/bash
 </li>
 </ol>
 <p>Si todo ha ido bien el OPK resultante se encontrará en <code>~/git/tetris_rg350/build/tetris.opk</code>. Comentar que por ejemplo el OPK compilado de esta forma no es operativo en ROGUE (seguramente por las diferencias en las versiones de las librerías SDL). Sin embargo en la imagen de sistema compilada con este mismo Buildroot funciona correctamente.</p>
+<h2 id="dinguxcmdr">DinguxCmdr<a class="headerlink" href="#dinguxcmdr" title="Permanent link">&para;</a></h2>
+<p>En esta ocasión vamos a compilar una aplicación de uso frecuente, el DinguxCommander o DinguxCmdr. Las fuentes las podemos encontrar en <a href="https://github.com/od-contrib/commander">este repositorio</a>. Analizando su contenido vemos que ofrece un script para automatizar la compilación, aunque internamente se trata de un proyecto de tipo <a href="https://cmake.org/">CMake</a>. El procedimiento para compilarlo es:</p>
+<ol>
+<li>
+<p>Bajamos el código:</p>
+<div class="highlight"><pre><span></span><code>$ cd ~/git
+$ git clone https://github.com/od-contrib/commander.git
+</code></pre></div>
+
+</li>
+<li>
+<p>Conectamos con el contenedor que contiene el toolchain:</p>
+<div class="highlight"><pre><span></span><code>$ docker start RG350_buildroot
+$ docker exec -it RG350_buildroot /bin/bash
+</code></pre></div>
+
+</li>
+<li>
+<p>Definimos la variable de entorno que servirá para localizar el toolchain de nuestro Buildroot:</p>
+<div class="highlight"><pre><span></span><code># export UILDROOT=/root/git/RG350_buildroot
+</code></pre></div>
+
+</li>
+<li>
+<p>Ejecutamos el script indicando la plataforma de destino:</p>
+<div class="highlight"><pre><span></span><code># cd ~/git/commander
+# ./build.sh rg350
+</code></pre></div>
+
+</li>
+</ol>
+<p>Tras terminar encontraremos el OPK en <code>~/git/commander/build-rg350/commander-rg350.opk</code>. Al igual que ocurre con <a href="">Tetris Clone for the RG350</a> el OPK no es operativo en ROGUE. Sin embargo en la imagen de sistema compilada con este mismo Buildroot funciona correctamente.</p>
                 
                   
                 
