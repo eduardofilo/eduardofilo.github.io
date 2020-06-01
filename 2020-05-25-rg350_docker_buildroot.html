@@ -2285,6 +2285,10 @@ $ docker run -it -v ~/git:/root/git --name RG350_buster_buildroot eduardofilo/rg
 </li>
 </ol>
 <p>Tras todo esto encontraremos la imagen completa compilada en <code>~/git/buildroot-rg350-old-kernel/output/images/od-imager/images/sd_image.bin</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>A la hora de compilar esta distribución Buildroot, no estaba disponible el paquete <code>libpng14</code>. La URL principal de descarga producía timeout en la conexión y las secundarias no existían. La solución fue bajar el paquete por nuestra cuenta, colocarlo en el directorio <code>~/git/buildroot-rg350-old-kernel/dl/libpng14</code> y volver a compilar. El paquete se puede encontrar por ejemplo <a href="https://sourceforge.net/projects/libpng/files/libpng14/1.4.22/libpng-1.4.22.tar.xz/download">aquí</a>.</p>
+</div>
 <h2 id="comandos-para-gestionar-contenedores">Comandos para gestionar contenedores<a class="headerlink" href="#comandos-para-gestionar-contenedores" title="Permanent link">&para;</a></h2>
 <p>Por último se comentan a continuación a modo de cheatsheet unos pocos comandos útiles para gestionar el contenedor que acabamos de crear:</p>
 <table>
