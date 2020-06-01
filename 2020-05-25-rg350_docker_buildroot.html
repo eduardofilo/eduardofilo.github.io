@@ -2299,7 +2299,8 @@ $ docker run -it -v ~/git:/root/git --name RG350_buster_buildroot eduardofilo/rg
 </li>
 </ol>
 <p>El script <code>make_initial_image.sh</code> tiene el mismo problema que comentábamos al final del apartado anterior con la distribución Tonyjih. Además falla por tener un patrón de target doble:</p>
-<div class="highlight"><pre><span></span><code>root@04084426cffe:~/git/buildroot-rg350-old-kernel# make rg350_defconfig BR2_EXTERNAL=board/opendingux:opks
+<div class="highlight"><pre><span></span><code># cd ~/git/buildroot-rg350-old-kernel
+# make rg350_defconfig BR2_EXTERNAL=board/opendingux:opks
 Makefile:184: *** multiple target patterns.  Stop.
 </code></pre></div>
 
