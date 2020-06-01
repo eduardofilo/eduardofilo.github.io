@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#procedimiento-para-crear-el-contenedor" tabindex="0" class="md-skip">
+      <a href="#eleccion-de-distribucion-buildroot" tabindex="0" class="md-skip">
         Saltar a contenido
       </a>
     
@@ -468,6 +468,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#eleccion-de-distribucion-buildroot" class="md-nav__link">
+    Elección de distribución Buildroot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#procedimiento-para-crear-el-contenedor" class="md-nav__link">
     Procedimiento para crear el contenedor
   </a>
@@ -484,6 +491,13 @@
         <li class="md-nav__item">
   <a href="#operacion-particular-de-la-distribucion-buildroot-para-rg350" class="md-nav__link">
     Operación particular de la distribución Buildroot para RG350
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compilacion-de-distribucion-od-contrib" class="md-nav__link">
+    Compilación de distribución od-contrib
   </a>
   
 </li>
@@ -2001,6 +2015,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#eleccion-de-distribucion-buildroot" class="md-nav__link">
+    Elección de distribución Buildroot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#procedimiento-para-crear-el-contenedor" class="md-nav__link">
     Procedimiento para crear el contenedor
   </a>
@@ -2017,6 +2038,13 @@
         <li class="md-nav__item">
   <a href="#operacion-particular-de-la-distribucion-buildroot-para-rg350" class="md-nav__link">
     Operación particular de la distribución Buildroot para RG350
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compilacion-de-distribucion-od-contrib" class="md-nav__link">
+    Compilación de distribución od-contrib
   </a>
   
 </li>
@@ -2050,10 +2078,10 @@
                   <h1>2020-05-25 RG350 Docker Buildroot</h1>
                 
                 <p><img alt="Buildroot logo" src="/images/posts/buildroot/logo.png" /></p>
-<p>La distribución del sistema operativo OpenDingux de la RG350 está basado en <a href="https://buildroot.org/">Buildroot</a>. Para compilarlo se recomienda utilizar una instalación Debian Stretch. Si no es el sistema que tenemos en nuestra máquina (bien por usar Windows o Mac o por tener otra distribución Linux), y no queremos o podemos instalar toda una máquina virtual para disponer de un entorno Debian Stretch, existe la posibilidad de encapsularlo en un contenedor Docker.</p>
-<p>El procedimiento que se muestra a continuación está hecho sobre un Linux Ubuntu 20.04, pero no debería ser complicado adaptarlo para poder realizarse sobre Windows o Mac.</p>
-<h2 id="procedimiento-para-crear-el-contenedor">Procedimiento para crear el contenedor<a class="headerlink" href="#procedimiento-para-crear-el-contenedor" title="Permanent link">&para;</a></h2>
-<p>Nos interesa utilizar Docker únicamente para encapsular las dependencias que tiene la versión de Buildroot que vamos a utilizar. El código del mismo y el resultado de la compilación queremos que se mantenga desde la máquina host (la máquina que aloja el contenedor). Para ello vamos a empezar bajando la distribución Buildroot de la RG350. Existen varias de estas distribuciones. A continuación se muestra un pequeño listado:</p>
+<p>La distribución del sistema operativo OpenDingux de la RG350 está basado en <a href="https://buildroot.org/">Buildroot</a>. Para compilarlo se recomienda utilizar una instalación Debian Stretch o Buster (según la versión de Buildroot en que esté basado). Si no es el sistema que tenemos en nuestra máquina (bien por usar Windows o Mac o por tener otra distribución Linux), y no queremos o podemos instalar una pesada máquina virtual para disponer del entorno adecuado, existe la posibilidad de encapsularlo en un contenedor Docker.</p>
+<p>El procedimiento que se muestra a continuación está hecho sobre un Linux Ubuntu 20.04, pero no debería ser complicado de adaptar para poder realizarse sobre Windows o Mac.</p>
+<h2 id="eleccion-de-distribucion-buildroot">Elección de distribución Buildroot<a class="headerlink" href="#eleccion-de-distribucion-buildroot" title="Permanent link">&para;</a></h2>
+<p>Existen varias distribuciones Buildroot para RG350. A continuación se listan algunas:</p>
 <table>
 <thead>
 <tr>
@@ -2075,12 +2103,12 @@
 </tr>
 <tr>
 <td align="left"><a href="https://github.com/tonyjih/RG350_buildroot">Tonyjih</a></td>
-<td align="left">Docker <a href="https://hub.docker.com/r/eduardofilo/rg350_buildroot">eduardofilo/rg350_buildroot</a></td>
+<td align="left">Debian Stretch; Docker <a href="https://hub.docker.com/r/eduardofilo/rg350_buildroot">eduardofilo/rg350_buildroot</a></td>
 <td align="left">Buildroot en el que se bajan muchos</td>
 </tr>
 <tr>
 <td align="left"><a href="https://github.com/Ninoh-FOX/toolchain">Ninoh-FOX</a></td>
-<td align="left"></td>
+<td align="left">Debian Stretch</td>
 <td align="left">ROGUE CFW</td>
 </tr>
 <tr>
@@ -2090,13 +2118,13 @@
 </tr>
 <tr>
 <td align="left"><a href="https://github.com/soarqin/RG350_buildroot">soarquin</a></td>
-<td align="left">Docker <a href="https://hub.docker.com/r/soarqin/rg350_toolchain">soarqin/rg350_toolchain</a></td>
+<td align="left">CentOS 7; Docker <a href="https://hub.docker.com/r/soarqin/rg350_toolchain">soarqin/rg350_toolchain</a></td>
 <td align="left"></td>
 </tr>
 <tr>
 <td align="left"><a href="https://github.com/od-contrib/buildroot-rg350-old-kernel">od-contrib</a></td>
-<td align="left"></td>
-<td align="left">Parece la distribución más "oficial"</td>
+<td align="left">Debian Buster; Docker <a href="https://hub.docker.com/r/eduardofilo/rg350_buster_buildroot">eduardofilo/rg350_buster_buildroot</a></td>
+<td align="left">Basado en un Buildroot moderno</td>
 </tr>
 <tr>
 <td align="left"><a href="https://github.com/glebm/od-buildroot">glebm</a></td>
@@ -2105,7 +2133,14 @@
 </tr>
 </tbody>
 </table>
-<p>En lo que sigue vamos a utilizar la versión de <a href="https://github.com/tonyjih/RG350_buildroot">Tonyjih</a>. El procedimiento completo se detalla a continuación:</p>
+<p>Vamos a empezar bajando una de estas distribuciones Buildroot de RG350 a un directorio de nuestra máquina (la que actuará de host para Docker). Es habitual utilizar un directorio <code>git</code> en el home del usuario donde descargar los repositorios y nosotros seguiremos esta costumbre. Más adelante, al arrancar el contenedor, indicaremos ese directorio como volumen para conectar el sistema de archivos de nuestra máquina (host) con el contenedor. Así conseguimos que nuestra máquina (host) sólo sirva de almacén de las fuentes y los binarios resultantes, utilizando Docker para encapsular las dependencias que tiene la versión de Buildroot que vamos a utilizar que son muy numerosas y con frecuencia no coinciden con lo que nuestro sistema tiene instalado.</p>
+<p>Por ejemplo vamos a utilizar la distribución de <a href="https://github.com/tonyjih/RG350_buildroot">Tonyjih</a>. Bajamos pues el repositorio en nuestra máquina. Con los siguientes comandos quedará en <code>~/git/RG350_buildroot</code>:</p>
+<div class="highlight"><pre><span></span><code>$ cd ~/git
+$ git clone https://github.com/tonyjih/RG350_buildroot.git
+</code></pre></div>
+
+<h2 id="procedimiento-para-crear-el-contenedor">Procedimiento para crear el contenedor<a class="headerlink" href="#procedimiento-para-crear-el-contenedor" title="Permanent link">&para;</a></h2>
+<p>Veíamos en la tabla anterior que podemos compilar la distribución que hemos elegido para ilustrar el artículo (la de <a href="https://github.com/tonyjih/RG350_buildroot">Tonyjih</a>) con la imagen Docker <a href="https://hub.docker.com/r/eduardofilo/rg350_buildroot">eduardofilo/rg350_buildroot</a>. A continuación vamos a ver los pasos para descargar y ejecutar esta imagen. Los primeros pasos son una receta rápida para instalar Docker en nuestro sistema si no contáramos ya con él, pero es mejor seguir una de las muchas guías que se pueden encontrar (por ejemplo para <a href="https://docs.docker.com/engine/install/ubuntu/">Ubuntu</a>).</p>
 <ol>
 <li>
 <p>Instalar Docker en máquina host:</p>
@@ -2118,27 +2153,20 @@ $ sudo systemctl start docker
 
 </li>
 <li>
-<p>Bajar repositorio en máquina host. Con los siguientes comandos quedará en <code>~/git/RG350_buildroot</code>:</p>
-<div class="highlight"><pre><span></span><code>$ cd ~/git
-$ git clone https://github.com/tonyjih/RG350_buildroot.git
-</code></pre></div>
-
-</li>
-<li>
-<p>Arrancar contenedor pasando el directorio del repositorio del punto anterior como volumen:</p>
+<p>Arrancar contenedor pasando el directorio <code>~/git</code> como volumen:</p>
 <div class="highlight"><pre><span></span><code>$ docker run -it -v ~/git:/root/git --name RG350_buildroot eduardofilo/rg350_buildroot
 </code></pre></div>
 
 </li>
 </ol>
-<p>Si en lugar de utilizar la versión compilada subida al <a href="https://hub.docker.com/r/eduardofilo/rg350_buildroot">Docker Hub</a> queremos construirlo en local (por si quisiéramos hacer alguna modificación en el Dockerfile), intercalaríamos los siguientes comandos entre los pasos 2 y 3 anteriores:</p>
+<p>Si en lugar de utilizar la versión compilada de la imagen subida al <a href="https://hub.docker.com/r/eduardofilo/rg350_buildroot">Docker Hub</a> queremos construirla en local (por si quisiéramos hacer alguna modificación en el Dockerfile), intercalaríamos los siguientes comandos entre los pasos 1 y 2 anteriores:</p>
 <div class="highlight"><pre><span></span><code>$ cd ~/git
 $ git clone https://github.com/eduardofilo/RG350_buildroot_docker.git
 $ cd ~/git/RG350_buildroot_docker
 $ docker build -t eduardofilo/rg350_buildroot .
 </code></pre></div>
 
-<p>Tras ejecutar el paso 3 debería quedar un prompt ejecutándose desde el entorno Debian dentro del contenedor. Como hemos conectado el directorio <code>/root/git</code> del contenedor con el directorio <code>~/git</code> de nuestra máquina, cualquier cosa que queramos modificar o recoger al final de la compilación, la podremos localizar desde cualquier explorador de archivos de nuestra máquina. Si en algún momento perdiéramos de vista la terminal ejecutándose en el entorno del contenedor, podremos recuperarla ejecutando:</p>
+<p>Tras ejecutar el paso 2 debería quedar un prompt ejecutándose desde el entorno Debian dentro del contenedor. Como hemos conectado el directorio <code>/root/git</code> del contenedor con el directorio <code>~/git</code> de nuestra máquina, cualquier cosa que queramos modificar o recoger al final de la compilación, la podremos localizar desde un explorador de archivos de nuestra máquina. Si en algún momento perdiéramos de vista la terminal ejecutándose en el entorno del contenedor, podremos recuperarla ejecutando:</p>
 <div class="highlight"><pre><span></span><code>$ docker exec -it RG350_buildroot /bin/bash
 </code></pre></div>
 
@@ -2147,19 +2175,19 @@ $ docker build -t eduardofilo/rg350_buildroot .
 </code></pre></div>
 
 <h2 id="operacion-general-de-buildroot">Operación general de Buildroot<a class="headerlink" href="#operacion-general-de-buildroot" title="Permanent link">&para;</a></h2>
-<p>Buildroot tiene su propia estructura y formas de operación. Vamos a empezar describiendo por encima el entorno y algunas operaciones habituales o interesantes.</p>
+<p>Una vez que tenemos en marcha y el contenedor y nos hemos conectado con él, ya podemos empezar a trabajar con Buildroot. Esta distribución tiene su propia estructura y formas de operación. Vamos a empezar describiendo por encima el entorno y algunas operaciones habituales o interesantes.</p>
 <p>Buildroot se puede describir de forma resumida como un toolchain de compilación cruzada unido a un gran número de paquetes (siendo uno de ellos el kernel Linux) que en conjunto pueden constituir un sistema Linux completo, habitualmente para un sistema embebido. La lista de paquetes que contiene Buildroot podemos encontrarla en el directorio <a href="https://github.com/tonyjih/RG350_buildroot/tree/opendingux-2014.08/package">package</a>.</p>
-<p>Luego, existen una serie de configuraciones predefinidas para placas conocidas. Las podemos encontrar en el directorio <a href="https://github.com/tonyjih/RG350_buildroot/tree/opendingux-2014.08/configs">configs</a>. Una de las primeras cosas que haremos más adelante es cargar la configuración para la RG350 (fichero <a href="https://github.com/tonyjih/RG350_buildroot/blob/opendingux-2014.08/configs/rg350_defconfig">rg350_defconfig</a>). Esta configuración se mantiene siempre dentro de la estructura oficial de Buildroot. Si en nuestro sistema deseamos alguna característica especial o parche sobre los paquetes estándar que Buildroot ofrece, tenemos otro mecanismo, los ficheros que encontraremos en el directorio <code>board/&lt;manufacturer&gt;/&lt;boardname&gt;</code>. En el caso de la RG350 el nombre del fabricante elegido es <code>opendingux</code> y el nombre de la placa <code>gcw0</code>. Así pues en el directorio <a href="https://github.com/tonyjih/RG350_buildroot/tree/opendingux-2014.08/board/opendingux/gcw0"><code>board/opendingux/gcw0</code></a> podemos encontrar por ejemplo los scripts para generar una imagen válida para la consola.</p>
+<p>Luego, existen una serie de configuraciones predefinidas para placas conocidas. Las podemos encontrar en el directorio <a href="https://github.com/tonyjih/RG350_buildroot/tree/opendingux-2014.08/configs">configs</a>. Una de las primeras cosas que haremos más adelante es cargar la configuración para RG350 (fichero <a href="https://github.com/tonyjih/RG350_buildroot/blob/opendingux-2014.08/configs/rg350_defconfig">rg350_defconfig</a>). Esta configuración se basa en la estructura oficial de Buildroot que es genérica para sistemas embebidos Linux. Si en nuestro sistema deseamos alguna característica especial o parche sobre los paquetes estándar que Buildroot ofrece, tenemos otro mecanismo, los ficheros que encontraremos en el directorio <code>board/&lt;fabricante&gt;/&lt;placa&gt;</code>. En el caso de RG350 el nombre del fabricante elegido es <code>opendingux</code> y el nombre de la placa <code>gcw0</code>. Así pues en el directorio <a href="https://github.com/tonyjih/RG350_buildroot/tree/opendingux-2014.08/board/opendingux/gcw0"><code>board/opendingux/gcw0</code></a> podemos encontrar por ejemplo los scripts para generar una imagen válida para la consola.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>A partir de este punto veremos que las líneas de terminal están precedidas por <code>#</code> y no por <code>$</code> como antes porque se refieren al terminal dentro del contenedor Docker, que se ejecuta con el usuario root del mismo.</p>
 </div>
-<p>Antes de empezar cargamos la configuración para la RG350 de las <a href="https://github.com/tonyjih/RG350_buildroot/tree/opendingux-2014.08/configs">múltiples que trae Buildroot de serie</a>:</p>
+<p>Antes de empezar cargamos la configuración para RG350 de las <a href="https://github.com/tonyjih/RG350_buildroot/tree/opendingux-2014.08/configs">múltiples que trae Buildroot de serie</a>:</p>
 <div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
 # make rg350_defconfig BR2_EXTERNAL=board/opendingux
 </code></pre></div>
 
-<p>Si ahora queremos respasar o cambiar algo de esta configuración lo haremos por medio de una herramienta similar a la que se utiliza para configurar un kernel Linux antes de compilarlo. Para ello utilizaremos uno de los dos comandos siguientes (sólo uno):</p>
+<p>Si ahora queremos repasar o cambiar algo de esta configuración lo haremos por medio de una herramienta similar a la que se utiliza para configurar un kernel Linux antes de compilarlo. Para ello utilizaremos uno de los dos comandos <code>make</code> siguientes (sólo uno):</p>
 <div class="highlight"><pre><span></span><code># cd ~/git/RG350_buildroot
 # make menuconfig
 # make nconfig
@@ -2188,18 +2216,18 @@ $ docker build -t eduardofilo/rg350_buildroot .
 </tr>
 <tr>
 <td align="left"><code>make &lt;paquete&gt;</code></td>
-<td align="left">Compila el paquete (de la <a href="https://github.com/tonyjih/RG350_buildroot/tree/opendingux-2014.08/package">lista de paquetes de la distribición</a>)</td>
+<td align="left">Compila el paquete (de la <a href="https://github.com/tonyjih/RG350_buildroot/tree/opendingux-2014.08/package">lista de paquetes de la distribución</a>)</td>
 </tr>
 <tr>
-<td align="left"><code>make &lt;package&gt;-rebuild</code></td>
+<td align="left"><code>make &lt;paquete&gt;-rebuild</code></td>
 <td align="left">Fuerza la recompilación del paquete</td>
 </tr>
 <tr>
-<td align="left"><code>make &lt;package&gt;-reconfigure</code></td>
+<td align="left"><code>make &lt;paquete&gt;-reconfigure</code></td>
 <td align="left">Fuerza la reconfiguración del paquete</td>
 </tr>
 <tr>
-<td align="left"><code>make &lt;package&gt;-graph-depends</code></td>
+<td align="left"><code>make &lt;paquete&gt;-graph-depends</code></td>
 <td align="left">Genera un gráfico del árbol de dependencias del paquete</td>
 </tr>
 <tr>
@@ -2209,7 +2237,7 @@ $ docker build -t eduardofilo/rg350_buildroot .
 </tbody>
 </table>
 <h2 id="operacion-particular-de-la-distribucion-buildroot-para-rg350">Operación particular de la distribución Buildroot para RG350<a class="headerlink" href="#operacion-particular-de-la-distribucion-buildroot-para-rg350" title="Permanent link">&para;</a></h2>
-<p>Una vez que tenemos preparado el entorno podremos realizar las tareas y compilaciones previstas en el mismo. Por ejemplo en el entorno preparado por <a href="https://github.com/tonyjih/RG350_buildroot">Tonyjih</a> vemos que podemos realizar las siguientes cosas:</p>
+<p>Una vez que tenemos preparado el entorno podremos realizar las tareas y compilaciones previstas en el mismo. Por ejemplo en el entorno preparado por <a href="https://github.com/tonyjih/RG350_buildroot">Tonyjih</a> vemos que podemos realizar las siguientes operaciones:</p>
 <ul>
 <li>
 <p>Si se quiere que la imagen incluya emuladores y aplicaciones, ejecutar antes lo siguiente (sólo es necesario hacerlo una vez):</p>
@@ -2233,13 +2261,62 @@ $ docker build -t eduardofilo/rg350_buildroot .
 
 </li>
 </ul>
+<h2 id="compilacion-de-distribucion-od-contrib">Compilación de distribución <a href="https://github.com/od-contrib/buildroot-rg350-old-kernel">od-contrib</a><a class="headerlink" href="#compilacion-de-distribucion-od-contrib" title="Permanent link">&para;</a></h2>
+<p>Existe una distribución Buildroot bastante moderna, que por tanto ofrece una versión mucho más actual de los paquetes que constituyen la distribución (no así el Kernel Linux que se mantiene en la versión 3.12). El procedimiento de compilación es muy similar al de la distribución de Tonyjih ilustrada antes. Vamos a mostrar el paso a paso sin dar explicaciones (sirven las mismas que antes) para compilar esta versión:</p>
+<ol>
+<li>
+<p>En máquina host:</p>
+<div class="highlight"><pre><span></span><code>$ cd ~/git
+$ git clone https://github.com/od-contrib/buildroot-rg350-old-kernel.git
+$ docker run -it -v ~/git:/root/git --name RG350_buster_buildroot eduardofilo/rg350_buster_buildroot
+</code></pre></div>
+
+</li>
+<li>
+<p>En contenedor:</p>
+<div class="highlight"><pre><span></span><code># cd ~/git/buildroot-rg350-old-kernel
+# make rg350_defconfig BR2_EXTERNAL=board/opendingux
+# make menuconfig
+# export BR2_JLEVEL=0
+# make toolchain
+# board/opendingux/gcw0/make_initial_image.sh rg350
+</code></pre></div>
+
+</li>
+</ol>
+<p>Tras todo esto encontraremos la imagen completa compilada en <code>~/git/buildroot-rg350-old-kernel/output/images/od-imager/images/sd_image.bin</code>.</p>
 <h2 id="comandos-para-gestionar-contenedores">Comandos para gestionar contenedores<a class="headerlink" href="#comandos-para-gestionar-contenedores" title="Permanent link">&para;</a></h2>
 <p>Por último se comentan a continuación a modo de cheatsheet unos pocos comandos útiles para gestionar el contenedor que acabamos de crear:</p>
-<ul>
-<li><code>docker container ls -a</code>: Listar contenedores. Para averiguar hash por ejemplo.</li>
-<li><code>docker container stop &lt;hash&gt;</code>: Detener contenedor.</li>
-<li><code>docker container rm &lt;hash&gt;</code>: Borrar contenedor.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Comando</th>
+<th align="left">Efecto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>docker container ls -a</code></td>
+<td align="left">Listar contenedores. Para averiguar hash por ejemplo.</td>
+</tr>
+<tr>
+<td align="left"><code>docker container start &lt;hash&gt;</code></td>
+<td align="left">Arrancar contenedor.</td>
+</tr>
+<tr>
+<td align="left"><code>docker exec -it &lt;hash&gt; /bin/bash</code></td>
+<td align="left">Obtener prompt bash en contenedor.</td>
+</tr>
+<tr>
+<td align="left"><code>docker container stop &lt;hash&gt;</code></td>
+<td align="left">Detener contenedor.</td>
+</tr>
+<tr>
+<td align="left"><code>docker container rm &lt;hash&gt;</code></td>
+<td align="left">Borrar contenedor.</td>
+</tr>
+</tbody>
+</table>
                 
                   
                 
