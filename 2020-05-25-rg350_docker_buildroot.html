@@ -2274,7 +2274,7 @@ $ docker build -t eduardofilo/rg350_buildroot .
 <ol>
 <li>Editar manualmente el fichero <a href="https://github.com/tonyjih/RG350_buildroot/blob/opendingux-2014.08/configs/rg350_defconfig">rg350_defconfig</a>.</li>
 <li>Retirar la llamada a <code>make rg350_defconfig BR2_EXTERNAL=board/opendingux</code> dentro del script <a href="https://github.com/tonyjih/RG350_buildroot/blob/opendingux-2014.08/board/opendingux/gcw0/make_initial_image.sh"><code>make_initial_image.sh</code></a>.</li>
-<li>Ejecutar <code>make savedefconfig</code> tras el <code>make menuconfig</code> para regenerar el fichero <code>configs/rg350_defconfig</code> a partir del <code>.config</code> que modifica el menuconfig.</li>
+<li>Ejecutar <code>make savedefconfig</code> tras el <code>make menuconfig</code> para regenerar el fichero <code>configs/rg350_defconfig</code> con la nueva configuración.</li>
 </ol>
 <h2 id="compilacion-de-distribucion-od-contrib">Compilación de distribución <a href="https://github.com/od-contrib/buildroot-rg350-old-kernel">od-contrib</a><a class="headerlink" href="#compilacion-de-distribucion-od-contrib" title="Permanent link">&para;</a></h2>
 <p>Existe una distribución Buildroot bastante moderna (basada en la versión 2020.05), que por tanto ofrece una versión mucho más actual de los paquetes que constituyen la distribución (no así el Kernel Linux que se mantiene en la versión 3.12). El procedimiento de compilación es muy similar al de la distribución de Tonyjih ilustrada antes. Vamos a mostrar el paso a paso sin dar explicaciones (sirven las mismas que antes) para compilar esta versión:</p>
