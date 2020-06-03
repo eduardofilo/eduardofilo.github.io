@@ -2124,6 +2124,11 @@ $ sudo rm zero.txt &amp;&amp; sudo sync
 </li>
 </ol>
 <p>El comando anterior puede tardar bastante. Suele ser mejor utilizar el comando <code>dcfldd</code> en lugar del <code>dd</code>, si lo tenemos instalado en nuestro sistema, ya que hace lo mismo que <code>dd</code> ofreciendo información del progreso del dump. Al finalizar encontraremos el fichero <code>imagen.img</code> con nuestro dump de la tarjeta con el tamaño prometido:</p>
+<div class="highlight"><pre><span></span><code>$ ls -l --block-size=M
+total 14632M
+-rwxrwxrwx 1 edumoreno edumoreno 14632M jun  4 00:44 imagen.img
+</code></pre></div>
+
 <p>Suele ser conveniente comprimir el dump (ya que <a href="#informacion-residual-en-espacio-libre">como sabemos</a> contendrá mucho espacio vacío que se comprimirá bien). Además la mayoría de las aplicaciones de flasheo aceptan imagenes comprimidas directamente.</p>
 <h4 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h4>
 <p>https://www.diskgenius.com/</p>
