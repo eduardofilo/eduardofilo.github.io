@@ -2091,7 +2091,7 @@ Dispositivo    Inicio Comienzo    Final Sectores Tamaño Id Tipo
 <ol>
 <li>Reducimos con <code>gparted</code> el tamaño de la última partición para dejar espacio libre al final de la tarjeta. Según los cálculos explicados en la <a href="#tamano-de-la-tarjeta">teoría</a> dejaríamos 200MB libres en la tarjeta.</li>
 <li>
-<p>Montamos la tarjeta en nuestro sistema y averiguamos los directorios donde se anclan las particiones (en sistemas como los de la RG350 y Raspberry Pi serán dos casi siempre), por ejemplo en mi máquina (filtro la salida del comando <code>df</code> por mmcblk0 porque es el nombre de dispositivo que adopta siempre el lector de tarjetas de mi portátil, pero puede cambiar en otras máquinas; si se desconoce retirar el <code>grep</code>):</p>
+<p>Montamos la tarjeta en nuestro sistema y averiguamos los directorios donde se anclan las particiones (en sistemas como los de la RG350 y Raspberry Pi serán dos casi siempre), por ejemplo en mi máquina (filtro la salida del comando <code>df</code> por mmcblk0 porque es el nombre de dispositivo que adopta siempre el lector de tarjetas de mi portátil, pero puede cambiar en otras máquinas; retirar el <code>grep</code> si se desconoce):</p>
 <div class="highlight"><pre><span></span><code>$ df -h | grep mmcblk0
 /dev/mmcblk0p1             400M   179M  221M  45% /media/edumoreno/2738-756D
 /dev/mmcblk0p2              14G    13G  1,3G  91% /media/edumoreno/6684e595-e23b-4e2f-8eb9-65f1286798cd
