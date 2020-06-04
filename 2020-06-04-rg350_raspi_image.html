@@ -2290,7 +2290,7 @@ total 14632M
 -rwxrwxrwx 1 edumoreno edumoreno 14632M jun  4 00:44 imagen.img
 </code></pre></div>
 
-<p>Suele ser conveniente comprimir el dump (ya que <a href="#informacion-residual-en-espacio-libre">como sabemos</a> contendrá mucho espacio vacío que se comprimirá bien). Además la mayoría de las aplicaciones de flasheo aceptan imagenes comprimidas directamente.</p>
+<p>Suele ser conveniente <a href="#compresion-y-troceo-de-la-imagen">comprimir</a> el dump (ya que <a href="#informacion-residual-en-espacio-libre">como sabemos</a> contendrá mucho espacio vacío que se comprimirá bien). Además la mayoría de las aplicaciones de flasheo aceptan imagenes comprimidas directamente.</p>
 <h4 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h4>
 <p>En el caso de Windows todos los pasos los podemos realizar con la excelente utilidad <a href="https://www.diskgenius.com/">DiskGenius</a> si contamos con la versión de pago. Si sólo tenemos la versión Free, el paso final lo realizaremos con <a href="https://sourceforge.net/projects/win32diskimager/">Win32DiskImager</a>.</p>
 <ol>
@@ -2315,7 +2315,7 @@ total 14632M
 <p><img alt="DiskGenius Erase Free Space 4" src="/images/posts/rg350_raspi_image/diskgenius_erase_free_space4.png" /></p>
 </li>
 <li>
-<p>Para hacer el dump final abandonamos DiskGenius porque la función que necesitamos para ello sólo está disponible en la versión de pago y pasamos a utilizar Win32DiskImager. Abrimos la utilidad y la configuramos indicando en <code>Image File</code> el destino y nombre del fichero de imagen, en <code>Device</code> seleccionamos la letra de la unidad donde se monta la partición FAT de la tarjeta y finalmente marcamos la opción <code>Read Only Allocated Partitions</code> para que el dump no incluya el espacio libre que hemos dejado al final en el paso 1.</p>
+<p>Para hacer el dump final abandonamos DiskGenius porque la función que necesitamos para ello (<code>Tools &gt; Copy Sectors</code>) sólo está disponible en la versión de pago y pasamos a utilizar Win32DiskImager. Abrimos la utilidad y la configuramos indicando en <code>Image File</code> el destino y nombre del fichero de imagen, en <code>Device</code> seleccionamos la letra de la unidad donde se monta la partición FAT de la tarjeta y finalmente marcamos la opción <code>Read Only Allocated Partitions</code> para que el dump no incluya el espacio libre que hemos dejado al final en el paso 1.</p>
 <p><img alt="Win32DiskImager" src="/images/posts/rg350_raspi_image/win32diskimager.png" /></p>
 </li>
 <li>
