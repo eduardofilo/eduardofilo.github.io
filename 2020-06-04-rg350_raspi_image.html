@@ -2279,12 +2279,12 @@ $ sudo rm zero.txt &amp;&amp; sudo sync
 </li>
 <li>
 <p>Finalmente realizamos el dump. Vamos a hacer el dump en bloques de 2MB y dado que según las cuentas hechas en la <a href="#dump-parcial">teoría</a> sólo queremos copiar 14632 MB, el dump será de 14632 / 2 = 7316 bloques:</p>
-<div class="highlight"><pre><span></span><code>$ sudo dd if=/dev/mmcblk0 of=imagen.img bs=2M count=7316
+<div class="highlight"><pre><span></span><code>$ sudo dd if=/dev/mmcblk0 of=imagen.img bs=2M count=7316 status=progress
 </code></pre></div>
 
 </li>
 </ol>
-<p>El comando anterior puede tardar bastante. Suele ser mejor utilizar el comando <code>dcfldd</code> en lugar del <code>dd</code>, si lo tenemos instalado en nuestro sistema, ya que hace lo mismo que <code>dd</code> ofreciendo información del progreso del dump. Al finalizar encontraremos el fichero <code>imagen.img</code> con nuestro dump de la tarjeta con el tamaño prometido:</p>
+<p>El comando anterior puede tardar bastante. Al finalizar encontraremos el fichero <code>imagen.img</code> con nuestro dump de la tarjeta con el tamaño prometido:</p>
 <div class="highlight"><pre><span></span><code>$ ls -l --block-size=M
 total 14632M
 -rwxrwxrwx 1 edumoreno edumoreno 14632M jun  4 00:44 imagen.img
@@ -2330,13 +2330,13 @@ total 14632M
 <ul>
 <li>
 <p>7z:</p>
-<div class="highlight"><pre><span></span><code>$ cat imagen.img | 7z -si -v1400m a imagen.img.7z
+<div class="highlight"><pre><span></span><code>$ 7z -v1400m a imagen.img.7z imagen.img
 </code></pre></div>
 
 </li>
 <li>
 <p>Rar:</p>
-<div class="highlight"><pre><span></span><code>$ cat imagen.img | rar a -m5 -simagen.img -v1400000k imagen.img.rar
+<div class="highlight"><pre><span></span><code>$ rar a -m5 -v1400000k imagen.img.rar imagen.img
 </code></pre></div>
 
 </li>

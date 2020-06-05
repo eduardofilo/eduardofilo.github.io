@@ -2720,17 +2720,16 @@ Oct <span class="m">16</span> <span class="m">13</span>:15:25 raspi-git noip2<sp
 </code></pre></div>
 
 <h3 id="backup-de-la-sd-comprimiendo-al-vuelo">Backup de la SD (comprimiendo al vuelo)<a class="headerlink" href="#backup-de-la-sd-comprimiendo-al-vuelo" title="Permanent link">&para;</a></h3>
-<p>Los siguientes comandos se ejecutan con <code>dcfldd</code>, pero es equivalente al tradicional <code>dd</code>.</p>
 <div class="highlight"><pre><span></span><code>$ <span class="c1">#Backup:</span>
-$ sudo dcfldd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="p">|</span> pv <span class="p">|</span> gzip -9 - &gt; Rpi_8gb_backup.img.gz
+$ sudo dd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="p">|</span> pv <span class="p">|</span> gzip -9 - &gt; Rpi_8gb_backup.img.gz
 $ <span class="c1">#Backup sólo de 4GB (si por ejemplo la tarjeta es más grande pero no aprovecha toda la superficie)</span>
-$ sudo dcfldd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">count</span><span class="o">=</span><span class="m">2048</span> <span class="p">|</span> pv -s 4g <span class="p">|</span> gzip -9 - &gt; Rpi_4gb_backup.img.gz
+$ sudo dd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">count</span><span class="o">=</span><span class="m">2048</span> <span class="nv">status</span><span class="o">=</span>progress <span class="p">|</span> pv -s 4g <span class="p">|</span> gzip -9 - &gt; Rpi_4gb_backup.img.gz
 $ <span class="c1">#Restauración (comprimido con gzip):</span>
-$ gunzip Rpi_8gb_backup.img.gz -c <span class="p">|</span> pv <span class="p">|</span> sudo dcfldd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M
+$ gunzip Rpi_8gb_backup.img.gz -c <span class="p">|</span> pv <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress
 $ <span class="c1">#Restauración (comprimido con xz):</span>
-$ xzcat Rpi_8gb_backup.img.xz <span class="p">|</span> pv <span class="p">|</span> sudo dcfldd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M
+$ xzcat Rpi_8gb_backup.img.xz <span class="p">|</span> pv <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress
 $ <span class="c1">#Restauración (comprimido con zip):</span>
-$ unzip -p Rpi_8gb_backup.zip <span class="p">|</span> pv <span class="p">|</span> sudo dcfldd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M
+$ unzip -p Rpi_8gb_backup.zip <span class="p">|</span> pv <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress
 </code></pre></div>
 
 <p>Para hacer un backup parcial los cálculos se harían así. Primero sacamos los datos de la estructura de la tarjeta con <code>fdisk</code>:</p>
@@ -2755,16 +2754,16 @@ Dispositivo    Inicio Comienzo    Final Sectores Tamaño Id Tipo
 <p>Por tanto en este caso copiaremos 3797 bloques para cubrir esos 15550464 sectores.</p>
 <h3 id="backup-de-la-sd-comprimiendo-al-vuelo-con-gzip-y-diviendo-en-trozos-el-fichero-resultante">Backup de la SD (comprimiendo al vuelo con gzip y diviendo en trozos el fichero resultante)<a class="headerlink" href="#backup-de-la-sd-comprimiendo-al-vuelo-con-gzip-y-diviendo-en-trozos-el-fichero-resultante" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ <span class="c1">#Backup:</span>
-$ sudo dcfldd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="p">|</span> pv <span class="p">|</span> gzip -9 - <span class="p">|</span> split --bytes<span class="o">=</span>2G - Rpi_8gb_backup.img.gz.part_
+$ sudo dd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="p">|</span> pv <span class="p">|</span> gzip -9 - <span class="p">|</span> split --bytes<span class="o">=</span>2G - Rpi_8gb_backup.img.gz.part_
 $ <span class="c1">#Restauración:</span>
-$ cat Rpi_8gb_backup.img.gz.part_* <span class="p">|</span> gunzip -c <span class="p">|</span> pv <span class="p">|</span> sudo dcfldd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M
+$ cat Rpi_8gb_backup.img.gz.part_* <span class="p">|</span> gunzip -c <span class="p">|</span> pv <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress
 </code></pre></div>
 
 <h3 id="backup-de-la-sd-comprimiendo-al-vuelo-con-7z-y-diviendo-en-trozos-el-fichero-resultante">Backup de la SD (comprimiendo al vuelo con 7z y diviendo en trozos el fichero resultante)<a class="headerlink" href="#backup-de-la-sd-comprimiendo-al-vuelo-con-7z-y-diviendo-en-trozos-el-fichero-resultante" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ <span class="c1">#Backup:</span>
-$ sudo dcfldd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">count</span><span class="o">=</span><span class="m">7350</span> <span class="p">|</span> 7z -si -v1400m a rg350_es.img.7z
+$ sudo dd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">count</span><span class="o">=</span><span class="m">7350</span> <span class="nv">status</span><span class="o">=</span>progress <span class="p">|</span> 7z -si -v1400m a rg350_es.img.7z
 $ <span class="c1">#Restauración:</span>
-$ 7z e -so rg350_es.7z.001 <span class="p">|</span> sudo dcfldd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M
+$ 7z e -so rg350_es.7z.001 <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress
 </code></pre></div>
 
 <h3 id="control-de-progreso-durante-flasheo">Control de progreso durante flasheo<a class="headerlink" href="#control-de-progreso-durante-flasheo" title="Permanent link">&para;</a></h3>
@@ -2880,7 +2879,7 @@ Octoprint_niubit.img2           98304 6598655  6500352   3,1G 83 Linux
 <div class="highlight"><pre><span></span><code>$ sudo losetup /dev/loop12 Octoprint_niubit.img -o $((98304*512))
 $ sudo mkdir -p /mnt/imageroot
 $ sudo mount /dev/loop12 /mnt/imageroot
-$ sudo dcfldd if=/dev/zero of=/mnt/imageroot/zero.txt
+$ sudo dd if=/dev/zero of=/mnt/imageroot/zero.txt status=progress
 $ sudo rm /mnt/imageroot/zero.txt
 $ sudo umount /mnt/imageroot
 $ sudo rmdir /mnt/imageroot
