@@ -1652,6 +1652,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#stamp-files" class="md-nav__link">
+    Stamp files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametros-importantes-del-menuconfig" class="md-nav__link">
+    Parámetros importantes del menuconfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monograficos" class="md-nav__link">
+    Monográficos
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compilacion-de-buildroot-con-toolchain-de-rg350-en-un-contenedor-docker" class="md-nav__link">
+    Compilación de Buildroot con toolchain de RG350 en un contenedor Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-de-compilacion-de-algunas-aplicaciones-para-rg350-por-medio-del-toolchain-en-docker" class="md-nav__link">
+    Ejemplos de compilación de algunas aplicaciones para RG350 por medio del toolchain en Docker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -2038,6 +2079,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#stamp-files" class="md-nav__link">
+    Stamp files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametros-importantes-del-menuconfig" class="md-nav__link">
+    Parámetros importantes del menuconfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monograficos" class="md-nav__link">
+    Monográficos
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compilacion-de-buildroot-con-toolchain-de-rg350-en-un-contenedor-docker" class="md-nav__link">
+    Compilación de Buildroot con toolchain de RG350 en un contenedor Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-de-compilacion-de-algunas-aplicaciones-para-rg350-por-medio-del-toolchain-en-docker" class="md-nav__link">
+    Ejemplos de compilación de algunas aplicaciones para RG350 por medio del toolchain en Docker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -2060,14 +2142,106 @@
                 <h1 id="buildroot">Buildroot<a class="headerlink" href="#buildroot" title="Permanent link">&para;</a></h1>
 <h2 id="enlaces">Enlaces<a class="headerlink" href="#enlaces" title="Permanent link">&para;</a></h2>
 <ul>
+<li><a href="https://buildroot.org/downloads/manual/manual.html">Manual</a></li>
 <li>Mastering Embedded Linux: <a href="https://www.thirtythreeforty.net/posts/2019/08/mastering-embedded-linux-part-1-concepts/">1</a>. <a href="https://www.thirtythreeforty.net/posts/2019/12/mastering-embedded-linux-part-2-hardware/">2</a>, <a href="https://www.thirtythreeforty.net/posts/2020/01/mastering-embedded-linux-part-3-buildroot/">3</a>, <a href="https://www.thirtythreeforty.net/posts/2020/03/mastering-embedded-linux-part-4-adding-features/#commento-login-box-container">4</a> y <a href="https://www.thirtythreeforty.net/posts/2020/05/mastering-embedded-linux-part-5-platform-daemons/">5</a></li>
 </ul>
 <h2 id="comandos-interesantes">Comandos interesantes<a class="headerlink" href="#comandos-interesantes" title="Permanent link">&para;</a></h2>
 <ul>
+<li><code>make list-defconfigs</code>: Muestra una lista de todos los defconfig que hay disponibles en la distribución Buildroot.</li>
+<li><code>make rg350_defconfig BR2_EXTERNAL=board/opendingux</code>: Carga un defconfig como la configuración actual (.config).</li>
+<li><code>make menuconfig</code>: Configuración detallada de toda la distribución Buildroot.</li>
 <li><code>make savedefconfig</code> Graba la configuración actual (<code>.config</code>) en el directorio <code>configs</code>.</li>
 <li><code>make BR2_DEFCONFIG=configs/raspi_defconfig savedefconfig</code> Graba la configuración actual (<code>.config</code>) en el directorio <code>configs</code> forzando el nombre del fichero.</li>
-<li><code>make &lt;package&gt;-dirclean</code> Borra el directorio <code>output/build/&lt;package&gt;</code> forzando a compilar el paquete en próximas invocaciones de <code>make</code>. No borra los ficheros copiados al rootfs en <code>output/target</code>.</li>
+<li><code>make busybox-menuconfig</code>: Configuración detallada de BusyBox. Debe estar activado previamente en <code>System configuration &gt; Init system</code>.</li>
+<li><code>make uclibc-menuconfig</code>: Configuración detallada de uClibc. Debe estar seleccionada como librería C en <code>Toolchain &gt; C library</code>.</li>
+<li><code>make linux-menuconfig</code>: Configuración detallada del kernel Linux.</li>
+<li><code>make linux-savedefconfig</code>: Graba la configuración hecha del kernel Linux.</li>
+<li><code>make barebox-menuconfig</code>: Configuración detallada del bootloader Barebox. Debe estar seleccionado como bootloader en <code>Bootloaders</code>.</li>
+<li><code>make barebox-savedefconfig</code>: Graba la configuración hecha del bootloader Barebox.</li>
+<li><code>make uboot-menuconfig</code>: Configuración detallada del bootloader U-Boot. Debe estar seleccionado como bootloader en <code>Bootloaders</code>.</li>
+<li><code>make uboot-savedefconfig</code>: Graba la configuración hecha del bootloader U-Boot.</li>
+<li><code>make source</code>: Descarga todo lo necesario para luego poder hacer una compilación offline.</li>
+<li><code>make toolchain</code>: Compila el toolchain.</li>
+<li><code>make</code>: Compila toda la distribución Buildroot.</li>
+<li><code>make V=1</code>: Compila toda la distribución Buildroot en modo verbose.</li>
+<li><code>make help</code>: Muestra una lista de todos los targets.</li>
+<li><code>make &lt;package&gt;</code>: Compila un paquete.</li>
+<li><code>make &lt;package&gt;-rebuild</code>: Fuerza la recompilación del paquete. No implica la recreación de la imagen ni el root filesystem. Para hacerlo ejecutar <code>make</code>.</li>
+<li><code>make &lt;package&gt;-reconfigure</code>: Fuerza la reconfiguración y recompilación del paquete. No implica la recreación de la imagen ni el root filesystem. Para hacerlo ejecutar <code>make</code>.</li>
+<li><code>make &lt;package&gt;-graph-depends</code>: Genera un gráfico del árbol de dependencias del paquete.</li>
+<li><code>make &lt;package&gt;-dirclean</code>: Borra el directorio <code>output/build/&lt;package&gt;</code> forzando a compilar el paquete en próximas invocaciones de <code>make</code>. No borra los ficheros copiados al rootfs en <code>output/target</code>. Al forzar la recompilación se sobreescribirán de nuevo, pero si en la nueva compilación algún fichero copiado la primera vez ya no debe ser incluido, permanecerá, por lo que en esos casos conviene borrar <code>output/target</code> previamente.</li>
+<li><code>make clean</code>: Borra todo lo compilado anteriormente (incluyendo directorios build, host, staging y target, las imágenes y el toolchain). Para saber cuándo merece la pena hacer un rebuild, consultar el apartado <a href="https://buildroot.org/downloads/manual/manual.html#full-rebuild">Understanding when a full rebuild is necessary</a>.</li>
+<li><code>make distclean</code>: Borra todo lo que no sean fuentes (incluyendo .config). Útil cuando se quiere cambiar de placa.</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Aviso</p>
+<p>Si <code>ccache</code> está activado, <code>make clean</code> o <code>make distclean</code> no borra la caché de compilación usada por Buildroot. Para borrarla, consultar la sección 8.13.3 de <a href="https://buildroot.org/downloads/manual/manual.html#ccache">Using ccache in Buildroot</a>.</p>
+</div>
+<h2 id="stamp-files">Stamp files<a class="headerlink" href="#stamp-files" title="Permanent link">&para;</a></h2>
+<p>Cada vez que se compila un package, se generan unos ficheros ocultos que marcan las distintas fases de la compilación en el directorio <code>output/build/&lt;package&gt;-&lt;version&gt;</code>. Se pueden borrar para provocar la repetición de esas fases, aunque lo habitual es utilizar los comandos <code>make &lt;package&gt;-rebuild</code> o <code>make &lt;package&gt;-reconfigure</code> (de hecho estos comandos precisamente lo que hacen es eliminar estos ficheros stamp). Por ejemplo estos son los ficheros generados en la compilación del paquete <code>sdl_image</code>:</p>
+<div class="highlight"><pre><span></span><code>root@04084426cffe:~/git/buildroot-rg350-old-kernel/output/build/sdl2_image-2.0.2# ls -ltra .stamp*
+-rw-r--r-- 1 root root 0 Jun  1 18:50 .stamp_downloaded
+-rw-r--r-- 1 root root 0 Jun  1 18:50 .stamp_extracted
+-rw-r--r-- 1 root root 0 Jun  1 18:50 .stamp_patched
+-rw-r--r-- 1 root root 0 Jun  1 18:50 .stamp_configured
+-rw-r--r-- 1 root root 0 Jun  1 18:50 .stamp_built
+-rw-r--r-- 1 root root 0 Jun  1 18:51 .stamp_staging_installed
+-rw-r--r-- 1 root root 0 Jun  1 18:51 .stamp_target_installed
+</code></pre></div>
+
+<h2 id="parametros-importantes-del-menuconfig">Parámetros importantes del menuconfig<a class="headerlink" href="#parametros-importantes-del-menuconfig" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>Target options</code><ul>
+<li><code>Target Architecture</code></li>
+<li><code>Target Architecture Variant</code></li>
+<li><code>Target ABI</code></li>
+</ul>
+</li>
+<li><code>Build options</code><ul>
+<li><code>[*] Enable compiler cache</code></li>
+<li><code>($(HOME)/git/.buildroot-ccache) Compiler cache location</code></li>
+<li><code>(board/&lt;company&gt;/&lt;model&gt;/patches) global patch directories</code></li>
+</ul>
+</li>
+<li><code>Toolchain</code><ul>
+<li><code>Toolchain type (Buildroot toolchain)</code></li>
+<li><code>C library (uClibc-ng)</code><ul>
+<li><code>Kernel Headers ()</code>: Seleccionar una versión igual o inferior a la del Kernel seleccionado más adelante (lo mejor es que sean iguales para no desaprovechar características del Kernel que se instalará)</li>
+</ul>
+</li>
+<li><code>GCC compiler Version ()</code></li>
+</ul>
+</li>
+<li><code>System configuration</code><ul>
+<li><code>(&lt;hostname&gt;) System hostname</code>: Sólo con <code>Root FS skeleton (default target skeleton)</code></li>
+<li><code>(Welcome to &lt;hostname&gt;) System banner</code>: Sólo con <code>Root FS skeleton (default target skeleton)</code></li>
+<li><code>/dev management</code>: <a href="https://buildroot.org/downloads/manual/manual.html#_dev_management">Documentación</a></li>
+<li><code>Init system</code>: <a href="https://buildroot.org/downloads/manual/manual.html#_init_system">Documentación</a></li>
+<li><code>(&lt;directorio con los ficheros a sustituir&gt;) Root filesystem overlay directories</code></li>
+<li><code>(&lt;script&gt;) Custom scripts to run before creating filesystem images</code></li>
+</ul>
+</li>
+<li><code>Kernel</code><ul>
+<li><code>[*] Linux Kernel</code></li>
+<li><code>Kernel version ()</code></li>
+<li><code>(&lt;defconfig_name&gt;) Defconfig name</code></li>
+<li><code>[ ]   Build a Device Tree Blob (DTB)</code>: En RG350 no, en Raspi Sí.</li>
+</ul>
+</li>
+<li><code>Target packages</code><ul>
+<li><code>-*- BusyBox</code></li>
+</ul>
+</li>
+<li><code>Filesystem images</code><ul>
+<li><code>[*] ext2/3/4 root filesystem</code></li>
+<li><code>ext2/3/4 variant (ext4)</code></li>
+</ul>
+</li>
+<li><code>Bootloaders</code>: En RG350 y Raspi no seleccionar ninguno.</li>
+</ul>
+<h2 id="monograficos">Monográficos<a class="headerlink" href="#monograficos" title="Permanent link">&para;</a></h2>
+<h4 id="compilacion-de-buildroot-con-toolchain-de-rg350-en-un-contenedor-docker"><a href="/2020-05-25-rg350_docker_buildroot.html">Compilación de Buildroot con toolchain de RG350 en un contenedor Docker</a><a class="headerlink" href="#compilacion-de-buildroot-con-toolchain-de-rg350-en-un-contenedor-docker" title="Permanent link">&para;</a></h4>
+<h4 id="ejemplos-de-compilacion-de-algunas-aplicaciones-para-rg350-por-medio-del-toolchain-en-docker"><a href="/2020-05-31-rg350_compile.html">Ejemplos de compilación de algunas aplicaciones para RG350 por medio del toolchain en Docker</a><a class="headerlink" href="#ejemplos-de-compilacion-de-algunas-aplicaciones-para-rg350-por-medio-del-toolchain-en-docker" title="Permanent link">&para;</a></h4>
                 
                   
                 
