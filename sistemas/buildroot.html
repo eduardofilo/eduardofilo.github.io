@@ -2109,39 +2109,139 @@
 <li>Mastering Embedded Linux: <a href="https://www.thirtythreeforty.net/posts/2019/08/mastering-embedded-linux-part-1-concepts/">1</a>. <a href="https://www.thirtythreeforty.net/posts/2019/12/mastering-embedded-linux-part-2-hardware/">2</a>, <a href="https://www.thirtythreeforty.net/posts/2020/01/mastering-embedded-linux-part-3-buildroot/">3</a>, <a href="https://www.thirtythreeforty.net/posts/2020/03/mastering-embedded-linux-part-4-adding-features/#commento-login-box-container">4</a> y <a href="https://www.thirtythreeforty.net/posts/2020/05/mastering-embedded-linux-part-5-platform-daemons/">5</a></li>
 </ul>
 <h2 id="comandos-interesantes">Comandos interesantes<a class="headerlink" href="#comandos-interesantes" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>make list-defconfigs</code>: Muestra una lista de todos los defconfig que hay disponibles en la distribución Buildroot.</li>
-<li><code>make rg350_defconfig BR2_EXTERNAL=board/opendingux</code>: Carga un defconfig como la configuración actual (.config).</li>
-<li><code>make menuconfig</code>: Configuración detallada de toda la distribución Buildroot.</li>
-<li><code>make savedefconfig</code> Graba la configuración actual (<code>.config</code>) en el directorio <code>configs</code>.</li>
-<li><code>make BR2_DEFCONFIG=configs/raspi_defconfig savedefconfig</code> Graba la configuración actual (<code>.config</code>) en el directorio <code>configs</code> forzando el nombre del fichero.</li>
-<li><code>make busybox-menuconfig</code>: Configuración detallada de BusyBox. Debe estar activado previamente en <code>System configuration &gt; Init system</code>.</li>
-<li><code>make uclibc-menuconfig</code>: Configuración detallada de uClibc. Debe estar seleccionada como librería C en <code>Toolchain &gt; C library</code>.</li>
-<li><code>make linux-menuconfig</code>: Configuración detallada del kernel Linux.</li>
-<li><code>make linux-savedefconfig</code>: Graba la configuración hecha del kernel Linux.</li>
-<li><code>make barebox-menuconfig</code>: Configuración detallada del bootloader Barebox. Debe estar seleccionado como bootloader en <code>Bootloaders</code>.</li>
-<li><code>make barebox-savedefconfig</code>: Graba la configuración hecha del bootloader Barebox.</li>
-<li><code>make uboot-menuconfig</code>: Configuración detallada del bootloader U-Boot. Debe estar seleccionado como bootloader en <code>Bootloaders</code>.</li>
-<li><code>make uboot-savedefconfig</code>: Graba la configuración hecha del bootloader U-Boot.</li>
-<li><code>make source</code>: Descarga todo lo necesario para luego poder hacer una compilación offline.</li>
-<li><code>make toolchain</code>: Compila el toolchain.</li>
-<li><code>make</code>: Compila toda la distribución Buildroot.</li>
-<li><code>make V=1</code>: Compila toda la distribución Buildroot en modo verbose.</li>
-<li><code>make help</code>: Muestra una lista de todos los targets.</li>
-<li><code>make &lt;package&gt;</code>: Compila un paquete.</li>
-<li><code>make &lt;package&gt;-rebuild</code>: Fuerza la recompilación del paquete. No implica la recreación de la imagen ni el root filesystem. Para hacerlo ejecutar <code>make</code>.</li>
-<li><code>make &lt;package&gt;-reconfigure</code>: Fuerza la reconfiguración y recompilación del paquete. No implica la recreación de la imagen ni el root filesystem. Para hacerlo ejecutar <code>make</code>.</li>
-<li>Gráficos: Todos los comandos siguientes se ven afectados por la variable de entorno <code>BR2_GRAPH_OUT</code> que permite ajustar el formato de salida de los gráficos generados a uno de los siguientes valores: ps, pdf, svg, png, gif, jpg.<ul>
-<li><a href="https://buildroot.org/downloads/manual/manual.html#_graphing_the_dependencies_between_packages"><code>make graph-depends</code></a>: Genera un gráfico del árbol de dependencias de toda la distribución Buildroot. Aparece en <code>output/graphs/graph-depends.pdf</code>.</li>
-<li><code>make &lt;package&gt;-graph-depends</code>: Genera un gráfico del árbol de dependencias del paquete. Aparece en <code>output/graph/&lt;pkg&gt;-graph-depends.pdf</code>.</li>
-<li><a href="https://buildroot.org/downloads/manual/manual.html#_graphing_the_build_duration"><code>make graph-build</code></a>: Genera gráficos de tiempos de compilación de toda la distribución Buildroot. Aparecen en <code>output/graphs</code>.</li>
-<li><a href="https://buildroot.org/downloads/manual/manual.html#graph-size"><code>make graph-size</code></a>: Genera gráficos de ocupación en el filesystem de toda la distribución Buildroot. Aparecen en <code>output/graphs</code>.</li>
-</ul>
-</li>
-<li><code>make &lt;package&gt;-dirclean</code>: Borra el directorio <code>output/build/&lt;package&gt;</code> forzando a compilar el paquete en próximas invocaciones de <code>make</code>. No borra los ficheros copiados al rootfs en <code>output/target</code>. Al forzar la recompilación se sobreescribirán de nuevo, pero si en la nueva compilación algún fichero copiado la primera vez ya no debe ser incluido, permanecerá, por lo que en esos casos conviene borrar <code>output/target</code> previamente.</li>
-<li><code>make clean</code>: Borra todo lo compilado anteriormente (incluyendo directorios build, host, staging y target, las imágenes y el toolchain). Para saber cuándo merece la pena hacer un rebuild, consultar el apartado <a href="https://buildroot.org/downloads/manual/manual.html#full-rebuild">Understanding when a full rebuild is necessary</a>.</li>
-<li><code>make distclean</code>: Borra todo lo que no sean fuentes (incluyendo .config). Útil cuando se quiere cambiar de placa.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Comando</th>
+<th align="left">Efecto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>make list-defconfigs</code></td>
+<td align="left">Muestra una lista de todos los defconfig que hay disponibles en la distribución Buildroot.</td>
+</tr>
+<tr>
+<td align="left"><code>make rg350_defconfig BR2_EXTERNAL=board/opendingux</code></td>
+<td align="left">Carga un defconfig como la configuración actual (.config).</td>
+</tr>
+<tr>
+<td align="left"><code>make menuconfig</code></td>
+<td align="left">Configuración detallada de toda la distribución Buildroot.</td>
+</tr>
+<tr>
+<td align="left"><code>make savedefconfig</code></td>
+<td align="left">Graba la configuración actual (<code>.config</code>) en el directorio <code>configs</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>make BR2_DEFCONFIG=configs/raspi_defconfig savedefconfig</code></td>
+<td align="left">Graba la configuración actual (<code>.config</code>) en el directorio <code>configs</code> forzando el nombre del fichero.</td>
+</tr>
+<tr>
+<td align="left"><code>make busybox-menuconfig</code></td>
+<td align="left">Configuración detallada de BusyBox. Debe estar activado previamente en <code>System configuration &gt; Init system</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>make uclibc-menuconfig</code></td>
+<td align="left">Configuración detallada de uClibc. Debe estar seleccionada como librería C en <code>Toolchain &gt; C library</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>make linux-menuconfig</code></td>
+<td align="left">Configuración detallada del kernel Linux.</td>
+</tr>
+<tr>
+<td align="left"><code>make linux-savedefconfig</code></td>
+<td align="left">Graba la configuración hecha del kernel Linux.</td>
+</tr>
+<tr>
+<td align="left"><code>make barebox-menuconfig</code></td>
+<td align="left">Configuración detallada del bootloader Barebox. Debe estar seleccionado como bootloader en <code>Bootloaders</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>make barebox-savedefconfig</code></td>
+<td align="left">Graba la configuración hecha del bootloader Barebox.</td>
+</tr>
+<tr>
+<td align="left"><code>make uboot-menuconfig</code></td>
+<td align="left">Configuración detallada del bootloader U-Boot. Debe estar seleccionado como bootloader en <code>Bootloaders</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>make uboot-savedefconfig</code></td>
+<td align="left">Graba la configuración hecha del bootloader U-Boot.</td>
+</tr>
+<tr>
+<td align="left"><code>make source</code></td>
+<td align="left">Descarga todo lo necesario para luego poder hacer una compilación offline.</td>
+</tr>
+<tr>
+<td align="left"><code>make toolchain</code></td>
+<td align="left">Compila el toolchain. Aparece en el directorio <code>output/host/bin/</code>. Conviene añadir esta ruta al PATH si queremos usar el toolchain para compilar programas para el dispositivo target que estén fuera de Buildroot.</td>
+</tr>
+<tr>
+<td align="left"><code>make</code></td>
+<td align="left">Compila toda la distribución Buildroot.</td>
+</tr>
+<tr>
+<td align="left"><code>make V=1</code></td>
+<td align="left">Compila toda la distribución Buildroot en modo verbose.</td>
+</tr>
+<tr>
+<td align="left"><code>make help</code></td>
+<td align="left">Muestra una lista de todos los targets.</td>
+</tr>
+<tr>
+<td align="left"><code>make &lt;package&gt;</code></td>
+<td align="left">Compila un paquete.</td>
+</tr>
+<tr>
+<td align="left"><code>make &lt;package&gt;-rebuild</code></td>
+<td align="left">Fuerza la recompilación del paquete. No implica la recreación de la imagen ni el root filesystem. Para hacerlo ejecutar <code>make</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>make &lt;package&gt;-reconfigure</code></td>
+<td align="left">Fuerza la reconfiguración y recompilación del paquete. No implica la recreación de la imagen ni el root filesystem. Para hacerlo ejecutar <code>make</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>make &lt;package&gt;-dirclean</code></td>
+<td align="left">Borra el directorio <code>output/build/&lt;package&gt;</code> forzando a compilar el paquete en próximas invocaciones de <code>make</code>. No borra los ficheros copiados al rootfs en <code>output/target</code>. Al forzar la recompilación se sobreescribirán de nuevo, pero si en la nueva compilación algún fichero copiado la primera vez ya no debe ser incluido, permanecerá, por lo que en esos casos conviene borrar <code>output/target</code> previamente.</td>
+</tr>
+<tr>
+<td align="left"><code>make clean</code></td>
+<td align="left">Borra todo lo compilado anteriormente (incluyendo directorios build, host, staging y target, las imágenes y el toolchain). Para saber cuándo merece la pena hacer un rebuild, consultar el apartado <a href="https://buildroot.org/downloads/manual/manual.html#full-rebuild">Understanding when a full rebuild is necessary</a>.</td>
+</tr>
+<tr>
+<td align="left"><code>make distclean</code></td>
+<td align="left">Borra todo lo que no sean fuentes (incluyendo .config). Útil cuando se quiere cambiar de placa.</td>
+</tr>
+</tbody>
+</table>
+<p>Los comandos siguientes se ven afectados por la variable de entorno <code>BR2_GRAPH_OUT</code> que permite ajustar el formato de salida de los gráficos generados a uno de los siguientes valores: ps, pdf, svg, png, gif, jpg.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Comando</th>
+<th align="left">Efecto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://buildroot.org/downloads/manual/manual.html#_graphing_the_dependencies_between_packages"><code>make graph-depends</code></a></td>
+<td align="left">Genera un gráfico del árbol de dependencias de toda la distribución Buildroot. Aparece en <code>output/graphs/graph-depends.pdf</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>make &lt;package&gt;-graph-depends</code></td>
+<td align="left">Genera un gráfico del árbol de dependencias del paquete. Aparece en <code>output/graph/&lt;pkg&gt;-graph-depends.pdf</code>.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://buildroot.org/downloads/manual/manual.html#_graphing_the_build_duration"><code>make graph-build</code></a></td>
+<td align="left">Genera gráficos de tiempos de compilación de toda la distribución Buildroot. Aparecen en <code>output/graphs</code>.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://buildroot.org/downloads/manual/manual.html#graph-size"><code>make graph-size</code></a></td>
+<td align="left">Genera gráficos de ocupación en el filesystem de toda la distribución Buildroot. Aparecen en <code>output/graphs</code>.</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition warning">
 <p class="admonition-title">Aviso</p>
 <p>Si <code>ccache</code> está activado, <code>make clean</code> o <code>make distclean</code> no borra la caché de compilación usada por Buildroot. Para borrarla, consultar la sección 8.13.3 de <a href="https://buildroot.org/downloads/manual/manual.html#ccache">Using ccache in Buildroot</a>.</p>
