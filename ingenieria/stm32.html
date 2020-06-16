@@ -40,7 +40,7 @@
     
     
       
-        <title>STM 32 - Apuntes de eduardófilo</title>
+        <title>STM32 - Apuntes de eduardófilo</title>
       
     
     
@@ -119,7 +119,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                STM 32
+                STM32
               
             </span>
           
@@ -187,14 +187,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../index.html" class="md-tabs__link md-tabs__link--active">
+      <a href="../index.html" class="md-tabs__link">
         Blog
       </a>
     
@@ -303,7 +305,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="3d_printing.html" class="md-tabs__link">
+        <a href="3d_printing.html" class="md-tabs__link md-tabs__link--active">
           Ingeniería
         </a>
       
@@ -1214,10 +1216,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-45" type="checkbox" id="nav-45">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-45" type="checkbox" id="nav-45" checked>
     
     <label class="md-nav__link" for="nav-45">
       Ingeniería
@@ -1247,7 +1251,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../electronica/arduino.html" title="Arduino" class="md-nav__link">
+    <a href="arduino.html" title="Arduino" class="md-nav__link">
       Arduino
     </a>
   </li>
@@ -1259,7 +1263,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../electronica/bus_pirate.html" title="Bus Pirate" class="md-nav__link">
+    <a href="bus_pirate.html" title="Bus Pirate" class="md-nav__link">
       Bus Pirate
     </a>
   </li>
@@ -1271,7 +1275,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../electronica/componentes.html" title="Componentes" class="md-nav__link">
+    <a href="componentes.html" title="Componentes" class="md-nav__link">
       Componentes
     </a>
   </li>
@@ -1295,7 +1299,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../electronica/kicad.html" title="KiCad" class="md-nav__link">
+    <a href="kicad.html" title="KiCad" class="md-nav__link">
       KiCad
     </a>
   </li>
@@ -1307,7 +1311,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../electronica/m328_transistor_tester.html" title="M328 Transistor Tester" class="md-nav__link">
+    <a href="m328_transistor_tester.html" title="M328 Transistor Tester" class="md-nav__link">
       M328 Transistor Tester
     </a>
   </li>
@@ -1319,7 +1323,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../electronica/modulos.html" title="Módulos" class="md-nav__link">
+    <a href="modulos.html" title="Módulos" class="md-nav__link">
       Módulos
     </a>
   </li>
@@ -1329,11 +1333,69 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../electronica/stm32.html" title="STM32" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        STM32
+      </label>
+    
+    <a href="stm32.html" title="STM32" class="md-nav__link md-nav__link--active">
       STM32
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Tabla de contenidos</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#placa-de-pruebas-stm32-vl-discovery" class="md-nav__link">
+    Placa de pruebas STM32 VL Discovery
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enlaces" class="md-nav__link">
+    Enlaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparacion-entorno-desarrollo" class="md-nav__link">
+    Preparación entorno desarrollo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2014,6 +2076,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="modulos.html" title="Módulos" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Módulos
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../proyectos/headsetcomm.html" title="Headset Commander" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Headset Commander
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
