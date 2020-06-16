@@ -2168,7 +2168,13 @@
 <li><code>make &lt;package&gt;</code>: Compila un paquete.</li>
 <li><code>make &lt;package&gt;-rebuild</code>: Fuerza la recompilación del paquete. No implica la recreación de la imagen ni el root filesystem. Para hacerlo ejecutar <code>make</code>.</li>
 <li><code>make &lt;package&gt;-reconfigure</code>: Fuerza la reconfiguración y recompilación del paquete. No implica la recreación de la imagen ni el root filesystem. Para hacerlo ejecutar <code>make</code>.</li>
-<li><code>make &lt;package&gt;-graph-depends</code>: Genera un gráfico del árbol de dependencias del paquete.</li>
+<li>Gráficos: Todos los comandos siguientes se ven afectados por la variable de entorno <code>BR2_GRAPH_OUT</code> que permite ajustar el formato de salida de los gráficos generados a uno de los siguientes valores: ps, pdf, svg, png, gif, jpg.<ul>
+<li><a href="https://buildroot.org/downloads/manual/manual.html#_graphing_the_dependencies_between_packages"><code>make graph-depends</code></a>: Genera un gráfico del árbol de dependencias de toda la distribución Buildroot. Aparece en <code>output/graphs/graph-depends.pdf</code>.</li>
+<li><code>make &lt;package&gt;-graph-depends</code>: Genera un gráfico del árbol de dependencias del paquete. Aparece en <code>output/graph/&lt;pkg&gt;-graph-depends.pdf</code>.</li>
+<li><a href="https://buildroot.org/downloads/manual/manual.html#_graphing_the_build_duration"><code>make graph-build</code></a>: Genera gráficos de tiempos de compilación de toda la distribución Buildroot. Aparecen en <code>output/graphs</code>.</li>
+<li><a href="https://buildroot.org/downloads/manual/manual.html#graph-size"><code>make graph-size</code></a>: Genera gráficos de ocupación en el filesystem de toda la distribución Buildroot. Aparecen en <code>output/graphs</code>.</li>
+</ul>
+</li>
 <li><code>make &lt;package&gt;-dirclean</code>: Borra el directorio <code>output/build/&lt;package&gt;</code> forzando a compilar el paquete en próximas invocaciones de <code>make</code>. No borra los ficheros copiados al rootfs en <code>output/target</code>. Al forzar la recompilación se sobreescribirán de nuevo, pero si en la nueva compilación algún fichero copiado la primera vez ya no debe ser incluido, permanecerá, por lo que en esos casos conviene borrar <code>output/target</code> previamente.</li>
 <li><code>make clean</code>: Borra todo lo compilado anteriormente (incluyendo directorios build, host, staging y target, las imágenes y el toolchain). Para saber cuándo merece la pena hacer un rebuild, consultar el apartado <a href="https://buildroot.org/downloads/manual/manual.html#full-rebuild">Understanding when a full rebuild is necessary</a>.</li>
 <li><code>make distclean</code>: Borra todo lo que no sean fuentes (incluyendo .config). Útil cuando se quiere cambiar de placa.</li>
