@@ -1867,6 +1867,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#backup-de-la-sd-comprimiendo-al-vuelo-con-rar-y-diviendo-en-trozos-el-fichero-resultante" class="md-nav__link">
+    Backup de la SD (comprimiendo al vuelo con rar y diviendo en trozos el fichero resultante)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#control-de-progreso-durante-flasheo" class="md-nav__link">
     Control de progreso durante flasheo
   </a>
@@ -2423,6 +2430,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#backup-de-la-sd-comprimiendo-al-vuelo-con-rar-y-diviendo-en-trozos-el-fichero-resultante" class="md-nav__link">
+    Backup de la SD (comprimiendo al vuelo con rar y diviendo en trozos el fichero resultante)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#control-de-progreso-durante-flasheo" class="md-nav__link">
     Control de progreso durante flasheo
   </a>
@@ -2767,11 +2781,11 @@ $ sudo dd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span cl
 $ <span class="c1">#Backup sólo de 4GB (si por ejemplo la tarjeta es más grande pero no aprovecha toda la superficie)</span>
 $ sudo dd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">count</span><span class="o">=</span><span class="m">2048</span> <span class="nv">status</span><span class="o">=</span>progress <span class="p">|</span> pv -s 4g <span class="p">|</span> gzip -9 - &gt; Rpi_4gb_backup.img.gz
 $ <span class="c1">#Restauración (comprimido con gzip):</span>
-$ gunzip Rpi_8gb_backup.img.gz -c <span class="p">|</span> pv <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress
+$ gunzip Rpi_8gb_backup.img.gz -c <span class="p">|</span> pv <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
 $ <span class="c1">#Restauración (comprimido con xz):</span>
-$ xzcat Rpi_8gb_backup.img.xz <span class="p">|</span> pv <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress
+$ xzcat Rpi_8gb_backup.img.xz <span class="p">|</span> pv <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
 $ <span class="c1">#Restauración (comprimido con zip):</span>
-$ unzip -p Rpi_8gb_backup.zip <span class="p">|</span> pv <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress
+$ unzip -p Rpi_8gb_backup.zip <span class="p">|</span> pv <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
 </code></pre></div>
 
 <p>Para hacer un backup parcial los cálculos se harían así. Primero sacamos los datos de la estructura de la tarjeta con <code>fdisk</code>:</p>
@@ -2798,14 +2812,21 @@ Dispositivo    Inicio Comienzo    Final Sectores Tamaño Id Tipo
 <div class="highlight"><pre><span></span><code>$ <span class="c1">#Backup:</span>
 $ sudo dd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="p">|</span> pv <span class="p">|</span> gzip -9 - <span class="p">|</span> split --bytes<span class="o">=</span>2G - Rpi_8gb_backup.img.gz.part_
 $ <span class="c1">#Restauración:</span>
-$ cat Rpi_8gb_backup.img.gz.part_* <span class="p">|</span> gunzip -c <span class="p">|</span> pv <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress
+$ cat Rpi_8gb_backup.img.gz.part_* <span class="p">|</span> gunzip -c <span class="p">|</span> pv <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
 </code></pre></div>
 
 <h3 id="backup-de-la-sd-comprimiendo-al-vuelo-con-7z-y-diviendo-en-trozos-el-fichero-resultante">Backup de la SD (comprimiendo al vuelo con 7z y diviendo en trozos el fichero resultante)<a class="headerlink" href="#backup-de-la-sd-comprimiendo-al-vuelo-con-7z-y-diviendo-en-trozos-el-fichero-resultante" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ <span class="c1">#Backup:</span>
-$ sudo dd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">count</span><span class="o">=</span><span class="m">7350</span> <span class="nv">status</span><span class="o">=</span>progress <span class="p">|</span> 7z -si -v1400m a rg350_es.img.7z
+$ sudo dd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">count</span><span class="o">=</span><span class="m">7350</span> <span class="nv">status</span><span class="o">=</span>progress <span class="p">|</span> 7z -si -v1400m a Rpi_8gb_backup.img.7z
 $ <span class="c1">#Restauración:</span>
-$ 7z e -so rg350_es.7z.001 <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress
+$ 7z e -so Rpi_8gb_backup.7z.001 <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
+</code></pre></div>
+
+<h3 id="backup-de-la-sd-comprimiendo-al-vuelo-con-rar-y-diviendo-en-trozos-el-fichero-resultante">Backup de la SD (comprimiendo al vuelo con rar y diviendo en trozos el fichero resultante)<a class="headerlink" href="#backup-de-la-sd-comprimiendo-al-vuelo-con-rar-y-diviendo-en-trozos-el-fichero-resultante" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ <span class="c1">#Backup:</span>
+$ sudo dd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">count</span><span class="o">=</span><span class="m">7350</span> <span class="nv">status</span><span class="o">=</span>progress <span class="p">|</span> rar a -m5 -sRpi_8gb_backup.img -v1400000k Rpi_8gb_backup.img.rar
+$ <span class="c1">#Restauración:</span>
+$ rar p Rpi_8gb_backup.img.part1.rar -idq <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
 </code></pre></div>
 
 <h3 id="control-de-progreso-durante-flasheo">Control de progreso durante flasheo<a class="headerlink" href="#control-de-progreso-durante-flasheo" title="Permanent link">&para;</a></h3>
