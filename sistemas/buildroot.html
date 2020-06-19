@@ -2126,6 +2126,7 @@
 <ul>
 <li><a href="https://buildroot.org/downloads/manual/manual.html#pkg-build-steps">Detalle de los subtargets que tiene cada package</a></li>
 <li><a href="https://buildroot.org/downloads/manual/manual.html#_using_buildroot_during_development">Uso de Buildroot durante el desarrollo</a></li>
+<li><a href="https://buildroot.org/downloads/manual/manual.html#customize-dir-structure">Estructura de directorios</a></li>
 </ul>
 <h2 id="comandos-interesantes">Comandos interesantes<a class="headerlink" href="#comandos-interesantes" title="Permanent link">&para;</a></h2>
 <table>
@@ -2158,15 +2159,15 @@
 </tr>
 <tr>
 <td align="left"><code>make busybox-menuconfig</code></td>
-<td align="left">Configuración detallada de BusyBox. Debe estar activado previamente en <code>System configuration &gt; Init system</code>.</td>
+<td align="left">Configuración detallada de BusyBox. Debe estar activado previamente en <code>System configuration &gt; Init system</code>. El fichero que se edita es <code>output/build/busybox-&lt;version&gt;/.config</code></td>
 </tr>
 <tr>
 <td align="left"><code>make uclibc-menuconfig</code></td>
-<td align="left">Configuración detallada de uClibc. Debe estar seleccionada como librería C en <code>Toolchain &gt; C library</code>.</td>
+<td align="left">Configuración detallada de uClibc. Debe estar seleccionada como librería C en <code>Toolchain &gt; C library</code>. El fichero que se edita es <code>output/build/uclibc-&lt;version&gt;/.config</code></td>
 </tr>
 <tr>
 <td align="left"><code>make linux-menuconfig</code></td>
-<td align="left">Configuración detallada del kernel Linux.</td>
+<td align="left">Configuración detallada del kernel Linux. El fichero que se edita es <code>output/build/linux-&lt;version&gt;/.config</code></td>
 </tr>
 <tr>
 <td align="left"><code>make linux-savedefconfig</code></td>
