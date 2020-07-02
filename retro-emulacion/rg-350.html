@@ -3250,11 +3250,36 @@
 <p>Si sólo es para alojar el sistema, hasta con una de 4GB sería suficiente. Si se quiere meter además emuladores y ROMs, entonces hay que subir el tamaño lo que se considere que se va a necesitar. En el debate sobre qué tarjeta poner más grande (si la interna o la externa), hay que tener en cuenta que pasar cosas por cable a la interna es muy lento. Lo más rápido para incorporar contenidos es copiarlos a la externa directamente en el ordenador. También hay considerar que mantener muchos contenidos en la interna dificulta los cambios de firmware en el futuro (no las actualizaciones) ya que se sustituye completamente el contenido de esta tarjeta. En esa situación habría que rescatar los contenidos previamente por cable, lo que como hemos dicho ya es lento. Una opción más rápida sería copiar de la interna a la externa por medio de DinguxCmdr, pero esto demuestra que antes de llegar a esa situación sería mejor idea mantener esos ficheros directamente en la tarjeta externa.</p>
 <h2 id="opciones-para-actualizar-el-firmware-rg350-rogue-cfw">Opciones para actualizar el firmware RG350-ROGUE-CFW<a class="headerlink" href="#opciones-para-actualizar-el-firmware-rg350-rogue-cfw" title="Permanent link">&para;</a></h2>
 <p>Entre los assets de cada <a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/releases">release</a> encontramos tres opciones:</p>
-<ol>
-<li><strong>Update</strong>: Por ejemplo en la release 1.7.10 el fichero sería: <a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/releases/download/1.7.10/rg350-update-1.7.10-2020-06-30.opk">rg350-update-1.7.10-2020-06-30.opk</a>. Es una aplicación OpenDingux, por tanto se ejecuta desde la propia consola. No formatea, sino que sustituye los archivos que han cambiado en el nuevo firmware respecto de un sistema anterior. Recomendable para no perder ajustes de usuario, aunque dependiendo de la versión del sistema de partida puede no quedar del todo fino. Se recomienda utilizar esta opción sólo para actualizar entre versiones de ROGUE, es decir si se parte de BASE, hay que utilizar una de las dos siguientes (preferentemente la última).</li>
-<li><strong>Flasher</strong>: Por ejemplo en la release 1.7.10 el fichero sería: <a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/releases/download/1.7.10/rg350-flasher-1.7.10-2020-07-01.opk">rg350-flasher-1.7.10-2020-07-01.opk</a>. Es una aplicación OpenDingux, por tanto se ejecuta desde la propia consola. Formatea completamente la SD interna con el nuevo firmware por lo que se pierden ajustes del usuario. Recomendable para solucionar problemas en updates que no han quedado bien. En <a href="https://www.youtube.com/watch?v=V7bWAM0xyzY">este video</a> se ilustra todo el procedimiento.</li>
-<li><strong>sd_image.bin</strong>: Por ejemplo en la release 1.7.10 el fichero sería: <a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/releases/download/1.7.10/sd_image.bin">sd_image.bin</a>. Es una imagen para flashear la tarjeta interna desde un ordenador. Es parecida a la opción 2 y la única que sirve si se parte de un sistema que no arranca. La imagen ocupa más porque es un volcado de todo lo que contiene la SD (incluidos los espacios vacíos de la tarjeta). El proceso incorpora la complejidad adicional de que tenemos que abrir la consola para extraer la microSD interna y utilizar algunas utilidades poco habituales. En <a href="https://www.youtube.com/watch?v=gyNDbmvH5Ro">este video</a> (en inglés) se ilustra todo el procedimiento. La primera parte de <a href="https://www.youtube.com/watch?v=VWJU3KR5MW4">este otro vídeo</a> también muestra el proceso, esta vez en español.</li>
-</ol>
+<table>
+<thead>
+<tr>
+<th align="left">Tipo</th>
+<th align="left">RG350</th>
+<th align="left">RG350M</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Update</strong></td>
+<td align="left"><a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/releases/download/1.7.10/rg350-update-1.7.10-2020-06-30.opk">Enlace</a></td>
+<td align="left"><a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/releases/download/1.7.10M/rg350m-update-1.7.10-2020-07-01.opk">Enlace</a></td>
+<td align="left">Es una aplicación OpenDingux, por tanto se ejecuta desde la propia consola. No formatea, sino que sustituye los archivos que han cambiado en el nuevo firmware respecto de un sistema anterior. Recomendable para no perder ajustes de usuario, aunque dependiendo de la versión del sistema de partida puede no quedar del todo fino. Se recomienda utilizar esta opción sólo para actualizar entre versiones de ROGUE, es decir si se parte de BASE, hay que utilizar una de las dos siguientes (preferentemente la última).</td>
+</tr>
+<tr>
+<td align="left"><strong>Flasher</strong></td>
+<td align="left"><a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/releases/download/1.7.10/rg350-flasher-1.7.10-2020-07-01.opk">Enlace</a></td>
+<td align="left"></td>
+<td align="left">Es una aplicación OpenDingux, por tanto se ejecuta desde la propia consola. Formatea completamente la SD interna con el nuevo firmware por lo que se pierden ajustes del usuario. Recomendable para solucionar problemas en updates que no han quedado bien. En <a href="https://www.youtube.com/watch?v=V7bWAM0xyzY">este video</a> se ilustra todo el procedimiento.</td>
+</tr>
+<tr>
+<td align="left"><strong>sd_image.bin</strong></td>
+<td align="left"><a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/releases/download/1.7.10/sd_image.bin">Enlace</a></td>
+<td align="left"><a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/releases/download/1.7.10M/sd_image.bin">Enlace</a></td>
+<td align="left">Es una imagen para flashear la tarjeta interna desde un ordenador. Es parecida a la opción 2 y la única que sirve si se parte de un sistema que no arranca. La imagen ocupa más porque es un volcado de todo lo que contiene la SD (incluidos los espacios vacíos de la tarjeta). El proceso incorpora la complejidad adicional de tener que utilizar algunas utilidades poco habituales, y en el modelo normal de la consola, además el tener que abrirla para extraer la microSD interna. En <a href="https://www.youtube.com/watch?v=gyNDbmvH5Ro">este video</a> (en inglés) se ilustra todo el procedimiento. La primera parte de <a href="https://www.youtube.com/watch?v=VWJU3KR5MW4">este otro vídeo</a> también muestra el proceso, esta vez en español.</td>
+</tr>
+</tbody>
+</table>
 <p>Así pues, para la primera actualización (y posteriores) se puede utilizar cualquier método. Dependiendo de la situación es más recomendable uno que otro. En general empezar por la opción 1, si no queda bien pasar a la 2 y si tampoco queda bien o no es posible utilizarlo porque la consola no arranca, usar el método 3.</p>
 <h2 id="flash-de-sd-interna">Flash de SD interna<a class="headerlink" href="#flash-de-sd-interna" title="Permanent link">&para;</a></h2>
 <p>De los procesos de actualización descritos en el apartado anterior, el que más dudas y temores plantea es el tercero. Sin embargo es el más recomendable ya que nos permite cambiar la tarjeta por una de más calidad, lo que a la larga es beneficioso.</p>
