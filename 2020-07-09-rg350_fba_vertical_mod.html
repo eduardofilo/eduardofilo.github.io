@@ -2093,7 +2093,7 @@
 <p><img alt="FBA Vertical Settings" src="/images/posts/fba_mod/fba_vertical_settings.png" /></p>
 <p>Tras hacerlo, si lanzamos el juego desde el interfaz propio de FBA conseguimos la orientación deseada:</p>
 <p><img alt="1941 Right" src="/images/posts/fba_mod/1941_right.png" /></p>
-<p>Hasta aquí bien. El problema viene cuando integramos FBA en frontends como SimpleMenu o PyMenu. En esos casos el emulador se lanzará por linea de comando pasando como argumento la ruta de la ROM. Cuando se lanzan así los juegos, no FBA no aplica los ajustes que hemos podido hacer en su interfaz propio. Así siempre se van a ver girados hacia la izquierda.</p>
+<p>Hasta aquí bien. El problema viene cuando integramos FBA en frontends como SimpleMenu o PyMenu. En esos casos el emulador se lanzará por linea de comando pasando como argumento la ruta de la ROM. Cuando se lanzan así los juegos, FBA no aplica los ajustes que hemos podido hacer en su interfaz propio. Así siempre se van a ver girados hacia la izquierda.</p>
 <p>Como en otros artículos, a partir de aquí voy a mostrar detalles técnicos del problema que hay debajo de lo anterior y cómo se ha hecho la modificación del emulador. Si no te interesan y sólo quieres aprovechar la modificación del emulador puedes saltar hasta el apartado <a href="#utilizacion-del-mod-de-fba">Utilización del mod de FBA</a>.</p>
 <h2 id="descripcion-tecnica-del-problema">Descripción técnica del problema<a class="headerlink" href="#descripcion-tecnica-del-problema" title="Permanent link">&para;</a></h2>
 <p>En el Readme que hay dentro del OPK puede leerse lo siguiente:</p>
