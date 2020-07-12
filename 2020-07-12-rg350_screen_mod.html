@@ -2097,8 +2097,8 @@
                   <h1>2020-07-12 RG350 Sustitución de pantalla 480p</h1>
                 
                 <p><img alt="Screen JT035IPS02-V0" src="/images/posts/screen_mod/JT035IPS02-V0.jpg" /></p>
-<p>Recientemente ha aparecido un modelo de RG350 llamado RG350M con unas pocas actualizaciones, de las cuales la más importante es la pantalla. Si en el modelo original la pantalla tiene una resolución de 320x240, en el nuevo modelo es de 640x480. Es decir con 4 veces el número de píxeles de la original.</p>
-<p>Al final del artículo comentaré lo que opino sobre si merece la pena la nueva pantalla. Como el resto del hardware es idéntico, el controlador de pantalla está en el propio procesador (que no cambia como digo) y el conector de la pantalla también es igual (54 pines), la pantalla de alta resolución es compatible y se puede instalar en el modelo antiguo. Vamos a ver cómo realizar la modificación.</p>
+<p>Recientemente ha aparecido un modelo de RG350 llamado RG350M con unas pocas actualizaciones, de las cuales la más importante es la pantalla. Si en el modelo original la pantalla tiene una resolución de 320x240, en el nuevo modelo es de 640x480. Es decir multiplica por 4 el número de píxeles de la original.</p>
+<p>Al final del artículo comentaré lo que opino sobre si merece la pena la nueva pantalla. Como el resto del hardware es idéntico, el controlador de pantalla está en el propio procesador (que no cambia como digo) y el conector de la pantalla también es el mismo (54 pines), la pantalla de alta resolución es compatible y se puede instalar en el modelo antiguo. Vamos a ver cómo realizar la modificación.</p>
 <h2 id="compra-de-la-pantalla">Compra de la pantalla<a class="headerlink" href="#compra-de-la-pantalla" title="Permanent link">&para;</a></h2>
 <p>La pantalla tiene como nombre en código <code>JT035IPS02-V0</code> y se encuentra fácilmente en Aliexpress por entre 20 y 30€. Un enlace de compra sería por ejemplo <a href="https://es.aliexpress.com/item/4000259235766.html">éste</a>.</p>
 <p>Recibiremos algo como lo que se ve al comienzo de este artículo.</p>
@@ -2108,7 +2108,7 @@
 <p>Para trabajar con la consola y dado que mantengo los sticks altos originales, utilizo la almohadilla que venía en la caja de la consola, de esta forma podremos tenerla apoyada en la mesa de forma estable por la cara frontal:</p>
 <p><img alt="Screen Installation 2" src="/images/posts/screen_mod/IMG_20200706_234032.jpg" />
 <img alt="Screen Installation 3" src="/images/posts/screen_mod/IMG_20200706_234037.jpg" /></p>
-<p>Empezamos retirando los 4 tornillos y una vez levantada la tapa trasera apartamos también los 4 gatillos que nos estorbarán durante el proceso. También soltamos el conector de la batería para poder apartar completamente la tapa trasera con la batería pegada:</p>
+<p>Empezamos retirando los 4 tornillos y una vez levantada la tapa trasera apartamos también los 4 gatillos que nos estorbarán durante el proceso. Soltamos el conector de la batería para poder apartar completamente la tapa trasera con la batería pegada:</p>
 <p><img alt="Screen Installation 4" src="/images/posts/screen_mod/IMG_20200706_234134.jpg" /></p>
 <p>Tenemos que extraer completamente la placa base, para lo que sólo es necesario retirar los 6 tornillos que la mantienen unida a la carcasa y las cintas de datos de los sticks analógicos. Empezamos levantando la pestaña del conector del cable de cinta de los sticks:</p>
 <p><img alt="Screen Installation 5" src="/images/posts/screen_mod/IMG_20200706_234212.jpg" /></p>
@@ -2142,7 +2142,7 @@
 <p><img alt="Screen Installation 20" src="/images/posts/screen_mod/IMG_20200707_001400.jpg" /></p>
 <p>Ahora tocaría reconectar la batería y atornillar la tapa trasera, pero no lo vamos a hacer todavía ya que la consola arrancaría y dado que no hemos tocado el sistema la pantalla no se vería. Así pues pasamos al apartado de instalación del software antes de terminar.</p>
 <h2 id="instalacion-software">Instalación software<a class="headerlink" href="#instalacion-software" title="Permanent link">&para;</a></h2>
-<p>El firmware original de la RG350 no da soporte directo a la pantalla de alta resolución, por lo que necesitamos ciertas piezas del firmware de la RG350M para que funcione. En concreto necesitamos el kernel Linux que hay en la partición <code>/boot</code>, es decir la primera partición de la tarjeta interna (la única que es de tipo FAT y que por tanto nos facilita el intercambio de ficheros). Como uso ROGUE, voy a tomar el fichero del kernel directamente de los releases que ofrece Ninoh. Concretamente el fichero del kernel es éste (correspondiente a la versión 1.7.10 de ROGUE que era la disponible en el momento de escribir este artículo):</p>
+<p>El firmware original de la RG350 no da soporte directo a la pantalla de alta resolución, por lo que necesitamos ciertas piezas del firmware de la RG350M para que funcione. En concreto necesitamos el kernel Linux que hay en la partición <code>/boot</code>, es decir la primera partición de la tarjeta interna (la única que es de tipo FAT y que por tanto nos facilita el intercambio de ficheros). Como uso ROGUE, voy a tomar el fichero del kernel directamente de los releases que ofrece Ninoh. Concretamente el fichero del kernel es el siguiente (correspondiente a la versión 1.7.10 de ROGUE que era la disponible en el momento de escribir este artículo):</p>
 <ul>
 <li><a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/releases/download/1.7.10M/vmlinuz.bin">https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/releases/download/1.7.10M/vmlinuz.bin</a></li>
 </ul>
@@ -2150,6 +2150,10 @@
 <ul>
 <li><a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/releases/download/1.7.10M/modules.squashfs">https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/releases/download/1.7.10M/modules.squashfs</a></li>
 <li><a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/releases/download/1.7.10M/rootfs.squashfs">https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/releases/download/1.7.10M/rootfs.squashfs</a></li>
+</ul>
+<p>En caso de preferir el firmware BASE, no he localizado estos ficheros por separado, por lo que nos tocará flashear la tarjeta interna completamente con este fichero:</p>
+<ul>
+<li><a href="https://rs97.bitgala.xyz/RG350M/Stock%20Firmware/sd_image.7z">https://rs97.bitgala.xyz/RG350M/Stock%20Firmware/sd_image.7z</a></li>
 </ul>
 <p>Una vez hechos estos cambios, ya podemos conectar la batería y cerrar la tapa trasera. Al conectar la batería la consola arrancará y deberemos ver el logo de ROGUE en alta resolución:</p>
 <p><img alt="Screen Installation 21" src="/images/posts/screen_mod/IMG_20200712_125621.jpg" /></p>
@@ -2159,10 +2163,10 @@
 
 <h2 id="merece-la-pena-el-cambio">¿Merece la pena el cambio?<a class="headerlink" href="#merece-la-pena-el-cambio" title="Permanent link">&para;</a></h2>
 <p>Por último, haré unos comentarios sobre las ventajas que tiene el cambio de pantalla y si merece la pena.</p>
-<p>Como sabemos hay muchos sistemas retro en los que encaja bastante bien la resolución de la pantalla de 320x240 de la RG350 original. Esto ocurre en la mayoría de las consolas de 8 y 16 bit. En cuanto a los sistemas que no coincide, podemos encontrarnos casos que queden por debajo (Game Boy por ejemplo) y por encima (PlayStation fundamentalmente). En ambos casos tener una pantalla de mayor resolución es una ventaja. En el caso de sistemas con más resolución resulta más evidente, pero también en sistemas de baja resolución ya que al hacer el escalado "hacia arriba" tendremos más píxeles para jugar, para aplicar distintos efectos de suavizado o para simular el efecto <em>dot matrix</em> que solían tener pantallas como las de la Game Boy.</p>
+<p>Como sabemos hay muchos sistemas retro en los que encaja bastante bien la resolución de la pantalla de 320x240 de la RG350 original. Esto ocurre en la mayoría de las consolas de 8 y 16 bit. En cuanto a los sistemas que no coincide, podemos encontrarnos casos que queden por debajo (Game Boy por ejemplo) y por encima (PlayStation fundamentalmente). En ambos casos tener una pantalla de mayor resolución es una ventaja. En el caso de sistemas con más resolución resulta muy evidente, pero también en sistemas de baja resolución ya que al hacer el escalado "hacia arriba" tendremos más píxeles para jugar, para aplicar distintos efectos de suavizado o para simular el efecto <em>dot matrix</em> que solían tener pantallas como las de la Game Boy.</p>
 <p>De todas formas, a grandes rasgos se puede decir que la pantalla de 480p merece fundamentalmente la pena si vamos a jugar a ciertos juegos de alta resolución en PlayStation, DOSBox y Arcade.</p>
-<p>Otro aspecto a considerar, que siempre me parece importante para valorar estas consolas, es el de la escena de desarrollo o scene. Sólo el tiempo lo dirá, pero parece lógico pensar que con el tiempo se irá ampliando la scene del modelo M y reduciendo el de la normal.</p>
-<p>Para terminar vamos a mostrar algunos pantallazos de juegos tal y como se verían en la pantalla de 240p frente a la de 480p. Las dos imágenes se han escalado a 640x480 para que se puedan comparar fácilmente:</p>
+<p>Otro aspecto a considerar, que siempre me parece importante para valorar estas retroconsolas, es el de la escena de desarrollo o scene. Sólo el tiempo lo dirá, pero parece lógico pensar que gradualmente se irá ampliando la scene del modelo M y reduciendo el de la normal.</p>
+<p>Para terminar vamos a mostrar algunos pantallazos de juegos tal y como se verían en la pantalla de 240p frente a la de 480p. Las dos imágenes se han escalado a 640x480 para que se puedan comparar fácilmente. Aún así debo decir que los pantallazos no hacen justicia. La pantalla de alta resolución se ve mucho mejor de lo que parece con estos juegos de alta resolución:</p>
 <p><strong>Logos arranque PlayStation</strong>: Resolución original 640x448</p>
 <p><img alt="Logo Sony 240p" src="/images/posts/screen_mod/logo_sony_240p.png" />
 <img alt="Logo Sony 480p" src="/images/posts/screen_mod/logo_sony_480p.png" /></p>
