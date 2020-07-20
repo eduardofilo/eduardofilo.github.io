@@ -1342,6 +1342,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#programacion-con-arduino" class="md-nav__link">
+    Programación con Arduino
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programacion-con-buspirate" class="md-nav__link">
+    Programación con BusPirate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cambiar-el-reloj" class="md-nav__link">
     Cambiar el reloj
   </a>
@@ -2091,6 +2105,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#programacion-con-arduino" class="md-nav__link">
+    Programación con Arduino
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programacion-con-buspirate" class="md-nav__link">
+    Programación con BusPirate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cambiar-el-reloj" class="md-nav__link">
     Cambiar el reloj
   </a>
@@ -2138,7 +2166,7 @@
 <p>En caso de que el dispositivo con el que conectemos trabaje a 3.3V (como Raspberry Pi por ejemplo), es necesario montar un divisor de tensión en la línea RX tal y como se ve en <a href="https://oscarliang.com/raspberry-pi-and-arduino-connected-serial-gpio/">este artículo</a> (en el artículo las líneas RX/TX sí que están cruzadas porque se conecta el puerto UART al microcontrolador Atmel, no al adaptador USB):</p>
 <p><img alt="arduino-raspberry-pi-serial-connect" src="/images/pages/arduino-raspberry-pi-serial-connect-schematics.jpg" /></p>
 <h2 id="programacion-de-attiny85">Programación de ATtiny85<a class="headerlink" href="#programacion-de-attiny85" title="Permanent link">&para;</a></h2>
-<p>El MC ATtiny85 no lleva el bootloader de Arduino que escucha por el puerto serie adaptado a USB ya que ni tiene puerto serie hardware ni suele estar acompañado por el adaptador USB. La única forma de programarlo es por <a href="https://en.wikipedia.org/wiki/In-system_programming">ISP</a> o mediante un programador de MC adecuado. Esto se puede hacer desde un Arduino (basado en ATmega328p) con el sketch "Arduino ISP" cargado.</p>
+<p>El MC ATtiny85 no lleva el bootloader de Arduino que escucha por el puerto serie adaptado a USB ya que ni tiene puerto serie hardware ni suele estar acompañado por el adaptador USB. La única forma de programarlo es por <a href="https://en.wikipedia.org/wiki/In-system_programming">ISP</a> o mediante un programador de MC adecuado de los que existen varios. Vamos a ver un par de ellos.</p>
 <p>Antes de empezar necesitamos cargar en el Arduino IDE las definiciones de placa para soportar ATtiny85 (y algunos de sus hermanos pequeños). Para ello proceder como sigue (<a href="http://highlowtech.org/?p=1695">fuente</a>):</p>
 <ol>
 <li>Abrimos el Arduino IDE y nos vamos a la ventana de Preferencias (<code>Archivo &gt; Preferencias</code>).</li>
@@ -2147,7 +2175,8 @@
 <li>Abrimos el Gestor de tarjetas (<code>Herramientas &gt; Placa &gt; Gestor de tarjetas...</code>).</li>
 <li>Localizamos el módulo <code>attiny by David A. Mellis</code> y lo instalamos.</li>
 </ol>
-<p>Los pasos para el montaje son los siguientes:</p>
+<h4 id="programacion-con-arduino">Programación con Arduino<a class="headerlink" href="#programacion-con-arduino" title="Permanent link">&para;</a></h4>
+<p>Podemos utilizar como programador un Arduino (basado en ATmega328p como el UNO) con el sketch "Arduino ISP" cargado. Los pasos para programar de esta forma son los siguientes:</p>
 <ol>
 <li>Cargamos en el Arduino el sketch "Arduino ISP" que hay en ejemplos.</li>
 <li>Colocamos un condensador de 10μF entre el pin RESET del Arduino y GND.</li>
@@ -2162,6 +2191,74 @@
 </ul>
 </li>
 </ol>
+<h4 id="programacion-con-buspirate">Programación con BusPirate<a class="headerlink" href="#programacion-con-buspirate" title="Permanent link">&para;</a></h4>
+<p>En este caso vamos a utilizar un BusPirate 3.6 como programador y un módulo Digispark para cablear más fácilmente la conexión ISP:</p>
+<ol>
+<li>
+<p>Insertar en <a href="https://es.aliexpress.com/item/606895785.html">módulo Digispark</a>. A la tira de pines de 2x4 del módulo le habremos recortado los pines que corresponden a los pines P3 y P4 del ATtiny85, ya que de esta forma la tira de pines se convierte en un conector ISP de 6 pines estándar.</p>
+<p><img alt="Digispark trimmed" src="/images/pages/arduino/digispark_trim.jpg" /></p>
+</li>
+<li>
+<p>Conectar el cable ISP entre BusPirate y módulo Digispark cableado como sigue (aunque el ATtiny85 funciona a 5V, parece que soporta sin problemas ser programado a 3.3V):</p>
+<table>
+<thead>
+<tr>
+<th align="left">Pin ISP</th>
+<th align="left">Señal</th>
+<th align="left">Pin BusPirate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">MISO</td>
+<td align="left">Negro:MISO</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">+3.3V</td>
+<td align="left">Rojo:+3.3V</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">SCK</td>
+<td align="left">Morado:CLK</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">MOSI</td>
+<td align="left">Gris:MOSI</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">CS</td>
+<td align="left">Blanco:CS</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">GND</td>
+<td align="left">Marrón:GND</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="BusPirate Digispark 1" src="/images/pages/arduino/buspirate_digispark_1.jpg" />
+<img alt="BusPirate Digispark 2" src="/images/pages/arduino/buspirate_digispark_2.jpg" />
+<img alt="BusPirate Digispark 3" src="/images/pages/arduino/buspirate_digispark_3.jpg" /></p>
+</li>
+<li>
+<p>Configuramos el Arduino IDE con los siguientes parámetros:</p>
+<ul>
+<li><strong>Placa</strong>: <code>ATtiny25/45/85</code></li>
+<li><strong>Procesador</strong>: <code>ATtiny85</code></li>
+<li><strong>Clock</strong>: <code>Internal 8 MHz</code></li>
+<li><strong>Programador</strong>: <code>BusPirate as ISP</code></li>
+</ul>
+</li>
+</ol>
+<p>Alternativamente podemos programar con el comando <code>avrdude</code> con el argumento <code>-c buspirate</code>. Por ejemplo para obtener el estado de los Fuse bits:</p>
+<div class="highlight"><pre><span></span><code>$ avrdude -c buspirate -P /dev/ttyUSB0 -p attiny85 -v
+</code></pre></div>
+
 <p>A partir de aquí hay varias cosas que podemos hacer.</p>
 <h4 id="cambiar-el-reloj">Cambiar el reloj<a class="headerlink" href="#cambiar-el-reloj" title="Permanent link">&para;</a></h4>
 <p>El ajuste del reloj que va a utilizar el MC es muy importante. Necesitamos conocerla para que el MC responda cuando queramos comunicarnos con él para cargarle un programa. Si en algún momento lo configuramos para que utilice reloj externo, tendremos que conectar uno entre los pines PB3 y PB4 siguiendo el datasheet. El ajuste del reloj se hace cambiando los fuse bits de 3 bytes especiales del MC. Esto desde el Arduino IDE se hace con el comando "Quemar Bootloader" que no hace otra cosa que cambiar estos fuse bits. De fábrica el ATtiny85 viene con el reloj interno de 1MHz configurado. Conviene cambiarlo inicialmente a 8MHz ya que es una configuración más potente (aunque también consumirá más). En caso de cometer algún error configurando los fuse bits y tener problemas para comunicar con el MC, se puede usar un <a href="/electronica/modulos.html#attiny-high-voltage-programmer">programador de alto voltaje</a> para forzar el cambio de los fusebits.</p>
