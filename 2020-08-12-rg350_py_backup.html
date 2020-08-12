@@ -2169,7 +2169,7 @@ systems =
 <p>La marca que aparece a la izquierda de cada fichero de backup sirve para especificar si queremos que dicho fichero forme parte de las operaciones de backup o restauración que ejecutaremos a partir de entonces.</p>
 <p>Cuando existan ficheros de backup ya realizados (color blanco) y alguno de éstos se encuentre marcado (marca a la izqierda), veremos que aparece un nuevo control que nos permite realizar la restauración, la tecla <code>X</code> (<em>restore</em>). La restauración sólo se realizará de los ficheros de los que exista backup. Por ejemplo en la siguiente configuracion, si ejecutamos una restauración de los backups, sólo se restaurará el primer fichero (<code>Stella (A2600)</code> que aparece en blanco) y no el del segundo (<code>FBA</code> que aparece en rojo) a pesar de que ambos están marcados para ser ejecutados:</p>
 <p><img alt="Selective backup" src="/images/posts/rg350_py_backup/selective_backup.png" /></p>
-<p>La ejecución del backup sí se realizará sobre los dos ficheros, y de hecho al finalizar, el segundo pasará a tomar color blanco al empezar a permitir la restauración:</p>
+<p>La ejecución del backup sí se realizará sobre los dos ficheros, y de hecho al finalizar, el segundo pasará a tomar color blanco al permitir ya la restauración:</p>
 <p><img alt="Backup done" src="/images/posts/rg350_py_backup/backup_done.png" /></p>
 <p>Podemos comprobar la generación de ambos backups (en realidad la repetición del primero y la creación del segundo) si exploramos los ficheros que existen en el directorio donde se dejan los backups (si no se modifica la configuración será <code>/media/sdcard</code>):</p>
 <p><img alt="Check backup" src="/images/posts/rg350_py_backup/check_backup.png" /></p>
