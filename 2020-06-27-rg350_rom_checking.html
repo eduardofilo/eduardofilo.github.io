@@ -2025,6 +2025,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#rom-the-simpsons-2-players-world-set-2-simps2pazip" class="md-nav__link">
+    ROM The Simpsons (2 Players World, set 2) - simps2pa.zip
+  </a>
+  
+</li>
+      
       
       
       
@@ -2084,6 +2091,52 @@
 
 <p>Ahí vemos claramente que se trata de una BIOS (<code>isbios="yes"</code>).</p>
 <p>Para que funcione el juego pues hay que localizar el fichero <code>konamigx.zip</code> que contenga la ROM <code>300a01.34k</code>.</p>
+<h2 id="rom-the-simpsons-2-players-world-set-2-simps2pazip">ROM <code>The Simpsons (2 Players World, set 2)</code> - <code>simps2pa.zip</code><a class="headerlink" href="#rom-the-simpsons-2-players-world-set-2-simps2pazip" title="Permanent link">&para;</a></h2>
+<p>Este juego es un clon de <code>The Simpsons (4 Players World, set 1)</code> tal y como vemos en el dat:</p>
+<div class="highlight"><pre><span></span><code>&lt;game name=&quot;simps2pa&quot; cloneof=&quot;simpsons&quot; romof=&quot;simpsons&quot;&gt;
+    &lt;description&gt;The Simpsons (2 Players alt)&lt;/description&gt;
+    &lt;year&gt;1991&lt;/year&gt;
+    &lt;manufacturer&gt;Konami&lt;/manufacturer&gt;
+    &lt;rom name=&quot;simp1.17c&quot; size=&quot;131072&quot; crc=&quot;07ceeaea&quot; sha1=&quot;c18255ae1d578c2d53de80d6323cdf41cbe47b57&quot;/&gt;
+    &lt;rom name=&quot;simp2.16c&quot; merge=&quot;g02.16c&quot; size=&quot;131072&quot; crc=&quot;580ce1d6&quot; sha1=&quot;5b07fb8e8041e1663980aa35d853fdc13b22dac5&quot;/&gt;
+    &lt;rom name=&quot;simp3.15c&quot; size=&quot;131072&quot; crc=&quot;96636225&quot; sha1=&quot;5de95606e5c9337f18bc42f4df791cacafa20399&quot;/&gt;
+    &lt;rom name=&quot;simp4.13c&quot; size=&quot;131072&quot; crc=&quot;54e6df66&quot; sha1=&quot;1b83ae56cf1deb51b04880fa421f06568c938a99&quot;/&gt;
+    &lt;rom name=&quot;simp5.6g&quot; size=&quot;131072&quot; crc=&quot;76c1850c&quot; sha1=&quot;9047c6b26c4e33c74eb7400a807d3d9f206f7bbe&quot;/&gt;
+    &lt;rom name=&quot;simp_12n.rom&quot; merge=&quot;simp_12n.rom&quot; size=&quot;1048576&quot; crc=&quot;577dbd53&quot; sha1=&quot;e603e03e3dcba766074561faa92afafa5761953d&quot;/&gt;
+    &lt;rom name=&quot;simp_16h.rom&quot; merge=&quot;simp_16h.rom&quot; size=&quot;524288&quot; crc=&quot;cf2bbcab&quot; sha1=&quot;47afea47f9bc8cb5eb1c7b7fbafe954b3e749aeb&quot;/&gt;
+    &lt;rom name=&quot;simp_16l.rom&quot; merge=&quot;simp_16l.rom&quot; size=&quot;1048576&quot; crc=&quot;55fab05d&quot; sha1=&quot;54db8559d71ed257de9a29c8808654eaea0df9e2&quot;/&gt;
+    &lt;rom name=&quot;simp_18h.rom&quot; merge=&quot;simp_18h.rom&quot; size=&quot;524288&quot; crc=&quot;ba1ec910&quot; sha1=&quot;0805ccb641271dea43185dc0365732260db1763d&quot;/&gt;
+    &lt;rom name=&quot;simp_1d.rom&quot; merge=&quot;simp_1d.rom&quot; size=&quot;262144&quot; crc=&quot;78778013&quot; sha1=&quot;edbd6d83b0d1a20df39bb160b92395586fa3c32d&quot;/&gt;
+    &lt;rom name=&quot;simp_1f.rom&quot; merge=&quot;simp_1f.rom&quot; size=&quot;1048576&quot; crc=&quot;1397a73b&quot; sha1=&quot;369422c84cca5472967af54b8351e29fcd69f621&quot;/&gt;
+    &lt;rom name=&quot;simp_3n.rom&quot; merge=&quot;simp_3n.rom&quot; size=&quot;1048576&quot; crc=&quot;7de500ad&quot; sha1=&quot;61b76b8f402e3bde1509679aaaa28ef08cafb0ab&quot;/&gt;
+    &lt;rom name=&quot;simp_8n.rom&quot; merge=&quot;simp_8n.rom&quot; size=&quot;1048576&quot; crc=&quot;aa085093&quot; sha1=&quot;925239d79bf607021d371263352618876f59c1f8&quot;/&gt;
+&lt;/game&gt;
+</code></pre></div>
+
+<p>Necesita por tanto que el juego base esté instalado:</p>
+<div class="highlight"><pre><span></span><code>&lt;game name=&quot;simpsons&quot;&gt;
+    &lt;description&gt;The Simpsons (4 Players)&lt;/description&gt;
+    &lt;year&gt;1991&lt;/year&gt;
+    &lt;manufacturer&gt;Konami&lt;/manufacturer&gt;
+    &lt;rom name=&quot;e03.6g&quot; size=&quot;131072&quot; crc=&quot;866b7a35&quot; sha1=&quot;98905764eb4c7d968ccc17618a1f24ee12e33c0e&quot;/&gt;
+    &lt;rom name=&quot;g01.17c&quot; size=&quot;131072&quot; crc=&quot;9f843def&quot; sha1=&quot;858432b59101b0577c5cec6ac0c7c20ab0780c9a&quot;/&gt;
+    &lt;rom name=&quot;g02.16c&quot; size=&quot;131072&quot; crc=&quot;580ce1d6&quot; sha1=&quot;5b07fb8e8041e1663980aa35d853fdc13b22dac5&quot;/&gt;
+    &lt;rom name=&quot;j12.15c&quot; size=&quot;131072&quot; crc=&quot;479e12f2&quot; sha1=&quot;15a6cb12e68b4773a29ab463640a43f8e814de59&quot;/&gt;
+    &lt;rom name=&quot;j13.13c&quot; size=&quot;131072&quot; crc=&quot;aade2abd&quot; sha1=&quot;10f178d5ed399b4866266e075d91ca3db26798f8&quot;/&gt;
+    &lt;rom name=&quot;simp_12n.rom&quot; size=&quot;1048576&quot; crc=&quot;577dbd53&quot; sha1=&quot;e603e03e3dcba766074561faa92afafa5761953d&quot;/&gt;
+    &lt;rom name=&quot;simp_16h.rom&quot; size=&quot;524288&quot; crc=&quot;cf2bbcab&quot; sha1=&quot;47afea47f9bc8cb5eb1c7b7fbafe954b3e749aeb&quot;/&gt;
+    &lt;rom name=&quot;simp_16l.rom&quot; size=&quot;1048576&quot; crc=&quot;55fab05d&quot; sha1=&quot;54db8559d71ed257de9a29c8808654eaea0df9e2&quot;/&gt;
+    &lt;rom name=&quot;simp_18h.rom&quot; size=&quot;524288&quot; crc=&quot;ba1ec910&quot; sha1=&quot;0805ccb641271dea43185dc0365732260db1763d&quot;/&gt;
+    &lt;rom name=&quot;simp_1d.rom&quot; size=&quot;262144&quot; crc=&quot;78778013&quot; sha1=&quot;edbd6d83b0d1a20df39bb160b92395586fa3c32d&quot;/&gt;
+    &lt;rom name=&quot;simp_1f.rom&quot; size=&quot;1048576&quot; crc=&quot;1397a73b&quot; sha1=&quot;369422c84cca5472967af54b8351e29fcd69f621&quot;/&gt;
+    &lt;rom name=&quot;simp_3n.rom&quot; size=&quot;1048576&quot; crc=&quot;7de500ad&quot; sha1=&quot;61b76b8f402e3bde1509679aaaa28ef08cafb0ab&quot;/&gt;
+    &lt;rom name=&quot;simp_8n.rom&quot; size=&quot;1048576&quot; crc=&quot;aa085093&quot; sha1=&quot;925239d79bf607021d371263352618876f59c1f8&quot;/&gt;
+&lt;/game&gt;
+</code></pre></div>
+
+<p>Empaquetar al final las ROMs con:</p>
+<div class="highlight"><pre><span></span><code>zip -0 rom.zip *
+</code></pre></div>
                 
                   
                 
