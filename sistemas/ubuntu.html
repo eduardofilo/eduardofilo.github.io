@@ -2064,6 +2064,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#conversion-de-formato-en-lote" class="md-nav__link">
+    Conversión de formato en lote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#renombrado-de-archivos-en-lote" class="md-nav__link">
     Renombrado de archivos en lote
   </a>
@@ -2571,6 +2578,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#conversion-de-formato-en-lote" class="md-nav__link">
+    Conversión de formato en lote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#renombrado-de-archivos-en-lote" class="md-nav__link">
     Renombrado de archivos en lote
   </a>
@@ -3059,18 +3073,26 @@ $ ls *.mp4 <span class="p">|</span> awk <span class="s1">&#39;{print &quot;HandB
 </code></pre></div>
 
 <p>En ocasiones, si hay varios miles de fotos, se puede llenar la memoria. En este caso hacer la conversión con el siguiente comando, que trata las imágenes una a una:</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nv">a</span><span class="o">=</span><span class="m">1</span>
-$ <span class="k">for</span> i in *.jpg<span class="p">;</span> <span class="k">do</span>
+<div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">1</span>
+<span class="k">for</span> i in *.jpg<span class="p">;</span> <span class="k">do</span>
   <span class="nv">new</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&quot;%04d.jpg&quot;</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span><span class="k">)</span>
   convert <span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="o">[</span>x1080<span class="o">]</span> resized/<span class="si">${</span><span class="nv">new</span><span class="si">}</span>
   <span class="nb">let</span> <span class="nv">a</span><span class="o">=</span>a+1
 <span class="k">done</span>
 </code></pre></div>
 
+<h2 id="conversion-de-formato-en-lote">Conversión de formato en lote<a class="headerlink" href="#conversion-de-formato-en-lote" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> file in *.jpg<span class="p">;</span> <span class="k">do</span>
+  <span class="nv">filename</span><span class="o">=</span><span class="k">$(</span>basename <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="k">)</span>
+  <span class="nv">fileid</span><span class="o">=</span><span class="si">${</span><span class="nv">filename</span><span class="p">%%.*</span><span class="si">}</span>
+  convert <span class="si">${</span><span class="nv">filename</span><span class="si">}</span> <span class="si">${</span><span class="nv">fileid</span><span class="si">}</span>.png
+<span class="k">done</span>
+</code></pre></div>
+
 <h2 id="renombrado-de-archivos-en-lote">Renombrado de archivos en lote<a class="headerlink" href="#renombrado-de-archivos-en-lote" title="Permanent link">&para;</a></h2>
 <p>Por ejemplo una serie de archivos jpg:</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nv">a</span><span class="o">=</span><span class="m">1</span>
-$ <span class="k">for</span> i in *.jpg<span class="p">;</span> <span class="k">do</span>
+<div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">1</span>
+<span class="k">for</span> i in *.jpg<span class="p">;</span> <span class="k">do</span>
   <span class="nv">new</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&quot;%04d.jpg&quot;</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span><span class="k">)</span>
   mv <span class="si">${</span><span class="nv">i</span><span class="si">}</span> <span class="si">${</span><span class="nv">new</span><span class="si">}</span>
   <span class="nb">let</span> <span class="nv">a</span><span class="o">=</span>a+1
