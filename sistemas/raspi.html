@@ -2822,15 +2822,15 @@ Oct <span class="m">16</span> <span class="m">13</span>:15:25 raspi-git noip2<sp
 
 <h3 id="backup-de-la-sd-comprimiendo-al-vuelo">Backup de la SD (comprimiendo al vuelo)<a class="headerlink" href="#backup-de-la-sd-comprimiendo-al-vuelo" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ <span class="c1">#Backup:</span>
-$ sudo dd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="p">|</span> pv <span class="p">|</span> gzip -9 - &gt; Rpi_8gb_backup.img.gz
+$ sudo dd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="p">|</span> gzip -9 - &gt; Rpi_8gb_backup.img.gz
 $ <span class="c1">#Backup sólo de 4GB (si por ejemplo la tarjeta es más grande pero no aprovecha toda la superficie)</span>
-$ sudo dd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">count</span><span class="o">=</span><span class="m">2048</span> <span class="nv">status</span><span class="o">=</span>progress <span class="p">|</span> pv -s 4g <span class="p">|</span> gzip -9 - &gt; Rpi_4gb_backup.img.gz
+$ sudo dd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">count</span><span class="o">=</span><span class="m">2048</span> <span class="p">|</span> pv -s 4g <span class="p">|</span> gzip -9 - &gt; Rpi_4gb_backup.img.gz
 $ <span class="c1">#Restauración (comprimido con gzip):</span>
-$ gunzip Rpi_8gb_backup.img.gz -c <span class="p">|</span> pv <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
+$ gunzip Rpi_8gb_backup.img.gz -c <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
 $ <span class="c1">#Restauración (comprimido con xz):</span>
-$ xzcat Rpi_8gb_backup.img.xz <span class="p">|</span> pv <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
+$ xzcat Rpi_8gb_backup.img.xz <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
 $ <span class="c1">#Restauración (comprimido con zip):</span>
-$ unzip -p Rpi_8gb_backup.zip <span class="p">|</span> pv <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
+$ unzip -p Rpi_8gb_backup.zip <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
 $ <span class="c1">#Restauración (comprimido con 7z):</span>
 $ 7z e -so Rpi_8gb_backup.7z <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
 </code></pre></div>
