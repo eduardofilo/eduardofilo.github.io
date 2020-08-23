@@ -2116,7 +2116,7 @@
 <li>Tarjeta interna: <code>/media/data/apps</code></li>
 <li>Tarjeta externa: <code>/media/sdcard/apps</code></li>
 </ul>
-<p>El OPK lo podemos bajar de la sección <a href="https://github.com/eduardofilo/RG350_py_backup/releases">releases</a> del repositorio de código de la aplicación, en concreto la última versión se encuentra <a href="https://github.com/eduardofilo/RG350_py_backup/releases/download/v1.3.1/py_backup_1.3.1.opk">aquí</a>.</p>
+<p>El OPK lo podemos bajar de la sección <a href="https://github.com/eduardofilo/RG350_py_backup/releases">releases</a> del repositorio de código de la aplicación, en concreto la última versión se encuentra <a href="https://github.com/eduardofilo/RG350_py_backup/releases/download/1.4/py_backup_1.4.opk">aquí</a>.</p>
 <p>Una vez instalada, podremos encontrar la aplicación en la sección <em>Applications</em> de los distintos lanzadores:</p>
 <p><img alt="GMenu2X" src="/images/posts/rg350_py_backup/gmenu2x.png" />
 <img alt="PyMenu" src="/images/posts/rg350_py_backup/pymenu.png" />
@@ -2128,7 +2128,7 @@
 
 <p>Por defecto viene con las rutas de los directorios de savestate de varios emuladores populares:</p>
 <div class="highlight"><pre><span></span><code>[DEFAULT]
-destination_directory = /media/sdcard
+destination_directory = /media/sdcard/backups
 systems =
     Stella (A2600),True,/media/data/local/home/.stella/state
     FBA,True,/media/data/local/home/.fba/saves
@@ -2145,6 +2145,9 @@ systems =
     PocketSNES (SNES),True,/media/data/local/home/.pocketsnes
     SwanEmu (WS),True,/media/data/local/home/.swanemu/sstates
     xMAME (Arcade),True,/media/data/local/share/xmame/xmame52/sta,/media/data/local/share/xmame/xmame69/sta,/media/data/local/share/xmame/xmame84/sta
+    ScummVM,True,/media/data/local/home/.local/share/scummvm/saves
+    OpenBOR,True,/media/data/local/home/.OpenBOR/Saves
+    Ports,True,/media/data/local/home/.nxengine,/media/data/local/home/.local/share/VVVVVV/saves,/media/data/local/home/.methane,/media/data/local/home/.sorrv5/savegame
 </code></pre></div>
 
 <p>Como vemos dentro del fichero de tipo <a href="https://es.wikipedia.org/wiki/INI_(extensi%C3%B3n_de_archivo)">INI</a> encontramos dos parámetros:</p>
@@ -2163,7 +2166,7 @@ systems =
 <div class="highlight"><pre><span></span><code>    PCSX4All (PS),True,/media/data/local/home/.pcsx4all/sstates,/media/data/local/home/.pcsx4all/memcards
 </code></pre></div>
 
-<p>Al ejecutar el backup, aparecerá un fichero de nombre <code>PCSX4All (PS).tgz</code> en el directorio <code>/media/sdcard</code> y con el contenido de los dos siguientes directorios:</p>
+<p>Al ejecutar el backup, aparecerá un fichero de nombre <code>PCSX4All (PS).tgz</code> en el directorio <code>/media/sdcard/backups</code> y con el contenido de los dos siguientes directorios:</p>
 <ul>
 <li><code>/media/data/local/home/.pcsx4all/sstates</code></li>
 <li><code>/media/data/local/home/.pcsx4all/memcards</code></li>
@@ -2185,7 +2188,7 @@ systems =
 <p><img alt="Selective backup" src="/images/posts/rg350_py_backup/selective_backup.png" /></p>
 <p>La ejecución del backup sí se realizará sobre los dos ficheros, y de hecho al finalizar, el segundo pasará a tomar color blanco al permitir ya la restauración:</p>
 <p><img alt="Backup done" src="/images/posts/rg350_py_backup/backup_done.png" /></p>
-<p>Podemos comprobar la generación de ambos backups (en realidad la repetición del primero y la creación del segundo) si exploramos los ficheros que existen en el directorio donde se dejan los backups (si no se modifica la configuración será <code>/media/sdcard</code>):</p>
+<p>Podemos comprobar la generación de ambos backups (en realidad la repetición del primero y la creación del segundo) si exploramos los ficheros que existen en el directorio donde se dejan los backups (si no se modifica la configuración será <code>/media/sdcard/backups</code>):</p>
 <p><img alt="Check backup" src="/images/posts/rg350_py_backup/check_backup.png" /></p>
 <p>Al ejecutar las operaciones de backup y restauración se nos pedirá confirmación por medio de un pequeño popup:</p>
 <p><img alt="Confirm backup" src="/images/posts/rg350_py_backup/confirm_backup.png" /></p>
