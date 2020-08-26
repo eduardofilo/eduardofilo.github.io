@@ -2116,7 +2116,7 @@
 <p>ScummVM es uno de esos sistemas de emulación que en RG350, al igual que otros como OpenBOR, utiliza un interfaz propio para seleccionar y arrancar los juegos, lo que dificulta su integración en lanzadores como SimpleMenu, EmulationStation o PyMenu. A pesar de ello, en las últimas versiones existe un mecanismo previsto para poder realizar la integración con los selectores de ROMs de los lanzadores. Vamos a ver cómo.</p>
 <p>Partimos de una instalación como la vista en <a href="/2020-04-14-rg350_scummvm.html">este artículo</a> anterior.</p>
 <h2 id="instalacion-de-opk-con-soporte-de-argumentos">Instalación de OPK con soporte de argumentos<a class="headerlink" href="#instalacion-de-opk-con-soporte-de-argumentos" title="Permanent link">&para;</a></h2>
-<p>Necesitamos una versión del emulador que admita o mejor dicho que lea argumentos o parámetros que se le pasen al ejecutable y que por medio de los mismos se le pueda indicar el juego a abrir. Esto es justo la mejora realizada en la versión de ScummVM que encontramos en este repositorio:</p>
+<p>Necesitamos una versión del emulador que admita o mejor dicho que lea argumentos o parámetros que se le pasen al ejecutable y que por medio de los mismos se le pueda indicar el juego a abrir. Esta es justo la mejora realizada en la versión de ScummVM que encontramos en este repositorio:</p>
 <p><a href="https://github.com/goldmojo/scummvm-rg350/releases/tag/2.2gitRC2-params">https://github.com/goldmojo/scummvm-rg350/releases/tag/2.2gitRC2-params</a></p>
 <p>Bajamos pues el OPK (desde <a href="https://github.com/goldmojo/scummvm-rg350/releases/download/2.2gitRC2-params/scummvm-2.2-git-rg350-01132020-params.opk">este enlace</a>) y sustituimos el emulador de ScummVM que teníamos instalado antes. Como siempre, para <a href="/2020-07-02-rg350_primeros_pasos.html#dondecomo-instalo-el-fichero-opk-del-emulador-que-he-bajado">instalar un nuevo OPK</a>, lo que tenemos que hacer es copiarlo a uno de estos dos directorios:</p>
 <ul>
@@ -2152,6 +2152,12 @@ drwxr-xr-x    2 root     root          4096 Feb  5  1970 MANIAC
 <p>A partir de ese momento, si vamos al directorio del juego, sólo nos debería aparecer el fichero correspondiente al target. Abriéndolo arrancará el juego directamente sin mediar el interfaz clásico de ScummVM:</p>
 <iframe width="640" height="480" src="https://www.youtube.com/embed/HQKXA7SM2oM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<div class="admonition caution">
+<p class="admonition-title">Importante</p>
+<p>Para que un target sea reconocido, el juego debe haber sido instalado previamente con el interfaz propio de ScummVM tal y como se describía en este <a href="/2020-04-14-rg350_scummvm.html#instalacion-de-juegos">artículo anterior</a>. Hay un problema, y es que la versión instalada en este artículo se comporta como la mayoría de los emuladores mostrando un explorador de archivos en lugar de abriendo directamente el frontend propio. Hay un truco para conseguir lanzar el frontend y consiste en editar el lanzador en GMenu2X y borrar la ruta de las ROMs:</p>
+<p><img alt="GMenu2X erase path" src="/images/posts/scummvm-launchers/gmenu2x_erase_path.png" /></p>
+<p>Haciendo esto, la próxima vez que abramos el emulador desde GMenu2X se nos mostrará el frontend propio de ScummVM y podremos instalar nuestros juegos.</p>
+</div>
 <h2 id="integracion-en-simplemenu">Integración en SimpleMenu<a class="headerlink" href="#integracion-en-simplemenu" title="Permanent link">&para;</a></h2>
 <p>Vamos a ver cómo realizaríamos la integración en SimpleMenu.</p>
 <p>Empezamos editando el fichero de configuración que contiene los sistemas instalados. En mi caso por ejemplo es un único fichero en la ruta:</p>
