@@ -1605,6 +1605,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ejecucion-de-codigo-en-modulo" class="md-nav__link">
+    Ejecución de código en módulo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#template-filters" class="md-nav__link">
     Template filters
   </a>
@@ -3007,6 +3014,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ejecucion-de-codigo-en-modulo" class="md-nav__link">
+    Ejecución de código en módulo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#template-filters" class="md-nav__link">
     Template filters
   </a>
@@ -3810,6 +3824,23 @@ $ python manage.py runserver 0.0.0.0:8000
 <li>Switch/case: Se suele utilizar un diccionario como se explica <a href="https://stackoverflow.com/questions/60208/replacements-for-switch-statement-in-python">aquí</a>.</li>
 <li>Intercambiar variables: <code>var_1, var_2 = var_2, var_1</code></li>
 </ul>
+<h2 id="ejecucion-de-codigo-en-modulo">Ejecución de código en módulo<a class="headerlink" href="#ejecucion-de-codigo-en-modulo" title="Permanent link">&para;</a></h2>
+<p>Tal y como se explica muy bien <a href="https://es.stackoverflow.com/questions/32165/qu%C3%A9-es-if-name-main">aquí</a>, el código a ejecutar en un módulo actuando como programa principal, conviene que lo vinculemos a la comprobación de si la propiedad <code>__name__</code> tiene el valor <code>__main__</code>, por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">hacer_algo</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;algo&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">hacer_algo</span><span class="p">()</span>
+</code></pre></div>
+
+<p>en lugar de:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">hacer_algo</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;algo&quot;</span><span class="p">)</span>
+
+<span class="n">hacer_algo</span><span class="p">()</span>
+</code></pre></div>
+
+<p>De esta forma podremos importar este módulo en otros programas sin que se ejecute código incontroladamente.</p>
 <h2 id="template-filters">Template filters<a class="headerlink" href="#template-filters" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>{{ variable|default_if_none:"" }}</code>: Muestra el texto pasado como argumento si <code>variable</code> vale <code>None</code>.</li>
