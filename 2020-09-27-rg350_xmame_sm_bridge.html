@@ -2177,14 +2177,15 @@
                   <h1>2020-09-27 RG350 Interfaz xMAME SimpleMenu</h1>
                 
                 <p><img alt="Icono" src="/images/posts/xmame_sm_bridge/icon.png" /></p>
-<p>xMAME tiene un frontend propio que intercala una pantalla de ajustes entre la selección de la ROM y la ejecución final de la misma. Ésta:</p>
+<p><a href="/2020-04-15-rg350_xmame.html">xMAME</a> tiene un frontend propio que intercala una pantalla de ajustes entre la selección de la ROM y la ejecución final de la misma. Ésta:</p>
 <p><img alt="xMAME ROM Settings" src="/images/posts/xmame_sm_bridge/xmame_rom_settings.png" /></p>
 <p>Cuando se integra xMAME en SimpleMenu se pierde esta pantalla de ajustes y la ROM es ejecutada con las opciones predeterminadas. Para mejorar esta situación se ha desarrollado una especie de clon de la pantalla de ajustes de xMAME que se puede integrar entre SimpleMenu y los binarios de xMAME que ejecutan al final la ROM.</p>
 <p>Vamos a ver aquí cómo instalar y utilizar este interfaz. Al final se describen también los aspectos técnicos de la solución para los que estén interesados.</p>
 <p>Esta solución funciona en los dos modelos de pantalla de la RG350, es decir que sirve tanto para el modelo original como los nuevos RG350P y RG350M.</p>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
-<p>La instalación se hace por medio de un OPK que sitúa los ficheros necesarios dentro de la ruta donde se encuentra xMAME. También hace las modificaciones automáticamente en los ficheros de configuración de SimpleMenu. Naturalmente, antes tendremos que tener instalado <a href="/2020-04-15-rg350_xmame.html">xMAME</a> y <a href="/2020-01-25-rg350_simplemenu.html">SimpleMenu</a>.</p>
-<p>El OPK con el instalador se puede descargar desde <a href="https://github.com/eduardofilo/RG350_xmame_sm_bridge/releases/download/1.2/xmame_sm_bridge_installer_1.2.opk">este enlace</a>. Una vez instalado en la RG350 (como cualquier otro OPK; ver instrucciones <a href="/2020-07-02-rg350_primeros_pasos.html#dondecomo-instalo-el-fichero-opk-del-emulador-que-he-bajado">aquí</a>), lo deberemos encontrar en nuestro lanzador en la sección de aplicaciones. Por ejemplo:</p>
+<p>La instalación se hace por medio de un OPK que sitúa los ficheros necesarios dentro de la ruta donde se encuentra xMAME (en concreto en el subdirectorio <code>/media/data/local/share/xmame/sm_bridge</code>). También hace las modificaciones automáticamente en los ficheros de configuración de SimpleMenu. Naturalmente, antes tendremos que tener instalado <a href="/2020-04-15-rg350_xmame.html">xMAME</a> y <a href="/2020-01-25-rg350_simplemenu.html">SimpleMenu</a>.</p>
+<p>El OPK con el instalador se puede descargar desde el siguiente enlace: <a href="https://github.com/eduardofilo/RG350_xmame_sm_bridge/releases/download/1.2/xmame_sm_bridge_installer_1.2.opk">https://github.com/eduardofilo/RG350_xmame_sm_bridge/releases/download/1.2/xmame_sm_bridge_installer_1.2.opk</a></p>
+<p>Una vez instalado en la RG350 (como cualquier otro OPK; ver instrucciones <a href="/2020-07-02-rg350_primeros_pasos.html#dondecomo-instalo-el-fichero-opk-del-emulador-que-he-bajado">aquí</a> en caso de dudas), lo deberemos encontrar en nuestro lanzador en la sección de aplicaciones. Por ejemplo:</p>
 <p><img alt="GMenu2X" src="/images/posts/xmame_sm_bridge/gmenu2x.png" />
 <img alt="SimpleMenu" src="/images/posts/xmame_sm_bridge/simplemenu.png" />
 <img alt="PyMenu" src="/images/posts/xmame_sm_bridge/pymenu.png" /></p>
@@ -2195,11 +2196,11 @@
 <p>A partir de entonces, al ejecutar una ROM con el sistema xMAME integrado en SimpleMenu, nos aparecerá un pequeño interfaz muy parecido al que muestra el interfaz propio de xMAME justo después de seleccionar la ROM.</p>
 <iframe width="640" height="480" src="https://www.youtube.com/embed/1OH2ENqr1tA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<p>Se han resplicado los controles de la pantalla de ajustes de xMAME. También se indican en la parte baja de la pantalla. Básicamente son estos:</p>
+<p>Se han replicado los controles de la pantalla de ajustes de xMAME que, al igual que en ella, se indican en la parte baja de la pantalla. Básicamente son estos:</p>
 <ul>
 <li><strong>Arriba/Abajo</strong>: Para seleccionar el ajuste que se quiere modificar.</li>
 <li><strong>Izquierda/Derecha</strong>: Para cambiar el ajuste seleccionado.</li>
-<li><strong>A</strong>: Confirma el arranque del juego.</li>
+<li><strong>A</strong>: Confirmar el arranque del juego.</li>
 <li><strong>B</strong>: Cancelar el arranque del juego, es decir volver a SimpleMenu.</li>
 </ul>
 <p>Los ajustes, una vez hechos, en el momento de arrancar el juego (no así si volvemos atrás con <code>B</code>), se guardan en el mismo fichero que utiliza xMAME. Por tanto los ajustes que hagamos persistirán entre distintas sesiones. Además serán compatibles con los ajustes que hayamos hecho en xMAME.</p>
@@ -2221,7 +2222,7 @@
 <p>El primero es el interfaz normal (el de la pantalla de fondo verde) que es el que muestra la lista de ROMs de los distintos romsets y la pantalla de ajustes una vez que seleccionamos una ROM:</p>
 <p><img alt="xMAME 1" src="/images/posts/xmame_sm_bridge/xmame_1.png" />
 <img alt="xMAME 2" src="/images/posts/xmame_sm_bridge/xmame_2.png" /></p>
-<p>Tras la segunda pantalla se ejecuta el proceso correspondiente al romset elegido al principio, que se corresponde con uno de los tres procesos restantes de la lista anterior. Por ejemplo, tal y como se ha ajustado el juego que se selecciona en los dos pantallazos anteriores, el proceso a ejecutar sería:</p>
+<p>Tras la segunda pantalla se ejecuta el proceso correspondiente al romset elegido al principio, que se corresponde con uno de los tres procesos restantes de la lista anterior. Por ejemplo, tal y como se ha ajustado el juego que se selecciona en los dos pantallazos anteriores, el proceso que se ejecuta finalmente es:</p>
 <div class="highlight"><pre><span></span><code>xmame.SDL.84 bombjack -ipu_scaler 2 -nodirty -triplebuf -rol
 </code></pre></div>
 
@@ -2266,13 +2267,13 @@
 </tr>
 </tbody>
 </table>
-<p>El valor es el dato que luego se almacena en el pequeño fichero de configuración que deja xMAME en los siguientes directorios en función del romset:</p>
+<p>Valor (o <code>values</code> en la codificación JSON) es el dato que luego se almacena en el pequeño fichero de configuración que deja xMAME en los siguientes directorios en función del romset:</p>
 <ul>
 <li><code>/media/data/local/share/xmame/xmame52/frontend</code></li>
 <li><code>/media/data/local/share/xmame/xmame69/frontend</code></li>
 <li><code>/media/data/local/share/xmame/xmame84/frontend</code></li>
 </ul>
-<p>Por ejemplo el fichero que aparece cuando configuramos BombJack del romset 84 como se veía en los pantallazos anteriores tiene es <code>/media/data/local/share/xmame/xmame84/frontend/bombjack.cfg</code> y tiene el siguiente contenido:</p>
+<p>Por ejemplo el fichero que aparece cuando configuramos el juego del ejemplo del romset 84 como se veía en los pantallazos anteriores es <code>/media/data/local/share/xmame/xmame84/frontend/bombjack.cfg</code> y tiene el siguiente contenido:</p>
 <div class="highlight"><pre><span></span><code>2,0,0,0,0,0,0,0,0,0,0,0,0,1,0
 </code></pre></div>
 
@@ -2283,20 +2284,20 @@
 
 <p>La forma de averiguar todos los valores posibles fue ajustándolos uno a uno cambiando uno cada vez y analizando el proceso ejecutado al final con el comando <code>ps</code> de Linux.</p>
 <h3 id="programacion">Programación<a class="headerlink" href="#programacion" title="Permanent link">&para;</a></h3>
-<p>Una vez reunida toda la información llegó el momento de programar. La idea era reproducir de la forma más fiel posible el interfaz de ajustes de la ROM que tiene xMAME. Para la programación se ha elegido el entorno Python más la librería <a href="https://www.pygame.org/wiki/about"><code>pygame</code></a> que ofrece primitivas para dibujar y controlar eventos. Ambos se encuentran preinstalados en OpenDingux.</p>
+<p>Una vez reunida toda la información llegó el momento de programar. La idea era reproducir de la forma más fiel posible el interfaz de ajustes de la ROM que tiene xMAME. Para la programación se ha elegido el entorno Python más la librería <a href="https://www.pygame.org/wiki/about"><code>pygame</code></a> que ofrece primitivas para dibujar en pantalla y controlar eventos (básicamente es una envoltura Python a la librería SDL). Ambos se encuentran preinstalados en OpenDingux.</p>
 <p>El código puede encontrarse en este repositorio: <a href="https://github.com/eduardofilo/RG350_xmame_sm_bridge">https://github.com/eduardofilo/RG350_xmame_sm_bridge</a></p>
-<p>El programa realizado tan solo muestra las opciones y permite cambiarlas. Al ejecutar la ROM elegida previamente en SimpleMenu (que le llega como argumento) hace dos cosas:</p>
+<p>El programa realizado en Python/pygame tan solo muestra las opciones y permite cambiarlas. Al seleccionar la ROM en SimpleMenu (que le llega como argumento) hace dos cosas:</p>
 <ol>
 <li>Persiste los ajustes en el fichero de configuración de xMAME correspondiente (subdirectorio <code>frontend</code> del directorio de cada romset).</li>
 <li>Genera un fichero <code>/tmp/run</code> que contiene el proceso a ejecutar, es decir el binario del emulador del romset elegido junto a los argumentos correspondientes a los ajustes hechos.</li>
 </ol>
-<p>Todo esto está envuelto con un pequeño script bash, en realidad tres scripts, uno por cada romset, que son los que se configuran en SimpleMenu en el fichero donde tengamos definido el sistema xMAME. Los tres scripts son los siguientes:</p>
+<p>Todo esto está envuelto con tres pequeños scripts bash, uno por cada romset, que son los que se configuran en SimpleMenu en el fichero donde tengamos definido el sistema xMAME. Los tres scripts son los siguientes:</p>
 <ul>
 <li><a href="https://github.com/eduardofilo/RG350_xmame_sm_bridge/blob/master/romset.52">https://github.com/eduardofilo/RG350_xmame_sm_bridge/blob/master/romset.52</a></li>
 <li><a href="https://github.com/eduardofilo/RG350_xmame_sm_bridge/blob/master/romset.69">https://github.com/eduardofilo/RG350_xmame_sm_bridge/blob/master/romset.69</a></li>
 <li><a href="https://github.com/eduardofilo/RG350_xmame_sm_bridge/blob/master/romset.84">https://github.com/eduardofilo/RG350_xmame_sm_bridge/blob/master/romset.84</a></li>
 </ul>
-<p>Todos los ficheros de este sistema deben instalarse en la ruta siguiente en el sistema de la consola:</p>
+<p>Todos los ficheros necesarios deben instalarse en la ruta siguiente en el sistema de la consola:</p>
 <div class="highlight"><pre><span></span><code>/media/data/local/share/xmame/sm_bridge
 </code></pre></div>
 
@@ -2308,7 +2309,7 @@
 <span class="na">aliasFile</span> <span class="o">=</span> <span class="s">/media/home/.simplemenu/alias.txt</span>
 </code></pre></div>
 
-<p>El instalador indicado al principio de este artículo se encarga tanto de copiar los ficheros necesarios a la ruta indicada antes, como de ajustar los ficheros de definición de sistemas de SimpleMenu para que se llame a los scripts que lanzan el interfaz de ajustes.</p>
+<p>El instalador comentado al principio de este artículo se encarga tanto de copiar los ficheros necesarios a la ruta indicada antes, como de ajustar los ficheros de definición de sistemas de SimpleMenu para que se llame a los scripts que lanzan el interfaz de ajustes.</p>
                 
                   
                 
