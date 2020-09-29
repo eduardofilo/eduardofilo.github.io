@@ -2237,6 +2237,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#configuracion-de-swap-en-disco-ssd" class="md-nav__link">
+    Configuración de SWAP en disco SSD
+  </a>
+  
+</li>
+      
       
       
       
@@ -2747,6 +2754,13 @@
         <li class="md-nav__item">
   <a href="#configuracion-de-idiomas-del-sistema-locales" class="md-nav__link">
     Configuración de idiomas del sistema (locales)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-swap-en-disco-ssd" class="md-nav__link">
+    Configuración de SWAP en disco SSD
   </a>
   
 </li>
@@ -3268,6 +3282,11 @@ gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 </ol>
 <h2 id="configuracion-de-idiomas-del-sistema-locales">Configuración de idiomas del sistema (locales)<a class="headerlink" href="#configuracion-de-idiomas-del-sistema-locales" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>$ sudo dpkg-reconfigure locales
+</code></pre></div>
+
+<h2 id="configuracion-de-swap-en-disco-ssd">Configuración de SWAP en disco SSD<a class="headerlink" href="#configuracion-de-swap-en-disco-ssd" title="Permanent link">&para;</a></h2>
+<p>Siguiendo [esta página], añado lo siguiente al fichero <code>/etc/sysctl.conf</code> para bajar el 60% que usa Ubuntu por defecto a 10%:</p>
+<div class="highlight"><pre><span></span><code>vm.swappiness=10
 </code></pre></div>
                 
                   
