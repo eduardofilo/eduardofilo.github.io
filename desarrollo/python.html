@@ -3869,7 +3869,8 @@ $ python manage.py runserver 0.0.0.0:8000
 </ul>
 <h2 id="snippets-python">Snippets Python<a class="headerlink" href="#snippets-python" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Servidor HTTP en el directorio actual: <code>python -m SimpleHTTPServer 8080</code></li>
+<li>Servidor HTTP en el directorio actual con Python2: <code>python -m SimpleHTTPServer</code></li>
+<li>Servidor HTTP en el directorio actual con Python3: <code>python3 -m http.server</code></li>
 <li>Convertir un set en un list ordenado: <code>una_lista = sorted(un_set, key=lambda x: x.position)</code></li>
 <li>Agregar elementos a un diccionario de listas creando las claves si no existen (<a href="https://stackoverflow.com/questions/12905999/python-dict-how-to-create-key-or-append-an-element-to-key">fuente</a>):<code>dic.setdefault(key,[]).append(value)</code></li>
 <li><a href="https://stackoverflow.com/a/311655">Formateo de fechas</a>:<ul>
