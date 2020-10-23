@@ -2425,6 +2425,7 @@ $ docker run -d -p <span class="m">4000</span>:80 friendlyhello              <sp
 $ docker container ls                                 <span class="c1"># List all running containers</span>
 $ docker container ls -a                              <span class="c1"># List all containers, even those not running</span>
 $ docker container logs &lt;hash&gt;                        <span class="c1"># Logs</span>
+$ docker container logs -f &lt;hash&gt;                     <span class="c1"># Logs en tiempo real</span>
 $ docker container start &lt;hash&gt;                       <span class="c1"># Arranca un contenedor</span>
 $ docker container stop &lt;hash&gt;                        <span class="c1"># Gracefully stop the specified container</span>
 $ docker container <span class="nb">kill</span> &lt;hash&gt;                        <span class="c1"># Force shutdown of the specified container</span>
