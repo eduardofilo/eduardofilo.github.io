@@ -2078,6 +2078,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#crop-en-video" class="md-nav__link">
+    Crop en video
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extraer-frame-de-video" class="md-nav__link">
+    Extraer frame de video
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#redimensionado-de-imagenes-en-lote" class="md-nav__link">
     Redimensionado de imágenes en lote
   </a>
@@ -2599,6 +2613,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#crop-en-video" class="md-nav__link">
+    Crop en video
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extraer-frame-de-video" class="md-nav__link">
+    Extraer frame de video
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#redimensionado-de-imagenes-en-lote" class="md-nav__link">
     Redimensionado de imágenes en lote
   </a>
@@ -3100,6 +3128,22 @@ $ ls *.mp4 <span class="p">|</span> awk <span class="s1">&#39;{print &quot;HandB
 <div class="highlight"><pre><span></span><code>ffmpeg -acodec aac -vcodec h264 -ss <span class="m">01</span>:07:38 -t <span class="m">00</span>:01:14 -i archivo_original.mp4 archivo_recortado.mp4
 </code></pre></div>
 
+<h2 id="crop-en-video">Crop en video<a class="headerlink" href="#crop-en-video" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>$ ffmpeg -i input.mp4 -filter:v <span class="s2">&quot;crop=w:h:x:y&quot;</span> output.mp4
+</code></pre></div>
+
+<p>donde:</p>
+<ul>
+<li>w: ancho final</li>
+<li>h: alto final</li>
+<li>x: coordenada x del punto superior izquierdo del recuadro</li>
+<li>y: coordenada y del punto superior izquierdo del recuadro</li>
+</ul>
+<h2 id="extraer-frame-de-video">Extraer frame de video<a class="headerlink" href="#extraer-frame-de-video" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>$ ffmpeg -ss <span class="m">00</span>:01:00 -i input.mp4 -frames:v <span class="m">1</span> frame.png
+</code></pre></div>
+
+<p>donde el argumento -ss marca el instante del frame en hh:mm:ss</p>
 <h2 id="redimensionado-de-imagenes-en-lote">Redimensionado de imágenes en lote<a class="headerlink" href="#redimensionado-de-imagenes-en-lote" title="Permanent link">&para;</a></h2>
 <p>Ajustar a 200 px de ancho manteniendo el ratio:</p>
 <div class="highlight"><pre><span></span><code>$ convert <span class="s1">&#39;*.jpg[200x]&#39;</span> resized%03d.png
