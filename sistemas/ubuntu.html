@@ -2099,8 +2099,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#redimensionado-de-fotos-en-lote" class="md-nav__link">
-    Redimensionado de fotos en lote
+  <a href="#redimensionado-de-imagenes-en-lote_1" class="md-nav__link">
+    Redimensionado de imágenes en lote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crop-y-resize-de-imagenes-en-lote" class="md-nav__link">
+    Crop y resize de imágenes en lote
   </a>
   
 </li>
@@ -2120,8 +2127,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#montaje-de-video-stopmotion-a-partir-de-fotos" class="md-nav__link">
-    Montaje de vídeo StopMotion a partir de fotos
+  <a href="#montaje-de-video-stopmotion-a-partir-de-imagenes" class="md-nav__link">
+    Montaje de vídeo StopMotion a partir de imágenes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#montaje-de-gif-a-partir-de-imagenes" class="md-nav__link">
+    Montaje de gif a partir de imágenes
   </a>
   
 </li>
@@ -2634,8 +2648,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#redimensionado-de-fotos-en-lote" class="md-nav__link">
-    Redimensionado de fotos en lote
+  <a href="#redimensionado-de-imagenes-en-lote_1" class="md-nav__link">
+    Redimensionado de imágenes en lote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crop-y-resize-de-imagenes-en-lote" class="md-nav__link">
+    Crop y resize de imágenes en lote
   </a>
   
 </li>
@@ -2655,8 +2676,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#montaje-de-video-stopmotion-a-partir-de-fotos" class="md-nav__link">
-    Montaje de vídeo StopMotion a partir de fotos
+  <a href="#montaje-de-video-stopmotion-a-partir-de-imagenes" class="md-nav__link">
+    Montaje de vídeo StopMotion a partir de imágenes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#montaje-de-gif-a-partir-de-imagenes" class="md-nav__link">
+    Montaje de gif a partir de imágenes
   </a>
   
 </li>
@@ -3153,7 +3181,7 @@ $ ls *.mp4 <span class="p">|</span> awk <span class="s1">&#39;{print &quot;HandB
 <div class="highlight"><pre><span></span><code>$ convert <span class="s1">&#39;*.jpg[x200]&#39;</span> resized%03d.png
 </code></pre></div>
 
-<h2 id="redimensionado-de-fotos-en-lote">Redimensionado de fotos en lote<a class="headerlink" href="#redimensionado-de-fotos-en-lote" title="Permanent link">&para;</a></h2>
+<h2 id="redimensionado-de-imagenes-en-lote_1">Redimensionado de imágenes en lote<a class="headerlink" href="#redimensionado-de-imagenes-en-lote_1" title="Permanent link">&para;</a></h2>
 <p>Por ejemplo a 1080 de alto dentro de un directorio llamado resized:</p>
 <div class="highlight"><pre><span></span><code>$ convert <span class="s1">&#39;*.jpg[x1080]&#39;</span> resized/%03d.jpg
 </code></pre></div>
@@ -3167,6 +3195,24 @@ $ ls *.mp4 <span class="p">|</span> awk <span class="s1">&#39;{print &quot;HandB
 <span class="k">done</span>
 </code></pre></div>
 
+<h2 id="crop-y-resize-de-imagenes-en-lote">Crop y resize de imágenes en lote<a class="headerlink" href="#crop-y-resize-de-imagenes-en-lote" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">1</span>
+<span class="k">for</span> i in *.jpg<span class="p">;</span> <span class="k">do</span>
+  <span class="nv">new</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&quot;%04d.jpg&quot;</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span><span class="k">)</span>
+  convert <span class="si">${</span><span class="nv">i</span><span class="si">}</span> -crop wxh+x+y -resize wsxhs -gravity Center <span class="si">${</span><span class="nv">new</span><span class="si">}</span>
+  <span class="nb">let</span> <span class="nv">a</span><span class="o">=</span>a+1
+<span class="k">done</span>
+</code></pre></div>
+
+<p>donde:</p>
+<ul>
+<li>w: ancho del crop</li>
+<li>h: alto del crop</li>
+<li>x: posición horizontal esquina superior derecha del crop</li>
+<li>y: posición vertical esquina superior derecha del crop</li>
+<li>ws: ancho del reescalado final</li>
+<li>hs: alto del reescalado final</li>
+</ul>
 <h2 id="conversion-de-formato-en-lote">Conversión de formato en lote<a class="headerlink" href="#conversion-de-formato-en-lote" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">for</span> file in *.jpg<span class="p">;</span> <span class="k">do</span>
   <span class="nv">filename</span><span class="o">=</span><span class="k">$(</span>basename <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="k">)</span>
@@ -3185,11 +3231,19 @@ $ ls *.mp4 <span class="p">|</span> awk <span class="s1">&#39;{print &quot;HandB
 <span class="k">done</span>
 </code></pre></div>
 
-<h2 id="montaje-de-video-stopmotion-a-partir-de-fotos">Montaje de vídeo StopMotion a partir de fotos<a class="headerlink" href="#montaje-de-video-stopmotion-a-partir-de-fotos" title="Permanent link">&para;</a></h2>
+<h2 id="montaje-de-video-stopmotion-a-partir-de-imagenes">Montaje de vídeo StopMotion a partir de imágenes<a class="headerlink" href="#montaje-de-video-stopmotion-a-partir-de-imagenes" title="Permanent link">&para;</a></h2>
 <p>A 10fps por ejemplo (<a href="http://www.dototot.com/compile-stop-motion-animation-image-sequence-avconv/">Fuente</a>):</p>
 <div class="highlight"><pre><span></span><code>$ ffmpeg -f image2 -r <span class="m">10</span> -i %04d.jpg -vf <span class="nv">scale</span><span class="o">=</span><span class="m">1440</span>:1080 -r:v <span class="m">10</span> -c:v libx264 -qp <span class="m">0</span> -preset veryslow -an <span class="s2">&quot;video.mkv&quot;</span>
 </code></pre></div>
 
+<h2 id="montaje-de-gif-a-partir-de-imagenes">Montaje de gif a partir de imágenes<a class="headerlink" href="#montaje-de-gif-a-partir-de-imagenes" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>convert -delay n -loop <span class="m">0</span> *.jpg output.gif
+</code></pre></div>
+
+<p>donde:</p>
+<ul>
+<li>n: milisegundos entre cada frame.</li>
+</ul>
 <h2 id="configurar-wireshark-para-poder-capturar-con-usuarios-no-root">Configurar Wireshark para poder capturar con usuarios no-root<a class="headerlink" href="#configurar-wireshark-para-poder-capturar-con-usuarios-no-root" title="Permanent link">&para;</a></h2>
 <p>Ejecutar lo siguiente:</p>
 <div class="highlight"><pre><span></span><code>$ sudo dpkg-reconfigure wireshark-common
