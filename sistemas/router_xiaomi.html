@@ -2395,10 +2395,26 @@
 <li>Cuando termine el proceso habremos perdido los paquetes adicionales. También los ajustes hechos al usuario adicional (como el directorio home) por lo que seguramente habrá que repasar la mayoría de los ajustes hechos durante la <a href="#configuracion-desde-cero">configuración desde cero</a>.</li>
 </ol>
 <h2 id="desactivacion-vpn">Desactivación VPN<a class="headerlink" href="#desactivacion-vpn" title="Permanent link">&para;</a></h2>
-<p>Para poder salir directamente a través de la conexión WAN sin atravesar el VPN, configurar las zonas del firewall como sigue:</p>
+<p>Para poder salir directamente a través de la conexión WAN sin atravesar el VPN:</p>
+<ol>
+<li>
+<p>Configurar las zonas del firewall como sigue:</p>
 <p><img alt="firewall-zones" src="/images/pages/router_xiaomi/firewall-zones_no_vpn.png" /></p>
-<p>Para volver a utilizar el VPN, cambiar a:</p>
+</li>
+<li>
+<p>Ir a <code>Network &gt; Interfaces &gt; LAN</code> y en el parámetro <code>Use custom DNS servers</code> poner las IPs de OpenDNS: <code>208.67.222.222</code> y <code>208.67.220.220</code>.</p>
+</li>
+</ol>
+<p>Para volver a utilizar el VPN</p>
+<ol>
+<li>
+<p>Configurar las zonas del firewall como sigue:</p>
 <p><img alt="firewall-zones" src="/images/pages/router_xiaomi/firewall-zones_end.png" /></p>
+</li>
+<li>
+<p>Ir a <code>Network &gt; Interfaces &gt; LAN</code> y en el parámetro <code>Use custom DNS servers</code> dejar únicamente la IP <code>10.8.8.1</code> (en caso de utilizar OpenVPN por protocolo TCP usar <code>10.7.7.1</code> en su lugar).</p>
+</li>
+</ol>
                 
                   
                 
