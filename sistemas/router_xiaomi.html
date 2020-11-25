@@ -1907,6 +1907,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#desactivacion-vpn" class="md-nav__link">
+    Desactivación VPN
+  </a>
+  
+</li>
+      
       
       
       
@@ -2139,6 +2146,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#desactivacion-vpn" class="md-nav__link">
+    Desactivación VPN
+  </a>
+  
+</li>
+      
       
       
       
@@ -2308,7 +2322,7 @@
 <li>Ir a la sección <code>Network &gt; Firewall</code>.</li>
 <li>
 <p>Los siguientes cambios son muy sensibles, por lo que muestro un pantallazo del estado de las zonas antes de los cambios:</p>
-<p><img alt="firewall-zones" src="/images/pages/firewall-zones.png" /></p>
+<p><img alt="firewall-zones" src="/images/pages/router_xiaomi/firewall-zones.png" /></p>
 </li>
 <li>
 <p>En la zona <code>wan</code> cambiar <code>Input</code> y <code>Forward</code> a <code>drop</code> y desmarcar los checks <code>Masquerading</code> y <code>MSS clamping</code>.</p>
@@ -2318,14 +2332,14 @@
 <li>Pulsar el botón <code>Edit</code> de la zona <code>lan</code>.</li>
 <li>
 <p>En la sección <code>Inter-Zone Forwarding</code> abrir el desplegable <code>Allow forward to destination zones</code> y marcar la sección <code>vpn</code> y desmarcar <code>wan</code>.</p>
-<p><img alt="forward-to-destination" src="/images/pages/forward-to-destination.png" /></p>
+<p><img alt="forward-to-destination" src="/images/pages/router_xiaomi/forward-to-destination.png" /></p>
 </li>
 <li>
 <p>Pulsar el botón <code>Save &amp; Apply</code></p>
 </li>
 <li>
 <p>Pantallazo de cómo deberían de quedar las zonas:</p>
-<p><img alt="firewall-zones" src="/images/pages/firewall-zones_end.png" /></p>
+<p><img alt="firewall-zones" src="/images/pages/router_xiaomi/firewall-zones_end.png" /></p>
 </li>
 <li>
 <p>Descargar el perfil <code>.ovpn</code> deseado de la sección "Downloads" de nuestro perfil en ProtonVPN seleccionando como plataforma <code>Router</code> y protocolo <code>UDP</code>. Vamos a suponer que el fichero se llama <code>is-es-01.protonvpn.com.udp.ovpn</code>.</p>
@@ -2380,6 +2394,11 @@
 <li>En la siguiente página confirmar el flasheo comprobando si se quiere los checksums.</li>
 <li>Cuando termine el proceso habremos perdido los paquetes adicionales. También los ajustes hechos al usuario adicional (como el directorio home) por lo que seguramente habrá que repasar la mayoría de los ajustes hechos durante la <a href="#configuracion-desde-cero">configuración desde cero</a>.</li>
 </ol>
+<h2 id="desactivacion-vpn">Desactivación VPN<a class="headerlink" href="#desactivacion-vpn" title="Permanent link">&para;</a></h2>
+<p>Para poder salir directamente a través de la conexión WAN sin atravesar el VPN, configurar las zonas del firewall como sigue:</p>
+<p><img alt="firewall-zones" src="/images/pages/router_xiaomi/firewall-zones_no_vpn.png" /></p>
+<p>Para volver a utilizar el VPN, cambiar a:</p>
+<p><img alt="firewall-zones" src="/images/pages/router_xiaomi/firewall-zones_end.png" /></p>
                 
                   
                 
