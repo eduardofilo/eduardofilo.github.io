@@ -1672,6 +1672,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#controles-arkos" class="md-nav__link">
+    Controles ArkOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#menus-interesantes-retroarch" class="md-nav__link">
     Menús interesantes RetroArch
   </a>
@@ -2222,6 +2229,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#controles-arkos" class="md-nav__link">
+    Controles ArkOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#menus-interesantes-retroarch" class="md-nav__link">
     Menús interesantes RetroArch
   </a>
@@ -2397,6 +2411,33 @@
 </tr>
 </tbody>
 </table>
+<h4 id="controles-arkos">Controles ArkOS<a class="headerlink" href="#controles-arkos" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th align="left">Situación</th>
+<th align="left">Función</th>
+<th align="left">Shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Emulador</td>
+<td align="left">Menú RetroArch</td>
+<td align="left"><code>Select + X</code></td>
+</tr>
+<tr>
+<td align="left">Emulador</td>
+<td align="left">Cerrar juego</td>
+<td align="left"><code>Select + Start</code></td>
+</tr>
+<tr>
+<td align="left">Emulador</td>
+<td align="left">Screenshot de aplicaciones lanzadas con rg351p-js2xbox</td>
+<td align="left"><code>L3</code></td>
+</tr>
+</tbody>
+</table>
 <h4 id="menus-interesantes-retroarch">Menús interesantes RetroArch<a class="headerlink" href="#menus-interesantes-retroarch" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -2418,18 +2459,71 @@
 <table>
 <thead>
 <tr>
+<th align="left">Sistema</th>
 <th align="left">Directorio</th>
 <th align="left">Contenido</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>/storage/.config/emulationstation/es_systems.cfg</code></td>
-<td align="left">Definición de sistemas en EmulationStation</td>
+<td align="left">EmuELEC/351ELEC</td>
+<td align="left"><code>/storage/.config/emulationstation</code></td>
+<td align="left">Configuración EmulationStation</td>
 </tr>
 <tr>
-<td align="left"><code>/storage/.config/emulationstation/themes/</code></td>
-<td align="left">Themes EmulationStation</td>
+<td align="left">EmuELEC/351ELEC</td>
+<td align="left"><code>/storage/.config/retroarch</code></td>
+<td align="left">Configuración RetroArch</td>
+</tr>
+<tr>
+<td align="left">EmuELEC/351ELEC</td>
+<td align="left"><code>/storage/.config/emuelec/scripts</code></td>
+<td align="left">Scripts de sistema como: Control de brillo, Lanzar emulador, Explorador de archivos, Mostrar splash, Mostrar diálogo. Se copian durante el arranque de <code>/usr/config/emuelec/scripts/</code></td>
+</tr>
+<tr>
+<td align="left">EmuELEC/351ELEC</td>
+<td align="left"><code>/storage/.brightness</code></td>
+<td align="left">Nivel de brillo en el arranque</td>
+</tr>
+<tr>
+<td align="left">EmuELEC/351ELEC</td>
+<td align="left"><code>/usr/lib/coreelec/fs-resize</code></td>
+<td align="left">Script que prepara la tercera partición para las ROMs (expandiéndola para que ocupe el espacio libre de la tarjeta). Se lanza desde el servicio definido en <code>/usr/lib/systemd/system/fs-resize.service</code></td>
+</tr>
+<tr>
+<td align="left">ArkOS</td>
+<td align="left"><code>/home/ark/.emulationstation</code></td>
+<td align="left">Configuración EmulationStation</td>
+</tr>
+<tr>
+<td align="left">ArkOS</td>
+<td align="left"><code>/home/ark/.config/retroarch</code></td>
+<td align="left">Configuración RetroArch64</td>
+</tr>
+<tr>
+<td align="left">ArkOS</td>
+<td align="left"><code>/opt/system</code></td>
+<td align="left">Scripts de sistema como: Enable/Disable Wifi, Enable/Disable remote services, Fix ExFAT Partition, Set clock, Network Info, Update OS</td>
+</tr>
+<tr>
+<td align="left">ArkOS</td>
+<td align="left"><code>/opt/asciis/launch.txt</code></td>
+<td align="left">ASCII art que aparece al lanzar los emuladores</td>
+</tr>
+<tr>
+<td align="left">ArkOS</td>
+<td align="left"><code>/home/ark</code></td>
+<td align="left">Screenshots</td>
+</tr>
+<tr>
+<td align="left">ArkOS</td>
+<td align="left"><code>/boot/firstboot.sh</code></td>
+<td align="left">Script de primer arranque, lanzado desde servicio <code>/etc/systemd/system/firstboot.service</code> que se desactiva y borra el propio script al terminar su trabajo</td>
+</tr>
+<tr>
+<td align="left">ArkOS</td>
+<td align="left"><code>/boor/expandtoexfat.sh</code></td>
+<td align="left">Script de expansión de tercera partición llamado desde <code>/boot/firstboot.sh</code> si no existe el flag <code>/boot/doneit</code></td>
 </tr>
 </tbody>
 </table>
@@ -2452,6 +2546,11 @@
 <td align="left">ArkOS</td>
 <td align="left">ark</td>
 <td align="left">ark</td>
+</tr>
+<tr>
+<td align="left">351ELEC</td>
+<td align="left">root</td>
+<td align="left">351elec</td>
 </tr>
 </tbody>
 </table>
