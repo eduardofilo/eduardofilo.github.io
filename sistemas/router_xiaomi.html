@@ -2411,22 +2411,45 @@
 <h2 id="desactivacion-vpn">Desactivación VPN<a class="headerlink" href="#desactivacion-vpn" title="Permanent link">&para;</a></h2>
 <p>Para poder salir directamente a través de la conexión WAN sin atravesar el VPN:</p>
 <ol>
+<li>Apagar Raspis.</li>
 <li>
-<p>Configurar las zonas del firewall como sigue:</p>
-<p><img alt="firewall-zones" src="/images/pages/router_xiaomi/firewall-zones_no_vpn.png" /></p>
+<p>Ir a <code>Network &gt; Interfaces</code> y detener el interfaz <code>OPENVPN</code> pulsando el botón <code>Stop</code>:</p>
+<p><img alt="interfaces-stop" src="/images/pages/router_xiaomi/interfaces-stop.png" /></p>
 </li>
 <li>
 <p>Ir a <code>Network &gt; Interfaces &gt; LAN</code> y en el parámetro <code>Use custom DNS servers</code> poner las IPs de OpenDNS: <code>208.67.222.222</code> y <code>208.67.220.220</code>.</p>
+</li>
+<li>
+<p>Ir a <code>Network &gt; Firewall</code> y editar la zona <code>lan</code> para que haga forward a la zona <code>wan</code> y no a la <code>vpn</code>:</p>
+<p><img alt="forward-lan" src="/images/pages/router_xiaomi/forward-wan.png" /></p>
+</li>
+<li>
+<p>En el listado de zonas firewall activar <code>Masquerading</code> y <code>MSS clamping</code> en la zona <code>wan</code> de manera que quede así:</p>
+<p><img alt="firewall-zones" src="/images/pages/router_xiaomi/firewall-zones_no_vpn.png" /></p>
+</li>
+<li>
+<p>Reiniciar router.</p>
 </li>
 </ol>
 <p>Para volver a utilizar el VPN</p>
 <ol>
 <li>
-<p>Configurar las zonas del firewall como sigue:</p>
+<p>Ir a <code>Network &gt; Interfaces</code> y conectar el interfaz <code>OPENVPN</code> pulsando el botón <code>Connect</code>:</p>
+<p><img alt="interfaces-stop" src="/images/pages/router_xiaomi/interfaces-connect.png" /></p>
+</li>
+<li>
+<p>Ir a <code>Network &gt; Interfaces &gt; LAN</code> y en el parámetro <code>Use custom DNS servers</code> dejar únicamente la IP: <code>10.8.8.1</code>.</p>
+</li>
+<li>
+<p>Ir a <code>Network &gt; Firewall</code> y editar la zona <code>lan</code> para que haga forward a la zona <code>vpn</code> y no a la <code>wan</code>:</p>
+<p><img alt="forward-lan" src="/images/pages/router_xiaomi/forward-vpn.png" /></p>
+</li>
+<li>
+<p>En el listado de zonas firewall desactivar <code>Masquerading</code> y <code>MSS clamping</code> en la zona <code>wan</code> de manera que quede así:</p>
 <p><img alt="firewall-zones" src="/images/pages/router_xiaomi/firewall-zones_end.png" /></p>
 </li>
 <li>
-<p>Ir a <code>Network &gt; Interfaces &gt; LAN</code> y en el parámetro <code>Use custom DNS servers</code> dejar únicamente la IP <code>10.8.8.1</code> (en caso de utilizar OpenVPN por protocolo TCP usar <code>10.7.7.1</code> en su lugar).</p>
+<p>Reiniciar router.</p>
 </li>
 </ol>
                 
