@@ -1638,6 +1638,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#documentacion" class="md-nav__link">
+    Documentación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#emuladores-ports-y-aplicaciones" class="md-nav__link">
     Emuladores, Ports y Aplicaciones
   </a>
@@ -1729,6 +1736,13 @@
           <li class="md-nav__item">
   <a href="#escalado-de-pantalla" class="md-nav__link">
     Escalado de pantalla
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jugar-juegos-verticales-en-horizontal" class="md-nav__link">
+    Jugar juegos verticales en horizontal
   </a>
   
 </li>
@@ -2235,6 +2249,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#documentacion" class="md-nav__link">
+    Documentación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#emuladores-ports-y-aplicaciones" class="md-nav__link">
     Emuladores, Ports y Aplicaciones
   </a>
@@ -2330,6 +2351,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#jugar-juegos-verticales-en-horizontal" class="md-nav__link">
+    Jugar juegos verticales en horizontal
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2377,6 +2405,10 @@
                 <h1 id="rg351">RG351<a class="headerlink" href="#rg351" title="Permanent link">&para;</a></h1>
 <p><img alt="RG351" src="/images/pages/rg351/rg351.png" /></p>
 <h2 id="enlaces">Enlaces<a class="headerlink" href="#enlaces" title="Permanent link">&para;</a></h2>
+<h4 id="documentacion">Documentación<a class="headerlink" href="#documentacion" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://github.com/christianhaitian/arkos/wiki/Frequently-Asked-Questions---RG351P">FAQs ArkOS</a></li>
+</ul>
 <h4 id="emuladores-ports-y-aplicaciones">Emuladores, Ports y Aplicaciones<a class="headerlink" href="#emuladores-ports-y-aplicaciones" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="https://github.com/jserodio/rg351p-ppsspp-settings">PSP game settings for RG351P by jserodio</a></li>
@@ -2659,6 +2691,14 @@
 <li>Iniciar RetroArch. Esto dependerá de la distribución que tengamos instalada. En la <em>BOB FAT edition</em> por ejemplo se hace desde el menú que aparece al pulsar <code>Select</code> en el listado de sistemas de EmulationStation.</li>
 <li>Seguir la siguiente ruta de menús: <code>Main Menu &gt; Settings &gt; Video &gt; RGA Scaling &gt; ON</code></li>
 <li>Seguir la siguiente ruta para guardar los cambios: <code>Main Menu &gt; Configuration File &gt; Save Current Configuration</code></li>
+</ol>
+<h4 id="jugar-juegos-verticales-en-horizontal">Jugar juegos verticales en horizontal<a class="headerlink" href="#jugar-juegos-verticales-en-horizontal" title="Permanent link">&para;</a></h4>
+<p>Esto sirve en BOB FAT Edition.</p>
+<ol>
+<li>Explorar de alguna forma los archivos de la consola (por SSH, WinSCP, con algún explorador de archivos en la propia consola o montando la tarjeta en un Linux) y desplazarnos hasta la ruta <code>/storage/.config/retroarch/config</code>.</li>
+<li>Borrar (o renombrar si queremos poder revertir el cambio más adelante) los directorios <code>FinalBurn Neo</code> y <code>MAME 2003-Plus</code>.</li>
+<li>Renombrar <code>FinalBurn Neo no vertical</code> a <code>FinalBurn Neo</code>.</li>
+<li>Renombrar <code>MAME 2003-Plus no vertical</code> a <code>MAME 2003-Plus</code>.</li>
 </ol>
 <h2 id="monograficos-en-blog">Monográficos en blog<a class="headerlink" href="#monograficos-en-blog" title="Permanent link">&para;</a></h2>
 <h4 id="instalacion-de-modulo-wifi-interno-en-rg351p"><a href="/2020-12-13-rg351_wifi_mod.html">Instalación de módulo Wifi interno en RG351P</a><a class="headerlink" href="#instalacion-de-modulo-wifi-interno-en-rg351p" title="Permanent link">&para;</a></h4>
