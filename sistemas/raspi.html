@@ -2875,6 +2875,8 @@ $ <span class="c1">#Restauración (comprimido con zip):</span>
 $ unzip -p Rpi_8gb_backup.zip <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
 $ <span class="c1">#Restauración (comprimido con 7z):</span>
 $ 7z e -so Rpi_8gb_backup.7z <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
+$ <span class="c1">#Restauración (comprimido con rar):</span>
+$ rar p Rpi_8gb_backup.rar -idq <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
 </code></pre></div>
 
 <p>Para hacer un backup parcial los cálculos se harían así. Primero sacamos los datos de la estructura de la tarjeta con <code>fdisk</code>:</p>
