@@ -2297,7 +2297,7 @@
 <li>Diseñar la PCB:<ol>
 <li>En <code>Schematic Layout Editor (eeschema)</code> pulsar el botón <code>Generate netlist</code>. <img src="/images/pages/kicad/netlist.svg" width="30"/></li>
 <li>En el popup que aparece pulsar el botón <code>Generate Netlist</code>.</li>
-<li>Guardar el fichero que genera en la raíz del proyyecto.</li>
+<li>Guardar el fichero que genera en la raíz del proyecto.</li>
 <li>Abrir el programa <code>PCB Layout Editor (pcbnew)</code>. <img src="/images/pages/kicad/pcbnew.svg" width="30"/></li>
 <li>Importar el netlist utilizando el botón <code>Load netlist</code>. <img src="/images/pages/kicad/netlist.svg" width="30"/></li>
 <li>En el popup que aparece seleccionar el fichero que hemos generado en el punto 3 anterior.</li>
@@ -2315,8 +2315,10 @@
 </ul>
 </li>
 <li>Crear las zonas rellenas de cobre (normalmente para las <em>nets</em> +5V y GND):<ol>
+<li>Seleccionar la capa donde queremos crear la zona rellena de cobre (<code>F.Cu</code> o <code>B.Cu</code> normalmente).</li>
 <li>Seleccionar la herramienta <code>Add filled zones</code>. <img src="/images/pages/kicad/add_zone.svg" width="30"/></li>
-<li>Delimitar una superficie que englobe la parte de la PCB que queremos rellenar de cobre. Al pinchar el primer vértice aparecerá una ventana en la que tendremos que indicar las propiedades de la zona a rellnar donde indicaremos la <em>net</em> y la capa de cobre.</li>
+<li>Delimitar una superficie que englobe la parte de la PCB que queremos rellenar de cobre. Al pinchar el primer vértice aparecerá una ventana en la que tendremos que indicar las propiedades de la zona a rellenar donde indicaremos la <em>net</em> y la capa de cobre.</li>
+<li>En caso de modificar las pistas más adelante, pulsar <code>B</code> para recalcular las zonas rellenas de cobre.</li>
 </ol>
 </li>
 <li>Ejecutar las DRC pulsando el botón <code>Perform design rules check</code>. <img src="/images/pages/kicad/drc.svg" width="30"/></li>
@@ -2337,7 +2339,7 @@
 <li>Cambios en esquemático y propagación:<ol>
 <li>Hacer el cambio en <code>Schematic Layout Editor (eeschema)</code>.</li>
 <li>Dar nombre a los nuevos componentes. Se puede hacer automáticamente con la herramienta de anotación a la que se accede con el botón <img src="/images/pages/kicad/annotate.svg" width="30"/> de la barra superior.</li>
-<li>Volver a <code>Schematic Layout Editor (eeschema)</code> y pulsar el botón <code>Update PCB from schematic</code>. <img src="/images/pages/kicad/annotate.svg" width="30"/></li>
+<li>Volver a <code>PCB Layout Editor (pcbnew)</code> y pulsar el botón <code>Update PCB from schematic</code>. <img src="/images/pages/kicad/update_pcb_from_sch.svg" width="30"/></li>
 <li>En el popup que aparece pulsar el botón <code>Update PCB</code>. Nos hará un informe de los cambios. En caso de que los cambios imploquen componentes nuevos, cuando lo cerremos se nos cargarán en el cursor para incorporarlos al PCB.</li>
 </ol>
 </li>
