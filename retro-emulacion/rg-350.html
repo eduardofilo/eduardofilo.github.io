@@ -1916,6 +1916,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#colocar-lanzadores-en-secciones-nuevas-de-gmenu2x" class="md-nav__link">
+    Colocar lanzadores en secciones nuevas de GMenu2X
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#programas-que-se-cierran" class="md-nav__link">
     Programas que se cierran
   </a>
@@ -2903,6 +2910,13 @@
           <li class="md-nav__item">
   <a href="#corrupcion-de-lanzador" class="md-nav__link">
     Corrupción de lanzador
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colocar-lanzadores-en-secciones-nuevas-de-gmenu2x" class="md-nav__link">
+    Colocar lanzadores en secciones nuevas de GMenu2X
   </a>
   
 </li>
@@ -4323,6 +4337,16 @@
 <h2 id="solucion-de-problemas">Solución de problemas<a class="headerlink" href="#solucion-de-problemas" title="Permanent link">&para;</a></h2>
 <h4 id="corrupcion-de-lanzador">Corrupción de lanzador<a class="headerlink" href="#corrupcion-de-lanzador" title="Permanent link">&para;</a></h4>
 <p>En ocasiones no se muestra correctamente el icono de una aplicación, o no apunta a donde debería. Puede suceder cuando hay dos OPK's con el mismo nombre en la SD interna y externa, y se borra uno de ellos por ejemplo. Para resetear la información, entrar en la sección donde esté el problema dentro de el directorio <code>/media/data/local/home/.gmenu2x/sections</code> y borrar el nombre de la aplicación problemática. Lo que hay allí no es la aplicación en sí sino un fichero tipo <code>.desktop</code> con metainformación (icono, descripción, etc.).</p>
+<h4 id="colocar-lanzadores-en-secciones-nuevas-de-gmenu2x">Colocar lanzadores en secciones nuevas de GMenu2X<a class="headerlink" href="#colocar-lanzadores-en-secciones-nuevas-de-gmenu2x" title="Permanent link">&para;</a></h4>
+<p>GMenu2X permite crear nuevas secciones y codificar en los <code>.desktop</code> que hay dentro de los OPKs que los lanzadores se muestren en esas secciones. Por algún motivo el mecanismo no fnunciona del todo bien y si la sección no es de las tradicionales (<code>applications</code>, <code>emulators</code>, <code>settings</code>, <code>games</code>), al editar el lanzador no se persisten los cambios ya que no se generan los ficheros de enlace en <code>~/.gmenu2x/sections</code>. Podemos engañar a GMenu2X para que genere estos ficheros siguiendo estos pasos:</p>
+<ol>
+<li>Crear el OPK con el <code>.desktop</code> apuntando a una sección de las que no dan problemas, por ejemplo <code>emulators</code>.</li>
+<li>Transferir el OPK a la consola y editar el lanzador haciendo un cambio menor, como por ejemplo el filtro de extensiones, para que se genere el fichero de link en <code>~/.gmenu2x/sections/emulators</code>.</li>
+<li>Cambiar el parámetro <code>Categories</code> (es decir la sección) en el <code>.desktop</code> del OPK poniendo la que interese en lugar de <code>emulators</code>, por ejemplo <code>doom</code>.</li>
+<li>Transferir el nuevo OPK a la consola.</li>
+<li>Reiniciar GMenu2X para asegurarnos de que se lean todos los cambios.</li>
+</ol>
+<p>A partir de entonces aparece el lanzador en su sección (<code>doom</code> en el ejemplo) y si se edita se persisten los cambios sin problemas.</p>
 <h4 id="programas-que-se-cierran">Programas que se cierran<a class="headerlink" href="#programas-que-se-cierran" title="Permanent link">&para;</a></h4>
 <p>En ocasiones los emuladores, aplicaciones o frontends (EmulationStation, PyMenu, SimpleMenu, etc.) cuando no están bien configurados se cierran sin dar más explicaciones al abrirlos o durante su manipulación. Para tener algo que analizar, si los hemos lanzado desde GMenu2X, podemos activar un log que nos ofrecerá la salida de error en la invocación de estos programas. Para activarla hay que entrar en los ajustes de GMenu2X y poner a ON el parámetro <code>Output logs</code> (<code>Archivos de registro de sucesos</code> si tenemos el interfaz en español):</p>
 <p><img alt="GMenu2X log 1" src="/images/pages/rg350/gmenu2x_log1.png" />
