@@ -1679,6 +1679,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#logs-completos-del-sistema" class="md-nav__link">
+    Logs completos del sistema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#controles-bob-fat-edition" class="md-nav__link">
     Controles BOB FAT edition
   </a>
@@ -2311,6 +2318,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#logs-completos-del-sistema" class="md-nav__link">
+    Logs completos del sistema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#controles-bob-fat-edition" class="md-nav__link">
     Controles BOB FAT edition
   </a>
@@ -2485,6 +2499,15 @@
 </li>
 </ul>
 <h2 id="cheatsheets">Cheatsheets<a class="headerlink" href="#cheatsheets" title="Permanent link">&para;</a></h2>
+<h4 id="logs-completos-del-sistema">Logs completos del sistema<a class="headerlink" href="#logs-completos-del-sistema" title="Permanent link">&para;</a></h4>
+<p>En EmuELEC hay montado un sistema para subir un log muy detallado de todo el sistema a internet. La consola tiene que estar conectada a internet para que esto funcione, no sólo a la red, porque sube todo el log a un sitio. Lo que hay que hacer es:</p>
+<ol>
+<li>Conectar la consola a internet.</li>
+<li>Iniciar un terminal por SSH.</li>
+<li>Ejecutar el comando <code>emueleclogs.sh</code>.</li>
+<li>El comando anterior devuelve una URL del dominio <code>ix.io</code>.</li>
+<li>Abrir la URL que devuelve con el navegador.</li>
+</ol>
 <h4 id="controles-bob-fat-edition">Controles BOB FAT edition<a class="headerlink" href="#controles-bob-fat-edition" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -2697,6 +2720,11 @@
 <td align="left">EmuELEC/351ELEC</td>
 <td align="left"><code>/usr/lib/coreelec/fs-resize</code></td>
 <td align="left">Script que prepara la tercera partición para las ROMs (expandiéndola para que ocupe el espacio libre de la tarjeta). Se lanza desde el servicio definido en <code>/usr/lib/systemd/system/fs-resize.service</code></td>
+</tr>
+<tr>
+<td align="left">EmuELEC/351ELEC</td>
+<td align="left"><code>/emuelec/logs/emuelec.log</code></td>
+<td align="left">Log del último juego ejecutado.</td>
 </tr>
 <tr>
 <td align="left">ArkOS</td>
