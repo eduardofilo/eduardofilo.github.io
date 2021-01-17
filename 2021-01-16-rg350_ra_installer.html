@@ -478,6 +478,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hoykeys" class="md-nav__link">
+    Hoykeys
+  </a>
+  
+</li>
+      
       
       
       
@@ -2129,6 +2136,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hoykeys" class="md-nav__link">
+    Hoykeys
+  </a>
+  
+</li>
+      
       
       
       
@@ -2156,7 +2170,7 @@
 <p><img alt="Files" src="/images/posts/rg350_ra_installer/files.png" /></p>
 <p>Una vez que todo está instalado en su sitio, la única manera de ejecutar las ROMs con los cores que incluye la distribución es por medio del único OPK que lanza RetroArch a modo frontend (el interfaz UX que suele decirse en otros emuladores):</p>
 <p><img alt="Frontend" src="/images/posts/rg350_ra_installer/frontend.png" /></p>
-<p>Para lograr una integración más completa de RetroArch, que respete la experiencia normal de los frontends habituales en RG350/RG280 (GMenu2X, SimpleMenu, PyMenu, etc.) se pueden crear unos OPKs tipo wrapper que permitan seleccionar las ROMs y lanzar el core de RetroArch correspondiente, ya que el binario/ejecutable <code>retroarch</code> que hay dentro del OPK admite los mismos argumentos que RetroArch en otras plataformas.</p>
+<p>Para lograr una integración más completa de RetroArch, que respete la experiencia normal de los frontends habituales en RG350/RG280 (GMenu2X, SimpleMenu, PyMenu, EmulationStation, etc.) se pueden crear unos OPKs tipo wrapper que permitan seleccionar las ROMs y lanzar el core de RetroArch correspondiente, ya que el binario/ejecutable <code>retroarch</code> que hay dentro del OPK admite los mismos argumentos que RetroArch en otras plataformas.</p>
 <h2 id="wrappers-opk">Wrappers OPK<a class="headerlink" href="#wrappers-opk" title="Permanent link">&para;</a></h2>
 <p>Para lograrlo, primero hubo que averiguar la forma de parametrizar el core y la ROM. Cargar un core y una ROM desde el propio RetroArch no sirve porque no exterioriza estos datos en forma de argumentos sobre el ejecutable. Lo que se hizo fue suponer que serviría el mismo formato de argumentos que utiliza el ejecutable <code>retroarch</code> en otros sistemas como EmuELEC en RG351P. Allí el frontend habitual EmulationStation sí que parametriza el core y la ROM a ejecutar por medio de argumentos en la llamada. Por ejemplo ejecutando Tetris de Game Boy con el core gambatte en EmuELEC sobre RG3551P se encuentra que el proceso se invoca de esta forma:</p>
 <div class="highlight"><pre><span></span><code>/usr/bin/retroarch -v -L /tmp/cores/gambatte_libretro.so --config /storage/.config/retroarch/retroarch.cfg /storage/roms/gb/Tetris (World) (Rev A).7z
@@ -2214,7 +2228,63 @@ X-OD-NeedsDownscaling=true
 <li>Filtros de GMenu2X por extensión para cada sistema.</li>
 <li>Sección nueva con el icono de RetroArch en todos los skins instalados en GMenu2X donde aparecen todos los lanzadores de los OPKs.</li>
 </ul>
-<p>El OPK con el instalador puede obtenerse en las releases de <a href="https://github.com/eduardofilo/RG350_ra_installer/releases">este repositorio</a>.</p>
+<p>El OPK con el instalador puede obtenerse en las releases de <a href="https://github.com/eduardofilo/RG350_ra_installer/releases/latest">este repositorio</a>.</p>
+<h2 id="hoykeys">Hoykeys<a class="headerlink" href="#hoykeys" title="Permanent link">&para;</a></h2>
+<p>En el fichero de configuración de RetroArch que instala el instalador, se han definido los siguientes controles:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Función</th>
+<th align="left">Shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Pausa</td>
+<td align="left"><code>Select + A</code></td>
+</tr>
+<tr>
+<td align="left">Reset</td>
+<td align="left"><code>Select + B</code></td>
+</tr>
+<tr>
+<td align="left">Menú RetroArch</td>
+<td align="left"><code>Select + X</code></td>
+</tr>
+<tr>
+<td align="left">Avance rápido</td>
+<td align="left"><code>Select + Y</code></td>
+</tr>
+<tr>
+<td align="left">Guardar savestate</td>
+<td align="left"><code>Select + R1</code></td>
+</tr>
+<tr>
+<td align="left">Cargar savestate</td>
+<td align="left"><code>Select + L1</code></td>
+</tr>
+<tr>
+<td align="left">Cambiar disco</td>
+<td align="left"><code>Select + R2</code></td>
+</tr>
+<tr>
+<td align="left">Abrir bandeja CD</td>
+<td align="left"><code>Select + L2</code></td>
+</tr>
+<tr>
+<td align="left">Cerrar juego</td>
+<td align="left"><code>Select + Start</code></td>
+</tr>
+<tr>
+<td align="left">Cambiar slot savestate</td>
+<td align="left"><code>Select + ←→</code></td>
+</tr>
+<tr>
+<td align="left">Cambiar volumen</td>
+<td align="left"><code>Select + ↑↓</code></td>
+</tr>
+</tbody>
+</table>
                 
                   
                 
