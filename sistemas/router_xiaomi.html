@@ -1982,6 +1982,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cambio-de-perfil-protonvpn" class="md-nav__link">
+    Cambio de perfil ProtonVPN
+  </a>
+  
+</li>
+      
       
       
       
@@ -2217,6 +2224,13 @@
         <li class="md-nav__item">
   <a href="#desactivacion-vpn" class="md-nav__link">
     Desactivación VPN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cambio-de-perfil-protonvpn" class="md-nav__link">
+    Cambio de perfil ProtonVPN
   </a>
   
 </li>
@@ -2506,6 +2520,20 @@
 <p>Reiniciar router.</p>
 </li>
 </ol>
+<h2 id="cambio-de-perfil-protonvpn">Cambio de perfil ProtonVPN<a class="headerlink" href="#cambio-de-perfil-protonvpn" title="Permanent link">&para;</a></h2>
+<p>En el router hay instalados un par de perfiles (se descargan de <a href="https://account.protonvpn.com/downloads#openvpn-configuration-files">aquí</a>), los correspondientes a Suiza (ch) y a Islandia (is). Los perfiles están aquí:</p>
+<div class="highlight"><pre><span></span><code>edumoreno@OpenWrt:~$ cd /etc/openvpn/protonvpn
+edumoreno@OpenWrt:/etc/openvpn/protonvpn$ ls -l
+-rw-r--r--    1 root     root            24 Nov 24  2018 auth
+-rw-r--r--    1 edumoren edumoren      4479 Jan 25 15:16 ch-es-01.protonvpn.com.udp.ovpn
+-rw-r--r--    1 root     root          4609 Nov 24  2018 is-es-01.protonvpn.com.udp.ovpn
+</code></pre></div>
+
+<p>Y se configuran al principio del fichero <code>/etc/config/openvpn</code>:</p>
+<div class="highlight"><pre><span></span><code>config openvpn &#39;protonvpn&#39;
+        option config &#39;/etc/openvpn/protonvpn/ch-es-01.protonvpn.com.udp.ovpn&#39;
+        option enabled &#39;1&#39;
+</code></pre></div>
                 
                   
                 
