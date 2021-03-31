@@ -2125,8 +2125,8 @@
 <li>
 <p>Activo el módulo PHP en <a href="http://www.lighttpd.net/">Lighttpd</a> y recargo la configuración de este último:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">sudo lighty-enable-mod fastcgi-php</span>
-<span class="err">sudo service lighttpd force-reload</span>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">sudo</span> <span class="n">lighty</span><span class="o">-</span><span class="n">enable</span><span class="o">-</span><span class="n">mod</span> <span class="n">fastcgi</span><span class="o">-</span><span class="n">php</span>
+<span class="n">sudo</span> <span class="n">service</span> <span class="n">lighttpd</span> <span class="n">force</span><span class="o">-</span><span class="n">reload</span>
 </code></pre></div>
 </td></tr></table>
 
@@ -2159,36 +2159,36 @@
 13
 14
 15
-16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">edumoreno@raspi-git /var/lib/dokuwiki/data $ ls -l</span>
-<span class="err">total 208</span>
-<span class="err">drwx------  2 www-data root 16384 dic 26 11:58 attic</span>
-<span class="err">drwx------ 11 www-data root 16384 dic 26 11:39 cache</span>
-<span class="err">-rw-r--r--  1 www-data root  7180 dic 26 11:39 deleted.files</span>
-<span class="err">-rw-r--r--  1 www-data root     0 dic 26 11:38 _dummy</span>
-<span class="err">drwx------  2 www-data root 16384 dic 26 11:58 index</span>
-<span class="err">drwx------  2 www-data root 16384 dic 26 11:58 locks</span>
-<span class="err">drwx------  3 www-data root 16384 dic 26 11:39 media</span>
-<span class="err">drwxr-xr-x  2 www-data root 16384 dic 26 11:39 media_attic</span>
-<span class="err">drwxr-xr-x  2 www-data root 16384 dic 26 11:39 media_meta</span>
-<span class="err">drwx------  2 www-data root 16384 dic 26 11:58 meta</span>
-<span class="err">drwx------  4 www-data root 16384 dic 26 11:42 pages</span>
-<span class="err">-rw-r--r--  1 www-data root  7917 dic 26 11:39 security.png</span>
-<span class="err">-rw-r--r--  1 www-data root 12093 dic 26 11:39 security.xcf</span>
-<span class="err">drwx------  2 www-data root 16384 dic 26 11:39 tmp</span>
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">edumoreno</span><span class="err">@</span><span class="n">raspi</span><span class="o">-</span><span class="n">git</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">dokuwiki</span><span class="o">/</span><span class="n">data</span> <span class="o">$</span> <span class="n">ls</span> <span class="o">-</span><span class="n">l</span>
+<span class="n">total</span> <span class="mi">208</span>
+<span class="n">drwx</span><span class="o">------</span>  <span class="mi">2</span> <span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="n">root</span> <span class="mi">16384</span> <span class="n">dic</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">58</span> <span class="n">attic</span>
+<span class="n">drwx</span><span class="o">------</span> <span class="mi">11</span> <span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="n">root</span> <span class="mi">16384</span> <span class="n">dic</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">39</span> <span class="n">cache</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="n">root</span>  <span class="mi">7180</span> <span class="n">dic</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">39</span> <span class="n">deleted</span><span class="o">.</span><span class="n">files</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="n">root</span>     <span class="mi">0</span> <span class="n">dic</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">38</span> <span class="n">_dummy</span>
+<span class="n">drwx</span><span class="o">------</span>  <span class="mi">2</span> <span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="n">root</span> <span class="mi">16384</span> <span class="n">dic</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">58</span> <span class="n">index</span>
+<span class="n">drwx</span><span class="o">------</span>  <span class="mi">2</span> <span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="n">root</span> <span class="mi">16384</span> <span class="n">dic</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">58</span> <span class="n">locks</span>
+<span class="n">drwx</span><span class="o">------</span>  <span class="mi">3</span> <span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="n">root</span> <span class="mi">16384</span> <span class="n">dic</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">39</span> <span class="n">media</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">2</span> <span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="n">root</span> <span class="mi">16384</span> <span class="n">dic</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">39</span> <span class="n">media_attic</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">2</span> <span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="n">root</span> <span class="mi">16384</span> <span class="n">dic</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">39</span> <span class="n">media_meta</span>
+<span class="n">drwx</span><span class="o">------</span>  <span class="mi">2</span> <span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="n">root</span> <span class="mi">16384</span> <span class="n">dic</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">58</span> <span class="n">meta</span>
+<span class="n">drwx</span><span class="o">------</span>  <span class="mi">4</span> <span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="n">root</span> <span class="mi">16384</span> <span class="n">dic</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">42</span> <span class="n">pages</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="n">root</span>  <span class="mi">7917</span> <span class="n">dic</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">39</span> <span class="n">security</span><span class="o">.</span><span class="n">png</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="n">root</span> <span class="mi">12093</span> <span class="n">dic</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">39</span> <span class="n">security</span><span class="o">.</span><span class="n">xcf</span>
+<span class="n">drwx</span><span class="o">------</span>  <span class="mi">2</span> <span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="n">root</span> <span class="mi">16384</span> <span class="n">dic</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">39</span> <span class="n">tmp</span>
 </code></pre></div>
 </td></tr></table>
 
 </li>
 <li>
 <p>Antes de hacer el montaje del directorio remoto del NAS hacia la Raspberry, transfiero al primero todos los ficheros que ha dejado la instalación en Raspberry. En mi caso, como tengo habilitado el acceso SSH en el NAS, lo hago así (desde la Raspberry):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">scp -r /var/lib/dokuwiki/data/* 192.168.1.200:/c/dokuwiki</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">scp</span> <span class="o">-</span><span class="n">r</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">dokuwiki</span><span class="o">/</span><span class="n">data</span><span class="o">/*</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.200</span><span class="p">:</span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">dokuwiki</span>
 </code></pre></div>
 </td></tr></table>
 
 </li>
 <li>
 <p>Ahora configuro en Raspberry el montaje del recurso compartido en el NAS, lo que hago insertando la siguiente línea en el fichero <code>/etc/fstab</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">192.168.1.200:/c/dokuwiki /var/lib/dokuwiki/data nfs rw 0 0</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="mf">192.168</span><span class="o">.</span><span class="mf">1.200</span><span class="p">:</span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">dokuwiki</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">dokuwiki</span><span class="o">/</span><span class="n">data</span> <span class="n">nfs</span> <span class="n">rw</span> <span class="mi">0</span> <span class="mi">0</span>
 </code></pre></div>
 </td></tr></table>
 

@@ -2328,6 +2328,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#buscar-paquetes" class="md-nav__link">
+    Buscar paquetes
+  </a>
+  
+</li>
+      
       
       
       
@@ -2877,6 +2884,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#buscar-paquetes" class="md-nav__link">
+    Buscar paquetes
+  </a>
+  
+</li>
+      
       
       
       
@@ -3041,7 +3055,7 @@ def DoAPOD<span class="o">()</span>:
     <span class="nv">KEY1</span> <span class="o">=</span> <span class="s1">&#39;href=&quot;&#39;</span>
     <span class="nv">KEY2</span> <span class="o">=</span> <span class="s1">&#39;&quot;&#39;</span>
     <span class="nv">image</span> <span class="o">=</span> None
-    <span class="k">for</span> line in u.readlines<span class="o">()</span>:
+    <span class="k">for</span> line <span class="k">in</span> u.readlines<span class="o">()</span>:
         <span class="nv">pos1</span> <span class="o">=</span> line.find<span class="o">(</span>KEY1<span class="o">)</span>
         <span class="k">if</span> <span class="nv">pos1</span> <span class="o">==</span> -1:
             <span class="k">continue</span>
@@ -3244,7 +3258,7 @@ $ ls *.mp4 <span class="p">|</span> awk <span class="s1">&#39;{print &quot;HandB
 
 <p>En ocasiones, si hay varios miles de fotos, se puede llenar la memoria. En este caso hacer la conversión con el siguiente comando, que trata las imágenes una a una:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">1</span>
-<span class="k">for</span> i in *.jpg<span class="p">;</span> <span class="k">do</span>
+<span class="k">for</span> i <span class="k">in</span> *.jpg<span class="p">;</span> <span class="k">do</span>
   <span class="nv">new</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&quot;%04d.jpg&quot;</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span><span class="k">)</span>
   convert <span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="o">[</span>x1080<span class="o">]</span> resized/<span class="si">${</span><span class="nv">new</span><span class="si">}</span>
   <span class="nb">let</span> <span class="nv">a</span><span class="o">=</span>a+1
@@ -3253,7 +3267,7 @@ $ ls *.mp4 <span class="p">|</span> awk <span class="s1">&#39;{print &quot;HandB
 
 <h2 id="crop-y-resize-de-imagenes-en-lote">Crop y resize de imágenes en lote<a class="headerlink" href="#crop-y-resize-de-imagenes-en-lote" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">1</span>
-<span class="k">for</span> i in *.jpg<span class="p">;</span> <span class="k">do</span>
+<span class="k">for</span> i <span class="k">in</span> *.jpg<span class="p">;</span> <span class="k">do</span>
   <span class="nv">new</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&quot;%04d.jpg&quot;</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span><span class="k">)</span>
   convert <span class="si">${</span><span class="nv">i</span><span class="si">}</span> -crop wxh+x+y -resize wsxhs -gravity Center <span class="si">${</span><span class="nv">new</span><span class="si">}</span>
   <span class="nb">let</span> <span class="nv">a</span><span class="o">=</span>a+1
@@ -3270,7 +3284,7 @@ $ ls *.mp4 <span class="p">|</span> awk <span class="s1">&#39;{print &quot;HandB
 <li>hs: alto del reescalado final</li>
 </ul>
 <h2 id="conversion-de-formato-en-lote">Conversión de formato en lote<a class="headerlink" href="#conversion-de-formato-en-lote" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">for</span> file in *.jpg<span class="p">;</span> <span class="k">do</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> file <span class="k">in</span> *.jpg<span class="p">;</span> <span class="k">do</span>
   <span class="nv">filename</span><span class="o">=</span><span class="k">$(</span>basename <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="k">)</span>
   <span class="nv">fileid</span><span class="o">=</span><span class="si">${</span><span class="nv">filename</span><span class="p">%%.*</span><span class="si">}</span>
   convert <span class="si">${</span><span class="nv">filename</span><span class="si">}</span> <span class="si">${</span><span class="nv">fileid</span><span class="si">}</span>.png
@@ -3280,7 +3294,7 @@ $ ls *.mp4 <span class="p">|</span> awk <span class="s1">&#39;{print &quot;HandB
 <h2 id="renombrado-de-archivos-en-lote">Renombrado de archivos en lote<a class="headerlink" href="#renombrado-de-archivos-en-lote" title="Permanent link">&para;</a></h2>
 <p>Por ejemplo una serie de archivos jpg:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">1</span>
-<span class="k">for</span> i in *.jpg<span class="p">;</span> <span class="k">do</span>
+<span class="k">for</span> i <span class="k">in</span> *.jpg<span class="p">;</span> <span class="k">do</span>
   <span class="nv">new</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&quot;%04d.jpg&quot;</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span><span class="k">)</span>
   mv <span class="si">${</span><span class="nv">i</span><span class="si">}</span> <span class="si">${</span><span class="nv">new</span><span class="si">}</span>
   <span class="nb">let</span> <span class="nv">a</span><span class="o">=</span>a+1
@@ -3442,6 +3456,12 @@ gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 <p>Siguiendo [esta página], añado lo siguiente al fichero <code>/etc/sysctl.conf</code> para bajar el 60% que usa Ubuntu por defecto a 10%:</p>
 <div class="highlight"><pre><span></span><code>vm.swappiness=10
 </code></pre></div>
+
+<h2 id="buscar-paquetes">Buscar paquetes<a class="headerlink" href="#buscar-paquetes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Encontrar un paquete por su nombre: <code>apt-cache search 'cadena'</code></li>
+<li>Encontrar un paquete que contiene un fichero: <code>apt-file search 'fichero'</code></li>
+</ul>
                 
                   
                 

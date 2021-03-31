@@ -2910,11 +2910,11 @@
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">shell ~$ screen -list</span>
-<span class="err">There are screens on:</span>
-<span class="err">    12629.pts-7.eduardo-HP-Folio-13 (04/04/15 13:55:03) (Detached)</span>
-<span class="err">    12609.pts-7.eduardo-HP-Folio-13 (04/04/15 13:54:51) (Detached)</span>
-<span class="err">2 Sockets in /var/run/screen/S-edumoreno.</span>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">shell</span> <span class="o">~$</span> <span class="n">screen</span> <span class="o">-</span><span class="n">list</span>
+<span class="n">There</span> <span class="n">are</span> <span class="n">screens</span> <span class="n">on</span><span class="p">:</span>
+    <span class="mf">12629.</span><span class="n">pts</span><span class="o">-</span><span class="mf">7.</span><span class="n">eduardo</span><span class="o">-</span><span class="n">HP</span><span class="o">-</span><span class="n">Folio</span><span class="o">-</span><span class="mi">13</span> <span class="p">(</span><span class="mi">04</span><span class="o">/</span><span class="mi">04</span><span class="o">/</span><span class="mi">15</span> <span class="mi">13</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">03</span><span class="p">)</span> <span class="p">(</span><span class="n">Detached</span><span class="p">)</span>
+    <span class="mf">12609.</span><span class="n">pts</span><span class="o">-</span><span class="mf">7.</span><span class="n">eduardo</span><span class="o">-</span><span class="n">HP</span><span class="o">-</span><span class="n">Folio</span><span class="o">-</span><span class="mi">13</span> <span class="p">(</span><span class="mi">04</span><span class="o">/</span><span class="mi">04</span><span class="o">/</span><span class="mi">15</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mi">51</span><span class="p">)</span> <span class="p">(</span><span class="n">Detached</span><span class="p">)</span>
+<span class="mi">2</span> <span class="n">Sockets</span> <span class="ow">in</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">screen</span><span class="o">/</span><span class="n">S</span><span class="o">-</span><span class="n">edumoreno</span><span class="o">.</span>
 </code></pre></div>
 </td></tr></table>
 
@@ -2938,7 +2938,7 @@
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="nv">SAVEIFS</span><span class="o">=</span><span class="nv">$IFS</span>
 <span class="nv">IFS</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> -en <span class="s2">&quot;\n\b&quot;</span><span class="k">)</span>
-<span class="k">for</span> file in <span class="sb">`</span>find .<span class="sb">`</span>
+<span class="k">for</span> file <span class="k">in</span> <span class="sb">`</span>find .<span class="sb">`</span>
 <span class="k">do</span>
 fgrep <span class="s2">&quot;[cadena a buscar]&quot;</span> <span class="nv">$file</span> &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
@@ -2962,7 +2962,7 @@ $ find . -type d -exec chmod <span class="m">775</span> <span class="o">{}</span
 <h2 id="renombrado-de-ficheros-de-mayusculas-a-minusculas">Renombrado de ficheros de mayúsculas a minúsculas<a class="headerlink" href="#renombrado-de-ficheros-de-mayusculas-a-minusculas" title="Permanent link">&para;</a></h2>
 <p>(<a href="http://aptgetanarchy.org/node/75">Fuente</a>)</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
-<span class="k">for</span> f in *<span class="p">;</span> <span class="k">do</span>
+<span class="k">for</span> f <span class="k">in</span> *<span class="p">;</span> <span class="k">do</span>
 <span class="nv">g</span><span class="o">=</span><span class="sb">`</span>expr <span class="s2">&quot;xxx</span><span class="nv">$f</span><span class="s2">&quot;</span> : <span class="s1">&#39;xxx\(.*\)&#39;</span> <span class="p">|</span> tr <span class="s1">&#39;[A-Z]&#39;</span> <span class="s1">&#39;[a-z]&#39;</span><span class="sb">`</span>
 mv <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$g</span><span class="s2">&quot;</span>
 <span class="k">done</span>
@@ -2970,14 +2970,14 @@ mv <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quo
 
 <h2 id="comprimir-uno-a-uno-los-ficheros-de-un-directorio">Comprimir uno a uno los ficheros de un directorio<a class="headerlink" href="#comprimir-uno-a-uno-los-ficheros-de-un-directorio" title="Permanent link">&para;</a></h2>
 <p>Por ejemplo ficheros de extensión <code>.gba</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span> f in *.gba<span class="p">;</span> <span class="k">do</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> f <span class="k">in</span> *.gba<span class="p">;</span> <span class="k">do</span>
 <span class="nv">file</span><span class="o">=</span><span class="k">$(</span>basename <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span> .gba<span class="k">)</span>
 zip <span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="si">}</span><span class="s2">.zip&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="si">}</span><span class="s2">.gba&quot;</span>
 <span class="k">done</span>
 </code></pre></div>
 
 <h2 id="quitar-los-primeros-5-caracteres-de-los-ficheros-de-un-directorio">Quitar los primeros 5 caracteres de los ficheros de un directorio<a class="headerlink" href="#quitar-los-primeros-5-caracteres-de-los-ficheros-de-un-directorio" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">for</span> f in *.gba<span class="p">;</span> <span class="k">do</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> f <span class="k">in</span> *.gba<span class="p">;</span> <span class="k">do</span>
 mv <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">f</span><span class="p">:</span><span class="nv">5</span><span class="p">:</span><span class="si">${#</span><span class="nv">f</span><span class="si">}}</span><span class="s2">&quot;</span>
 <span class="k">done</span>
 </code></pre></div>
@@ -3017,11 +3017,11 @@ $ sudo update-java-alternatives --set <span class="o">[</span>elegir el identifi
 <p>Conseguiremos que la autentificación del cliente se haga por medio de una pareja de claves privada/pública en lugar de con identificador de usuario/password. Primero generamos la pareja de claves pública-privada ejecutando en el cliente <code>ssh-keygen</code>:</p>
 <div class="highlight"><pre><span></span><code>$ ssh-keygen -t rsa
 Generating public/private rsa key pair.
-Enter file in which to save the key <span class="o">(</span>/home/user/.ssh/id_rsa<span class="o">)</span>:
+Enter file <span class="k">in</span> which to save the key <span class="o">(</span>/home/user/.ssh/id_rsa<span class="o">)</span>:
 Enter passphrase <span class="o">(</span>empty <span class="k">for</span> no passphrase<span class="o">)</span>:
 Enter same passphrase again:
-Your identification has been saved in /home/user/.ssh/id_rsa.
-Your public key has been saved in /home/user/.ssh/id_rsa.pub.
+Your identification has been saved <span class="k">in</span> /home/user/.ssh/id_rsa.
+Your public key has been saved <span class="k">in</span> /home/user/.ssh/id_rsa.pub.
 The key fingerprint is:
 xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx user@machine
 </code></pre></div>
@@ -3319,7 +3319,7 @@ RetroPie.img2        124928 7744511  7619584  3,6G 83 Linux
 <span class="c1">### Start MySQL Backup ###</span>
 <span class="c1"># Get all databases name</span>
 <span class="nv">DBS</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nv">$MYSQL</span> -u <span class="nv">$MUSER</span> -h <span class="nv">$MHOST</span> -p<span class="nv">$MPASS</span> -Bse <span class="s1">&#39;show databases&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
-<span class="k">for</span> db in <span class="nv">$DBS</span>
+<span class="k">for</span> db <span class="k">in</span> <span class="nv">$DBS</span>
 <span class="k">do</span>
  <span class="nv">FILE</span><span class="o">=</span><span class="nv">$BACKUP</span>/mysql-<span class="nv">$db</span>.<span class="nv">$NOW</span>-<span class="k">$(</span>date +<span class="s2">&quot;%T&quot;</span><span class="k">)</span>.gz
  <span class="nv">$MYSQLDUMP</span> -u <span class="nv">$MUSER</span> -h <span class="nv">$MHOST</span> -p<span class="nv">$MPASS</span> <span class="nv">$db</span> <span class="p">|</span> <span class="nv">$GZIP</span> -9 &gt; <span class="nv">$FILE</span>

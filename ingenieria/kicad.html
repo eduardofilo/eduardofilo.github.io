@@ -2304,6 +2304,8 @@
 <li><a href="http://support.seeedstudio.com/knowledgebase/articles/447362-fusion-pcb-specification">Desing Rules recomendadas para minimizar problemas en fabricación PCB's</a></li>
 <li><a href="https://defproc.co.uk/blog/kicad-logo-size/">Sizing Logos in KiCAD</a></li>
 <li><a href="https://jlcpcb.com/client/index.html#/parts">Librería de componentes de JLCPCB para Assembly Service</a></li>
+<li><a href="https://www.digikey.com/es/resources/online-conversion-calculators">Calculadoras de conversión en línea por DigiKey</a></li>
+<li><a href="https://github.com/badgeek/svg2shenzhen">Svg2Shenzhen</a>: Inkscape extension for exporting drawings into a KiCad PCB.</li>
 </ul>
 <h2 id="gestion-de-librerias">Gestión de librerías<a class="headerlink" href="#gestion-de-librerias" title="Permanent link">&para;</a></h2>
 <ol>
@@ -2345,9 +2347,12 @@
 </li>
 <li>Diseñar símbolo:<ol>
 <li>Abrir el programa <code>Symbol Editor</code>. <img src="/images/pages/kicad/add_component.svg" width="30"/></li>
-<li>Crear una nueva librería con el comando <code>File &gt; New library...</code> en el directorio <code>lib_sch</code>.</li>
-<li>En el popup <code>Add To Library Table</code> que aparece seleccionar la opción <code>Project</code>.</li>
-<li>Pulsar el botón <code>Create new symbol</code>. <img src="/images/pages/kicad/add_component.svg" width="30"/></li>
+<li>Para mantener los ficheros del nuevo símbolo, escoger uno de estos caminos en función de si se quiere mantener el símbolo exclusivamente dentro del proyecto o de forma global:<ul>
+<li>Crear una nueva librería con el comando <code>File &gt; New Library...</code> en el directorio <code>lib_sch</code>. En el popup <code>Add To Library Table</code> que aparece seleccionar la opción <code>Project</code>.</li>
+<li>Instalar a nivel global (<code>Preferences &gt; Manage Symbol Libraries...</code>) las que se mantienen en <a href="https://github.com/eduardofilo/kicad_footprints">este repositorio</a>.</li>
+</ul>
+</li>
+<li>Seleccionar la librería recien creada o importada y pulsar el botón <code>Create new symbol</code>. <img src="/images/pages/kicad/add_component.svg" width="30"/></li>
 <li>Se nos preguntará por la librería donde incorporarlo. Seleccionar la que acabamos de crear (aparecerá al final).</li>
 <li>Rellenar el cuadro <code>Symbol Properties</code>. Fundamentalmente tenemos que dar un nombre para el componente.</li>
 <li>Crear el símbolo del componente utilizando fundamentalmente los siguientes atajos de teclado:<ul>
@@ -2388,11 +2393,14 @@
 <li>Asociar símbolos del esquemático con huellas PCB ejecutando CvPCB. <img src="/images/pages/kicad/cvpcb.svg" width="30"/>. Aprovechar los botones de filtrado, sobre todo <code>Filter footprint list using a partial name or a pattern</code>.</li>
 <li>Diseñar las huellas que no se encuentren en la librería:<ol>
 <li>Abrir el programa <code>Footprint Editor</code>. <img src="/images/pages/kicad/new_footprint.svg" width="30"/></li>
-<li>Crear una nueva librería con el comando <code>File &gt; New Library...</code> en el directorio <code>lib_fp.pretty</code>.</li>
-<li>En el popup <code>Select Library Table</code> que aparece seleccionar la opción <code>Project</code>.</li>
+<li>Para mantener los ficheros de la nueva huella, escoger uno de estos caminos en función de si se quiere mantener exclusivamente dentro del proyecto o de forma global:<ul>
+<li>Crear una nueva librería con el comando <code>File &gt; New Library...</code> en el directorio <code>lib_fp.pretty</code>. En el popup <code>Select Library Table</code> que aparece seleccionar la opción <code>Project</code>.</li>
+<li>Instalar a nivel global (<code>Preferences &gt; Manage Footprint Libraries...</code>) las que se mantienen en <a href="https://github.com/eduardofilo/kicad_footprints">este repositorio</a> en el directorio <code>eduardofilo_footprints.pretty</code>.</li>
+</ul>
+</li>
+<li>Seleccionar en la lista de librerías la que acabamos de crear o incorporar en el paso anterior. De esta forma la nueva huella que vamos a crear se creará dentro de esta librería.</li>
 <li>Pulsar el botón <code>New footprint</code>. <img src="/images/pages/kicad/new_footprint.svg" width="30"/></li>
 <li>Darle nombre en el popup que aparece.</li>
-<li>Guardarlo para que nos pregunte por la librería donde incorporarlo. Seleccionar la que acabamos de crear (aparecerá al final).</li>
 <li>Crear la huella utilizando fundamentalmente los siguientes atajos de teclado:<ul>
 <li><code>M</code>: Mover objeto.</li>
 <li><code>R</code>: Rotar objeto.</li>
@@ -2450,7 +2458,7 @@
 <li>Hacer el cambio en <code>Schematic Layout Editor (eeschema)</code>.</li>
 <li>Dar nombre a los nuevos componentes. Se puede hacer automáticamente con la herramienta de anotación a la que se accede con el botón <img src="/images/pages/kicad/annotate.svg" width="30"/> de la barra superior.</li>
 <li>Volver a <code>PCB Layout Editor (pcbnew)</code> y pulsar el botón <code>Update PCB from schematic</code>. <img src="/images/pages/kicad/update_pcb_from_sch.svg" width="30"/></li>
-<li>En el popup que aparece pulsar el botón <code>Update PCB</code>. Nos hará un informe de los cambios. En caso de que los cambios imploquen componentes nuevos, cuando lo cerremos se nos cargarán en el cursor para incorporarlos al PCB.</li>
+<li>En el popup que aparece pulsar el botón <code>Update PCB</code>. Nos hará un informe de los cambios. En caso de que los cambios impliquen componentes nuevos, cuando lo cerremos se nos cargarán en el cursor para incorporarlos al PCB.</li>
 </ol>
 </li>
 </ol>
@@ -2737,6 +2745,7 @@ git clone git@github.com:KiCad/kicad-packages3D.git
 </table>
 <h3 id="simbolos-y-footprints-propios-kicad">Símbolos y footprints propios KiCad<a class="headerlink" href="#simbolos-y-footprints-propios-kicad" title="Permanent link">&para;</a></h3>
 <p>En <a href="https://github.com/eduardofilo/kicad_footprints">este repositorio</a>.</p>
+<p>Antes de crear los símbolos o los footprints, tratar de buscarlos en sitios como <a href="https://www.snapeda.com/">SnapEDA</a>.</p>
 <table>
 <thead>
 <tr>
