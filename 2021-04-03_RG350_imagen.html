@@ -1,0 +1,2789 @@
+
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Apuntes varios sobre algunas de las cosas que necesito recordar, principalmente sobre Desarrollo y Sistemas.">
+      
+      
+      
+        <meta name="author" content="Eduardo Moreno Lamana">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copiar al portapapeles">
+      
+        <meta name="lang:clipboard.copied" content="Copiado al portapapeles">
+      
+        <meta name="lang:search.language" content="es">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No se encontraron documentos">
+      
+        <meta name="lang:search.result.one" content="1 documento encontrado">
+      
+        <meta name="lang:search.result.other" content="# documentos encontrados">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>RG350/RG280 Imagen</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ff7043">
+      
+    
+    
+      <script src="assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    
+      <link rel="manifest" type="application/manifest+json" href="manifest.webmanifest" crossorigin="use-credentials">
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@8.5.1/dist/mermaid.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="deep-orange" data-md-color-accent="amber">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#presentacion" tabindex="0" class="md-skip">
+        Saltar a contenido
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="index.html" title="Apuntes de eduardófilo" aria-label="Apuntes de eduardófilo" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="images/eduardofilo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Apuntes de eduardófilo
+            </span>
+            <span class="md-header-nav__topic">
+              
+                RG350/RG280 Imagen
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Teclee para comenzar búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/eduardofilo/eduardofilo.mkdocs/" title="Ir al repositorio" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="index.html" class="md-tabs__link md-tabs__link--active">
+        Blog
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="desarrollo/android.html" class="md-tabs__link">
+          Desarrollo
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="ingenieria/3d_printing.html" class="md-tabs__link">
+          Ingeniería
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="proyectos/headsetcomm.html" class="md-tabs__link">
+          Proyectos
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="retro-emulacion/c64.html" class="md-tabs__link">
+          Retro-Emulación
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="sistemas/android_system.html" class="md-tabs__link">
+          Sistemas
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="varios/bici.html" class="md-tabs__link">
+          Varios
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="index.html" title="Apuntes de eduardófilo" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="images/eduardofilo.png" width="48" height="48">
+      
+    </a>
+    Apuntes de eduardófilo
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/eduardofilo/eduardofilo.mkdocs/" title="Ir al repositorio" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="index.html" title="Blog" class="md-nav__link">
+      Blog
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        RG350/RG280 Imagen
+      </label>
+    
+    <a href="2021-04-03_RG350_imagen.html" title="RG350/RG280 Imagen" class="md-nav__link md-nav__link--active">
+      RG350/RG280 Imagen
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Tabla de contenidos</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#presentacion" class="md-nav__link">
+    Presentación
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-de-partidas-antes-de-flashear" class="md-nav__link">
+    Backup de partidas antes de flashear
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flasheo-de-la-imagen" class="md-nav__link">
+    Flasheo de la imagen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seleccion-de-frontend-predeterminado" class="md-nav__link">
+    Selección de frontend predeterminado
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anadir-roms" class="md-nav__link">
+    Añadir ROMs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anadir-bios" class="md-nav__link">
+    Añadir BIOS
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2021-02-28_pico_fuzix.html" title="FUZIX en Raspberry Pi Pico" class="md-nav__link">
+      FUZIX en Raspberry Pi Pico
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2021-01-19-retroconsolas.html" title="Retroconsolas" class="md-nav__link">
+      Retroconsolas
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2021-01-16-rg350_ra_installer.html" title="RG350 Instalador RA" class="md-nav__link">
+      RG350 Instalador RA
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-12-13-rg351_wifi_mod.html" title="RG351P Wifi mod" class="md-nav__link">
+      RG351P Wifi mod
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-09-27-rg350_xmame_sm_bridge.html" title="RG350 Interfaz xMAME SimpleMenu" class="md-nav__link">
+      RG350 Interfaz xMAME SimpleMenu
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-08-31-cancion_herb_alpert.html" title="La canción que merece la pena escuchar" class="md-nav__link">
+      La canción que merece la pena escuchar
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-08-15-rg350_scummvm_launchers.html" title="RG350 ScummVM en lanzadores" class="md-nav__link">
+      RG350 ScummVM en lanzadores
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-08-12-rg350_py_backup.html" title="RG350 Py Backup" class="md-nav__link">
+      RG350 Py Backup
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-07-12-rg350_screen_mod.html" title="RG350 Sustitución de pantalla 480p" class="md-nav__link">
+      RG350 Sustitución de pantalla 480p
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-07-09-rg350_fba_vertical_mod.html" title="RG350 FBA mod" class="md-nav__link">
+      RG350 FBA mod
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-07-02-rg350_primeros_pasos.html" title="RG350 Primeros pasos" class="md-nav__link">
+      RG350 Primeros pasos
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-06-04-rg350_raspi_image.html" title="RG350 Raspi Imagen" class="md-nav__link">
+      RG350 Raspi Imagen
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-05-31-rg350_compile.html" title="RG350 Compilar aplicaciones" class="md-nav__link">
+      RG350 Compilar aplicaciones
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-05-25-rg350_docker_buildroot.html" title="RG350 Docker Buildroot" class="md-nav__link">
+      RG350 Docker Buildroot
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-05-14-rg350_mame4all.html" title="RG350 MAME4All" class="md-nav__link">
+      RG350 MAME4All
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-05-08-rg350_dosbox.html" title="RG350 DOSBox" class="md-nav__link">
+      RG350 DOSBox
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-05-06-rg350_openbor.html" title="RG350 OpenBOR" class="md-nav__link">
+      RG350 OpenBOR
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-05-04-rg350_daphne.html" title="RG350 Daphne" class="md-nav__link">
+      RG350 Daphne
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-04-15-rg350_xmame.html" title="RG350 xMAME" class="md-nav__link">
+      RG350 xMAME
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-04-14-rg350_scummvm.html" title="RG350 ScummVM" class="md-nav__link">
+      RG350 ScummVM
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-03-28-rg350_pymenu.html" title="RG350 PyMenu" class="md-nav__link">
+      RG350 PyMenu
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-03-19-rg350_backup.html" title="RG350 Backup" class="md-nav__link">
+      RG350 Backup
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-02-16-panelizar_pcb.html" title="Panelizar PCB" class="md-nav__link">
+      Panelizar PCB
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-02-13-rg350_emulationstation.html" title="RG350 EmulationStation" class="md-nav__link">
+      RG350 EmulationStation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-02-09-rg350_network.html" title="RG350 Conexión a internet" class="md-nav__link">
+      RG350 Conexión a internet
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-02-08-eduzebox.html" title="EdUzebox" class="md-nav__link">
+      EdUzebox
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-01-31-rg350_fba.html" title="RG350 FBA" class="md-nav__link">
+      RG350 FBA
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-01-25-rg350_simplemenu.html" title="RG350 SimpleMenu" class="md-nav__link">
+      RG350 SimpleMenu
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2020-01-11-rg350_scraper.html" title="RG350 Scraper" class="md-nav__link">
+      RG350 Scraper
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2019-08-06-django_site.html" title="Creación de un sitio Django desde cero" class="md-nav__link">
+      Creación de un sitio Django desde cero
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2019-07-07-crankshaft-build.html" title="Compilación OpenAuto para solucionar touch screen" class="md-nav__link">
+      Compilación OpenAuto para solucionar touch screen
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2019-04-20-pong_composite_mod.html" title="Composite mod en consola Pong" class="md-nav__link">
+      Composite mod en consola Pong
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2019-01-29-bloqueo_telsome.html" title="Bloqueo de llamadas entrantes en Telsome" class="md-nav__link">
+      Bloqueo de llamadas entrantes en Telsome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2019-01-26-conversion_apuntes_mkdocs.html" title="Conversión del sitio de Apuntes a MkDocs" class="md-nav__link">
+      Conversión del sitio de Apuntes a MkDocs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2018-10-20-Octoprint-en-Anet-A8.html" title="Octoprint en Anet A8" class="md-nav__link">
+      Octoprint en Anet A8
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2018-10-19-crankshaft.html" title="Crankshaft - AndroidAuto sobre Raspberry Pi" class="md-nav__link">
+      Crankshaft - AndroidAuto sobre Raspberry Pi
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2018-05-05-otto.html" title="Otto DIY" class="md-nav__link">
+      Otto DIY
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2017-01-14-raspi2-kodi-16-tvheadend.html" title="Raspberry Pi 3 + KODI 16 + Tvheadend" class="md-nav__link">
+      Raspberry Pi 3 + KODI 16 + Tvheadend
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2016-12-06-raspi3-kodi.html" title="Raspberry Pi 3 + KODI" class="md-nav__link">
+      Raspberry Pi 3 + KODI
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2016-10-17-raspi-switch.html" title="Interruputor de encendido para Raspberry Pi" class="md-nav__link">
+      Interruputor de encendido para Raspberry Pi
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2016-08-17-el-mundo-de-ayer.html" title="El mundo de ayer - Stefan Zweig" class="md-nav__link">
+      El mundo de ayer - Stefan Zweig
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2016-08-02-stm32-vl-discovery.html" title="Entorno desarrollo STM32 VL Discovery sobre Linux" class="md-nav__link">
+      Entorno desarrollo STM32 VL Discovery sobre Linux
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2016-07-21-PIGRRL-2.html" title="Configuración PiGRRL-2" class="md-nav__link">
+      Configuración PiGRRL-2
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2016-07-10-wild.html" title="Wild - Cheryl Strayed" class="md-nav__link">
+      Wild - Cheryl Strayed
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2016-07-02-virus-android.html" title="Alertas por supuestos virus en Android" class="md-nav__link">
+      Alertas por supuestos virus en Android
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2016-04-10-un-antropologo-en-marte.html" title="Un antropólogo en Marte - Oliver Sacks" class="md-nav__link">
+      Un antropólogo en Marte - Oliver Sacks
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2016-02-25-los-innovadores.html" title="Los Innovadores - Walter Isaacson" class="md-nav__link">
+      Los Innovadores - Walter Isaacson
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2015-03-14-raspi2-kodi-tvheadend.html" title="Raspberry Pi 2 + KODI + Tvheadend" class="md-nav__link">
+      Raspberry Pi 2 + KODI + Tvheadend
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2015-01-09-moviles.html" title="Móviles recomendables" class="md-nav__link">
+      Móviles recomendables
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2015-01-08-jekyll.html" title="Jekyll+GitHub Pages" class="md-nav__link">
+      Jekyll+GitHub Pages
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2014-12-26-dokuwiki-raspi.html" title="Dokuwiki en Raspberry Pi manteniendo los ficheros en NAS" class="md-nav__link">
+      Dokuwiki en Raspberry Pi manteniendo los ficheros en NAS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2014-12-20-micro-placas.html" title="Micro placas" class="md-nav__link">
+      Micro placas
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="2014-12-15-presentacion.html" title="Presentación" class="md-nav__link">
+      Presentación
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-56" type="checkbox" id="nav-56">
+    
+    <label class="md-nav__link" for="nav-56">
+      Desarrollo
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-56">
+        Desarrollo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/android.html" title="Android" class="md-nav__link">
+      Android
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/db.html" title="Bases de Datos" class="md-nav__link">
+      Bases de Datos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/diseno.html" title="Diseño" class="md-nav__link">
+      Diseño
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/dokuwiki.html" title="Dokuwiki" class="md-nav__link">
+      Dokuwiki
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/eclipse.html" title="Eclipse" class="md-nav__link">
+      Eclipse
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/projects.html" title="Gestión de Proyectos" class="md-nav__link">
+      Gestión de Proyectos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/git.html" title="Git" class="md-nav__link">
+      Git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/html.html" title="HTML+CSS" class="md-nav__link">
+      HTML+CSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/ia.html" title="IA" class="md-nav__link">
+      IA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/java.html" title="Java" class="md-nav__link">
+      Java
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/javaee.html" title="JavaEE" class="md-nav__link">
+      JavaEE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/javascript.html" title="JavaScript" class="md-nav__link">
+      JavaScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/joomla.html" title="Joomla" class="md-nav__link">
+      Joomla
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/phonegap.html" title="Phonegap" class="md-nav__link">
+      Phonegap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/php.html" title="PHP" class="md-nav__link">
+      PHP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/python.html" title="Python/Django" class="md-nav__link">
+      Python/Django
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/ror.html" title="Ruby on Rails" class="md-nav__link">
+      Ruby on Rails
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/spree.html" title="Spree" class="md-nav__link">
+      Spree
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/subl.html" title="Sublime Text 2" class="md-nav__link">
+      Sublime Text 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/svn.html" title="SVN" class="md-nav__link">
+      SVN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/vagrant.html" title="Vagrant" class="md-nav__link">
+      Vagrant
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="desarrollo/yii.html" title="Yii" class="md-nav__link">
+      Yii
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-57" type="checkbox" id="nav-57">
+    
+    <label class="md-nav__link" for="nav-57">
+      Ingeniería
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-57">
+        Ingeniería
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ingenieria/3d_printing.html" title="3D Printing" class="md-nav__link">
+      3D Printing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ingenieria/arduino.html" title="Arduino" class="md-nav__link">
+      Arduino
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ingenieria/bus_pirate.html" title="Bus Pirate" class="md-nav__link">
+      Bus Pirate
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ingenieria/freecad.html" title="FreeCAD" class="md-nav__link">
+      FreeCAD
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ingenieria/kicad.html" title="KiCad" class="md-nav__link">
+      KiCad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ingenieria/m328_transistor_tester.html" title="M328 Transistor Tester" class="md-nav__link">
+      M328 Transistor Tester
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ingenieria/modulos.html" title="Módulos" class="md-nav__link">
+      Módulos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ingenieria/stm32.html" title="STM32" class="md-nav__link">
+      STM32
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-58" type="checkbox" id="nav-58">
+    
+    <label class="md-nav__link" for="nav-58">
+      Proyectos
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-58">
+        Proyectos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="proyectos/headsetcomm.html" title="Headset Commander" class="md-nav__link">
+      Headset Commander
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="proyectos/dicom.html" title="Impresión 3D de ecografías" class="md-nav__link">
+      Impresión 3D de ecografías
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="proyectos/minecraft.html" title="Minecraft" class="md-nav__link">
+      Minecraft
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-59" type="checkbox" id="nav-59">
+    
+    <label class="md-nav__link" for="nav-59">
+      Retro-Emulación
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-59">
+        Retro-Emulación
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="retro-emulacion/c64.html" title="Commodore 64" class="md-nav__link">
+      Commodore 64
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="retro-emulacion/emulacion.html" title="Emulación" class="md-nav__link">
+      Emulación
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="retro-emulacion/fpga.html" title="FPGA" class="md-nav__link">
+      FPGA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="retro-emulacion/juegos.html" title="Juegos destacados" class="md-nav__link">
+      Juegos destacados
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="retro-emulacion/proyecto-x.html" title="Lemon Pi" class="md-nav__link">
+      Lemon Pi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="retro-emulacion/rg-350.html" title="RG350" class="md-nav__link">
+      RG350
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="retro-emulacion/rg-351.html" title="RG351" class="md-nav__link">
+      RG351
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="retro-emulacion/uzebox.html" title="Uzebox" class="md-nav__link">
+      Uzebox
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="retro-emulacion/zx-spectrum.html" title="ZX Spectrum" class="md-nav__link">
+      ZX Spectrum
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="retro-emulacion/zx-uno.html" title="ZX-UNO" class="md-nav__link">
+      ZX-UNO
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-60" type="checkbox" id="nav-60">
+    
+    <label class="md-nav__link" for="nav-60">
+      Sistemas
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-60">
+        Sistemas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/android_system.html" title="Android" class="md-nav__link">
+      Android
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/soft_imprescindible.html" title="Aplicaciones interesantes" class="md-nav__link">
+      Aplicaciones interesantes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/appletv.html" title="AppleTV" class="md-nav__link">
+      AppleTV
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/buildroot.html" title="Buildroot" class="md-nav__link">
+      Buildroot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/docker.html" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/email.html" title="e-mail" class="md-nav__link">
+      e-mail
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/impresoras.html" title="Impresoras" class="md-nav__link">
+      Impresoras
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/iot.html" title="IOT" class="md-nav__link">
+      IOT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/kodi.html" title="Kodi/OpenELEC" class="md-nav__link">
+      Kodi/OpenELEC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/macosx.html" title="Mac OS X" class="md-nav__link">
+      Mac OS X
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/mysql.html" title="MySQL" class="md-nav__link">
+      MySQL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/nas.html" title="NAS" class="md-nav__link">
+      NAS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/odroid.html" title="ODROID" class="md-nav__link">
+      ODROID
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/office.html" title="Office" class="md-nav__link">
+      Office
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/raspi.html" title="Raspberry Pi" class="md-nav__link">
+      Raspberry Pi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/redes.html" title="Redes" class="md-nav__link">
+      Redes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/router_xiaomi.html" title="Router Xiaomi MiWiFi 3G" class="md-nav__link">
+      Router Xiaomi MiWiFi 3G
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/ubuntu_phone.html" title="Ubuntu Phone" class="md-nav__link">
+      Ubuntu Phone
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/ubuntu.html" title="Ubuntu" class="md-nav__link">
+      Ubuntu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/unix.html" title="UNIX" class="md-nav__link">
+      UNIX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sistemas/trucos_windows.html" title="Windows" class="md-nav__link">
+      Windows
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-61" type="checkbox" id="nav-61">
+    
+    <label class="md-nav__link" for="nav-61">
+      Varios
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-61">
+        Varios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="varios/bici.html" title="Bicicleta" class="md-nav__link">
+      Bicicleta
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="varios/links.html" title="Enlaces" class="md-nav__link">
+      Enlaces
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="varios/excursionismo.html" title="Excursionismo" class="md-nav__link">
+      Excursionismo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="varios/hogar.html" title="Hogar" class="md-nav__link">
+      Hogar
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="varios/english.html" title="Inglés" class="md-nav__link">
+      Inglés
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="varios/corsa_d.html" title="Opel Corsa D" class="md-nav__link">
+      Opel Corsa D
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="varios/recetas.html" title="Recetas" class="md-nav__link">
+      Recetas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="varios/viajes.html" title="Viajes" class="md-nav__link">
+      Viajes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Tabla de contenidos</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#presentacion" class="md-nav__link">
+    Presentación
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-de-partidas-antes-de-flashear" class="md-nav__link">
+    Backup de partidas antes de flashear
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flasheo-de-la-imagen" class="md-nav__link">
+    Flasheo de la imagen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seleccion-de-frontend-predeterminado" class="md-nav__link">
+    Selección de frontend predeterminado
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anadir-roms" class="md-nav__link">
+    Añadir ROMs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anadir-bios" class="md-nav__link">
+    Añadir BIOS
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/eduardofilo/eduardofilo.mkdocs/edit/master/docs/2021-04-03_RG350_imagen.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>RG350/RG280 Imagen</h1>
+                
+                <p><img alt="RG350" src="/images/pages/rg350.png" /></p>
+<h2 id="presentacion">Presentación<a class="headerlink" href="#presentacion" title="Permanent link">&para;</a></h2>
+<p>Se comentan aquí los detalles de una imagen de tarjeta interna preparada para las consolas RG350, RG350P, RG350M, RG280V y RG280M. La imagen es un volcado de una microSD de 4GB con sistema ROGUE (agradecimiento especial a <a href="https://github.com/Ninoh-FOX">Ninoh-FOX</a> por su soporte), ports, emuladores y cores RetroArch y los frontends GMenu2X, SimpleMenu (agradecimiento especial a <a href="https://github.com/fgl82">FGL82</a> por su soporte) y PyMenu. Se puede flashear sobre una tarjeta de ese tamaño o superior. Durante el primer arranque se expandirá el tamaño de la partición principal hasta ocupar todo el espacio disponible en la tarjeta.</p>
+<p>Descarga de la imagen desde los siguientes enlaces:</p>
+<ul>
+<li><a href="https://drive.google.com/file/d/1QrMYXZXGm8idTy7ceixC746V4xFECnkW/view?usp=sharing">Panda</a> (RG350 y RG350P)</li>
+<li><a href="https://drive.google.com/file/d/15mvH5UbVgQcAlkcaKZhgbo3jPB_MwYul/view?usp=sharing">Mapache</a> (RG350M)</li>
+<li><a href="https://drive.google.com/file/d/18cFQvN4C0iRBk6eqtIAywLdO2VKjx7AO/view?usp=sharing">Visón</a> (RG280V)</li>
+<li><a href="https://drive.google.com/file/d/1kaQXQYIsM7oxmE_0rNCJz5omqWQLV8It/view?usp=sharing">Musaraña</a> (RG280M)</li>
+</ul>
+<p>Los emuladores y los cores RetroArch tienen lanzadores personalizados con iconos que representan las máquinas que emulan para mejor identificación. Los nombres de los emuladores y cores también se han modificado con esta misma idea.</p>
+<p><img alt="Emulators" src="/images/posts/2021-04-02_RG350_imagen/emulators.png" />
+<img alt="RetroArch cores" src="/images/posts/2021-04-02_RG350_imagen/retroarch_cores.png" /></p>
+<p>Los ports o juegos instalados son los siguientes (algunos como <code>Cannonball</code> y <code>OpenJazz</code> necesitan ROMs en la tarjeta externa):</p>
+<p><img alt="Ports" src="/images/posts/2021-04-02_RG350_imagen/ports.png" /></p>
+<h2 id="backup-de-partidas-antes-de-flashear">Backup de partidas antes de flashear<a class="headerlink" href="#backup-de-partidas-antes-de-flashear" title="Permanent link">&para;</a></h2>
+<p>Si se ha estado utilizando la consola con otro sistema, seguramente nos interese guardar los savestates de las partidas que hayamos jugado. Así pues, antes de flashear esta imagen, conviene hacer backup de los mismos. Para facilitar esta tarea se ha creado la aplicación <code>Py Backup</code> que se describe en <a href="http://apuntes.eduardofilo.es/2020-08-12-rg350_py_backup.html">este artículo</a> y que viene preconfigurada con todos los directorios de savestates de los emuladores instalados en la imagen.</p>
+<p>Básicamente el procedimiento para hacer el backup es el siguiente. Empezamos trabajando sobre la imagen que exista en la consola antes de flashear la que se ofrece aquí:</p>
+<ol>
+<li>Instalar el <a href="https://github.com/eduardofilo/RG350_py_backup/releases/download/1.4.3/py_backup_1.4.3.opk">OPK</a>.</li>
+<li>
+<p>Localizar la aplicación instalada en el paso anterior. Se encontrará en la sección <code>applications</code> de los distintos launchers. Una vez encontrada abrirla.</p>
+<p><img alt="PyBackup launcher" src="/images/posts/2021-04-02_RG350_imagen/py_backup_launcher.png" /></p>
+</li>
+<li>
+<p>Pulsar <code>B</code> para empezar el backup y confirmar con <code>A</code> (al llegar a PCSX4All suele engancharse un buen rato porque los savestates de este emulador son pesados). Se pueden desactivar previamente los backups de los sistemas que no nos interesen, pero es más seguro dejar todos activos para evitar disgustos.</p>
+<p><img alt="PyBackup begin backup" src="/images/posts/2021-04-02_RG350_imagen/py_backup_begin_backup.png" /></p>
+</li>
+</ol>
+<p>Hasta aquí para generar el backup. Éste se deja en el directorio <code>backups</code> de la tarjeta externa dentro del cual aparecerán una serie de ficheros con extensión <code>.tgz</code>. Una vez flasheada la imagen tendremos que hacer la restauración. Para ello proceder de la siguiente forma:</p>
+<ol>
+<li>Abrir la aplicación <code>Py Backup</code> que ya está preinstalada en la imagen.</li>
+<li>
+<p>Pulsar <code>X</code> para empezar la restauración del backup y confirmar con <code>A</code>.</p>
+<p><img alt="PyBackup begin restore" src="/images/posts/2021-04-02_RG350_imagen/py_backup_begin_restore.png" /></p>
+</li>
+</ol>
+<p><strong>Advertencia</strong>: La correspondencia de las partidas o <em>savestates</em> depende de los nombres de las ROMs. Si guardamos una partida cuando por ejemplo la ROM se llamaba "001. Catrap.gb" si luego tratamos de recuperarla desde una ROM llamada "Catrap.gb" no nos va a funcionar. En ese caso tocará revisar el directorio de savestate correspondiente (en el caso de GB es <code>/media/data/local/home/.gambatte/saves</code>) y renombrar el fichero para que corresponda con el nuevo nombre de la ROM.</p>
+<p>Por último, un pequeño tutorial en video:</p>
+<iframe width="853" height="480" src="https://www.youtube.com/embed/LcRdPeFu5tw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2 id="flasheo-de-la-imagen">Flasheo de la imagen<a class="headerlink" href="#flasheo-de-la-imagen" title="Permanent link">&para;</a></h2>
+<p>La imagen está contenida en un único fichero en formato <code>img.gz</code>. Esto significa que es un volcado directo de la tarjeta (<code>img</code>) comprimido (<code>gz</code>). El fichero tiene alrededor de 1GB de tamaño.</p>
+<p>Para flashear se recomienda utilizar el programa <a href="https://www.balena.io/etcher/">Balena Etcher</a> que es capaz de utilizar este formato directamente además de ser compatible con los tres sistemas principales (Windows, MacOS y Linux). La imagen se puede flashear en tarjetas de 4GB en adelante.</p>
+<p>En Linux resulta más rápido y directo flashear con los siguientes comandos (sustituyendo el dispositivo <code>/dev/mmcblk0</code> del ejemplo por el que corresponda en nuestro caso):</p>
+<div class="highlight"><pre><span></span><code>$ sudo umount /dev/mmcblk0*
+$ gunzip panda_v10.0.img.gz -c | sudo dd of=/dev/mmcblk0 bs=2M status=progress conv=fsync
+</code></pre></div>
+
+<p>No se recomienda flashear sobre la misma tarjeta Toshiba que trae la consola de fábrica. Se han observado problemas de rendimiento y errores con ella. Mejor buscar una tarjeta de marca de garantía y que sea rápida.</p>
+<p>En <a href="http://www.youtube.com/watch?v=VWJU3KR5MW4">este vídeo</a> puede verse el proceso de apertura de la consola y extracción de la tarjeta interna en la RG350 original (en RG350P/M y RG280V/M no es necesario), así como el flasheo de una imagen con Balena Etcher en Windows. En el vídeo la imagen que se utiliza es la de ROGUE limpio (fichero <code>sd_image.bin</code>), pero el proceso para la imagen que se comenta aquí (fichero <code>panda_v10.0.img.gz</code>, <code>mapache_v10.0.img.gz</code>, <code>vison_v10.0.img.gz</code> o <code>musarana_v10.0.img.gz</code> dependiendo de la versión de la consola) sería el mismo sin más que seleccionar el fichero correspondiente en Balena Etcher. El formateo de la tarjeta que se hace en el vídeo en realidad no es necesario. El video sólo es necesario seguirlo hasta el minuto 11:20, ya que a partir de ese punto lo que se hace es añadir emuladores y juegos a la consola, cosas que en la imagen ya están incluidas.</p>
+<h2 id="seleccion-de-frontend-predeterminado">Selección de frontend predeterminado<a class="headerlink" href="#seleccion-de-frontend-predeterminado" title="Permanent link">&para;</a></h2>
+<p>Durante el primer arranque de la imagen, se ejecutan los procesos de ROGUE para consolidar el sistema. Esto supone varios reinicios. En algún momento aparece un selector con cuatro opciones para elegir el launcher o frontend predeterminado:</p>
+<p><img alt="Launcher Selector" src="/images/posts/2021-04-02_RG350_imagen/launchsel.png" /></p>
+<p>Sólo hay que seleccionar el launcher preferido con la cruceta (arriba/abajo) y confirmar con <code>Start</code>. En ese momento la consola se reiniciará de nuevo y apareceremos en el launcher elegido. Si en cualquier momento se quiere cambiar de launcher se puede volver a lanzar el selector por medio de la aplicación <code>Launcher selector</code>:</p>
+<p><img alt="Launcher Selector GMenu2X launcher" src="/images/posts/2021-04-02_RG350_imagen/launchersel_gmenu2x_launcher.png" />
+<img alt="Launcher Selector SimpleMenu launcher" src="/images/posts/2021-04-02_RG350_imagen/launchersel_sm_launcher.png" />
+<img alt="Launcher Selector PyMenu launcher" src="/images/posts/2021-04-02_RG350_imagen/launchersel_pm_launcher.png" /></p>
+<h2 id="anadir-roms">Añadir ROMs<a class="headerlink" href="#anadir-roms" title="Permanent link">&para;</a></h2>
+<p>La imagen no incorpora ROMs ni BIOS, por lo que deberemos incorporarlos nosotros. Todos los emuladores y frontends están preconfigurados para encontrar las ROMs en rutas concretas pertenecientes a la tarjeta externa. Estos son los directorios que hay que respetar para instalar ROMs (se muestra la ruta relativa a la tarjeta externa; como sabemos <code>roms/NEOGEO</code> por ejemplo, se corresponde con <code>/media/sdcard/roms/NEOGEO</code> en el sistema de la consola):</p>
+<table>
+<thead>
+<tr>
+<th align="left">Ruta</th>
+<th align="left">Sistema</th>
+<th align="left">Extensiones admitidas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">roms/32X</td>
+<td align="left">SEGA 32X</td>
+<td align="left">.32x,.zip</td>
+</tr>
+<tr>
+<td align="left">roms/A2600</td>
+<td align="left">Atari 2600</td>
+<td align="left">.bin,.a26</td>
+</tr>
+<tr>
+<td align="left">roms/A5200</td>
+<td align="left">Atari 5200</td>
+<td align="left">.a52</td>
+</tr>
+<tr>
+<td align="left">roms/A7800</td>
+<td align="left">Atari 7800</td>
+<td align="left">.a78</td>
+</tr>
+<tr>
+<td align="left">roms/AMIGA</td>
+<td align="left">Commodore Amiga</td>
+<td align="left">.adf,.sna,.zip</td>
+</tr>
+<tr>
+<td align="left">roms/AMSTRAD</td>
+<td align="left">Amstrad CPC</td>
+<td align="left">.dsk,.hfe</td>
+</tr>
+<tr>
+<td align="left">roms/ARCADE</td>
+<td align="left">xMAME</td>
+<td align="left">.zip</td>
+</tr>
+<tr>
+<td align="left">roms/ATARIST</td>
+<td align="left">Atari ST</td>
+<td align="left">.st,.zip</td>
+</tr>
+<tr>
+<td align="left">roms/C64</td>
+<td align="left">Commodore 64</td>
+<td align="left">.crt,.d64,.t64,.bin</td>
+</tr>
+<tr>
+<td align="left">roms/COLECO</td>
+<td align="left">ColecoVision</td>
+<td align="left">.rom,.col</td>
+</tr>
+<tr>
+<td align="left">roms/CPS</td>
+<td align="left">CPS</td>
+<td align="left">.zip</td>
+</tr>
+<tr>
+<td align="left">roms/DAPHNE</td>
+<td align="left">Daphne</td>
+<td align="left">.zip</td>
+</tr>
+<tr>
+<td align="left">roms/DOOM</td>
+<td align="left">Doom</td>
+<td align="left">.wad</td>
+</tr>
+<tr>
+<td align="left">roms/DOSBOX</td>
+<td align="left">DosBOX</td>
+<td align="left">.bat,.exe,.com</td>
+</tr>
+<tr>
+<td align="left">roms/FBA</td>
+<td align="left">Final Burn Alpha</td>
+<td align="left">.zip</td>
+</tr>
+<tr>
+<td align="left">roms/FC</td>
+<td align="left">Nintendo NES</td>
+<td align="left">.nes,.zip</td>
+</tr>
+<tr>
+<td align="left">roms/GB</td>
+<td align="left">Nintendo GB</td>
+<td align="left">.gb,.gz,.zip</td>
+</tr>
+<tr>
+<td align="left">roms/GBA</td>
+<td align="left">Nintendo GBA</td>
+<td align="left">.gba,.zip</td>
+</tr>
+<tr>
+<td align="left">roms/GBC</td>
+<td align="left">Nintendo GBC</td>
+<td align="left">.gbc,.zip</td>
+</tr>
+<tr>
+<td align="left">roms/GG</td>
+<td align="left">SEGA GG</td>
+<td align="left">.gg,.zip</td>
+</tr>
+<tr>
+<td align="left">roms/GW</td>
+<td align="left">Nintendo G&amp;W</td>
+<td align="left">.ws,.wsc</td>
+</tr>
+<tr>
+<td align="left">roms/INTELLI</td>
+<td align="left">Intellivision</td>
+<td align="left">.int</td>
+</tr>
+<tr>
+<td align="left">roms/JAZZ</td>
+<td align="left">OpenJazz</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">roms/LYNX</td>
+<td align="left">Atari Lynx</td>
+<td align="left">.lnx,.zip</td>
+</tr>
+<tr>
+<td align="left">roms/MAME4ALL</td>
+<td align="left">MAME4All</td>
+<td align="left">.zip</td>
+</tr>
+<tr>
+<td align="left">roms/MD</td>
+<td align="left">SEGA MD</td>
+<td align="left">.bin,.smd,.md,.zip</td>
+</tr>
+<tr>
+<td align="left">roms/MSX</td>
+<td align="left">MSX</td>
+<td align="left">.rom,.zip</td>
+</tr>
+<tr>
+<td align="left">roms/NEOGEO</td>
+<td align="left">Neo Geo</td>
+<td align="left">.zip</td>
+</tr>
+<tr>
+<td align="left">roms/NGP</td>
+<td align="left">Neo Geo Pocket</td>
+<td align="left">.ngp,.ngc</td>
+</tr>
+<tr>
+<td align="left">roms/OUTRUN</td>
+<td align="left">Cannonball</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">roms/PCE</td>
+<td align="left">PC Engine</td>
+<td align="left">.pce,.tg16,.cue</td>
+</tr>
+<tr>
+<td align="left">roms/PCECD</td>
+<td align="left">PC Engine CD</td>
+<td align="left">.pce,.tg16,.cue</td>
+</tr>
+<tr>
+<td align="left">roms/PICO8</td>
+<td align="left">PICO-8</td>
+<td align="left">.png</td>
+</tr>
+<tr>
+<td align="left">roms/POKEMINI</td>
+<td align="left">Pokemon Mini</td>
+<td align="left">.zip</td>
+</tr>
+<tr>
+<td align="left">roms/PS</td>
+<td align="left">PlayStation</td>
+<td align="left">.mdf,.cue, .bin,.img,.ccd,.sub,.zip,.pbp,.chd</td>
+</tr>
+<tr>
+<td align="left">roms/QUAKE</td>
+<td align="left">Quake</td>
+<td align="left">.pak</td>
+</tr>
+<tr>
+<td align="left">roms/SCUMMVM</td>
+<td align="left">ScummVM</td>
+<td align="left">.svm</td>
+</tr>
+<tr>
+<td align="left">roms/SEGACD</td>
+<td align="left">SEGA CD</td>
+<td align="left">.cue</td>
+</tr>
+<tr>
+<td align="left">roms/SFC</td>
+<td align="left">Nintendo SNES</td>
+<td align="left">.smc,.sfc,.zip</td>
+</tr>
+<tr>
+<td align="left">roms/SMS</td>
+<td align="left">SEGA MS</td>
+<td align="left">.sms,.zip</td>
+</tr>
+<tr>
+<td align="left">roms/SUPERVISION</td>
+<td align="left">Watara Supervision</td>
+<td align="left">.sv</td>
+</tr>
+<tr>
+<td align="left">roms/TIC80</td>
+<td align="left">TIC-80</td>
+<td align="left">.tic</td>
+</tr>
+<tr>
+<td align="left">roms/VB</td>
+<td align="left">Nintendo VB</td>
+<td align="left">.vb</td>
+</tr>
+<tr>
+<td align="left">roms/VIDEOPAC</td>
+<td align="left">Phillips Videopac</td>
+<td align="left">.bin</td>
+</tr>
+<tr>
+<td align="left">roms/WSC</td>
+<td align="left">WonderSwan</td>
+<td align="left">.ws,.wsc</td>
+</tr>
+<tr>
+<td align="left">roms/ZX</td>
+<td align="left">ZX Spectrum</td>
+<td align="left">.z80,.scl,.trd,.tzx,.csw,.tap</td>
+</tr>
+<tr>
+<td align="left">OpenBOR/Paks</td>
+<td align="left">OpenBOR</td>
+<td align="left">.pak</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Advertencia</strong>: Ojo al caso de OpenBOR que se comporta de forma irregular al exigir una ruta fija en la tarjeta externa.</p>
+<p>En el caso de los sistemas para los que exista core RetroArch, también servirán las extensiones <code>zip</code> y <code>7z</code>, ya que se soportan a nivel de framework. También se soporta la extensión <code>chd</code> en los cores RetroArch de <code>SEGACD</code> y <code>PCECD</code>.</p>
+<h2 id="anadir-bios">Añadir BIOS<a class="headerlink" href="#anadir-bios" title="Permanent link">&para;</a></h2>
+<p>Todos los emuladores instalados en la imagen (RetroArch incluido) tienen redirigidas las rutas donde deben estar las BIOS al directorio <code>bios</code> en la tarjeta externa. De forma similar al caso de las ROMs, el directorio <code>bios</code> en la raíz de la tarjeta externa, se corresponderá con la ruta <code>/media/sdcard/bios</code> en el sistema de la consola.</p>
+<p>No todos los emuladores necesitan BIOS. Es el caso de las máquinas que no la tenían o cuya función se ha podido emular. A continuación se indica el fichero de BIOS que habrá que localizar así como el lugar donde lo deberemos colocar. Para ayudar a identificar los ficheros correctos, se indica su tamaño en bytes y un hash MD5. Se marcan también los casos en que la BIOS es imprescindible para que funcione el emulador. En caso de indicarse que <code>NO</code>, el emulador funcionará, pero se recomienda instalarla de cara a conseguir la mayor compatibilidad de los juegos.</p>
+<p>Los tamaños y hashes indicados son de BIOS que se han comprobado funcionales, pero no necesariamente las únicas posibles. Es decir, en algunas máquinas existen varias versiones de BIOS posibles, normalmente por haber existido varios modelos de las máquinas (siendo el caso de la PlayStation uno de los más típicos), o por haber desarrollado alguien BIOS con capacidades mejoradas (aquí el caso típico es el de Neo Geo y su UNIBIOS).</p>
+<table>
+<thead>
+<tr>
+<th align="left">Sistema</th>
+<th align="left">Ruta</th>
+<th align="right">Tamaño</th>
+<th align="left">Hash MD5</th>
+<th align="left">¿Necesaria?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Atari 5200</td>
+<td align="left">bios/5200.rom</td>
+<td align="right">2048</td>
+<td align="left"><code>281f20ea4320404ec820fb7ec0693b38</code></td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left">Atari ST</td>
+<td align="left">bios/rom</td>
+<td align="right">196608</td>
+<td align="left"><code>036c5ae4f885cbf62c9bed651c6c58a8</code></td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left">SEGACD</td>
+<td align="left">bios/bios_CD_E.bin</td>
+<td align="right">131072</td>
+<td align="left"><code>e66fa1dc5820d254611fdcdba0662372</code></td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left">SEGACD</td>
+<td align="left">bios/bios_CD_J.bin</td>
+<td align="right">131072</td>
+<td align="left"><code>278a9397d192149e84e820ac621a8edd</code></td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left">SEGACD</td>
+<td align="left">bios/bios_CD_U.bin</td>
+<td align="right">131072</td>
+<td align="left"><code>854b9150240a198070150e4566ae1290</code></td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left">Intellivision</td>
+<td align="left">bios/exec.bin</td>
+<td align="right">8192</td>
+<td align="left"><code>62e761035cb657903761800f4437b8af</code></td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left">Intellivision</td>
+<td align="left">bios/grom.bin</td>
+<td align="right">2048</td>
+<td align="left"><code>0cd5946c6473e42e8e4c2137785e427f</code></td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left">PC Engine CD</td>
+<td align="left">bios/syscard3.pce</td>
+<td align="right">262144</td>
+<td align="left"><code>390815d3d1a184a9e73adc91ba55f2bb</code></td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left">Commodore Amiga</td>
+<td align="left">bios/kick.rom</td>
+<td align="right">262144</td>
+<td align="left"><code>82a21c1890cae844b3df741f2762d48d</code></td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left">Nintendo Famicom Disk System</td>
+<td align="left">bios/disksys.rom</td>
+<td align="right">8192</td>
+<td align="left"><code>ca30b50f880eb660a320674ed365ef7a</code></td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left">Atari Lynx</td>
+<td align="left">bios/lynxboot.img</td>
+<td align="right">512</td>
+<td align="left"><code>fcd403db69f54290b51035d82f835e7b</code></td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left">Phillips Videopac</td>
+<td align="left">bios/o2rom.bin</td>
+<td align="right">1024</td>
+<td align="left"><code>562d5ebf9e030a40d6fabfc2f33139fd</code></td>
+<td align="left">Sí</td>
+</tr>
+<tr>
+<td align="left">SNK Neo Geo</td>
+<td align="left">bios/neogeo.zip</td>
+<td align="right">1950023</td>
+<td align="left"><code>36241192dae2823eaf3bf464dde6dbc6</code></td>
+<td align="left">Sí en FBA, No en RetroArch</td>
+</tr>
+<tr>
+<td align="left">Nintendo GBA</td>
+<td align="left">bios/gba_bios.bin</td>
+<td align="right">16384</td>
+<td align="left"><code>a860e8c0b6d573d191e4ec7db1b1e4f6</code></td>
+<td align="left">No, aunque recomendable</td>
+</tr>
+<tr>
+<td align="left">PlayStation</td>
+<td align="left">bios/SCPH1001.BIN</td>
+<td align="right">524288</td>
+<td align="left"><code>924e392ed05558ffdb115408c263dccf</code></td>
+<td align="left">No, aunque muy recomendable</td>
+</tr>
+</tbody>
+</table>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="index.html" title="Blog" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Blog
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="2021-02-28_pico_fuzix.html" title="FUZIX en Raspberry Pi Pico" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                FUZIX en Raspberry Pi Pico
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/eduardofilo" target="_blank" rel="noopener" title="github-alt" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/eduardofilo" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/edumoreno/" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+    
+      <a href="http://eduardofilo.es" target="_blank" rel="noopener" title="tumblr" class="md-footer-social__link fa fa-tumblr"></a>
+    
+      <a href="https://www.youtube.com/c/EduardoMorenoLamana" target="_blank" rel="noopener" title="youtube" class="md-footer-social__link fa fa-youtube"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/application.c33a9706.js"></script>
+      
+        
+        
+          
+          <script src="assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+                <script src="assets/javascripts/lunr/lunr.es.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      
+        <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
