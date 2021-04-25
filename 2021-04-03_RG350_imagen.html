@@ -2261,19 +2261,24 @@
                   <h1>RG350/RG280 Imagen</h1>
                 
                 <p><img alt="RG350" src="/images/pages/rg350.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">Actualización 2021-04-25</p>
+<p>Se actualiza el artículo para reflejar los cambios introducidos en la v10.1 de la imagen presentada en esta fecha. Para convertir la v10.0 original en la nueva v10.1, existe un parche que realiza las mejoras y cambios. El parche puede descargarse desde <a href="https://drive.google.com/file/d/1CkzcEoEHl-cVUe2p58uNHw3Q_ijnLjJY/view?usp=sharing">este enlace</a>.</p>
+</div>
 <h2 id="presentacion">Presentación<a class="headerlink" href="#presentacion" title="Permanent link">&para;</a></h2>
 <p>Se comentan aquí los detalles de una imagen de tarjeta interna preparada para las consolas de emulación Anbernic RG350, RG350P, RG350M, RG280V y RG280M. La imagen es un volcado de una microSD de 4GB con sistema ROGUE (agradecimiento especial a <a href="https://github.com/Ninoh-FOX">Ninoh-FOX</a> por su soporte), ports, emuladores y cores RetroArch y los frontends GMenu2X, SimpleMenu (agradecimiento especial a <a href="https://github.com/fgl82">FGL82</a> por su soporte) y PyMenu. Se puede flashear sobre una tarjeta de ese tamaño o superior. Durante el primer arranque se expandirá el tamaño de la partición principal hasta ocupar todo el espacio disponible en la tarjeta.</p>
 <p>Descarga de la imagen desde los siguientes enlaces:</p>
 <ul>
-<li><a href="https://drive.google.com/file/d/1QrMYXZXGm8idTy7ceixC746V4xFECnkW/view?usp=sharing">Panda</a> (RG350 y RG350P)</li>
-<li><a href="https://drive.google.com/file/d/15mvH5UbVgQcAlkcaKZhgbo3jPB_MwYul/view?usp=sharing">Mapache</a> (RG350M)</li>
-<li><a href="https://drive.google.com/file/d/18cFQvN4C0iRBk6eqtIAywLdO2VKjx7AO/view?usp=sharing">Visón</a> (RG280V)</li>
-<li><a href="https://drive.google.com/file/d/1kaQXQYIsM7oxmE_0rNCJz5omqWQLV8It/view?usp=sharing">Musaraña</a> (RG280M)</li>
+<li><a href="https://drive.google.com/file/d/1u7u3-sqD9aUX6wh698cwPlgyy2rEiuSS/view?usp=sharing">Panda</a> (RG350 y RG350P)</li>
+<li><a href="https://drive.google.com/file/d/1y105Uub27XeMjLdf7X91RfaySqjpUsSN/view?usp=sharing">Mapache</a> (RG350M)</li>
+<li><a href="https://drive.google.com/file/d/1P1WSF1VQ794ArNLQa291QEVXg6Yy90FZ/view?usp=sharing">Visón</a> (RG280V)</li>
+<li><a href="https://drive.google.com/file/d/1umrEsZ8OgXUJOGhuORDJPSFycGbMpP19/view?usp=sharing">Musaraña</a> (RG280M)</li>
 </ul>
+<p>Alternativamente todas las imágenes y parches también pueden encontrarse en el canal Telegram <a href="https://t.me/code_animal_images">Code Animal images</a>. Utilizar el canal tiene la ventaja adicional de que se reciben notificaciones cuando aparecen parches o nuevas versiones de las imágenes.</p>
 <p>Los emuladores y los cores RetroArch tienen lanzadores personalizados con iconos que representan las máquinas que emulan para mejor identificación. Los nombres de los emuladores y cores también se han modificado con esta misma idea.</p>
 <p><img alt="Emulators" src="/images/posts/2021-04-02_RG350_imagen/emulators.png" />
 <img alt="RetroArch cores" src="/images/posts/2021-04-02_RG350_imagen/retroarch_cores.png" /></p>
-<p>Los ports o juegos instalados son los siguientes (algunos como <code>Cannonball</code> y <code>OpenJazz</code> necesitan ROMs en la tarjeta externa):</p>
+<p>Los ports o juegos instalados son los siguientes (algunos como <code>Cannonball</code>, <code>OpenBOR</code>, <code>OpenJazz</code> y <code>Solarus</code> necesitan ROMs en la tarjeta externa):</p>
 <p><img alt="Ports" src="/images/posts/2021-04-02_RG350_imagen/ports.png" /></p>
 <p>Por último, en <a href="https://docs.google.com/spreadsheets/d/1tXUCsvTqmq3SW0RjlzgE1kZbiWu5ykyYXIhSVtvRM0g/edit?usp=sharing">este documento</a> pueden encontrarse detalles de los emuladores instalados y las configuraciones de RetroArch para los cores disponibles en la imagen.</p>
 <h2 id="backup-de-partidas-antes-de-flashear">Backup de partidas antes de flashear<a class="headerlink" href="#backup-de-partidas-antes-de-flashear" title="Permanent link">&para;</a></h2>
@@ -2307,11 +2312,11 @@
 <p>Para flashear se recomienda utilizar el programa <a href="https://www.balena.io/etcher/">Balena Etcher</a> que es capaz de utilizar este formato directamente además de ser compatible con los tres sistemas principales (Windows, MacOS y Linux). La imagen se puede flashear en tarjetas de 4GB en adelante.</p>
 <p>En Linux resulta más rápido y directo flashear con los siguientes comandos (sustituyendo el dispositivo <code>/dev/mmcblk0</code> del ejemplo por el que corresponda en nuestro caso):</p>
 <div class="highlight"><pre><span></span><code>$ sudo umount /dev/mmcblk0*
-$ gunzip panda_v10.0.img.gz -c | sudo dd of=/dev/mmcblk0 bs=2M status=progress conv=fsync
+$ gunzip panda_v10.1.img.gz -c | sudo dd of=/dev/mmcblk0 bs=2M status=progress conv=fsync
 </code></pre></div>
 
 <p>No se recomienda flashear sobre la misma tarjeta Toshiba que trae la consola de fábrica. Se han observado problemas de rendimiento y errores con ella. Mejor buscar una tarjeta de marca de garantía y que sea rápida.</p>
-<p>En <a href="http://www.youtube.com/watch?v=VWJU3KR5MW4">este vídeo</a> puede verse el proceso de apertura de la consola y extracción de la tarjeta interna en la RG350 original (en RG350P/M y RG280V/M no es necesario), así como el flasheo de una imagen con Balena Etcher en Windows. En el vídeo la imagen que se utiliza es la de ROGUE limpio (fichero <code>sd_image.bin</code>), pero el proceso para la imagen que se comenta aquí (fichero <code>panda_v10.0.img.gz</code>, <code>mapache_v10.0.img.gz</code>, <code>vison_v10.0.img.gz</code> o <code>musarana_v10.0.img.gz</code> dependiendo de la versión de la consola) sería el mismo sin más que seleccionar el fichero correspondiente en Balena Etcher. El formateo de la tarjeta que se hace en el vídeo en realidad no es necesario. El video sólo es necesario seguirlo hasta el minuto 11:20, ya que a partir de ese punto lo que se hace es añadir emuladores y juegos a la consola, cosas que en la imagen ya están incluidas.</p>
+<p>En <a href="http://www.youtube.com/watch?v=VWJU3KR5MW4">este vídeo</a> puede verse el proceso de apertura de la consola y extracción de la tarjeta interna en la RG350 original (en RG350P/M y RG280V/M no es necesario), así como el flasheo de una imagen con Balena Etcher en Windows. En el vídeo la imagen que se utiliza es la de ROGUE limpio (fichero <code>sd_image.bin</code>), pero el proceso para la imagen que se comenta aquí (fichero <code>panda_v10.1.img.gz</code>, <code>mapache_v10.1.img.gz</code>, <code>vison_v10.1.img.gz</code> o <code>musarana_v10.1.img.gz</code> dependiendo de la versión de la consola) sería el mismo sin más que seleccionar el fichero correspondiente en Balena Etcher. El formateo de la tarjeta que se hace en el vídeo en realidad no es necesario. El video sólo es necesario seguirlo hasta el minuto 11:20, ya que a partir de ese punto lo que se hace es añadir emuladores y juegos a la consola, cosas que en la imagen ya están incluidas.</p>
 <h2 id="seleccion-de-frontend-predeterminado">Selección de frontend predeterminado<a class="headerlink" href="#seleccion-de-frontend-predeterminado" title="Permanent link">&para;</a></h2>
 <p>Durante el primer arranque de la imagen, se ejecutan los procesos de ROGUE para consolidar el sistema. Esto supone varios reinicios. En algún momento aparece un selector con cuatro opciones para elegir el launcher o frontend predeterminado:</p>
 <p><img alt="Launcher Selector" src="/images/posts/2021-04-02_RG350_imagen/launchsel.png" /></p>
@@ -2320,7 +2325,7 @@ $ gunzip panda_v10.0.img.gz -c | sudo dd of=/dev/mmcblk0 bs=2M status=progress c
 <img alt="Launcher Selector SimpleMenu launcher" src="/images/posts/2021-04-02_RG350_imagen/launchersel_sm_launcher.png" />
 <img alt="Launcher Selector PyMenu launcher" src="/images/posts/2021-04-02_RG350_imagen/launchersel_pm_launcher.png" /></p>
 <h2 id="anadir-roms">Añadir ROMs<a class="headerlink" href="#anadir-roms" title="Permanent link">&para;</a></h2>
-<p>La imagen no incorpora ROMs ni BIOS, por lo que deberemos incorporarlos nosotros. Todos los emuladores y frontends están preconfigurados para encontrar las ROMs en rutas concretas pertenecientes a la tarjeta externa. Estos son los directorios que hay que respetar para instalar ROMs (se muestra la ruta relativa a la tarjeta externa; como sabemos <code>roms/NEOGEO</code> por ejemplo, se corresponde con <code>/media/sdcard/roms/NEOGEO</code> en el sistema de la consola):</p>
+<p>La imagen no incorpora ROMs ni BIOS, por lo que deberemos incorporarlas nosotros. Todos los emuladores y frontends están preconfigurados para encontrar las ROMs en rutas concretas pertenecientes a la tarjeta externa. Estos son los directorios que hay que respetar para instalar ROMs (se muestra la ruta relativa a la tarjeta externa; como sabemos <code>roms/NEOGEO</code> por ejemplo, se corresponde con <code>/media/sdcard/roms/NEOGEO</code> en el sistema de la consola):</p>
 <table>
 <thead>
 <tr>
@@ -2442,13 +2447,18 @@ $ gunzip panda_v10.0.img.gz -c | sudo dd of=/dev/mmcblk0 bs=2M status=progress c
 </tr>
 <tr>
 <td align="left">roms/JAZZ</td>
-<td align="left">OpenJazz</td>
+<td align="left">OpenJazz (port)</td>
 <td align="left"></td>
 </tr>
 <tr>
 <td align="left">roms/LYNX</td>
 <td align="left">Atari Lynx</td>
 <td align="left">.lnx,.zip</td>
+</tr>
+<tr>
+<td align="left">roms/MAME2003</td>
+<td align="left">MAME2003</td>
+<td align="left">.zip</td>
 </tr>
 <tr>
 <td align="left">roms/MAME4ALL</td>
@@ -2477,7 +2487,7 @@ $ gunzip panda_v10.0.img.gz -c | sudo dd of=/dev/mmcblk0 bs=2M status=progress c
 </tr>
 <tr>
 <td align="left">roms/OUTRUN</td>
-<td align="left">Cannonball</td>
+<td align="left">Cannonball (port)</td>
 <td align="left"></td>
 </tr>
 <tr>
@@ -2531,6 +2541,11 @@ $ gunzip panda_v10.0.img.gz -c | sudo dd of=/dev/mmcblk0 bs=2M status=progress c
 <td align="left">.sms,.zip</td>
 </tr>
 <tr>
+<td align="left">roms/SOLARUS</td>
+<td align="left">Solarus (port)</td>
+<td align="left">.zip</td>
+</tr>
+<tr>
 <td align="left">roms/SUPERVISION</td>
 <td align="left">Watara Supervision</td>
 <td align="left">.sv</td>
@@ -2562,16 +2577,16 @@ $ gunzip panda_v10.0.img.gz -c | sudo dd of=/dev/mmcblk0 bs=2M status=progress c
 </tr>
 <tr>
 <td align="left">OpenBOR/Paks</td>
-<td align="left">OpenBOR</td>
+<td align="left">OpenBOR (port)</td>
 <td align="left">.pak</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Advertencia</strong>: Ojo al caso de OpenBOR que se comporta de forma irregular al exigir una ruta fija en la tarjeta externa.</p>
-<p>En el caso de los sistemas para los que exista core RetroArch, también servirán las extensiones <code>zip</code> y <code>7z</code>, ya que se soportan a nivel de framework. También se soporta la extensión <code>chd</code> en los cores RetroArch de <code>SEGACD</code> y <code>PCECD</code>.</p>
+<p>En el caso de los sistemas para los que exista core RetroArch, también servirán las extensiones <code>zip</code> y <code>7z</code>, ya que se soportan a nivel de framework. También se soporta la extensión <code>chd</code> en los cores RetroArch de sistemas basados en CD, es decir <code>SEGACD</code> y <code>PCECD</code>.</p>
 <h2 id="anadir-bios">Añadir BIOS<a class="headerlink" href="#anadir-bios" title="Permanent link">&para;</a></h2>
 <p>Todos los emuladores instalados en la imagen (RetroArch incluido) tienen redirigidas las rutas donde deben estar las BIOS al directorio <code>bios</code> en la tarjeta externa. De forma similar al caso de las ROMs, el directorio <code>bios</code> en la raíz de la tarjeta externa, se corresponderá con la ruta <code>/media/sdcard/bios</code> en el sistema de la consola.</p>
-<p>No todos los emuladores necesitan BIOS. Es el caso de las máquinas que no la tenían o cuya función se ha podido emular. A continuación se indica el fichero de BIOS que habrá que localizar así como el lugar donde lo deberemos colocar. Para ayudar a identificar los ficheros correctos, se indica su tamaño en bytes y un hash MD5. Se marcan también los casos en que la BIOS es imprescindible para que funcione el emulador. En caso de indicarse que <code>NO</code>, el emulador funcionará, pero se recomienda instalarla de cara a conseguir la mayor compatibilidad de los juegos.</p>
+<p>No todos los emuladores necesitan BIOS. Es el caso de las máquinas que no la tenían o cuya función se ha podido emular. A continuación se indica el fichero de BIOS que habrá que localizar así como el lugar donde lo deberemos colocar. Para ayudar a identificar los ficheros correctos, se indica su tamaño en bytes y un hash MD5. Se marcan también los casos en que la BIOS es imprescindible para que funcione el emulador. En caso de indicarse que <code>NO</code>, el emulador funcionará, pero se recomienda instalarla de cara a conseguir la mayor compatibilidad de los juegos. Para comprobar los hashes MD5 se recomienda la utilidad multiplataforma <a href="https://www.quickhash-gui.org/">Quickhash</a>.</p>
 <p>Los tamaños y hashes indicados son de BIOS que se han comprobado funcionales, pero no necesariamente las únicas posibles. Es decir, en algunas máquinas existen varias versiones de BIOS posibles, normalmente por haber existido varios modelos de las máquinas (siendo el caso de la PlayStation uno de los más típicos), o por haber desarrollado alguien BIOS con capacidades mejoradas (aquí el caso típico es el de Neo Geo y su UNIBIOS).</p>
 <table>
 <thead>
