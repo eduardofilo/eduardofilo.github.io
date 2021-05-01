@@ -2243,7 +2243,7 @@
 <ol>
 <li>Instalar <code>kicadStepUpMod</code> desde <code>Addon manager</code> en FreeCAD.</li>
 <li>Conviene que en KiCad esté instalado el paquete <code>kicad-packages3d</code> para que además de la PCB se exporten los volúmenes 3D de los componentes.</li>
-<li>Comprobar que se corresponde la ruta del parámetro KISYS3DMOD en ambos programas (<code>Preferences...</code> en FreeCAD y <code>Configure Paths...</code> en KiCad).</li>
+<li>Comprobar que se corresponde la ruta del parámetro KISYS3DMOD en ambos programas (<code>Preferences...</code> en FreeCAD y <code>Configure Paths...</code> en KiCad). Para que aparezcan los ajustes de <code>kicadStepUpGui</code> en las preferencias de FreeCAD hay que cargar antes el workbench, ya que para preservar recursos, los workbench no se cargan hasta ser utilizados. Esto puede forzarse por medio de <code>Preferences &gt; Workbenches</code>, seleccionando el módulo y pulsando <code>Load Selected</code>.</li>
 <li>Cambiar al workbench <code>kicadStepUp</code>.</li>
 <li>Pulsar el botón <img alt="" src="/images/pages/freecad/kicadstepup_load.png" /> para importar el diseño 3D de la PCB.</li>
 <li>Tras importarlo puede convenir agrupar todos los componentes y la PCB para que queden como un objeto único. Para ello utilizar la siguiente herramienta del workbench <code>Draft</code>: <img alt="Joins" src="/images/pages/freecad/draft_joins.png" /></li>
