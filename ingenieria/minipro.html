@@ -1524,26 +1524,6 @@
     Uso de utilidad minipro de linea de comando
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#version" class="md-nav__link">
-    Versión
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#testeo-de-hardware" class="md-nav__link">
-    Testeo de hardware
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
       
@@ -2237,26 +2217,6 @@
     Uso de utilidad minipro de linea de comando
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#version" class="md-nav__link">
-    Versión
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#testeo-de-hardware" class="md-nav__link">
-    Testeo de hardware
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
       
@@ -2282,7 +2242,7 @@
 <h2 id="enlaces">Enlaces<a class="headerlink" href="#enlaces" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="http://www.autoelectric.cn/en/tl866_main.html">XGecu T56 Universal programmer</a></li>
-<li><a href="https://gitlab.com/DavidGriffith/minipro">minipro</a>: An open source program for controlling the MiniPRO TL866xx series of chip programmers.</li>
+<li><a href="https://gitlab.com/DavidGriffith/minipro">minipro</a>: An open source program for controlling the MiniPRO TL866xx series of chip programmers. <a href="https://gitlab.com/DavidGriffith/minipro#installation-on-linux">Instalación en Linux</a></li>
 </ul>
 <h2 id="actualizacion-firmware">Actualización firmware<a class="headerlink" href="#actualizacion-firmware" title="Permanent link">&para;</a></h2>
 <ol>
@@ -2308,24 +2268,15 @@ Reflash... OK
 </li>
 </ol>
 <h2 id="uso-de-utilidad-minipro-de-linea-de-comando">Uso de utilidad <a href="https://gitlab.com/DavidGriffith/minipro">minipro</a> de linea de comando<a class="headerlink" href="#uso-de-utilidad-minipro-de-linea-de-comando" title="Permanent link">&para;</a></h2>
-<h3 id="version">Versión<a class="headerlink" href="#version" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>edumoreno@eduardo-HP-Folio-13:~$ minipro -V
-Supported programmers: TL866A/CS, TL866II+
-Found TL866II+ 04.2.125 (0x27d)
-Warning: Firmware is newer than expected.
-  Expected  04.2.123 (0x27b)
-  Found     04.2.125 (0x27d)
-minipro version 0.5     A free and open TL866XX programmer
-Commit date: 2021-04-16 20:53:59 -0700
-Git commit: b52ab70f4411ba4a290835c1fe060c71c90c6759
-Git branch: master
-TL866A/CS: 14330 devices, 8 custom
-TL866II+: 16324 devices, 4 custom
-</code></pre></div>
-
-<h3 id="testeo-de-hardware">Testeo de hardware<a class="headerlink" href="#testeo-de-hardware" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>edumoreno@eduardo-HP-Folio-13:~$ minipro -t
-</code></pre></div>
+<ul>
+<li>Versión firmware y utilidad: <code>minipro -V</code></li>
+<li>Testeo dispositivo: <code>minipro -t</code></li>
+<li>Búsqueda de integrados compatibles: <code>minipro -L &lt;search&gt;</code></li>
+<li>Indicar modelo de programador <code>TL866II+</code> en comandos: <code>minipro -q tl866ii</code></li>
+<li>Programar integrado (ejemplo con ATTiny85): <code>minipro -p ATTINY85 -w &lt;filename&gt;</code></li>
+<li>Leer integrado (ejemplo con ATTiny855; además del volcado de la flash, genera un par de ficheros adicionales, uno con el volcado de la EEPROM y otro con la configuración de fuse bits): <code>minipro -p ATTINY85 -r &lt;filename&gt;</code></li>
+<li>Leer tipo de memoria concreta (posibles valores: code, data, config) en integrado (ejemplo con ATTiny855): <code>minipro -p ATTINY85 -r &lt;filename&gt; -c &lt;type&gt;</code></li>
+</ul>
                 
                   
                 
