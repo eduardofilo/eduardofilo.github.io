@@ -527,6 +527,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#canal-telegram" class="md-nav__link">
+    Canal Telegram
+  </a>
+  
+</li>
+      
       
       
       
@@ -2221,6 +2228,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#canal-telegram" class="md-nav__link">
+    Canal Telegram
+  </a>
+  
+</li>
+      
       
       
       
@@ -2242,21 +2256,21 @@
                 
                   <h1>RG350 Instalador RA</h1>
                 
-                <p><img alt="Icono" src="/images/posts/rg350_ra_installer/icon.png" /></p>
-<p>A finales de diciembre empezaron a aparecer distribuciones oficiales de RetroArch para RG350 y RG280. De momento en versión beta en forma de nightly builds que pueden obtenerse de <a href="https://buildbot.libretro.com/nightly/dingux/mips32/">este sitio</a>.</p>
-<p>Los zips que distribuyen contienen un único OPK y un directorio (con toda la configuración y los cores) destinado a copiarse al home de la consola:</p>
+                <p><img alt="Icono" src="/images/posts/rg350_ra_installer/icon_big.png" /></p>
+<p>A finales de diciembre empezaron a aparecer distribuciones oficiales de RetroArch para RG350 y RG280. De momento en versión beta en forma de nightly builds que pueden obtenerse de <a href="https://buildbot.libretro.com/nightly/dingux/mips32/">este sitio</a> para stock/ROGUE o <a href="https://buildbot.libretro.com/nightly/dingux/mips32-odbeta/">este otro</a> para <a href="http://od.abstraction.se/opendingux/latest/">ODBeta</a>.</p>
+<p>Los zips que distribuyen contienen un único OPK, un binario (opcional) y un directorio (con toda la configuración y los cores) destinado a copiarse al home de la consola:</p>
 <p><img alt="Files" src="/images/posts/rg350_ra_installer/files.png" /></p>
 <p>Una vez que todo está instalado en su sitio, la única manera de ejecutar las ROMs con los cores que incluye la distribución es por medio del único OPK que lanza RetroArch a modo frontend (el interfaz UX que suele decirse en otros emuladores):</p>
 <p><img alt="Frontend" src="/images/posts/rg350_ra_installer/frontend.png" /></p>
-<p>Para lograr una integración más completa de RetroArch, que respete la experiencia normal de los frontends habituales en RG350/RG280 (GMenu2X, SimpleMenu, PyMenu, EmulationStation, etc.) se pueden crear unos OPKs tipo wrapper que permitan seleccionar las ROMs y lanzar el core de RetroArch correspondiente, ya que el binario/ejecutable <code>retroarch</code> que hay dentro del OPK admite los mismos argumentos que RetroArch en otras plataformas.</p>
+<p>Para lograr una integración más completa de RetroArch, que respete la experiencia normal de los frontends habituales en RG350/RG280 (GMenu2X, SimpleMenu, PyMenu, EmulationStation, etc.) se pueden crear unos OPKs tipo wrapper que permitan seleccionar las ROMs y lanzar el core de RetroArch correspondiente, ya que el binario opcional admite los mismos argumentos que RetroArch en otras plataformas.</p>
 <h2 id="wrappers-opk">Wrappers OPK<a class="headerlink" href="#wrappers-opk" title="Permanent link">&para;</a></h2>
-<p>Para lograrlo, primero hubo que averiguar la forma de parametrizar el core y la ROM. Cargar un core y una ROM desde el propio RetroArch no sirve porque no exterioriza estos datos en forma de argumentos sobre el ejecutable. Lo que se hizo fue suponer que serviría el mismo formato de argumentos que utiliza el ejecutable <code>retroarch</code> en otros sistemas como EmuELEC en RG351P. Allí el frontend habitual EmulationStation sí que parametriza el core y la ROM a ejecutar por medio de argumentos en la llamada. Por ejemplo ejecutando Tetris de Game Boy con el core gambatte en EmuELEC sobre RG3551P se encuentra que el proceso se invoca de esta forma:</p>
+<p>Para lograrlo, primero hubo que averiguar la forma de parametrizar el core y la ROM. Cargar un core y una ROM desde el propio RetroArch no sirve porque no exterioriza estos datos en forma de argumentos sobre el ejecutable. Lo que se hizo fue suponer que serviría el mismo formato de argumentos que utiliza el binario <code>retroarch_rg350</code> (dentro del directorio <code>bin</code>; en la distribución correspondiente a ODBeta, el binario es <code>retroarch_rg350_odbeta</code>) en otros sistemas como EmuELEC en RG351P. Allí el frontend habitual EmulationStation sí que parametriza el core y la ROM a ejecutar por medio de argumentos en la llamada. Por ejemplo ejecutando Tetris de Game Boy con el core gambatte en EmuELEC sobre RG3551P se encuentra que el proceso se invoca de esta forma:</p>
 <div class="highlight"><pre><span></span><code>/usr/bin/retroarch -v -L /tmp/cores/gambatte_libretro.so --config /storage/.config/retroarch/retroarch.cfg /storage/roms/gb/Tetris (World) (Rev A).7z
 </code></pre></div>
 
-<p>Por tanto la idea es por un lado instalar el ejecutable/binario de RetroArch que hay dentro del OPK en una ruta accesible (se elige <code>/media/data/local/bin</code>) y luego construir distintos OPKs que invoque un script al que se le pase como argumento la ROM a ejecutar y que termine llamando al ejecutable de RetroArch anterior. Por ejemplo para el sistema Game Boy el script podría ser el siguiente:</p>
+<p>Por tanto la idea es por un lado instalar el binario opcional <code>retroarch_rg350</code> en una ruta accesible (se elige <code>/media/data/local/bin</code>) y luego construir distintos OPKs que invoque un script al que se le pase como argumento la ROM a ejecutar. Dentro del script podemos montar la llamada completa a <code>retroarch_rg30</code>. Por ejemplo para el sistema Game Boy el script podría ser el siguiente:</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
-/media/data/local/bin/retroarch -v -L /media/data/local/home/.retroarch/cores/gambatte_libretro.so --config /media/data/local/home/.retroarch/retroarch.cfg <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+/media/data/local/bin/retroarch_rg350 -v -L /media/data/local/home/.retroarch/cores/gambatte_libretro.so --config /media/data/local/home/.retroarch/retroarch.cfg <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
 </code></pre></div>
 
 <p>Introducimos el script anterior junto con un icono adecuado al sistema que va a lanzar y un <code>.desktop</code> que invoque el script pasando como argumento la ROM que vamos a lanzar, por ejemplo:</p>
@@ -2272,39 +2286,317 @@ Categories=retroarch;
 X-OD-NeedsDownscaling=true
 </code></pre></div>
 
-<p>Los cores que ofrece la última versión de RetroArch publicada en el momento de escribir este artículo son los siguientes:</p>
-<ul>
-<li>fbalpha2012_cps1_libretro: CPS1</li>
-<li>fbalpha2012_cps2_libretro: CPS2</li>
-<li>fbalpha2012_neogeo_libretro: Neo Geo</li>
-<li>fceumm_libretro: NES</li>
-<li>gambatte_libretro: GB/GBC</li>
-<li>genesis_plus_gx_libretro: MD, MS, GG, SEGA CD</li>
-<li>gpsp_libretro: GBA</li>
-<li>handy_libretro: LYNX</li>
-<li>mednafen_pce_fast_libretro: PCE, PCE CD</li>
-<li>mednafen_wswan_libretro: WS</li>
-<li>mgba_libretro: GBA</li>
-<li>mrboom_libretro: MrBoom</li>
-<li>picodrive_libretro: MD, MS, SEGA CD, SEGA 32X</li>
-<li>pokemini_libretro: POKEMINI</li>
-<li>prboom_libretro: DOOM</li>
-<li>quicknes_libretro: NES</li>
-<li>race_libretro: NGP</li>
-<li>snes9x2005_libretro: SNES</li>
-<li>snes9x2005_plus_libretro: SNES</li>
-<li>tyrquake_libretro: QUAKE</li>
-<li>vice_x64_libretro: C64</li>
-</ul>
-<p>Por lo tanto habrá que hacer al menos un OPK para cada uno de ellos. Decimos al menos porque se puede plantear la opción de hacer un OPK por cada combinación "core/sistema a emular".</p>
+<p>Los cores que ofrece la última versión de RetroArch publicada en el momento de escribir este artículo (2021-06-18) son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Core</th>
+<th align="left">Sistema</th>
+<th align="left">Extensiones soportadas</th>
+<th align="left">Observaciones</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">fbalpha2012_cps1_libretro.so</td>
+<td align="left">CPS1</td>
+<td align="left">zip</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">fbalpha2012_cps2_libretro.so</td>
+<td align="left">CPS2</td>
+<td align="left">zip</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">fbalpha2012_neogeo_libretro.so</td>
+<td align="left">Neo Geo</td>
+<td align="left">zip</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">fceumm_libretro.so</td>
+<td align="left">NES</td>
+<td align="left">fds, nes, unif, unf</td>
+<td align="left">Disk System necesita BIOS: <code>disksys.rom</code> (md5: <code>ca30b50f880eb660a320674ed365ef7a</code>)</td>
+</tr>
+<tr>
+<td align="left">gambatte_libretro.so</td>
+<td align="left">GB/GBC</td>
+<td align="left">gb, gbc, dmg</td>
+<td align="left">BIOS opcional: <code>gb_bios.bin</code> (md5: <code>32fbbd84168d3482956eb3c5051637f5</code>), <code>gbc_bios.bin</code> (md5: <code>dbfce9db9deaa2567f6a84fde55f9680</code>)</td>
+</tr>
+<tr>
+<td align="left">genesis_plus_gx_libretro.so</td>
+<td align="left">MD, MS, GG, SEGA CD</td>
+<td align="left">mdx, md, smd, gen, bin, cue, iso, sms, bms, gg, sg, 68k, chd, m3u</td>
+<td align="left">SEGA CD necesita BIOS: <code>bios_CD_E.bin</code>, <code>bios_CD_U.bin</code>, <code>bios_CD_J.bin</code></td>
+</tr>
+<tr>
+<td align="left">genesis_plus_gx_wide_libretro.so</td>
+<td align="left">MD, MS, GG, SEGA CD</td>
+<td align="left">mdx, md, smd, gen, bin, cue, iso, sms, bms, gg, sg, 68k, chd, m3u</td>
+<td align="left">SEGA CD necesita BIOS: <code>bios_CD_E.bin</code>, <code>bios_CD_U.bin</code>, <code>bios_CD_J.bin</code></td>
+</tr>
+<tr>
+<td align="left">gpsp_libretro.so</td>
+<td align="left">GBA</td>
+<td align="left">gba, bin</td>
+<td align="left">BIOS opcional: <code>gba_bios.bin</code> (md5: <code>a860e8c0b6d573d191e4ec7db1b1e4f6</code>)</td>
+</tr>
+<tr>
+<td align="left">handy_libretro.so</td>
+<td align="left">LYNX</td>
+<td align="left">lnx, o</td>
+<td align="left">Necesita BIOS: <code>lynxboot.img</code> (md5: <code>fcd403db69f54290b51035d82f835e7b</code>)</td>
+</tr>
+<tr>
+<td align="left">mednafen_pce_fast_libretro.so</td>
+<td align="left">PCE, PCE CD</td>
+<td align="left">pce, cue, ccd, chd, toc, m3u</td>
+<td align="left">PCE CD necesita BIOS: <code>syscard3.pce</code> (md5: <code>38179df8f4ac870017db21ebcbf53114</code>)</td>
+</tr>
+<tr>
+<td align="left">mednafen_wswan_libretro.so</td>
+<td align="left">WS</td>
+<td align="left">ws, wsc, pc2</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">mgba_libretro.so</td>
+<td align="left">GBA</td>
+<td align="left">gb, gbc, gba</td>
+<td align="left">BIOS opcional: <code>gba_bios.bin</code> (md5: <code>a860e8c0b6d573d191e4ec7db1b1e4f6</code>)</td>
+</tr>
+<tr>
+<td align="left">mrboom_libretro.so</td>
+<td align="left">MrBoom</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">picodrive_libretro.so</td>
+<td align="left">MD, MS, SEGA CD, SEGA 32X</td>
+<td align="left">bin, gen, smd, md, 32x, chd, cue, iso, sms, 68k, m3u</td>
+<td align="left">SEGA CD necesita BIOS: <code>bios_CD_U.bin</code> (md5: <code>2efd74e3232ff260e371b99f84024f7f</code>), <code>bios_CD_E.bin</code> (md5: <code>e66fa1dc5820d254611fdcdba0662372</code>), <code>bios_CD_J.bin</code> (md5: <code>278a9397d192149e84e820ac621a8edd</code>)</td>
+</tr>
+<tr>
+<td align="left">pokemini_libretro.so</td>
+<td align="left">POKEMINI</td>
+<td align="left">min</td>
+<td align="left">Necesita BIOS: <code>bios.min</code> (md5: <code>1e4fb124a3a886865acb574f388c803d</code>)</td>
+</tr>
+<tr>
+<td align="left">prboom_libretro.so</td>
+<td align="left">DOOM</td>
+<td align="left">wad, iwad, pwad</td>
+<td align="left">Necesita ficheros de juego</td>
+</tr>
+<tr>
+<td align="left">quicknes_libretro.so</td>
+<td align="left">NES</td>
+<td align="left">nes</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">race_libretro.so</td>
+<td align="left">NGP</td>
+<td align="left">ngp, ngc, ngpc, npc</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">snes9x2005_libretro.so</td>
+<td align="left">SNES</td>
+<td align="left">smc, fig, sfc, gd3, gd7, dx2, bsx, swc</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">snes9x2005_plus_libretro.so</td>
+<td align="left">SNES</td>
+<td align="left">smc, fig, sfc, gd3, gd7, dx2, bsx, swc</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">tyrquake_libretro.so</td>
+<td align="left">QUAKE</td>
+<td align="left">pak</td>
+<td align="left">Necesita ficheros de juego</td>
+</tr>
+<tr>
+<td align="left">vice_x64_libretro.so</td>
+<td align="left">C64</td>
+<td align="left">d64, d71, d80, d81, d82, g64, g41, x64, t64, tap, prg, p00, crt, bin, zip, gz, d6z, d7z, d8z, g6z, g4z, x6z, cmd, m3u, vfl, vsf, nib, nbz, d2m, d4m</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">stella2014_libretro.so</td>
+<td align="left">Atari 2600</td>
+<td align="left">a26, bin</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">prosystem_libretro.so</td>
+<td align="left">Atari 7800</td>
+<td align="left">a78, bin</td>
+<td align="left">BIOS opcional: <code>7800 BIOS (U).rom</code> (md5: <code>0763f1ffb006ddbe32e52d497ee848ae</code>)</td>
+</tr>
+<tr>
+<td align="left">scummvm_libretro.so</td>
+<td align="left">ScummVM</td>
+<td align="left"><ver fichero en core_info></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">tic80_libretro.so</td>
+<td align="left">TIC-80</td>
+<td align="left">tic</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">potator_libretro.so</td>
+<td align="left">Watara Supervision</td>
+<td align="left">bin, sv</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">dosbox_pure_libretro.so</td>
+<td align="left">DOSBox</td>
+<td align="left">zip, dosz, exe, com, bat, iso, cue, ins, img, ima, vhd, m3u, m3u8</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">o2em_libretro.so</td>
+<td align="left">Magnavox Odyssey2, Phillips Videopac+</td>
+<td align="left">bin</td>
+<td align="left">Necesita BIOS: <code>o2rom.bin</code> (md5: <code>562d5ebf9e030a40d6fabfc2f33139fd</code>)</td>
+</tr>
+<tr>
+<td align="left">mame2003_libretro.so</td>
+<td align="left">MAME2003</td>
+<td align="left">zip</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">mame2003_plus_libretro.so</td>
+<td align="left">MAME2003</td>
+<td align="left">zip</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>Adicionalmente, se ha incluido la compilación de cores no oficiales hecha por <a href="https://github.com/Poligraf/opendingux_ra_cores_unofficial">Poligraf</a>. Esto implica que se han añadido los siguientes cores a la lista anterior:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Core</th>
+<th align="left">Sistema</th>
+<th align="left">Extensiones soportadas</th>
+<th align="left">Observaciones</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">81_libretro.so</td>
+<td align="left">Sinclair ZX81</td>
+<td align="left">p, tzx, t81</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">bk_libretro.so</td>
+<td align="left">Elektronika - BK-0010/BK-0011</td>
+<td align="left">bin</td>
+<td align="left">Necesita BIOS: <code>bk/BASIC10.ROM</code> (md5: <code>3fa774326d75410a065659aea80252f0</code>), <code>bk/FOCAL10.ROM</code> (md5: <code>5737f972e8638831ab71e9139abae052</code>), <code>bk/MONIT10.ROM</code> (md5: <code>95f8c41c6abf7640e35a6a03cecebd01</code>)</td>
+</tr>
+<tr>
+<td align="left">cannonball_libretro.so</td>
+<td align="left">SEGA Outrun</td>
+<td align="left">game, 88</td>
+<td align="left">Necesita ficheros de juego y un fichero dummy con la extensión <code>.game</code></td>
+</tr>
+<tr>
+<td align="left">cap32_libretro.so</td>
+<td align="left">Amstrad CPC</td>
+<td align="left">dsk, sna, zip, tap, cdt, voc, cpr, m3u</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">freechaf_libretro.so</td>
+<td align="left">Fairchild ChannelF</td>
+<td align="left">bin, chf</td>
+<td align="left">Necesita BIOS: <code>sl31253.bin</code> (md5: <code>ac9804d4c0e9d07e33472e3726ed15c3</code>), <code>sl31254.bin</code> (md5: <code>da98f4bb3242ab80d76629021bb27585</code>), <code>sl90025.bin</code> (md5: <code>95d339631d867c8f1d15a5f2ec26069d</code>)</td>
+</tr>
+<tr>
+<td align="left">fuse_libretro.so</td>
+<td align="left">Sinclair ZX Spectrum</td>
+<td align="left">tzx, tap, z80, rzx, scl, trd, dsk</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">gme_libretro.so</td>
+<td align="left">Game Music Emu</td>
+<td align="left">ay, gbs, gym, hes, kss, nsf, nsfe, sap, spc, vgm, vgz, zip</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">hatari_libretro.so</td>
+<td align="left">Atari ST</td>
+<td align="left">st, msa, zip, stx, dim, ipf, m3u</td>
+<td align="left">Necesita BIOS: <code>tos.img</code> (md5: <code>c1c57ce48e8ee4135885cee9e63a68a2</code>). Configuración complicada. Se ha conseguido cierto éxito con RG350M pero no con RG350P</td>
+</tr>
+<tr>
+<td align="left">mednafen_vb_libretro.so</td>
+<td align="left">Nintendo Virtual Boy</td>
+<td align="left">vb, vboy, bin</td>
+<td align="left">Rendimiento pobre</td>
+</tr>
+<tr>
+<td align="left">nxengine_libretro.so</td>
+<td align="left">Cave Story</td>
+<td align="left">exe</td>
+<td align="left">Necesita ficheros de juego</td>
+</tr>
+<tr>
+<td align="left">puae_libretro.so</td>
+<td align="left">Commodore Amiga</td>
+<td align="left">adf, adz, dms, fdi, ipf, hdf, hdz, lha, slave, info, cue, ccd, nrg, mds, iso, chd, uae, m3u, zip, 7z</td>
+<td align="left">Necesita BIOS: <code>kick34005.A500</code> (md5: <code>82a21c1890cae844b3df741f2762d48d</code>)</td>
+</tr>
+<tr>
+<td align="left">reminiscence_libretro.so</td>
+<td align="left">Flashback</td>
+<td align="left">map, aba, seq, lev</td>
+<td align="left">Necesita ficheros de juego</td>
+</tr>
+<tr>
+<td align="left">theodore_libretro.so</td>
+<td align="left">Thomson - MO/TO</td>
+<td align="left">fd, sap, k7, m7, m5, rom</td>
+<td align="left">Configuración complicada. Se ha conseguido cierto éxito con el modelo MO5 de máquina, en ODBeta con RG350M, pero no en stock/ROGUE</td>
+</tr>
+<tr>
+<td align="left">uzem_libretro.so</td>
+<td align="left">Uzebox</td>
+<td align="left">uze</td>
+<td align="left">Rendimiento pobre</td>
+</tr>
+</tbody>
+</table>
+<p>Por lo tanto habrá que hacer al menos un OPK para cada uno de ellos. Decimos <em>al menos</em> porque se puede plantear la opción de hacer un OPK por cada combinación "core/sistema a emular".</p>
 <h2 id="instalador">Instalador<a class="headerlink" href="#instalador" title="Permanent link">&para;</a></h2>
 <p>Como son varias las piezas necesarias para que funcione el conjunto, se ha creado un instalador para instalar de una sola vez todo lo necesario. En concreto el instalador integra:</p>
 <ul>
 <li>OPKs para lanzar de manera independiente desde distintos frontends (GMenu2X, SimpleMenu, PyMenu, EmulationStation, etc) los distintos cores seleccionando previamente la ROM.</li>
-<li>Binario <code>retroarch</code> en localización común (<code>/media/data/local/bin</code>) para no tener que repetirlo dentro de los OPKs anteriores.</li>
+<li>Binario <code>retroarch_rg3350</code> (o <code>retroarch_rg350_odbeta</code> para ODBeta) en localización común (<code>/media/data/local/bin</code>) para no tener que repetirlo dentro de los OPKs anteriores.</li>
 <li>Configuraciones de todos los cores diferenciados por pantalla, es decir se instalan unas configuraciones adecuadas para 320x240 o para 640x480 en función de la pantalla detectada. Las configuraciones se han adoptado de las recomendaciones de Retro Game Corps en <a href="https://retrogamecorps.com/2020/12/24/guide-retroarch-on-rg350-and-rg280-devices/">esta guía</a>.</li>
 <li>Filtros de GMenu2X por extensión para cada sistema.</li>
 <li>Sección nueva con el icono de RetroArch en todos los skins instalados en GMenu2X donde aparecen todos los lanzadores de los OPKs.</li>
+</ul>
+<p>Cuando se lanza, pregunta por dos opciones que están desactivadas por defecto:</p>
+<p><img alt="Installing options" src="images/installing_options.png" /></p>
+<ul>
+<li>Install config: Para instalar las configuraciones comentadas en el tercer punto de la lista anterior. Se recomienda instalar las configuraciones la primera vez y no instalarlas en reinstalaciones posteriores para evitar la pérdida de los ajustes personales hechos sobre la configuración básica.</li>
+<li>Install unofficial cores: Para instalar los 14 nuevos pero no oficiales cores compilados por <a href="https://github.com/Poligraf/opendingux_ra_cores_unofficial">Poligraf</a>.</li>
 </ul>
 <p>El OPK con el instalador puede obtenerse en las releases de <a href="https://github.com/eduardofilo/RG350_ra_installer/releases/latest">este repositorio</a>.</p>
 <h2 id="hotkeys">Hotkeys<a class="headerlink" href="#hotkeys" title="Permanent link">&para;</a></h2>
@@ -2363,6 +2655,8 @@ X-OD-NeedsDownscaling=true
 </tr>
 </tbody>
 </table>
+<h2 id="canal-telegram">Canal Telegram<a class="headerlink" href="#canal-telegram" title="Permanent link">&para;</a></h2>
+<p>Se ha creado este canal de Telegram para comunicar más fácilmente las actualizaciones de este instalador: <a href="https://t.me/RG350_ra_installer">https://t.me/RG350_ra_installer</a></p>
                 
                   
                 
