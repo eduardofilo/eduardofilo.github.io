@@ -1294,6 +1294,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#submodulos" class="md-nav__link">
+    Submódulos
+  </a>
+  
+</li>
+      
       
       
       
@@ -2343,6 +2350,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#submodulos" class="md-nav__link">
+    Submódulos
+  </a>
+  
+</li>
+      
       
       
       
@@ -2733,6 +2747,20 @@ $ rm -rf repo.git
 
 </li>
 </ol>
+<h2 id="submodulos">Submódulos<a class="headerlink" href="#submodulos" title="Permanent link">&para;</a></h2>
+<p>Documentación: <a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Enlace 1</a>, <a href="https://training.github.com/downloads/es_ES/submodule-vs-subtree-cheat-sheet/">Enlace 2</a>.</p>
+<p>Añadir submódulo (el directorio PATH que se pone al final no debe existir):</p>
+<div class="highlight"><pre><span></span><code>$ git submodule add SUBMODULE_URL PATH
+</code></pre></div>
+
+<p>Clonar un repositorio con submódulos:</p>
+<div class="highlight"><pre><span></span><code>$ git clone --recursive REPO_URL       <span class="c1"># si los submódulos tienen a su vez submódulos</span>
+$ git clone --recurse-submodules URL   <span class="c1"># si no hay submódulos recursivos</span>
+</code></pre></div>
+
+<p>Actualizar repositorio y submódulos:</p>
+<div class="highlight"><pre><span></span><code>$ git pull --recurse-submodules
+</code></pre></div>
                 
                   
                 
