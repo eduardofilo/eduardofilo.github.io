@@ -1301,6 +1301,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#borrar-commits-en-repositorio-remoto" class="md-nav__link">
+    Borrar commits en repositorio remoto
+  </a>
+  
+</li>
+      
       
       
       
@@ -2357,6 +2364,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#borrar-commits-en-repositorio-remoto" class="md-nav__link">
+    Borrar commits en repositorio remoto
+  </a>
+  
+</li>
+      
       
       
       
@@ -2761,6 +2775,21 @@ $ git clone --recurse-submodules URL   <span class="c1"># si no hay submódulos 
 <p>Actualizar repositorio y submódulos:</p>
 <div class="highlight"><pre><span></span><code>$ git pull --recurse-submodules
 </code></pre></div>
+
+<h2 id="borrar-commits-en-repositorio-remoto">Borrar commits en repositorio remoto<a class="headerlink" href="#borrar-commits-en-repositorio-remoto" title="Permanent link">&para;</a></h2>
+<p>Es importante recordar que si los cambios ya han sido compartidos, es decir otras personas los han sincronizado, se va a romper el histórico para estas personas. Pero si el repositorio es personal, se puede hacer lo siguiente:</p>
+<ol>
+<li>
+<p>Situarnos en el commit que nos interese:</p>
+<ol>
+<li>Para borrar sólo el último: <code>git reset HEAD^ --hard</code></li>
+<li>Para borrar varios: <code>git reset hash_commit --hard</code></li>
+</ol>
+</li>
+<li>
+<p>Forzar los cambios en el repositorio remoto: <code>git push origin -f</code></p>
+</li>
+</ol>
                 
                   
                 
