@@ -2397,6 +2397,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#limpieza-de-paquetes-snap" class="md-nav__link">
+    Limpieza de paquetes snap
+  </a>
+  
+</li>
+      
       
       
       
@@ -2949,6 +2956,13 @@
         <li class="md-nav__item">
   <a href="#buscar-paquetes" class="md-nav__link">
     Buscar paquetes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limpieza-de-paquetes-snap" class="md-nav__link">
+    Limpieza de paquetes snap
   </a>
   
 </li>
@@ -3524,6 +3538,24 @@ gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 <li>Encontrar un paquete por su nombre: <code>apt-cache search 'cadena'</code></li>
 <li>Encontrar un paquete que contiene un fichero: <code>apt-file search 'fichero'</code></li>
 </ul>
+<h2 id="limpieza-de-paquetes-snap">Limpieza de paquetes snap<a class="headerlink" href="#limpieza-de-paquetes-snap" title="Permanent link">&para;</a></h2>
+<p>Localizar los paquetes desactivados con:</p>
+<div class="highlight"><pre><span></span><code>$ snap list --all|fgrep desactivado
+</code></pre></div>
+
+<p>Y luego borrarlos con:</p>
+<div class="highlight"><pre><span></span><code>$ snap remove --revision XXX NOMBRE
+</code></pre></div>
+
+<p>Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code>edumoreno@eduardo-HP-Folio-13:~$ snap list --all|fgrep desactivado
+canonical-livepatch   9.7.3                       105    latest/stable    canonical*  desactivado
+chromium              94.0.4606.81                1781   latest/stable    canonical*  desactivado
+edumoreno@eduardo-HP-Folio-13:~$ snap remove --revision 105 canonical-livepatch
+canonical-livepatch (revisión 105) eliminado
+edumoreno@eduardo-HP-Folio-13:~$ snap remove --revision 1781 chromium
+chromium (revisión 1781) eliminado
+</code></pre></div>
                 
                   
                 
