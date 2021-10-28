@@ -2429,6 +2429,30 @@
 <p><img alt="lib_sch" src="/images/pages/kicad/lib_sch.png" /></p>
 </li>
 </ol>
+<p>Una alternativa a la forma de trabajar anterior es recoger todos los símbolos y footprints generados en una librería independiente que se pueda añadir a todos los proyectos, una especie de repositorio personal. La incorporaremos como un <a href="/desarrollo/git.html#submodulos">submódulo git</a>. Para ello seguir estos pasos:</p>
+<ol>
+<li>
+<p>Inicializar un repositorio git para el proyecto:</p>
+<div class="highlight"><pre><span></span><code>$ cd mi_proyecto
+$ git init
+</code></pre></div>
+
+</li>
+<li>
+<p>Instalar la librería como un submódulo git en un directorio llamado <code>lib</code>:</p>
+<div class="highlight"><pre><span></span><code>$ git submodule add git@github.com:eduardofilo/kicad_footprints.git lib
+</code></pre></div>
+
+</li>
+<li>
+<p>Añadir la librería de símbolos desde <code>Preferences &gt; Manage Symbol Libraries... &gt; Project Specific Libraries</code>:</p>
+<p><img alt="lib_kicad_symbols" src="/images/pages/kicad/lib_kicad_symbols.png" /></p>
+</li>
+<li>
+<p>Y la librería de footprints desde <code>Preferences &gt; Manage Footprint Libraries... &gt; Project Specific Libraries</code>:</p>
+<p><img alt="lib_kicad_footprints" src="/images/pages/kicad/lib_kicad_footprints.png" /></p>
+</li>
+</ol>
 <h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h2>
 <p>En general KiCad se utiliza con atajos de teclado. Para obtener los atajos de teclado que sirven en una de las aplicaciones, pulsar <code>Ctrl+F1</code>.</p>
 <ol>
