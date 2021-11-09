@@ -3020,9 +3020,9 @@ Dispositivo    Inicio Comienzo    Final Sectores Tamaño Id Tipo
 <p>Por tanto en este caso copiaremos 3797 bloques para cubrir esos 15550464 sectores.</p>
 <h3 id="backup-de-la-sd-comprimiendo-al-vuelo-con-gzip-y-diviendo-en-trozos-el-fichero-resultante">Backup de la SD (comprimiendo al vuelo con gzip y diviendo en trozos el fichero resultante)<a class="headerlink" href="#backup-de-la-sd-comprimiendo-al-vuelo-con-gzip-y-diviendo-en-trozos-el-fichero-resultante" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ <span class="c1">#Backup:</span>
-$ sudo dd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="p">|</span> pv <span class="p">|</span> gzip -9 - <span class="p">|</span> split --bytes<span class="o">=</span>2G - Rpi_8gb_backup.img.gz.part_
+$ sudo dd <span class="k">if</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="p">|</span> gzip -9 - <span class="p">|</span> split --bytes<span class="o">=</span>2G - Rpi_8gb_backup.img.gz.part_
 $ <span class="c1">#Restauración:</span>
-$ cat Rpi_8gb_backup.img.gz.part_* <span class="p">|</span> gunzip -c <span class="p">|</span> pv <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
+$ cat Rpi_8gb_backup.img.gz.part_* <span class="p">|</span> gunzip -c <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">bs</span><span class="o">=</span>2M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
 </code></pre></div>
 
 <h3 id="backup-de-la-sd-comprimiendo-al-vuelo-con-7z-y-diviendo-en-trozos-el-fichero-resultante">Backup de la SD (comprimiendo al vuelo con 7z y diviendo en trozos el fichero resultante)<a class="headerlink" href="#backup-de-la-sd-comprimiendo-al-vuelo-con-7z-y-diviendo-en-trozos-el-fichero-resultante" title="Permanent link">&para;</a></h3>
