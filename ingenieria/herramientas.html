@@ -1634,6 +1634,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#menu-cheatsheet" class="md-nav__link">
+    Menu cheatsheet
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2486,6 +2493,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#menu-cheatsheet" class="md-nav__link">
+    Menu cheatsheet
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2696,6 +2710,87 @@ Reflash... OK
 <ul>
 <li><a href="https://wiki.pine64.org/wiki/Pinecil">Wiki oficial</a></li>
 <li><a href="https://github.com/Ralim/IronOS">IronOS - Flexible Soldering iron control Firmware</a></li>
+</ul>
+<h3 id="menu-cheatsheet">Menu cheatsheet<a class="headerlink" href="#menu-cheatsheet" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Soldering mode<ul>
+<li>
+<ul>
+<li>short press: Short temperature increment</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>long press: Long temperature increment</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>short press: Short temperature decrement</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>long press: Long temperature decrement</li>
+</ul>
+</li>
+<li>+/- same time press: Exit soldering mode</li>
+<li>
+<ul>
+<li>long press: Exit soldering mode</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>long press: Boost mode (if enabled)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Power settings<ul>
+<li>Power source: Sets cutoff voltage. (DC 10V) (S 3.3V per cell, disable power limit) # Default: DC</li>
+<li>QC voltage: Max QC voltage the iron should negotiate for # Default: 9.0</li>
+<li>PD timeout: PD negotiation timeout in 100ms steps for compatibility with some QC chargers # Default: 20</li>
+</ul>
+</li>
+<li>Soldering settings<ul>
+<li>Boost temp: Temperature used in "boost mode" # Default: 420</li>
+<li>Heat on power up: O=off | S=soldering temp | Z=standby at sleep temp until moved | R=standby without heating until moved # Default: O</li>
+<li>Temp change short: Temperature-change-increment on short button press # Default: 1</li>
+<li>Temp change long: Temperature-change-increment on long button press # Default: 10</li>
+<li>Allow locking buttons: While soldering, hold down both buttons to toggle locking them (D=disable | B=boost mode only | F=full locking) # Default: D</li>
+</ul>
+</li>
+<li>Sleep mode<ul>
+<li>Motion sensitivity: 0=off | 1=least sensitive | ... | 9=most sensitive # Default: 7</li>
+<li>Sleep temp: Tip temperature while in "sleep mode" # Default: 150</li>
+<li>Sleep timeout: Interval before \"sleep mode\" kicks in (S=seconds | M=minutes) # Default: 50S</li>
+<li>Shutdown timeout: Interval before the iron shuts down (M=minutes) # Default: 10M</li>
+<li>Hall sensor sensitivity: Sensitivity of the Hall effect sensor to detect sleep (O=off | L=low | M=medium | H=high) # Default: L</li>
+</ul>
+</li>
+<li>User interface<ul>
+<li>Temperature unit: C=Celsius | F=Fahrenheit # Default: C</li>
+<li>Display orientation: R=right-handed | L=left-handed | A=automatic # Default: R</li>
+<li>Cooldown blink: Flash the temperature reading after heating was halted while the tip is still hot # Default: False</li>
+<li>Scrolling speed: Speed info text scrolls past at (S=slow | F=fast) # Default: S</li>
+<li>Reverse + - keys: Reverse assignment of buttons for temperature adjustment # Default: False</li>
+<li>Anim. speed: Pace of icon animations in menu (O=off | S=slow | M=medium | F=fast) # Default: M</li>
+<li>Anim. loop: Loop icon animations in main menu # Default: True</li>
+<li>Brightness: Adjust the brightness of the OLED screen # Default: 4</li>
+<li>Invert: Invert the colours of the OLED screen # Default: False</li>
+<li>Detailed idle screen: Display detailed information in a smaller font on the idle screen # Default: False</li>
+<li>Detailed solder screen: Display detailed information in a smaller font on soldering screen # Default: False</li>
+</ul>
+</li>
+<li>Advanced settings<ul>
+<li>Power limit: Maximum power the iron can use (W=watt) # Default: Off</li>
+<li>Factory reset?: Reset settings to default</li>
+<li>Calibrate temperature?: Start tip temperature offset calibration</li>
+<li>Calibrate input voltage?: Start VIN calibration (long press to exit)</li>
+<li>Power pulse: Intensity of power of keep-awake-pulse (watt) # Default: Off</li>
+</ul>
+</li>
 </ul>
                 
                   
