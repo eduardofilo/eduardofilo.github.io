@@ -2612,6 +2612,7 @@ git clone git@gitlab.com:kicad/libraries/kicad-packages3D.git
 </li>
 </ol>
 <h2 id="designacion-de-componentes">Designación de componentes<a class="headerlink" href="#designacion-de-componentes" title="Permanent link">&para;</a></h2>
+<p><a href="https://dexpcb.com/Manual/standard-reference-designators.htm">Fuente</a></p>
 <table>
 <thead>
 <tr>
@@ -2621,8 +2622,12 @@ git clone git@gitlab.com:kicad/libraries/kicad-packages3D.git
 </thead>
 <tbody>
 <tr>
+<td align="left">A</td>
+<td align="left">Separable assembly or sub-assembly (e.g. printed circuit assembly)</td>
+</tr>
+<tr>
 <td align="left">AT</td>
-<td align="left">Attenuator</td>
+<td align="left">Attenuator or isolator</td>
 </tr>
 <tr>
 <td align="left">BR</td>
@@ -2665,8 +2670,28 @@ git clone git@gitlab.com:kicad/libraries/kicad-packages3D.git
 <td align="left">Fiducial</td>
 </tr>
 <tr>
+<td align="left">FL</td>
+<td align="left">Filter</td>
+</tr>
+<tr>
+<td align="left">G</td>
+<td align="left">Generator or oscillator</td>
+</tr>
+<tr>
+<td align="left">GN</td>
+<td align="left">General network</td>
+</tr>
+<tr>
+<td align="left">H</td>
+<td align="left">Hardware</td>
+</tr>
+<tr>
+<td align="left">HY</td>
+<td align="left">Circulator or directional coupler</td>
+</tr>
+<tr>
 <td align="left">J</td>
-<td align="left">Jack connector (female)</td>
+<td align="left">Jack (least-movable connector of a connector pair) | Jack connector (connector may have "male" pin contacts and/or "female" socket contacts)</td>
 </tr>
 <tr>
 <td align="left">JP</td>
@@ -2674,11 +2699,11 @@ git clone git@gitlab.com:kicad/libraries/kicad-packages3D.git
 </tr>
 <tr>
 <td align="left">K</td>
-<td align="left">Relay</td>
+<td align="left">Relay or contactor</td>
 </tr>
 <tr>
 <td align="left">L</td>
-<td align="left">Inductor</td>
+<td align="left">Inductor or coil or ferrite bead</td>
 </tr>
 <tr>
 <td align="left">LS</td>
@@ -2698,7 +2723,7 @@ git clone git@gitlab.com:kicad/libraries/kicad-packages3D.git
 </tr>
 <tr>
 <td align="left">P</td>
-<td align="left">Plug connector (male)</td>
+<td align="left">Plug (most-movable connector of a connector pair) | Plug connector (connector may have "male" pin contacts and/or "female" socket contacts)</td>
 </tr>
 <tr>
 <td align="left">PS</td>
@@ -2746,7 +2771,7 @@ git clone git@gitlab.com:kicad/libraries/kicad-packages3D.git
 </tr>
 <tr>
 <td align="left">U</td>
-<td align="left">Integrated circuit</td>
+<td align="left">Inseparable assembly (e.g., integrated circuit)</td>
 </tr>
 <tr>
 <td align="left">V</td>
@@ -2758,7 +2783,7 @@ git clone git@gitlab.com:kicad/libraries/kicad-packages3D.git
 </tr>
 <tr>
 <td align="left">X</td>
-<td align="left">Transducer not matching any other category</td>
+<td align="left">Socket connector for another item not P or J, paired with the letter symbol for that item (XV for vacuum tube socket, XF for fuse holder, XA for printed circuit assembly connector, XU for integrated circuit connector, XDS for light socket, etc.)</td>
 </tr>
 <tr>
 <td align="left">Y</td>
