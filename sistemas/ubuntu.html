@@ -2223,6 +2223,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sustitucion-de-cadena-en-ficheros-en-lote" class="md-nav__link">
+    Sustitución de cadena en ficheros en lote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#montaje-de-video-stopmotion-a-partir-de-imagenes" class="md-nav__link">
+    Montaje de vídeo StopMotion a partir de imágenes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#montaje-de-gif-a-partir-de-imagenes" class="md-nav__link">
     Montaje de gif a partir de imágenes
   </a>
@@ -2774,6 +2788,20 @@
         <li class="md-nav__item">
   <a href="#compresion-de-ficheros-en-lote" class="md-nav__link">
     Compresión de ficheros en lote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sustitucion-de-cadena-en-ficheros-en-lote" class="md-nav__link">
+    Sustitución de cadena en ficheros en lote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#montaje-de-video-stopmotion-a-partir-de-imagenes" class="md-nav__link">
+    Montaje de vídeo StopMotion a partir de imágenes
   </a>
   
 </li>
@@ -3338,14 +3366,19 @@ $ ls *.mp4 <span class="p">|</span> awk <span class="s1">&#39;{print &quot;HandB
   <span class="nv">fileid</span><span class="o">=</span><span class="si">${</span><span class="nv">filename</span><span class="p">%%.*</span><span class="si">}</span>
   7z a <span class="s2">&quot;</span><span class="si">${</span><span class="nv">fileid</span><span class="si">}</span><span class="s2">.7z&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">filename</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="k">done</span>
+</code></pre></div>
 
+<h2 id="sustitucion-de-cadena-en-ficheros-en-lote">Sustitución de cadena en ficheros en lote<a class="headerlink" href="#sustitucion-de-cadena-en-ficheros-en-lote" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> file <span class="k">in</span> *.cfg<span class="p">;</span> <span class="k">do</span>
+  <span class="nv">filename</span><span class="o">=</span><span class="k">$(</span>basename <span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span>
+  <span class="nv">fileid</span><span class="o">=</span><span class="si">${</span><span class="nv">filename</span><span class="p">%%.*</span><span class="si">}</span>
+  sed -i <span class="s1">&#39;s/ShowFps 1/ShowFps 0/&#39;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">done</span>
+</code></pre></div>
 
-<span class="c1">## Montaje de vídeo StopMotion a partir de imágenes</span>
-
-A 10fps por ejemplo <span class="o">([</span>Fuente<span class="o">](</span>http://www.dototot.com/compile-stop-motion-animation-image-sequence-avconv/<span class="o">))</span>:
-
-<span class="sb">```</span>bash
-$ ffmpeg -f image2 -r <span class="m">10</span> -i %04d.jpg -vf <span class="nv">scale</span><span class="o">=</span><span class="m">1440</span>:1080 -r:v <span class="m">10</span> -c:v libx264 -qp <span class="m">0</span> -preset veryslow -an <span class="s2">&quot;video.mkv&quot;</span>
+<h2 id="montaje-de-video-stopmotion-a-partir-de-imagenes">Montaje de vídeo StopMotion a partir de imágenes<a class="headerlink" href="#montaje-de-video-stopmotion-a-partir-de-imagenes" title="Permanent link">&para;</a></h2>
+<p>A 10fps por ejemplo (<a href="http://www.dototot.com/compile-stop-motion-animation-image-sequence-avconv/">Fuente</a>):</p>
+<div class="highlight"><pre><span></span><code>$ ffmpeg -f image2 -r <span class="m">10</span> -i %04d.jpg -vf <span class="nv">scale</span><span class="o">=</span><span class="m">1440</span>:1080 -r:v <span class="m">10</span> -c:v libx264 -qp <span class="m">0</span> -preset veryslow -an <span class="s2">&quot;video.mkv&quot;</span>
 </code></pre></div>
 
 <h2 id="montaje-de-gif-a-partir-de-imagenes">Montaje de gif a partir de imágenes<a class="headerlink" href="#montaje-de-gif-a-partir-de-imagenes" title="Permanent link">&para;</a></h2>
