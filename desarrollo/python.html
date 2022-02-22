@@ -4342,8 +4342,10 @@ $ sudo systemctl disable traefik.service
 <h2 id="queries-complejas">Queries complejas<a class="headerlink" href="#queries-complejas" title="Permanent link">&para;</a></h2>
 <p>Los parámetros que aplicamos al método <a href="https://docs.djangoproject.com/en/1.11/topics/db/queries/#retrieving-specific-objects-with-filters">filter</a> se aplican con un <code>and</code> entre ellos a la query resultante. Para hacer queries más complejas (con <code>and</code> y <code>or</code> con prioridades establecidas con paréntesis) hay que utilizar los <a href="https://docs.djangoproject.com/en/1.11/topics/db/queries/#complex-lookups-with-q-objects">objetos Q</a>.</p>
 <h2 id="localizacion-de-site-packages">Localización de site-packages<a class="headerlink" href="#localizacion-de-site-packages" title="Permanent link">&para;</a></h2>
-<p>Ruta general: <code>python -c 'import site; print(site.getsitepackages())'</code>
-Ruta de usuario: <code>python -m site --user-site</code></p>
+<ul>
+<li>Ruta general: <code>python -c 'import site; print(site.getsitepackages())'</code></li>
+<li>Ruta de usuario: <code>python -m site --user-site</code></li>
+</ul>
                 
                   
                 
