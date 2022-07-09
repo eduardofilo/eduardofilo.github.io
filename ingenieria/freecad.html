@@ -2346,7 +2346,12 @@
 <li><a href="https://www.youtube.com/watch?v=uXeYTfEMu1I"><code>File &gt; Import...</code></a>: Permite importar ficheros STEP para hacer modificaciones.</li>
 <li><a href="https://www.youtube.com/watch?v=eNCsavtEpzA"><code>Edit &gt; Aligment...</code></a>: Permite situar un sólido sobre un plano.</li>
 <li><code>Tools &gt; Dependency graph</code>: Árbol de dependencias entre objetos.</li>
-<li><a href="https://www.youtube.com/watch?v=9a6rE8XzIgE">Duplicado de objetos</a> (Copias totales, copias simples y piezas clonadas)</li>
+<li><a href="https://www.youtube.com/watch?v=9a6rE8XzIgE">Duplicado de objetos</a> (Copias totales, copias simples y piezas clonadas)<ul>
+<li>Copia total (copiando dependencias): <code>Edit &gt; Copy/Paste</code>. La pieza resultante es paramétrica y no depende de la original.</li>
+<li>Copia simple (se pierden dependencias): <code>Part &gt; Create simple copy</code>. La pieza resultante no es paramétrica y no depende de la original. En el arbol de dependencias aparece como una pieza aislada.</li>
+<li>Clones (referenciando las dependencias de la original): <code>Draft &gt; Modification &gt; Clone</code>. La pieza resultante es paramétrica por medio de la original.</li>
+</ul>
+</li>
 <li><a href="https://www.youtube.com/watch?v=gfSIwmD8Nnk">Diseño de volúmenes a partir de puntos, aristas y caras</a></li>
 <li><a href="https://www.youtube.com/watch?v=KpEl2JtMiKU">Restricciones en lineas</a></li>
 <li><a href="https://www.youtube.com/watch?v=pI2uhfirrgc">Redondeando trayectorias: Tuberías, tubos y cables</a></li>
