@@ -2439,6 +2439,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#montar-ext4-para-usuario" class="md-nav__link">
+    Montar ext4 para usuario
+  </a>
+  
+</li>
+      
       
       
       
@@ -3005,6 +3012,13 @@
         <li class="md-nav__item">
   <a href="#limpieza-de-paquetes-snap" class="md-nav__link">
     Limpieza de paquetes snap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#montar-ext4-para-usuario" class="md-nav__link">
+    Montar ext4 para usuario
   </a>
   
 </li>
@@ -3604,6 +3618,13 @@ edumoreno@eduardo-HP-Folio-13:~$ snap remove --revision 105 canonical-livepatch
 canonical-livepatch (revisión 105) eliminado
 edumoreno@eduardo-HP-Folio-13:~$ snap remove --revision 1781 chromium
 chromium (revisión 1781) eliminado
+</code></pre></div>
+
+<h2 id="montar-ext4-para-usuario">Montar ext4 para usuario<a class="headerlink" href="#montar-ext4-para-usuario" title="Permanent link">&para;</a></h2>
+<p>Normalmente al automontar una partición ext4 se respetarán los ID's de los propietarios:grupos de los ficheros. Para montar temporalmente con permisos ajustados para un usuario, utilizar <code>bindfs</code> de esta forma:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># El punto de partida es una partición automontada de esta forma:</span>
+<span class="c1"># /dev/sdb1                                   306616440      64348   290907216   1% /media/edumoreno/47acea17-841f-42d3-85f2-886543f056db</span>
+sudo bindfs -u <span class="k">$(</span>id -u<span class="k">)</span> -g <span class="k">$(</span>id -g<span class="k">)</span> /media/edumoreno/47acea17-841f-42d3-85f2-886543f056db /home/edumoreno/mnt/
 </code></pre></div>
                 
                   
