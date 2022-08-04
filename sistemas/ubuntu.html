@@ -2446,6 +2446,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cambiar-id-de-usuario" class="md-nav__link">
+    Cambiar ID de usuario
+  </a>
+  
+</li>
+      
       
       
       
@@ -3019,6 +3026,13 @@
         <li class="md-nav__item">
   <a href="#montar-ext4-para-usuario" class="md-nav__link">
     Montar ext4 para usuario
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cambiar-id-de-usuario" class="md-nav__link">
+    Cambiar ID de usuario
   </a>
   
 </li>
@@ -3625,6 +3639,11 @@ chromium (revisión 1781) eliminado
 <div class="highlight"><pre><span></span><code><span class="c1"># El punto de partida es una partición automontada de esta forma:</span>
 <span class="c1"># /dev/sdb1                                   306616440      64348   290907216   1% /media/edumoreno/47acea17-841f-42d3-85f2-886543f056db</span>
 sudo bindfs -u <span class="k">$(</span>id -u<span class="k">)</span> -g <span class="k">$(</span>id -g<span class="k">)</span> /media/edumoreno/47acea17-841f-42d3-85f2-886543f056db /home/edumoreno/mnt/
+</code></pre></div>
+
+<h2 id="cambiar-id-de-usuario">Cambiar ID de usuario<a class="headerlink" href="#cambiar-id-de-usuario" title="Permanent link">&para;</a></h2>
+<p>Por ejemplo para sincronizar con los IDs de un sistema de archivos montado por NFS y así no tener problemas de permisos. En el siguiente ejemplo se cambia el ID del usuario edumoreno a 1002:</p>
+<div class="highlight"><pre><span></span><code>sudo usermod -u <span class="m">1002</span> edumoreno
 </code></pre></div>
                 
                   
