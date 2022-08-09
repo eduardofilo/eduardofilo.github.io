@@ -1,0 +1,3351 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes varios sobre algunas de las cosas que necesito recordar, principalmente sobre Desarrollo y Sistemas.">
+      
+      
+        <meta name="author" content="Eduardo Moreno Lamana">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Minecraft - Apuntes de eduardófilo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@8.5.1/dist/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#minecraft" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../index.html" title="Apuntes de eduardófilo" class="md-header__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+      
+  <img src="../../images/eduardofilo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apuntes de eduardófilo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Minecraft
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../proyectos/minecraft.html" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../en/proyectos/minecraft.html" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../2022-08-08_mmiyoo_uart.html" class="md-tabs__link">
+        Blog
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../desarrollo/android.html" class="md-tabs__link">
+        Desarrollo
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ingenieria/3d_printing.html" class="md-tabs__link">
+        Ingeniería
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="headsetcomm.html" class="md-tabs__link md-tabs__link--active">
+        Proyectos
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../retro-emulacion/c64.html" class="md-tabs__link">
+        Retro-Emulación
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sistemas/android_system.html" class="md-tabs__link">
+        Sistemas
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../varios/bici.html" class="md-tabs__link">
+        Varios
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Apuntes de eduardófilo" class="md-nav__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+      
+  <img src="../../images/eduardofilo.png" alt="logo">
+
+    </a>
+    Apuntes de eduardófilo
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Blog
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Blog" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Blog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-08-08_mmiyoo_uart.html" class="md-nav__link">
+        Miyoo Mini UART
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-04-17_vr.html" class="md-nav__link">
+        Aventuras en VR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-10-30_raspi_zero_2_upgrade.html" class="md-nav__link">
+        Raspberry Pi Zero 2 W upgrade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-04-03_RG350_imagen.html" class="md-nav__link">
+        RG350/RG280 Imagen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-02-28_pico_fuzix.html" class="md-nav__link">
+        FUZIX en Raspberry Pi Pico
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-01-19-retroconsolas.html" class="md-nav__link">
+        Retroconsolas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-01-16-rg350_ra_installer.html" class="md-nav__link">
+        RG350 Instalador RA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-12-13-rg351_wifi_mod.html" class="md-nav__link">
+        RG351P Wifi mod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-09-27-rg350_xmame_sm_bridge.html" class="md-nav__link">
+        RG350 Interfaz xMAME SimpleMenu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-08-31-cancion_herb_alpert.html" class="md-nav__link">
+        La canción que merece la pena escuchar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-08-15-rg350_scummvm_launchers.html" class="md-nav__link">
+        RG350 ScummVM en lanzadores
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-08-12-rg350_py_backup.html" class="md-nav__link">
+        RG350 Py Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-07-12-rg350_screen_mod.html" class="md-nav__link">
+        RG350 Sustitución de pantalla 480p
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-07-09-rg350_fba_vertical_mod.html" class="md-nav__link">
+        RG350 FBA mod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-07-02-rg350_primeros_pasos.html" class="md-nav__link">
+        RG350 Primeros pasos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-06-04-rg350_raspi_image.html" class="md-nav__link">
+        RG350 Raspi Imagen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-31-rg350_compile.html" class="md-nav__link">
+        RG350 Compilar aplicaciones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-25-rg350_docker_buildroot.html" class="md-nav__link">
+        RG350 Docker Buildroot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-14-rg350_mame4all.html" class="md-nav__link">
+        RG350 MAME4All
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-08-rg350_dosbox.html" class="md-nav__link">
+        RG350 DOSBox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-06-rg350_openbor.html" class="md-nav__link">
+        RG350 OpenBOR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-04-rg350_daphne.html" class="md-nav__link">
+        RG350 Daphne
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-04-15-rg350_xmame.html" class="md-nav__link">
+        RG350 xMAME
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-04-14-rg350_scummvm.html" class="md-nav__link">
+        RG350 ScummVM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-03-28-rg350_pymenu.html" class="md-nav__link">
+        RG350 PyMenu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-03-19-rg350_backup.html" class="md-nav__link">
+        RG350 Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-16-panelizar_pcb.html" class="md-nav__link">
+        Panelizar PCB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-13-rg350_emulationstation.html" class="md-nav__link">
+        RG350 EmulationStation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-09-rg350_network.html" class="md-nav__link">
+        RG350 Conexión a internet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-08-eduzebox.html" class="md-nav__link">
+        EdUzebox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-01-31-rg350_fba.html" class="md-nav__link">
+        RG350 FBA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-01-25-rg350_simplemenu.html" class="md-nav__link">
+        RG350 SimpleMenu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-01-11-rg350_scraper.html" class="md-nav__link">
+        RG350 Scraper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-08-06-django_site.html" class="md-nav__link">
+        Creación de un sitio Django desde cero
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-07-07-crankshaft-build.html" class="md-nav__link">
+        Compilación OpenAuto para solucionar touch screen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-04-20-pong_composite_mod.html" class="md-nav__link">
+        Composite mod en consola Pong
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-01-29-bloqueo_telsome.html" class="md-nav__link">
+        Bloqueo de llamadas entrantes en Telsome
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-01-26-conversion_apuntes_mkdocs.html" class="md-nav__link">
+        Conversión del sitio de Apuntes a MkDocs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-10-20-Octoprint-en-Anet-A8.html" class="md-nav__link">
+        Octoprint en Anet A8
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-10-19-crankshaft.html" class="md-nav__link">
+        Crankshaft - AndroidAuto sobre Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-05-05-otto.html" class="md-nav__link">
+        Otto DIY
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2017-01-14-raspi2-kodi-16-tvheadend.html" class="md-nav__link">
+        Raspberry Pi 3 + KODI 16 + Tvheadend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-12-06-raspi3-kodi.html" class="md-nav__link">
+        Raspberry Pi 3 + KODI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-10-17-raspi-switch.html" class="md-nav__link">
+        Interruputor de encendido para Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-08-17-el-mundo-de-ayer.html" class="md-nav__link">
+        El mundo de ayer - Stefan Zweig
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-08-02-stm32-vl-discovery.html" class="md-nav__link">
+        Entorno desarrollo STM32 VL Discovery sobre Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-07-21-PIGRRL-2.html" class="md-nav__link">
+        Configuración PiGRRL-2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-07-10-wild.html" class="md-nav__link">
+        Wild - Cheryl Strayed
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-07-02-virus-android.html" class="md-nav__link">
+        Alertas por supuestos virus en Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-04-10-un-antropologo-en-marte.html" class="md-nav__link">
+        Un antropólogo en Marte - Oliver Sacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-02-25-los-innovadores.html" class="md-nav__link">
+        Los Innovadores - Walter Isaacson
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2015-03-14-raspi2-kodi-tvheadend.html" class="md-nav__link">
+        Raspberry Pi 2 + KODI + Tvheadend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2015-01-09-moviles.html" class="md-nav__link">
+        Móviles recomendables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2015-01-08-jekyll.html" class="md-nav__link">
+        Jekyll+GitHub Pages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2014-12-26-dokuwiki-raspi.html" class="md-nav__link">
+        Dokuwiki en Raspberry Pi manteniendo los ficheros en NAS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2014-12-20-micro-placas.html" class="md-nav__link">
+        Micro placas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2014-12-15-presentacion.html" class="md-nav__link">
+        Presentación
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Desarrollo
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Desarrollo
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/android.html" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/db.html" class="md-nav__link">
+        Bases de Datos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/diseno.html" class="md-nav__link">
+        Diseño
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/dokuwiki.html" class="md-nav__link">
+        Dokuwiki
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/eclipse.html" class="md-nav__link">
+        Eclipse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/projects.html" class="md-nav__link">
+        Gestión de Proyectos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/git.html" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/html.html" class="md-nav__link">
+        HTML+CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/ia.html" class="md-nav__link">
+        IA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/java.html" class="md-nav__link">
+        Java
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/javaee.html" class="md-nav__link">
+        JavaEE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/javascript.html" class="md-nav__link">
+        JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/joomla.html" class="md-nav__link">
+        Joomla
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/phonegap.html" class="md-nav__link">
+        Phonegap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/php.html" class="md-nav__link">
+        PHP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/python.html" class="md-nav__link">
+        Python/Django
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/ror.html" class="md-nav__link">
+        Ruby on Rails
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/spree.html" class="md-nav__link">
+        Spree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/subl.html" class="md-nav__link">
+        Sublime Text 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/svn.html" class="md-nav__link">
+        SVN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/vagrant.html" class="md-nav__link">
+        Vagrant
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/vr.html" class="md-nav__link">
+        VR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/yii.html" class="md-nav__link">
+        Yii
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Ingeniería
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ingeniería" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Ingeniería
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/3d_printing.html" class="md-nav__link">
+        3D Printing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/arduino.html" class="md-nav__link">
+        Arduino
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/freecad.html" class="md-nav__link">
+        FreeCAD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/herramientas.html" class="md-nav__link">
+        Herramientas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/kicad.html" class="md-nav__link">
+        KiCad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/modulos.html" class="md-nav__link">
+        Módulos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/stm32.html" class="md-nav__link">
+        STM32
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Proyectos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Proyectos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Proyectos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="headsetcomm.html" class="md-nav__link">
+        Headset Commander
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dicom.html" class="md-nav__link">
+        Impresión 3D de ecografías
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Minecraft
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="minecraft.html" class="md-nav__link md-nav__link--active">
+        Minecraft
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enlaces" class="md-nav__link">
+    Enlaces
+  </a>
+  
+    <nav class="md-nav" aria-label="Enlaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varios" class="md-nav__link">
+    Varios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#educacion" class="md-nav__link">
+    Educación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mecanismos" class="md-nav__link">
+    Mecanismos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servidores" class="md-nav__link">
+    Servidores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuraciones" class="md-nav__link">
+    Configuraciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugins-interesantes" class="md-nav__link">
+    Plugins interesantes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejecucion-servidor-en-raspberry-pi-yo-odroid-c1" class="md-nav__link">
+    Ejecución Servidor en Raspberry Pi y/o ODROID-C1
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejecución Servidor en Raspberry Pi y/o ODROID-C1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comandos-para-arrancarlo" class="md-nav__link">
+    Comandos para arrancarlo
+  </a>
+  
+    <nav class="md-nav" aria-label="Comandos para arrancarlo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi" class="md-nav__link">
+    Raspberry Pi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi-2-o-odroid-c1" class="md-nav__link">
+    Raspberry Pi 2 o ODROID-C1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settings-aconsejadas" class="md-nav__link">
+    Settings aconsejadas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-utiles" class="md-nav__link">
+    Comandos útiles
+  </a>
+  
+    <nav class="md-nav" aria-label="Comandos útiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminal-linux" class="md-nav__link">
+    Terminal Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servidor-minecraft" class="md-nav__link">
+    Servidor Minecraft
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugins" class="md-nav__link">
+    Plugins
+  </a>
+  
+    <nav class="md-nav" aria-label="Plugins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worldborder" class="md-nav__link">
+    WorldBorder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynmap" class="md-nav__link">
+    Dynmap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worldedit" class="md-nav__link">
+    WorldEdit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printbot" class="md-nav__link">
+    Printbot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montaje-de-un-mundo-plano-para-talleres" class="md-nav__link">
+    Montaje de un mundo plano para talleres
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloques" class="md-nav__link">
+    Bloques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-mineos-en-odroid-c1" class="md-nav__link">
+    Instalación MineOS en ODROID-C1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Retro-Emulación
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Retro-Emulación" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Retro-Emulación
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/c64.html" class="md-nav__link">
+        Commodore 64
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/fpga.html" class="md-nav__link">
+        FPGA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/general.html" class="md-nav__link">
+        General
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/juegos.html" class="md-nav__link">
+        Juegos destacados
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/miyoo-mini.html" class="md-nav__link">
+        Miyoo Mini
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/retroarch.html" class="md-nav__link">
+        RetroArch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/rg-350.html" class="md-nav__link">
+        RG350/RG280
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/rg-351.html" class="md-nav__link">
+        RG351
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/microconsolas.html" class="md-nav__link">
+        Micro consolas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/z80-computer.html" class="md-nav__link">
+        Z80 Computer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/zx-spectrum.html" class="md-nav__link">
+        ZX Spectrum
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/zx-uno.html" class="md-nav__link">
+        ZX-UNO
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Sistemas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sistemas" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Sistemas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/android_system.html" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/soft_imprescindible.html" class="md-nav__link">
+        Aplicaciones interesantes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/appletv.html" class="md-nav__link">
+        AppleTV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/buildroot.html" class="md-nav__link">
+        Buildroot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/docker.html" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/email.html" class="md-nav__link">
+        e-mail
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/impresoras.html" class="md-nav__link">
+        Impresoras
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/iot.html" class="md-nav__link">
+        IOT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/kodi.html" class="md-nav__link">
+        Kodi/OpenELEC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/macosx.html" class="md-nav__link">
+        Mac OS X
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/mysql.html" class="md-nav__link">
+        MySQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/nas.html" class="md-nav__link">
+        NAS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/oculus.html" class="md-nav__link">
+        Oculus Quest 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/odroid.html" class="md-nav__link">
+        ODROID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/office.html" class="md-nav__link">
+        Office
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/raspi.html" class="md-nav__link">
+        Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/raspi_pico.html" class="md-nav__link">
+        Raspberry Pi Pico
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/redes.html" class="md-nav__link">
+        Redes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/router_xiaomi.html" class="md-nav__link">
+        Router Xiaomi MiWiFi 3G
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/ubuntu_phone.html" class="md-nav__link">
+        Ubuntu Phone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/ubuntu.html" class="md-nav__link">
+        Ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/unix.html" class="md-nav__link">
+        UNIX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/trucos_windows.html" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Varios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Varios" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Varios
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/bici.html" class="md-nav__link">
+        Bicicleta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/links.html" class="md-nav__link">
+        Enlaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/excursionismo.html" class="md-nav__link">
+        Excursionismo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/hogar.html" class="md-nav__link">
+        Hogar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/english.html" class="md-nav__link">
+        Inglés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/corsa_d.html" class="md-nav__link">
+        Opel Corsa D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/recetas.html" class="md-nav__link">
+        Recetas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/viajes.html" class="md-nav__link">
+        Viajes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enlaces" class="md-nav__link">
+    Enlaces
+  </a>
+  
+    <nav class="md-nav" aria-label="Enlaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varios" class="md-nav__link">
+    Varios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#educacion" class="md-nav__link">
+    Educación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mecanismos" class="md-nav__link">
+    Mecanismos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servidores" class="md-nav__link">
+    Servidores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuraciones" class="md-nav__link">
+    Configuraciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugins-interesantes" class="md-nav__link">
+    Plugins interesantes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejecucion-servidor-en-raspberry-pi-yo-odroid-c1" class="md-nav__link">
+    Ejecución Servidor en Raspberry Pi y/o ODROID-C1
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejecución Servidor en Raspberry Pi y/o ODROID-C1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comandos-para-arrancarlo" class="md-nav__link">
+    Comandos para arrancarlo
+  </a>
+  
+    <nav class="md-nav" aria-label="Comandos para arrancarlo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi" class="md-nav__link">
+    Raspberry Pi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi-2-o-odroid-c1" class="md-nav__link">
+    Raspberry Pi 2 o ODROID-C1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settings-aconsejadas" class="md-nav__link">
+    Settings aconsejadas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-utiles" class="md-nav__link">
+    Comandos útiles
+  </a>
+  
+    <nav class="md-nav" aria-label="Comandos útiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminal-linux" class="md-nav__link">
+    Terminal Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servidor-minecraft" class="md-nav__link">
+    Servidor Minecraft
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugins" class="md-nav__link">
+    Plugins
+  </a>
+  
+    <nav class="md-nav" aria-label="Plugins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worldborder" class="md-nav__link">
+    WorldBorder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynmap" class="md-nav__link">
+    Dynmap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worldedit" class="md-nav__link">
+    WorldEdit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printbot" class="md-nav__link">
+    Printbot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montaje-de-un-mundo-plano-para-talleres" class="md-nav__link">
+    Montaje de un mundo plano para talleres
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloques" class="md-nav__link">
+    Bloques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-mineos-en-odroid-c1" class="md-nav__link">
+    Instalación MineOS en ODROID-C1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/eduardofilo/eduardofilo.mkdocs/edit/master/docs/proyectos/minecraft.md" title="Editar esta página" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="minecraft">Minecraft<a class="headerlink" href="#minecraft" title="Permanent link">&para;</a></h1>
+<h2 id="enlaces">Enlaces<a class="headerlink" href="#enlaces" title="Permanent link">&para;</a></h2>
+<h3 id="varios">Varios<a class="headerlink" href="#varios" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="http://picraftbukkit.webs.com/pi-minecraft-server-how-to">How to Create A Minecraft Server Like Mine on your Raspberry Pi</a></li>
+<li><a href="http://minecraft.gamepedia.com/Setting_up_a_server">Tutorials/Setting up a server</a></li>
+<li><a href="http://minecraft.gamepedia.com/Server_commands">Server Commands</a></li>
+<li><a href="http://msmhq.com/">Minecraft Server Manager</a></li>
+<li><a href="http://www.howtogeek.com/173044/how-to-run-low-cost-minecraft-on-a-raspberry-pi-for-block-building-on-the-cheap/">How to Run Low-Cost Minecraft on a Raspberry Pi for Block Building on the Cheap</a> :exclamation:</li>
+<li><a href="http://everyday-tech.com/minecraftpi-a-raspberry-pi-minecraft-server-image/">MineCraftPi - A Raspberry Pi MineCraft Server Image!</a>: Minecraft se arranca automáticamente desde <code>/etc/rc.local</code>.</li>
+<li><a href="http://blogs.ncs-nj.org/minecraft/2013/12/14/how-to-3d-print-what-you-build-in-minecraft-tutorial-with-video/">How to 3D print what you build in Minecraft … TUTORIAL WITH VIDEO!</a></li>
+<li><a href="http://www.planetminecraft.com/resources/projects/">Minecraft Projects</a></li>
+<li><a href="http://www.trucoteca.com/guia-minecraft/pc-12340.html">Guía / Manual del juego Minecraft</a></li>
+<li><a href="http://diamondboots.com/">Minecraft Crafting y Guía de Referencia - La elaboración de recetas, los valores de datos &amp; Pociones</a> :exclamation:</li>
+<li><a href="http://minecraftporjorge134.weebly.com/guia-de-crafteo.html">Guía de crafteo</a> :exclamation:</li>
+<li><a href="http://mineplex.net/about">Mineplex</a>: Servidores de juego con reglas adaptadas (Survival con protección de terreno y normas éticas).</li>
+<li><a href="http://rogerallen.github.io/jetson/2014/07/31/minecraft-on-jetson-tk1/">Minecraft sobre ARM</a>: Compilación de librerías LWJGL y OpenAL para lanzar Minecraft (completo, no Pocket edition) sobre ARM.</li>
+<li><a href="http://minecraft.codeemo.com/">MineOS: Minecraft hosting improved</a></li>
+<li><a href="https://www.raspberrypi.org/forums/viewtopic.php?f=78&amp;t=137279">How to setup Minecraft 1.8.9 on RaspPi2</a></li>
+<li><a href="http://optifine.net/home">OptiFine</a>: Mod para tunear Minecraft en placas poco potentes. Instrucciones <a href="http://magazine.odroid.com/wp-content/uploads/ODROID-Magazine-201607.pdf#page=20">aquí</a>.</li>
+<li><a href="http://forum.odroid.com/viewtopic.php?f=52&amp;t=5908&amp;p=47148">Debian/Ubuntu repository for Games/Emulators/Kernel</a>: Repositorio con versión de Minecraft modificada para funcionar en ARM. Instrucciones <a href="http://magazine.odroid.com/wp-content/uploads/ODROID-Magazine-201607.pdf#page=20">aquí</a>.</li>
+</ul>
+<h3 id="educacion">Educación<a class="headerlink" href="#educacion" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=-mTf3j2koJA">Video de educador que usa Minecraft</a></li>
+<li><a href="http://minecraftedu.com/">Minecraft Edu</a></li>
+<li><a href="http://services.minecraftedu.com/wiki/Main_Page">Minecraft Edu Wiki</a></li>
+<li><a href="http://services.minecraftedu.com/wiki/index.php?title=Teaching_with_MinecraftEdu">Teaching with MinecraftEdu</a></li>
+<li><a href="http://services.minecraftedu.com/worlds/">MinecraftEdu World Library</a></li>
+<li><a href="http://services.minecraftedu.com/worlds/node/75">Logic Gates</a>: Mundo MinecraftEdu que explica las puertas lógicas básicas.</li>
+<li><a href="http://services.minecraftedu.com/worlds/node/57">Paleontology</a>: Mundo MinecraftEdu en el que hay un esqueleto de dinosaurio enterrado.</li>
+<li><a href="http://services.minecraftedu.com/worlds/node/58">Obstacle Course</a>: Yincana.</li>
+<li><a href="http://services.minecraftedu.com/worlds/node/27">Escape from Everest</a></li>
+<li><a href="http://services.minecraftedu.com/worlds/node/26">Tutorial World</a></li>
+<li><a href="http://www.dispersium.es/recursos-educativos-para-minecraft/">Recursos educativos para Minecraft</a></li>
+<li>Opciones:</li>
+<li><a href="http://minecraft-es.gamepedia.com/Tutoriales/Mecanismos">Mecanismos Redstone</a></li>
+<li>Construcción con recursos limitados (como lo que hace <a href="https://www.youtube.com/watch?v=AJk_js4e6jE">Joel Levin</a>)</li>
+<li>Yincana (tipo <a href="http://services.minecraftedu.com/worlds/node/58">Obstacle Course</a>)</li>
+<li>Aventura (tipo <a href="http://services.minecraftedu.com/worlds/node/27">Escape from Everest</a>)</li>
+<li>Descubrimiento (tipo <a href="http://services.minecraftedu.com/worlds/node/57">Paleontology</a> o mundos tipo museo)</li>
+<li>Construcción de un modelo que luego se imprimirá con la impresora 3D gracias a <a href="http://dev.bukkit.org/bukkit-plugins/printbot/">Printbot</a>.</li>
+<li>La caza del tesoro. Por ejemplo esconder un objeto valioso en una gruta profunda y complicada. Dar pistas en carteles en forma de acertijos.</li>
+</ul>
+<h3 id="mecanismos">Mecanismos<a class="headerlink" href="#mecanismos" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="http://minecraft-es.gamepedia.com/Tutoriales/Mecanismos">Tutoriales/Mecanismos</a></li>
+<li><a href="http://www.minecraft101.net/redstone/redstone-basics.html">Introduction to Redstone</a></li>
+</ul>
+<h3 id="servidores">Servidores<a class="headerlink" href="#servidores" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="http://mc-server.org/">MCServer</a></li>
+<li><a href="http://mineserver.be/">Mineserver</a></li>
+<li><a href="https://minecraft.net/download">Descarga servidor oficial</a></li>
+<li><a href="https://savebukkit.org/">Mirror de Bukkit y Spigot para sortear DMCA</a></li>
+</ul>
+<h3 id="configuraciones">Configuraciones<a class="headerlink" href="#configuraciones" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="http://minecraft.gamepedia.com/Server.properties">server.properties</a></li>
+<li><a href="http://wiki.bukkit.org/Bukkit.yml/es">Bukkit.yml fichero de configuración de Craftbukkit y Spigot</a></li>
+<li><a href="http://www.spigotmc.org/wiki/spigot-configuration-spigot-yml/">spigot.yml fichero de configuración de Spigot</a></li>
+</ul>
+<h3 id="plugins-interesantes">Plugins interesantes<a class="headerlink" href="#plugins-interesantes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="http://dev.bukkit.org/bukkit-plugins/nospawnchunks/">NoSpawnChunks</a>: Prevents spawn chunks being loaded into memory for all worlds on the server.</li>
+<li><a href="http://dev.bukkit.org/bukkit-plugins/worldborder/">WorldBorder</a></li>
+<li><a href="http://dev.bukkit.org/bukkit-plugins/clearlagg/">ClearLagg</a></li>
+<li><a href="http://dev.bukkit.org/bukkit-plugins/dynmap/">Dynmap</a>: Mapa 2D dinámico.</li>
+<li><a href="http://dev.bukkit.org/bukkit-plugins/worldedit/">WorldEdit</a>: Editor de mundos. Comandos <a href="http://wiki.sk89q.com/wiki/WorldEdit/Reference">aquí</a>. Documentación <a href="http://wiki.sk89q.com/wiki/WorldEdit">aquí</a>.</li>
+<li><a href="http://dev.bukkit.org/bukkit-plugins/stoprain/">StopRain</a>: Desactiva la lluvia.</li>
+<li><a href="http://dev.bukkit.org/bukkit-plugins/essentials/">Essentials</a></li>
+<li><a href="http://dev.bukkit.org/bukkit-plugins/printbot/">Printbot</a>: Impresión 3D de partes de un mundo. Tiene dependencias con los plugins <a href="http://dev.bukkit.org/bukkit-plugins/worldguard/">WorldGuard</a> y con <a href="http://dev.bukkit.org/bukkit-plugins/worldedit/">WorldEdit</a>. Hay bastante sensibilidad con las versiones. Una combinación que se ha probado que funciona es:<ul>
+<li>WorldEdit v5.5.8</li>
+<li><a href="http://dev.bukkit.org/bukkit-plugins/worldguard/files/40-world-guard-5-9/">WorldGuard v5.9</a></li>
+<li><a href="http://dev.bukkit.org/bukkit-plugins/printbot/files/2-printbot-1-5-0/">Printbot v1.5.0</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="ejecucion-servidor-en-raspberry-pi-yo-odroid-c1">Ejecución Servidor en Raspberry Pi y/o ODROID-C1<a class="headerlink" href="#ejecucion-servidor-en-raspberry-pi-yo-odroid-c1" title="Permanent link">&para;</a></h2>
+<h3 id="comandos-para-arrancarlo">Comandos para arrancarlo<a class="headerlink" href="#comandos-para-arrancarlo" title="Permanent link">&para;</a></h3>
+<h4 id="raspberry-pi">Raspberry Pi<a class="headerlink" href="#raspberry-pi" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>$ sudo java -Xms256M -Xmx496M -jar /home/mine/spigot/spigot.jar nogui
+</code></pre></div>
+<h4 id="raspberry-pi-2-o-odroid-c1">Raspberry Pi 2 o ODROID-C1<a class="headerlink" href="#raspberry-pi-2-o-odroid-c1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>$ sudo java -Xms512M -Xmx768M -jar /home/mine/spigot/spigot.jar nogui
+</code></pre></div>
+<h3 id="settings-aconsejadas">Settings aconsejadas<a class="headerlink" href="#settings-aconsejadas" title="Permanent link">&para;</a></h3>
+<p>(<a href="http://www.raspberrypi.org/forums/viewtopic.php?t=27889">Fuente</a>)</p>
+<p><em>server.properties</em></p>
+<div class="highlight"><pre><span></span><code>#Minecraft server properties
+#Thu Jan 03 16:16:28 WET 2013
+
+level-name=world #Determina la carpeta donde se almacena el mundo. Por tanto sirve para cambiar de mundo
+level-type=DEFAULT
+server-name=Niubit Server
+motd=Raspberry Pi Minecraft server
+max-players=6 #Máximo de jugadores admitidos
+online-mode=false
+spawn-monsters=false #No se generan monstruos
+spawn-npcs=false #No se generan vecinos (villagers)
+spawn-animals=true #Se generan animales
+spawn-protection=16
+generate-structures=true #Determina si se generan estructuras (como ciudades)
+gamemode=1 #Creative
+difficulty=0 #Peaceful
+pvp=false #No se permiten daños entre jugadores
+view-distance=4 #Es una medida del radio de visión que tienen los jugadores. Influye en el rendimiento del servidor
+allow-flight=true #En modo Creative creo que se permite siempre
+allow-nether=false
+white-list=false #Si se activa sólo se permitirá la incorporación a la partida de determinados jugadores
+level-seed=
+server-ip=
+enable-query=false #Si se permite obtener información del servidor mediante el protocolo GameSpy4
+hardcore=false
+enable-rcon=false
+generator-settings=
+server-port=25565
+max-build-height=256 #Altura máxima permitida para construir, aunque el terreno generado puede superarla
+snooper-enabled=false #Si se envían periódicamente datos a snoop.minecraft.net
+op-permission-level=4 #Nivel máximo de permisos de op
+announce-player-achievements=true #Se anuncian los logros obtenidos por los jugadores
+debug=false
+force-gamemode=true #Fuerza la configuración del servidor a cada jugador
+resource-pack=
+enable-command-block=false
+player-idle-timeout=0
+</code></pre></div>
+<p><em>bukkit.yml</em></p>
+<div class="highlight"><pre><span></span><code>settings:
+  allow-end: false #Desactiva el End (http://minecraft.gamepedia.com/The_End)
+</code></pre></div>
+<p><em>spigot.yml</em></p>
+<div class="highlight"><pre><span></span><code>world-settings:
+  default:
+    view-distance: 4
+</code></pre></div>
+<p><em>plugins/WorldBorder/config.yml</em></p>
+<div class="highlight"><pre><span></span><code>cfg-version: 11
+message: Has alcanzado el límite de este mundo.
+round-border: false
+debug-mode: false
+whoosh-effect: true
+portal-redirection: true
+knock-back-dist: 3.0
+timer-delay-ticks: 5
+remount-delay-ticks: 0
+dynmap-border-enabled: true
+dynmap-border-message: Has alcanzado el límite de este mundo.
+player-killed-bad-spawn: false
+deny-enderpearl: true
+fill-autosave-frequency: 30
+bypass-list-uuids: []
+fill-memory-tolerance: 500
+worlds:
+  taller1:  # Nombre del mundo a limitar
+    x: 0
+    z: 0
+    radiusX: 80
+    radiusZ: 80
+    wrapping: false
+</code></pre></div>
+<h3 id="comandos-utiles">Comandos útiles<a class="headerlink" href="#comandos-utiles" title="Permanent link">&para;</a></h3>
+<h4 id="terminal-linux">Terminal Linux<a class="headerlink" href="#terminal-linux" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>sudo chown -R usuario:grupo directorio</code>: Asigna el usuario y el grupo recursivamente a partir del directorio indicado.</li>
+<li><code>sudo poweroff</code>: Apagar la máquina.</li>
+<li><code>sudo reboot</code>: Reiniciar la máquina.</li>
+<li><code>ifconfig eth0</code>: Datos de TCP/IP del adaptador de red <code>eth0</code> (tarjeta de red ethernet; los adaptadores wifi suelen llamarse <code>wlan0</code>).</li>
+<li><code>sudo nmap -sP 192.168.1.0/24</code>: Escanea la red local 192.168.1.0 para encontrar máquinas conectadas a ella.</li>
+</ul>
+<h4 id="servidor-minecraft">Servidor Minecraft<a class="headerlink" href="#servidor-minecraft" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>gamerule doDaylightCycle false</code>: Paramos el reloj.</li>
+<li><code>time set 6000</code>: Pone el reloj al mediodía # Fijamos el reloj al mediodía.</li>
+<li><code>tp &lt;jugador&gt; [&lt;x&gt; &lt;y&gt; &lt;z&gt;]</code>: Teleporta a un jugador a una posición.</li>
+<li><code>setworldspawn &lt;x&gt; &lt;y&gt; &lt;z&gt;</code>: Definimos el punto de spawn del mundo.</li>
+<li><code>toggledownfall</code>: Activa/desactiva la lluvia.</li>
+<li><code>weather rain &lt;segundos&gt;</code>: Activa la lluvia durante los segundos indicados.</li>
+<li><code>weather clear &lt;segundos&gt;</code>: Desactiva la lluvia/nieve durante los segundos indicados.</li>
+<li><code>gamerule doFireTick false</code>: Evita que se propague el fuego.</li>
+<li><code>gamerule doMobSpawning false</code>: Evita que se generen Mobs (pasivos y enemigos). Util para evitar distracciones.</li>
+<li><code>gamerule keepInventory true</code>: Evita que los jugadores pierdan su inventario al morir.</li>
+<li><code>give &lt;jugador&gt; &lt;elemento&gt; [cantidad] [data] [dataTag]</code>: Dar un elemento a un jugador.</li>
+<li><code>gamemode &lt;modo&gt; [jugador]</code>: Asigna el modo de juego a uno o a todos los jugadores de entre los siguientes posibles: <code>adventure</code>, <code>creative</code>, <code>survival</code></li>
+<li><code>kick &lt;jugador&gt;</code>: Expulsar a un jugador de la partida.</li>
+<li><code>ban &lt;player&gt;</code>: Expulsar a un jugador del servidor.</li>
+</ul>
+<h4 id="plugins">Plugins<a class="headerlink" href="#plugins" title="Permanent link">&para;</a></h4>
+<h5 id="worldborder">WorldBorder<a class="headerlink" href="#worldborder" title="Permanent link">&para;</a></h5>
+<ul>
+<li><code>wb shape square</code>: Ajustamos el tipo de borde a cuadrado.</li>
+<li><code>wb &lt;nombre_mundo&gt; set 100 spawn</code>: Ajustamos el radio del borde del mundo.</li>
+<li><code>wb &lt;nombre_mundo&gt; fill</code>: Forzamos la generación del mundo dentro del límite.</li>
+<li><code>wb &lt;nombre_mundo&gt; trim</code>: Eliminamos el mapeado del mundo que queda fuera del límite.</li>
+<li><code>wb setmsg "Has alcanzado el límite de este mundo."</code>: Ajustamos el mensaje que ven los jugadores al alcanzar el límite.</li>
+</ul>
+<h5 id="dynmap">Dynmap<a class="headerlink" href="#dynmap" title="Permanent link">&para;</a></h5>
+<ul>
+<li><code>dynmap fullrender &lt;world-name&gt;</code>: Genera el mapa que inicialmente aparece en negro.</li>
+</ul>
+<h5 id="worldedit">WorldEdit<a class="headerlink" href="#worldedit" title="Permanent link">&para;</a></h5>
+<p>Los comandos de WorldEdit sólo se pueden lanzar desde la consola que hay dentro del juego (tecla <code>T</code>). Por ese motivo llevan la <code>/</code> delante, aunque curiosamente la mayoría de los comandos de WorldEdit llevan una doble <code>/</code> en realidad. Para poder utilizar WorldEdit el jugador debe ser operador (comando <code>op &lt;jugador&gt;</code> desde consola. Hay que acordarse de quitar el permiso de operador a todos los jugadores para no tener problemas de bloqueo de bloques alrededor del punto de spawn.</p>
+<ul>
+<li><code>//wand</code>: Te otorga la herramienta para definir regiones cúbicas o planas.</li>
+<li><code>//walls &lt;material&gt;</code>: Construye las 4 paredes del paralelepípedo definido por la selección (dejando el suelo y techo sin construir).</li>
+<li><code>//faces &lt;material&gt;</code>: Construye las 6 paredes del paralelepípedo definido por la selección.</li>
+<li><code>//set &lt;material&gt;</code>: Rellena todo el paralelepípedo definido por la selección.</li>
+</ul>
+<p>La documentación de WorldEdit está <a href="http://wiki.sk89q.com/wiki/WorldEdit/Reference">aquí</a>. Versión imprimible <a href="https://github.com/sk89q/WorldEdit-Reference/releases/download/rev6/worldedit_ref_rev6.pdf">aquí</a>.</p>
+<h5 id="printbot">Printbot<a class="headerlink" href="#printbot" title="Permanent link">&para;</a></h5>
+<p>Para poder utilizar este plugin, necesitamos tener instalados los plugins de WorldEdit y WorldGuard. Los comandos de Printbot sólo se pueden lanzar siendo op.</p>
+<ul>
+<li><code>/printselection</code>: Previamente deberemos haber hecho una selección por medio de WorldEdit. Este comando envía información sobre lo que contenga la selección a los servidores de Printbot y tras un periodo de proceso aparece en la consola del juego una URL que nos permitirá descargar el fichero STL que podremos imprimir con la impresora 3D.</li>
+</ul>
+<h3 id="montaje-de-un-mundo-plano-para-talleres">Montaje de un mundo plano para talleres<a class="headerlink" href="#montaje-de-un-mundo-plano-para-talleres" title="Permanent link">&para;</a></h3>
+<p>Antes de empezar paramos el servidor. Generamos un mundo nuevo cambiando lo siguiente en <code>server.properties</code>:</p>
+<div class="highlight"><pre><span></span><code>level-type=FLAT
+level-name=taller1
+allow-nether=false
+gamemode=1 #Creative
+difficulty=0 #Peaceful
+generate-structures=false #No se generan estructuras (como ciudades)
+spawn-npcs=false #No se generan vecinos (villagers)
+online-mode=false
+spawn-animals=false #No se generan animales
+force-gamemode=true #Fuerza la configuración del servidor a cada jugador
+</code></pre></div>
+<p>Instalamos los siguientes plugins:</p>
+<ul>
+<li><a href="http://dev.bukkit.org/bukkit-plugins/stoprain/">StopRain</a>: Desactiva la lluvia.</li>
+<li><a href="http://dev.bukkit.org/bukkit-plugins/worldedit/">WorldEdit</a>: Editor de mundos. Comandos <a href="http://wiki.sk89q.com/wiki/WorldEdit/Reference">aquí</a>. Documentación <a href="http://wiki.sk89q.com/wiki/WorldEdit">aquí</a>.</li>
+<li><a href="http://dev.bukkit.org/bukkit-plugins/nospawnchunks/">NoSpawnChunks</a>: Prevents spawn chunks being loaded into memory for all worlds on the server.</li>
+<li><a href="http://dev.bukkit.org/bukkit-plugins/worldborder/">WorldBorder</a></li>
+</ul>
+<p>Arrancamos el servidor. Por medio de comandos lo modelamos:</p>
+<div class="highlight"><pre><span></span><code>setworldspawn 0 20 0
+wb shape square
+wb taller1 set 80 spawn # Lo limitamos a un cuadrado de 160x160 en torno al punto de spawn
+wb taller1 fill # Generamos el mundo
+wb fill confirm
+wb taller1 trim # Eliminamos lo que sobra
+wb trim confirm
+wb setmsg &quot;Has alcanzado el límite de este mundo.&quot; # Ajustamos mensajes
+gamerule doDaylightCycle false # Paramos el reloj
+time set 6000 # Pone el reloj al mediodía # Fijamos el reloj al mediodía
+</code></pre></div>
+<h3 id="bloques">Bloques<a class="headerlink" href="#bloques" title="Permanent link">&para;</a></h3>
+<p>Es útil tener a mano <a href="http://diamondboots.com/">esta guía</a>, aunque tiene el inconveniente de que está en inglés y que parece de una versión distinta a la que solemos usar, porque hay elementos de esta lista que no aparecen en nuestro servidor.</p>
+<p>Indico el nombre del elemento en inglés, luego su código y finalmente el nombre del elemento en español:</p>
+<ul>
+<li>LEASH - 420 - Riendas</li>
+<li>IRON_BARDING - 417 - Armadura de caballo de hierro</li>
+<li>BOW - 261 - Arco</li>
+<li>ARROW - 262 - Flechas</li>
+<li>SADDLE - 329 - Silla de montar</li>
+<li>FENCE - 85 - Valla</li>
+<li>DIRT - 3 - Tierra</li>
+<li>BEDROCK - 7 - Piedra base</li>
+</ul>
+<p>Otras guías en formato gráfico se han sacado de <a href="http://minecraft.alcachofafilms.es/index.php?threads/id-de-los-objetos-y-bloques.5/">esta página</a>:</p>
+<p><img alt="Bloques Minecraft" src="/images/pages/minecraft_blocks.png" /></p>
+<p><img alt="Bloques Minecraft 2" src="/images/pages/minecraft_blocks2.png" /></p>
+<h3 id="instalacion-mineos-en-odroid-c1">Instalación MineOS en ODROID-C1<a class="headerlink" href="#instalacion-mineos-en-odroid-c1" title="Permanent link">&para;</a></h3>
+<p>Como requerimiento previo, tendremos que tener instalado el JDK de Java, preferiblemente a partir de la versión 8. Aparte de eso, ejecutar los siguientes comandos:</p>
+<div class="highlight"><pre><span></span><code>$ sudo apt-get update
+$ sudo apt-get -y install screen python-cherrypy3 rdiff-backup git
+$ sudo mkdir -p /usr/games
+$ <span class="nb">cd</span> /usr/games
+$ sudo git clone git://github.com/hexparrot/mineos minecraft
+$ <span class="nb">cd</span> minecraft
+$ sudo git config core.filemode <span class="nb">false</span>
+$ sudo chmod +x server.py mineos_console.py generate-sslcert.sh
+$ sudo ln -s /usr/games/minecraft/mineos_console.py /usr/local/bin/mineos
+$ sudo cp /usr/games/minecraft/init/mineos /etc/init.d/
+$ sudo chmod <span class="m">744</span> /etc/init.d/mineos
+$ sudo update-rc.d mineos defaults
+$ sudo cp /usr/games/minecraft/init/minecraft /etc/init.d/
+$ sudo chmod <span class="m">744</span> /etc/init.d/minecraft
+$ sudo update-rc.d minecraft defaults
+$ sudo cp /usr/games/minecraft/mineos.conf /etc/
+$ <span class="nb">cd</span> /usr/games/minecraft
+$ sudo ./generate-sslcert.sh
+$ sudo service mineos start
+</code></pre></div>
+<p>A partir de ahora accederemos a la consola web en la dirección: https://ODROID_IP:8080</p>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      
+        
+        <a href="dicom.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Impresión 3D de ecografías" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Impresión 3D de ecografías
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../retro-emulacion/c64.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Commodore 64" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              Commodore 64
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/eduardofilo" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/eduardofilo" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/edumoreno/" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="http://eduardofilo.es" target="_blank" rel="noopener" title="eduardofilo.es" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M309.8 480.3c-13.6 14.5-50 31.7-97.4 31.7-120.8 0-147-88.8-147-140.6v-144H17.9c-5.5 0-10-4.5-10-10v-68c0-7.2 4.5-13.6 11.3-16 62-21.8 81.5-76 84.3-117.1.8-11 6.5-16.3 16.1-16.3h70.9c5.5 0 10 4.5 10 10v115.2h83c5.5 0 10 4.4 10 9.9v81.7c0 5.5-4.5 10-10 10h-83.4V360c0 34.2 23.7 53.6 68 35.8 4.8-1.9 9-3.2 12.7-2.2 3.5.9 5.8 3.4 7.4 7.9l22 64.3c1.8 5 3.3 10.6-.4 14.5z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/c/EduardoMorenoLamana" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

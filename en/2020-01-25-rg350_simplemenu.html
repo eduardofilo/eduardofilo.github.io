@@ -1,0 +1,3032 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes varios sobre algunas de las cosas que necesito recordar, principalmente sobre Desarrollo y Sistemas.">
+      
+      
+        <meta name="author" content="Eduardo Moreno Lamana">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>RG350 SimpleMenu - Apuntes de eduardófilo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@8.5.1/dist/mermaid.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#instalacion" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Apuntes de eduardófilo" class="md-header__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+      
+  <img src="../images/eduardofilo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apuntes de eduardófilo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RG350 SimpleMenu
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../2020-01-25-rg350_simplemenu.html" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="2020-01-25-rg350_simplemenu.html" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="2022-08-08_mmiyoo_uart.html" class="md-tabs__link md-tabs__link--active">
+        Blog
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="desarrollo/android.html" class="md-tabs__link">
+        Desarrollo
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="ingenieria/3d_printing.html" class="md-tabs__link">
+        Ingeniería
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="proyectos/headsetcomm.html" class="md-tabs__link">
+        Proyectos
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="retro-emulacion/c64.html" class="md-tabs__link">
+        Retro-Emulación
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="sistemas/android_system.html" class="md-tabs__link">
+        Sistemas
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="varios/bici.html" class="md-tabs__link">
+        Varios
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Apuntes de eduardófilo" class="md-nav__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+      
+  <img src="../images/eduardofilo.png" alt="logo">
+
+    </a>
+    Apuntes de eduardófilo
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Blog
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Blog" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Blog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2022-08-08_mmiyoo_uart.html" class="md-nav__link">
+        Miyoo Mini UART
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2022-04-17_vr.html" class="md-nav__link">
+        Aventuras en VR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2021-10-30_raspi_zero_2_upgrade.html" class="md-nav__link">
+        Raspberry Pi Zero 2 W upgrade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2021-04-03_RG350_imagen.html" class="md-nav__link">
+        RG350/RG280 Imagen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2021-02-28_pico_fuzix.html" class="md-nav__link">
+        FUZIX en Raspberry Pi Pico
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2021-01-19-retroconsolas.html" class="md-nav__link">
+        Retroconsolas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2021-01-16-rg350_ra_installer.html" class="md-nav__link">
+        RG350 Instalador RA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-12-13-rg351_wifi_mod.html" class="md-nav__link">
+        RG351P Wifi mod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-09-27-rg350_xmame_sm_bridge.html" class="md-nav__link">
+        RG350 Interfaz xMAME SimpleMenu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-08-31-cancion_herb_alpert.html" class="md-nav__link">
+        La canción que merece la pena escuchar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-08-15-rg350_scummvm_launchers.html" class="md-nav__link">
+        RG350 ScummVM en lanzadores
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-08-12-rg350_py_backup.html" class="md-nav__link">
+        RG350 Py Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-07-12-rg350_screen_mod.html" class="md-nav__link">
+        RG350 Sustitución de pantalla 480p
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-07-09-rg350_fba_vertical_mod.html" class="md-nav__link">
+        RG350 FBA mod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-07-02-rg350_primeros_pasos.html" class="md-nav__link">
+        RG350 Primeros pasos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-06-04-rg350_raspi_image.html" class="md-nav__link">
+        RG350 Raspi Imagen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-05-31-rg350_compile.html" class="md-nav__link">
+        RG350 Compilar aplicaciones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-05-25-rg350_docker_buildroot.html" class="md-nav__link">
+        RG350 Docker Buildroot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-05-14-rg350_mame4all.html" class="md-nav__link">
+        RG350 MAME4All
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-05-08-rg350_dosbox.html" class="md-nav__link">
+        RG350 DOSBox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-05-06-rg350_openbor.html" class="md-nav__link">
+        RG350 OpenBOR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-05-04-rg350_daphne.html" class="md-nav__link">
+        RG350 Daphne
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-04-15-rg350_xmame.html" class="md-nav__link">
+        RG350 xMAME
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-04-14-rg350_scummvm.html" class="md-nav__link">
+        RG350 ScummVM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-03-28-rg350_pymenu.html" class="md-nav__link">
+        RG350 PyMenu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-03-19-rg350_backup.html" class="md-nav__link">
+        RG350 Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-02-16-panelizar_pcb.html" class="md-nav__link">
+        Panelizar PCB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-02-13-rg350_emulationstation.html" class="md-nav__link">
+        RG350 EmulationStation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-02-09-rg350_network.html" class="md-nav__link">
+        RG350 Conexión a internet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-02-08-eduzebox.html" class="md-nav__link">
+        EdUzebox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-01-31-rg350_fba.html" class="md-nav__link">
+        RG350 FBA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          RG350 SimpleMenu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="2020-01-25-rg350_simplemenu.html" class="md-nav__link md-nav__link--active">
+        RG350 SimpleMenu
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    Instalación
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion" class="md-nav__link">
+    Configuración
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistemas" class="md-nav__link">
+    Sistemas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-general" class="md-nav__link">
+    Configuración general
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manejo" class="md-nav__link">
+    Manejo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#previews" class="md-nav__link">
+    Previews
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles" class="md-nav__link">
+    Controles
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-01-11-rg350_scraper.html" class="md-nav__link">
+        RG350 Scraper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2019-08-06-django_site.html" class="md-nav__link">
+        Creación de un sitio Django desde cero
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2019-07-07-crankshaft-build.html" class="md-nav__link">
+        Compilación OpenAuto para solucionar touch screen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2019-04-20-pong_composite_mod.html" class="md-nav__link">
+        Composite mod en consola Pong
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2019-01-29-bloqueo_telsome.html" class="md-nav__link">
+        Bloqueo de llamadas entrantes en Telsome
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2019-01-26-conversion_apuntes_mkdocs.html" class="md-nav__link">
+        Conversión del sitio de Apuntes a MkDocs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2018-10-20-Octoprint-en-Anet-A8.html" class="md-nav__link">
+        Octoprint en Anet A8
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2018-10-19-crankshaft.html" class="md-nav__link">
+        Crankshaft - AndroidAuto sobre Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2018-05-05-otto.html" class="md-nav__link">
+        Otto DIY
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2017-01-14-raspi2-kodi-16-tvheadend.html" class="md-nav__link">
+        Raspberry Pi 3 + KODI 16 + Tvheadend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-12-06-raspi3-kodi.html" class="md-nav__link">
+        Raspberry Pi 3 + KODI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-10-17-raspi-switch.html" class="md-nav__link">
+        Interruputor de encendido para Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-08-17-el-mundo-de-ayer.html" class="md-nav__link">
+        El mundo de ayer - Stefan Zweig
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-08-02-stm32-vl-discovery.html" class="md-nav__link">
+        Entorno desarrollo STM32 VL Discovery sobre Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-07-21-PIGRRL-2.html" class="md-nav__link">
+        Configuración PiGRRL-2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-07-10-wild.html" class="md-nav__link">
+        Wild - Cheryl Strayed
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-07-02-virus-android.html" class="md-nav__link">
+        Alertas por supuestos virus en Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-04-10-un-antropologo-en-marte.html" class="md-nav__link">
+        Un antropólogo en Marte - Oliver Sacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-02-25-los-innovadores.html" class="md-nav__link">
+        Los Innovadores - Walter Isaacson
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2015-03-14-raspi2-kodi-tvheadend.html" class="md-nav__link">
+        Raspberry Pi 2 + KODI + Tvheadend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2015-01-09-moviles.html" class="md-nav__link">
+        Móviles recomendables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2015-01-08-jekyll.html" class="md-nav__link">
+        Jekyll+GitHub Pages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2014-12-26-dokuwiki-raspi.html" class="md-nav__link">
+        Dokuwiki en Raspberry Pi manteniendo los ficheros en NAS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2014-12-20-micro-placas.html" class="md-nav__link">
+        Micro placas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2014-12-15-presentacion.html" class="md-nav__link">
+        Presentación
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Desarrollo
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Desarrollo
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/android.html" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/db.html" class="md-nav__link">
+        Bases de Datos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/diseno.html" class="md-nav__link">
+        Diseño
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/dokuwiki.html" class="md-nav__link">
+        Dokuwiki
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/eclipse.html" class="md-nav__link">
+        Eclipse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/projects.html" class="md-nav__link">
+        Gestión de Proyectos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/git.html" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/html.html" class="md-nav__link">
+        HTML+CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/ia.html" class="md-nav__link">
+        IA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/java.html" class="md-nav__link">
+        Java
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/javaee.html" class="md-nav__link">
+        JavaEE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/javascript.html" class="md-nav__link">
+        JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/joomla.html" class="md-nav__link">
+        Joomla
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/phonegap.html" class="md-nav__link">
+        Phonegap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/php.html" class="md-nav__link">
+        PHP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/python.html" class="md-nav__link">
+        Python/Django
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/ror.html" class="md-nav__link">
+        Ruby on Rails
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/spree.html" class="md-nav__link">
+        Spree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/subl.html" class="md-nav__link">
+        Sublime Text 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/svn.html" class="md-nav__link">
+        SVN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/vagrant.html" class="md-nav__link">
+        Vagrant
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/vr.html" class="md-nav__link">
+        VR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/yii.html" class="md-nav__link">
+        Yii
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Ingeniería
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ingeniería" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Ingeniería
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/3d_printing.html" class="md-nav__link">
+        3D Printing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/arduino.html" class="md-nav__link">
+        Arduino
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/freecad.html" class="md-nav__link">
+        FreeCAD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/herramientas.html" class="md-nav__link">
+        Herramientas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/kicad.html" class="md-nav__link">
+        KiCad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/modulos.html" class="md-nav__link">
+        Módulos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/stm32.html" class="md-nav__link">
+        STM32
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Proyectos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Proyectos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Proyectos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="proyectos/headsetcomm.html" class="md-nav__link">
+        Headset Commander
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="proyectos/dicom.html" class="md-nav__link">
+        Impresión 3D de ecografías
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="proyectos/minecraft.html" class="md-nav__link">
+        Minecraft
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Retro-Emulación
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Retro-Emulación" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Retro-Emulación
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/c64.html" class="md-nav__link">
+        Commodore 64
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/fpga.html" class="md-nav__link">
+        FPGA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/general.html" class="md-nav__link">
+        General
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/juegos.html" class="md-nav__link">
+        Juegos destacados
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/miyoo-mini.html" class="md-nav__link">
+        Miyoo Mini
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/retroarch.html" class="md-nav__link">
+        RetroArch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/rg-350.html" class="md-nav__link">
+        RG350/RG280
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/rg-351.html" class="md-nav__link">
+        RG351
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/microconsolas.html" class="md-nav__link">
+        Micro consolas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/z80-computer.html" class="md-nav__link">
+        Z80 Computer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/zx-spectrum.html" class="md-nav__link">
+        ZX Spectrum
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/zx-uno.html" class="md-nav__link">
+        ZX-UNO
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Sistemas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sistemas" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Sistemas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/android_system.html" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/soft_imprescindible.html" class="md-nav__link">
+        Aplicaciones interesantes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/appletv.html" class="md-nav__link">
+        AppleTV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/buildroot.html" class="md-nav__link">
+        Buildroot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/docker.html" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/email.html" class="md-nav__link">
+        e-mail
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/impresoras.html" class="md-nav__link">
+        Impresoras
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/iot.html" class="md-nav__link">
+        IOT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/kodi.html" class="md-nav__link">
+        Kodi/OpenELEC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/macosx.html" class="md-nav__link">
+        Mac OS X
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/mysql.html" class="md-nav__link">
+        MySQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/nas.html" class="md-nav__link">
+        NAS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/oculus.html" class="md-nav__link">
+        Oculus Quest 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/odroid.html" class="md-nav__link">
+        ODROID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/office.html" class="md-nav__link">
+        Office
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/raspi.html" class="md-nav__link">
+        Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/raspi_pico.html" class="md-nav__link">
+        Raspberry Pi Pico
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/redes.html" class="md-nav__link">
+        Redes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/router_xiaomi.html" class="md-nav__link">
+        Router Xiaomi MiWiFi 3G
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/ubuntu_phone.html" class="md-nav__link">
+        Ubuntu Phone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/ubuntu.html" class="md-nav__link">
+        Ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/unix.html" class="md-nav__link">
+        UNIX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/trucos_windows.html" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Varios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Varios" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Varios
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/bici.html" class="md-nav__link">
+        Bicicleta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/links.html" class="md-nav__link">
+        Enlaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/excursionismo.html" class="md-nav__link">
+        Excursionismo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/hogar.html" class="md-nav__link">
+        Hogar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/english.html" class="md-nav__link">
+        Inglés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/corsa_d.html" class="md-nav__link">
+        Opel Corsa D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/recetas.html" class="md-nav__link">
+        Recetas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/viajes.html" class="md-nav__link">
+        Viajes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    Instalación
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion" class="md-nav__link">
+    Configuración
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistemas" class="md-nav__link">
+    Sistemas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-general" class="md-nav__link">
+    Configuración general
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manejo" class="md-nav__link">
+    Manejo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#previews" class="md-nav__link">
+    Previews
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles" class="md-nav__link">
+    Controles
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/eduardofilo/eduardofilo.mkdocs/edit/master/docs/2020-01-25-rg350_simplemenu.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+  <h1>RG350 SimpleMenu</h1>
+
+<p><img alt="SimpleMenu" src="/images/posts/simplemenu.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">Actualización 2020-04-29</p>
+<p>Se modifica el artículo para que las instrucciones correspondan con la nueva <a href="https://github.com/fgl82/simplemenu/releases/tag/5.5">versión 5.5</a>.</p>
+</div>
+<p>Se ilustra a continuación el proceso de instalación y configuración del launcher <a href="https://github.com/fgl82/simplemenu">SimpleMenu</a> para RG350.</p>
+<h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
+<p>La instalación consiste únicamente en copiar el <a href="https://github.com/fgl82/simplemenu/releases/download/5.5/SimpleMenu-RG-350.opk">OPK</a> que ofrece su autor a una de las dos rutas que lee Gmenu2x para mostrar el lanzador, es decir:</p>
+<ul>
+<li>Tarjeta interna: <code>/media/data/apps</code></li>
+<li>Tarjeta externa: <code>/media/sdcard/apps</code></li>
+</ul>
+<p>Tras hacerlo aparece el lanzador en la sección <code>applications</code> de GMenu2X:</p>
+<p><img alt="SimpleMenu Launching1" src="/images/posts/simplemenu_launching1.png" /></p>
+<p>Si lo abrimos en este momento, reconocerá las aplicaciones y ports que tengamos instalados, dado que la ruta y extensión de los mismos es previsible:</p>
+<p><img alt="SimpleMenu Games" src="/images/posts/simplemenu_games.png" />
+<img alt="SimpleMenu Apps" src="/images/posts/simplemenu_apps.png" /></p>
+<p>Si nos desplazamos hasta alguno de los sistemas de emulación seguramente veremos que no reconoce los emuladores y/o ROMs que tengamos instalados. Esto es normal puesto que todavía no hemos adaptado la configuración:</p>
+<p><img alt="SimpleMenu Launching2" src="/images/posts/simplemenu_launching2.png" /></p>
+<h2 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Aviso</p>
+<p>Las tres últimas versiones mayores del programa han modificado el formato de los ficheros de configuración, por lo que si contábamos con una instalación de las versiones previas (2.x ó 3.x) nos va a tocar adaptarlos, es decir no se pueden utilizar directamente ya que no son compatibles. Lo mejor será renombrar el directorio <code>/media/data/local/home/.simplemenu</code> para que se vuelva a generar en el siguiente arranque y así además mantener copia de la configuración anterior para que nos sirva de modelo para crear la nueva.</p>
+<p>Entre la versión 4.1 y la 4.2 ha habido un cambio importante en la gestión del tema gráfico.</p>
+<p>Entre la versión 4.2 y la 4.5 el cambio importante ha sido en la ubicación y división del fichero <code>sections.ini</code> en varios para agrupar las distintas máquinas por tipos.</p>
+<p>Entre la versión 4.5 y 5.5 no ha habido cambios importantes en la configuración por lo que podremos mantenerla.</p>
+</div>
+<p>De serie SimpleMenu trae una configuración con varios sistemas precargados, pero como apunta de forma estática a las rutas de los distintos emuladores y ROMs, es casi seguro que nos va a tocar ajustar esta configuración a los que nosotros tengamos instalados en la consola. Aún así interesa que lo ejecutemos al menos una vez para que se genere el directorio <code>.simplemenu</code> dentro del home de la consola para que tengamos la plantilla sobre la que empezar a modificar.</p>
+<h4 id="sistemas">Sistemas<a class="headerlink" href="#sistemas" title="Permanent link">&para;</a></h4>
+<p>Los ficheros clave son los que se encuentran en la ruta <code>/media/data/local/home/.simplemenu/section_groups</code>. Allí encontramos los siguientes ficheros:</p>
+<div class="highlight"><pre><span></span><code>RG350:/media/data/local/home/.simplemenu/section_groups # ls -l
+-rw-r--r--    1 root     root           235 Jan 28 17:35 apps and games.ini
+-rw-r--r--    1 root     root         10716 Jan 28 17:35 apps and games.png
+-rw-r--r--    1 root     root           936 Jan 28 17:35 arcades.ini
+-rw-r--r--    1 root     root         14746 Jan 28 17:35 arcades.png
+-rw-r--r--    1 root     root          1889 Jan 28 17:35 consoles.ini
+-rw-r--r--    1 root     root         19669 Jan 28 17:35 consoles.png
+-rw-r--r--    1 root     root          1188 Jan 28 17:35 handhelds.ini
+-rw-r--r--    1 root     root          8626 Jan 28 17:35 handhelds.png
+-rw-r--r--    1 root     root           949 Jan 28 17:35 home computers.ini
+-rw-r--r--    1 root     root         17383 Jan 28 17:35 home computers.png
+</code></pre></div>
+<p>Como vemos hay una imagen y un fichero <code>.ini</code> para 5 grupos de sistemas. Esta agrupación es flexible, es decir, podemos ampliar o reducir el número de tipos a nuestro gusto. El fichero de imagen tiene que llamarse exactamente igual que el de configuración. Será lo que se vea en la pantalla al seleccionar el tipo correspondiente.</p>
+<p>A no ser que seamos expertos con el editor <code>vi</code> que podemos ejecutar por SSH, lo mejor será transferir los ficheros al ordenador de alguna manera (pasándolos a la tarjeta externa con DinguxCmdr si no se conoce otra forma más directa) y editarlos allí con un editor que soporte los finales de línea y la codificación utilizada habitualmente en sistemas Linux (como <a href="https://notepad-plus-plus.org/">Notepad++</a>).</p>
+<p>A partir de aquí nos vamos a centrar en el tipo <code>handhelds</code> para seguir la explicación, pero todo lo que digamos se puede aplicar exactamente igual a cualquiera de los otros tipos.</p>
+<p>En el fichero <code>handhelds.ini</code> tenemos al principio la lista de sistemas en la propiedad <code>consoleList</code> del apartado <code>[CONSOLES]</code>. En esta propiedad se van añadiendo los distintos sistemas que definiremos a continuación, separados por comas. Podemos <em>seleccionar</em> un subconjunto de los sistemas definidos más abajo, es decir, podemos ocultar algunos simplemente no incluyéndolos en <code>consoleList</code>.</p>
+<div class="highlight"><pre><span></span><code>[CONSOLES]
+consoleList =GAME BOY,GAME BOY COLOR,GAME BOY ADVANCE,GAME &amp; WATCH,GAME GEAR,NEO GEO POCKET,WONDERSWAN,LYNX
+</code></pre></div>
+<p>Luego por cada sistema tenemos un bloque como el siguiente:</p>
+<div class="highlight"><pre><span></span><code>[GAME BOY]
+execs = /media/data/apps/gambatte-multi-r572u4-20200127.opk
+romDirs = /media/data/roms/GB/
+romExts = .gb,.gz,.zip
+</code></pre></div>
+<p>El formato del archivo es el que se utiliza habitualmente para los ficheros de configuración tipo <a href="https://es.wikipedia.org/wiki/INI_(extensi%C3%B3n_de_archivo)">INI</a>. El significado de los parámetros es:</p>
+<ul>
+<li><code>execs</code>: OPKs de los emuladores del sistema con sus rutas, separados por comas.</li>
+<li><code>romDirs</code>: Directorios donde se encuentran las ROMs de este sistema, separados por comas.</li>
+<li><code>romExts</code>: Extensiones de los ficheros que se incluirán en el listado de ROMs, separadas por comas.</li>
+</ul>
+<p>Una vez que devolvamos los ficheros de configuración a su lugar en <code>/media/data/local/home/.simplemenu/section_groups</code>, ya podremos tratar de ejecutarlo para comprobar si ha cargado bien los sistemas y previews de las ROMs. Al menos en mi caso lo que me encuentro en este momento es:</p>
+<p><img alt="SimpleMenu First Launch" src="/images/posts/simplemenu_first_launch.png" /></p>
+<p>Como vemos en la definición de los parámetros, ahora puede haber varios emuladores y varios directorios de ROMs en cada sistema. En el primer caso podremos elegir el emulador a utilizar pulsando <code>Select</code> cuando esté seleccionada la ROM que queremos emular. Por ejemplo, tras añadir el emulador GPSP a la configuración de GBA podemos ver lo siguiente al pulsar <code>Select</code> en el listado de ROMs de GBA y pulsar arriba/abajo en la cruceta:</p>
+<p><img alt="SimpleMenu GBA1" src="/images/posts/simplemenu_gba1.png" />
+<img alt="SimpleMenu GBA2" src="/images/posts/simplemenu_gba2.png" /></p>
+<p>Como punto de partida dejo aquí mis ficheros de configuración que contienen la mayoría de los emuladores y la <a href="/retro-emulacion/rg-350.html#las-roms-y-su-organizacion">estructura de directorios para las ROMs</a> que se utilizan habitualmente.</p>
+<ul>
+<li><a href="/files/posts/simplemenu.zip">simplemenu.zip</a></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>A partir de la versión 4.2, SimpleMenu es mucho más robusto respecto a defectos o carencias en la configuración tanto de los sistemas como del tema, por lo que arrancará siempre. Cuando por ejemplo no exista correspondencia de un sistema en el tema, nos mostrará el nombre del mismo en lugar de un logotipo, lo que nos servirá como indicación de que debemos incorporarlo nosotros.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Aviso</p>
+<p>Si sustituimos los ficheros de configuración de los sistemas después de haber abierto SimpleMenu al menos una vez y hecho cambios en su configuración, es probable que éste se niegue a abrirse (volviendo inmediatamente a GMenu2X al intentarlo). En esos casos borrar el fichero <code>/media/data/local/home/.simplemenu/last_state.sav</code>.</p>
+</div>
+<h4 id="configuracion-general">Configuración general<a class="headerlink" href="#configuracion-general" title="Permanent link">&para;</a></h4>
+<p>Dentro de <code>/media/data/local/home/.simplemenu</code> hay otro fichero que nos interesa modificar. Se trata del <code>config.ini</code>.</p>
+<p>A partir de la versión 5.0 esta configuración general se puede hacer desde el propio frontend. Accedemos a ella pulsando <code>Start</code> desde el listado de ROMs de un sistema:</p>
+<p><img alt="SimpleMenu Settings" src="/images/posts/simplemenu_settings.png" /></p>
+<p>La mayoría de estos ajustes tienen su correspondencia en el fichero de configuración. Vamos a empezar estudiando las opciones directamente sobre el fichero y al final veremos las opciones del menú de settings que no están en él.</p>
+<p>El contenido del fichero es el siguiente por defecto:</p>
+<div class="highlight"><pre><span></span><code>[GENERAL]
+media_folder = media
+theme = default
+
+[FULLSCREEN_MODE]
+display_footer = 0
+display_menu = 1
+
+[SYSTEM]
+screen_timeout_in_seconds = 30
+allow_shutdown = 0
+
+[CPU]
+underclocked_speed = 408
+normal_speed = 702
+overclocked_speed = 732
+sleep_speed = 200
+</code></pre></div>
+<p>Los parámetros dentro del grupo <code>[CPU]</code> son ignorados en RG350 (en principio son para modificar las frecuencias del procesador). El resto de parámetros sí los podemos modificar. Su significado es el siguiente:</p>
+<ul>
+<li><code>media_folder</code>: Directorio donde se buscan las previsualizaciones de las ROMs. Interesa cambiar este valor del <code>media</code> que viene por defecto a <code>.previews</code> para que sea compatible con la ruta utilizada por Gmenu2x.</li>
+<li><code>theme</code>: A partir de la versión 4.2 se pueden incorporar varios temas (en distintos directorios dentro de <code>/media/data/local/home/.simplemenu/themes</code>) que luego se pueden seleccionar mediante este parámetro.</li>
+<li><code>display_footer</code>: Muestra el nombre de la ROM cuando estamos en modo preview (0=No; 1=Sí).</li>
+<li><code>display_menu</code>: Muestra la lista de ROMs de una sección cuando nos desplazamos entre las ROMs en modo preview (0=No; 1=Sí).</li>
+<li><code>screen_timeout_in_seconds</code>: Número de segundos a partir del cual salta el salvapantallas. Cuando éste entre, la forma de salir es pulsar cualquier botón.</li>
+<li><code>allow_shutdown</code>: Antes de la versión 5.0 esta opción servía para configurar el efecto de la combinación de teclas <code>Start+Select</code> para cerrar la aplicación o apagar la consola. A partir de esta versión este comportamiento se gestiona de forma diferente como veremos dentro de poco.</li>
+</ul>
+<p>Por último comentamos las opciones del menú de settings que muestra el frontend que son independientes del fichero de configuración. Son las siguientes:</p>
+<p><img alt="SimpleMenu Settings" src="/images/posts/simplemenu_settings.png" /></p>
+<p>Confirmando este menú cerraremos SimpleMenu y regresaremos al programa desde el que lo hayamos lanzado (GMenu2X habitualmente).</p>
+<p><img alt="SimpleMenu Settings" src="/images/posts/simplemenu_autohide.png" /></p>
+<p>Cuando estamos navegando entre los sistemas de un grupo, si esta opción está a <code>YES</code> el logo del sistema se verá durante un segundo antes de aparecer el listado de ROMs de ese sistema. Si está a <code>NO</code> el logo se mantendrá visible hasta que pulsemos <code>A</code> para pasar al listado de ROMs.</p>
+<p><img alt="SimpleMenu Layout" src="/images/posts/simplemenu_layout.png" /></p>
+<p>Permite seleccionar entre tres tipos de disposiciones de los listados de ROMs y sus previews. La visualización dependerá del tema activo. Por ejemplo para el tema <code>default</code> las tres disposiciones tienen el siguiente aspecto:</p>
+<ul>
+<li>
+<p>Layout SimpleMenu</p>
+<p><img alt="SimpleMenu Layout SimpleMenu" src="/images/posts/simplemenu_layout_sm.png" /></p>
+</li>
+<li>
+<p>Layout Traditional</p>
+<p><img alt="SimpleMenu Layout Traditional" src="/images/posts/simplemenu_layout_traditional.png" /></p>
+</li>
+<li>
+<p>Layout Drunken Monkey</p>
+<p><img alt="SimpleMenu Layout Drunken Monkey" src="/images/posts/simplemenu_layout_drunkenmonkey.png" /></p>
+</li>
+</ul>
+<p><img alt="SimpleMenu Settings" src="/images/posts/simplemenu_default.png" /></p>
+<p>Esta entrada del menú de settings nos permite configurar SimpleMenu como frontend predeterminado en el sistema. Cuando lo configuramos de este modo, la primera entrada del menú de settings pasa de <code>QUIT</code> a <code>SHUTDOWN</code> permitiéndonos apagar la máquina.</p>
+<p><img alt="SimpleMenu Settings" src="/images/posts/simplemenu_shutdown.png" /></p>
+<h2 id="manejo">Manejo<a class="headerlink" href="#manejo" title="Permanent link">&para;</a></h2>
+<p>Como hemos visto durante la configuración, a partir de la versión 4.5 se pueden definir varios grupos de máquinas. Por defecto existen 5 grupos definidos por tipo de máquinas. Entramos en el modo de selección de un grupo pulsando <code>B</code>. En ese momento vemos por ejemplo:</p>
+<p><img alt="SimpleMenu Group" src="/images/posts/simplemenu_group.png" /></p>
+<p>En esta situación cambiamos de grupo pulsando <code>Arriba</code> y <code>Abajo</code> en la cruceta, y entramos en el grupo pulsando <code>A</code>.</p>
+<h2 id="previews">Previews<a class="headerlink" href="#previews" title="Permanent link">&para;</a></h2>
+<p>SimpleMenu soporta previsualización de las ROMs. Para que aparezcan hay que hacer dos cosas:</p>
+<ol>
+<li>Colocar las imágenes con el mismo nombre que las ROMs pero con extensión <code>.png</code> en un directorio al mismo nivel que las ROMs cuyo nombre se corresponda con el definido en el parámetro <code>media_folder</code> del fichero de configuración <code>config.ini</code>. Inicialmente este nombre es <code>media</code>. Por ejemplo la previsualización de la ROM <code>/media/sdcard/roms/GB/DKLAND.gb</code> iría en <code>/media/sdcard/roms/GB/media/DKLAND.png</code>.</li>
+<li>Activar la visualización de las miniaturas. Para ello hay que pulsar la tecla <code>Y</code>. Volviéndola a pulsar volvemos al listado normal.</li>
+</ol>
+<p>Como hemos comentado en el apartado de <a href="#configuracion-general">Configuración general</a>, podemos modificar el directorio que se utiliza de forma predeterminada (<code>media</code>) por el <code>.previews</code> que utiliza Gmenu2x para así hacerlos compatibles y no tener que duplicar las previsualizaciones.</p>
+<p>El resultado:</p>
+<iframe width="853" height="480" src="https://www.youtube.com/embed/D-qJo1Y69mY&cc_load_policy=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2 id="controles">Controles<a class="headerlink" href="#controles" title="Permanent link">&para;</a></h2>
+<p>La página de documentación de controles es <a href="https://github.com/fgl82/simplemenu/wiki/Controls">ésta</a>, pero resulta un poco confusa porque mezcla varias máquinas, por lo que se listan a continuación de forma explícita los controles para RG350:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Shortcut</th>
+<th align="left">Modo</th>
+<th align="left">Función</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>R1</code> / <code>L1</code></td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Cambia de sistema desde la lista de ROMs. Si está activada la previsualización de las ROMs, se mostrará el logotipo del sistema durante un segundo</td>
+</tr>
+<tr>
+<td align="left"><code>Arriba</code> / <code>Abajo</code></td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Selecciona la ROM anterior/siguiente</td>
+</tr>
+<tr>
+<td align="left"><code>Izquierda</code> / <code>Derercha</code></td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Avanza 10 ROMs anteriores/siguientes</td>
+</tr>
+<tr>
+<td align="left"><code>B+Izquierda</code> / <code>B+Derecha</code></td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Cambia de sistema mostrando el logotipo de los sistemas</td>
+</tr>
+<tr>
+<td align="left"><code>B+Arriba</code> / <code>B+Abajo</code></td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Pasa a la letra anterior/siguiente</td>
+</tr>
+<tr>
+<td align="left"><code>Y</code></td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Activa/desactiva la previsualización de las ROMs</td>
+</tr>
+<tr>
+<td align="left"><code>A</code></td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Lanza la ROM seleccionada</td>
+</tr>
+<tr>
+<td align="left"><code>B+Select</code></td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Lanza una ROM aleatoria</td>
+</tr>
+<tr>
+<td align="left"><code>Select</code></td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Permite seleccionar el emulador a utilizar cuando hay varios definidos en el sistema</td>
+</tr>
+<tr>
+<td align="left"><code>Select+Start</code></td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Apaga la consola o cierra SimpleMenu (dependiendo del parámetro <code>allow_shutdown</code> en <code>config.ini</code>)</td>
+</tr>
+<tr>
+<td align="left"><code>X</code></td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Añade la ROM seleccionada a Favoritos</td>
+</tr>
+<tr>
+<td align="left"><code>L2</code></td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Entra en la lista de Favoritos</td>
+</tr>
+<tr>
+<td align="left"><code>X</code></td>
+<td align="left">Listado de Favoritos</td>
+<td align="left">Borra la ROM seleccionada de Favoritos</td>
+</tr>
+<tr>
+<td align="left"><code>L2</code></td>
+<td align="left">Listado de Favoritos</td>
+<td align="left">Sale de la lista de Favoritos</td>
+</tr>
+<tr>
+<td align="left"><code>B</code></td>
+<td align="left">Listado de ROMs</td>
+<td align="left">Sube al nivel de seleción de grupos</td>
+</tr>
+<tr>
+<td align="left"><code>A</code></td>
+<td align="left">Listado de grupos</td>
+<td align="left">Entra en el grupo seleccionado</td>
+</tr>
+</tbody>
+</table>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="2020-01-31-rg350_fba.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: RG350 FBA" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              RG350 FBA
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="2020-01-11-rg350_scraper.html" class="md-footer__link md-footer__link--next" aria-label="Next: RG350 Scraper" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              RG350 Scraper
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/eduardofilo" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/eduardofilo" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/edumoreno/" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="http://eduardofilo.es" target="_blank" rel="noopener" title="eduardofilo.es" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M309.8 480.3c-13.6 14.5-50 31.7-97.4 31.7-120.8 0-147-88.8-147-140.6v-144H17.9c-5.5 0-10-4.5-10-10v-68c0-7.2 4.5-13.6 11.3-16 62-21.8 81.5-76 84.3-117.1.8-11 6.5-16.3 16.1-16.3h70.9c5.5 0 10 4.5 10 10v115.2h83c5.5 0 10 4.4 10 9.9v81.7c0 5.5-4.5 10-10 10h-83.4V360c0 34.2 23.7 53.6 68 35.8 4.8-1.9 9-3.2 12.7-2.2 3.5.9 5.8 3.4 7.4 7.9l22 64.3c1.8 5 3.3 10.6-.4 14.5z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/c/EduardoMorenoLamana" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "navigation.tabs"], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

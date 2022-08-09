@@ -1,0 +1,4281 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes varios sobre algunas de las cosas que necesito recordar, principalmente sobre Desarrollo y Sistemas.">
+      
+      
+        <meta name="author" content="Eduardo Moreno Lamana">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Yii - Apuntes de eduardófilo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@8.5.1/dist/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#yii-framework" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../index.html" title="Apuntes de eduardófilo" class="md-header__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+      
+  <img src="../../images/eduardofilo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apuntes de eduardófilo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Yii
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../desarrollo/yii.html" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../en/desarrollo/yii.html" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../2022-08-08_mmiyoo_uart.html" class="md-tabs__link">
+        Blog
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="android.html" class="md-tabs__link md-tabs__link--active">
+        Desarrollo
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ingenieria/3d_printing.html" class="md-tabs__link">
+        Ingeniería
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../proyectos/headsetcomm.html" class="md-tabs__link">
+        Proyectos
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../retro-emulacion/c64.html" class="md-tabs__link">
+        Retro-Emulación
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sistemas/android_system.html" class="md-tabs__link">
+        Sistemas
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../varios/bici.html" class="md-tabs__link">
+        Varios
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Apuntes de eduardófilo" class="md-nav__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+      
+  <img src="../../images/eduardofilo.png" alt="logo">
+
+    </a>
+    Apuntes de eduardófilo
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Blog
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Blog" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Blog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-08-08_mmiyoo_uart.html" class="md-nav__link">
+        Miyoo Mini UART
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-04-17_vr.html" class="md-nav__link">
+        Aventuras en VR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-10-30_raspi_zero_2_upgrade.html" class="md-nav__link">
+        Raspberry Pi Zero 2 W upgrade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-04-03_RG350_imagen.html" class="md-nav__link">
+        RG350/RG280 Imagen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-02-28_pico_fuzix.html" class="md-nav__link">
+        FUZIX en Raspberry Pi Pico
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-01-19-retroconsolas.html" class="md-nav__link">
+        Retroconsolas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-01-16-rg350_ra_installer.html" class="md-nav__link">
+        RG350 Instalador RA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-12-13-rg351_wifi_mod.html" class="md-nav__link">
+        RG351P Wifi mod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-09-27-rg350_xmame_sm_bridge.html" class="md-nav__link">
+        RG350 Interfaz xMAME SimpleMenu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-08-31-cancion_herb_alpert.html" class="md-nav__link">
+        La canción que merece la pena escuchar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-08-15-rg350_scummvm_launchers.html" class="md-nav__link">
+        RG350 ScummVM en lanzadores
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-08-12-rg350_py_backup.html" class="md-nav__link">
+        RG350 Py Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-07-12-rg350_screen_mod.html" class="md-nav__link">
+        RG350 Sustitución de pantalla 480p
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-07-09-rg350_fba_vertical_mod.html" class="md-nav__link">
+        RG350 FBA mod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-07-02-rg350_primeros_pasos.html" class="md-nav__link">
+        RG350 Primeros pasos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-06-04-rg350_raspi_image.html" class="md-nav__link">
+        RG350 Raspi Imagen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-31-rg350_compile.html" class="md-nav__link">
+        RG350 Compilar aplicaciones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-25-rg350_docker_buildroot.html" class="md-nav__link">
+        RG350 Docker Buildroot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-14-rg350_mame4all.html" class="md-nav__link">
+        RG350 MAME4All
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-08-rg350_dosbox.html" class="md-nav__link">
+        RG350 DOSBox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-06-rg350_openbor.html" class="md-nav__link">
+        RG350 OpenBOR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-04-rg350_daphne.html" class="md-nav__link">
+        RG350 Daphne
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-04-15-rg350_xmame.html" class="md-nav__link">
+        RG350 xMAME
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-04-14-rg350_scummvm.html" class="md-nav__link">
+        RG350 ScummVM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-03-28-rg350_pymenu.html" class="md-nav__link">
+        RG350 PyMenu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-03-19-rg350_backup.html" class="md-nav__link">
+        RG350 Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-16-panelizar_pcb.html" class="md-nav__link">
+        Panelizar PCB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-13-rg350_emulationstation.html" class="md-nav__link">
+        RG350 EmulationStation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-09-rg350_network.html" class="md-nav__link">
+        RG350 Conexión a internet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-08-eduzebox.html" class="md-nav__link">
+        EdUzebox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-01-31-rg350_fba.html" class="md-nav__link">
+        RG350 FBA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-01-25-rg350_simplemenu.html" class="md-nav__link">
+        RG350 SimpleMenu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-01-11-rg350_scraper.html" class="md-nav__link">
+        RG350 Scraper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-08-06-django_site.html" class="md-nav__link">
+        Creación de un sitio Django desde cero
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-07-07-crankshaft-build.html" class="md-nav__link">
+        Compilación OpenAuto para solucionar touch screen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-04-20-pong_composite_mod.html" class="md-nav__link">
+        Composite mod en consola Pong
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-01-29-bloqueo_telsome.html" class="md-nav__link">
+        Bloqueo de llamadas entrantes en Telsome
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-01-26-conversion_apuntes_mkdocs.html" class="md-nav__link">
+        Conversión del sitio de Apuntes a MkDocs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-10-20-Octoprint-en-Anet-A8.html" class="md-nav__link">
+        Octoprint en Anet A8
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-10-19-crankshaft.html" class="md-nav__link">
+        Crankshaft - AndroidAuto sobre Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-05-05-otto.html" class="md-nav__link">
+        Otto DIY
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2017-01-14-raspi2-kodi-16-tvheadend.html" class="md-nav__link">
+        Raspberry Pi 3 + KODI 16 + Tvheadend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-12-06-raspi3-kodi.html" class="md-nav__link">
+        Raspberry Pi 3 + KODI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-10-17-raspi-switch.html" class="md-nav__link">
+        Interruputor de encendido para Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-08-17-el-mundo-de-ayer.html" class="md-nav__link">
+        El mundo de ayer - Stefan Zweig
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-08-02-stm32-vl-discovery.html" class="md-nav__link">
+        Entorno desarrollo STM32 VL Discovery sobre Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-07-21-PIGRRL-2.html" class="md-nav__link">
+        Configuración PiGRRL-2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-07-10-wild.html" class="md-nav__link">
+        Wild - Cheryl Strayed
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-07-02-virus-android.html" class="md-nav__link">
+        Alertas por supuestos virus en Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-04-10-un-antropologo-en-marte.html" class="md-nav__link">
+        Un antropólogo en Marte - Oliver Sacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-02-25-los-innovadores.html" class="md-nav__link">
+        Los Innovadores - Walter Isaacson
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2015-03-14-raspi2-kodi-tvheadend.html" class="md-nav__link">
+        Raspberry Pi 2 + KODI + Tvheadend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2015-01-09-moviles.html" class="md-nav__link">
+        Móviles recomendables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2015-01-08-jekyll.html" class="md-nav__link">
+        Jekyll+GitHub Pages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2014-12-26-dokuwiki-raspi.html" class="md-nav__link">
+        Dokuwiki en Raspberry Pi manteniendo los ficheros en NAS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2014-12-20-micro-placas.html" class="md-nav__link">
+        Micro placas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2014-12-15-presentacion.html" class="md-nav__link">
+        Presentación
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Desarrollo
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Desarrollo
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="android.html" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="db.html" class="md-nav__link">
+        Bases de Datos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="diseno.html" class="md-nav__link">
+        Diseño
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dokuwiki.html" class="md-nav__link">
+        Dokuwiki
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="eclipse.html" class="md-nav__link">
+        Eclipse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="projects.html" class="md-nav__link">
+        Gestión de Proyectos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="git.html" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="html.html" class="md-nav__link">
+        HTML+CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ia.html" class="md-nav__link">
+        IA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="java.html" class="md-nav__link">
+        Java
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="javaee.html" class="md-nav__link">
+        JavaEE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="javascript.html" class="md-nav__link">
+        JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="joomla.html" class="md-nav__link">
+        Joomla
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="phonegap.html" class="md-nav__link">
+        Phonegap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="php.html" class="md-nav__link">
+        PHP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python.html" class="md-nav__link">
+        Python/Django
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ror.html" class="md-nav__link">
+        Ruby on Rails
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="spree.html" class="md-nav__link">
+        Spree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="subl.html" class="md-nav__link">
+        Sublime Text 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="svn.html" class="md-nav__link">
+        SVN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vagrant.html" class="md-nav__link">
+        Vagrant
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vr.html" class="md-nav__link">
+        VR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Yii
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="yii.html" class="md-nav__link md-nav__link--active">
+        Yii
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enlaces" class="md-nav__link">
+    Enlaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensiones" class="md-nav__link">
+    Extensiones
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#know-how" class="md-nav__link">
+    Know How
+  </a>
+  
+    <nav class="md-nav" aria-label="Know How">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    Instalación
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apache" class="md-nav__link">
+    Apache
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fundamentos" class="md-nav__link">
+    Fundamentos
+  </a>
+  
+    <nav class="md-nav" aria-label="Fundamentos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-mode" class="md-nav__link">
+    Development mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application" class="md-nav__link">
+    Application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controller" class="md-nav__link">
+    Controller
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view" class="md-nav__link">
+    View
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component" class="md-nav__link">
+    Component
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module" class="md-nav__link">
+    Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-alias-e-importacion-de-clases" class="md-nav__link">
+    Path Alias e importación de clases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convenciones" class="md-nav__link">
+    Convenciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Convenciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#del-framework" class="md-nav__link">
+    Del framework
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nomenclatura-para-codigo" class="md-nav__link">
+    Nomenclatura para código
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nomenclatura-para-bases-de-datos" class="md-nav__link">
+    Nomenclatura para bases de datos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formularios" class="md-nav__link">
+    Formularios
+  </a>
+  
+    <nav class="md-nav" aria-label="Formularios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creando-el-modelo" class="md-nav__link">
+    Creando el Modelo
+  </a>
+  
+    <nav class="md-nav" aria-label="Creando el Modelo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validacion" class="md-nav__link">
+    Validación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asignacion-de-atributos" class="md-nav__link">
+    Asignación de atributos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provocando-la-validacion" class="md-nav__link">
+    Provocando la validación
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recogiendo-varios-modelos-a-la-vez" class="md-nav__link">
+    Recogiendo varios modelos a la vez
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form-builder" class="md-nav__link">
+    Form Builder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-de-datos" class="md-nav__link">
+    Base de Datos
+  </a>
+  
+    <nav class="md-nav" aria-label="Base de Datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetos-dao" class="md-nav__link">
+    Objetos DAO
+  </a>
+  
+    <nav class="md-nav" aria-label="Objetos DAO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binding-de-parametros" class="md-nav__link">
+    Binding de parámetros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binding-de-variables" class="md-nav__link">
+    Binding de variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-builder" class="md-nav__link">
+    Query Builder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#active-record" class="md-nav__link">
+    Active Record
+  </a>
+  
+    <nav class="md-nav" aria-label="Active Record">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creando-registros" class="md-nav__link">
+    Creando registros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recuperando-registros" class="md-nav__link">
+    Recuperando registros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualizando-registros" class="md-nav__link">
+    Actualizando registros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borrando-registros" class="md-nav__link">
+    Borrando registros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparando-registros" class="md-nav__link">
+    Comparando registros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptacion-de-datos" class="md-nav__link">
+    Adaptación de datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usando-transacciones" class="md-nav__link">
+    Usando transacciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#named-scopes" class="md-nav__link">
+    Named scopes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activerecord-relacional" class="md-nav__link">
+    ActiveRecord relacional
+  </a>
+  
+    <nav class="md-nav" aria-label="ActiveRecord relacional">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declaracion-de-relaciones" class="md-nav__link">
+    Declaración de relaciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consultas-relacionales" class="md-nav__link">
+    Consultas relacionales
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consultas-relacionales-sin-obtener-los-modelos-relacionados" class="md-nav__link">
+    Consultas relacionales sin obtener los modelos relacionados
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opciones-de-consultas-relacionales" class="md-nav__link">
+    Opciones de consultas relacionales
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desambiguacion-de-columnas" class="md-nav__link">
+    Desambiguación de columnas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opciones-dinamicas-en-consultas-relacionales" class="md-nav__link">
+    Opciones dinámicas en consultas relacionales
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendimiento-de-consultas-relacionales" class="md-nav__link">
+    Rendimiento de consultas relacionales
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consulta-estadistica" class="md-nav__link">
+    Consulta estadística
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consulta-relacional-con-named-scopes" class="md-nav__link">
+    Consulta relacional con named scopes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consulta-relacional-con-through" class="md-nav__link">
+    Consulta relacional con through
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabla-de-relacion-many_many-con-datos-adicionales" class="md-nav__link">
+    Tabla de relación MANY_MANY con datos adicionales
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosas-interesantes" class="md-nav__link">
+    Cosas interesantes
+  </a>
+  
+    <nav class="md-nav" aria-label="Cosas interesantes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-singleton" class="md-nav__link">
+    Application Singleton
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-jquery" class="md-nav__link">
+    Añadir jQuery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtrado-referido-en-bootgridview-o-cgridview" class="md-nav__link">
+    Filtrado referido en BootGridView o CGridView
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Ingeniería
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ingeniería" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Ingeniería
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/3d_printing.html" class="md-nav__link">
+        3D Printing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/arduino.html" class="md-nav__link">
+        Arduino
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/freecad.html" class="md-nav__link">
+        FreeCAD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/herramientas.html" class="md-nav__link">
+        Herramientas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/kicad.html" class="md-nav__link">
+        KiCad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/modulos.html" class="md-nav__link">
+        Módulos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/stm32.html" class="md-nav__link">
+        STM32
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Proyectos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Proyectos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Proyectos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proyectos/headsetcomm.html" class="md-nav__link">
+        Headset Commander
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proyectos/dicom.html" class="md-nav__link">
+        Impresión 3D de ecografías
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proyectos/minecraft.html" class="md-nav__link">
+        Minecraft
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Retro-Emulación
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Retro-Emulación" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Retro-Emulación
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/c64.html" class="md-nav__link">
+        Commodore 64
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/fpga.html" class="md-nav__link">
+        FPGA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/general.html" class="md-nav__link">
+        General
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/juegos.html" class="md-nav__link">
+        Juegos destacados
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/miyoo-mini.html" class="md-nav__link">
+        Miyoo Mini
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/retroarch.html" class="md-nav__link">
+        RetroArch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/rg-350.html" class="md-nav__link">
+        RG350/RG280
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/rg-351.html" class="md-nav__link">
+        RG351
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/microconsolas.html" class="md-nav__link">
+        Micro consolas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/z80-computer.html" class="md-nav__link">
+        Z80 Computer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/zx-spectrum.html" class="md-nav__link">
+        ZX Spectrum
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/zx-uno.html" class="md-nav__link">
+        ZX-UNO
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Sistemas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sistemas" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Sistemas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/android_system.html" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/soft_imprescindible.html" class="md-nav__link">
+        Aplicaciones interesantes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/appletv.html" class="md-nav__link">
+        AppleTV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/buildroot.html" class="md-nav__link">
+        Buildroot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/docker.html" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/email.html" class="md-nav__link">
+        e-mail
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/impresoras.html" class="md-nav__link">
+        Impresoras
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/iot.html" class="md-nav__link">
+        IOT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/kodi.html" class="md-nav__link">
+        Kodi/OpenELEC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/macosx.html" class="md-nav__link">
+        Mac OS X
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/mysql.html" class="md-nav__link">
+        MySQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/nas.html" class="md-nav__link">
+        NAS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/oculus.html" class="md-nav__link">
+        Oculus Quest 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/odroid.html" class="md-nav__link">
+        ODROID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/office.html" class="md-nav__link">
+        Office
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/raspi.html" class="md-nav__link">
+        Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/raspi_pico.html" class="md-nav__link">
+        Raspberry Pi Pico
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/redes.html" class="md-nav__link">
+        Redes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/router_xiaomi.html" class="md-nav__link">
+        Router Xiaomi MiWiFi 3G
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/ubuntu_phone.html" class="md-nav__link">
+        Ubuntu Phone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/ubuntu.html" class="md-nav__link">
+        Ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/unix.html" class="md-nav__link">
+        UNIX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/trucos_windows.html" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Varios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Varios" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Varios
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/bici.html" class="md-nav__link">
+        Bicicleta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/links.html" class="md-nav__link">
+        Enlaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/excursionismo.html" class="md-nav__link">
+        Excursionismo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/hogar.html" class="md-nav__link">
+        Hogar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/english.html" class="md-nav__link">
+        Inglés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/corsa_d.html" class="md-nav__link">
+        Opel Corsa D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/recetas.html" class="md-nav__link">
+        Recetas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/viajes.html" class="md-nav__link">
+        Viajes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enlaces" class="md-nav__link">
+    Enlaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensiones" class="md-nav__link">
+    Extensiones
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#know-how" class="md-nav__link">
+    Know How
+  </a>
+  
+    <nav class="md-nav" aria-label="Know How">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    Instalación
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apache" class="md-nav__link">
+    Apache
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fundamentos" class="md-nav__link">
+    Fundamentos
+  </a>
+  
+    <nav class="md-nav" aria-label="Fundamentos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-mode" class="md-nav__link">
+    Development mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application" class="md-nav__link">
+    Application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controller" class="md-nav__link">
+    Controller
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view" class="md-nav__link">
+    View
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component" class="md-nav__link">
+    Component
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module" class="md-nav__link">
+    Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-alias-e-importacion-de-clases" class="md-nav__link">
+    Path Alias e importación de clases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convenciones" class="md-nav__link">
+    Convenciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Convenciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#del-framework" class="md-nav__link">
+    Del framework
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nomenclatura-para-codigo" class="md-nav__link">
+    Nomenclatura para código
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nomenclatura-para-bases-de-datos" class="md-nav__link">
+    Nomenclatura para bases de datos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formularios" class="md-nav__link">
+    Formularios
+  </a>
+  
+    <nav class="md-nav" aria-label="Formularios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creando-el-modelo" class="md-nav__link">
+    Creando el Modelo
+  </a>
+  
+    <nav class="md-nav" aria-label="Creando el Modelo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validacion" class="md-nav__link">
+    Validación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asignacion-de-atributos" class="md-nav__link">
+    Asignación de atributos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provocando-la-validacion" class="md-nav__link">
+    Provocando la validación
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recogiendo-varios-modelos-a-la-vez" class="md-nav__link">
+    Recogiendo varios modelos a la vez
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form-builder" class="md-nav__link">
+    Form Builder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-de-datos" class="md-nav__link">
+    Base de Datos
+  </a>
+  
+    <nav class="md-nav" aria-label="Base de Datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetos-dao" class="md-nav__link">
+    Objetos DAO
+  </a>
+  
+    <nav class="md-nav" aria-label="Objetos DAO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binding-de-parametros" class="md-nav__link">
+    Binding de parámetros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binding-de-variables" class="md-nav__link">
+    Binding de variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-builder" class="md-nav__link">
+    Query Builder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#active-record" class="md-nav__link">
+    Active Record
+  </a>
+  
+    <nav class="md-nav" aria-label="Active Record">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creando-registros" class="md-nav__link">
+    Creando registros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recuperando-registros" class="md-nav__link">
+    Recuperando registros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualizando-registros" class="md-nav__link">
+    Actualizando registros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borrando-registros" class="md-nav__link">
+    Borrando registros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparando-registros" class="md-nav__link">
+    Comparando registros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptacion-de-datos" class="md-nav__link">
+    Adaptación de datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usando-transacciones" class="md-nav__link">
+    Usando transacciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#named-scopes" class="md-nav__link">
+    Named scopes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activerecord-relacional" class="md-nav__link">
+    ActiveRecord relacional
+  </a>
+  
+    <nav class="md-nav" aria-label="ActiveRecord relacional">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declaracion-de-relaciones" class="md-nav__link">
+    Declaración de relaciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consultas-relacionales" class="md-nav__link">
+    Consultas relacionales
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consultas-relacionales-sin-obtener-los-modelos-relacionados" class="md-nav__link">
+    Consultas relacionales sin obtener los modelos relacionados
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opciones-de-consultas-relacionales" class="md-nav__link">
+    Opciones de consultas relacionales
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desambiguacion-de-columnas" class="md-nav__link">
+    Desambiguación de columnas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opciones-dinamicas-en-consultas-relacionales" class="md-nav__link">
+    Opciones dinámicas en consultas relacionales
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendimiento-de-consultas-relacionales" class="md-nav__link">
+    Rendimiento de consultas relacionales
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consulta-estadistica" class="md-nav__link">
+    Consulta estadística
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consulta-relacional-con-named-scopes" class="md-nav__link">
+    Consulta relacional con named scopes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consulta-relacional-con-through" class="md-nav__link">
+    Consulta relacional con through
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabla-de-relacion-many_many-con-datos-adicionales" class="md-nav__link">
+    Tabla de relación MANY_MANY con datos adicionales
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosas-interesantes" class="md-nav__link">
+    Cosas interesantes
+  </a>
+  
+    <nav class="md-nav" aria-label="Cosas interesantes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-singleton" class="md-nav__link">
+    Application Singleton
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-jquery" class="md-nav__link">
+    Añadir jQuery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtrado-referido-en-bootgridview-o-cgridview" class="md-nav__link">
+    Filtrado referido en BootGridView o CGridView
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/eduardofilo/eduardofilo.mkdocs/edit/master/docs/desarrollo/yii.md" title="Editar esta página" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="yii-framework">Yii Framework<a class="headerlink" href="#yii-framework" title="Permanent link">&para;</a></h1>
+<h2 id="enlaces">Enlaces<a class="headerlink" href="#enlaces" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="http://www.yiiframework.com/forum/index.php/topic/13125-solveddrop-down-list/page__view__findpost__p__64258">A probar cuando tenga un error</a> :exclamation:</li>
+<li><a href="http://www.yiiframework.com/wiki/24/">Creating a dependent dropdown</a></li>
+<li><a href="http://www.yiiframework.com/forum/index.php/topic/9083-search-filter-of-a-relations-field-through-cgridview/">Search() &amp; Filter of a relations field through CGridView</a></li>
+<li><a href="http://www.larryullman.com/2010/08/10/handling-related-models-in-yii-forms/">Handling Related Models in Yii Forms</a></li>
+<li><a href="http://www.larryullman.com/series/learning-the-yii-framework/">Learning Yii Framework Series</a></li>
+<li><a href="http://www.yiiframework.com/wiki/250/yii-for-beginners/">Yii for beginners</a></li>
+<li><a href="http://stackoverflow.com/questions/6811706/yii-how-to-change-datetime-format-displayed-on-the-view">How to Change datetime format displayed on the View</a></li>
+<li><a href="http://www.javierblogs.com/tabla-master-detail-en-yii-framework/">Tabla Master Detail en Yii GridView de Yii Framework</a></li>
+<li><a href="http://www.yiiframework.com/wiki/323/">Dynamic parent and child CGridCiew on single view. Using $.ajax to update child gridview via controller (with MANY_MANY relation), after row in parent gridview was clicked</a></li>
+<li><a href="http://www.yiiframework.com/forum/index.php?/topic/14377-search-cgridview-related-tables-dates-and-datepicker/">Search CGridView, related tables, dates and datepicker</a></li>
+<li><a href="http://www.yiiframeworkenespanol.org/foro/">Yii Framework en Español - Foro</a></li>
+<li><a href="http://www.yiiframework.com/forum/index.php/topic/32798-multimodelform-dropdown-con-ajax/">Multimodelform dropdown con Ajax Ejecutar acción en multimodelform con dropdown</a></li>
+<li><a href="http://www.yiiframeworkenespanol.org/foro/showthread.php?tid=60">Usando Ajax en Yii, Facil</a></li>
+<li><a href="http://www.yiiframework.com/doc/guide/1.1/en/database.ar#c2395">Class Level Methods vs Static Methods</a></li>
+<li><a href="http://www.yiiframework.com/wiki/285">Accessing data in a join table with the related models (tabla intermedia en relación many_many con información adicional)</a></li>
+<li><a href="http://www.yiiframework.com/forum/index.php/topic/8581-selecting-join-table-with-mant-to-many">Selecting join table with mant to many? (tabla intermedia en relación many_many con información adicional)</a></li>
+<li><a href="http://www.yiiframework.com/wiki/252/special-variables-in-cgridview-and-clistview/">Special $variables in CGridView and CListView</a></li>
+<li><a href="http://www.ramirezcobos.com/2010/11/30/custom-page-size-for-cgridview/">Custom Page Size for CGridView</a></li>
+<li><a href="http://www.yiiframework.com/wiki/106/using-cbuttoncolumn-to-customize-buttons-in-cgridview/">Using CButtonColumn to customize buttons in CGridView</a></li>
+<li><a href="http://www.yiiframework.com/wiki/167/understanding-virtual-attributes-and-get-set-methods/">Understanding Virtual Attributes and get/set methods</a> :exclamation:</li>
+<li><a href="http://www.yiiframework.com/wiki/117/using-standard-filters-in-cgridview-custom-fields/">Using standard filters in CGridView custom fields</a></li>
+<li><a href="http://www.yiiframework.com/wiki/281/searching-and-sorting-by-related-model-in-cgridview/">Searching and sorting by related model in CGridView</a> :exclamation:</li>
+<li><a href="http://www.yiiframework.com/wiki/56/reference-model-rules-validation">Reference: Model rules validation</a> :exclamation:</li>
+<li><a href="http://www.yiiframework.com/wiki/385/displaying-sorting-and-filtering-hasmany-manymany-relations-in-cgridview/">Displaying, sorting and filtering HasMany &amp; ManyMany relations in CGridView</a> :exclamation:</li>
+<li><a href="http://gabrielduarte77.wordpress.com/category/yii-framework/">Tutorial Yii Framework</a><ul>
+<li><a href="http://gabrielduarte77.wordpress.com/2012/01/25/instalandoyii-2/">1. INSTALANDO YII Y PRIMERA APLICACIÓN</a></li>
+<li><a href="http://gabrielduarte77.wordpress.com/2012/01/25/creandomodelos/">2. CREANDO MODELOS Y CRUD A PARTIR DE UNA BASE DE DATOS</a></li>
+<li><a href="http://gabrielduarte77.wordpress.com/2012/01/25/tutorial-yii-capitulo-3-lenguaje-y-vista-por-defecto/">3. LENGUAJE Y VISTA POR DEFECTO</a></li>
+<li><a href="http://gabrielduarte77.wordpress.com/2012/01/25/modificandoelmenudeyii/">4. MODIFICANDO EL MENÚ</a></li>
+<li><a href="http://gabrielduarte77.wordpress.com/2012/01/26/autenticacion-de-usuarios/">5. AUTENTICACIÓN DE USUARIOS</a></li>
+<li><a href="http://gabrielduarte77.wordpress.com/2012/01/26/clavesforaneasenyi/">6. CLAVES FORÁNEAS EN VISTAS</a></li>
+<li><a href="http://gabrielduarte77.wordpress.com/2012/01/26/tutorial-yii-framework-capitulo-7-validando-los-formularios/">7. VALIDANDO LOS FORMULARIOS</a></li>
+<li><a href="http://gabrielduarte77.wordpress.com/2012/01/27/tutorial-yii-framework-capitulo-8-orden-por-defecto-y-condicion-extra-en-grid/">8. ORDEN POR DEFECTO Y CONDICION EXTRA EN GRID</a></li>
+<li><a href="http://gabrielduarte77.wordpress.com/2012/01/27/tutorial-yii-framework-capitulo-9-fechas-con-cjuidatepicker/">9. FECHAS CON CJUIDATEPICKER</a></li>
+<li><a href="http://gabrielduarte77.wordpress.com/2012/01/27/buscadaporfechasenyii/">10. BÚSQUEDAS POR FECHAS CON SYDATECOLUMN</a></li>
+<li><a href="http://gabrielduarte77.wordpress.com/2012/01/27/tutorial-yii-framework-capitulo-11-exportar-del-cgridview-a-pdf/">11. EXPORTAR DEL CGRIDVIEW A PDF</a></li>
+<li><a href="http://gabrielduarte77.wordpress.com/2012/01/27/reportesengridyii/">12. REPORTES A PARTIR DE UNA BÚSQUEDA EN EL GRID</a></li>
+<li><a href="http://gabrielduarte77.wordpress.com/2012/01/27/combosdependientesenyii/">13. COMBOS DEPENDIENTES</a></li>
+<li><a href="http://gabrielduarte77.wordpress.com/2012/01/27/tutorial-yii-framework-capitulo-14-campo-con-autocompletar/">14. CAMPO CON AUTOCOMPLETAR</a></li>
+<li><a href="http://gabrielduarte77.wordpress.com/2012/01/27/url_limpias_en_yii/">15. NO MOSTRAR INDEX.PHP EN LAS URL</a></li>
+<li><a href="http://gabrielduarte77.wordpress.com/2012/01/27/tutorial-yii-framework-capitulo-16-guardar-automaticamente-usuario-y-fecha-de-creacion-y-modificacion/">16. GUARDAR AUTOMÁTICAMENTE USUARIO Y FECHA DE CREACIÓN Y MODIFICACIÓN</a></li>
+<li><a href="http://gabrielduarte77.wordpress.com/2012/01/27/tutorial-yii-framework-capitulo-17-hacer-formulario-para-multiples-modelos/">17. HACER FORMULARIO PARA MULTIPLES MODELOS</a></li>
+<li><a href="http://gabrielduarte77.wordpress.com/2012/01/27/campos_enmascarados_yii/">18. CAMPOS ENMASCARADOS EN FORMULARIO</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="extensiones">Extensiones<a class="headerlink" href="#extensiones" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="http://www.yiiframework.com/extension/bootstrap/">bootstrap</a>: Bootstrap brings together Yii and Bootstrap, Twitter's HTML, CSS and JavaScript toolkit.</li>
+<li><a href="http://www.yiiframework.com/extension/eupdatedialog/">eupdatedialog</a>: EUpdateDialog is an extension for Yii framework that allows to run controller actions using jQuery UI dialog.</li>
+<li><a href="http://www.yiiframework.com/extension/multimodelform/">multimodelform</a>: This extension allows to work with multiple records and different models in a edit form.</li>
+<li><a href="http://www.yiiframework.com/extension/enexmo">enexmo</a>: ENexmo Library allows Yii programmers to use the Restful API offered by Mobile Messaging provider <a href="http://www.nexmo.com/">Nexmo</a>.</li>
+<li><a href="http://www.yiiframework.com/extension/ejuitimepicker/">ejuitimepicker</a>: This extension is a wrapper for Timepicker addon which adds a timepicker to jQuery UI Datepicker.</li>
+<li><a href="http://www.yiiframework.com/extension/datetimepicker/">datetimepicker</a>: Datetime picker input widget, based on Jui-timepicker-addon.</li>
+<li><a href="http://www.yiiframeworkenespanol.org/foro/showthread.php?tid=52">Envio email con Emailer</a></li>
+<li><a href="https://github.com/sensorario/MSensorarioDropdown">A module to build dependents dropdown</a></li>
+<li><a href="http://www.yiiframework.com/extension/save-relations-ar-behavior/">save-relations-ar-behavior</a>: Save HasMany and ManyMany relational active records along with the main model.</li>
+</ul>
+<h2 id="know-how">Know How<a class="headerlink" href="#know-how" title="Permanent link">&para;</a></h2>
+<h3 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h3>
+<h4 id="apache">Apache<a class="headerlink" href="#apache" title="Permanent link">&para;</a></h4>
+<p>Para ocultar el script de inicio (<code>index.php</code>) de la URL se puede configurar un fichero <code>.htaccess</code> como sigue:</p>
+<div class="highlight"><pre><span></span><code>RewriteEngine on
+
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# otherwise forward it to index.php
+RewriteRule . index.php
+</code></pre></div>
+<h3 id="fundamentos">Fundamentos<a class="headerlink" href="#fundamentos" title="Permanent link">&para;</a></h3>
+<h4 id="development-mode">Development mode<a class="headerlink" href="#development-mode" title="Permanent link">&para;</a></h4>
+<p>En el fichero index.php el modo DEBUG se ajusta en la linea siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;YII_DEBUG&#39;</span><span class="p">)</span> <span class="k">or</span> <span class="nb">define</span><span class="p">(</span><span class="s1">&#39;YII_DEBUG&#39;</span><span class="p">,</span><span class="k">true</span><span class="p">);</span>
+</code></pre></div>
+<p>Ponerlo a <code>false</code> en Producción (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.entry">fuente</a>).</p>
+<p>El componente <code>log</code> admite como una de las rutas de log la clase <code>CWebLogRoute</code> que muestra un log detallado de la ejecución de la página en la parte inferior de la misma. Para activarlo incluir la clase en el array de <code>routes</code> del componente <code>log</code>, por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="s1">&#39;log&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;class&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;CLogRouter&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;routes&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;class&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;CFileLogRoute&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;levels&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;error, warning&#39;</span><span class="p">,</span>
+                <span class="p">),</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;class&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;CWebLogRoute&#39;</span><span class="p">,</span>
+                <span class="p">),</span>
+        <span class="p">),</span>
+<span class="p">),</span>
+</code></pre></div>
+<p>Cuando el desarrollo esté avanzado o al menos en una fase en la que no se esperen muchos cambios en el esquema de base de datos, se puede mejorar la velocidad del componente <code>db</code> dando un valor mayor que 0 a la propiedad <code>CDbConnection::schemaCachingDuration</code> (<a href="http://www.yiiframework.com/doc/guide/1.1/en/database.ar#establishing-db-connection">fuente</a>).</p>
+<p>Desactivar el módulo <code>gii</code> en el fichero de configuración cuando la aplicación esté en Producción.</p>
+<p>Poner a <code>false</code> el parámetro <code>enableParamLogging</code> del componente <code>db</code> en el fichero de configuración de la aplicación.</p>
+<h4 id="application">Application<a class="headerlink" href="#application" title="Permanent link">&para;</a></h4>
+<p>Si no se especifica, el controlador predeterminado de una aplicación se llama "site" (SiteController), pero se puede especificar así en el fichero de configuración de la aplicación (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.application#application-configuration">fuente</a>):</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;defaultController&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;site&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Los componentes de aplicación se activan por defecto si son definidos en el fichero de configuración de la aplicación, pero pueden ser desactivados asignando <code>false</code> al atributo <code>enabled</code> (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.application#application-components">fuente</a>). Los componentes de aplicación se suelen incorporar de un paquete incluido con la instalación de Yii. La lista completa de componentes de aplicación de Yii puede consultarse <a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.application#core-application-components">aquí</a>.</p>
+<p>La aplicación genera un log en <code>&lt;AppRoot&gt;/protected/runtime/application.log</code>.</p>
+<h4 id="controller">Controller<a class="headerlink" href="#controller" title="Permanent link">&para;</a></h4>
+<p>Si no se especifica la acción a ejecutar de un controller, se ejecuta la acción predeterminada que es <code>index</code>. Puede cambiarse ajustando la variable de instancia pública <code>CController:defaultAction</code> (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.controller">fuente</a>).</p>
+<p>La ruta de los controllers es relativa al directorio <code>&lt;AppRoot&gt;/protected/controllers</code> (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.controller#route">fuente</a>).</p>
+<p>Si la aplicación está organizada en módulos, la ruta completa de las acciones será del estilo <code>moduleID/controllerID/actionID</code> (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.controller#route">fuente</a>).</p>
+<p>La instanciación de controllers sigue esta secuencia (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.controller#controller-instantiation">fuente</a>):</p>
+<ul>
+<li>Si se ha especificado <code>CWebApplication::catchAllRequest</code> (se usa normalmente para poner la aplicación en modo mantenimiento).</li>
+<li>Si el ID del controller se encuentra en el mapa definido en <code>CWebApplication::controllerMap</code>.</li>
+<li>Finalmente se utiliza la convención comentada anteriormente que enlaza el ID del controller con las clases del directorio <code>&lt;AppRoot&gt;/protected/controllers</code>.</li>
+</ul>
+<p>Las acciones se pueden escribir como clases autónomas en lugar de como métodos de un controller (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.controller#action">fuente</a>).</p>
+<p>Los filtros se pueden definir como métodos de los controllers en cuyo caso deben empezar por <code>filter</code> o como clases independientes descendientes de CFilter (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.controller#filter">fuente</a>).</p>
+<p>Los filtros se pueden mapear en la función <code>filters()</code> de los controllers. Se pueden definir listas negras y listas blancas de acciones sobre las que se aplicará la lista de filtros (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.controller#filter">fuente</a>).</p>
+<h4 id="view">View<a class="headerlink" href="#view" title="Permanent link">&para;</a></h4>
+<p>La ruta de las vistas es relativa al directorio <code>&lt;AppRoot&gt;/protected/views</code> (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.view">fuente</a>).</p>
+<p>Dentro de las vistas se puede acceder al controller mediante <code>$this</code>. Adicionalmente se pueden pasar variables concretas desde el controller al invocar la vista de la siguiente manera:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;edit&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;var1&#39;</span><span class="o">=&gt;</span><span class="nv">$value1</span><span class="p">,</span>
+    <span class="s1">&#39;var2&#39;</span><span class="o">=&gt;</span><span class="nv">$value2</span><span class="p">,</span>
+<span class="p">));</span>
+</code></pre></div>
+<p>Por defecto se aplica a las vistas el layout definido en <code>&lt;AppRoot&gt;/protected/views/layouts/main.php</code>. Esto puede cambiarse a nivel de aplicación en <code>CWebApplication::layout</code> o a nivel de controller en <code>CController::layout</code>. Si se quiere renderizar una vista sin aplicar layout, en lugar del método <code>CController::render()</code> hay que invocar <code>CController:renderPartial()</code> (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.view#layout">fuente</a>).</p>
+<h4 id="component">Component<a class="headerlink" href="#component" title="Permanent link">&para;</a></h4>
+<p>Los componentes se utilizan para encapsular funcionalidad. Soportan propiedades, eventos y behaviors. Estos últimos se utilizan para implementar herencia múltiple (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.component#component-behavior">fuente</a>).</p>
+<h4 id="module">Module<a class="headerlink" href="#module" title="Permanent link">&para;</a></h4>
+<p>Un módulo es una unidad de código autocontenida que engloba modelos, vistas, controllers y componentes. Es en cierto modo una aplicación, sólo que no puede ser desplegada por separado. Los módulos se pueden anidar en varios niveles. De la misma forma que una aplicación puede contener módulos, éstos pueden contener a su vez otros módulos. Se configuran de la misma forma con el fichero de configuración de la aplicación, indicando la propiedad <code>modules</code> en el módulo contenedor.</p>
+<h4 id="path-alias-e-importacion-de-clases">Path Alias e importación de clases<a class="headerlink" href="#path-alias-e-importacion-de-clases" title="Permanent link">&para;</a></h4>
+<p>De forma predeterminada están definidos los siguientes path alias:</p>
+<ul>
+<li>system: <code>&lt;YiiRoot&gt;/framework</code></li>
+<li>zii: <code>&lt;YiiRoot&gt;/framework/zii</code></li>
+<li>application: <code>&lt;AppRoot&gt;/protected</code></li>
+<li>webroot: <code>&lt;AppRoot&gt;</code></li>
+<li>ext: <code>&lt;AppRoot&gt;/protected/extensions</code></li>
+</ul>
+<p>Para importar clases mejor utilizar <code>Yii:import('path_alias_de_la_clase')</code> que el <code>include</code>, <code>require</code> o <code>require_once</code> de PHP (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.namespace#importing-classes">fuente</a>). Se pueden importar todas las clases de un directorio en bloque con una orden del estilo <code>Yii:import('path_alias_del_directorio.*')</code>. Las clases del propio framework están pre-importadas, por lo que no es necesario hacerlo.</p>
+<h4 id="convenciones">Convenciones<a class="headerlink" href="#convenciones" title="Permanent link">&para;</a></h4>
+<h5 id="del-framework">Del framework<a class="headerlink" href="#del-framework" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Si no se especifica en la URL el ID del action se ejecutará el action predeterminada. Si no se cambia (con <code>CController::defaultAction</code>) se ejecutará el action <code>index</code>.</li>
+<li>Si no se especifica en la URL el ID del controller se ejecutará el controller predeterminado. Si no se cambia (con <code>CWebApplication::defaultController</code>) se ejecutará el controller <code>site</code>.</li>
+</ul>
+<h5 id="nomenclatura-para-codigo">Nomenclatura para código<a class="headerlink" href="#nomenclatura-para-codigo" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Utilizar notación camelCase.</li>
+<li>Comenzar las clases con una letra mayúscula. La letra <code>C</code> se usa en las clases del framework =&gt; Se recomienda utilizar otra (<code>T</code> por ejemplo).</li>
+<li>Comenzar las variables privadas de clase con underscore.</li>
+<li>Terminar las clases controller con <code>Controller</code>.</li>
+<li>Dentro de una clase controller, los métodos de action comenzarlos con <code>action</code>.</li>
+<li>Terminar las clases de action con <code>Action</code>.</li>
+</ul>
+<h5 id="nomenclatura-para-bases-de-datos">Nomenclatura para bases de datos<a class="headerlink" href="#nomenclatura-para-bases-de-datos" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Nombres de tablas y campos en minúsculas.</li>
+<li>Palabras separadas con underscore (por ejemplo: direccion_cliente).</li>
+<li>Nombres de tablas en singular.</li>
+<li>Nombres de tablas con prefijo propio de la aplicación (por ejemplo: gestoo_clientes).</li>
+</ul>
+<h3 id="formularios">Formularios<a class="headerlink" href="#formularios" title="Permanent link">&para;</a></h3>
+<h4 id="creando-el-modelo">Creando el Modelo<a class="headerlink" href="#creando-el-modelo" title="Permanent link">&para;</a></h4>
+<h5 id="validacion">Validación<a class="headerlink" href="#validacion" title="Permanent link">&para;</a></h5>
+<p>Las reglas de validación se definen en la función <code>rules()</code> del Model componiendo un array en el que cada elemento se define como sigue:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">array</span><span class="p">(</span><span class="s1">&#39;ListaAtributos&#39;</span><span class="p">,</span> <span class="s1">&#39;Validador&#39;</span><span class="p">,</span> <span class="s1">&#39;on&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;ListaEscenarios&#39;</span><span class="p">,</span> <span class="o">...</span><span class="nx">opciones</span> <span class="nx">adicionales</span><span class="p">)</span>
+</code></pre></div>
+<p>donde <code>ListaAtributos</code> es una lista separada por comas de nombres de atributos del Model; <code>Validador</code> especifica el tipo de validación; el parámetro <code>on</code> es opcional y especifica la lista de escenarios en las que se aplica la regla; las opciones adicionales son pares clave-valor para inicializar propiedades de los validadores usados.</p>
+<p>Hay tres tipos de validadores:</p>
+<ul>
+<li><code>Validador</code> puede ser el nombre de un método de la clase Modelo. El método tiene que tener la siguiente forma:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * @param string $attribute the name of the attribute to be validated</span>
+<span class="sd"> * @param array $params options specified in the validation rule</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">ValidatorName</span><span class="p">(</span><span class="nv">$attribute</span><span class="p">,</span><span class="nv">$params</span><span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><code>Validador</code> puede ser el nombre de una clase de validación. En este caso cuando la regla es aplicada, una instancia de la clase de validación se crea y se inicializa con las opciones adicionales. La clase de validación debe extender de <a href="http://www.yiiframework.com/doc/api/1.1/CValidator">CValidator</a>.</li>
+<li><code>Validador</code> puede ser una de las clases de validación predefinidas en Yii (<a href="http://www.yiiframework.com/doc/guide/1.1/en/form.model#declaring-validation-rules">lista</a>).</li>
+</ul>
+<h5 id="asignacion-de-atributos">Asignación de atributos<a class="headerlink" href="#asignacion-de-atributos" title="Permanent link">&para;</a></h5>
+<p>Las asignaciones de atributos entre formulario y modelo se pueden hacer en bloque por medio de la función de PHP <code>$_POST[&lt;clase_modelo&gt;]</code>. Sólo se asignan los atributos considerados seguros, es decir los que tienen asociada una regla de validación. Hay que tener en cuenta que las reglas de validación se pueden asociar a escenarios por lo que se asignarán unos atributos u otros según el escenario declarado al instanciar el modelo. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// en escenario login</span>
+<span class="nv">$model</span><span class="o">=</span><span class="k">new</span> <span class="nx">User</span><span class="p">(</span><span class="s1">&#39;login&#39;</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;User&#39;</span><span class="p">]))</span>
+    <span class="nv">$model</span><span class="o">-&gt;</span><span class="na">attributes</span><span class="o">=</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;User&#39;</span><span class="p">];</span>
+
+<span class="c1">// en escenario register</span>
+<span class="nv">$model</span><span class="o">=</span><span class="k">new</span> <span class="nx">User</span><span class="p">(</span><span class="s1">&#39;register&#39;</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;User&#39;</span><span class="p">]))</span>
+    <span class="nv">$model</span><span class="o">-&gt;</span><span class="na">attributes</span><span class="o">=</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;User&#39;</span><span class="p">];</span>
+</code></pre></div>
+<p>Es importante recordar que las reglas de validación se usan para chequear los datos introducidos por los usuarios y no los datos generados por código (timestamps o primary keys). Por lo tanto <strong>no hay que definir reglas de validación en los atributos que no esperamos que sean introducidos por el usuario</strong>. Por ejemplo, si marcamos como seguro el atributo <code>id</code> de un modelo (por medio del validador <code>safe</code> por ejemplo), aunque inicialmente no incluyamos el campo en el formulario, un atacante podría enviarlo y la asignación en bloque sobre el modelo lo incluiría y podría permitir cambiar el ID del registro en base de datos.</p>
+<h5 id="provocando-la-validacion">Provocando la validación<a class="headerlink" href="#provocando-la-validacion" title="Permanent link">&para;</a></h5>
+<p>Una vez que el modelo recibe los atributos (normalmente procedentes del usuario por medio de un formulario) la validación se puede desencadenar invocando el método <code>CModel::validate()</code>. Retornará <code>true</code> o <code>false</code> en función del resultado. En los modelos tipo <code>CActiveRecord</code> de forma predeterminada se desencadena también al invocar el método <code>save()</code>. Antes de invocar la validación se puede indicar el escenario (ajustando la propiedad <code>scenario</code> del modelo) para elegir el conjunto de reglas de validación que se desean.</p>
+<p>Una vez que la validación se ha hecho, los posibles errores se almacenan en el propio modelo. Se pueden obtener con las funciones <code>CModel::getErrors()</code> (devuelve todos los errores) y <code>CModel::getError()</code> (devuelve sólo el primero).</p>
+<h4 id="recogiendo-varios-modelos-a-la-vez">Recogiendo varios modelos a la vez<a class="headerlink" href="#recogiendo-varios-modelos-a-la-vez" title="Permanent link">&para;</a></h4>
+<p>Para recoger varios modelos o registros de un tipo simultáneamente (o entrada tabular) necesitamos crear o rellenar un array de instancias del modelo, dependiendo de si queremos insertar o modificar registros. Luego recogeremos los datos de entrada del usuario de la variable <code>$_POST</code> y los asignaremos a cada modelo. Cuando recogíamos un solo modelo hacíamos <code>$_POST[&lt;clase_modelo&gt;]</code>, ahora haremos <code>$_POST[&lt;clase_modelo&gt;][$i]</code>. El action de modificación tendrá el siguiente aspecto:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">actionBatchUpdate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// retrieve items to be updated in a batch mode</span>
+    <span class="c1">// assuming each item is of model class &#39;Item&#39;</span>
+    <span class="nv">$items</span><span class="o">=</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getItemsToUpdate</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]))</span> <span class="p">{</span>
+        <span class="nv">$valid</span><span class="o">=</span><span class="k">true</span><span class="p">;</span>
+        <span class="k">foreach</span><span class="p">(</span><span class="nv">$items</span> <span class="k">as</span> <span class="nv">$i</span><span class="o">=&gt;</span><span class="nv">$item</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">][</span><span class="nv">$i</span><span class="p">]))</span>
+                <span class="nv">$item</span><span class="o">-&gt;</span><span class="na">attributes</span><span class="o">=</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">][</span><span class="nv">$i</span><span class="p">];</span>
+            <span class="nv">$valid</span><span class="o">=</span><span class="nv">$item</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nv">$valid</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="nv">$valid</span><span class="p">)</span>  <span class="c1">// all items are valid</span>
+            <span class="c1">// ...do something here</span>
+    <span class="p">}</span>
+    <span class="c1">// displays the view to collect tabular input</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;batchUpdate&#39;</span><span class="p">,</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;items&#39;</span><span class="o">=&gt;</span><span class="nv">$items</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>y la vista incluirá algo como:</p>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;div class=&quot;form&quot;&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">CHtml</span><span class="o">::</span><span class="na">beginForm</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;table&gt;</span>
+<span class="x">&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Price&lt;/th&gt;&lt;th&gt;Count&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">foreach</span><span class="p">(</span><span class="nv">$items</span> <span class="k">as</span> <span class="nv">$i</span><span class="o">=&gt;</span><span class="nv">$item</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;tr&gt;</span>
+<span class="x">&lt;td&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">CHtml</span><span class="o">::</span><span class="na">activeTextField</span><span class="p">(</span><span class="nv">$item</span><span class="p">,</span><span class="s2">&quot;[</span><span class="si">$i</span><span class="s2">]name&quot;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;/td&gt;</span>
+<span class="x">&lt;td&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">CHtml</span><span class="o">::</span><span class="na">activeTextField</span><span class="p">(</span><span class="nv">$item</span><span class="p">,</span><span class="s2">&quot;[</span><span class="si">$i</span><span class="s2">]price&quot;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;/td&gt;</span>
+<span class="x">&lt;td&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">CHtml</span><span class="o">::</span><span class="na">activeTextField</span><span class="p">(</span><span class="nv">$item</span><span class="p">,</span><span class="s2">&quot;[</span><span class="si">$i</span><span class="s2">]count&quot;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;/td&gt;</span>
+<span class="x">&lt;td&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">CHtml</span><span class="o">::</span><span class="na">activeTextArea</span><span class="p">(</span><span class="nv">$item</span><span class="p">,</span><span class="s2">&quot;[</span><span class="si">$i</span><span class="s2">]description&quot;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;/td&gt;</span>
+<span class="x">&lt;/tr&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;/table&gt;</span>
+
+<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">CHtml</span><span class="o">::</span><span class="na">submitButton</span><span class="p">(</span><span class="s1">&#39;Save&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">CHtml</span><span class="o">::</span><span class="na">endForm</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;/div&gt;&lt;!-- form --&gt;</span>
+</code></pre></div>
+<h4 id="form-builder">Form Builder<a class="headerlink" href="#form-builder" title="Permanent link">&para;</a></h4>
+<p>Yii incluye un sistema de generación de formularios dinámico. Se basa en el objeto <a href="http://www.yiiframework.com/doc/api/1.1/CForm">CForm</a>. El uso se basa en crear el objeto, pasarle un array de configuración (se suele mantener en un fichero aparte) y renderizarlo desde una vista.</p>
+<p>Si se definen formularios anidados (como se ve en la <a href="http://www.yiiframework.com/doc/guide/1.1/en/form.builder#creating-a-nested-form">documentación</a>), el formulario renderizado contendrá únicamente una etiqueta <code>form</code> HTML dentro de la cual los campos se identificarán con nombres tipo <code>Model[atributo]</code>, donde Model se corresponderá con uno de los modelos asociados a uno de los sub-forms.</p>
+<p>Cuando se utiliza el Form Builder la asignación de atributos del formulario al modelo se puede gestionar desde el propio objeto CForm. Para ello existe el método <code>loadData()</code>. Esta carga se hace automáticamente cuando es necesario, como por ejemplo si invocamos el método <code>validate()</code> de CForm que valida los modelos asociados.</p>
+<p>Documentación completa <a href="http://www.yiiframework.com/doc/guide/1.1/en/form.builder">aquí</a>.</p>
+<h3 id="base-de-datos">Base de Datos<a class="headerlink" href="#base-de-datos" title="Permanent link">&para;</a></h3>
+<h4 id="objetos-dao">Objetos DAO<a class="headerlink" href="#objetos-dao" title="Permanent link">&para;</a></h4>
+<p>El modelo de acceso a bases de datos de Yii se basa en los siguientes objetos:</p>
+<ul>
+<li>CDbConnection: Representa una conexión a una base de datos. Normalmente se configura como componente de la aplicación. Es interesante aprovechar la funcionalidad de prefijo de tablas por medio de la propiedad <code>CDbConnection::tablePrefix</code>. Si se utiliza, luego en las consultas hay que indicar las tablas sin el prefijo (que queda configurado en esta propiedad) y entre dobles llaves (por ejemplo: {{usuario}}).</li>
+<li>CDbCommand: Representa una sentencia SQL para ejecutar contra una base de datos. Se puede crear mediante el método <code>createCommand()</code> del objeto CDbConnection. Se ejecuta con los métodos <code>query()</code> para selects y <code>execute()</code> para el resto. <code>query()</code> devuelve un <code>CDbDataReader</code>. Existen cuatro variantes de <code>query()</code> que devuelven datos directamente:<ul>
+<li>queryAll(): Devuelve un array con todos los registros del resultado de la consulta.</li>
+<li>queryRow(): Devuelve el primer registro del resultado de la consulta.</li>
+<li>queryColumn(): Devuelve un array con el valor de la primera columna del resultado de la consulta.</li>
+<li>queryScalar(): Devuelve el primer campo del primer registro del resultado de la consulta. Útil para una consulta tipo count.</li>
+</ul>
+</li>
+<li>CDbDataReader: Representa un conjunto de registros que se lee sólo hacia adelante resultado de una consulta. Normalmente el objeto se recorre ejecutando sucesivamente el método <code>read()</code> hasta que devuelve <code>false</code>. A continuación se muestran tres formas de extraer los datos de CDbDataReader:
+    <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$dataReader</span><span class="o">=</span><span class="nv">$command</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>
+<span class="c1">// calling read() repeatedly until it returns false</span>
+<span class="k">while</span><span class="p">((</span><span class="nv">$row</span><span class="o">=</span><span class="nv">$dataReader</span><span class="o">-&gt;</span><span class="na">read</span><span class="p">())</span><span class="o">!==</span><span class="k">false</span><span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="c1">// using foreach to traverse through every row of data</span>
+<span class="k">foreach</span><span class="p">(</span><span class="nv">$dataReader</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="c1">// retrieving all rows at once in a single array</span>
+<span class="nv">$rows</span><span class="o">=</span><span class="nv">$dataReader</span><span class="o">-&gt;</span><span class="na">readAll</span><span class="p">();</span>
+</code></pre></div></li>
+<li>CDbTransaction: Representa una transacción en la base de datos. A continuación se muestra una estructura típica transaccional con este objeto:
+    <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$transaction</span><span class="o">=</span><span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">beginTransaction</span><span class="p">();</span>
+<span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">createCommand</span><span class="p">(</span><span class="nv">$sql1</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+    <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">createCommand</span><span class="p">(</span><span class="nv">$sql2</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+    <span class="c1">//.... other SQL executions</span>
+    <span class="nv">$transaction</span><span class="o">-&gt;</span><span class="na">commit</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">(</span><span class="nx">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// an exception is raised if a query fails</span>
+    <span class="nv">$transaction</span><span class="o">-&gt;</span><span class="na">rollBack</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></li>
+</ul>
+<h5 id="binding-de-parametros">Binding de parámetros<a class="headerlink" href="#binding-de-parametros" title="Permanent link">&para;</a></h5>
+<p>Para evitar ataques de inyección de SQL y para mejorar el rendimiento de consultas que se repiten habitualmente, se recomienda parametrizar las consultas con los métodos <code>CDbCommand::bindParam()</code> y <code>CDbCommand::bindValue()</code>. Ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// una query con dos placeholders &quot;:username&quot; and &quot;:email&quot;</span>
+<span class="nv">$sql</span><span class="o">=</span><span class="s2">&quot;INSERT INTO tbl_user (username, email) VALUES(:username,:email)&quot;</span><span class="p">;</span>
+<span class="nv">$command</span><span class="o">=</span><span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">createCommand</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+<span class="nv">$command</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="s2">&quot;:username&quot;</span><span class="p">,</span><span class="nv">$username</span><span class="p">,</span><span class="nx">PDO</span><span class="o">::</span><span class="na">PARAM_STR</span><span class="p">);</span>  <span class="c1">// reemplaza el placeholder &quot;:username&quot; con el valor de la variable $username</span>
+<span class="nv">$command</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="s2">&quot;:email&quot;</span><span class="p">,</span><span class="nv">$email</span><span class="p">,</span><span class="nx">PDO</span><span class="o">::</span><span class="na">PARAM_STR</span><span class="p">);</span>        <span class="c1">// reemplaza el placeholder &quot;:email&quot; con el valor de la variable $email</span>
+<span class="nv">$command</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+<span class="c1">// inserta otra fila con un nuevo conjunto de valores</span>
+<span class="nv">$command</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="s2">&quot;:username&quot;</span><span class="p">,</span><span class="nv">$username2</span><span class="p">,</span><span class="nx">PDO</span><span class="o">::</span><span class="na">PARAM_STR</span><span class="p">);</span>
+<span class="nv">$command</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="s2">&quot;:email&quot;</span><span class="p">,</span><span class="nv">$email2</span><span class="p">,</span><span class="nx">PDO</span><span class="o">::</span><span class="na">PARAM_STR</span><span class="p">);</span>
+<span class="nv">$command</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+</code></pre></div>
+<h5 id="binding-de-variables">Binding de variables<a class="headerlink" href="#binding-de-variables" title="Permanent link">&para;</a></h5>
+<p>Se pueden asociar variables PHP a columnas de una query de manera que tomen valor automáticamente cada vez que leamos el siguiente registro. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$sql</span><span class="o">=</span><span class="s2">&quot;SELECT username, email FROM tbl_user&quot;</span><span class="p">;</span>
+<span class="nv">$dataReader</span><span class="o">=</span><span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">createCommand</span><span class="p">(</span><span class="nv">$sql</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>
+<span class="nv">$dataReader</span><span class="o">-&gt;</span><span class="na">bindColumn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nv">$username</span><span class="p">);</span>  <span class="c1">// asocia la primera columna (username) con la variable $username</span>
+<span class="nv">$dataReader</span><span class="o">-&gt;</span><span class="na">bindColumn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nv">$email</span><span class="p">);</span>     <span class="c1">// asocia la segunda columna (email) con la variable $email</span>
+<span class="k">while</span><span class="p">(</span><span class="nv">$dataReader</span><span class="o">-&gt;</span><span class="na">read</span><span class="p">()</span><span class="o">!==</span><span class="k">false</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// $username y $email contienen los valores correspondientes a la fila en curso</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="query-builder">Query Builder<a class="headerlink" href="#query-builder" title="Permanent link">&para;</a></h4>
+<p>Existe un conjunto de herramientas para construir sentencias SQL de una manera orientada a objeto. Como ventajas, permite construir sentencias de forma programática, evita problemas de sintaxis o ambigüedades, previene ataques de inyección de SQL al usar binding de parámetros y ofrece abstracción de base de datos lo que facilitaría una migración más adelante.</p>
+<p>Consultar la documentación completa <a href="http://www.yiiframework.com/doc/guide/1.1/en/database.query-builder">aquí</a>.</p>
+<h4 id="active-record">Active Record<a class="headerlink" href="#active-record" title="Permanent link">&para;</a></h4>
+<p>Active Record (AR) es una popular técnica de mapeo Objeto-Relacional (ORM) que permite manipular una tabla de manera orientada a objeto. De forma dinámica se genera una entidad modelo a partir de una tabla con prácticamente nada de código. Se recomienda que todos los nombres de los campos de las tablas estén en minúsculas para no tener problemas con el cambio de gestor de base de datos, ya que algunos son sensibles a mayúsculas y otros no.</p>
+<h5 id="creando-registros">Creando registros<a class="headerlink" href="#creando-registros" title="Permanent link">&para;</a></h5>
+<p>Simplemente creando un objeto AR, asignando valores a sus propiedades y llamando al método <code>CActiveRecord::save()</code>.</p>
+<p>Para asignar expresiones SQL a algunos de los campos o propiedades de los objetos AR, hay que utilizar el objero <code>CDbExpression</code>, por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$post</span><span class="o">=</span><span class="k">new</span> <span class="nx">Post</span><span class="p">;</span>
+<span class="nv">$post</span><span class="o">-&gt;</span><span class="na">create_time</span><span class="o">=</span><span class="k">new</span> <span class="nx">CDbExpression</span><span class="p">(</span><span class="s1">&#39;NOW()&#39;</span><span class="p">);</span>  <span class="c1">// $post-&gt;create_time=&#39;NOW()&#39;; no funcionaría porque &#39;NOW()&#39; sería tratado como cadena</span>
+<span class="nv">$post</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
+</code></pre></div>
+<h5 id="recuperando-registros">Recuperando registros<a class="headerlink" href="#recuperando-registros" title="Permanent link">&para;</a></h5>
+<p>Para recuperar un solo registro tenemos los métodos:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$post</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$condition</span><span class="p">,</span><span class="nv">$params</span><span class="p">);</span>                          <span class="c1">// encuentra la primera fila que satisface la condición especificada</span>
+<span class="nv">$post</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">findByPk</span><span class="p">(</span><span class="nv">$postID</span><span class="p">,</span><span class="nv">$condition</span><span class="p">,</span><span class="nv">$params</span><span class="p">);</span>              <span class="c1">// encuentra la fila con el primary key especificado</span>
+<span class="nv">$post</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">findByAttributes</span><span class="p">(</span><span class="nv">$attributes</span><span class="p">,</span><span class="nv">$condition</span><span class="p">,</span><span class="nv">$params</span><span class="p">);</span>  <span class="c1">// encuentra la fila con los valores de los atributos especificados</span>
+<span class="nv">$post</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">findBySql</span><span class="p">(</span><span class="nv">$sql</span><span class="p">,</span><span class="nv">$params</span><span class="p">);</span>                           <span class="c1">// encuentra la primera fila usando la SQL especificada</span>
+</code></pre></div>
+<p>Si no se encuentra ningún registro, el resultado será <code>null</code>.</p>
+<p>Para recuperar varios registros tenemos los métodos:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$posts</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">(</span><span class="nv">$condition</span><span class="p">,</span><span class="nv">$params</span><span class="p">);</span>                          <span class="c1">// encuentra todas las filas que satisfacen la condición especificada</span>
+<span class="nv">$posts</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">findAllByPk</span><span class="p">(</span><span class="nv">$postIDs</span><span class="p">,</span><span class="nv">$condition</span><span class="p">,</span><span class="nv">$params</span><span class="p">);</span>             <span class="c1">// encuentra todas las filas con el primary key especificado</span>
+<span class="nv">$posts</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">findAllByAttributes</span><span class="p">(</span><span class="nv">$attributes</span><span class="p">,</span><span class="nv">$condition</span><span class="p">,</span><span class="nv">$params</span><span class="p">);</span>  <span class="c1">// encuentra todas las filas con los valores de los atributos especificados</span>
+<span class="nv">$posts</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">findAllBySql</span><span class="p">(</span><span class="nv">$sql</span><span class="p">,</span><span class="nv">$params</span><span class="p">);</span>                           <span class="c1">// encuentra todas las filas usando la SQL especificada</span>
+</code></pre></div>
+<p>Adicionalmente existen los siguientes métodos:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$n</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">count</span><span class="p">(</span><span class="nv">$condition</span><span class="p">,</span><span class="nv">$params</span><span class="p">);</span>        <span class="c1">// obtiene el número de filas que satisfacen la condición especificada</span>
+<span class="nv">$n</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">countBySql</span><span class="p">(</span><span class="nv">$sql</span><span class="p">,</span><span class="nv">$params</span><span class="p">);</span>         <span class="c1">// obtiene el número de filas que se obtendrían con las SQL especificada</span>
+<span class="nv">$exists</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">exists</span><span class="p">(</span><span class="nv">$condition</span><span class="p">,</span><span class="nv">$params</span><span class="p">);</span>  <span class="c1">// comprueba si existe al menos una fila que satisface la condición especificada</span>
+</code></pre></div>
+<p>En todos los casos, en lugar de la pareja de strings <code>$condition</code> y <code>$params</code>, podemos entregar un objeto de tipo <code>CDbCriteria</code> más cosas además de una cláusula WHERE. Alternativamente a pasar un <code>CDbCriteria</code> podemos pasar un array con las propiedades de permitan construir este objeto dinámicamente.</p>
+<h5 id="actualizando-registros">Actualizando registros<a class="headerlink" href="#actualizando-registros" title="Permanent link">&para;</a></h5>
+<p>Modificando un AR recién obtenido y guardando se producirá una actualización en base de datos:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$post</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">findByPk</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="nv">$post</span><span class="o">-&gt;</span><span class="na">title</span><span class="o">=</span><span class="s1">&#39;new post title&#39;</span><span class="p">;</span>
+<span class="nv">$post</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span> <span class="c1">// guarda el cambio en la base de datos</span>
+</code></pre></div>
+<p>Cuando se guarda (método <code>save()</code>) se invoca automáticamente la validación (a no ser que se pase el argumento false).</p>
+<p>Si el registro es nuevo se hará un insert en lugar de un update. Se puede interrogar al modelo si estamos en uno u otro caso por medio del método <code>CActiveRecord::isNewRecord()</code>.</p>
+<p>Se puede actualizar un AR que no se haya cargado previamente con los siguientes métodos:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">updateAll</span><span class="p">(</span><span class="nv">$attributes</span><span class="p">,</span><span class="nv">$condition</span><span class="p">,</span><span class="nv">$params</span><span class="p">);</span>       <span class="c1">// actualiza las filas que satisfacen la condición especificada</span>
+<span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">updateByPk</span><span class="p">(</span><span class="nv">$pk</span><span class="p">,</span><span class="nv">$attributes</span><span class="p">,</span><span class="nv">$condition</span><span class="p">,</span><span class="nv">$params</span><span class="p">);</span>  <span class="c1">// actualiza las filas que satisfacen la condición y la primary key especificadas</span>
+<span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">updateCounters</span><span class="p">(</span><span class="nv">$counters</span><span class="p">,</span><span class="nv">$condition</span><span class="p">,</span><span class="nv">$params</span><span class="p">);</span>    <span class="c1">// actualiza las columnas tipo counter en las filas que satisfacen la condición especificada</span>
+</code></pre></div>
+<h5 id="borrando-registros">Borrando registros<a class="headerlink" href="#borrando-registros" title="Permanent link">&para;</a></h5>
+<p>Para borrar un solo registro utilizar el método <code>delete()</code> sobre una instancia AR obtenida previamente:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$post</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">findByPk</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span> <span class="c1">// localizamos el registro</span>
+<span class="nv">$post</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">();</span> <span class="c1">// lo borramos. El objeto $post seguirá existiendo, pero el registro en base de datos no</span>
+</code></pre></div>
+<p>También se pueden borrar registros sin cargarlos previamente con los siguientes métodos:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">deleteAll</span><span class="p">(</span><span class="nv">$condition</span><span class="p">,</span><span class="nv">$params</span><span class="p">);</span>       <span class="c1">// borra las filas que se ajusten a la condición especificada</span>
+<span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">deleteByPk</span><span class="p">(</span><span class="nv">$pk</span><span class="p">,</span><span class="nv">$condition</span><span class="p">,</span><span class="nv">$params</span><span class="p">);</span>  <span class="c1">// borra las filas que se ajusten a la condición especificada y a la primary key</span>
+</code></pre></div>
+<h5 id="comparando-registros">Comparando registros<a class="headerlink" href="#comparando-registros" title="Permanent link">&para;</a></h5>
+<p>Usar el método <code>CActiveRecord::equals()</code>.</p>
+<h5 id="adaptacion-de-datos">Adaptación de datos<a class="headerlink" href="#adaptacion-de-datos" title="Permanent link">&para;</a></h5>
+<p><code>CActiveRecord</code> proporciona los siguientes métodos para adaptar los datos que se intercambian entre modelo y base de datos en uno y otro sentido:</p>
+<ul>
+<li>beforeValidate y afterValidate: invocados antes y después de que se efectúe la validación.</li>
+<li>beforeSave y afterSave: invocados antes y después de que se guarde una instancia AR.</li>
+<li>beforeDelete y afterDelete: invocados antes y después de que se borre una instancia AR.</li>
+<li>afterConstruct: invocado en cada instancia AR creada con el operador <code>new</code>.</li>
+<li>beforeFind: invocado antes de que un método de búsqueda de AR se use para efectuar una consulta (por ejemplo find(), findAll()).</li>
+<li>afterFind: invocado después de que cada instancia AR es creada como resultado de una búsqueda.</li>
+</ul>
+<h5 id="usando-transacciones">Usando transacciones<a class="headerlink" href="#usando-transacciones" title="Permanent link">&para;</a></h5>
+<p>Cada instancia AR contiene una propiedad llamada <code>dbConnection</code> que soporta transacciones de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$model</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">();</span>
+<span class="nv">$transaction</span><span class="o">=</span><span class="nv">$model</span><span class="o">-&gt;</span><span class="na">dbConnection</span><span class="o">-&gt;</span><span class="na">beginTransaction</span><span class="p">();</span>
+<span class="k">try</span> <span class="p">{</span>
+    <span class="c1">// find y save son dos pasos entre los que puede interferir otra petición</span>
+    <span class="c1">// encerraremos el intervalo entre ambas órdenes en una transacción para asegurar consistencia e integridad</span>
+    <span class="nv">$post</span><span class="o">=</span><span class="nv">$model</span><span class="o">-&gt;</span><span class="na">findByPk</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+    <span class="nv">$post</span><span class="o">-&gt;</span><span class="na">title</span><span class="o">=</span><span class="s1">&#39;new post title&#39;</span><span class="p">;</span>
+    <span class="nv">$post</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
+    <span class="nv">$transaction</span><span class="o">-&gt;</span><span class="na">commit</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">(</span><span class="nx">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$transaction</span><span class="o">-&gt;</span><span class="na">rollBack</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="named-scopes">Named scopes<a class="headerlink" href="#named-scopes" title="Permanent link">&para;</a></h5>
+<p>Un named scope representa un criterio de búsqueda al que le asignamos un nombre y que puede ser combinado con otros named scopes para refinar una búsqueda de AR's. Se declaran en el método <code>CActiveRecord::scopes()</code> como pares nombre-criterio de filtrado. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">Post</span> <span class="k">extends</span> <span class="nx">CActiveRecord</span> <span class="p">{</span>
+    <span class="c1">//......</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">scopes</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;published&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;condition&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;status=1&#39;</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="s1">&#39;recently&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;order&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;create_time DESC&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;limit&#39;</span><span class="o">=&gt;</span><span class="mi">5</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>La declaración de cada named scope se corresponde con un array que sirve para inicializar un objeto CDbCriteria. Una vez definidos se pueden combinar en las sentencias de búsqueda como por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$posts</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">published</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">recently</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
+</code></pre></div>
+<p>Deben usarse siempre sobre métodos class-level, es decir partiendo de <code>ModelName::model()-&gt;</code>, no directamente de <code>ModelName::</code>. Si se quieren parametrizar hay que definirlos como métodos class-level autónomos en lugar de configurarlos en el array de <code>CActiveRecord::scopes</code>. Por ejemplo para parametrizar el named scope <code>recently</code> definido previamente se haría:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">recently</span><span class="p">(</span><span class="nv">$limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDbCriteria</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">mergeWith</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;order&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;create_time DESC&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;limit&#39;</span><span class="o">=&gt;</span><span class="nv">$limit</span><span class="p">,</span>
+    <span class="p">));</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Luego podríamos llamar:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$posts</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">published</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">recently</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
+</code></pre></div>
+<p>Se puede definir un named scope predeterminado. De esta forma será aplicado automáticamente en todas las consultas. Para ello se define en el método <code>CActiveRecord::defaultScope</code> sin darle nombre como sí había que hacer en <code>CActiveRecord::scopes</code>. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">defaultScope</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;condition&#39;</span><span class="o">=&gt;</span><span class="s2">&quot;language=&#39;&quot;</span><span class="o">.</span><span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">language</span><span class="o">.</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span>
+    <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="activerecord-relacional">ActiveRecord relacional<a class="headerlink" href="#activerecord-relacional" title="Permanent link">&para;</a></h4>
+<h5 id="declaracion-de-relaciones">Declaración de relaciones<a class="headerlink" href="#declaracion-de-relaciones" title="Permanent link">&para;</a></h5>
+<p>Para ilustrar los ejemplos de esta sección se utilizará el siguiente modelo de datos:
+<img alt="er.png" src="/images/pages/er.png" /></p>
+<p>Las relaciones entre dos clases AR tienen que ver con la relación entre las tablas en base de datos. En base de datos tendremos las relaciones:</p>
+<ul>
+<li>one-to-many: entre tbl_user y tbl_post por ejemplo.</li>
+<li>ono-to-one: entre tbl_user y tbl_profile por ejemplo.</li>
+<li>many-to-many: entre tbl_category y tbl_post por ejemplo.</li>
+</ul>
+<p>En el lado AR hay cuatro tipos posibles:</p>
+<ul>
+<li>BELONGS_TO: Si la relación entre las tablas A y B es one-to-many, entonces B belongs_to A. En el ejemplo A=tbl_user y B=tbl_post.</li>
+<li>HAS_MANY: Si la relación entre las tablas A y B es one-to-many, entonces A has_many B. En el ejemplo A=tbl_user y B=tbl_post.</li>
+<li>HAS_ONE: Si la relación entre las tablas A y B es ono-to-one. Es un caso especial de HAS_MANY en el que A tiene al menos un B. En el ejemplo A=tbl_user y B=tbl_profile.</li>
+<li>MANY_MANY: Si la relación entre las tablas A y B es many-to-many. Se necesita una tabla intermedia que descomponga la relación en dos relaciones 1:n con la tabla intermedia (C). En el ejemplo A=tbl_post, B=tbl_category y C=tbl_post_category.</li>
+</ul>
+<p>Estas relaciones se declaran en el método <code>CActiveRecord::relations()</code> definiendo un array en el que cada elemento representa una relación de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="s1">&#39;VarName&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;RelationType&#39;</span><span class="p">,</span> <span class="s1">&#39;ClassName&#39;</span><span class="p">,</span> <span class="s1">&#39;ForeignKey&#39;</span><span class="p">,</span> <span class="o">...</span><span class="nx">opciones</span> <span class="nx">adicionales</span><span class="p">)</span>
+</code></pre></div>
+<p>donde <code>VarName</code> es el nombre de la relación, <code>RelationType</code> indica el tipo de relación (se pueden aprovechar las siguientes constantes: <code>self::BELONGS_TO</code>, <code>self::HAS_ONE</code>, <code>self::HAS_MANY</code> y <code>self::MANY_MANY</code>), <code>ClassName</code> es el nombre de la clase AR con que se está estableciendo la relación y <code>ForeignKey</code> indica la foreign key implicada en la relación. Las opciones adicionales se explicarán en la sección <a href="#opciones-de-consultas-relacionales">Opciones de consultas relacionales</a>.</p>
+<p>A continuación se definen las relaciones en los modelos User y Post:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">Post</span> <span class="k">extends</span> <span class="nx">CActiveRecord</span> <span class="p">{</span>
+    <span class="c1">//......</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">relations</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;author&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span><span class="nx">self</span><span class="o">::</span><span class="na">BELONGS_TO</span><span class="p">,</span> <span class="s1">&#39;User&#39;</span><span class="p">,</span> <span class="s1">&#39;author_id&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;categories&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span><span class="nx">self</span><span class="o">::</span><span class="na">MANY_MANY</span><span class="p">,</span> <span class="s1">&#39;Category&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;tbl_post_category(post_id, category_id)&#39;</span><span class="p">),</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">User</span> <span class="k">extends</span> <span class="nx">CActiveRecord</span> <span class="p">{</span>
+    <span class="c1">//......</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">relations</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;posts&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span><span class="nx">self</span><span class="o">::</span><span class="na">HAS_MANY</span><span class="p">,</span> <span class="s1">&#39;Post&#39;</span><span class="p">,</span> <span class="s1">&#39;author_id&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;profile&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span><span class="nx">self</span><span class="o">::</span><span class="na">HAS_ONE</span><span class="p">,</span> <span class="s1">&#39;Profile&#39;</span><span class="p">,</span> <span class="s1">&#39;owner_id&#39;</span><span class="p">),</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="consultas-relacionales">Consultas relacionales<a class="headerlink" href="#consultas-relacionales" title="Permanent link">&para;</a></h5>
+<p>Por defecto se aplica el sistema <em>lazy loading</em> en los campos de un modelo que se refieren a una relación. Para forzar un <em>eager loading</em> hay que preceder los métodos de búsqueda con el método <code>with()</code>. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$posts</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;author&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
+</code></pre></div>
+<p>Se pueden especificar varios nombres de relaciones separados por comas en el método <code>with()</code> o pasarle un <code>CDbCriteria::with</code> al método de búsqueda. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$criteria</span><span class="o">=</span><span class="k">new</span> <span class="nx">CDbCriteria</span><span class="p">;</span>
+<span class="nv">$criteria</span><span class="o">-&gt;</span><span class="na">with</span><span class="o">=</span><span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;author.profile&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;author.posts&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;categories&#39;</span><span class="p">,</span>
+<span class="p">);</span>
+<span class="nv">$posts</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">(</span><span class="nv">$criteria</span><span class="p">);</span>
+</code></pre></div>
+<h5 id="consultas-relacionales-sin-obtener-los-modelos-relacionados">Consultas relacionales sin obtener los modelos relacionados<a class="headerlink" href="#consultas-relacionales-sin-obtener-los-modelos-relacionados" title="Permanent link">&para;</a></h5>
+<p>En ocasiones nos interesa hacer una consulta usando una relación pero no queremos los datos de los propios modelos relacionados. Por ejemplo si quisiéramos los usuarios que tienen post's en estado published=1, pero no los post's en sí, podríamos hacer lo siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$users</span><span class="o">=</span><span class="nx">User</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;posts&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;select&#39;</span><span class="o">=&gt;</span><span class="k">false</span><span class="p">,</span>
+        <span class="s1">&#39;joinType&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;INNER JOIN&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;condition&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;posts.published=1&#39;</span><span class="p">,</span>
+    <span class="p">),</span>
+<span class="p">))</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
+</code></pre></div>
+<h5 id="opciones-de-consultas-relacionales">Opciones de consultas relacionales<a class="headerlink" href="#opciones-de-consultas-relacionales" title="Permanent link">&para;</a></h5>
+<p>Las opciones adicionales que se pueden indicar cuando se definen las relaciones que se mencionaban en el apartado <a href="#declaración-de-relaciones">Declaración de relaciones</a> son las siguientes (consultar su funcionamiento en la <a href="http://www.yiiframework.com/doc/guide/1.1/en/database.arr#relational-query-options">documentación oficial</a>):</p>
+<ul>
+<li>select</li>
+<li>condition</li>
+<li>params</li>
+<li>on</li>
+<li>order</li>
+<li>with</li>
+<li>joinType</li>
+<li>alias</li>
+<li>together</li>
+<li>join</li>
+<li>group</li>
+<li>having</li>
+<li>index</li>
+<li>scopes</li>
+</ul>
+<p>Adicionalmente las siguientes opciones están disponibles para ciertas relaciones durante el <em>lazy loading</em> (consultar su funcionamiento en la <a href="http://www.yiiframework.com/doc/guide/1.1/en/database.arr#relational-query-options">documentación oficial</a>):</p>
+<ul>
+<li>limit</li>
+<li>offset</li>
+<li>through</li>
+</ul>
+<p>Ejemplo de uso:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">User</span> <span class="k">extends</span> <span class="nx">CActiveRecord</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">relations</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;posts&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span><span class="nx">self</span><span class="o">::</span><span class="na">HAS_MANY</span><span class="p">,</span> <span class="s1">&#39;Post&#39;</span><span class="p">,</span> <span class="s1">&#39;author_id&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;order&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;posts.create_time DESC&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;with&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;categories&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;profile&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span><span class="nx">self</span><span class="o">::</span><span class="na">HAS_ONE</span><span class="p">,</span> <span class="s1">&#39;Profile&#39;</span><span class="p">,</span> <span class="s1">&#39;owner_id&#39;</span><span class="p">),</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="desambiguacion-de-columnas">Desambiguación de columnas<a class="headerlink" href="#desambiguacion-de-columnas" title="Permanent link">&para;</a></h5>
+<p>En una consulta relacional con AR, el alias para la tabla primaria es <code>t</code>, mientras que el alias de la tabla relacionada se corresponde con el nombre de la relación. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$posts</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;comments&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;order&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;t.create_time, comments.create_time&#39;</span>
+<span class="p">));</span>
+</code></pre></div>
+<h5 id="opciones-dinamicas-en-consultas-relacionales">Opciones dinámicas en consultas relacionales<a class="headerlink" href="#opciones-dinamicas-en-consultas-relacionales" title="Permanent link">&para;</a></h5>
+<p>Se pueden sobreescribir las opciones que se definen en las relaciones indicando otras mediante el método <code>with()</code> o con la opción adicional <code>with</code>.</p>
+<h5 id="rendimiento-de-consultas-relacionales">Rendimiento de consultas relacionales<a class="headerlink" href="#rendimiento-de-consultas-relacionales" title="Permanent link">&para;</a></h5>
+<p>Existe una opción que permite elegir entre dos métodos para realizar consultas <em>eager loading</em>. Se trata de la opción <code>together</code> que determina si se realizará una única consulta con el join de las tablas relacionadas (más rendimiento) o una consulta por cada tabla (menos información redundante). Consultar <a href="http://www.yiiframework.com/doc/guide/1.1/en/database.arr#relational-query-performance">documentación completa</a>.</p>
+<h5 id="consulta-estadistica">Consulta estadística<a class="headerlink" href="#consulta-estadistica" title="Permanent link">&para;</a></h5>
+<p>Existe un tipo de relación especializado en obtener datos estadísticos entre tablas. Sólo se puede aplicar sobre tablas relacionadas con <code>HAS_MANY</code> y <code>MANY_MANY</code> y el tipo de relación se designa con <code>self::STAT</code>. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">Post</span> <span class="k">extends</span> <span class="nx">CActiveRecord</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">relations</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;commentCount&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span><span class="nx">self</span><span class="o">::</span><span class="na">STAT</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">,</span> <span class="s1">&#39;post_id&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;categoryCount&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span>
+                <span class="nx">self</span><span class="o">::</span><span class="na">STAT</span><span class="p">,</span> <span class="s1">&#39;Category&#39;</span><span class="p">,</span> <span class="s1">&#39;post_category(post_id, category_id)&#39;</span>
+            <span class="p">),</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Por defecto la consulta estadística consistirá en un <code>COUNT</code>, pero podemos realizar ajustes con las siguientes opciones adicionales al definir la relación:</p>
+<ul>
+<li><code>select</code>: la expresión estadística. Por defecto es <code>COUNT(*)</code>, lo que realiza un conteo de los objetos hijos.</li>
+<li><code>defaultValue</code>: el valor que se asignará a los registros que no reciban un resultado de la consulta estadística. Por ejemplo, si un post no tiene comentarios, <code>commentCount</code> recibirá este valor. Por defecto vale 0.</li>
+<li><code>condition</code>: la cláusula WHERE. Su valor por defecto es vacío.</li>
+<li><code>params</code>: los parámetros a asociar a la sentencia SQL generada. Debe ser un array de parejas clave-valor.</li>
+<li><code>order</code>: la cláusula ORDER. Su valor por defecto es vacío.</li>
+<li><code>group</code>: la cláusula GROUP BY. Su valor por defecto es vacío.</li>
+<li><code>having</code>: la cláusula HAVING. Su valor por defecto es vacío.</li>
+</ul>
+<h5 id="consulta-relacional-con-named-scopes">Consulta relacional con named scopes<a class="headerlink" href="#consulta-relacional-con-named-scopes" title="Permanent link">&para;</a></h5>
+<p>Se pueden combinar las consultas relacionales con los <em>named scopes</em> aplicando estos últimos tanto sobre la tabla principal como sobre las relacionadas. En el primer caso se haría combinando <em>named scopes</em> y consulta relacional en cadena de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$posts</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">published</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">recently</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;comments&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
+</code></pre></div>
+<p>Aplicar <em>named scopes</em> a los modelos relacionados se hace indicandolos detrás de la relación separándolos con ":". Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$posts</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;comments:recently:approved&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
+</code></pre></div>
+<p>Los <em>named scopes</em> pueden forzarse en la propia declaración de la relación del siguiente modo:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">User</span> <span class="k">extends</span> <span class="nx">CActiveRecord</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">relations</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;posts&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span><span class="nx">self</span><span class="o">::</span><span class="na">HAS_MANY</span><span class="p">,</span> <span class="s1">&#39;Post&#39;</span><span class="p">,</span> <span class="s1">&#39;author_id&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;with&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;comments:approved&#39;</span><span class="p">),</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Si los <em>named scopes</em> del objeto relacionados admiten parámetros, pueden pasarse en la consulta relacional de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$users</span><span class="o">=</span><span class="nx">User</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;with&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;posts&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;scopes&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;rated&#39;</span><span class="o">=&gt;</span><span class="mi">5</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">),</span>
+    <span class="p">),</span>
+<span class="p">));</span>
+</code></pre></div>
+<h5 id="consulta-relacional-con-through">Consulta relacional con through<a class="headerlink" href="#consulta-relacional-con-through" title="Permanent link">&para;</a></h5>
+<p>Se definen así:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="s1">&#39;comments&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span><span class="nx">self</span><span class="o">::</span><span class="na">HAS_MANY</span><span class="p">,</span><span class="s1">&#39;Comment&#39;</span><span class="p">,</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;key1&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;key2&#39;</span><span class="p">),</span><span class="s1">&#39;through&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;posts&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>donde en array('key1'=&gt;'key2'):</p>
+<ul>
+<li>key1 es una clave definida en la relación especificada en <code>through</code> (<code>posts</code> en este caso)</li>
+<li>key2 es una clave definida en el modelo al que esta relación apunta (<code>Comment</code> en este caso)</li>
+</ul>
+<p><code>through</code> puede utilizarse en relaciones <code>HAS_ONE</code> y <code>HAS_MANY</code>.</p>
+<p>Para ilustrar el caso HAS_MANY se utilizará el siguiente modelo de datos:
+<img alt="has_many_through.png" src="/images/pages/has_many_through.png" /></p>
+<p>Por ejemplo, para obtener los usuarios de un grupo en concreto:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">Group</span> <span class="k">extends</span> <span class="nx">CActiveRecord</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">relations</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;roles&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span><span class="nx">self</span><span class="o">::</span><span class="na">HAS_MANY</span><span class="p">,</span> <span class="s1">&#39;Role&#39;</span><span class="p">,</span> <span class="s1">&#39;group_id&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;users&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span><span class="nx">self</span><span class="o">::</span><span class="na">HAS_MANY</span><span class="p">,</span> <span class="s1">&#39;User&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;id&#39;</span><span class="p">),</span> <span class="s1">&#39;through&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;roles&#39;</span>
+            <span class="p">),</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Un caso más complicado sería obtener todos los comentarios de todos los usuarios de un grupo en concreto. Se lograría añadiendo a las relaciones anteriores la siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="s1">&#39;comments&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span>
+    <span class="nx">self</span><span class="o">::</span><span class="na">HAS_MANY</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;user_id&#39;</span><span class="p">),</span> <span class="s1">&#39;through&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;users&#39;</span>
+<span class="p">),</span>
+</code></pre></div>
+<p>Una variante del <code>HAS_MANY through</code> es cuando el modelo origen y destino es el mismo. Por ejemplo, dado el siguiente modelo de datos:
+<img alt="through_self.png" src="/images/pages/through_self.png" /></p>
+<p>Podríamos definir las siguientes relaciones:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">User</span> <span class="k">extends</span> <span class="nx">CActiveRecord</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">relations</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;mentorships&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span>
+                <span class="nx">self</span><span class="o">::</span><span class="na">HAS_MANY</span><span class="p">,</span><span class="s1">&#39;Mentorship&#39;</span><span class="p">,</span><span class="s1">&#39;teacher_id&#39;</span><span class="p">,</span><span class="s1">&#39;joinType&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;INNER JOIN&#39;</span>
+            <span class="p">),</span>
+            <span class="s1">&#39;students&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span>
+                <span class="nx">self</span><span class="o">::</span><span class="na">HAS_MANY</span><span class="p">,</span><span class="s1">&#39;User&#39;</span><span class="p">,</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;student_id&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;id&#39;</span><span class="p">),</span>
+                    <span class="s1">&#39;through&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;mentorships&#39;</span><span class="p">,</span><span class="s1">&#39;joinType&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;INNER JOIN&#39;</span>
+            <span class="p">),</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>De manera que podríamos obtener los alumnos que son enseñados por un profesor (alumnos y profesor son ambos usuarios):</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$teacher</span><span class="o">=</span><span class="nx">User</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">findByPk</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nv">$students</span><span class="o">=</span><span class="nv">$teacher</span><span class="o">-&gt;</span><span class="na">students</span><span class="p">;</span>
+</code></pre></div>
+<p>Para ilustrar el caso de <code>HAS_ONE through</code> nos basaremos en:
+<img alt="has_one_through.png" src="/images/pages/has_one_through.png" /></p>
+<p>Por ejemplo, obtener la dirección de un usuario cuando ésta está relacionada con el usuario por medio de un profile:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">User</span> <span class="k">extends</span> <span class="nx">CActiveRecord</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">relations</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;profile&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span><span class="nx">self</span><span class="o">::</span><span class="na">HAS_ONE</span><span class="p">,</span> <span class="s1">&#39;Profile&#39;</span><span class="p">,</span> <span class="s1">&#39;user_id&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;address&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span><span class="nx">self</span><span class="o">::</span><span class="na">HAS_ONE</span><span class="p">,</span> <span class="s1">&#39;Address&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;profile_id&#39;</span><span class="p">),</span> <span class="s1">&#39;through&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;profile&#39;</span>
+            <span class="p">),</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="tabla-de-relacion-many_many-con-datos-adicionales">Tabla de relación MANY_MANY con datos adicionales<a class="headerlink" href="#tabla-de-relacion-many_many-con-datos-adicionales" title="Permanent link">&para;</a></h5>
+<p>Para el caso en que la tabla intermedia que desarrolla una relación MANY_MANY entre otras dos tablas contenga campos con información adicional a los dos foreign keys que apuntan a las dos tablas, seguir <a href="http://www.yiiframework.com/wiki/285">este artículo</a> del wiki y <a href="http://www.yiiframework.com/forum/index.php/topic/8581-selecting-join-table-with-mant-to-many/">éste</a> del foro (ignorar las respuestas más viejas que son de cuando no existía el mecanismo <code>through</code>).</p>
+<h3 id="cosas-interesantes">Cosas interesantes<a class="headerlink" href="#cosas-interesantes" title="Permanent link">&para;</a></h3>
+<h5 id="application-singleton">Application Singleton<a class="headerlink" href="#application-singleton" title="Permanent link">&para;</a></h5>
+<p><code>Yii:app()</code> Sirve como almacén central de ajustes de configuración a nivel de aplicación (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.application">fuente</a>).</p>
+<h5 id="anadir-jquery">Añadir jQuery<a class="headerlink" href="#anadir-jquery" title="Permanent link">&para;</a></h5>
+<p>Añadir jQuery a una página. Código visto en un action, pero también se podría insertar directamente en la vista en que vaya a ser necesario:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Adding jQuery to the view page.</span>
+<span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getClientScript</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">registerCoreScript</span><span class="p">(</span><span class="s1">&#39;jquery&#39;</span><span class="p">);</span>
+</code></pre></div>
+<h5 id="filtrado-referido-en-bootgridview-o-cgridview">Filtrado referido en BootGridView o CGridView<a class="headerlink" href="#filtrado-referido-en-bootgridview-o-cgridview" title="Permanent link">&para;</a></h5>
+<p>Imaginemos el modelo empleado asociado en n:1 al modelo departamento. En el listado de empleados queremos mostrar el departamento al que pertenece y poder filtrar por el nombre del mismo (no por el ID de departamento como ocurriría si indicáramos el campo departamento_id que pertenece a empleado). Ver ejemplo en el filtrado del campo xproduct.product en <code>admin.php</code> del modelo Product en R135 del repositorio <code>svn+ssh://edumoreno@192.168.2.250/var/lib/subversion/gestoo/trunk</code>.</p>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      
+        
+        <a href="vr.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: VR" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              VR
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../ingenieria/3d_printing.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 3D Printing" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              3D Printing
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/eduardofilo" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/eduardofilo" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/edumoreno/" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="http://eduardofilo.es" target="_blank" rel="noopener" title="eduardofilo.es" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M309.8 480.3c-13.6 14.5-50 31.7-97.4 31.7-120.8 0-147-88.8-147-140.6v-144H17.9c-5.5 0-10-4.5-10-10v-68c0-7.2 4.5-13.6 11.3-16 62-21.8 81.5-76 84.3-117.1.8-11 6.5-16.3 16.1-16.3h70.9c5.5 0 10 4.5 10 10v115.2h83c5.5 0 10 4.4 10 9.9v81.7c0 5.5-4.5 10-10 10h-83.4V360c0 34.2 23.7 53.6 68 35.8 4.8-1.9 9-3.2 12.7-2.2 3.5.9 5.8 3.4 7.4 7.9l22 64.3c1.8 5 3.3 10.6-.4 14.5z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/c/EduardoMorenoLamana" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

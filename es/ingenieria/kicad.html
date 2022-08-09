@@ -1,0 +1,3534 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes varios sobre algunas de las cosas que necesito recordar, principalmente sobre Desarrollo y Sistemas.">
+      
+      
+        <meta name="author" content="Eduardo Moreno Lamana">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>KiCad - Apuntes de eduardófilo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@8.5.1/dist/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kicad" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../index.html" title="Apuntes de eduardófilo" class="md-header__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+      
+  <img src="../../images/eduardofilo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apuntes de eduardófilo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              KiCad
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../ingenieria/kicad.html" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../en/ingenieria/kicad.html" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../2022-08-08_mmiyoo_uart.html" class="md-tabs__link">
+        Blog
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../desarrollo/android.html" class="md-tabs__link">
+        Desarrollo
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="3d_printing.html" class="md-tabs__link md-tabs__link--active">
+        Ingeniería
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../proyectos/headsetcomm.html" class="md-tabs__link">
+        Proyectos
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../retro-emulacion/c64.html" class="md-tabs__link">
+        Retro-Emulación
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sistemas/android_system.html" class="md-tabs__link">
+        Sistemas
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../varios/bici.html" class="md-tabs__link">
+        Varios
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Apuntes de eduardófilo" class="md-nav__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+      
+  <img src="../../images/eduardofilo.png" alt="logo">
+
+    </a>
+    Apuntes de eduardófilo
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Blog
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Blog" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Blog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-08-08_mmiyoo_uart.html" class="md-nav__link">
+        Miyoo Mini UART
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-04-17_vr.html" class="md-nav__link">
+        Aventuras en VR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-10-30_raspi_zero_2_upgrade.html" class="md-nav__link">
+        Raspberry Pi Zero 2 W upgrade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-04-03_RG350_imagen.html" class="md-nav__link">
+        RG350/RG280 Imagen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-02-28_pico_fuzix.html" class="md-nav__link">
+        FUZIX en Raspberry Pi Pico
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-01-19-retroconsolas.html" class="md-nav__link">
+        Retroconsolas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-01-16-rg350_ra_installer.html" class="md-nav__link">
+        RG350 Instalador RA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-12-13-rg351_wifi_mod.html" class="md-nav__link">
+        RG351P Wifi mod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-09-27-rg350_xmame_sm_bridge.html" class="md-nav__link">
+        RG350 Interfaz xMAME SimpleMenu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-08-31-cancion_herb_alpert.html" class="md-nav__link">
+        La canción que merece la pena escuchar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-08-15-rg350_scummvm_launchers.html" class="md-nav__link">
+        RG350 ScummVM en lanzadores
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-08-12-rg350_py_backup.html" class="md-nav__link">
+        RG350 Py Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-07-12-rg350_screen_mod.html" class="md-nav__link">
+        RG350 Sustitución de pantalla 480p
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-07-09-rg350_fba_vertical_mod.html" class="md-nav__link">
+        RG350 FBA mod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-07-02-rg350_primeros_pasos.html" class="md-nav__link">
+        RG350 Primeros pasos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-06-04-rg350_raspi_image.html" class="md-nav__link">
+        RG350 Raspi Imagen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-31-rg350_compile.html" class="md-nav__link">
+        RG350 Compilar aplicaciones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-25-rg350_docker_buildroot.html" class="md-nav__link">
+        RG350 Docker Buildroot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-14-rg350_mame4all.html" class="md-nav__link">
+        RG350 MAME4All
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-08-rg350_dosbox.html" class="md-nav__link">
+        RG350 DOSBox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-06-rg350_openbor.html" class="md-nav__link">
+        RG350 OpenBOR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-04-rg350_daphne.html" class="md-nav__link">
+        RG350 Daphne
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-04-15-rg350_xmame.html" class="md-nav__link">
+        RG350 xMAME
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-04-14-rg350_scummvm.html" class="md-nav__link">
+        RG350 ScummVM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-03-28-rg350_pymenu.html" class="md-nav__link">
+        RG350 PyMenu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-03-19-rg350_backup.html" class="md-nav__link">
+        RG350 Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-16-panelizar_pcb.html" class="md-nav__link">
+        Panelizar PCB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-13-rg350_emulationstation.html" class="md-nav__link">
+        RG350 EmulationStation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-09-rg350_network.html" class="md-nav__link">
+        RG350 Conexión a internet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-08-eduzebox.html" class="md-nav__link">
+        EdUzebox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-01-31-rg350_fba.html" class="md-nav__link">
+        RG350 FBA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-01-25-rg350_simplemenu.html" class="md-nav__link">
+        RG350 SimpleMenu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-01-11-rg350_scraper.html" class="md-nav__link">
+        RG350 Scraper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-08-06-django_site.html" class="md-nav__link">
+        Creación de un sitio Django desde cero
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-07-07-crankshaft-build.html" class="md-nav__link">
+        Compilación OpenAuto para solucionar touch screen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-04-20-pong_composite_mod.html" class="md-nav__link">
+        Composite mod en consola Pong
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-01-29-bloqueo_telsome.html" class="md-nav__link">
+        Bloqueo de llamadas entrantes en Telsome
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-01-26-conversion_apuntes_mkdocs.html" class="md-nav__link">
+        Conversión del sitio de Apuntes a MkDocs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-10-20-Octoprint-en-Anet-A8.html" class="md-nav__link">
+        Octoprint en Anet A8
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-10-19-crankshaft.html" class="md-nav__link">
+        Crankshaft - AndroidAuto sobre Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-05-05-otto.html" class="md-nav__link">
+        Otto DIY
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2017-01-14-raspi2-kodi-16-tvheadend.html" class="md-nav__link">
+        Raspberry Pi 3 + KODI 16 + Tvheadend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-12-06-raspi3-kodi.html" class="md-nav__link">
+        Raspberry Pi 3 + KODI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-10-17-raspi-switch.html" class="md-nav__link">
+        Interruputor de encendido para Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-08-17-el-mundo-de-ayer.html" class="md-nav__link">
+        El mundo de ayer - Stefan Zweig
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-08-02-stm32-vl-discovery.html" class="md-nav__link">
+        Entorno desarrollo STM32 VL Discovery sobre Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-07-21-PIGRRL-2.html" class="md-nav__link">
+        Configuración PiGRRL-2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-07-10-wild.html" class="md-nav__link">
+        Wild - Cheryl Strayed
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-07-02-virus-android.html" class="md-nav__link">
+        Alertas por supuestos virus en Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-04-10-un-antropologo-en-marte.html" class="md-nav__link">
+        Un antropólogo en Marte - Oliver Sacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-02-25-los-innovadores.html" class="md-nav__link">
+        Los Innovadores - Walter Isaacson
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2015-03-14-raspi2-kodi-tvheadend.html" class="md-nav__link">
+        Raspberry Pi 2 + KODI + Tvheadend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2015-01-09-moviles.html" class="md-nav__link">
+        Móviles recomendables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2015-01-08-jekyll.html" class="md-nav__link">
+        Jekyll+GitHub Pages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2014-12-26-dokuwiki-raspi.html" class="md-nav__link">
+        Dokuwiki en Raspberry Pi manteniendo los ficheros en NAS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2014-12-20-micro-placas.html" class="md-nav__link">
+        Micro placas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2014-12-15-presentacion.html" class="md-nav__link">
+        Presentación
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Desarrollo
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Desarrollo
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/android.html" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/db.html" class="md-nav__link">
+        Bases de Datos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/diseno.html" class="md-nav__link">
+        Diseño
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/dokuwiki.html" class="md-nav__link">
+        Dokuwiki
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/eclipse.html" class="md-nav__link">
+        Eclipse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/projects.html" class="md-nav__link">
+        Gestión de Proyectos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/git.html" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/html.html" class="md-nav__link">
+        HTML+CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/ia.html" class="md-nav__link">
+        IA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/java.html" class="md-nav__link">
+        Java
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/javaee.html" class="md-nav__link">
+        JavaEE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/javascript.html" class="md-nav__link">
+        JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/joomla.html" class="md-nav__link">
+        Joomla
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/phonegap.html" class="md-nav__link">
+        Phonegap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/php.html" class="md-nav__link">
+        PHP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/python.html" class="md-nav__link">
+        Python/Django
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/ror.html" class="md-nav__link">
+        Ruby on Rails
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/spree.html" class="md-nav__link">
+        Spree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/subl.html" class="md-nav__link">
+        Sublime Text 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/svn.html" class="md-nav__link">
+        SVN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/vagrant.html" class="md-nav__link">
+        Vagrant
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/vr.html" class="md-nav__link">
+        VR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/yii.html" class="md-nav__link">
+        Yii
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Ingeniería
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ingeniería" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Ingeniería
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3d_printing.html" class="md-nav__link">
+        3D Printing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="arduino.html" class="md-nav__link">
+        Arduino
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="freecad.html" class="md-nav__link">
+        FreeCAD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="herramientas.html" class="md-nav__link">
+        Herramientas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          KiCad
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="kicad.html" class="md-nav__link md-nav__link--active">
+        KiCad
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enlaces" class="md-nav__link">
+    Enlaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-librerias" class="md-nav__link">
+    Gestión de librerías
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generacion-modelo-3d-de-la-placa" class="md-nav__link">
+    Generación modelo 3D de la placa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#designacion-de-componentes" class="md-nav__link">
+    Designación de componentes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentes" class="md-nav__link">
+    Componentes
+  </a>
+  
+    <nav class="md-nav" aria-label="Componentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tiendas" class="md-nav__link">
+    Tiendas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#componentes-interesantes-simbolos-y-footprints-propios-kicad" class="md-nav__link">
+    Componentes interesantes, Símbolos y footprints propios KiCad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valores-habituales-de-resistencias" class="md-nav__link">
+    Valores habituales de resistencias
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#panelizacion" class="md-nav__link">
+    Panelización
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modulos.html" class="md-nav__link">
+        Módulos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="stm32.html" class="md-nav__link">
+        STM32
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Proyectos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Proyectos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Proyectos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proyectos/headsetcomm.html" class="md-nav__link">
+        Headset Commander
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proyectos/dicom.html" class="md-nav__link">
+        Impresión 3D de ecografías
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proyectos/minecraft.html" class="md-nav__link">
+        Minecraft
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Retro-Emulación
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Retro-Emulación" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Retro-Emulación
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/c64.html" class="md-nav__link">
+        Commodore 64
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/fpga.html" class="md-nav__link">
+        FPGA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/general.html" class="md-nav__link">
+        General
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/juegos.html" class="md-nav__link">
+        Juegos destacados
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/miyoo-mini.html" class="md-nav__link">
+        Miyoo Mini
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/retroarch.html" class="md-nav__link">
+        RetroArch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/rg-350.html" class="md-nav__link">
+        RG350/RG280
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/rg-351.html" class="md-nav__link">
+        RG351
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/microconsolas.html" class="md-nav__link">
+        Micro consolas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/z80-computer.html" class="md-nav__link">
+        Z80 Computer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/zx-spectrum.html" class="md-nav__link">
+        ZX Spectrum
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/zx-uno.html" class="md-nav__link">
+        ZX-UNO
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Sistemas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sistemas" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Sistemas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/android_system.html" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/soft_imprescindible.html" class="md-nav__link">
+        Aplicaciones interesantes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/appletv.html" class="md-nav__link">
+        AppleTV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/buildroot.html" class="md-nav__link">
+        Buildroot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/docker.html" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/email.html" class="md-nav__link">
+        e-mail
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/impresoras.html" class="md-nav__link">
+        Impresoras
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/iot.html" class="md-nav__link">
+        IOT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/kodi.html" class="md-nav__link">
+        Kodi/OpenELEC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/macosx.html" class="md-nav__link">
+        Mac OS X
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/mysql.html" class="md-nav__link">
+        MySQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/nas.html" class="md-nav__link">
+        NAS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/oculus.html" class="md-nav__link">
+        Oculus Quest 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/odroid.html" class="md-nav__link">
+        ODROID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/office.html" class="md-nav__link">
+        Office
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/raspi.html" class="md-nav__link">
+        Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/raspi_pico.html" class="md-nav__link">
+        Raspberry Pi Pico
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/redes.html" class="md-nav__link">
+        Redes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/router_xiaomi.html" class="md-nav__link">
+        Router Xiaomi MiWiFi 3G
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/ubuntu_phone.html" class="md-nav__link">
+        Ubuntu Phone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/ubuntu.html" class="md-nav__link">
+        Ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/unix.html" class="md-nav__link">
+        UNIX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/trucos_windows.html" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Varios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Varios" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Varios
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/bici.html" class="md-nav__link">
+        Bicicleta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/links.html" class="md-nav__link">
+        Enlaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/excursionismo.html" class="md-nav__link">
+        Excursionismo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/hogar.html" class="md-nav__link">
+        Hogar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/english.html" class="md-nav__link">
+        Inglés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/corsa_d.html" class="md-nav__link">
+        Opel Corsa D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/recetas.html" class="md-nav__link">
+        Recetas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/viajes.html" class="md-nav__link">
+        Viajes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enlaces" class="md-nav__link">
+    Enlaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-librerias" class="md-nav__link">
+    Gestión de librerías
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generacion-modelo-3d-de-la-placa" class="md-nav__link">
+    Generación modelo 3D de la placa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#designacion-de-componentes" class="md-nav__link">
+    Designación de componentes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentes" class="md-nav__link">
+    Componentes
+  </a>
+  
+    <nav class="md-nav" aria-label="Componentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tiendas" class="md-nav__link">
+    Tiendas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#componentes-interesantes-simbolos-y-footprints-propios-kicad" class="md-nav__link">
+    Componentes interesantes, Símbolos y footprints propios KiCad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valores-habituales-de-resistencias" class="md-nav__link">
+    Valores habituales de resistencias
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#panelizacion" class="md-nav__link">
+    Panelización
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/eduardofilo/eduardofilo.mkdocs/edit/master/docs/ingenieria/kicad.md" title="Editar esta página" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="kicad">KiCad<a class="headerlink" href="#kicad" title="Permanent link">&para;</a></h1>
+<h2 id="enlaces">Enlaces<a class="headerlink" href="#enlaces" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Creating A PCB In Everything: KiCad: <a href="https://hackaday.com/2016/11/17/creating-a-pcb-in-everything-kicad-part-1/">Part 1</a>, <a href="https://hackaday.com/2016/12/09/creating-a-pcb-in-everything-kicad-part-2/">Part 2</a> y <a href="https://hackaday.com/2016/12/23/creating-a-pcb-in-everything-kicad-part-3/">Part 3</a></li>
+<li><a href="https://hackaday.com/2017/05/18/kicad-best-practises-library-management/">KiCad Best Practices: Library Management</a></li>
+<li><a href="http://support.seeedstudio.com/knowledgebase/articles/447362-fusion-pcb-specification">Desing Rules recomendadas para minimizar problemas en fabricación PCB's</a></li>
+<li><a href="https://github.com/sethhillbrand/kicad_templates">KiCad Templates for new projects</a>: Plantillas con ajustes adecuados para distintos fabricantes de PCBs.</li>
+<li><a href="https://defproc.co.uk/blog/kicad-logo-size/">Sizing Logos in KiCAD</a></li>
+<li><a href="https://jlcpcb.com/client/index.html#/parts">Librería de componentes de JLCPCB para Assembly Service</a></li>
+<li><a href="https://www.digikey.com/es/resources/online-conversion-calculators">Calculadoras de conversión en línea por DigiKey</a></li>
+<li><a href="https://github.com/badgeek/svg2shenzhen">Svg2Shenzhen</a>: Inkscape extension for exporting drawings into a KiCad PCB.</li>
+<li>Descarga de footprints y modelos 3D:<ul>
+<li><a href="https://www.snapeda.com/">SnapEDA</a></li>
+<li><a href="https://b2b.partcommunity.com/community/">PARTcommunity</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/openscopeproject/InteractiveHtmlBom/wiki">Interactive HTML BOM plugin for KiCad</a></li>
+<li>Herramientas de Jan Mrázek:<ul>
+<li><a href="https://github.com/yaqwsx/KiKit">KiKit</a>: Automation for KiCAD: panelization, automatic DRC check, generating assembly data.</li>
+<li><a href="https://github.com/yaqwsx/PcbDraw">PcbDraw</a>, <a href="https://github.com/yaqwsx/Pinion">Pinion</a>: Making nice pinout diagrams for your boards</li>
+<li><a href="https://github.com/yaqwsx/jlcparts">JLCPars</a>: Parametric search for electronics components</li>
+<li><a href="https://github.com/yaqwsx/YSpurGear">YSpurGear</a>, <a href="https://github.com/yaqwsx/YBevelGear">YBevelGear</a>: Parametric generators for gears in Fusion 360 which allow you to edit the gear parameters in history.</li>
+</ul>
+</li>
+<li><a href="https://www.pcbway.com/blog/PCB_Design_Tutorial/USO_DE_ETIQUETAS_EN_KICAD_PARA_LA_CONEXI_N_DE_COMPONENTES.html">Uso de etiquetas en KiCad para la conexión de componentes</a></li>
+<li><a href="https://www.pcbway.com/blog/PCB_Design_Tutorial/Best_practices_and_considerations_when_designing_your_PCB.html">Best practices and considerations when designing your PCB</a></li>
+<li><a href="https://hackaday.io/project/9550-solder-stencilme">Solder-stencil.me</a>: Aplicación/servicio para generar STLs a partir de los Gerber para imprimir stencils con una impresora 3D.</li>
+</ul>
+<h2 id="gestion-de-librerias">Gestión de librerías<a class="headerlink" href="#gestion-de-librerias" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Crear la siguiente estructura de directorios al crear un nuevo proyecto:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">mi_proyecto</span>
+ ↳<span class="mi">3</span><span class="nv">d_models</span>     <span class="o">//</span> .<span class="nv">STEP</span> <span class="nv">and</span> .<span class="nv">WRL</span> <span class="nv">model</span> <span class="nv">files</span> <span class="k">for</span> <span class="nv">all</span> <span class="nv">footprints</span>
+ ↳<span class="nv">datasheets</span>    <span class="o">//</span> <span class="nv">data</span> <span class="nv">sheets</span> <span class="k">for</span> <span class="nv">components</span> <span class="nv">used</span>
+ ↳<span class="nv">gerber</span>        <span class="o">//</span> <span class="nv">final</span> <span class="nv">production</span> <span class="nv">files</span>
+ ↳<span class="nv">images</span>        <span class="o">//</span> <span class="nv">SVG</span> <span class="nv">images</span> <span class="nv">and</span> <span class="mi">3</span><span class="nv">D</span> <span class="nv">board</span> <span class="nv">renders</span>
+ ↳<span class="nv">lib_sch</span>       <span class="o">//</span> <span class="nv">schematic</span> <span class="nv">symbols</span>
+ ↳<span class="nv">lib_fp</span>.<span class="nv">pretty</span> <span class="o">//</span> <span class="nv">footprints</span>
+ ↳<span class="nv">pdf</span>           <span class="o">//</span> <span class="nv">schematics</span>, <span class="nv">board</span> <span class="nv">layouts</span>, <span class="nv">dimension</span> <span class="nv">drawings</span>
+</code></pre></div></td></tr></table></div>
+
+</li>
+<li>
+<p>Conforme se va editando un esquemático, KiCad va incorporando todos los símbolos utilizados (procedentes de las librerías de la aplicación y de las creadas para el proyecto) a una librería de backup llamada "mi_proyecto-cache.lib". Una vez que el esquemático esté completo, copiar dicha librería al directorio <code>lib_sch</code>, renombrándola para quitar el sufijo <code>-cache</code> del nombre, es decir quedando <code>lib_sch/mi_proyecto.lib</code>.</p>
+</li>
+<li>
+<p>En el editor del esquemático abrir el comando de menú <code>Preferencias &gt; Administrar librerías de símbolos...</code>, seleccionar la pestaña <code>Librerías específicas del proyecto</code> y añadir la librería que hemos copiado en el paso anterior por medio del botón con forma de carpeta (<code>Add existing library to table</code>). De esta forma nunca perderemos los símbolos utilizados durante la creación del esquema (se podrían modificar al actualizar las librerías del programa):</p>
+<p><img alt="lib_sch" src="/images/pages/kicad/lib_sch.png" /></p>
+</li>
+</ol>
+<p>Una alternativa a la forma de trabajar anterior es recoger todos los símbolos y footprints generados en una librería independiente que se pueda añadir a todos los proyectos, una especie de repositorio personal. La incorporaremos como un <a href="/desarrollo/git.html#submodulos">submódulo git</a>. Para ello seguir estos pasos:</p>
+<ol>
+<li>
+<p>Inicializar un repositorio git para el proyecto:</p>
+<div class="highlight"><pre><span></span><code>$ cd mi_proyecto
+$ git init
+</code></pre></div>
+</li>
+<li>
+<p>Instalar la librería como un submódulo git en un directorio llamado <code>lib</code>:</p>
+<div class="highlight"><pre><span></span><code>$ git submodule add git@github.com:eduardofilo/kicad_footprints.git lib
+</code></pre></div>
+</li>
+<li>
+<p>Añadir la librería de símbolos desde <code>Preferences &gt; Manage Symbol Libraries... &gt; Project Specific Libraries</code>:</p>
+<p><img alt="lib_kicad_symbols" src="/images/pages/kicad/lib_kicad_symbols.png" /></p>
+</li>
+<li>
+<p>Y la librería de footprints desde <code>Preferences &gt; Manage Footprint Libraries... &gt; Project Specific Libraries</code>:</p>
+<p><img alt="lib_kicad_footprints" src="/images/pages/kicad/lib_kicad_footprints.png" /></p>
+</li>
+</ol>
+<h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h2>
+<p>En general KiCad se utiliza con atajos de teclado. Para obtener los atajos de teclado que sirven en una de las aplicaciones, pulsar <code>Ctrl+F1</code>.</p>
+<ol>
+<li>Crear proyecto:<ol>
+<li>Desde la ventana principal del programa, <code>File &gt; FNew &gt; Project...</code></li>
+</ol>
+</li>
+<li>Diseñar símbolo:<ol>
+<li>Abrir el programa <code>Symbol Editor</code>. <img src="/images/pages/kicad/add_component.svg" width="30"/></li>
+<li>Para mantener los ficheros del nuevo símbolo, escoger uno de estos caminos en función de si se quiere mantener el símbolo exclusivamente dentro del proyecto o de forma global:<ul>
+<li>Crear una nueva librería con el comando <code>File &gt; New Library...</code> en el directorio <code>lib_sch</code>. En el popup <code>Add To Library Table</code> que aparece seleccionar la opción <code>Project</code>.</li>
+<li>Instalar a nivel global (<code>Preferences &gt; Manage Symbol Libraries...</code>) las que se mantienen en <a href="https://github.com/eduardofilo/kicad_footprints">este repositorio</a>.</li>
+</ul>
+</li>
+<li>Seleccionar la librería recien creada o importada y pulsar el botón <code>Create new symbol</code>. <img src="/images/pages/kicad/add_component.svg" width="30"/></li>
+<li>Se nos preguntará por la librería donde incorporarlo. Seleccionar la que acabamos de crear (aparecerá al final).</li>
+<li>Rellenar el cuadro <code>Symbol Properties</code>. Fundamentalmente tenemos que dar un nombre para el componente.</li>
+<li>Crear el símbolo del componente utilizando fundamentalmente los siguientes atajos de teclado:<ul>
+<li><code>M</code>: Mover objeto.</li>
+<li><code>P</code>: Crear pin. El círculo al final de la línea representa el punto donde se hará la conexión. <img src="/images/pages/kicad/add_pin.svg" width="30"/></li>
+<li><code>Supr</code>: Eliminar objeto.</li>
+</ul>
+</li>
+<li>Decorar el símbolo con las herramientas de dibujo.</li>
+<li>Guardar los cambios. <img src="/images/pages/kicad/save.svg" width="30"/></li>
+</ol>
+</li>
+<li>Diseñar esquemático:<ol>
+<li>Abrir el programa <code>Schematic Layout Editor (eeschema)</code>. <img src="/images/pages/kicad/icon_eeschema.svg" width="30"/></li>
+<li>Añadir los símbolos que van a componer el esquemático con la ayuda de los siguientes atajos:<ul>
+<li><code>A</code>: Añadir símbolo. <img src="/images/pages/kicad/add_component.svg" width="30"/></li>
+<li><code>P</code>: Añadir fuente de alimentación o masa. <img src="/images/pages/kicad/add_power.svg" width="30"/></li>
+<li><code>C</code>: Copiar símbolo.</li>
+</ul>
+</li>
+<li>Una vez que tengamos todos los símbolos a la vista los reorganizaremos y cablearemos con los siguientes atajos de teclado:<ul>
+<li><code>M</code>: Mover objeto (rompe las conexiones).</li>
+<li><code>G</code>: Arrastrar objeto (mantiene las conexiones).</li>
+<li><code>R</code>: Rotar objeto.</li>
+<li><code>E</code>: Editar propiedades del objeto como Referencia (<code>U</code>), Valor (<code>V</code>) o Footprint (<code>F</code>).</li>
+<li><code>W</code>: Conexión entre símbolos. <img src="/images/pages/kicad/add_line.svg" width="30"/></li>
+<li><code>K</code>: Terminar el trazado de una conexión.</li>
+<li><code>Q</code>: Añadir no conexión.</li>
+<li><code>L</code>: Añadir etiqueta de red. <img src="/images/pages/kicad/add_line_label.svg" width="30"/></li>
+<li><code>I</code>: Añadir polilínea. <img src="/images/pages/kicad/add_dashed_line.svg" width="30"/></li>
+<li><code>T</code>: Añadir texto.</li>
+</ul>
+</li>
+<li>Dar valores a los componentes que lo necesiten (Resistencias, Condesadores, Diodos, etc.) con el atajo <code>V</code> o <code>E</code>.</li>
+<li>Dar nombre a los componentes. Se puede hacer automáticamente con la herramienta de anotación a la que se accede con el botón <img src="/images/pages/kicad/annotate.svg" width="30"/> de la barra superior.</li>
+</ol>
+</li>
+<li>Asociar símbolos del esquemático con huellas PCB ejecutando CvPCB. <img src="/images/pages/kicad/cvpcb.svg" width="30"/>. Aprovechar los botones de filtrado, sobre todo <code>Filter footprint list using a partial name or a pattern</code>.</li>
+<li>Diseñar las huellas que no se encuentren en la librería:<ol>
+<li>Abrir el programa <code>Footprint Editor</code>. <img src="/images/pages/kicad/new_footprint.svg" width="30"/></li>
+<li>Para mantener los ficheros de la nueva huella, escoger uno de estos caminos en función de si se quiere mantener exclusivamente dentro del proyecto o de forma global:<ul>
+<li>Crear una nueva librería con el comando <code>File &gt; New Library...</code> en el directorio <code>lib_fp.pretty</code>. En el popup <code>Select Library Table</code> que aparece seleccionar la opción <code>Project</code>.</li>
+<li>Instalar a nivel global (<code>Preferences &gt; Manage Footprint Libraries...</code>) las que se mantienen en <a href="https://github.com/eduardofilo/kicad_footprints">este repositorio</a> en el directorio <code>eduardofilo_footprints.pretty</code>.</li>
+</ul>
+</li>
+<li>Seleccionar en la lista de librerías la que acabamos de crear o incorporar en el paso anterior. De esta forma la nueva huella que vamos a crear se creará dentro de esta librería.</li>
+<li>Pulsar el botón <code>New footprint</code>. <img src="/images/pages/kicad/new_footprint.svg" width="30"/></li>
+<li>Darle nombre en el popup que aparece.</li>
+<li>Crear la huella utilizando fundamentalmente los siguientes atajos de teclado:<ul>
+<li><code>M</code>: Mover objeto.</li>
+<li><code>R</code>: Rotar objeto.</li>
+<li>Add pad: <img src="/images/pages/kicad/pad.svg" width="30"/></li>
+<li><code>E</code>: Editar propiedad de objeto. Cuando se aplica sobre los pads es importante asignar correctamente el valor del <code>Pad number</code> ya que es como se enlazan los símbolos con las huellas.</li>
+</ul>
+</li>
+<li>Decorar la huella con las herramientas de dibujo.</li>
+<li>Guardar los cambios. <img src="/images/pages/kicad/save.svg" width="30"/></li>
+</ol>
+</li>
+<li>Diseñar la PCB:<ol>
+<li>En <code>Schematic Layout Editor (eeschema)</code> pulsar el botón <code>Generate netlist</code>. <img src="/images/pages/kicad/netlist.svg" width="30"/></li>
+<li>En el popup que aparece pulsar el botón <code>Generate Netlist</code>.</li>
+<li>Guardar el fichero que genera en la raíz del proyecto.</li>
+<li>Abrir el programa <code>PCB Layout Editor (pcbnew)</code>. <img src="/images/pages/kicad/pcbnew.svg" width="30"/></li>
+<li>Importar el netlist utilizando el botón <code>Load netlist</code>. <img src="/images/pages/kicad/netlist.svg" width="30"/></li>
+<li>En el popup que aparece seleccionar el fichero que hemos generado en el punto 3 anterior.</li>
+<li>Pulsar el botón <code>Update PCB</code>.</li>
+<li>Cerrar el popup y hacer clic sobre la PCB para colocar las huellas.</li>
+<li>Utilizando los atajos <code>M</code> y <code>R</code> recolocar todos los componentes como más convenga.</li>
+<li>Ocultar las etiquetas que no interesen, pulsando <code>E</code> sobre ellas y desmarcando el check <code>Visible</code>.</li>
+<li>Dibujar el perfil de la PCB con las herramientas de dibujo en la capa <code>Edge.Cuts</code>.</li>
+<li>Rutear haciendo uso de los siguientes atajos de teclado:<ul>
+<li><code>X</code>: Añadir pista.</li>
+<li><code>V</code>: Añadir vía.</li>
+<li><code>M</code>: Mover componente.</li>
+<li><code>R</code>: Rotar componente.</li>
+<li><code>D</code>: Arrastrar pista.</li>
+</ul>
+</li>
+<li>Crear las zonas rellenas de cobre (normalmente para las <em>nets</em> +5V y GND):<ol>
+<li>Seleccionar la capa donde queremos crear la zona rellena de cobre (<code>F.Cu</code> o <code>B.Cu</code> normalmente).</li>
+<li>Seleccionar la herramienta <code>Add filled zones</code>. <img src="/images/pages/kicad/add_zone.svg" width="30"/></li>
+<li>Delimitar una superficie que englobe la parte de la PCB que queremos rellenar de cobre. Al pinchar el primer vértice aparecerá una ventana en la que tendremos que indicar las propiedades de la zona a rellenar donde indicaremos la <em>net</em> y la capa de cobre.</li>
+<li>En caso de modificar las pistas más adelante, pulsar <code>B</code> para recalcular las zonas rellenas de cobre.</li>
+</ol>
+</li>
+<li>Ejecutar las DRC pulsando el botón <code>Perform design rules check</code>. <img src="/images/pages/kicad/drc.svg" width="30"/></li>
+</ol>
+</li>
+<li>Exportar Gerber:<ol>
+<li>Pulsar el botón <code>Plot (HPGL, Postscript, or GERBER format)</code>. <img src="/images/pages/kicad/plot.svg" width="30"/></li>
+<li>En la ventana que aparece, seleccionar las capas que queremos incluir y las opciones que se ven a continuación e indicar el directorio <code>gerber</code> del proyecto (en <a href="https://support.jlcpcb.com/article/149-how-to-generate-gerber-and-drill-files-in-kicad">esta página</a> se muestran las opciones más recomendables para JLCPCB).
+    <img alt="plot" src="/images/pages/kicad/plot.png" /></li>
+<li>Pulsar el botón <code>Plot</code>.</li>
+<li>Pulsar el botón <code>Generate Drill Files</code> y en la nueva ventana que aparece encima pulsar el botón <code>Generate Drill File</code>.</li>
+</ol>
+</li>
+<li>Exportar BOM:<ol>
+<li>Pulsar el botón <code>Generate bill of materials</code>. <img src="/images/pages/kicad/bom.svg" width="30"/></li>
+<li>De la lista <code>BOM plugins</code> que aparece seleccionar <code>bom2grouped_csv</code> y pulsar <code>Generate</code>.</li>
+</ol>
+</li>
+<li>Cambios en esquemático y propagación:<ol>
+<li>Hacer el cambio en <code>Schematic Layout Editor (eeschema)</code>.</li>
+<li>Dar nombre a los nuevos componentes. Se puede hacer automáticamente con la herramienta de anotación a la que se accede con el botón <img src="/images/pages/kicad/annotate.svg" width="30"/> de la barra superior.</li>
+<li>Volver a <code>PCB Layout Editor (pcbnew)</code> y pulsar el botón <code>Update PCB from schematic</code>. <img src="/images/pages/kicad/update_pcb_from_sch.svg" width="30"/></li>
+<li>En el popup que aparece pulsar el botón <code>Update PCB</code>. Nos hará un informe de los cambios. En caso de que los cambios impliquen componentes nuevos, cuando lo cerremos se nos cargarán en el cursor para incorporarlos al PCB.</li>
+</ol>
+</li>
+</ol>
+<p>Las capas más importantes son:</p>
+<ul>
+<li><code>F.Cu</code>: Capa superior de cobre. Atajo de teclado: <code>RePag</code>.</li>
+<li><code>B.Cu</code>: Capa inferior de cobre. Atajo de teclado: <code>AvPag</code>.</li>
+<li><code>Edge.Cuts</code>: Perfil de corte de la PCB.</li>
+<li><code>F.SilkS</code>: Silkscreen superior o capa donde se representan los símbolos y textos de los componentes habitualmente en blanco.</li>
+<li><code>B.SilkS</code>: Silkscreen inferior.</li>
+<li><code>F.Mask</code>: Máscara de soldado superior, habitualmente en verde.</li>
+<li><code>B.Mask</code>: Máscara de soldado inferior.</li>
+</ul>
+<h2 id="generacion-modelo-3d-de-la-placa">Generación modelo 3D de la placa<a class="headerlink" href="#generacion-modelo-3d-de-la-placa" title="Permanent link">&para;</a></h2>
+<p>Es recomendable instalar los paquetes recomendados con apt cuando se instala KiCad. Se puede hacer con la siguiente opción en el comando de instalación:</p>
+<div class="highlight"><pre><span></span><code>$ sudo apt install --install-recommends kicad
+</code></pre></div>
+<p>En caso de no tener las librerías de paquetes 3D o querer forzar el tener la última versión de Github, se puede proceder como sigue:</p>
+<ol>
+<li>
+<p>Bajar el repositorio con los modelos de los componentes:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/git
+git clone git@gitlab.com:kicad/libraries/kicad-packages3D.git
+</code></pre></div>
+</li>
+<li>
+<p>Abrir el menú `Preferencias &gt; Configure Paths...".</p>
+</li>
+<li>
+<p>Configurar el repositorio recien bajado como la nueva ruta de la librería <code>KISYS3DMOD</code> (originalmente la ruta es <code>/usr/share/kicad/modules/packages3d/</code>):</p>
+<p><img alt="KISYS3DMOD path" src="/images/pages/kicad/configure_KISYS3DMOD_path.png" />)</p>
+</li>
+<li>
+<p>En Pcbnew editar las propiedades de las huellas y en la solapa <code>Opciones 3D</code> añadir la ruta del modelo 3D o ajustarla si es que existe.</p>
+<p><img alt="Opciones 3D propiedades huella" src="/images/pages/kicad/opciones_3d_propiedades_huella.png" />)</p>
+</li>
+<li>
+<p>Abrir el menú <code>Ver &gt; Visor 3D</code>.</p>
+</li>
+</ol>
+<h2 id="designacion-de-componentes">Designación de componentes<a class="headerlink" href="#designacion-de-componentes" title="Permanent link">&para;</a></h2>
+<p><a href="https://dexpcb.com/Manual/standard-reference-designators.htm">Fuente</a></p>
+<table>
+<thead>
+<tr>
+<th align="left">Referencia</th>
+<th align="left">Tipo de componente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">A</td>
+<td align="left">Separable assembly or sub-assembly (e.g. printed circuit assembly)</td>
+</tr>
+<tr>
+<td align="left">AT</td>
+<td align="left">Attenuator or isolator</td>
+</tr>
+<tr>
+<td align="left">BR</td>
+<td align="left">Bridge Rectifier</td>
+</tr>
+<tr>
+<td align="left">BT</td>
+<td align="left">Battery</td>
+</tr>
+<tr>
+<td align="left">C</td>
+<td align="left">Capacitor</td>
+</tr>
+<tr>
+<td align="left">CN</td>
+<td align="left">Capacitor network</td>
+</tr>
+<tr>
+<td align="left">D</td>
+<td align="left">Diode (including zeners, thyristors and LEDs)</td>
+</tr>
+<tr>
+<td align="left">DL</td>
+<td align="left">Delay line</td>
+</tr>
+<tr>
+<td align="left">DS</td>
+<td align="left">Display</td>
+</tr>
+<tr>
+<td align="left">F</td>
+<td align="left">Fuse</td>
+</tr>
+<tr>
+<td align="left">FB or FEB</td>
+<td align="left">Ferrite bead</td>
+</tr>
+<tr>
+<td align="left">FD</td>
+<td align="left">Fiducial</td>
+</tr>
+<tr>
+<td align="left">FL</td>
+<td align="left">Filter</td>
+</tr>
+<tr>
+<td align="left">G</td>
+<td align="left">Generator or oscillator</td>
+</tr>
+<tr>
+<td align="left">GN</td>
+<td align="left">General network</td>
+</tr>
+<tr>
+<td align="left">H</td>
+<td align="left">Hardware</td>
+</tr>
+<tr>
+<td align="left">HY</td>
+<td align="left">Circulator or directional coupler</td>
+</tr>
+<tr>
+<td align="left">J</td>
+<td align="left">Jack (least-movable connector of a connector pair) | Jack connector (connector may have "male" pin contacts and/or "female" socket contacts)</td>
+</tr>
+<tr>
+<td align="left">JP</td>
+<td align="left">Link (Jumper)</td>
+</tr>
+<tr>
+<td align="left">K</td>
+<td align="left">Relay or contactor</td>
+</tr>
+<tr>
+<td align="left">L</td>
+<td align="left">Inductor or coil or ferrite bead</td>
+</tr>
+<tr>
+<td align="left">LS</td>
+<td align="left">Loudspeaker or buzzer</td>
+</tr>
+<tr>
+<td align="left">M</td>
+<td align="left">Motor</td>
+</tr>
+<tr>
+<td align="left">MK</td>
+<td align="left">Microphone</td>
+</tr>
+<tr>
+<td align="left">MP</td>
+<td align="left">Mechanical part (including screws and fasteners)</td>
+</tr>
+<tr>
+<td align="left">P</td>
+<td align="left">Plug (most-movable connector of a connector pair) | Plug connector (connector may have "male" pin contacts and/or "female" socket contacts)</td>
+</tr>
+<tr>
+<td align="left">PS</td>
+<td align="left">Power supply</td>
+</tr>
+<tr>
+<td align="left">Q</td>
+<td align="left">Transistor (all types)</td>
+</tr>
+<tr>
+<td align="left">R</td>
+<td align="left">Resistor</td>
+</tr>
+<tr>
+<td align="left">RN</td>
+<td align="left">Resistor network</td>
+</tr>
+<tr>
+<td align="left">RT</td>
+<td align="left">Thermistor</td>
+</tr>
+<tr>
+<td align="left">RV</td>
+<td align="left">Varistor</td>
+</tr>
+<tr>
+<td align="left">S</td>
+<td align="left">Switch (all types, including push-buttons)</td>
+</tr>
+<tr>
+<td align="left">T</td>
+<td align="left">Transformer</td>
+</tr>
+<tr>
+<td align="left">TC</td>
+<td align="left">Thermocouple</td>
+</tr>
+<tr>
+<td align="left">TUN</td>
+<td align="left">Tuner</td>
+</tr>
+<tr>
+<td align="left">TP</td>
+<td align="left">Test point</td>
+</tr>
+<tr>
+<td align="left">U</td>
+<td align="left">Inseparable assembly (e.g., integrated circuit)</td>
+</tr>
+<tr>
+<td align="left">V</td>
+<td align="left">Vacuum Tube</td>
+</tr>
+<tr>
+<td align="left">VR</td>
+<td align="left">Variable Resistor (potentiometer or rheostat)</td>
+</tr>
+<tr>
+<td align="left">X</td>
+<td align="left">Socket connector for another item not P or J, paired with the letter symbol for that item (XV for vacuum tube socket, XF for fuse holder, XA for printed circuit assembly connector, XU for integrated circuit connector, XDS for light socket, etc.)</td>
+</tr>
+<tr>
+<td align="left">Y</td>
+<td align="left">Crystal or oscillator</td>
+</tr>
+<tr>
+<td align="left">Z</td>
+<td align="left">Zener Diode</td>
+</tr>
+</tbody>
+</table>
+<h2 id="componentes">Componentes<a class="headerlink" href="#componentes" title="Permanent link">&para;</a></h2>
+<h3 id="tiendas">Tiendas<a class="headerlink" href="#tiendas" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://lcsc.com/">LCSC</a></li>
+<li><a href="https://viinko.es.aliexpress.com/store/1361740">Viinko Electronics HK Ltd</a>: Acepta pedidos BOM.</li>
+</ul>
+<h3 id="componentes-interesantes-simbolos-y-footprints-propios-kicad">Componentes interesantes, Símbolos y footprints propios KiCad<a class="headerlink" href="#componentes-interesantes-simbolos-y-footprints-propios-kicad" title="Permanent link">&para;</a></h3>
+<p>En <a href="https://github.com/eduardofilo/kicad_footprints">este repositorio</a>.</p>
+<p>Antes de crear los símbolos o los footprints, tratar de buscarlos en sitios como <a href="https://www.snapeda.com/">SnapEDA</a>.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Componente</th>
+<th align="left">Symbol</th>
+<th align="left">Footprint</th>
+<th align="left">Compra</th>
+<th align="left">Observaciones</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Resistencia 1/4W P=10,16mm</td>
+<td align="left"></td>
+<td align="left"><code>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</code></td>
+<td align="left"></td>
+<td align="left">Resistencia convencional</td>
+</tr>
+<tr>
+<td align="left">Condensador cerámico 100nF P=2,54mm</td>
+<td align="left"></td>
+<td align="left"><code>Capacitors_ThroughHole:C_Disc_D3.0mm_W1.6mm_P2.50mm</code></td>
+<td align="left"></td>
+<td align="left">Bypass capacitor convencional</td>
+</tr>
+<tr>
+<td align="left">LED D=5mm</td>
+<td align="left"></td>
+<td align="left"><code>LED_THT:LED_D5.0mm</code></td>
+<td align="left"></td>
+<td align="left">LED convencional 5mm</td>
+</tr>
+<tr>
+<td align="left">USB micro-B</td>
+<td align="left"></td>
+<td align="left"><code>Connect:USB_Micro-B</code></td>
+<td align="left"><a href="https://lcsc.com/product-detail/USB-Connectors_Amphenol-ICC-10118194-0001LF_C132563.html">LCSC</a></td>
+<td align="left">Conector microUSB con terminales SMD y 4 agujeros para chasis</td>
+</tr>
+<tr>
+<td align="left">Lector microSD</td>
+<td align="left"></td>
+<td align="left"><code>Connector_Card:microSD_HC_Hirose_DM3AT-SD-PEJMS</code></td>
+<td align="left"><a href="https://lcsc.com/product-detail/Card-Sockets-Connectors_HRS-Hirose_DM3AT-SF-PEJM5_HRS-Hirose-HRS-DM3AT-SF-PEJM5_C114218.html">LCSC</a></td>
+<td align="left">Ranura microSD inserción lateral</td>
+</tr>
+<tr>
+<td align="left">Lector microSD</td>
+<td align="left"></td>
+<td align="left"><code>Connector_Card:microSD_HC_Wuerth_693072010801</code></td>
+<td align="left"><a href="https://lcsc.com/product-detail/Card-Sockets-Connectors_Korean-Hroparts-Elec-TF-04A_C145799.html">LCSC</a></td>
+<td align="left">Ranura microSD inserción con portezuela superior</td>
+</tr>
+<tr>
+<td align="left">Lector microSD</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><a href="https://lcsc.com/product-detail/Card-Sockets-Connectors_XUNPU-TF-104_C266612.html">LCSC</a></td>
+<td align="left">Ranura microSD inserción deslizante para interior</td>
+</tr>
+<tr>
+<td align="left">Transistor TO-92</td>
+<td align="left"></td>
+<td align="left"><code>Package_TO_SOT_THT:TO-92L_Inline_Wide</code> o <code>Package_TO_SOT_THT:TO-92L_HandSolder</code></td>
+<td align="left"></td>
+<td align="left">Transistor convencional, como NPN 2N3904</td>
+</tr>
+<tr>
+<td align="left">Tactile button 6mm</td>
+<td align="left"></td>
+<td align="left"><code>Buttons_Switches_ThroughHole:SW_PUSH_6mm</code></td>
+<td align="left"><a href="https://lcsc.com/product-detail/Others_E-Switch_TL1105AF160Q_E-Switch-TL1105AF160Q_C273465.html">LCSC</a></td>
+<td align="left">Tactile switch 6mm convencional</td>
+</tr>
+<tr>
+<td align="left">AY-8760</td>
+<td align="left">eduardofilo_symbols.kicad_sym/AY-3-8760</td>
+<td align="left"><code>Package_DIP:DIP-28_W15.24mm_Socket_LongPads</code></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Portapilas 2xAA</td>
+<td align="left">eduardofilo_symbols.kicad_sym/Battery_Holder</td>
+<td align="left">eduardofilo_footprints.pretty/BatteryHolder_Keystone_1013.kicad_mod</td>
+<td align="left"><a href="https://lcsc.com/product-detail/Battery-Holders-Clips-Contacts_Keystone-1013_C238059.html">LCSC</a></td>
+<td align="left">Keystone 1013</td>
+</tr>
+<tr>
+<td align="left">Portapilas CR2032</td>
+<td align="left">eduardofilo_symbols.kicad_sym/BS-7</td>
+<td align="left">eduardofilo_footprints.pretty/BAT_BS-7.kicad_mod</td>
+<td align="left"><a href="https://lcsc.com/product-detail/Battery-Box-Battery-Holders_Q-J-BS-2-1_C70376.html">LCSC</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Portapilas LR44</td>
+<td align="left"><code>Device:Battery_Cell</code></td>
+<td align="left">eduardofilo_footprints.pretty/BatteryHolder_Keystone_2997_1x12mm.kicad_mod</td>
+<td align="left"><a href="https://www.digikey.es/product-detail/es/keystone-electronics/2997/36-2997-ND/1649360">Digikey</a></td>
+<td align="left">Keystone 2997</td>
+</tr>
+<tr>
+<td align="left">Cargador batería Li y regulador de tensión</td>
+<td align="left">eduardofilo_symbols.kicad_sym/DD05CVSA</td>
+<td align="left">eduardofilo_footprints.pretty/DD05CVSA.kicad_mod</td>
+<td align="left"><a href="https://www.aliexpress.com/item/4000714467896.html">Aliexpress</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">MicroSD holder</td>
+<td align="left">eduardofilo_symbols.kicad_sym/Micro_SD_Cd</td>
+<td align="left">eduardofilo_footprints.pretty/Micro_SD_Cd.kicad_mod</td>
+<td align="left"><a href="https://es.aliexpress.com/item/32802051702.html">Aliexpress</a>; <a href="https://lcsc.com/product-detail/Card-Sockets-Connectors_HOAUC-HYC77-TF09-200_C341092.html">LCSC</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Pantalla OLED SSD1306-I2C</td>
+<td align="left">eduardofilo_symbols.kicad_sym/OLED-SSD1306-I2C</td>
+<td align="left">eduardofilo_footprints.pretty/OLED-SSD1306-I2C.kicad_mod</td>
+<td align="left"><a href="https://www.aliexpress.com/item/32977643629.html">Aliexpress</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Pantalla OLED SSD1306-SPI</td>
+<td align="left">eduardofilo_symbols.kicad_sym/OLED-SSD1306-SPI</td>
+<td align="left">eduardofilo_footprints.pretty/OLED-SSD1306-SPI.kicad_mod</td>
+<td align="left"><a href="https://www.aliexpress.com/item/32831561142.html">Aliexpress 0,96"</a>; <a href="https://www.aliexpress.com/item/4001051535838.html">Aliexpress 1,54"</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Potenciómetro</td>
+<td align="left"><code>Device:R_POT</code></td>
+<td align="left">eduardofilo_footprints.pretty/Potentiometer_Alpha_RD901F-40-00D_Single_Vertical_mod.kicad_mod</td>
+<td align="left"><a href="https://lcsc.com/product-detail/Potentiometers-Variable-Resistors_ALPSALPINE-RK09K1130A5R_C209779.html">LCSC</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Raspberry Pi Pico</td>
+<td align="left">eduardofilo_symbols.kicad_sym/raspberrypi-pico-module</td>
+<td align="left">eduardofilo_footprints.pretty/raspberrypi-pico-module.kicad_mod</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Raspberry Pi Pico</td>
+<td align="left"><a href="https://github.com/ncarandini/KiCad-RP-Pico">Símbolo de ncarandini</a></td>
+<td align="left"><a href="https://github.com/ncarandini/KiCad-RP-Pico">Footprint de ncarandini</a></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">SCART conector</td>
+<td align="left"><code>Connector:SCART-F</code></td>
+<td align="left">eduardofilo_symbols.kicad_sym/SCART.kicad_mod</td>
+<td align="left"><a href="https://es.aliexpress.com/item/32997772379.html">Aliexpress</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">SNES conector</td>
+<td align="left">eduardofilo_symbols.kicad_sym/SNES_Connector</td>
+<td align="left">eduardofilo_symbols.kicad_sym/SNES.kicad_mod</td>
+<td align="left"><a href="https://es.aliexpress.com/item/32828768824.html">Aliexpress</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Switch horizontal</td>
+<td align="left">eduardofilo_symbols.kicad_sym/SK12D07VG4</td>
+<td align="left"><code>Button_Switch_THT:SW_CuK_OS102011MA1QN1_SPDT_Angled</code></td>
+<td align="left"><a href="https://lcsc.com/product-detail/Toggle-Switches_SHOU-HAN-SK12D07VG4_C393937.html">LCSC</a></td>
+<td align="left">Interruptor horizontal SPDT con 2mm de pitch</td>
+</tr>
+<tr>
+<td align="left">Switch horizontal</td>
+<td align="left">eduardofilo_symbols.kicad_sym/SS-12F44-G5</td>
+<td align="left">eduardofilo_footprints.pretty/SS-12F44-G5.kicad_mod</td>
+<td align="left"><a href="https://lcsc.com/product-detail/Toggle-Switches_Korean-Hroparts-Elec-SS-12F44-G5_C136718.html">LCSC</a></td>
+<td align="left">Interruptor vertical SPDT con 3mm de pitch</td>
+</tr>
+<tr>
+<td align="left">Switch horizontal</td>
+<td align="left"><code>Switch:SW_SPDT</code></td>
+<td align="left">eduardofilo_footprints.pretty/SW_SPDT_Angled.kicad_mod</td>
+<td align="left"><a href="https://lcsc.com/product-detail/Toggle-Switches_Korean-Hroparts-Elec-K3-1260D-L1_C92657.html">LCSC</a></td>
+<td align="left">Interruptor horizontal SPDT con 2,5mm de pitch sin terminales de chasis</td>
+</tr>
+<tr>
+<td align="left">Switch horizontal</td>
+<td align="left"><code>Switch:SW_DPDT_x2</code></td>
+<td align="left"><code>Button_Switch_THT:SW_E-Switch_EG1271_DPDT</code></td>
+<td align="left"><a href="https://www.digikey.es/es/products/detail/e-switch/EG1271A/251336">Digikey</a>, <a href="https://www.digikey.es/es/products/detail/e-switch/EG1271A/251336">Digikey</a>, <a href="https://www.digikey.es/es/products/detail/c-k/JS202011CQN/1640097">Digikey</a>, <a href="https://www.digikey.es/es/products/detail/c-k/JS202011AQN/1640096">Digikey</a></td>
+<td align="left">Interruptor horizontal DPDT con 2,5 de pitch sin terminales de chasis</td>
+</tr>
+<tr>
+<td align="left">Switch tactile goma 8mm</td>
+<td align="left"><code>Switch:SW_Push</code></td>
+<td align="left">eduardofilo_footprints.pretty/SW_PUSH_8mm_2pin.kicad_mod</td>
+<td align="left"><a href="https://es.aliexpress.com/item/32668774566.html">Aliexpress</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Logo Niubit</td>
+<td align="left"></td>
+<td align="left">eduardofilo_footprints.pretty/NiubitLogo.kicad_mod</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Vibrador</td>
+<td align="left"><code>Motor:Motor_DC</code></td>
+<td align="left">eduardofilo_footprints.pretty/Vibrator_Seeed_316040005.kicad_mod</td>
+<td align="left"><a href="https://www.digikey.es/es/products/detail/seeed-technology-co-ltd/316040005/5487674">Digikey</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Barrel jack 2.3mm</td>
+<td align="left"><code>Connector:Jack-DC</code></td>
+<td align="left">eduardofilo_footprints.pretty/Barrel_jack_PJ1-023.kicad_mod</td>
+<td align="left"><a href="https://www.digikey.es/es/products/detail/cui-devices/PJ1-023/659897">Digikey</a></td>
+<td align="left">También compatible con <a href="https://www.digikey.es/es/products/detail/cui-devices/PJ1-022/659901">PJ1-022</a></td>
+</tr>
+<tr>
+<td align="left">Barrel jack 5.5mm</td>
+<td align="left"><code>Connector:Jack-DC</code></td>
+<td align="left"><code>Connector_BarrelJack:BarrelJack_Wuerth_6941xx301002</code></td>
+<td align="left"><a href="https://lcsc.com/product-detail/Power-Connectors_XKB-Enterprise-DC-005-5A-2-0_C381116.html">LCSC</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Zócalo 8 pin (ATtiny85)</td>
+<td align="left"></td>
+<td align="left"><code>Housings_DIP:DIP-8_W7.62mm</code></td>
+<td align="left"></td>
+<td align="left">Zócalo DIP-8 convencional</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="SPDT vs DPDT" src="/images/pages/kicad/spdt_dpdt.png" /></p>
+<h3 id="valores-habituales-de-resistencias">Valores habituales de resistencias<a class="headerlink" href="#valores-habituales-de-resistencias" title="Permanent link">&para;</a></h3>
+<p>A pesar de que se fabrican resistencias de prácticamente cualquier valor, como tienen una tolerancia de fabricación amplia (lo normal es utilizar resistencias de en torno al 1-5% de tolerancia), lo habitual es utilizar valores nominales que comiencen con los siguientes valores: 1.0, 1.2, 1.5, 1.8, 2.2, 2.7, 3.3, 3.9, 4.7, 5.6, 6.8, 8.2</p>
+<p><a href="https://unicrom.com/tolerancia-valores-normalizados-de-resistores-resistencias/">Aquí</a> puede verse una tabla donde se ven los valores normalizados en función de la tolerancia (a menor tolerancia mayor número de valores normalizados).</p>
+<p><img alt="lib_sch" src="/images/pages/kicad/valores-normalizados-resistencias-diferentes-tolerancias.png" /></p>
+<h2 id="panelizacion">Panelización<a class="headerlink" href="#panelizacion" title="Permanent link">&para;</a></h2>
+<p>Después de una mala experiencia con <a href="https://github.com/ThisIsNotRocketScience/GerberTools">GerberTools</a> descrita en <a href="/2020-02-16-panelizar_pcb.html">este post</a>, se encuentra el pack de utilidades <a href="https://github.com/yaqwsx/KiKit">KiKit</a> que funciona mucho mejor.</p>
+<p>En cuanto a la instalación, sobre la versión 1.7.10 de KiCad, no aparecia el plugin <code>panelize</code> en el menú <code>Tools &gt; External Plugins...</code>, por lo que instalo la versión unstable:</p>
+<div class="highlight"><pre><span></span><code>$ pip3 install git+https://github.com/yaqwsx/KiKit@master
+$ kikit-plugin enable --all
+$ kikit-plugin registerlib
+</code></pre></div>
+<p>Aunque se puede parametrizar desde la utilidad que hay en el menú mencionado antes, es mejor utilizar directamente la utilidad de línea de comando, para lo que conviene consultar los siguientes documentos:</p>
+<ul>
+<li><a href="https://github.com/yaqwsx/KiKit/blob/master/doc/panelizeCli.md">Panelization CLI</a></li>
+<li><a href="https://github.com/yaqwsx/KiKit/blob/master/doc/examples.md">Examples</a></li>
+</ul>
+<p>Un ejemplo sería:</p>
+<div class="highlight"><pre><span></span><code>kikit panelize \
+    --layout &#39;rows: 1; cols: 2; rotation: 180deg; alternation: cols;&#39; \
+    --source &#39;tolerance: 50mm;&#39; \
+    --post &#39;millradius: 0.5mm&#39; \
+    --cuts vcuts \
+    --tabs &#39;type: fixed; hcount: 2; hwidth: 3mm;&#39; \
+    vibrabot.kicad_pcb panel.kicad_pcb
+</code></pre></div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      
+        
+        <a href="herramientas.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Herramientas" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Herramientas
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="modulos.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Módulos" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              Módulos
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/eduardofilo" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/eduardofilo" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/edumoreno/" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="http://eduardofilo.es" target="_blank" rel="noopener" title="eduardofilo.es" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M309.8 480.3c-13.6 14.5-50 31.7-97.4 31.7-120.8 0-147-88.8-147-140.6v-144H17.9c-5.5 0-10-4.5-10-10v-68c0-7.2 4.5-13.6 11.3-16 62-21.8 81.5-76 84.3-117.1.8-11 6.5-16.3 16.1-16.3h70.9c5.5 0 10 4.5 10 10v115.2h83c5.5 0 10 4.4 10 9.9v81.7c0 5.5-4.5 10-10 10h-83.4V360c0 34.2 23.7 53.6 68 35.8 4.8-1.9 9-3.2 12.7-2.2 3.5.9 5.8 3.4 7.4 7.9l22 64.3c1.8 5 3.3 10.6-.4 14.5z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/c/EduardoMorenoLamana" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

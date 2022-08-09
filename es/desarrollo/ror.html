@@ -1,0 +1,3631 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes varios sobre algunas de las cosas que necesito recordar, principalmente sobre Desarrollo y Sistemas.">
+      
+      
+        <meta name="author" content="Eduardo Moreno Lamana">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Ruby on Rails - Apuntes de eduardófilo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@8.5.1/dist/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ruby-on-rails" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../index.html" title="Apuntes de eduardófilo" class="md-header__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+      
+  <img src="../../images/eduardofilo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apuntes de eduardófilo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ruby on Rails
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../desarrollo/ror.html" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../en/desarrollo/ror.html" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../2022-08-08_mmiyoo_uart.html" class="md-tabs__link">
+        Blog
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="android.html" class="md-tabs__link md-tabs__link--active">
+        Desarrollo
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ingenieria/3d_printing.html" class="md-tabs__link">
+        Ingeniería
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../proyectos/headsetcomm.html" class="md-tabs__link">
+        Proyectos
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../retro-emulacion/c64.html" class="md-tabs__link">
+        Retro-Emulación
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sistemas/android_system.html" class="md-tabs__link">
+        Sistemas
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../varios/bici.html" class="md-tabs__link">
+        Varios
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Apuntes de eduardófilo" class="md-nav__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+      
+  <img src="../../images/eduardofilo.png" alt="logo">
+
+    </a>
+    Apuntes de eduardófilo
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Blog
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Blog" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Blog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-08-08_mmiyoo_uart.html" class="md-nav__link">
+        Miyoo Mini UART
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-04-17_vr.html" class="md-nav__link">
+        Aventuras en VR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-10-30_raspi_zero_2_upgrade.html" class="md-nav__link">
+        Raspberry Pi Zero 2 W upgrade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-04-03_RG350_imagen.html" class="md-nav__link">
+        RG350/RG280 Imagen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-02-28_pico_fuzix.html" class="md-nav__link">
+        FUZIX en Raspberry Pi Pico
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-01-19-retroconsolas.html" class="md-nav__link">
+        Retroconsolas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-01-16-rg350_ra_installer.html" class="md-nav__link">
+        RG350 Instalador RA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-12-13-rg351_wifi_mod.html" class="md-nav__link">
+        RG351P Wifi mod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-09-27-rg350_xmame_sm_bridge.html" class="md-nav__link">
+        RG350 Interfaz xMAME SimpleMenu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-08-31-cancion_herb_alpert.html" class="md-nav__link">
+        La canción que merece la pena escuchar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-08-15-rg350_scummvm_launchers.html" class="md-nav__link">
+        RG350 ScummVM en lanzadores
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-08-12-rg350_py_backup.html" class="md-nav__link">
+        RG350 Py Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-07-12-rg350_screen_mod.html" class="md-nav__link">
+        RG350 Sustitución de pantalla 480p
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-07-09-rg350_fba_vertical_mod.html" class="md-nav__link">
+        RG350 FBA mod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-07-02-rg350_primeros_pasos.html" class="md-nav__link">
+        RG350 Primeros pasos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-06-04-rg350_raspi_image.html" class="md-nav__link">
+        RG350 Raspi Imagen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-31-rg350_compile.html" class="md-nav__link">
+        RG350 Compilar aplicaciones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-25-rg350_docker_buildroot.html" class="md-nav__link">
+        RG350 Docker Buildroot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-14-rg350_mame4all.html" class="md-nav__link">
+        RG350 MAME4All
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-08-rg350_dosbox.html" class="md-nav__link">
+        RG350 DOSBox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-06-rg350_openbor.html" class="md-nav__link">
+        RG350 OpenBOR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-04-rg350_daphne.html" class="md-nav__link">
+        RG350 Daphne
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-04-15-rg350_xmame.html" class="md-nav__link">
+        RG350 xMAME
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-04-14-rg350_scummvm.html" class="md-nav__link">
+        RG350 ScummVM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-03-28-rg350_pymenu.html" class="md-nav__link">
+        RG350 PyMenu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-03-19-rg350_backup.html" class="md-nav__link">
+        RG350 Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-16-panelizar_pcb.html" class="md-nav__link">
+        Panelizar PCB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-13-rg350_emulationstation.html" class="md-nav__link">
+        RG350 EmulationStation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-09-rg350_network.html" class="md-nav__link">
+        RG350 Conexión a internet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-08-eduzebox.html" class="md-nav__link">
+        EdUzebox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-01-31-rg350_fba.html" class="md-nav__link">
+        RG350 FBA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-01-25-rg350_simplemenu.html" class="md-nav__link">
+        RG350 SimpleMenu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-01-11-rg350_scraper.html" class="md-nav__link">
+        RG350 Scraper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-08-06-django_site.html" class="md-nav__link">
+        Creación de un sitio Django desde cero
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-07-07-crankshaft-build.html" class="md-nav__link">
+        Compilación OpenAuto para solucionar touch screen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-04-20-pong_composite_mod.html" class="md-nav__link">
+        Composite mod en consola Pong
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-01-29-bloqueo_telsome.html" class="md-nav__link">
+        Bloqueo de llamadas entrantes en Telsome
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-01-26-conversion_apuntes_mkdocs.html" class="md-nav__link">
+        Conversión del sitio de Apuntes a MkDocs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-10-20-Octoprint-en-Anet-A8.html" class="md-nav__link">
+        Octoprint en Anet A8
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-10-19-crankshaft.html" class="md-nav__link">
+        Crankshaft - AndroidAuto sobre Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-05-05-otto.html" class="md-nav__link">
+        Otto DIY
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2017-01-14-raspi2-kodi-16-tvheadend.html" class="md-nav__link">
+        Raspberry Pi 3 + KODI 16 + Tvheadend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-12-06-raspi3-kodi.html" class="md-nav__link">
+        Raspberry Pi 3 + KODI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-10-17-raspi-switch.html" class="md-nav__link">
+        Interruputor de encendido para Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-08-17-el-mundo-de-ayer.html" class="md-nav__link">
+        El mundo de ayer - Stefan Zweig
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-08-02-stm32-vl-discovery.html" class="md-nav__link">
+        Entorno desarrollo STM32 VL Discovery sobre Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-07-21-PIGRRL-2.html" class="md-nav__link">
+        Configuración PiGRRL-2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-07-10-wild.html" class="md-nav__link">
+        Wild - Cheryl Strayed
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-07-02-virus-android.html" class="md-nav__link">
+        Alertas por supuestos virus en Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-04-10-un-antropologo-en-marte.html" class="md-nav__link">
+        Un antropólogo en Marte - Oliver Sacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-02-25-los-innovadores.html" class="md-nav__link">
+        Los Innovadores - Walter Isaacson
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2015-03-14-raspi2-kodi-tvheadend.html" class="md-nav__link">
+        Raspberry Pi 2 + KODI + Tvheadend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2015-01-09-moviles.html" class="md-nav__link">
+        Móviles recomendables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2015-01-08-jekyll.html" class="md-nav__link">
+        Jekyll+GitHub Pages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2014-12-26-dokuwiki-raspi.html" class="md-nav__link">
+        Dokuwiki en Raspberry Pi manteniendo los ficheros en NAS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2014-12-20-micro-placas.html" class="md-nav__link">
+        Micro placas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2014-12-15-presentacion.html" class="md-nav__link">
+        Presentación
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Desarrollo
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Desarrollo
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="android.html" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="db.html" class="md-nav__link">
+        Bases de Datos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="diseno.html" class="md-nav__link">
+        Diseño
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dokuwiki.html" class="md-nav__link">
+        Dokuwiki
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="eclipse.html" class="md-nav__link">
+        Eclipse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="projects.html" class="md-nav__link">
+        Gestión de Proyectos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="git.html" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="html.html" class="md-nav__link">
+        HTML+CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ia.html" class="md-nav__link">
+        IA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="java.html" class="md-nav__link">
+        Java
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="javaee.html" class="md-nav__link">
+        JavaEE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="javascript.html" class="md-nav__link">
+        JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="joomla.html" class="md-nav__link">
+        Joomla
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="phonegap.html" class="md-nav__link">
+        Phonegap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="php.html" class="md-nav__link">
+        PHP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python.html" class="md-nav__link">
+        Python/Django
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Ruby on Rails
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ror.html" class="md-nav__link md-nav__link--active">
+        Ruby on Rails
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enlaces" class="md-nav__link">
+    Enlaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-tunning" class="md-nav__link">
+    Performance Tunning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-lio-del-respond_with" class="md-nav__link">
+    El lío del respond_with
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulos-interesantes" class="md-nav__link">
+    Módulos interesantes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-en-ubuntu" class="md-nav__link">
+    Instalación en Ubuntu
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación en Ubuntu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algunas-guias" class="md-nav__link">
+    Algunas guías
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedimiento-ubuntu-1304" class="md-nav__link">
+    Procedimiento Ubuntu &lt;=13.04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedimiento-ubuntu-1310" class="md-nav__link">
+    Procedimiento Ubuntu &gt;=13.10
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buenas-practicas" class="md-nav__link">
+    Buenas prácticas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    Tips
+  </a>
+  
+    <nav class="md-nav" aria-label="Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visibilidad-de-helpers" class="md-nav__link">
+    Visibilidad de Helpers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mejora-en-rendimiento-en-desarrollo" class="md-nav__link">
+    Mejora en rendimiento en Desarrollo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borrado-de-assets" class="md-nav__link">
+    Borrado de assets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualizacion-de-paquetes" class="md-nav__link">
+    Actualización de paquetes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muestra-el-mapa-de-rutas" class="md-nav__link">
+    Muestra el mapa de rutas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muestra-todas-las-tareas" class="md-nav__link">
+    Muestra todas las tareas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-gem" class="md-nav__link">
+    Instalación de gem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activar-modo-debug" class="md-nav__link">
+    Activar modo debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generacion-de-un-modelo" class="md-nav__link">
+    Generación de un modelo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-helpers" class="md-nav__link">
+    Path Helpers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tareas-en-base-de-datos" class="md-nav__link">
+    Tareas en base de datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-del-pluralsingular" class="md-nav__link">
+    Gestión del plural/singular
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relacion-entre-modelos" class="md-nav__link">
+    Relación entre modelos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspeccionar-la-definicion-de-un-metodo" class="md-nav__link">
+    Inspeccionar la definición de un método
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listar-gems-instalados" class="md-nav__link">
+    Listar gems instalados
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generar-el-api-de-rails" class="md-nav__link">
+    Generar el API de rails
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rubygems-documentation" class="md-nav__link">
+    RubyGems Documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problema-con-el-encoding-de-algunas-fuentes-en-utf-8" class="md-nav__link">
+    Problema con el encoding de algunas fuentes en UTF-8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downgrade-de-rubygems" class="md-nav__link">
+    Downgrade de Rubygems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solucion-a-error-could-not-find-rake-1004-in-any-of-the-sources-con-passenger" class="md-nav__link">
+    Solución a error "Could not find rake-10.0.4 in any of the sources" con Passenger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#especificar-entorno" class="md-nav__link">
+    Especificar entorno
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desinstalacion-de-todas-las-gems" class="md-nav__link">
+    Desinstalación de todas las gems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pluralessingulares-de-resources" class="md-nav__link">
+    Plurales/Singulares de resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecutar-una-version-concreta-de-rails" class="md-nav__link">
+    Ejecutar una versión concreta de rails
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecutar-una-version-concreta-de-spree" class="md-nav__link">
+    Ejecutar una versión concreta de spree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagramas-erd" class="md-nav__link">
+    Diagramas ERD
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="spree.html" class="md-nav__link">
+        Spree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="subl.html" class="md-nav__link">
+        Sublime Text 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="svn.html" class="md-nav__link">
+        SVN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vagrant.html" class="md-nav__link">
+        Vagrant
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vr.html" class="md-nav__link">
+        VR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="yii.html" class="md-nav__link">
+        Yii
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Ingeniería
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ingeniería" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Ingeniería
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/3d_printing.html" class="md-nav__link">
+        3D Printing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/arduino.html" class="md-nav__link">
+        Arduino
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/freecad.html" class="md-nav__link">
+        FreeCAD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/herramientas.html" class="md-nav__link">
+        Herramientas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/kicad.html" class="md-nav__link">
+        KiCad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/modulos.html" class="md-nav__link">
+        Módulos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/stm32.html" class="md-nav__link">
+        STM32
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Proyectos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Proyectos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Proyectos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proyectos/headsetcomm.html" class="md-nav__link">
+        Headset Commander
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proyectos/dicom.html" class="md-nav__link">
+        Impresión 3D de ecografías
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proyectos/minecraft.html" class="md-nav__link">
+        Minecraft
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Retro-Emulación
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Retro-Emulación" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Retro-Emulación
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/c64.html" class="md-nav__link">
+        Commodore 64
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/fpga.html" class="md-nav__link">
+        FPGA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/general.html" class="md-nav__link">
+        General
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/juegos.html" class="md-nav__link">
+        Juegos destacados
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/miyoo-mini.html" class="md-nav__link">
+        Miyoo Mini
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/retroarch.html" class="md-nav__link">
+        RetroArch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/rg-350.html" class="md-nav__link">
+        RG350/RG280
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/rg-351.html" class="md-nav__link">
+        RG351
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/microconsolas.html" class="md-nav__link">
+        Micro consolas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/z80-computer.html" class="md-nav__link">
+        Z80 Computer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/zx-spectrum.html" class="md-nav__link">
+        ZX Spectrum
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/zx-uno.html" class="md-nav__link">
+        ZX-UNO
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Sistemas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sistemas" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Sistemas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/android_system.html" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/soft_imprescindible.html" class="md-nav__link">
+        Aplicaciones interesantes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/appletv.html" class="md-nav__link">
+        AppleTV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/buildroot.html" class="md-nav__link">
+        Buildroot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/docker.html" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/email.html" class="md-nav__link">
+        e-mail
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/impresoras.html" class="md-nav__link">
+        Impresoras
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/iot.html" class="md-nav__link">
+        IOT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/kodi.html" class="md-nav__link">
+        Kodi/OpenELEC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/macosx.html" class="md-nav__link">
+        Mac OS X
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/mysql.html" class="md-nav__link">
+        MySQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/nas.html" class="md-nav__link">
+        NAS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/oculus.html" class="md-nav__link">
+        Oculus Quest 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/odroid.html" class="md-nav__link">
+        ODROID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/office.html" class="md-nav__link">
+        Office
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/raspi.html" class="md-nav__link">
+        Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/raspi_pico.html" class="md-nav__link">
+        Raspberry Pi Pico
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/redes.html" class="md-nav__link">
+        Redes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/router_xiaomi.html" class="md-nav__link">
+        Router Xiaomi MiWiFi 3G
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/ubuntu_phone.html" class="md-nav__link">
+        Ubuntu Phone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/ubuntu.html" class="md-nav__link">
+        Ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/unix.html" class="md-nav__link">
+        UNIX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemas/trucos_windows.html" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Varios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Varios" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Varios
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/bici.html" class="md-nav__link">
+        Bicicleta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/links.html" class="md-nav__link">
+        Enlaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/excursionismo.html" class="md-nav__link">
+        Excursionismo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/hogar.html" class="md-nav__link">
+        Hogar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/english.html" class="md-nav__link">
+        Inglés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/corsa_d.html" class="md-nav__link">
+        Opel Corsa D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/recetas.html" class="md-nav__link">
+        Recetas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/viajes.html" class="md-nav__link">
+        Viajes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enlaces" class="md-nav__link">
+    Enlaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-tunning" class="md-nav__link">
+    Performance Tunning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-lio-del-respond_with" class="md-nav__link">
+    El lío del respond_with
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulos-interesantes" class="md-nav__link">
+    Módulos interesantes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-en-ubuntu" class="md-nav__link">
+    Instalación en Ubuntu
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación en Ubuntu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algunas-guias" class="md-nav__link">
+    Algunas guías
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedimiento-ubuntu-1304" class="md-nav__link">
+    Procedimiento Ubuntu &lt;=13.04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedimiento-ubuntu-1310" class="md-nav__link">
+    Procedimiento Ubuntu &gt;=13.10
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buenas-practicas" class="md-nav__link">
+    Buenas prácticas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    Tips
+  </a>
+  
+    <nav class="md-nav" aria-label="Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visibilidad-de-helpers" class="md-nav__link">
+    Visibilidad de Helpers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mejora-en-rendimiento-en-desarrollo" class="md-nav__link">
+    Mejora en rendimiento en Desarrollo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borrado-de-assets" class="md-nav__link">
+    Borrado de assets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualizacion-de-paquetes" class="md-nav__link">
+    Actualización de paquetes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muestra-el-mapa-de-rutas" class="md-nav__link">
+    Muestra el mapa de rutas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muestra-todas-las-tareas" class="md-nav__link">
+    Muestra todas las tareas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-gem" class="md-nav__link">
+    Instalación de gem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activar-modo-debug" class="md-nav__link">
+    Activar modo debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generacion-de-un-modelo" class="md-nav__link">
+    Generación de un modelo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-helpers" class="md-nav__link">
+    Path Helpers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tareas-en-base-de-datos" class="md-nav__link">
+    Tareas en base de datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-del-pluralsingular" class="md-nav__link">
+    Gestión del plural/singular
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relacion-entre-modelos" class="md-nav__link">
+    Relación entre modelos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspeccionar-la-definicion-de-un-metodo" class="md-nav__link">
+    Inspeccionar la definición de un método
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listar-gems-instalados" class="md-nav__link">
+    Listar gems instalados
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generar-el-api-de-rails" class="md-nav__link">
+    Generar el API de rails
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rubygems-documentation" class="md-nav__link">
+    RubyGems Documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problema-con-el-encoding-de-algunas-fuentes-en-utf-8" class="md-nav__link">
+    Problema con el encoding de algunas fuentes en UTF-8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downgrade-de-rubygems" class="md-nav__link">
+    Downgrade de Rubygems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solucion-a-error-could-not-find-rake-1004-in-any-of-the-sources-con-passenger" class="md-nav__link">
+    Solución a error "Could not find rake-10.0.4 in any of the sources" con Passenger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#especificar-entorno" class="md-nav__link">
+    Especificar entorno
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desinstalacion-de-todas-las-gems" class="md-nav__link">
+    Desinstalación de todas las gems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pluralessingulares-de-resources" class="md-nav__link">
+    Plurales/Singulares de resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecutar-una-version-concreta-de-rails" class="md-nav__link">
+    Ejecutar una versión concreta de rails
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecutar-una-version-concreta-de-spree" class="md-nav__link">
+    Ejecutar una versión concreta de spree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagramas-erd" class="md-nav__link">
+    Diagramas ERD
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/eduardofilo/eduardofilo.mkdocs/edit/master/docs/desarrollo/ror.md" title="Editar esta página" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="ruby-on-rails">Ruby on Rails<a class="headerlink" href="#ruby-on-rails" title="Permanent link">&para;</a></h1>
+<h2 id="enlaces">Enlaces<a class="headerlink" href="#enlaces" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="http://ruby.railstutorial.org/book/ruby-on-rails-tutorial">Ruby on Rails Tutorial</a></li>
+<li><a href="http://www.ruby-doc.org/docs/ProgrammingRuby/">Programming Ruby: The Pragmatic Programmer's Guide</a></li>
+<li><a href="http://mislav.uniqpath.com/poignant-guide/">Why's (Poignant) Guide to Ruby</a></li>
+<li><a href="http://www.rubyist.net/~slagell/ruby/index.html">Ruby User's Guide</a></li>
+<li><a href="http://tryruby.org/levels/1/challenges/0">Try Ruby</a></li>
+<li><a href="http://www.aptana.com/products/radrails">Aptana Studio (IDE)</a></li>
+<li><a href="http://railscasts.com/">Ruby on Rails Screencasts</a> :exclamation:</li>
+<li><a href="http://guides.rubyonrails.org/">Ruby on Rails Guides</a> :exclamation:</li>
+<li><a href="http://www.tutorialspoint.com/ruby/index.htm">Ruby Tutorial</a></li>
+<li><a href="http://r3uw.herokuapp.com/">Rails 3 para Windows y Linux Ubuntu (libro en español)</a></li>
+<li><a href="http://railsapps.github.com/">Rails Examples and Tutorials</a></li>
+<li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html">Ruby QuickRef</a></li>
+<li><a href="https://github.com/mhartl/rails_tutorial_sublime_text">Rails Tutorial Sublime Text setup</a></li>
+<li><a href="http://yehudakatz.com/2009/11/15/metaprogramming-in-ruby-its-all-about-the-self/">Metaprogramming in Ruby: It’s All About the Self</a></li>
+<li><a href="http://stackoverflow.com/questions/9297446/how-to-use-a-route-helper-method-from-a-file-in-the-lib-directory">Comprobación de entorno de ejecución en código</a> :exclamation:</li>
+</ul>
+<h2 id="performance-tunning">Performance Tunning<a class="headerlink" href="#performance-tunning" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="http://www.alfajango.com/blog/performance-tuning-for-phusion-passenger-an-introduction/">Performance Tuning for Phusion Passenger (an Introduction)</a> :exclamation:</li>
+<li><a href="http://blog.phusion.nl/2013/03/12/tuning-phusion-passengers-concurrency-settings/">Phusion Corporate Blog - Tuning Phusion Passenger’s concurrency settings</a></li>
+<li><a href="http://blog.scoutapp.com/articles/2009/12/08/production-rails-tuning-with-passenger-passengermaxprocesses">Production Rails Tuning with Passenger: PassengerMaxProcesses</a></li>
+<li><a href="http://blog.railsupgrade.com/2011/11/passenger-tuning-for-rails-application.html">Passenger tuning for rails application</a></li>
+<li><a href="http://www.modrails.com/documentation/Users%20guide%20Apache.html#_resource_control_and_optimization_options">Phusion Passenger users guide, Apache version - Resource control and optimization options</a></li>
+</ul>
+<h2 id="el-lio-del-respond_with">El lío del respond_with<a class="headerlink" href="#el-lio-del-respond_with" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="http://david.heinemeierhansson.com/posts/37-bringing-merbs-providesdisplay-into-rails-3">Bringing Merb's provides/display into Rails 3</a></li>
+<li><a href="http://blog.plataformatec.com.br/2009/08/embracing-rest-with-mind-body-and-soul/">Embracing REST with mind, body and soul</a></li>
+<li><a href="http://archives.ryandaigle.com/articles/2009/8/6/what-s-new-in-edge-rails-cleaner-restful-controllers-w-respond_with">What's New in Edge Rails: Cleaner RESTful Controllers w/ respond_with</a></li>
+<li><a href="http://bendyworks.com/geekville/tutorials/2012/6/respond-with-an-explanation">Respond With An Explanation</a></li>
+</ul>
+<h2 id="modulos-interesantes">Módulos interesantes<a class="headerlink" href="#modulos-interesantes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="http://devise.plataformatec.com.br/">Devise: Engine de autenticación/autorización</a></li>
+<li><a href="https://github.com/radar/forem#readme">Forem: Engine para implementar un foro</a></li>
+<li><a href="https://github.com/jim/carmen-rails">carmen-rails</a>: Seed con datos de los países y las regiones del mundo.</li>
+<li><a href="http://railscasts.com/episodes/328-twitter-bootstrap-basics">RailsCasts #328 Twitter Bootstrap Basics</a></li>
+<li><a href="https://github.com/thomas-mcdonald/bootstrap-sass">Twitter Bootstrap Gem</a></li>
+<li><a href="http://fastercsv.rubyforge.org/">FasterCSV</a>: Carga y generación de ficheros CSV hacia y desde tablas. <a href="http://www.funonrails.com/2012/01/csv-file-importexport-in-rails-3.html">Ejemplo de uso</a>.</li>
+<li><a href="http://rails-erd.rubyforge.org/">Entity-Relationship Diagrams for Ruby on Rails</a>: Obtiene el esquema de relación entre entidades de una aplicación en base al análisis de sus modelos.</li>
+</ul>
+<h2 id="instalacion-en-ubuntu">Instalación en Ubuntu<a class="headerlink" href="#instalacion-en-ubuntu" title="Permanent link">&para;</a></h2>
+<h3 id="algunas-guias">Algunas guías<a class="headerlink" href="#algunas-guias" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="http://blog.sudobits.com/2012/05/02/how-to-install-ruby-on-rails-in-ubuntu-12-04-lts/">How to install Ruby on Rails in Ubuntu 12.04 LTS</a></li>
+<li><a href="http://railsapps.github.com/installing-rails.html">Buena guía de <code>railsapps</code> sobre instalación de Ruby/Rails</a></li>
+<li><a href="http://railsapps.github.com/updating-rails.html">Otra guía de <code>railsapps</code> sobre actualización</a></li>
+</ul>
+<h3 id="procedimiento-ubuntu-1304">Procedimiento Ubuntu &lt;=13.04<a class="headerlink" href="#procedimiento-ubuntu-1304" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Instalar los paquetes:<ul>
+<li><code>ruby</code></li>
+<li><code>ruby-dev</code></li>
+<li><code>libsqlite3-dev</code></li>
+<li><code>libmysqlclient-dev</code></li>
+<li><code>nodejs</code></li>
+<li><code>nodejs-dev</code></li>
+</ul>
+</li>
+<li>Instalar RubyGems bajándolo de <a href="http://rubygems.org/pages/download">aquí</a> y siguiendo las instrucciones de instalación de esa misma página.</li>
+<li>Instalar Bundler:
+    <div class="highlight"><pre><span></span><code>sudo gem install bundler
+</code></pre></div></li>
+<li>Instalación de Rails:
+    <div class="highlight"><pre><span></span><code>sudo gem install rails
+</code></pre></div></li>
+<li>Instalar passenger (el propio instalador da instrucciones sobre los paquetes necesarios):
+    <div class="highlight"><pre><span></span><code>sudo gem install passenger
+</code></pre></div></li>
+<li>Instalar el módulo en Apache:
+    <div class="highlight"><pre><span></span><code>sudo passenger-install-apache2-module
+</code></pre></div></li>
+<li>Tal y como indica la salida del comando anterior, hay que habilitar el módulo recién instalado por medio de la configuración de Apache. Se puede hacer añadiendo los dos siguientes ficheros:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>#/etc/apache2/mods-available/passenger.load
+LoadModule passenger_module /usr/lib/ruby/gems/1.9.1/gems/passenger-3.0.19/ext/apache2/mod_passenger.so
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#/etc/apache2/mods-available/passenger.conf
+PassengerRoot /usr/lib/ruby/gems/1.9.1/gems/passenger-3.0.19
+PassengerRuby /usr/bin/ruby1.9.1
+</code></pre></div>
+<p>(las rutas contenidas en los ficheros anteriores dependerán de la instalación; la salida del comando que instala el módulo nos indica los valores correctos).</p>
+<p>Finalmente hay que habilitar el módulo:</p>
+<div class="highlight"><pre><span></span><code>$ sudo a2enmod passenger
+</code></pre></div>
+<p>Y reiniciamos Apache:</p>
+<div class="highlight"><pre><span></span><code>$ sudo service apache2 restart
+</code></pre></div>
+<h3 id="procedimiento-ubuntu-1310">Procedimiento Ubuntu &gt;=13.10<a class="headerlink" href="#procedimiento-ubuntu-1310" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Instalar los paquetes:<ul>
+<li><code>ruby</code></li>
+<li><code>ruby-dev</code></li>
+<li><code>libsqlite3-dev</code></li>
+<li><code>libmysqlclient-dev</code></li>
+<li><code>nodejs</code></li>
+<li><code>nodejs-dev</code></li>
+</ul>
+</li>
+<li>Instalar RubyGems bajándolo de <a href="http://rubygems.org/pages/download">aquí</a> y siguiendo las instrucciones de instalación de esa misma página.</li>
+<li>Instalar Bundler:
+    <div class="highlight"><pre><span></span><code>sudo gem install bundler
+</code></pre></div></li>
+<li>Instalación de Rails:
+    <div class="highlight"><pre><span></span><code>sudo gem install rails
+</code></pre></div></li>
+<li>Instalar passenger siguiendo <a href="http://www.modrails.com/documentation/Users%20guide%20Apache.html#install_on_debian_ubuntu">esta guía</a>. Recomienda instalarlo con los paquetes de la distribución. A continuación se indica un resumen de los pasos.</li>
+<li>Instalar la clave PGP del repositorio que vamos a añadir:
+    <div class="highlight"><pre><span></span><code>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
+</code></pre></div></li>
+<li>Instalar el siguiente paquete:<ul>
+<li><code>apt-transport-https</code></li>
+</ul>
+</li>
+<li>Crear el fichero <code>/etc/apt/sources.list.d/passenger.list</code> con el siguiente contenido:
+    <div class="highlight"><pre><span></span><code>deb https://oss-binaries.phusionpassenger.com/apt/passenger saucy main
+</code></pre></div></li>
+<li>Actualizar el repositorio e instalar el siguiente paquete:<ul>
+<li><code>libapache2-mod-passenger</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="buenas-practicas">Buenas prácticas<a class="headerlink" href="#buenas-practicas" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="http://weblog.jamisbuck.org/2006/10/18/skinny-controller-fat-model">Skinny Controller, Fat Model</a></li>
+<li><a href="http://weblog.jamisbuck.org/2007/2/5/nesting-resources">Nesting resources</a>: Resources should never be nested more than 1 level deep.</li>
+</ul>
+<h2 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h2>
+<h3 id="visibilidad-de-helpers">Visibilidad de Helpers<a class="headerlink" href="#visibilidad-de-helpers" title="Permanent link">&para;</a></h3>
+<p>Los métodos definidos en los módulos Helper (<code>app/helpers/&lt;controller&gt;_helper.rb</code>) son visibles en las vistas por defecto. Para que estén disponibles en los controllers hay que hacer un <code>include</code>. Si lo hacemos en el controller base (<code>ApplicationController</code>) estará disponibles en todos los controllers dado que éstos heredan de <code>ApplicationController</code>.</p>
+<h3 id="mejora-en-rendimiento-en-desarrollo">Mejora en rendimiento en Desarrollo<a class="headerlink" href="#mejora-en-rendimiento-en-desarrollo" title="Permanent link">&para;</a></h3>
+<p>Rails 3.1 introdujo el concepto del <a href="http://guides.rubyonrails.org/asset_pipeline.html">asset pipeline</a>. Desafortunadamente esto causa problemas de rendimiento en el entorno de desarrollo. Para mejorarlo se puede utilizar la tarea de precompilador siguiente:</p>
+<div class="highlight"><pre><span></span><code>$ bundle <span class="nb">exec</span> rake assets:precompile:nondigest
+</code></pre></div>
+<p>Esto provoca que los cambios en los ficheros asset no sean incluidos automáticamente cuando recargamos la página. Para forzar su refresco hay que volver a ejecutar el comando anterior.</p>
+<h3 id="borrado-de-assets">Borrado de assets<a class="headerlink" href="#borrado-de-assets" title="Permanent link">&para;</a></h3>
+<p>Rails proporciona la siguiente tarea de precompilador que borrará el directorio <code>public/assets</code>, cosa que puede resultar útil antes de un commit.</p>
+<div class="highlight"><pre><span></span><code>$ bundle <span class="nb">exec</span> rake assets:clean
+</code></pre></div>
+<p>Esta orden puede solucionar el problema con el <code>font-awesome</code>, que en ocasiones se dibuja mal.</p>
+<p>También puede merecer la pena incluir el directorio <code>public/assets</code> en el fichero <code>.gitignore</code>.</p>
+<h3 id="actualizacion-de-paquetes">Actualización de paquetes<a class="headerlink" href="#actualizacion-de-paquetes" title="Permanent link">&para;</a></h3>
+<p>Comandos interesantes relacionados con las versiones de los paquetes y su gestión:</p>
+<ul>
+<li><code>bundle outdated</code>: Informe de paquetes desactualizados.</li>
+<li><code>bundle outdated &lt;paquete&gt;</code>: Informa sobre el nivel de actualización de un paquete.</li>
+<li><code>bundle update</code>: Actualiza todos los paquetes.</li>
+<li><code>bundle update &lt;paquete&gt;</code>: Actualiza el paquete.</li>
+</ul>
+<h3 id="muestra-el-mapa-de-rutas">Muestra el mapa de rutas<a class="headerlink" href="#muestra-el-mapa-de-rutas" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ bundle <span class="nb">exec</span> rake routes
+</code></pre></div>
+<h3 id="muestra-todas-las-tareas">Muestra todas las tareas<a class="headerlink" href="#muestra-todas-las-tareas" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ bundle <span class="nb">exec</span> rake -T
+</code></pre></div>
+<h3 id="instalacion-de-gem">Instalación de gem<a class="headerlink" href="#instalacion-de-gem" title="Permanent link">&para;</a></h3>
+<p>Tras la instalación de un gem generalmente hay que instalar y ejecutar las migraciones de base de datos con los siguientes comandos:</p>
+<div class="highlight"><pre><span></span><code>$ rake railties:install:migrations
+$ rake db:migrate
+</code></pre></div>
+<p>Para instalar una versión específica de una gem hay que añadir el argumento <code>--version</code>, como por ejemplo:</p>
+<div class="highlight"><pre><span></span><code>$ gem install --version <span class="s1">&#39;3.0.13&#39;</span> passenger
+</code></pre></div>
+<h3 id="activar-modo-debug">Activar modo debug<a class="headerlink" href="#activar-modo-debug" title="Permanent link">&para;</a></h3>
+<p>Instalar primero la gem <code>debugger</code>:</p>
+<div class="highlight"><pre><span></span><code>$ sudo gem install debugger
+</code></pre></div>
+<p>Añadir al Gemfile lo siguiente (probablemente sólo sea necesario en el entorno de desarrollo):</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">group</span><span class="w"> </span><span class="o">:</span><span class="n">development</span><span class="w"> </span><span class="k">do</span><span class="w"></span>
+<span class="w">  </span><span class="n">gem</span><span class="w"> </span><span class="s1">&#39;debugger&#39;</span><span class="w"></span>
+<span class="n">end</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+
+<p>Insertar en el código una llamada a <code>debugger</code> en el punto del código donde queramos que se detenga la ejecución.</p>
+<p>Finalmente para arrancar el servidor en modo debug:</p>
+<div class="highlight"><pre><span></span><code>$ bundle <span class="nb">exec</span> rails s --debugger
+</code></pre></div>
+<p>Lo anterior sirve para depurar sobre Webrick. Para hacerlo bajo Passenger seguir las instrucciones de este <a href="http://chrisadams.me.uk/2009/04/28/how-to-set-up-a-debugger-with-mod_railspassenger/">post</a> (con la ayuda de <a href="http://stackoverflow.com/questions/10678779/debugging-rails-with-passenger-and-apache">este otro</a>). De forma resumida consiste en ejecutar:</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> &lt;app_root&gt;
+$ sudo gem install ruby-debug19
+</code></pre></div>
+<p>Generar un task con:</p>
+<div class="highlight"><pre><span></span><code>$ bundle <span class="nb">exec</span> rails g task myapplication restart
+</code></pre></div>
+<p>Añadir lo siguiente al final del fichero <code>config/environments/development.rb</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">exists?</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">RAILS_ROOT</span><span class="p">,</span><span class="s1">&#39;tmp&#39;</span><span class="p">,</span> <span class="s1">&#39;debug.txt&#39;</span><span class="p">))</span>
+  <span class="nb">require</span> <span class="s1">&#39;ruby-debug&#39;</span>
+  <span class="no">Debugger</span><span class="o">.</span><span class="n">wait_connection</span> <span class="o">=</span> <span class="kp">true</span>
+  <span class="no">Debugger</span><span class="o">.</span><span class="n">start_remote</span>
+  <span class="no">File</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">RAILS_ROOT</span><span class="p">,</span><span class="s1">&#39;tmp&#39;</span><span class="p">,</span> <span class="s1">&#39;debug.txt&#39;</span><span class="p">))</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Ejecutar:</p>
+<div class="highlight"><pre><span></span><code>$ bundle <span class="nb">exec</span> rake myapplication:restart <span class="nv">DEBUG</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<p>Y una vez que hagamos una request para que se reinicie la aplicación ejecutar:</p>
+<div class="highlight"><pre><span></span><code>$ rdebug -c
+</code></pre></div>
+<h3 id="generacion-de-un-modelo">Generación de un modelo<a class="headerlink" href="#generacion-de-un-modelo" title="Permanent link">&para;</a></h3>
+<p>El siguiente comando creará un modelo para una entidad además de la migration correspondiente en la base de datos:</p>
+<div class="highlight"><pre><span></span><code>$ bundle <span class="nb">exec</span> rails g model spree/product_layout name:string view:string description:text
+</code></pre></div>
+<h3 id="path-helpers">Path Helpers<a class="headerlink" href="#path-helpers" title="Permanent link">&para;</a></h3>
+<p>Dada la siguiente definición de resources anidados:</p>
+<div class="highlight"><pre><span></span><code><span class="n">resources</span> <span class="ss">:magazines</span> <span class="k">do</span>
+  <span class="n">resources</span> <span class="ss">:ads</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Alternativamente al uso de los path helpers habituales, cuando se pasa como argumento un objeto se puede dejar a Rails que decida automáticamente el path helper necesario, es decir las siguientes líneas serán equivalentes:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="sx">%= link_to &quot;Ad details&quot;, magazine_ad_path(@magazine, @ad) %&gt;</span>
+<span class="sx">&lt;%=</span> <span class="n">link_to</span> <span class="s2">&quot;Ad details&quot;</span><span class="p">,</span> <span class="n">url_for</span><span class="p">(</span><span class="o">[</span><span class="vi">@magazine</span><span class="p">,</span> <span class="vi">@ad</span><span class="o">]</span><span class="p">)</span> <span class="o">%&gt;</span>
+</code></pre></div>
+<p>En helpers como <code>link_to</code> podemos indicar simplemente los objetos:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;%=</span> <span class="n">link_to</span> <span class="s2">&quot;Ad details&quot;</span><span class="p">,</span> <span class="o">[</span><span class="vi">@magazine</span><span class="p">,</span> <span class="vi">@ad</span><span class="o">]</span> <span class="o">%&gt;</span>
+</code></pre></div>
+<p>O si queremos enlazar directamente a la <code>magazine</code> en lugar de un array pasaremos directamente el objeto padre:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;%=</span> <span class="n">link_to</span> <span class="s2">&quot;Magazine details&quot;</span><span class="p">,</span> <span class="vi">@magazine</span> <span class="o">%&gt;</span>
+</code></pre></div>
+<h3 id="tareas-en-base-de-datos">Tareas en base de datos<a class="headerlink" href="#tareas-en-base-de-datos" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>db:create</code>: creates the database for the current env</li>
+<li><code>db:create:all</code>: creates the databases for all envs</li>
+<li><code>db:drop</code>: drops the database for the current env</li>
+<li><code>db:drop:all</code>: drops the databases for all envs</li>
+<li><code>db:migrate</code>: runs migrations for the current env that have not run yet</li>
+<li><code>db:migrate:up</code>: runs one specific migration</li>
+<li><code>db:migrate:down</code>: rolls back one specific migration</li>
+<li><code>db:migrate:status</code>: shows current migration status</li>
+<li><code>db:migrate:rollback</code>: rolls back the last migration</li>
+<li><code>db:migrate:redo</code>: runs (<code>db:migrate:down</code> <code>db:migrate:up</code>) or (<code>db:migrate:rollback</code> <code>db:migrate</code>) depending on the specified migration</li>
+<li><code>db:migrate:reset</code>: runs <code>db:drop</code> <code>db:create</code> <code>db:migrate</code></li>
+<li><code>db:forward</code>: advances the current schema version to the next one</li>
+<li><code>db:seed</code>: (only) runs the db/seed.rb file</li>
+<li><code>db:schema:load</code>: loads the schema into the current env's database</li>
+<li><code>db:schema:dump</code>: dumps the current env's schema (and seems to create the db aswell)</li>
+<li><code>db:setup</code>: runs <code>db:schema:load</code> <code>db:seed</code></li>
+<li><code>db:reset</code>: runs <code>db:drop</code> <code>db:setup</code></li>
+</ul>
+<h3 id="gestion-del-pluralsingular">Gestión del plural/singular<a class="headerlink" href="#gestion-del-pluralsingular" title="Permanent link">&para;</a></h3>
+<p>Cuando un modelo/recurso tenga un plural irregular, se puede gestionar manualmente por medio de un <code>Inflector</code>. Consultar esta <a href="http://guides.rubyonrails.org/routing.html#overriding-the-singular-form">guía</a>.</p>
+<h3 id="relacion-entre-modelos">Relación entre modelos<a class="headerlink" href="#relacion-entre-modelos" title="Permanent link">&para;</a></h3>
+<p>Estos serían los pasos para establecer una relación 1:n entre dos modelos preexistentes. Se basa en <a href="http://guides.rubyonrails.org/association_basics.html#creating-foreign-keys-for-belongs_to-associations">este apartado</a> de las Rails Guides.</p>
+<p>Partimos de los modelos <code>Spree::Product</code> de la gem <code>spree_core</code> y el modelo <code>Spree::ProductLayout</code> propio de nuestra aplicación. La relación será un <code>belongs_to</code> de Product a ProductLayout, es decir un n:1. Empezamos añadiendo la relación al modelo Product. Como es una entidad de una gem lo haremos con un fichero decorator:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#app/models/spree/product_decorator.rb</span>
+<span class="no">Spree</span><span class="o">::</span><span class="no">Product</span><span class="o">.</span><span class="n">class_eval</span> <span class="k">do</span>
+  <span class="n">belongs_to</span> <span class="ss">:product_layout</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>A continuación generamos un migration para añadir el campo que establece la relación en la tabla que mantiene el modelo Product:</p>
+<div class="highlight"><pre><span></span><code>$ bundle <span class="nb">exec</span> rails g migration AddProductLayoutRelationToProducts
+</code></pre></div>
+<p>Ahora lo editamos para incorporar el campo:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#db/migrate/20130228153926_add_product_layout_relation_to_products.rb</span>
+<span class="k">class</span> <span class="nc">AddProductLayoutRelationToProducts</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
+  <span class="k">def</span> <span class="nf">change</span>
+    <span class="n">change_table</span> <span class="ss">:spree_products</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">references</span> <span class="ss">:product_layout</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Finalmente ejecutamos el migrate:</p>
+<div class="highlight"><pre><span></span><code>$ bundle <span class="nb">exec</span> rake db:migrate
+</code></pre></div>
+<h3 id="inspeccionar-la-definicion-de-un-metodo">Inspeccionar la definición de un método<a class="headerlink" href="#inspeccionar-la-definicion-de-un-metodo" title="Permanent link">&para;</a></h3>
+<p>Si queremos averiguar en qué módulo se encuentra definido un método ejecutamos en consola IRB lo siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span> <span class="no">Objeto</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="ss">:metodo</span><span class="p">)</span><span class="o">.</span><span class="n">source_location</span>
+</code></pre></div>
+<p>o</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span> <span class="no">Objeto</span><span class="o">.</span><span class="n">instance_method</span><span class="p">(</span><span class="ss">:metodo</span><span class="p">)</span><span class="o">.</span><span class="n">source_location</span>
+</code></pre></div>
+<p>Sustituyendo "Objeto" y "metodo" por lo que corresponda. <a href="http://www.jonathanleighton.com/articles/2012/finding-methods/">Fuente</a>.</p>
+<p>Si se trata de un helper partimos de <code>helper</code>, por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">helper</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="ss">:tab</span><span class="p">)</span><span class="o">.</span><span class="n">source_location</span>
+</code></pre></div>
+<h3 id="listar-gems-instalados">Listar gems instalados<a class="headerlink" href="#listar-gems-instalados" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ gem list --local
+</code></pre></div>
+<p>Si queremos sólo las versiones de una gem, de <code>rails</code> por ejemplo:</p>
+<div class="highlight"><pre><span></span><code>$ gem list --local rails
+</code></pre></div>
+<h3 id="generar-el-api-de-rails">Generar el API de rails<a class="headerlink" href="#generar-el-api-de-rails" title="Permanent link">&para;</a></h3>
+<p>Para tener en local la versión actualizada del API de rails:</p>
+<div class="highlight"><pre><span></span><code>$ rails new dummy_app
+$ <span class="nb">cd</span> dummy_app
+$ bundle <span class="nb">exec</span> rake doc:rails
+</code></pre></div>
+<p>Luego mover el subdirectorio <code>doc/api/index.html</code> a donde nos interese y borrar la dummy_app.</p>
+<h3 id="rubygems-documentation">RubyGems Documentation<a class="headerlink" href="#rubygems-documentation" title="Permanent link">&para;</a></h3>
+<p>Para visualizar la documentación de todas las gems instaladas en el sistema ejecutar:</p>
+<div class="highlight"><pre><span></span><code>$ gem server
+</code></pre></div>
+<p>Y abrir la dirección: http://localhost:8808</p>
+<h3 id="problema-con-el-encoding-de-algunas-fuentes-en-utf-8">Problema con el encoding de algunas fuentes en UTF-8<a class="headerlink" href="#problema-con-el-encoding-de-algunas-fuentes-en-utf-8" title="Permanent link">&para;</a></h3>
+<p>Al incorporar el gem <a href="https://github.com/picazoH/spree_sermepa">spree_sermepa</a> se produjo el problema descrito <a href="https://github.com/carlhuda/bundler/issues/1570">aquí</a>.</p>
+<p>Hay varias formas de solucionarlo. Una es añadir:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="no">RUBY_VERSION</span> <span class="o">=~</span> <span class="sr">/1.9/</span>
+  <span class="no">Encoding</span><span class="o">.</span><span class="n">default_external</span> <span class="o">=</span> <span class="no">Encoding</span><span class="o">::</span><span class="no">UTF_8</span>
+  <span class="no">Encoding</span><span class="o">.</span><span class="n">default_internal</span> <span class="o">=</span> <span class="no">Encoding</span><span class="o">::</span><span class="no">UTF_8</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>en la parte superior del Gemfile.</p>
+<p>Si se utiliza Passenger para servir la aplicación, otra opción es sustituir la siguiente variable del fichero <code>/etc/apache2/envvars</code>:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="n">LANG</span><span class="o">=</span><span class="n">C</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+
+<p>por:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="n">LANG</span><span class="o">=</span><span class="n">es_ES</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+
+<h3 id="downgrade-de-rubygems">Downgrade de Rubygems<a class="headerlink" href="#downgrade-de-rubygems" title="Permanent link">&para;</a></h3>
+<p>Tras actualizar a la versión 2.0.3 de Rubygems empecé a tener problemas a la hora de hacer <code>bundle install</code>. Aunque me pedía el password de root luego se producían errores de permisos en los directorios donde se almacenan las gems. La solución fue volver a una versión anterior de Rubygems. En concreto la misma que había en ese momento en el servidor de DinaHosting, es decir la 1.8.23. Se hizo con el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code>$ sudo gem update --system <span class="m">1</span>.8.23
+</code></pre></div>
+<h3 id="solucion-a-error-could-not-find-rake-1004-in-any-of-the-sources-con-passenger">Solución a error "Could not find rake-10.0.4 in any of the sources" con Passenger<a class="headerlink" href="#solucion-a-error-could-not-find-rake-1004-in-any-of-the-sources-con-passenger" title="Permanent link">&para;</a></h3>
+<p>En el alojamiento de DinaHosting, al ejecutar por primera vez una aplicación Ruby ejecutada con Passport, se produce el error siguiente:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Could not find rake-10.0.4 in any of the sources
+</code></pre></div></td></tr></table></div>
+
+<p>Instalando las gemas en el home del usuario se soluciona el error:</p>
+<div class="highlight"><pre><span></span><code>$ bundle install --deployment
+</code></pre></div>
+<p>Esto instala las gem's en el directorio <code>vendor/bundle</code>.</p>
+<h3 id="especificar-entorno">Especificar entorno<a class="headerlink" href="#especificar-entorno" title="Permanent link">&para;</a></h3>
+<p>Para especificar el entorno en una tarea <code>rake</code> añadir al final de la orden <code>RAILS_ENV=&lt;entorno&gt;</code>. Por ejemplo para desarrollo:</p>
+<div class="highlight"><pre><span></span><code>$ bundle <span class="nb">exec</span> rake routes <span class="nv">RAILS_ENV</span><span class="o">=</span>development
+</code></pre></div>
+<p>Con el script <code>rails</code>, depende. Si se quiere arrancar la consola añadir al final el entorno sin más. Por ejemplo para desarrollo:</p>
+<div class="highlight"><pre><span></span><code>$ bundle <span class="nb">exec</span> rails c development
+</code></pre></div>
+<p>Si se quiere arrancar el servidor Webrick añadir el entorno por medio de la opción <code>-e</code>. Por ejemplo para desarrollo:</p>
+<div class="highlight"><pre><span></span><code>$ bundle <span class="nb">exec</span> rails s -e development
+</code></pre></div>
+<h3 id="desinstalacion-de-todas-las-gems">Desinstalación de todas las gems<a class="headerlink" href="#desinstalacion-de-todas-las-gems" title="Permanent link">&para;</a></h3>
+<p>Con el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code>$ gem list <span class="p">|</span> cut -d<span class="s2">&quot; &quot;</span> -f1 <span class="p">|</span> xargs gem uninstall -aIx
+</code></pre></div>
+<p>Posteriormente habrá que volver a instalar Bundler y el resto de gems. Para ello:</p>
+<div class="highlight"><pre><span></span><code>$ sudo gem install bundler
+$ <span class="nb">cd</span> &lt;proyecto&gt;
+$ bundle install
+</code></pre></div>
+<h3 id="pluralessingulares-de-resources">Plurales/Singulares de resources<a class="headerlink" href="#pluralessingulares-de-resources" title="Permanent link">&para;</a></h3>
+<p>Recurso de tipo colección dentro de un namespace:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Elemento</th>
+<th align="left">Plural/Singular</th>
+<th align="left">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Tabla en base de datos</td>
+<td align="left">Plural</td>
+<td align="left">spree_posts</td>
+</tr>
+<tr>
+<td align="left">Clase del modelo</td>
+<td align="left">Singular</td>
+<td align="left">Spree::Post</td>
+</tr>
+<tr>
+<td align="left">Fichero del modelo</td>
+<td align="left">Singular</td>
+<td align="left">spree/post.rb</td>
+</tr>
+<tr>
+<td align="left">Clase del controlador</td>
+<td align="left">Plural</td>
+<td align="left">Spree::PostsController</td>
+</tr>
+<tr>
+<td align="left">Fichero del controlador</td>
+<td align="left">Plural</td>
+<td align="left">spree/posts_controller.rb</td>
+</tr>
+<tr>
+<td align="left">rails generator</td>
+<td align="left">Singular</td>
+<td align="left">rails g resource spree/post title:string body:text</td>
+</tr>
+<tr>
+<td align="left">Ruta en config/routes.rb</td>
+<td align="left">Plural</td>
+<td align="left">resources :posts</td>
+</tr>
+<tr>
+<td align="left">Directorio en views</td>
+<td align="left">Plural</td>
+<td align="left">spree/posts</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ejecutar-una-version-concreta-de-rails">Ejecutar una versión concreta de rails<a class="headerlink" href="#ejecutar-una-version-concreta-de-rails" title="Permanent link">&para;</a></h3>
+<p>Si tenemos instaladas varias versiones del gem de rails, para forzar que se utilice el script <code>rails</code> de una versión concreta, pondremos la versión de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code>$ rails _3.2.13_ -v
+</code></pre></div>
+<p>De forma que si por ejemplo queremos generar un nuevo proyecto con la versión 3.2.13 haremos:</p>
+<div class="highlight"><pre><span></span><code>$ rails _3.2.13_ new nueva_app
+</code></pre></div>
+<h3 id="ejecutar-una-version-concreta-de-spree">Ejecutar una versión concreta de spree<a class="headerlink" href="#ejecutar-una-version-concreta-de-spree" title="Permanent link">&para;</a></h3>
+<p>Si tenemos instaladas varias versiones del gem de spree, para forzar que se utilice el script <code>spree</code> de una versión concreta, pondremos la versión de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code>$ spree _1.3.3_ -v
+</code></pre></div>
+<p>De forma que si por ejemplo queremos hacer la instalación dentro de una aplicación rails nueva con la versión 1.3.3 de Spree haremos:</p>
+<div class="highlight"><pre><span></span><code>$ spree _1.3.3_ install
+</code></pre></div>
+<h3 id="diagramas-erd">Diagramas ERD<a class="headerlink" href="#diagramas-erd" title="Permanent link">&para;</a></h3>
+<p>A continuación se indica el comando para obtener una serie de diagramas ERD interesantes. La documentación de todos los parámetros de ERD está <a href="http://rails-erd.rubyforge.org/customise.html">aquí</a>.</p>
+<p>Modelado de producto en Spree:</p>
+<div class="highlight"><pre><span></span><code>$ bundle <span class="nb">exec</span> rake erd <span class="nv">attributes</span><span class="o">=</span>foreign_keys <span class="nv">only</span><span class="o">=</span><span class="s2">&quot;Spree::Product,Spree::OptionType,Spree::OptionValue,Spree::Variant,Spree::ProductOptionType&quot;</span> <span class="nv">title</span><span class="o">=</span><span class="s1">&#39;Productos&#39;</span>
+</code></pre></div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      
+        
+        <a href="python.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Python/Django" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Python/Django
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="spree.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Spree" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              Spree
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/eduardofilo" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/eduardofilo" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/edumoreno/" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="http://eduardofilo.es" target="_blank" rel="noopener" title="eduardofilo.es" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M309.8 480.3c-13.6 14.5-50 31.7-97.4 31.7-120.8 0-147-88.8-147-140.6v-144H17.9c-5.5 0-10-4.5-10-10v-68c0-7.2 4.5-13.6 11.3-16 62-21.8 81.5-76 84.3-117.1.8-11 6.5-16.3 16.1-16.3h70.9c5.5 0 10 4.5 10 10v115.2h83c5.5 0 10 4.4 10 9.9v81.7c0 5.5-4.5 10-10 10h-83.4V360c0 34.2 23.7 53.6 68 35.8 4.8-1.9 9-3.2 12.7-2.2 3.5.9 5.8 3.4 7.4 7.9l22 64.3c1.8 5 3.3 10.6-.4 14.5z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/c/EduardoMorenoLamana" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,4014 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes varios sobre algunas de las cosas que necesito recordar, principalmente sobre Desarrollo y Sistemas.">
+      
+      
+        <meta name="author" content="Eduardo Moreno Lamana">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Ubuntu - Apuntes de eduardófilo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@8.5.1/dist/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ubuntu" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../index.html" title="Apuntes de eduardófilo" class="md-header__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+      
+  <img src="../../images/eduardofilo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apuntes de eduardófilo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ubuntu
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../sistemas/ubuntu.html" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../en/sistemas/ubuntu.html" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../2022-08-08_mmiyoo_uart.html" class="md-tabs__link">
+        Blog
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../desarrollo/android.html" class="md-tabs__link">
+        Desarrollo
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ingenieria/3d_printing.html" class="md-tabs__link">
+        Ingeniería
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../proyectos/headsetcomm.html" class="md-tabs__link">
+        Proyectos
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../retro-emulacion/c64.html" class="md-tabs__link">
+        Retro-Emulación
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="android_system.html" class="md-tabs__link md-tabs__link--active">
+        Sistemas
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../varios/bici.html" class="md-tabs__link">
+        Varios
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Apuntes de eduardófilo" class="md-nav__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+      
+  <img src="../../images/eduardofilo.png" alt="logo">
+
+    </a>
+    Apuntes de eduardófilo
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Blog
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Blog" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Blog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-08-08_mmiyoo_uart.html" class="md-nav__link">
+        Miyoo Mini UART
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-04-17_vr.html" class="md-nav__link">
+        Aventuras en VR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-10-30_raspi_zero_2_upgrade.html" class="md-nav__link">
+        Raspberry Pi Zero 2 W upgrade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-04-03_RG350_imagen.html" class="md-nav__link">
+        RG350/RG280 Imagen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-02-28_pico_fuzix.html" class="md-nav__link">
+        FUZIX en Raspberry Pi Pico
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-01-19-retroconsolas.html" class="md-nav__link">
+        Retroconsolas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-01-16-rg350_ra_installer.html" class="md-nav__link">
+        RG350 Instalador RA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-12-13-rg351_wifi_mod.html" class="md-nav__link">
+        RG351P Wifi mod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-09-27-rg350_xmame_sm_bridge.html" class="md-nav__link">
+        RG350 Interfaz xMAME SimpleMenu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-08-31-cancion_herb_alpert.html" class="md-nav__link">
+        La canción que merece la pena escuchar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-08-15-rg350_scummvm_launchers.html" class="md-nav__link">
+        RG350 ScummVM en lanzadores
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-08-12-rg350_py_backup.html" class="md-nav__link">
+        RG350 Py Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-07-12-rg350_screen_mod.html" class="md-nav__link">
+        RG350 Sustitución de pantalla 480p
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-07-09-rg350_fba_vertical_mod.html" class="md-nav__link">
+        RG350 FBA mod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-07-02-rg350_primeros_pasos.html" class="md-nav__link">
+        RG350 Primeros pasos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-06-04-rg350_raspi_image.html" class="md-nav__link">
+        RG350 Raspi Imagen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-31-rg350_compile.html" class="md-nav__link">
+        RG350 Compilar aplicaciones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-25-rg350_docker_buildroot.html" class="md-nav__link">
+        RG350 Docker Buildroot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-14-rg350_mame4all.html" class="md-nav__link">
+        RG350 MAME4All
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-08-rg350_dosbox.html" class="md-nav__link">
+        RG350 DOSBox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-06-rg350_openbor.html" class="md-nav__link">
+        RG350 OpenBOR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-04-rg350_daphne.html" class="md-nav__link">
+        RG350 Daphne
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-04-15-rg350_xmame.html" class="md-nav__link">
+        RG350 xMAME
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-04-14-rg350_scummvm.html" class="md-nav__link">
+        RG350 ScummVM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-03-28-rg350_pymenu.html" class="md-nav__link">
+        RG350 PyMenu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-03-19-rg350_backup.html" class="md-nav__link">
+        RG350 Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-16-panelizar_pcb.html" class="md-nav__link">
+        Panelizar PCB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-13-rg350_emulationstation.html" class="md-nav__link">
+        RG350 EmulationStation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-09-rg350_network.html" class="md-nav__link">
+        RG350 Conexión a internet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-02-08-eduzebox.html" class="md-nav__link">
+        EdUzebox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-01-31-rg350_fba.html" class="md-nav__link">
+        RG350 FBA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-01-25-rg350_simplemenu.html" class="md-nav__link">
+        RG350 SimpleMenu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-01-11-rg350_scraper.html" class="md-nav__link">
+        RG350 Scraper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-08-06-django_site.html" class="md-nav__link">
+        Creación de un sitio Django desde cero
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-07-07-crankshaft-build.html" class="md-nav__link">
+        Compilación OpenAuto para solucionar touch screen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-04-20-pong_composite_mod.html" class="md-nav__link">
+        Composite mod en consola Pong
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-01-29-bloqueo_telsome.html" class="md-nav__link">
+        Bloqueo de llamadas entrantes en Telsome
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-01-26-conversion_apuntes_mkdocs.html" class="md-nav__link">
+        Conversión del sitio de Apuntes a MkDocs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-10-20-Octoprint-en-Anet-A8.html" class="md-nav__link">
+        Octoprint en Anet A8
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-10-19-crankshaft.html" class="md-nav__link">
+        Crankshaft - AndroidAuto sobre Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-05-05-otto.html" class="md-nav__link">
+        Otto DIY
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2017-01-14-raspi2-kodi-16-tvheadend.html" class="md-nav__link">
+        Raspberry Pi 3 + KODI 16 + Tvheadend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-12-06-raspi3-kodi.html" class="md-nav__link">
+        Raspberry Pi 3 + KODI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-10-17-raspi-switch.html" class="md-nav__link">
+        Interruputor de encendido para Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-08-17-el-mundo-de-ayer.html" class="md-nav__link">
+        El mundo de ayer - Stefan Zweig
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-08-02-stm32-vl-discovery.html" class="md-nav__link">
+        Entorno desarrollo STM32 VL Discovery sobre Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-07-21-PIGRRL-2.html" class="md-nav__link">
+        Configuración PiGRRL-2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-07-10-wild.html" class="md-nav__link">
+        Wild - Cheryl Strayed
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-07-02-virus-android.html" class="md-nav__link">
+        Alertas por supuestos virus en Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-04-10-un-antropologo-en-marte.html" class="md-nav__link">
+        Un antropólogo en Marte - Oliver Sacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2016-02-25-los-innovadores.html" class="md-nav__link">
+        Los Innovadores - Walter Isaacson
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2015-03-14-raspi2-kodi-tvheadend.html" class="md-nav__link">
+        Raspberry Pi 2 + KODI + Tvheadend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2015-01-09-moviles.html" class="md-nav__link">
+        Móviles recomendables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2015-01-08-jekyll.html" class="md-nav__link">
+        Jekyll+GitHub Pages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2014-12-26-dokuwiki-raspi.html" class="md-nav__link">
+        Dokuwiki en Raspberry Pi manteniendo los ficheros en NAS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2014-12-20-micro-placas.html" class="md-nav__link">
+        Micro placas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2014-12-15-presentacion.html" class="md-nav__link">
+        Presentación
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Desarrollo
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Desarrollo
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/android.html" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/db.html" class="md-nav__link">
+        Bases de Datos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/diseno.html" class="md-nav__link">
+        Diseño
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/dokuwiki.html" class="md-nav__link">
+        Dokuwiki
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/eclipse.html" class="md-nav__link">
+        Eclipse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/projects.html" class="md-nav__link">
+        Gestión de Proyectos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/git.html" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/html.html" class="md-nav__link">
+        HTML+CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/ia.html" class="md-nav__link">
+        IA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/java.html" class="md-nav__link">
+        Java
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/javaee.html" class="md-nav__link">
+        JavaEE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/javascript.html" class="md-nav__link">
+        JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/joomla.html" class="md-nav__link">
+        Joomla
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/phonegap.html" class="md-nav__link">
+        Phonegap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/php.html" class="md-nav__link">
+        PHP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/python.html" class="md-nav__link">
+        Python/Django
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/ror.html" class="md-nav__link">
+        Ruby on Rails
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/spree.html" class="md-nav__link">
+        Spree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/subl.html" class="md-nav__link">
+        Sublime Text 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/svn.html" class="md-nav__link">
+        SVN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/vagrant.html" class="md-nav__link">
+        Vagrant
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/vr.html" class="md-nav__link">
+        VR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/yii.html" class="md-nav__link">
+        Yii
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Ingeniería
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ingeniería" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Ingeniería
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/3d_printing.html" class="md-nav__link">
+        3D Printing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/arduino.html" class="md-nav__link">
+        Arduino
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/freecad.html" class="md-nav__link">
+        FreeCAD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/herramientas.html" class="md-nav__link">
+        Herramientas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/kicad.html" class="md-nav__link">
+        KiCad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/modulos.html" class="md-nav__link">
+        Módulos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingenieria/stm32.html" class="md-nav__link">
+        STM32
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Proyectos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Proyectos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Proyectos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proyectos/headsetcomm.html" class="md-nav__link">
+        Headset Commander
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proyectos/dicom.html" class="md-nav__link">
+        Impresión 3D de ecografías
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proyectos/minecraft.html" class="md-nav__link">
+        Minecraft
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Retro-Emulación
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Retro-Emulación" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Retro-Emulación
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/c64.html" class="md-nav__link">
+        Commodore 64
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/fpga.html" class="md-nav__link">
+        FPGA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/general.html" class="md-nav__link">
+        General
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/juegos.html" class="md-nav__link">
+        Juegos destacados
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/miyoo-mini.html" class="md-nav__link">
+        Miyoo Mini
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/retroarch.html" class="md-nav__link">
+        RetroArch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/rg-350.html" class="md-nav__link">
+        RG350/RG280
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/rg-351.html" class="md-nav__link">
+        RG351
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/microconsolas.html" class="md-nav__link">
+        Micro consolas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/z80-computer.html" class="md-nav__link">
+        Z80 Computer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/zx-spectrum.html" class="md-nav__link">
+        ZX Spectrum
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retro-emulacion/zx-uno.html" class="md-nav__link">
+        ZX-UNO
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Sistemas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sistemas" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Sistemas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="android_system.html" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="soft_imprescindible.html" class="md-nav__link">
+        Aplicaciones interesantes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="appletv.html" class="md-nav__link">
+        AppleTV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="buildroot.html" class="md-nav__link">
+        Buildroot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="docker.html" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="email.html" class="md-nav__link">
+        e-mail
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="impresoras.html" class="md-nav__link">
+        Impresoras
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="iot.html" class="md-nav__link">
+        IOT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kodi.html" class="md-nav__link">
+        Kodi/OpenELEC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="macosx.html" class="md-nav__link">
+        Mac OS X
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mysql.html" class="md-nav__link">
+        MySQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nas.html" class="md-nav__link">
+        NAS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="oculus.html" class="md-nav__link">
+        Oculus Quest 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="odroid.html" class="md-nav__link">
+        ODROID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="office.html" class="md-nav__link">
+        Office
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="raspi.html" class="md-nav__link">
+        Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="raspi_pico.html" class="md-nav__link">
+        Raspberry Pi Pico
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="redes.html" class="md-nav__link">
+        Redes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="router_xiaomi.html" class="md-nav__link">
+        Router Xiaomi MiWiFi 3G
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ubuntu_phone.html" class="md-nav__link">
+        Ubuntu Phone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Ubuntu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ubuntu.html" class="md-nav__link md-nav__link--active">
+        Ubuntu
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aplicaciones-interesantes" class="md-nav__link">
+    Aplicaciones interesantes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicios-interesantes" class="md-nav__link">
+    Servicios interesantes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problema-con-aplicaciones-root-en-wayland" class="md-nav__link">
+    Problema con aplicaciones root en Wayland
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-opcion-predeterminada-en-grub" class="md-nav__link">
+    Configuración de opción predeterminada en GRUB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemas-con-grub" class="md-nav__link">
+    Problemas con GRUB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solucion-problemas-wifi-en-1104-y-1110" class="md-nav__link">
+    Solución problemas wifi en 11.04 y 11.10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solucion-problema-wireshark-en-trusty-y-utopic" class="md-nav__link">
+    Solución problema Wireshark en trusty y utopic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actualizacion-de-intrepid-a-jaunty" class="md-nav__link">
+    Actualización de Intrepid a Jaunty
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actualizacion-de-raring-a-saucy" class="md-nav__link">
+    Actualización de raring a saucy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-graficos" class="md-nav__link">
+    Recursos gráficos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convertir-un-video-a-formato-3gp-h263aac" class="md-nav__link">
+    Convertir un video a formato 3GP (H263+AAC)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convertir-ape-a-wav" class="md-nav__link">
+    Convertir APE a WAV
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convertir-flac-a-wav" class="md-nav__link">
+    Convertir FLAC a WAV
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restaurar-panel-gnome" class="md-nav__link">
+    Restaurar panel Gnome
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concatenar-pdfs" class="md-nav__link">
+    Concatenar PDF's
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apod" class="md-nav__link">
+    APOD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalar-oracle-java" class="md-nav__link">
+    Instalar Oracle Java
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reparacion-del-sistema-de-archivos-cuando-se-pone-en-modo-solo-lectura" class="md-nav__link">
+    Reparación del sistema de archivos cuando se pone en modo "sólo lectura"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#descarga-de-un-video-incrustado-en-un-reproductor-flash" class="md-nav__link">
+    Descarga de un vídeo incrustado en un reproductor Flash
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#descarga-video-de-a3player" class="md-nav__link">
+    Descarga vídeo de A3Player
+  </a>
+  
+    <nav class="md-nav" aria-label="Descarga vídeo de A3Player">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enlaces" class="md-nav__link">
+    Enlaces
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compresion-batch-de-videos" class="md-nav__link">
+    Compresión batch de vídeos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resampleado-de-video-con-handbrake" class="md-nav__link">
+    Resampleado de video con HandBrake
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#split-de-videos" class="md-nav__link">
+    Split de vídeos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crop-en-video" class="md-nav__link">
+    Crop en video
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extraer-frame-de-video" class="md-nav__link">
+    Extraer frame de video
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redimensionado-de-imagenes-en-lote" class="md-nav__link">
+    Redimensionado de imágenes en lote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crop-y-resize-de-imagenes-en-lote" class="md-nav__link">
+    Crop y resize de imágenes en lote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conversion-de-formato-en-lote" class="md-nav__link">
+    Conversión de formato en lote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renombrado-de-archivos-en-lote" class="md-nav__link">
+    Renombrado de archivos en lote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compresion-de-ficheros-en-lote" class="md-nav__link">
+    Compresión de ficheros en lote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sustitucion-de-cadena-en-ficheros-en-lote" class="md-nav__link">
+    Sustitución de cadena en ficheros en lote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#montaje-de-video-stopmotion-a-partir-de-imagenes" class="md-nav__link">
+    Montaje de vídeo StopMotion a partir de imágenes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#montaje-de-gif-a-partir-de-imagenes" class="md-nav__link">
+    Montaje de gif a partir de imágenes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurar-wireshark-para-poder-capturar-con-usuarios-no-root" class="md-nav__link">
+    Configurar Wireshark para poder capturar con usuarios no-root
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solucionar-el-problema-con-wireshark-en-las-ultimas-versiones-de-ubuntu" class="md-nav__link">
+    Solucionar el problema con Wireshark en las últimas versiones de Ubuntu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ficheros-implicados-en-arranque" class="md-nav__link">
+    Ficheros implicados en arranque
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#montar-imagen-de-disco-o-particion" class="md-nav__link">
+    Montar imagen de disco o partición
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screencast" class="md-nav__link">
+    Screencast
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-modulos" class="md-nav__link">
+    Gestión de módulos
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de módulos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anadir-un-modulo-al-kernel" class="md-nav__link">
+    Añadir un módulo al kernel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listado-de-modulos" class="md-nav__link">
+    Listado de módulos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#informacion-de-un-modulo" class="md-nav__link">
+    Información de un módulo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ficheros-definicion-variables-de-entorno" class="md-nav__link">
+    Ficheros definición variables de entorno
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poner-barras-de-scroll-normales" class="md-nav__link">
+    Poner barras de scroll normales
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skype-en-tray" class="md-nav__link">
+    Skype en tray
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workrave-en-tray" class="md-nav__link">
+    Workrave en tray
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localizacion-de-ficheros-desktop" class="md-nav__link">
+    Localización de ficheros .desktop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-gedit" class="md-nav__link">
+    Configuración de gedit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localizar-paquete-que-contiene-un-fichero" class="md-nav__link">
+    Localizar paquete que contiene un fichero
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-idiomas-del-sistema-locales" class="md-nav__link">
+    Configuración de idiomas del sistema (locales)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-swap-en-disco-ssd" class="md-nav__link">
+    Configuración de SWAP en disco SSD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buscar-paquetes" class="md-nav__link">
+    Buscar paquetes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limpieza-de-paquetes-snap" class="md-nav__link">
+    Limpieza de paquetes snap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#montar-ext4-para-usuario" class="md-nav__link">
+    Montar ext4 para usuario
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cambiar-id-de-usuario" class="md-nav__link">
+    Cambiar ID de usuario
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unix.html" class="md-nav__link">
+        UNIX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="trucos_windows.html" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Varios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Varios" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Varios
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/bici.html" class="md-nav__link">
+        Bicicleta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/links.html" class="md-nav__link">
+        Enlaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/excursionismo.html" class="md-nav__link">
+        Excursionismo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/hogar.html" class="md-nav__link">
+        Hogar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/english.html" class="md-nav__link">
+        Inglés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/corsa_d.html" class="md-nav__link">
+        Opel Corsa D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/recetas.html" class="md-nav__link">
+        Recetas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../varios/viajes.html" class="md-nav__link">
+        Viajes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aplicaciones-interesantes" class="md-nav__link">
+    Aplicaciones interesantes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicios-interesantes" class="md-nav__link">
+    Servicios interesantes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problema-con-aplicaciones-root-en-wayland" class="md-nav__link">
+    Problema con aplicaciones root en Wayland
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-opcion-predeterminada-en-grub" class="md-nav__link">
+    Configuración de opción predeterminada en GRUB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemas-con-grub" class="md-nav__link">
+    Problemas con GRUB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solucion-problemas-wifi-en-1104-y-1110" class="md-nav__link">
+    Solución problemas wifi en 11.04 y 11.10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solucion-problema-wireshark-en-trusty-y-utopic" class="md-nav__link">
+    Solución problema Wireshark en trusty y utopic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actualizacion-de-intrepid-a-jaunty" class="md-nav__link">
+    Actualización de Intrepid a Jaunty
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actualizacion-de-raring-a-saucy" class="md-nav__link">
+    Actualización de raring a saucy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-graficos" class="md-nav__link">
+    Recursos gráficos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convertir-un-video-a-formato-3gp-h263aac" class="md-nav__link">
+    Convertir un video a formato 3GP (H263+AAC)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convertir-ape-a-wav" class="md-nav__link">
+    Convertir APE a WAV
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convertir-flac-a-wav" class="md-nav__link">
+    Convertir FLAC a WAV
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restaurar-panel-gnome" class="md-nav__link">
+    Restaurar panel Gnome
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concatenar-pdfs" class="md-nav__link">
+    Concatenar PDF's
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apod" class="md-nav__link">
+    APOD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalar-oracle-java" class="md-nav__link">
+    Instalar Oracle Java
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reparacion-del-sistema-de-archivos-cuando-se-pone-en-modo-solo-lectura" class="md-nav__link">
+    Reparación del sistema de archivos cuando se pone en modo "sólo lectura"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#descarga-de-un-video-incrustado-en-un-reproductor-flash" class="md-nav__link">
+    Descarga de un vídeo incrustado en un reproductor Flash
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#descarga-video-de-a3player" class="md-nav__link">
+    Descarga vídeo de A3Player
+  </a>
+  
+    <nav class="md-nav" aria-label="Descarga vídeo de A3Player">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enlaces" class="md-nav__link">
+    Enlaces
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compresion-batch-de-videos" class="md-nav__link">
+    Compresión batch de vídeos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resampleado-de-video-con-handbrake" class="md-nav__link">
+    Resampleado de video con HandBrake
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#split-de-videos" class="md-nav__link">
+    Split de vídeos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crop-en-video" class="md-nav__link">
+    Crop en video
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extraer-frame-de-video" class="md-nav__link">
+    Extraer frame de video
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redimensionado-de-imagenes-en-lote" class="md-nav__link">
+    Redimensionado de imágenes en lote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crop-y-resize-de-imagenes-en-lote" class="md-nav__link">
+    Crop y resize de imágenes en lote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conversion-de-formato-en-lote" class="md-nav__link">
+    Conversión de formato en lote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renombrado-de-archivos-en-lote" class="md-nav__link">
+    Renombrado de archivos en lote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compresion-de-ficheros-en-lote" class="md-nav__link">
+    Compresión de ficheros en lote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sustitucion-de-cadena-en-ficheros-en-lote" class="md-nav__link">
+    Sustitución de cadena en ficheros en lote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#montaje-de-video-stopmotion-a-partir-de-imagenes" class="md-nav__link">
+    Montaje de vídeo StopMotion a partir de imágenes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#montaje-de-gif-a-partir-de-imagenes" class="md-nav__link">
+    Montaje de gif a partir de imágenes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurar-wireshark-para-poder-capturar-con-usuarios-no-root" class="md-nav__link">
+    Configurar Wireshark para poder capturar con usuarios no-root
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solucionar-el-problema-con-wireshark-en-las-ultimas-versiones-de-ubuntu" class="md-nav__link">
+    Solucionar el problema con Wireshark en las últimas versiones de Ubuntu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ficheros-implicados-en-arranque" class="md-nav__link">
+    Ficheros implicados en arranque
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#montar-imagen-de-disco-o-particion" class="md-nav__link">
+    Montar imagen de disco o partición
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screencast" class="md-nav__link">
+    Screencast
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-modulos" class="md-nav__link">
+    Gestión de módulos
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de módulos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anadir-un-modulo-al-kernel" class="md-nav__link">
+    Añadir un módulo al kernel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listado-de-modulos" class="md-nav__link">
+    Listado de módulos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#informacion-de-un-modulo" class="md-nav__link">
+    Información de un módulo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ficheros-definicion-variables-de-entorno" class="md-nav__link">
+    Ficheros definición variables de entorno
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poner-barras-de-scroll-normales" class="md-nav__link">
+    Poner barras de scroll normales
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skype-en-tray" class="md-nav__link">
+    Skype en tray
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workrave-en-tray" class="md-nav__link">
+    Workrave en tray
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localizacion-de-ficheros-desktop" class="md-nav__link">
+    Localización de ficheros .desktop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-gedit" class="md-nav__link">
+    Configuración de gedit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localizar-paquete-que-contiene-un-fichero" class="md-nav__link">
+    Localizar paquete que contiene un fichero
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-idiomas-del-sistema-locales" class="md-nav__link">
+    Configuración de idiomas del sistema (locales)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-swap-en-disco-ssd" class="md-nav__link">
+    Configuración de SWAP en disco SSD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buscar-paquetes" class="md-nav__link">
+    Buscar paquetes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limpieza-de-paquetes-snap" class="md-nav__link">
+    Limpieza de paquetes snap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#montar-ext4-para-usuario" class="md-nav__link">
+    Montar ext4 para usuario
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cambiar-id-de-usuario" class="md-nav__link">
+    Cambiar ID de usuario
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/eduardofilo/eduardofilo.mkdocs/edit/master/docs/sistemas/ubuntu.md" title="Editar esta página" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="ubuntu">Ubuntu<a class="headerlink" href="#ubuntu" title="Permanent link">&para;</a></h1>
+<h2 id="aplicaciones-interesantes">Aplicaciones interesantes<a class="headerlink" href="#aplicaciones-interesantes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/retext-project/retext">ReText</a>: Editor Markdown.</li>
+<li><a href="https://meetfranz.com/">Franz</a>: <a href="https://gist.github.com/jamiesoncj/756728b3ba7c07d7a90f843400af37bb">Configuración de icono en GNome</a>.</li>
+<li><a href="http://www.appgrid.org/">App Grid</a>: Repositorio de aplicaciones.</li>
+<li><a href="https://itsfoss.com/display-weather-ubuntu/">OpenWeather Shell Extension</a>: Información del tiempo meteorológico en la barra de menú.</li>
+</ul>
+<h2 id="servicios-interesantes">Servicios interesantes<a class="headerlink" href="#servicios-interesantes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/kalcaddle/KODExplorer">KodExplorer</a></li>
+<li><a href="https://gitea.io/en-us/">Gitea</a></li>
+</ul>
+<h2 id="problema-con-aplicaciones-root-en-wayland">Problema con aplicaciones root en Wayland<a class="headerlink" href="#problema-con-aplicaciones-root-en-wayland" title="Permanent link">&para;</a></h2>
+<p>Hay que ejecutar el comando:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>xhost si:localuser:root
+</code></pre></div></td></tr></table></div>
+
+<p>Se puede automatizar en el arranque añadiendo el comando en las <code>Aplicaciones al incio</code> (<a href="http://ubuntuhandbook.org/index.php/2017/10/ubuntu-17-10-tip-graphical-apps-doesnt-launch-via-root-sudo-gksu/">fuente</a>).</p>
+<h2 id="configuracion-de-opcion-predeterminada-en-grub">Configuración de opción predeterminada en GRUB<a class="headerlink" href="#configuracion-de-opcion-predeterminada-en-grub" title="Permanent link">&para;</a></h2>
+<p><a href="https://forums.linuxmint.com/viewtopic.php?t=230650">Fuente</a></p>
+<ol>
+<li>Editar fichero <code>/etc/default/grub</code> y modificar el parámetro <code>GRUB_DEFAULT</code> dando el valor <code>saved</code> en lugar del valor numérico que encontraremos.</li>
+<li>Ejecutar <code>sudo update-grub</code>.</li>
+<li>Ejecutar <code>sudo grub-set-default N</code> siendo N la posición de la entrada del menú de GRUB que queremos que actúe como predeterminada (contando desde 0).</li>
+</ol>
+<h2 id="problemas-con-grub">Problemas con GRUB<a class="headerlink" href="#problemas-con-grub" title="Permanent link">&para;</a></h2>
+<p><a href="http://molinuxaula.pbworks.com/w/page/27409912/Reinstalar%20GRUB%202">Reinstalar GRUB 2</a></p>
+<h2 id="solucion-problemas-wifi-en-1104-y-1110">Solución problemas wifi en 11.04 y 11.10<a class="headerlink" href="#solucion-problemas-wifi-en-1104-y-1110" title="Permanent link">&para;</a></h2>
+<p><a href="http://joeslifewithubuntu.blogspot.com/2011/06/how-to-fix-slow-wifi-in-ubuntu-1104.html">Help with Ubuntu: Fix slow WiFi in Ubuntu 11.04</a></p>
+<h2 id="solucion-problema-wireshark-en-trusty-y-utopic">Solución problema Wireshark en trusty y utopic<a class="headerlink" href="#solucion-problema-wireshark-en-trusty-y-utopic" title="Permanent link">&para;</a></h2>
+<p><a href="https://bugs.launchpad.net/ubuntu/+source/overlay-scrollbar/+bug/1248400">liboverlay-scrollbar hangs Wireshark</a></p>
+<h2 id="actualizacion-de-intrepid-a-jaunty">Actualización de Intrepid a Jaunty<a class="headerlink" href="#actualizacion-de-intrepid-a-jaunty" title="Permanent link">&para;</a></h2>
+<p>Tras actualizar de Intrepid a Jaunty se observa un empobrecimiento del rendimiento gráfico en equipos con gráficas integradas Intel 945. En las siguientes páginas explican como hacer downgrade al controlador Intel que había en Intrepid:</p>
+<ul>
+<li><a href="https://wiki.ubuntu.com/ReinhardTartler/X/RevertingIntelDriverTo2.4">https://wiki.ubuntu.com/ReinhardTartler/X/RevertingIntelDriverTo2.4</a></li>
+<li><a href="http://www.astaroth.glufca.com/?p=346">http://www.astaroth.glufca.com/?p=346</a></li>
+</ul>
+<p>Otro truco que también funcionó sin necesidad de hacer lo anterior fue reconfigurar xorg a la configuración por defecto y luego en la composición de múltiples monitores, situar uno debajo del otro en lugar de uno al lado del otro.</p>
+<h2 id="actualizacion-de-raring-a-saucy">Actualización de raring a saucy<a class="headerlink" href="#actualizacion-de-raring-a-saucy" title="Permanent link">&para;</a></h2>
+<p>Apache cambia de versión de 2.2 a 2.4. <a href="http://tfountain.co.uk/blog/2013/10/18/fixing-apache-ubuntu-13-10">Aquí</a> encontré solución a los problemas que eso supuso.</p>
+<h2 id="recursos-graficos">Recursos gráficos<a class="headerlink" href="#recursos-graficos" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>/usr/share/icons
+/usr/share/app-install/icons
+/usr/share/pixmaps
+/usr/share/icons/gnome
+/usr/share/icons/hicolor
+/usr/share/icons/Human
+/usr/share/icons/Humanity        &lt;---
+/usr/share/icons/oxygen
+/usr/share/icons/default.kde4    &lt;---
+</code></pre></div>
+<h2 id="convertir-un-video-a-formato-3gp-h263aac">Convertir un video a formato 3GP (H263+AAC)<a class="headerlink" href="#convertir-un-video-a-formato-3gp-h263aac" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Instalar un <a href="http://medibuntu.org/repository.php">repositorio no oficial</a> que contiene los codecs:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ sudo -E wget --output-document<span class="o">=</span>/etc/apt/sources.list.d/medibuntu.list http://www.medibuntu.org/sources.list.d/<span class="k">$(</span>lsb_release -cs<span class="k">)</span>.list <span class="o">&amp;&amp;</span> sudo apt-get --quiet update <span class="o">&amp;&amp;</span> sudo apt-get --yes --quiet --allow-unauthenticated install medibuntu-keyring <span class="o">&amp;&amp;</span> sudo apt-get --quiet update
+</code></pre></div>
+<ul>
+<li>Instalar el codificador y los codecs:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ sudo aptitude install ffmpeg libavcodec-extra-53
+</code></pre></div>
+<ul>
+<li>Codificar el video:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ ffmpeg -i EspacioMudejar.wmv -s qcif -vcodec h263 -acodec libfaac -ac <span class="m">1</span> -ar <span class="m">8000</span> -r <span class="m">25</span> -ab <span class="m">32</span> -strict experimental -y EspacioMudejar.3gp
+</code></pre></div>
+<p>Las opciones más importantes son:</p>
+<ul>
+<li>ar: Frecuencia de audio</li>
+<li>r: framerate</li>
+<li>ab: Audio bitrate en kbps</li>
+</ul>
+<h2 id="convertir-ape-a-wav">Convertir APE a WAV<a class="headerlink" href="#convertir-ape-a-wav" title="Permanent link">&para;</a></h2>
+<p>Los ficheros .ape con que se distribuyen algunos CD's se puede convertir a WAV para poder quemarlo a un CD (con un fichero .cue que normalmente acompaña al .ape se puede quemar directamente con el Burn del Mac por ejemplo) instalando el paquete <code>ffmpeg</code> y ejecutando el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code>$ ffmpeg -i fichero.ape fichero.wav
+</code></pre></div>
+<p>Hay que acordarse de sustituir dentro del fichero .cue la referencia al fichero original .ape por el nuevo .wav.</p>
+<h2 id="convertir-flac-a-wav">Convertir FLAC a WAV<a class="headerlink" href="#convertir-flac-a-wav" title="Permanent link">&para;</a></h2>
+<p>Los ficheros .flac con que se distribuyen algunos CD's se puede convertir a WAV para poder quemarlo a un CD (con un fichero .cue que normalmente acompaña al .flac se puede quemar directamente con el Burn del Mac por ejemplo) instalando el paquete <code>flac</code> y ejecutando el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code>$ flac -d fichero.flac
+</code></pre></div>
+<p>Hay que acordarse de sustituir dentro del fichero .cue la referencia al fichero original .flac por el nuevo .wav.</p>
+<h2 id="restaurar-panel-gnome">Restaurar panel Gnome<a class="headerlink" href="#restaurar-panel-gnome" title="Permanent link">&para;</a></h2>
+<p>(<a href="http://www.google.com/url?q=http%3A%2F%2Fsuperuser.com%2Fquestions%2F129320%2Fhow-do-i-restore-the-default-applets-to-gnomes-notification-area&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGUVYnYCoUfrVCGX5tIHc5UWBNeDw">fuente 1</a>; <a href="http://www.google.com/url?q=http%3A%2F%2Fwww.watchingthenet.com%2Frestore-panels-in-ubuntu-back-to-their-default-settings.html&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHAEFYUaK7ztqIKEgF563uoWWTHBw">fuente 2</a>)</p>
+<div class="highlight"><pre><span></span><code>$ gconftool --recursive-unset /apps/panel
+$ rm -rf ~/.gconf/apps/panel
+$ pkill gnome-panel
+</code></pre></div>
+<h2 id="concatenar-pdfs">Concatenar PDF's<a class="headerlink" href="#concatenar-pdfs" title="Permanent link">&para;</a></h2>
+<p>Con <code>pdftk</code> programa en linea de comando para procesar ficheros PDF. Está para casi todas las plataformas.</p>
+<div class="highlight"><pre><span></span><code>$ sudo aptitude search pdftk
+i pdftk - A useful tool <span class="k">for</span> manipulating PDF documents
+
+$ sudo aptitude install pdftk
+</code></pre></div>
+<p>Concatenar todos los archivos facilmente que tengas en una carpeta:</p>
+<div class="highlight"><pre><span></span><code>$ pdftk carpeta_con_todos_ficheros/*.pdf cat output fichero_concatenado.pdf
+</code></pre></div>
+<p>Tiene muchas mas funcionalidades consultables con –help, pero si quieres, puedes echarle un vistazo a un <a href="https://www.linux-magazine.es/issue/12/PDFTk.pdf">articulo de Linux-Magazine “PDF a tope”</a>.</p>
+<h2 id="apod">APOD<a class="headerlink" href="#apod" title="Permanent link">&para;</a></h2>
+<p>Programa para descargar y ajustar como fondo de escritorio la imagen astronómica del día de la web <a href="http://apod.nasa.gov/apod/">APOD</a>. Es necesario que se encuentre Python instalado en el sistema.</p>
+<p>Instalar el siguiente script en algún lugar:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/python</span>
+
+<span class="c1">#APOD in the GNOME desktop</span>
+<span class="c1">#Author: Rodrigo Rivas Costa.</span>
+<span class="c1">#Mail:  rodrigorivascosta@gmail.com</span>
+<span class="c1">#Web:   http://rodrigo.dualnot.com/</span>
+
+<span class="c1"># This program is in public domain, so do whatever you wish with it,</span>
+<span class="c1"># although it&#39;d be nice if you keep the above notice.</span>
+<span class="c1"># Just don&#39;t blame me if it blows your computer.</span>
+
+import urllib
+import gconf
+import os
+
+<span class="nv">dir</span> <span class="o">=</span> os.getenv<span class="o">(</span><span class="s1">&#39;HOME&#39;</span><span class="o">)</span> + <span class="s1">&#39;/.apod&#39;</span>
+try:
+    os.mkdir<span class="o">(</span>dir<span class="o">)</span>
+except:
+    pass
+
+try:
+    execfile<span class="o">(</span>dir + <span class="s1">&#39;/options.py&#39;</span><span class="o">)</span>
+except:
+    pass
+
+def DoAPOD<span class="o">()</span>:
+    <span class="nv">u</span> <span class="o">=</span> urllib.urlopen<span class="o">(</span><span class="s1">&#39;http://apod.nasa.gov/apod/&#39;</span><span class="o">)</span>
+    <span class="nv">KEY1</span> <span class="o">=</span> <span class="s1">&#39;href=&quot;&#39;</span>
+    <span class="nv">KEY2</span> <span class="o">=</span> <span class="s1">&#39;&quot;&#39;</span>
+    <span class="nv">image</span> <span class="o">=</span> None
+    <span class="k">for</span> line <span class="k">in</span> u.readlines<span class="o">()</span>:
+        <span class="nv">pos1</span> <span class="o">=</span> line.find<span class="o">(</span>KEY1<span class="o">)</span>
+        <span class="k">if</span> <span class="nv">pos1</span> <span class="o">==</span> -1:
+            <span class="k">continue</span>
+        <span class="nv">pos1</span> <span class="o">+=</span> len<span class="o">(</span>KEY1<span class="o">)</span>
+        <span class="nv">pos2</span> <span class="o">=</span> line.find<span class="o">(</span>KEY2, pos1<span class="o">)</span>
+        <span class="k">if</span> <span class="nv">pos2</span> <span class="o">==</span> -1:
+            <span class="k">continue</span>
+        <span class="nv">href</span> <span class="o">=</span> line<span class="o">[</span>pos1:pos2<span class="o">]</span>
+        <span class="nv">hrefl</span> <span class="o">=</span> href.lower<span class="o">()</span>
+        <span class="k">if</span> hrefl.endswith<span class="o">(</span><span class="s1">&#39;.jpg&#39;</span><span class="o">)</span> or hrefl.endswith<span class="o">(</span><span class="s1">&#39;.png&#39;</span><span class="o">)</span>:
+            <span class="nv">image</span> <span class="o">=</span> href
+            <span class="nb">break</span>
+    u.close<span class="o">()</span>
+
+    <span class="k">if</span> not image:
+        <span class="k">return</span>
+
+    <span class="nv">image_base</span> <span class="o">=</span> os.path.split<span class="o">(</span>image<span class="o">)[</span>-1<span class="o">]</span>
+    <span class="nv">image_base_ext</span> <span class="o">=</span> os.path.splitext<span class="o">(</span>image_base<span class="o">)</span>
+    <span class="nv">image_base</span> <span class="o">=</span> <span class="s1">&#39;apod&#39;</span> + image_base_ext<span class="o">[</span>-1<span class="o">]</span>
+
+    <span class="k">if</span> not <span class="o">(</span>image.startswith<span class="o">(</span><span class="s1">&#39;http:&#39;</span><span class="o">)</span> or image.startswith<span class="o">(</span><span class="s1">&#39;ftp:&#39;</span><span class="o">))</span>:
+        <span class="k">if</span> not image.startswith<span class="o">(</span><span class="s1">&#39;/&#39;</span><span class="o">)</span>:
+            <span class="nv">image</span> <span class="o">=</span> <span class="s1">&#39;/apod.nasa.gov/apod/&#39;</span> + image
+        <span class="nv">image</span> <span class="o">=</span> <span class="s1">&#39;http:/&#39;</span> + image
+
+    <span class="nv">img</span> <span class="o">=</span> urllib.urlopen<span class="o">(</span>image<span class="o">)</span>
+    <span class="nv">d</span> <span class="o">=</span> img.read<span class="o">()</span>
+    img.close<span class="o">()</span>
+
+    try:
+        os.unlink<span class="o">(</span><span class="s1">&#39;apod.jpg&#39;</span><span class="o">)</span>
+    except:
+        pass
+    try:
+        os.unlink<span class="o">(</span><span class="s1">&#39;apod.png&#39;</span><span class="o">)</span>
+    except:
+        pass
+
+    <span class="nv">name</span> <span class="o">=</span> dir + <span class="s1">&#39;/&#39;</span> + image_base
+    <span class="nv">f</span> <span class="o">=</span> file<span class="o">(</span>name, <span class="s1">&#39;wb&#39;</span><span class="o">)</span>
+    f.write<span class="o">(</span>d<span class="o">)</span>
+    f.close<span class="o">()</span>
+
+    <span class="nv">cli</span> <span class="o">=</span> gconf.client_get_default<span class="o">()</span>
+    cli.set_string<span class="o">(</span><span class="s1">&#39;/desktop/gnome/background/picture_filename&#39;</span>, name<span class="o">)</span>
+    cli.set_string<span class="o">(</span><span class="s1">&#39;/desktop/gnome/background/picture_options&#39;</span>, <span class="s1">&#39;zoom&#39;</span><span class="o">)</span>
+
+<span class="k">if</span> <span class="nv">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span>:
+    DoAPOD<span class="o">()</span>
+</code></pre></div>
+<p>Por último programar una tarea en cron para ejecutar el script con el usuario al que queramos que se aplique el fondo de escritorio. Por ejemplo introduciendo la siguiente línea en <code>/etc/crontab</code> para que se ejecute a las 10 de la mañana:</p>
+<div class="highlight"><pre><span></span><code>00 10   * * *   edumoreno       /home/edumoreno/.apod/apod
+</code></pre></div>
+<p>En el ejemplo se ha puesto como ejemplo el usuario <code>edumoreno</code> así como su home.</p>
+<h2 id="instalar-oracle-java">Instalar Oracle Java<a class="headerlink" href="#instalar-oracle-java" title="Permanent link">&para;</a></h2>
+<p>(Fuentes: <a href="http://www.guia-ubuntu.org/index.php?title=Java#Desde_la_web_de_Java">1</a> y <a href="http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html">2</a>)</p>
+<p>Movemos la carpeta creada después de la instalación (llamada <code>jre1.7.0_05</code> en este ejemplo) a una ruta más apropiada:</p>
+<div class="highlight"><pre><span></span><code>$ sudo mv jre1.7.0_05 /usr/lib/jvm
+</code></pre></div>
+<p>Establecemos el nuevo Java como una de las "alternativas de java":</p>
+<div class="highlight"><pre><span></span><code>$ sudo update-alternatives --install <span class="s2">&quot;/usr/bin/java&quot;</span> <span class="s2">&quot;java&quot;</span> <span class="s2">&quot;/usr/lib/jvm/jre1.7.0_05/bin/java&quot;</span> <span class="m">1</span>
+</code></pre></div>
+<p>Ahora establecemos la "nueva alternativa" como la real de Java. Este paso hace que la versión de Oracle sea la usada por defecto:</p>
+<div class="highlight"><pre><span></span><code>$ sudo update-alternatives --set java /usr/lib/jvm/jre1.7.0_05/bin/java
+</code></pre></div>
+<p>Para comprobar si tenemos la versión 1.7.0, tecleamos en la terminal:</p>
+<div class="highlight"><pre><span></span><code>$ java -version
+java version <span class="s2">&quot;1.7.0_05&quot;</span>
+Java<span class="o">(</span>TM<span class="o">)</span> SE Runtime Environment <span class="o">(</span>build <span class="m">1</span>.7.0_05-b05<span class="o">)</span>
+Java HotSpot<span class="o">(</span>TM<span class="o">)</span> <span class="m">64</span>-Bit Server VM <span class="o">(</span>build <span class="m">23</span>.1-b03, mixed mode<span class="o">)</span>
+</code></pre></div>
+<p>Para ver cómo ha quedado el estado de las alternativas:</p>
+<div class="highlight"><pre><span></span><code>$ update-alternatives --config java
+</code></pre></div>
+<p>Para ver físicamente cómo han quedado las alternativas relativas a <code>java</code>:</p>
+<div class="highlight"><pre><span></span><code>$ ls -l /etc/alternatives/java*
+</code></pre></div>
+<p>Si nos interesa borrar alguna de las alternativas (por ejemplo una para <code>java</code>):</p>
+<div class="highlight"><pre><span></span><code>$ sudo update-alternatives --remove java /usr/lib/jvm/jdk1.8.0_20/bin/java
+</code></pre></div>
+<p>Hay un PPA para poder instalar el JDK más fácilmente. Se pueden ver las instrucciones <a href="http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html">aquí</a>. Desafortunadamente dejó de funcionar a mediados de abril de 2019 por cambios en la política de distribución de Java por parte de Oracle. A partir de ahora instalar manualmente siguiendo <a href="https://www.fosstechnix.com/install-oracle-java-8-on-ubuntu-20-04/">estas instrucciones</a> o instalar el JDK que se distribuye en forma de <a href="https://www.oracle.com/java/technologies/javase-jdk15-downloads.html">.deb</a>.</p>
+<h2 id="reparacion-del-sistema-de-archivos-cuando-se-pone-en-modo-solo-lectura">Reparación del sistema de archivos cuando se pone en modo "sólo lectura"<a class="headerlink" href="#reparacion-del-sistema-de-archivos-cuando-se-pone-en-modo-solo-lectura" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>$ sudo fsck
+</code></pre></div>
+<h2 id="descarga-de-un-video-incrustado-en-un-reproductor-flash">Descarga de un vídeo incrustado en un reproductor Flash<a class="headerlink" href="#descarga-de-un-video-incrustado-en-un-reproductor-flash" title="Permanent link">&para;</a></h2>
+<p><a href="http://www.youtube.com/watch?v=8PuUnQCS7DQ">Fuente</a></p>
+<p>Hacer captura Wireshark. Filtrar los paquetes RTMP con el filtro: "rtmpt". Localizar en los paquetes RTMP los comandos Handshake o Invoke la base de la url, lo que está en una propiedad llamada "tcUrl". Por ejemplo en un vídeo de Antena3 de F1 esta propiedad valía:</p>
+<div class="highlight"><pre><span></span><code>rtmp://antena3tvfs.fplive.net/antena3mediateca
+</code></pre></div>
+<p>Luego localizar el fichero en concreto. Suele estar en otro paquete y está relacionado con el comando "play". En el caso del ejemplo anterior salía:</p>
+<div class="highlight"><pre><span></span><code>mp4:mp_series1/f1cms/gestorf1/videos/517/VIDEOS_20130512_1315517.mp4
+</code></pre></div>
+<p>Unir las dos piezas para construir la URL completa:</p>
+<div class="highlight"><pre><span></span><code>rtmp://antena3tvfs.fplive.net/antena3mediateca/mp_series1/f1cms/gestorf1/videos/517/VIDEOS_20130512_1315517.mp4
+</code></pre></div>
+<p>Descargar el stream con el comando "rtmpdump":</p>
+<div class="highlight"><pre><span></span><code>$ rtmpdump -r <span class="s2">&quot;rtmp://antena3tvfs.fplive.net/antena3mediateca/mp_series1/f1cms/gestorf1/videos/517/VIDEOS_20130512_1315517.mp4&quot;</span> -o archivo.mp4
+</code></pre></div>
+<p>En ocasiones se produce el error siguiente:</p>
+<div class="highlight"><pre><span></span><code>WARNING: Received FLV packet before play()! Ignoring.
+</code></pre></div>
+<p>En estos casos utilizar el siguiente comando que separa las dos porciones de la URL:</p>
+<div class="highlight"><pre><span></span><code>$ rtmpdump -r <span class="s2">&quot;rtmp://alacarta.aragontelevision.es/vod&quot;</span> -y <span class="s2">&quot;mp4:/_archivos/videos/web/15288/15288.mp4&quot;</span> -o archivo.flv
+</code></pre></div>
+<p>Para vídeos de emisiones en vivo hay que añadir la opción <code>-v</code>. Por ejemplo, en una emisión de AragónTV, en la captura Wireshark se localizaron los siguientes elementos:</p>
+<ul>
+<li>Paquete Handshake S2 =&gt; tcUrl = rtmp://aragontvlivefs.fplive.net/aragontvlive-live</li>
+<li>Paquete play =&gt; valor = stream_normal_abt</li>
+</ul>
+<p>Así pues la URL final será: <code>rtmp://aragontvlivefs.fplive.net/aragontvlive-live/stream_normal_abt</code> y el comando de descarga:</p>
+<div class="highlight"><pre><span></span><code>$ rtmpdump -v -r <span class="s2">&quot;rtmp://aragontvlivefs.fplive.net/aragontvlive-live/stream_normal_abt&quot;</span> -o archivo.mp4
+</code></pre></div>
+<p>Para descargar vídeos desde YouTube, last.fm, Google video, Dailymotion y Vimeo se puede utilizar el comando <code>clive</code>. <a href="http://www.emezeta.com/articulos/10-comandos-interesantes-para-linux">Aquí</a> comentan cómo se usa.</p>
+<h2 id="descarga-video-de-a3player">Descarga vídeo de A3Player<a class="headerlink" href="#descarga-video-de-a3player" title="Permanent link">&para;</a></h2>
+<h3 id="enlaces">Enlaces<a class="headerlink" href="#enlaces" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="http://blog.tvalacarta.info/2012/10/25/como-descargar-videos-en-formato-m3u8-o-hls/">Cómo descargar vídeos en formato M3U8 (o HLS)</a></li>
+<li><a href="https://gitorious.org/hls-player#more">http live streaming player</a></li>
+</ul>
+<p>Las carreras de Formula1 últimamente son emitidas en el formato HLS. Para descargar una carrera empezar haciendo una captura con Wireshark desde el momento en que se le da al Play hasta que se empieza a ver parte del vídeo (esperando que terminen los anuncios). Luego filtrar en Wireshark con la siguiente expresión:</p>
+<div class="highlight"><pre><span></span><code>http.request.uri contains &quot;playlist.m3u8&quot;
+</code></pre></div>
+<p>Localizar la URL de descarga del fichero playlist.m3u8. Por ejemplo podría ser:</p>
+<div class="highlight"><pre><span></span><code>http://geodeswowa3player.antena3.com/vcg/_definst_/mp4:assets3/2013/10/26/E6941C5D-2A9F-414B-B3FF-01FAC33073C4/sigra.mp4/playlist.m3u8?pulse=assets3%2F2013%2F10%2F26%2FE6941C5D-2A9F-414B-B3FF-01FAC33073C4%2F%7C1382835190%7Cb23df1201096fc1cc490427e05307f70
+</code></pre></div>
+<h2 id="compresion-batch-de-videos">Compresión batch de vídeos<a class="headerlink" href="#compresion-batch-de-videos" title="Permanent link">&para;</a></h2>
+<p>Instalar el cliente de linea de comando de <a href="http://handbrake.fr/downloads.php">Handbrake</a>.</p>
+<p>Dependiendo de la extensión habrá que cambiar el <code>ls</code> inicial. Los vídeos de salida son MP4, por lo que si la extensión inicial no es esa, habrá que cambiarla en los ficheros finales.</p>
+<div class="highlight"><pre><span></span><code>$ mkdir comp
+$ ls *.mp4 <span class="p">|</span> awk <span class="s1">&#39;{print &quot;HandBrakeCLI -Z Normal -i &quot;$0&quot; -o comp/&quot;$0}&#39;</span> <span class="p">|</span> sh
+</code></pre></div>
+<h2 id="resampleado-de-video-con-handbrake">Resampleado de video con HandBrake<a class="headerlink" href="#resampleado-de-video-con-handbrake" title="Permanent link">&para;</a></h2>
+<p>(<a href="http://www.antiscreeners.com/phpBB2/viewtopic.php?p=85974#85974">Fuente</a>)</p>
+<p>On the Video tab use Avg Bitrate and use 2500 to 3000 depending if a big action movie(3000) or if less fast action/movement in the movie(2500). Make sure to click on 2-Pass Encoding and Turbo first pass.</p>
+<h2 id="split-de-videos">Split de vídeos<a class="headerlink" href="#split-de-videos" title="Permanent link">&para;</a></h2>
+<p>(<a href="http://askubuntu.com/questions/35605/splitting-an-mp4-file">Fuente</a>)</p>
+<p>Con el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code>$ ffmpeg -acodec copy -vcodec copy -ss <span class="m">00</span>:00:00 -t <span class="m">00</span>:04:09 -i archivo_original.mp4 archivo_recortado.mp4
+</code></pre></div>
+<p>Donde el valor de la opción -ss es el instante de inicio en hh:mm:ss y el valor de -t es la longitud en hh:mm:ss</p>
+<p>Durante un tiempo en Ubuntu, <code>ffmpeg</code> no estuvo disponible. Su sustituto fue <code>avconv</code>, compatible la mayoría de las veces. No admitía sin embargo la opción de copiar el codec de audio y vídeo. Había que especificarlo. Una lista de encoders soportados se puede obtener ejecutando:</p>
+<div class="highlight"><pre><span></span><code>$ avconv -encoders
+</code></pre></div>
+<p>Un par de codecs comprobados que suelen dar buen resultados son h264 y aac:</p>
+<div class="highlight"><pre><span></span><code>ffmpeg -acodec aac -vcodec h264 -ss <span class="m">01</span>:07:38 -t <span class="m">00</span>:01:14 -i archivo_original.mp4 archivo_recortado.mp4
+</code></pre></div>
+<h2 id="crop-en-video">Crop en video<a class="headerlink" href="#crop-en-video" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>$ ffmpeg -i input.mp4 -filter:v <span class="s2">&quot;crop=w:h:x:y&quot;</span> output.mp4
+</code></pre></div>
+<p>donde:</p>
+<ul>
+<li>w: ancho final</li>
+<li>h: alto final</li>
+<li>x: coordenada x del punto superior izquierdo del recuadro</li>
+<li>y: coordenada y del punto superior izquierdo del recuadro</li>
+</ul>
+<h2 id="extraer-frame-de-video">Extraer frame de video<a class="headerlink" href="#extraer-frame-de-video" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>$ ffmpeg -ss <span class="m">00</span>:01:00 -i input.mp4 -frames:v <span class="m">1</span> frame.png
+</code></pre></div>
+<p>donde el argumento -ss marca el instante del frame en hh:mm:ss</p>
+<h2 id="redimensionado-de-imagenes-en-lote">Redimensionado de imágenes en lote<a class="headerlink" href="#redimensionado-de-imagenes-en-lote" title="Permanent link">&para;</a></h2>
+<p>Por ejemplo a 1080 de alto manteniendo el ratio dentro de un directorio llamado resized:</p>
+<div class="highlight"><pre><span></span><code>$ convert <span class="s1">&#39;*.jpg[x1080]&#39;</span> resized/%03d.jpg
+</code></pre></div>
+<p>En ocasiones, si hay varios miles de fotos, se puede llenar la memoria. En este caso hacer la conversión con el siguiente comando, que trata las imágenes una a una:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">1</span>
+<span class="k">for</span> i <span class="k">in</span> *.jpg<span class="p">;</span> <span class="k">do</span>
+  <span class="nv">new</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&quot;%04d.jpg&quot;</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span><span class="k">)</span>
+  convert <span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="o">[</span>x1080<span class="o">]</span> resized/<span class="si">${</span><span class="nv">new</span><span class="si">}</span>
+  <span class="nb">let</span> <span class="nv">a</span><span class="o">=</span>a+1
+<span class="k">done</span>
+</code></pre></div>
+<h2 id="crop-y-resize-de-imagenes-en-lote">Crop y resize de imágenes en lote<a class="headerlink" href="#crop-y-resize-de-imagenes-en-lote" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">1</span>
+<span class="k">for</span> i <span class="k">in</span> *.jpg<span class="p">;</span> <span class="k">do</span>
+  <span class="nv">new</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&quot;%04d.jpg&quot;</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span><span class="k">)</span>
+  convert <span class="si">${</span><span class="nv">i</span><span class="si">}</span> -crop wxh+x+y -resize wsxhs -gravity Center <span class="si">${</span><span class="nv">new</span><span class="si">}</span>
+  <span class="nb">let</span> <span class="nv">a</span><span class="o">=</span>a+1
+<span class="k">done</span>
+</code></pre></div>
+<p>donde:</p>
+<ul>
+<li>w: ancho del crop</li>
+<li>h: alto del crop</li>
+<li>x: posición horizontal esquina superior derecha del crop</li>
+<li>y: posición vertical esquina superior derecha del crop</li>
+<li>ws: ancho del reescalado final</li>
+<li>hs: alto del reescalado final</li>
+</ul>
+<h2 id="conversion-de-formato-en-lote">Conversión de formato en lote<a class="headerlink" href="#conversion-de-formato-en-lote" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> file <span class="k">in</span> *.jpg<span class="p">;</span> <span class="k">do</span>
+  <span class="nv">filename</span><span class="o">=</span><span class="k">$(</span>basename <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="k">)</span>
+  <span class="nv">fileid</span><span class="o">=</span><span class="si">${</span><span class="nv">filename</span><span class="p">%%.*</span><span class="si">}</span>
+  convert <span class="si">${</span><span class="nv">filename</span><span class="si">}</span> <span class="si">${</span><span class="nv">fileid</span><span class="si">}</span>.png
+<span class="k">done</span>
+</code></pre></div>
+<h2 id="renombrado-de-archivos-en-lote">Renombrado de archivos en lote<a class="headerlink" href="#renombrado-de-archivos-en-lote" title="Permanent link">&para;</a></h2>
+<p>Por ejemplo una serie de archivos jpg:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">1</span>
+<span class="k">for</span> i <span class="k">in</span> *.jpg<span class="p">;</span> <span class="k">do</span>
+  <span class="nv">new</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&quot;%04d.jpg&quot;</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span><span class="k">)</span>
+  mv <span class="si">${</span><span class="nv">i</span><span class="si">}</span> <span class="si">${</span><span class="nv">new</span><span class="si">}</span>
+  <span class="nb">let</span> <span class="nv">a</span><span class="o">=</span>a+1
+<span class="k">done</span>
+</code></pre></div>
+<h2 id="compresion-de-ficheros-en-lote">Compresión de ficheros en lote<a class="headerlink" href="#compresion-de-ficheros-en-lote" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> file <span class="k">in</span> *.col<span class="p">;</span> <span class="k">do</span>
+  <span class="nv">filename</span><span class="o">=</span><span class="k">$(</span>basename <span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span>
+  <span class="nv">fileid</span><span class="o">=</span><span class="si">${</span><span class="nv">filename</span><span class="p">%%.*</span><span class="si">}</span>
+  7z a <span class="s2">&quot;</span><span class="si">${</span><span class="nv">fileid</span><span class="si">}</span><span class="s2">.7z&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">filename</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">done</span>
+</code></pre></div>
+<h2 id="sustitucion-de-cadena-en-ficheros-en-lote">Sustitución de cadena en ficheros en lote<a class="headerlink" href="#sustitucion-de-cadena-en-ficheros-en-lote" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> file <span class="k">in</span> *.cfg<span class="p">;</span> <span class="k">do</span>
+  <span class="nv">filename</span><span class="o">=</span><span class="k">$(</span>basename <span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span>
+  <span class="nv">fileid</span><span class="o">=</span><span class="si">${</span><span class="nv">filename</span><span class="p">%%.*</span><span class="si">}</span>
+  sed -i <span class="s1">&#39;s/ShowFps 1/ShowFps 0/&#39;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">done</span>
+</code></pre></div>
+<h2 id="montaje-de-video-stopmotion-a-partir-de-imagenes">Montaje de vídeo StopMotion a partir de imágenes<a class="headerlink" href="#montaje-de-video-stopmotion-a-partir-de-imagenes" title="Permanent link">&para;</a></h2>
+<p>A 10fps por ejemplo (<a href="http://www.dototot.com/compile-stop-motion-animation-image-sequence-avconv/">Fuente</a>):</p>
+<div class="highlight"><pre><span></span><code>$ ffmpeg -f image2 -r <span class="m">10</span> -i %04d.jpg -vf <span class="nv">scale</span><span class="o">=</span><span class="m">1440</span>:1080 -r:v <span class="m">10</span> -c:v libx264 -qp <span class="m">0</span> -preset veryslow -an <span class="s2">&quot;video.mkv&quot;</span>
+</code></pre></div>
+<h2 id="montaje-de-gif-a-partir-de-imagenes">Montaje de gif a partir de imágenes<a class="headerlink" href="#montaje-de-gif-a-partir-de-imagenes" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>convert -delay n -loop <span class="m">0</span> *.jpg output.gif
+</code></pre></div>
+<p>donde:</p>
+<ul>
+<li>n: milisegundos entre cada frame.</li>
+</ul>
+<h2 id="configurar-wireshark-para-poder-capturar-con-usuarios-no-root">Configurar Wireshark para poder capturar con usuarios no-root<a class="headerlink" href="#configurar-wireshark-para-poder-capturar-con-usuarios-no-root" title="Permanent link">&para;</a></h2>
+<p>Ejecutar lo siguiente:</p>
+<div class="highlight"><pre><span></span><code>$ sudo dpkg-reconfigure wireshark-common
+$ sudo usermod -a -G wireshark &lt;usuario&gt;
+</code></pre></div>
+<p>Reiniciar la sesión.</p>
+<h2 id="solucionar-el-problema-con-wireshark-en-las-ultimas-versiones-de-ubuntu">Solucionar el problema con Wireshark en las últimas versiones de Ubuntu<a class="headerlink" href="#solucionar-el-problema-con-wireshark-en-las-ultimas-versiones-de-ubuntu" title="Permanent link">&para;</a></h2>
+<p>Cuando se inicia una captura, se cuelga Wireshark, emitiendo una serie infinita de errores de GTK en consola. En <a href="https://bugs.launchpad.net/ubuntu/+source/overlay-scrollbar/+bug/1248400">esta página</a> comentan varios workarrounds. Por ejemplo editando el fichero <code>/usr/share/applications/wireshark.desktop</code> y cambiando la línea de ejecución por:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="n">Exec</span><span class="o">=</span><span class="n">env</span><span class="w"> </span><span class="n">LIBOVERLAY_SCROLLBAR</span><span class="o">=</span><span class="mh">0</span><span class="w"> </span><span class="n">wireshark</span><span class="w"> </span><span class="o">%</span><span class="n">f</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+
+<h2 id="ficheros-implicados-en-arranque">Ficheros implicados en arranque<a class="headerlink" href="#ficheros-implicados-en-arranque" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>/etc/rc.local</code>: This script is executed at the end of each multiuser runlevel.</li>
+</ul>
+<h2 id="montar-imagen-de-disco-o-particion">Montar imagen de disco o partición<a class="headerlink" href="#montar-imagen-de-disco-o-particion" title="Permanent link">&para;</a></h2>
+<p>(<a href="http://www.forensicswiki.org/wiki/Mounting_Disk_Images#To_mount_a_disk_image_on_Linux">Fuente</a>)</p>
+<ol>
+<li>
+<p>Averiguar la estructura de las particiones:</p>
+<div class="highlight"><pre><span></span><code>$ fdisk -l Rpi_8gb_wheezy_backup.img
+Disco Rpi_8gb_wheezy_backup.img: <span class="m">7</span>,5 GiB, <span class="m">8068792320</span> bytes, <span class="m">15759360</span> sectores
+Unidades: sectores de <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytes
+Tamaño de sector <span class="o">(</span>lógico/físico<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+Tamaño de E/S <span class="o">(</span>mínimo/óptimo<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+Tipo de etiqueta de disco: dos
+Identificador del disco: 0x000981cb
+
+Dispositivo                Inicio Comienzo    Final Sectores Tamaño Id Tipo
+Rpi_8gb_wheezy_backup.img1            <span class="m">8192</span>   <span class="m">122879</span>   <span class="m">114688</span>    56M  c W95 FAT32 <span class="o">(</span>LBA<span class="o">)</span>
+Rpi_8gb_wheezy_backup.img2          <span class="m">122880</span> <span class="m">15759359</span> <span class="m">15636480</span>   <span class="m">7</span>,5G <span class="m">83</span> Linux
+</code></pre></div>
+</li>
+<li>
+<p>Calcular el offset multiplicando el sector de comienzo de la partición por el tamaño del sector:</p>
+<p>122880 * 512 = 62914560</p>
+</li>
+<li>
+<p>Montar:</p>
+<div class="highlight"><pre><span></span><code>$ sudo mount -t ext4 -o loop,offset<span class="o">=</span><span class="m">62914560</span>,ro,noexec Rpi_8gb_wheezy_backup.img mnt
+</code></pre></div>
+</li>
+</ol>
+<h2 id="screencast">Screencast<a class="headerlink" href="#screencast" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>$ avconv -f x11grab -r <span class="m">25</span> -s 910x550 -i :0.0 -vcodec huffyuv screencast.avi
+</code></pre></div>
+<h2 id="gestion-de-modulos">Gestión de módulos<a class="headerlink" href="#gestion-de-modulos" title="Permanent link">&para;</a></h2>
+<h3 id="anadir-un-modulo-al-kernel">Añadir un módulo al kernel<a class="headerlink" href="#anadir-un-modulo-al-kernel" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ sudo modprobe &lt;modulo&gt;
+</code></pre></div>
+<p>Si se quiere añadir de forma permanente, es decir, de forma automática en el arranque, se incorpora el nombre del módulo al fichero <code>/etc/modules</code>.</p>
+<p>Cuando el módulo que se carga es un driver de un dispositivo, el kernel envía un evento al subsistema <code>udev</code>. La monitorización de estos mensajes se puede hacer teniendo abierto un terminal con el siguiente comando lanzado (<a href="https://wiki.ubuntu.com/Kernel/Firmware">fuente</a>):</p>
+<div class="highlight"><pre><span></span><code>$ udevadm monitor --property
+</code></pre></div>
+<h3 id="listado-de-modulos">Listado de módulos<a class="headerlink" href="#listado-de-modulos" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ lsmod
+</code></pre></div>
+<h3 id="informacion-de-un-modulo">Información de un módulo<a class="headerlink" href="#informacion-de-un-modulo" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ modinfo &lt;modulo&gt;
+</code></pre></div>
+<h2 id="ficheros-definicion-variables-de-entorno">Ficheros definición variables de entorno<a class="headerlink" href="#ficheros-definicion-variables-de-entorno" title="Permanent link">&para;</a></h2>
+<p>Si se necesita definir una variable global se podrá hacer en los ficheros:</p>
+<ul>
+<li><code>/etc/environment</code></li>
+<li><code>/etc/profile</code></li>
+<li><code>/etc/profile.d</code></li>
+<li><code>/etc/bashrc</code> o <code>/etc/bash.bashrc</code></li>
+</ul>
+<p>Si es a nivel de usuario se hará en:</p>
+<ul>
+<li><code>~/.bashrc</code></li>
+<li><code>~/.bash_profile</code></li>
+</ul>
+<h2 id="poner-barras-de-scroll-normales">Poner barras de scroll normales<a class="headerlink" href="#poner-barras-de-scroll-normales" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>gsettings <span class="nb">set</span> com.canonical.desktop.interface scrollbar-mode normal
+</code></pre></div>
+<h2 id="skype-en-tray">Skype en tray<a class="headerlink" href="#skype-en-tray" title="Permanent link">&para;</a></h2>
+<p>Instalar los paquetes <code>sni-qt</code> y <code>sni-qt:i386</code>.</p>
+<h2 id="workrave-en-tray">Workrave en tray<a class="headerlink" href="#workrave-en-tray" title="Permanent link">&para;</a></h2>
+<p><a href="https://sourceforge.net/p/workrave/mailman/message/30722930/">Fuente</a></p>
+<div class="highlight"><pre><span></span><code>gsettings <span class="nb">set</span> com.canonical.Unity.Panel systray-whitelist <span class="s2">&quot;[&#39;all&#39;]&quot;</span>
+</code></pre></div>
+<h2 id="localizacion-de-ficheros-desktop">Localización de ficheros .desktop<a class="headerlink" href="#localizacion-de-ficheros-desktop" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Los del usuario se encuentran en: <code>~/.local/share/applications</code></li>
+<li>Los del sistema en: <code>/usr/share/applications</code></li>
+</ul>
+<h2 id="configuracion-de-gedit">Configuración de gedit<a class="headerlink" href="#configuracion-de-gedit" title="Permanent link">&para;</a></h2>
+<p>Al menos las últimas versiones de gedit no tienen un panel de ajustes para las opciones predeterminadas. Cada vez que arranca aparecen preajustados 8 espacios como anchura del tabulador y no sustituye por espacios. Puede sacarse una lista de todos los ajustes que se pueden cambiar con el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code>gsettings list-recursively | grep -i gedit.preferences.editor
+</code></pre></div>
+<p>Los ajustes del tabulador mencionados antes, para pasar a 4 espacios, ejecutar:</p>
+<div class="highlight"><pre><span></span><code>gsettings set org.gnome.gedit.preferences.editor insert-spaces true
+gsettings set org.gnome.gedit.preferences.editor tabs-size 4
+</code></pre></div>
+<p>Otro ajuste interesante es el del wrap mode. Se puede hacer con (puede valer 'none', 'word', 'char', o 'word-char'):</p>
+<div class="highlight"><pre><span></span><code>gsettings set org.gnome.gedit.preferences.editor wrap-mode &#39;word&#39;
+</code></pre></div>
+<h2 id="localizar-paquete-que-contiene-un-fichero">Localizar paquete que contiene un fichero<a class="headerlink" href="#localizar-paquete-que-contiene-un-fichero" title="Permanent link">&para;</a></h2>
+<p>(<a href="https://www.cyberciti.biz/faq/equivalent-of-rpm-qf-command/">Fuente</a>)</p>
+<ol>
+<li>
+<p>Instalar <code>apt-file</code>:</p>
+<div class="highlight"><pre><span></span><code>$ sudo apt-get install apt-file
+</code></pre></div>
+</li>
+<li>
+<p>Actualizar su base de datos:</p>
+<div class="highlight"><pre><span></span><code>$ sudo apt-file update
+</code></pre></div>
+</li>
+<li>
+<p>Hacer la búsqueda:</p>
+<div class="highlight"><pre><span></span><code>$ apt-file search &lt;fichero_con_ruta&gt;
+</code></pre></div>
+</li>
+</ol>
+<h2 id="configuracion-de-idiomas-del-sistema-locales">Configuración de idiomas del sistema (locales)<a class="headerlink" href="#configuracion-de-idiomas-del-sistema-locales" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>$ sudo dpkg-reconfigure locales
+</code></pre></div>
+<h2 id="configuracion-de-swap-en-disco-ssd">Configuración de SWAP en disco SSD<a class="headerlink" href="#configuracion-de-swap-en-disco-ssd" title="Permanent link">&para;</a></h2>
+<p>Siguiendo [esta página], añado lo siguiente al fichero <code>/etc/sysctl.conf</code> para bajar el 60% que usa Ubuntu por defecto a 10%:</p>
+<div class="highlight"><pre><span></span><code>vm.swappiness=10
+</code></pre></div>
+<h2 id="buscar-paquetes">Buscar paquetes<a class="headerlink" href="#buscar-paquetes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Encontrar un paquete por su nombre: <code>apt-cache search 'cadena'</code></li>
+<li>Encontrar un paquete que contiene un fichero: <code>apt-file search 'fichero'</code></li>
+</ul>
+<h2 id="limpieza-de-paquetes-snap">Limpieza de paquetes snap<a class="headerlink" href="#limpieza-de-paquetes-snap" title="Permanent link">&para;</a></h2>
+<p>Localizar los paquetes desactivados con:</p>
+<div class="highlight"><pre><span></span><code>$ snap list --all|fgrep desactivado
+</code></pre></div>
+<p>Y luego borrarlos con:</p>
+<div class="highlight"><pre><span></span><code>$ snap remove --revision XXX NOMBRE
+</code></pre></div>
+<p>Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code>edumoreno@eduardo-HP-Folio-13:~$ snap list --all|fgrep desactivado
+canonical-livepatch   9.7.3                       105    latest/stable    canonical*  desactivado
+chromium              94.0.4606.81                1781   latest/stable    canonical*  desactivado
+edumoreno@eduardo-HP-Folio-13:~$ snap remove --revision 105 canonical-livepatch
+canonical-livepatch (revisión 105) eliminado
+edumoreno@eduardo-HP-Folio-13:~$ snap remove --revision 1781 chromium
+chromium (revisión 1781) eliminado
+</code></pre></div>
+<h2 id="montar-ext4-para-usuario">Montar ext4 para usuario<a class="headerlink" href="#montar-ext4-para-usuario" title="Permanent link">&para;</a></h2>
+<p>Normalmente al automontar una partición ext4 se respetarán los ID's de los propietarios:grupos de los ficheros. Para montar temporalmente con permisos ajustados para un usuario, utilizar <code>bindfs</code> de esta forma:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># El punto de partida es una partición automontada de esta forma:</span>
+<span class="c1"># /dev/sdb1                                   306616440      64348   290907216   1% /media/edumoreno/47acea17-841f-42d3-85f2-886543f056db</span>
+sudo bindfs -u <span class="k">$(</span>id -u<span class="k">)</span> -g <span class="k">$(</span>id -g<span class="k">)</span> /media/edumoreno/47acea17-841f-42d3-85f2-886543f056db /home/edumoreno/mnt/
+</code></pre></div>
+<h2 id="cambiar-id-de-usuario">Cambiar ID de usuario<a class="headerlink" href="#cambiar-id-de-usuario" title="Permanent link">&para;</a></h2>
+<p>Por ejemplo para sincronizar con los IDs de un sistema de archivos montado por NFS y así no tener problemas de permisos. En el siguiente ejemplo se cambia el ID del usuario edumoreno a 1002:</p>
+<div class="highlight"><pre><span></span><code>sudo usermod -u <span class="m">1002</span> edumoreno
+</code></pre></div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      
+        
+        <a href="ubuntu_phone.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Ubuntu Phone" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Ubuntu Phone
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="unix.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: UNIX" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              UNIX
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/eduardofilo" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/eduardofilo" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/edumoreno/" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="http://eduardofilo.es" target="_blank" rel="noopener" title="eduardofilo.es" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M309.8 480.3c-13.6 14.5-50 31.7-97.4 31.7-120.8 0-147-88.8-147-140.6v-144H17.9c-5.5 0-10-4.5-10-10v-68c0-7.2 4.5-13.6 11.3-16 62-21.8 81.5-76 84.3-117.1.8-11 6.5-16.3 16.1-16.3h70.9c5.5 0 10 4.5 10 10v115.2h83c5.5 0 10 4.4 10 9.9v81.7c0 5.5-4.5 10-10 10h-83.4V360c0 34.2 23.7 53.6 68 35.8 4.8-1.9 9-3.2 12.7-2.2 3.5.9 5.8 3.4 7.4 7.9l22 64.3c1.8 5 3.3 10.6-.4 14.5z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/c/EduardoMorenoLamana" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
