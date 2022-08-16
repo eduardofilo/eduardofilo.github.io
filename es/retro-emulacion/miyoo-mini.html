@@ -1953,6 +1953,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#teclas" class="md-nav__link">
+    Teclas
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2655,6 +2662,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#teclas" class="md-nav__link">
+    Teclas
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2699,7 +2713,11 @@
 </ul>
 <h4 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link">&para;</a></h4>
 <ul>
-<li><a href="https://steward-fu.github.io/website/handheld/miyoo-mini/uart.htm">Extracción UART</a></li>
+<li>Extracción UART:<ul>
+<li><a href="https://steward-fu.github.io/website/handheld/miyoo-mini/uart.htm">steward-fu</a></li>
+<li><a href="2022-08-08_mmiyoo_uart.html">eduardofilo</a></li>
+</ul>
+</li>
 <li><a href="https://steward-fu.github.io/website/handheld/miyoo-mini/teardown_new.htm">Teardown</a></li>
 <li>Para imprimir:<ul>
 <li>Gatillos más accesibles: <a href="https://www.thingiverse.com/thing:5398496">V1</a>, <a href="https://www.thingiverse.com/thing:5422756">V2</a></li>
@@ -2762,6 +2780,109 @@ gpiochip0: GPIOs 0-90, gpio:
  gpio-86  (                    |GPIO Key POWER      ) in  lo
  gpio-90  (                    |GPIO Key R          ) in  hi
 </code></pre></div>
+<h4 id="teclas">Teclas<a class="headerlink" href="#teclas" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th align="left">Tecla</th>
+<th align="left">GPIO</th>
+<th align="left">Valor SDL</th>
+<th align="left">Descriptor SDL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Arriba</td>
+<td align="left">1</td>
+<td align="left">273</td>
+<td align="left">SDLK_UP</td>
+</tr>
+<tr>
+<td align="left">Abajo</td>
+<td align="left">69</td>
+<td align="left">274</td>
+<td align="left">SDLK_DOWN</td>
+</tr>
+<tr>
+<td align="left">Izquierda</td>
+<td align="left">70</td>
+<td align="left">276</td>
+<td align="left">SDLK_LEFT</td>
+</tr>
+<tr>
+<td align="left">Derecha</td>
+<td align="left">5</td>
+<td align="left">275</td>
+<td align="left">SDLK_RIGHT</td>
+</tr>
+<tr>
+<td align="left">Menu</td>
+<td align="left">12</td>
+<td align="left">27</td>
+<td align="left">SDLK_ESCAPE</td>
+</tr>
+<tr>
+<td align="left">A</td>
+<td align="left">8</td>
+<td align="left">32</td>
+<td align="left">SDLK_SPACE</td>
+</tr>
+<tr>
+<td align="left">B</td>
+<td align="left">6</td>
+<td align="left">306</td>
+<td align="left">SDLK_LCTRL</td>
+</tr>
+<tr>
+<td align="left">X</td>
+<td align="left">9</td>
+<td align="left">304</td>
+<td align="left">SDLK_LSHIFT</td>
+</tr>
+<tr>
+<td align="left">Y</td>
+<td align="left">7</td>
+<td align="left">308</td>
+<td align="left">SDLK_LALT</td>
+</tr>
+<tr>
+<td align="left">Select</td>
+<td align="left">11</td>
+<td align="left">305</td>
+<td align="left">SDLK_RCTRL</td>
+</tr>
+<tr>
+<td align="left">Start</td>
+<td align="left">10</td>
+<td align="left">13</td>
+<td align="left">SDLK_RETURN</td>
+</tr>
+<tr>
+<td align="left">L1</td>
+<td align="left">13</td>
+<td align="left">101</td>
+<td align="left">SDLK_e</td>
+</tr>
+<tr>
+<td align="left">L2</td>
+<td align="left">14</td>
+<td align="left">9</td>
+<td align="left">SDLK_TAB</td>
+</tr>
+<tr>
+<td align="left">R1</td>
+<td align="left">90</td>
+<td align="left">116</td>
+<td align="left">SDLK_t</td>
+</tr>
+<tr>
+<td align="left">R2</td>
+<td align="left">47</td>
+<td align="left">8</td>
+<td align="left">SDLK_BACKSPACE</td>
+</tr>
+</tbody>
+</table>
 
               
             </article>
