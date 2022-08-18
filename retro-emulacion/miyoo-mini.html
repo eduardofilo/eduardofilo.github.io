@@ -2756,7 +2756,11 @@ sf write 0x21000000 ${sf_part_start} 0x1AE000
 <li>Según la <a href="https://u-boot.readthedocs.io/en/v2022.04/usage/cmd/fatload.html">documentación</a> del comando <code>fatload</code> de U-boot, los dos últimos parámetros en hexadecimal son el tamaño y la posición de la partición rootfs dentro del fichero <code>.img</code>.</li>
 <li>Crear un directorio (por ejemplo <code>mnt</code>) y ejecutar el siguiente comando para montar el rootfs del firmware en él:</li>
 </ol>
-<div class="highlight"><pre><span></span><code>sudo mount -o loop,offset=2273280,sizelimit=1761280,ro,noexec miyoo283_fw.img mnt
+<div class="highlight"><pre><span></span><code>sudo mount -o loop,offset=0x22b000,sizelimit=0x1ae000,ro,noexec miyoo283_fw.img mnt
+</code></pre></div>
+<p>Utilizando el mismo método se pueden montar también las particiones <code>miservice</code> y <code>customer</code>:</p>
+<div class="highlight"><pre><span></span><code>sudo mount -o loop,offset=0x3d9000,sizelimit=0x32f000,ro,noexec miyoo283_fw.img mnt2
+sudo mount -o loop,offset=0x708000,sizelimit=0x6c5000,ro,noexec miyoo283_fw.img mnt3
 </code></pre></div>
 <h2 id="cheatsheets">Cheatsheets<a class="headerlink" href="#cheatsheets" title="Permanent link">&para;</a></h2>
 <h4 id="directoriosficheros-interesantes-onionos">Directorios/Ficheros interesantes OnionOS<a class="headerlink" href="#directoriosficheros-interesantes-onionos" title="Permanent link">&para;</a></h4>
