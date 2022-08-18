@@ -1947,8 +1947,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#interesting-directoriesfiles-onionos" class="md-nav__link">
-    Interesting directories/files OnionOS
+  <a href="#interesting-firmware-directoriesfiles" class="md-nav__link">
+    Interesting firmware directories/files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interesting-onionui-directoriesfiles" class="md-nav__link">
+    Interesting OnionUI directories/files
   </a>
   
 </li>
@@ -2663,8 +2670,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#interesting-directoriesfiles-onionos" class="md-nav__link">
-    Interesting directories/files OnionOS
+  <a href="#interesting-firmware-directoriesfiles" class="md-nav__link">
+    Interesting firmware directories/files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interesting-onionui-directoriesfiles" class="md-nav__link">
+    Interesting OnionUI directories/files
   </a>
   
 </li>
@@ -2758,17 +2772,35 @@ sf write 0x21000000 ${sf_part_start} 0x1AE000
 </li>
 <li>
 <p>Create a directory (for example <code>mnt</code>) and run the following command to mount the firmware rootfs in it:</p>
-<div class="highlight"><pre><span></span><code>sudo mount -o loop,offset=0x22b000,sizelimit=0x1ae000,ro,noexec miyoo283_fw.img mnt
+<div class="highlight"><pre><span></span><code>sudo mount -o loop,sizelimit=0x1ae000,offset=0x22b000,ro,noexec miyoo283_fw.img mnt
 </code></pre></div>
 </li>
 </ol>
 <p>Using the same method you can also mount the <code>miservice</code> and <code>customer</code> partitions:</p>
-<div class="highlight"><pre><span></span><code>sudo mount -o loop,offset=0x3d9000,sizelimit=0x32f000,ro,noexec miyoo283_fw.img mnt2
-sudo mount -o loop,offset=0x708000,sizelimit=0x6c5000,ro,noexec miyoo283_fw.img mnt3
+<div class="highlight"><pre><span></span><code>sudo mount -o loop,sizelimit=0x32f000,offset=0x3d9000,ro,noexec miyoo283_fw.img mnt2
+sudo mount -o loop,sizelimit=0x6c5000,offset=0x708000,ro,noexec miyoo283_fw.img mnt3
 </code></pre></div>
 <h2 id="cheatsheets">Cheatsheets<a class="headerlink" href="#cheatsheets" title="Permanent link">&para;</a></h2>
-<h4 id="interesting-directoriesfiles-onionos">Interesting directories/files OnionOS<a class="headerlink" href="#interesting-directoriesfiles-onionos" title="Permanent link">&para;</a></h4>
-<p>With the system booted, the root of the SD card is mounted in <code>/mnt/SDCARD</code>.</p>
+<h4 id="interesting-firmware-directoriesfiles">Interesting firmware directories/files<a class="headerlink" href="#interesting-firmware-directoriesfiles" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th align="left">Directory</th>
+<th align="left">Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>/mnt/SDCARD</code></td>
+<td align="left">SD mounting point</td>
+</tr>
+<tr>
+<td align="left"><code>/customer/main</code></td>
+<td align="left">Main frontend startup script. It is the one that invokes <code>.tmp_update/updater</code> in case it exists which is the starting point of UIs like Onion or MiniUI</td>
+</tr>
+</tbody>
+</table>
+<h4 id="interesting-onionui-directoriesfiles">Interesting OnionUI directories/files<a class="headerlink" href="#interesting-onionui-directoriesfiles" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
