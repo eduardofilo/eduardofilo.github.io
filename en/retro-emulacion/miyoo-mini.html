@@ -2798,6 +2798,10 @@ sudo mount -o loop,sizelimit=0x6c5000,offset=0x708000,ro,noexec miyoo283_fw.img 
 <td align="left"><code>/customer/main</code></td>
 <td align="left">Main frontend startup script. It is the one that invokes <code>.tmp_update/updater</code> in case it exists which is the starting point of UIs like Onion or MiniUI</td>
 </tr>
+<tr>
+<td align="left"><code>/sys/devices/gpiochip0/gpio/gpio59/value</code></td>
+<td align="left">Flag indicating if the machine is being charged</td>
+</tr>
 </tbody>
 </table>
 <h4 id="interesting-onionui-directoriesfiles">Interesting OnionUI directories/files<a class="headerlink" href="#interesting-onionui-directoriesfiles" title="Permanent link">&para;</a></h4>
