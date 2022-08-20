@@ -2211,6 +2211,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#gpios" class="md-nav__link">
+    GPIOs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#codigos-teclas-para-mappers-dosbox" class="md-nav__link">
     Códigos teclas para mappers DOSBOX
   </a>
@@ -3199,6 +3206,13 @@
           <li class="md-nav__item">
   <a href="#bios" class="md-nav__link">
     BIOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpios" class="md-nav__link">
+    GPIOs
   </a>
   
 </li>
@@ -4511,6 +4525,49 @@
 </tr>
 </tbody>
 </table>
+<h4 id="gpios">GPIOs<a class="headerlink" href="#gpios" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>rg280v:~ $ sudo cat /sys/kernel/debug/gpio
+Password:
+gpiochip0: GPIOs 0-31, parent: platform/10010000.pin-controller, GPIOA:
+ gpio-30  (                    |Power button        ) in  hi IRQ ACTIVE LOW
+
+gpiochip1: GPIOs 32-63, parent: platform/10010000.pin-controller, GPIOB:
+ gpio-34  (                    |cd                  ) in  lo IRQ ACTIVE LOW
+ gpio-37  (                    |vbus                ) in  hi IRQ
+ gpio-42  (                    |Left shoulder button) in  hi IRQ ACTIVE LOW
+ gpio-43  (                    |R2 shoulder button  ) in  hi IRQ ACTIVE LOW
+ gpio-44  (                    |Volume+ button      ) in  hi IRQ ACTIVE LOW
+ gpio-45  (                    |Volume- button      ) in  hi IRQ ACTIVE LOW
+ gpio-52  (                    |L2 shoulder button  ) in  hi IRQ ACTIVE LOW
+ gpio-53  (                    |Start button        ) in  hi IRQ ACTIVE LOW
+ gpio-62  (                    |power               ) out lo ACTIVE LOW
+
+gpiochip2: GPIOs 64-95, parent: platform/10010000.pin-controller, GPIOC:
+
+gpiochip3: GPIOs 96-127, parent: platform/10010000.pin-controller, GPIOD:
+ gpio-114 (                    |Select button       ) in  lo IRQ
+
+gpiochip4: GPIOs 128-159, parent: platform/10010000.pin-controller, GPIOE:
+ gpio-130 (                    |reset               ) out hi ACTIVE LOW
+ gpio-137 (                    |regulator@1         ) out lo ACTIVE LOW
+ gpio-143 (                    |sck                 ) out lo
+ gpio-144 (                    |spi0 CS0            ) out hi ACTIVE LOW
+ gpio-145 (                    |mosi                ) out lo
+ gpio-148 (                    |Button B            ) in  hi IRQ ACTIVE LOW
+ gpio-149 (                    |D-pad up            ) in  hi IRQ ACTIVE LOW
+ gpio-151 (                    |D-pad left          ) in  hi IRQ ACTIVE LOW
+ gpio-152 (                    |D-pad right         ) in  hi IRQ ACTIVE LOW
+ gpio-153 (                    |D-pad down          ) in  hi IRQ ACTIVE LOW
+ gpio-154 (                    |Right shoulder butto) in  hi IRQ ACTIVE LOW
+ gpio-155 (                    |Button X            ) in  hi IRQ ACTIVE LOW
+ gpio-156 (                    |Button Y            ) in  hi IRQ ACTIVE LOW
+ gpio-157 (                    |Button A            ) in  hi IRQ ACTIVE LOW
+
+gpiochip5: GPIOs 160-191, parent: platform/10010000.pin-controller, GPIOF:
+ gpio-163 (                    |enable              ) out hi ACTIVE LOW
+ gpio-180 (                    |enable              ) out lo
+ gpio-181 (                    |Headphone detection ) in  hi IRQ
+</code></pre></div>
 <h4 id="codigos-teclas-para-mappers-dosbox">Códigos teclas para mappers DOSBOX<a class="headerlink" href="#codigos-teclas-para-mappers-dosbox" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
