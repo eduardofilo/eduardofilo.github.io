@@ -2806,6 +2806,30 @@ sudo mount -o loop,sizelimit=0x6c5000,offset=0x708000,ro,noexec miyoo283_fw.img 
 <td align="left"><code>/sys/class/pwm/pwmchip0/pwm0/duty_cycle</code></td>
 <td align="left">Screen brightness (from 0 to 100)</td>
 </tr>
+<tr>
+<td align="left"><code>/sys/devices/system/cpu/cpufreq/policy0/scaling_available_governors</code></td>
+<td align="left">Available governors for processor (<code>userspace</code>, <code>powersave</code>, <code>ondemand</code>, <code>performance</code>)</td>
+</tr>
+<tr>
+<td align="left"><code>/sys/devices/system/cpu/cpufreq/policy0/scaling_governor</code></td>
+<td align="left">Current governor</td>
+</tr>
+<tr>
+<td align="left"><code>/sys/devices/system/cpu/cpufreq/policy0/scaling_available_frequencies</code></td>
+<td align="left">Available frequencies for processor (<code>400000</code>, <code>600000</code>, <code>800000</code>, <code>1000000</code>, <code>1100000</code>, <code>1200000</code>)</td>
+</tr>
+<tr>
+<td align="left"><code>/sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq</code></td>
+<td align="left">Minimum frequency for processor</td>
+</tr>
+<tr>
+<td align="left"><code>/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq</code></td>
+<td align="left">Maximum frecuency for processor</td>
+</tr>
+<tr>
+<td align="left"><code>/sys/devices/system/cpu/cpufreq/policy0/scaling_cur_freq</code></td>
+<td align="left">Current frecuency</td>
+</tr>
 </tbody>
 </table>
 <h4 id="interesting-onionui-directoriesfiles">Interesting OnionUI directories/files<a class="headerlink" href="#interesting-onionui-directoriesfiles" title="Permanent link">&para;</a></h4>
