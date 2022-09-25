@@ -1974,6 +1974,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#framebuffer" class="md-nav__link">
+    Framebuffer
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2697,6 +2704,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#framebuffer" class="md-nav__link">
+    Framebuffer
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2993,6 +3007,18 @@ gpiochip0: GPIOs 0-90, gpio:
 </tr>
 </tbody>
 </table>
+<h4 id="framebuffer">Framebuffer<a class="headerlink" href="#framebuffer" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>/ # fbset
+
+mode &quot;640x480-100&quot;
+        # D: 45.455 MHz, H: 54.633 kHz, V: 100.060 Hz
+        geometry 640 480 640 1440 32
+        timings 22000 64 64 32 32 64 2
+        accel false
+        rgba 8/16,8/8,8/0,8/24
+endmode
+</code></pre></div>
+<p>The frambuffer (<code>/dev/fb0</code>) contains 3 images (640x1440) and is rotated 180º. Each pixel occupies 4 bytes encoded in the following order: <code>BBGGRRAA</code> where <code>AA</code> (alpha) is always <code>FF</code>.</p>
 
               
             </article>
