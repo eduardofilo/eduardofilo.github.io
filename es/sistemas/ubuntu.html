@@ -2324,6 +2324,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ficheros-interesantes" class="md-nav__link">
+    Ficheros interesantes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#aplicaciones-interesantes" class="md-nav__link">
     Aplicaciones interesantes
   </a>
@@ -2950,6 +2957,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ficheros-interesantes" class="md-nav__link">
+    Ficheros interesantes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#aplicaciones-interesantes" class="md-nav__link">
     Aplicaciones interesantes
   </a>
@@ -3379,6 +3393,21 @@
 
 
 <h1 id="ubuntu">Ubuntu<a class="headerlink" href="#ubuntu" title="Permanent link">&para;</a></h1>
+<h2 id="ficheros-interesantes">Ficheros interesantes<a class="headerlink" href="#ficheros-interesantes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Fichero</th>
+<th align="left">Utilidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>/usr/lib/os-release</code></td>
+<td align="left">Información sobre la distribución</td>
+</tr>
+</tbody>
+</table>
 <h2 id="aplicaciones-interesantes">Aplicaciones interesantes<a class="headerlink" href="#aplicaciones-interesantes" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://github.com/retext-project/retext">ReText</a>: Editor Markdown.</li>
@@ -3762,9 +3791,8 @@ $ sudo usermod -a -G wireshark &lt;usuario&gt;
 <p>Reiniciar la sesión.</p>
 <h2 id="solucionar-el-problema-con-wireshark-en-las-ultimas-versiones-de-ubuntu">Solucionar el problema con Wireshark en las últimas versiones de Ubuntu<a class="headerlink" href="#solucionar-el-problema-con-wireshark-en-las-ultimas-versiones-de-ubuntu" title="Permanent link">&para;</a></h2>
 <p>Cuando se inicia una captura, se cuelga Wireshark, emitiendo una serie infinita de errores de GTK en consola. En <a href="https://bugs.launchpad.net/ubuntu/+source/overlay-scrollbar/+bug/1248400">esta página</a> comentan varios workarrounds. Por ejemplo editando el fichero <code>/usr/share/applications/wireshark.desktop</code> y cambiando la línea de ejecución por:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="n">Exec</span><span class="o">=</span><span class="n">env</span><span class="w"> </span><span class="n">LIBOVERLAY_SCROLLBAR</span><span class="o">=</span><span class="mh">0</span><span class="w"> </span><span class="n">wireshark</span><span class="w"> </span><span class="o">%</span><span class="n">f</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-
+<div class="highlight"><pre><span></span><code>Exec=env LIBOVERLAY_SCROLLBAR=0 wireshark %f
+</code></pre></div>
 <h2 id="ficheros-implicados-en-arranque">Ficheros implicados en arranque<a class="headerlink" href="#ficheros-implicados-en-arranque" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>/etc/rc.local</code>: This script is executed at the end of each multiuser runlevel.</li>
@@ -3789,7 +3817,8 @@ Rpi_8gb_wheezy_backup.img2          <span class="m">122880</span> <span class="m
 </li>
 <li>
 <p>Calcular el offset multiplicando el sector de comienzo de la partición por el tamaño del sector:</p>
-<p>122880 * 512 = 62914560</p>
+<div class="highlight"><pre><span></span><code>122880 * 512 = 62914560
+</code></pre></div>
 </li>
 <li>
 <p>Montar:</p>
