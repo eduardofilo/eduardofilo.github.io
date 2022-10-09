@@ -3787,31 +3787,23 @@ $ source djangodev/bin/activate
 <li>Instalo módulo Python3 desde el Centro de Paquetes.</li>
 <li>
 <p>Instalo pip en Python3:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>$ wget -nd https://bootstrap.pypa.io/get-pip.py
+<div class="highlight"><pre><span></span><code>$ wget -nd https://bootstrap.pypa.io/get-pip.py
 $ python get-pip.py
-$ <span class="nb">cd</span> /usr/local/bin
+$ cd /usr/local/bin
 $ sudo ln -s /volume1/@appstore/py3k/usr/local/bin/pip3
-</code></pre></div></td></tr></table></div>
-
+</code></pre></div>
 </li>
 <li>
 <p>Instalo virtualenv:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ sudo pip3 install virtualenv
-$ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtualenv.py --python<span class="o">=</span><span class="sb">`</span>which python3<span class="sb">`</span> djangodev
-</code></pre></div></td></tr></table></div>
-
+<div class="highlight"><pre><span></span><code>$ sudo pip3 install virtualenv
+$ python3 /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/virtualenv.py --python=`which python3` djangodev
+</code></pre></div>
 </li>
 <li>
 <p>Arranco el entorno virtual e instalo Django:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ <span class="nb">source</span> djangodev/bin/activate
-<span class="o">(</span>djangodev<span class="o">)</span> $ pip install Django
-</code></pre></div></td></tr></table></div>
-
+<div class="highlight"><pre><span></span><code>$ source djangodev/bin/activate
+(djangodev) $ pip install Django
+</code></pre></div>
 </li>
 </ol>
 <h2 id="creacion-de-proyecto-django">Creación de proyecto Django<a class="headerlink" href="#creacion-de-proyecto-django" title="Permanent link">&para;</a></h2>
@@ -3862,60 +3854,45 @@ $ pipenv shell
 <ol>
 <li>
 <p>Instalar algunos paquetes necesarios:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ sudo apt-get install build-essential checkinstall
+<div class="highlight"><pre><span></span><code>$ sudo apt-get install build-essential checkinstall
 $ sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
-</code></pre></div></td></tr></table></div>
-
+</code></pre></div>
 </li>
 <li>
 <p>Bajamos la versión <code>source</code> de <a href="https://www.python.org/downloads/source/">aquí</a>.</p>
 </li>
 <li>
 <p>Descomprimimos:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ tar -xzvf Python-3.6.5.tgz
-</code></pre></div></td></tr></table></div>
-
+<div class="highlight"><pre><span></span><code>$ tar -xzvf Python-3.6.5.tgz
+</code></pre></div>
 </li>
 <li>
 <p>Renombramos el directorio de las fuentes para no confundirlo con el de los binarios:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ mv Python-3.6.5 Python-3.6.5_src
-</code></pre></div></td></tr></table></div>
-
+<div class="highlight"><pre><span></span><code>$ mv Python-3.6.5 Python-3.6.5_src
+</code></pre></div>
 </li>
 <li>
 <p>Creamos el directorio para los binarios:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ mkdir Python-3.6.5
-</code></pre></div></td></tr></table></div>
-
+<div class="highlight"><pre><span></span><code>$ mkdir Python-3.6.5
+</code></pre></div>
 </li>
 <li>
 <p>Entramos en el directorio de las fuentes y compilamos:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>$ <span class="nb">cd</span> /home/usuario/Python-3.6.5_src
-$ ./configure --disable-ipv6 --prefix<span class="o">=</span>/home/usuario/Python-3.6.5
+<div class="highlight"><pre><span></span><code>$ cd /home/usuario/Python-3.6.5_src
+$ ./configure --disable-ipv6 --prefix=/home/usuario/Python-3.6.5
 $ make
-$ make <span class="nb">test</span>
+$ make test
 $ make install
-</code></pre></div></td></tr></table></div>
-
+</code></pre></div>
 </li>
 <li>
 <p>Creamos el entorno:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>$ <span class="nb">cd</span> directorio_proyecto
+<div class="highlight"><pre><span></span><code>$ cd directorio_proyecto
 $ pipenv install --python /home/usuario/Python-3.6.5/bin/python3
-$ pipenv install <span class="nv">Django</span><span class="o">==</span><span class="m">1</span>.11.12
+$ pipenv install Django==1.11.12
 $ pipenv install _resto_de_paquetes_
 $ pipenv shell
-</code></pre></div></td></tr></table></div>
-
+</code></pre></div>
 </li>
 </ol>
 <h2 id="ejemplo-de-creacion-de-entorno-django-desde-cero-con-pipenv">Ejemplo de creación de entorno Django desde cero con pipenv<a class="headerlink" href="#ejemplo-de-creacion-de-entorno-django-desde-cero-con-pipenv" title="Permanent link">&para;</a></h2>
@@ -3957,33 +3934,24 @@ $ python manage.py runserver 0.0.0.0:8000
 <ol>
 <li>
 <p>Ejecutar:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ sudo pip install virtualenv
+<div class="highlight"><pre><span></span><code>$ sudo pip install virtualenv
 $ sudo pip install virtualenvwrapper
-</code></pre></div></td></tr></table></div>
-
+</code></pre></div>
 </li>
 <li>
 <p>Añadir a <code>~/.bashrc</code>:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Virtualenvwrapper</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="n">WORKON_HOME</span><span class="o">=$</span><span class="n">HOME</span><span class="o">/.</span><span class="n">virtualenvs</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="n">PROJECT_HOME</span><span class="o">=$</span><span class="n">HOME</span><span class="o">/</span><span class="n">git</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="n">VIRTUALENVWRAPPER_PYTHON</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">python3</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="n">VIRTUALENVWRAPPER_VIRTUALENV_ARGS</span><span class="o">=</span><span class="s1">&#39;--no-site-packages&#39;</span><span class="w"></span>
-<span class="n">source</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">virtualenvwrapper</span><span class="o">.</span><span class="n">sh</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-
+<div class="highlight"><pre><span></span><code># Virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/git
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS=&#39;--no-site-packages&#39;
+source /usr/local/bin/virtualenvwrapper.sh
+</code></pre></div>
 </li>
 <li>
 <p>Reiniciar sesión o cargar de nuevo el <code>~/.bashrc</code> con:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ <span class="nb">source</span> ~/.bashrc
-</code></pre></div></td></tr></table></div>
-
+<div class="highlight"><pre><span></span><code>$ source ~/.bashrc
+</code></pre></div>
 </li>
 </ol>
 <h3 id="utilizacion">Utilización<a class="headerlink" href="#utilizacion" title="Permanent link">&para;</a></h3>
@@ -4117,9 +4085,8 @@ $ python manage.py runserver 0.0.0.0:8000
     <span class="k">pass</span>
 </code></pre></div>
 <p>Y lo activamos definiendo la siguiente propiedad en el fichero <code>settings.py</code>:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>AUTH_USER_MODEL = &#39;app01.User&#39;
-</code></pre></div></td></tr></table></div>
-
+<div class="highlight"><pre><span></span><code>AUTH_USER_MODEL = &#39;app01.User&#39;
+</code></pre></div>
 <p>Si no queremos perder los formularios especiales de la aplicación <code>admin</code> para el modelo original, además hay que personalizar la clase <code>UserAdmin</code> de la siguiente forma:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.contrib.auth.admin</span> <span class="kn">import</span> <span class="n">UserAdmin</span>
 
