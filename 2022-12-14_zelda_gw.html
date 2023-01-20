@@ -17,7 +17,7 @@
     
     
       
-        <title>Game&Watch Zelda jack - Apuntes de eduardófilo</title>
+        <title>G&W Zelda hack - Apuntes de eduardófilo</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#documentacion-paletochan" class="md-skip">
+        <a href="#modificacion-hardware" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Game&Watch Zelda jack
+              G&W Zelda hack
             
           </span>
         </div>
@@ -1846,6 +1846,20 @@
   
   
     <li class="md-nav__item">
+      <a href="retro-emulacion/funkey-s.html" class="md-nav__link">
+        FunKey S
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="retro-emulacion/general.html" class="md-nav__link">
         General
       </a>
@@ -2513,6 +2527,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#modificacion-hardware" class="md-nav__link">
+    Modificación hardware
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#documentacion-paletochan" class="md-nav__link">
     Documentación paletochan
   </a>
@@ -2541,6 +2562,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#con-ofw-en-raspi" class="md-nav__link">
+    Con OFW en Raspi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#lista-juegos-gw" class="md-nav__link">
     Lista juegos G&amp;W
   </a>
@@ -2548,8 +2576,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#roms" class="md-nav__link">
-    ROMs
+  <a href="#roms-que-no-funcionan" class="md-nav__link">
+    ROMs que no funcionan
   </a>
   
 </li>
@@ -2579,9 +2607,28 @@
 
 
 
-  <h1>Game&Watch Zelda jack</h1>
+  <h1>G&W Zelda hack</h1>
 
-<p><img alt="Zelda G&amp;W" src="/images/posts/2022-12-14_zelda_gw/zelda_gw.jpg" /></p>
+<p><img alt="Zelda G&amp;W" src="/images/posts/2022-12-14_zelda_gw/zelda_gnw.png" /></p>
+<p>Un conocido fabricante japonés de videojuegos empezó a distribuir hace algo más de dos años, un par de máquinas replicando el aspecto de algunas de las viejas G&amp;W, sobre la base de un STM32H7 que ejecuta un firmware baremetal con emuladores de NES y GB, tres juegos clásicos y una aplicación reloj inspirados en la franquicia Zelda. La máquina resulta muy interesante por las virtudes de estar basada en un microcontrolador, en lugar de un microprocesador, es decir gran duración de la pequeña batería que contiene (la de un joycon de Switch), arranque y modo suspensión instantáneos. El soporte de datos es un pequeño chip flash NOR de 4MB, suficiente para alojar los emuladores y juegos mencionados, pero muy escaso si se quiere sacar partido de la máquina. El firmware original sirve para comprobar la solvencia de la plataforma para emular al menos las máquinas de 8 bit que funcionan originalmente, por lo que en seguida el dispositivo resultó atractivo para la comunidad hacker. Al poco tiempo de empezar a comercializarse ya aparecieron procedimientos para modificar la máquina de manera que se pudieran instalar más emuladores y juegos. Lo más habitual es sustituir el chip flash por otro de 64MB, y los emuladores soportados en la actualidad son:</p>
+<ul>
+<li>Amstrad CPC6128</li>
+<li>Atari 7800</li>
+<li>ColecoVision</li>
+<li>Gameboy / Gameboy Color</li>
+<li>G&amp;W / LCD Games</li>
+<li>MSX1/2/2+</li>
+<li>NES</li>
+<li>PC Engine / TurboGrafx-16</li>
+<li>Sega Game Gear</li>
+<li>Sega Genesis / Megadrive</li>
+<li>Sega Master System</li>
+<li>Sega SG-1000</li>
+<li>Watara Supervision</li>
+</ul>
+<p>En este artículo vamos a ver los pasos para realizar esta modificación.</p>
+<h2 id="modificacion-hardware">Modificación hardware<a class="headerlink" href="#modificacion-hardware" title="Permanent link">&para;</a></h2>
+<p>Toda la modificación del software se hace a través del puerto SWD que habitualmente tienen los microcontroladores STM32 para programar su memoria flash interna y depurar los desarrollos. Este puerto SWD se encuentra en la PCB sin poblar, es decir sin pines o conectores soldados.</p>
 <h2 id="documentacion-paletochan">Documentación paletochan<a class="headerlink" href="#documentacion-paletochan" title="Permanent link">&para;</a></h2>
 <p>bueno, el repositorio es un poco lioso, hay que saltar de un sitio a otro pero, ahora te pongo aqui lo que he conseguido usar con exito
 Este el que lo hizo y su video: https://www.youtube.com/watch?v=Rsi8p5gbaps</p>
@@ -2609,10 +2656,14 @@ ea 🙂</p>
 <li><a href="https://www.reddit.com/r/GameAndWatchMods/wiki/flash-upgrade/">Chips compatible G&amp;W flash upgrade</a></li>
 <li><a href="https://github.com/Upcycle-Electronics/game-and-watch-hardware">Esquemático G&amp;W Mario</a></li>
 <li><a href="https://www.reddit.com/r/GameAndWatchMods/comments/mr8hxs/click_here_for_links/">Links</a></li>
+<li>ROMs G&amp;W:<ul>
 <li><a href="https://gist.github.com/DNA64/16fed499d6bd4664b78b4c0a9638e4ef">LCD-Game-Shrinker</a></li>
 <li><a href="https://drive.google.com/drive/folders/1IbSRYTfKoKDgZfJZTZdnKFSpBvCvgJZV">Artwork G&amp;W hydef</a></li>
 <li><a href="https://drive.google.com/drive/folders/1aVBEWQsgY9UaJ0D-VrTzY80pUnYJ0jfY">Artwork G&amp;W hydef previews</a></li>
 <li><a href="https://drive.google.com/drive/u/0/folders/1vl9O-0jIGCHHY_lrWpOwBtqTXEKsVGOY">Artwork G&amp;W DarthMarino</a></li>
+</ul>
+</li>
+<li><a href="https://cryptpad.fr/sheet/#/2/sheet/edit/blA68Hq6JiCLdHR0St26pgho/">Lista compatibilidad juegos MD</a></li>
 </ul>
 <p>Vídeo en español</p>
 <ul>
@@ -2635,18 +2686,26 @@ ea 🙂</p>
 </li>
 </ul>
 <h2 id="compilacion-en-raspi">Compilación en Raspi<a class="headerlink" href="#compilacion-en-raspi" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>sudo apt update
-sudo apt upgrade
-sudo apt install libnewlib-arm-none-eabi build-essential git python3-pip libncurses-dev binutils-arm-none-eabi python3 libhidapi-hidraw0 libftdi1 libftdi1-2
+<div class="highlight"><pre><span></span><code>sudo apt update -y
+sudo apt upgrade -y
+sudo apt install -y libnewlib-arm-none-eabi build-essential git python3-pip libncurses-dev binutils-arm-none-eabi python3 libhidapi-hidraw0 libftdi1 libftdi1-2 cmake
 
 mkdir ~/gnw
 cd ~/gnw
+# En 32bit
+# Bajar fichero gcc-arm-none-eabi-10.3-2023.01-armv7l-linux.tar.bz2 de https://mega.nz/file/P05U3ApL#mcD32Ru_2CojMdupsGky1MmEEIgSoJeg2-Y0HJV_j0g
+sudo tar xjf gcc-arm-none-eabi-10.3-2023.01-armv7l-linux.tar.bz2 -C /usr/share
+export GCC_PATH=/usr/share/gcc-arm-none-eabi-10.3-2023.01/bin
+
+# En 64bit
 wget https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-aarch64-linux.tar.bz2
 sudo tar xjf gcc-arm-none-eabi-10.3-2021.10-aarch64-linux.tar.bz2 -C /usr/share
+export GCC_PATH=/usr/share/gcc-arm-none-eabi-10.3-2021.10/bin
 
 git clone https://github.com/kbeckmann/ubuntu-openocd-git-builder.git
 cd ubuntu-openocd-git-builder
 ./build.sh
+# En 32bit: openocd-git_0.12.0-rc3-1-gdfe57baa1_armhf.deb
 sudo dpkg -i openocd-git_0.12.0-rc3-1-gdfe57baa1_arm64.deb
 
 cd ~/gnw
@@ -2655,7 +2714,6 @@ cd game-and-watch-backup
 
 export ADAPTER=rpi
 export OPENOCD=&quot;/opt/openocd-git/bin/openocd&quot;
-export GCC_PATH=/usr/share/gcc-arm-none-eabi-10.3-2021.10/bin
 
 ./1_sanity_check.sh rpi zelda
 ./2_backup_flash.sh rpi zelda
@@ -2679,9 +2737,57 @@ External flash usage
     Free:          8077143 Bytes (  7.703 MB)
 </code></pre></div>
 <h2 id="compilacion-en-ubuntu">Compilación en Ubuntu<a class="headerlink" href="#compilacion-en-ubuntu" title="Permanent link">&para;</a></h2>
+<p>Parchear el firmware del STLink v2 siguiendo estos pasos:</p>
+<div class="highlight"><pre><span></span><code># Method 2
+
+Firmware &quot;V2J37S7 STM8/STM32 Debugger&quot;.
+
+1) Go to https://www.st.com/en/development-tools/stsw-link007.html.
+2) Download &quot;en.stsw-link007_V2-37-27.zip&quot; and extract it.
+3) Extract &quot;com\st\stlinkupgrade\core\f2_3.bin&quot; from &quot;AllPlatforms\STLinkUpgrade.jar&quot;.
+4) Patch &quot;f2_3.bin&quot;.
+5) Replace original &quot;f2_3.bin&quot; in .jar with patched version.
+6) Double-click .jar to upgrade to patched firmware.
+
+OR
+
+1) Go to https://www.st.com/en/development-tools/stm32cubeprog.html.
+2) Download &quot;en.stm32cubeprg-win32_v2-7-0.zip&quot; and install it.
+3) Extract &quot;com\st\stlinkupgrade\core\f2_3.bin&quot; from &quot;C:\Program Files (x86)\STMicroelectronics\STM32Cube\STM32CubeProgrammer\Drivers\FirmwareUpgrade\STLinkUpgrade.jar&quot;.
+4) Patch &quot;f2_3.bin&quot;.
+5) Replace original &quot;f2_3.bin&quot; in .jar with patched version.
+6) Double-click .jar to upgrade to patched firmware.
+
+f2_3.bin (original)
+00000970  01 94 8C 66 83 73 74 87 52 F4 C2 09 F9 69 A1 68
+00000980  5C 90 84 57 BA 6A 7D 4A 2D 6C 23 FE B1 61 1A 8D
+00001EF0  91 85 86 A3 FB CA 22 15 35 06 D7 73 21 24 B9 B1
+00007890  7F 67 2E 5D 10 CD 3F 52 A1 68 5D 09 D6 91 48 86
+000078A0  3D 87 1B D6 44 E0 10 44 B8 2C 94 7C 69 28 7E 00
+
+f2_3.bin (patched)
+00000970  26 44 00 F1 4B 73 D0 A1 49 B2 5B 7A 54 E6 D5 6D
+00000980  74 5E 06 92 74 88 C4 3B 06 DB A9 90 D0 A1 45 26
+00001EF0  B9 70 FE E0 FE E9 C5 BA B8 CF 23 50 7B E5 24 77
+00007890  D0 FA AD 25 19 A8 10 B0 04 57 62 28 A6 E5 4C B5
+000078A0  83 BA 91 00 42 4E E4 57 7D F4 57 E9 F6 E3 F8 38
+</code></pre></div>
+<p>Crear el fichero <code>/etc/udev/rules.d/49-stlinkv2.rules</code> con el siguiente contenido:</p>
+<div class="highlight"><pre><span></span><code># stm32 discovery boards, with onboard st/linkv2
+# ie, STM32L, STM32F4.
+
+SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;0483&quot;, ATTRS{idProduct}==&quot;3748&quot;, \
+    MODE:=&quot;0666&quot;, \
+    SYMLINK+=&quot;stlinkv2_%n&quot;
+
+# If you share your linux system with other users, or just don&#39;t like the
+# idea of write permission for everybody, you can replace MODE:=&quot;0666&quot; with
+# OWNER:=&quot;yourusername&quot; to create the device owned by you, or with
+# GROUP:=&quot;somegroupname&quot; and mange access using standard unix groups.
+</code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo apt update
 sudo apt upgrade
-sudo apt install libnewlib-arm-none-eabi build-essential git python3-pip libncurses-dev binutils-arm-none-eabi python3 libhidapi-hidraw0 libftdi1 libftdi1-2
+sudo apt install libnewlib-arm-none-eabi build-essential git python3-pip libncurses-dev binutils-arm-none-eabi python3 libhidapi-hidraw0 libftdi1 libftdi1-2 libjaylink-dev
 
 mkdir ~/gnw
 cd ~/gnw
@@ -2691,7 +2797,7 @@ sudo tar xjf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 -C /usr/share
 git clone https://github.com/kbeckmann/ubuntu-openocd-git-builder.git
 cd ubuntu-openocd-git-builder
 ./build.sh
-sudo dpkg -i openocd-git_0.12.0-rc2-28-g9501b263e_amd64.deb
+sudo dpkg -i openocd-git_0.12.0-40-gcda39f929_amd64.deb
 
 cd ~/gnw
 git clone https://github.com/ghidraninja/game-and-watch-backup.git
@@ -2715,6 +2821,37 @@ make clean GNW_TARGET=zelda
 make romdef GNW_TARGET=zelda
 make COVERFLOW=1 JPG_QUALITY=90 COMPRESS=lzma GNW_TARGET=zelda EXTFLASH_SIZE_MB=64
 make flash COVERFLOW=1 JPG_QUALITY=90 COMPRESS=lzma GNW_TARGET=zelda EXTFLASH_SIZE_MB=64
+</code></pre></div>
+<h2 id="con-ofw-en-raspi">Con OFW en Raspi<a class="headerlink" href="#con-ofw-en-raspi" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code># Ampliación swap
+sudo dphys-swapfile swapoff
+sudo vi /etc/dphys-swapfile
+# Cambiar: CONF_SWAPSIZE=1024
+sudo dphys-swapfile setup
+sudo dphys-swapfile swapon
+reboot
+
+# Instalación keystone-engine
+wget https://files.pythonhosted.org/packages/0a/65/3a2e7e55cc1db188869bbbacee60036828330e0ce57fc5f05a3167ab4b4d/keystone-engine-0.9.2.tar.gz
+tar -zxvf keystone-engine-0.9.2.tar.gz
+cd keystone-engine-0.9.2
+# »»»» Edit line 114 in setup.py:
+# obj_dir = os.path.join(BUILD_DIR, &#39;llvm&#39;, &#39;lib&#39;, &#39;arm-linux-gnueabihf&#39;)
+pip install --upgrade pip
+pip install .
+
+cd ~/gnw
+git clone https://github.com/BrianPugh/game-and-watch-patch.git
+cd game-and-watch-patch
+pip install -r requirements.txt
+make download_sdk
+&lt;copia de flash_backup_zelda.bin y internal_flash_backup_zelda.bin a este directorio&gt;
+make clean
+make PATCH_PARAMS=&quot;--device=zelda&quot; LARGE_FLASH=1 flash_patched
+cd ~/gnw/game-and-watch-retro-go
+make clean GNW_TARGET=zelda
+make romdef GNW_TARGET=zelda
+make flash COVERFLOW=1 JPG_QUALITY=90 COMPRESS=lzma GNW_TARGET=zelda EXTFLASH_SIZE_MB=60 EXTFLASH_OFFSET=4194304 INTFLASH_BANK=2
 </code></pre></div>
 <h2 id="lista-juegos-gw">Lista juegos G&amp;W<a class="headerlink" href="#lista-juegos-gw" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>gnw_ball.zip        Game &amp; Watch Ball.gw                                        OK
@@ -2769,21 +2906,20 @@ gnw_tfish.zip       Game &amp; Watch Tropical Fish.gw                           
 gnw_vermin.zip      Game &amp; Watch Vermin.gw                                      OK
 gnw_zelda.zip       Game &amp; Watch Zelda.gw                                       OK
 </code></pre></div>
-<h2 id="roms">ROMs<a class="headerlink" href="#roms" title="Permanent link">&para;</a></h2>
-<p>Quitar:
-MD: Virtua Racing
-SMS: Outrun
-GB: Battletoads
-GBC: Tetris DX
-Coleco: frogger
-A7800: super skate boarding
-NES: Zelda
-NES: Micromachines</p>
-<p>Meter:
-GB: Tetris (normal)
-GB: Kirby
-GB: Catrap
-MD: Micromachines</p>
+<h2 id="roms-que-no-funcionan">ROMs que no funcionan<a class="headerlink" href="#roms-que-no-funcionan" title="Permanent link">&para;</a></h2>
+<ul>
+<li>MD: Virtua Racing</li>
+<li>SMS: Fantasy zone ii</li>
+<li>SMS: Golden axe</li>
+<li>SMS: Outrun</li>
+<li>SMS: Space harrier</li>
+<li>GB: Battletoads</li>
+<li>Coleco: Frogger I</li>
+<li>A7800: Super skate boarding</li>
+<li>NES: Micromachines</li>
+<li>NES: Battletoads</li>
+<li>MD: Landstalker - The Treasures of King Nole (da error al comprimir)</li>
+</ul>
 <h2 id="controles">Controles<a class="headerlink" href="#controles" title="Permanent link">&para;</a></h2>
 <p>Holding the <code>PAUSE/SET</code> button while pressing other buttons have the following actions:</p>
 <table>
