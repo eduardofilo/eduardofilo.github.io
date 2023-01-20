@@ -1884,25 +1884,25 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#instalacion-toolchain" class="md-nav__link">
-    Instalación toolchain
+  <a href="#toolchain-installation" class="md-nav__link">
+    Toolchain installation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#compilacion-sdlretro" class="md-nav__link">
-    Compilación sdlretro
+  <a href="#sdlretro-build" class="md-nav__link">
+    sdlretro build
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#compilacion-cores-retroarch" class="md-nav__link">
-    Compilación cores RetroArch
+  <a href="#retroarch-cores-build" class="md-nav__link">
+    RetroArch cores build
   </a>
   
-    <nav class="md-nav" aria-label="Compilación cores RetroArch">
+    <nav class="md-nav" aria-label="RetroArch cores build">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2608,25 +2608,25 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#instalacion-toolchain" class="md-nav__link">
-    Instalación toolchain
+  <a href="#toolchain-installation" class="md-nav__link">
+    Toolchain installation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#compilacion-sdlretro" class="md-nav__link">
-    Compilación sdlretro
+  <a href="#sdlretro-build" class="md-nav__link">
+    sdlretro build
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#compilacion-cores-retroarch" class="md-nav__link">
-    Compilación cores RetroArch
+  <a href="#retroarch-cores-build" class="md-nav__link">
+    RetroArch cores build
   </a>
   
-    <nav class="md-nav" aria-label="Compilación cores RetroArch">
+    <nav class="md-nav" aria-label="RetroArch cores build">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2660,29 +2660,32 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/eduardofilo/eduardofilo.mkdocs/edit/master/docs/retro-emulacion/funkey-s.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/eduardofilo/eduardofilo.mkdocs/edit/master/docs/retro-emulacion/funkey-s.en.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
 <h1 id="funkey-s">FunKey S<a class="headerlink" href="#funkey-s" title="Permanent link">&para;</a></h1>
-<h2 id="instalacion-toolchain">Instalación toolchain<a class="headerlink" href="#instalacion-toolchain" title="Permanent link">&para;</a></h2>
-<p>Se descarga de <a href="https://doc.funkey-project.com/developer_guide/tutorials/build_system/build_program_using_sdk/">aquí</a>.</p>
-<p>Una vez descomprimido, ejecutar desde el directorio donde haya quedado (por ejemplo <code>/home/usuario/funkey/FunKey-sdk-2.3.0</code>):</p>
+<h2 id="toolchain-installation">Toolchain installation<a class="headerlink" href="#toolchain-installation" title="Permanent link">&para;</a></h2>
+<p>Prerequisites:</p>
+<div class="highlight"><pre><span></span><code>$ sudo apt install bash bc binutils build-essential bzip2 ca-certificates cpio cvs expect file g++ gcc git gzip liblscp-dev libncurses5-dev locales make mercurial openssh-client patch perl procps python3 python3-dev python3-distutils python3-setuptools rsync rsync sed subversion sudo tar unzip wget xxd
+</code></pre></div>
+<p>Download from <a href="https://github.com/FunKey-Project/FunKey-OS/releases/download/FunKey-OS-2.3.0/FunKey-sdk-2.3.0.tar.gz">here</a>.</p>
+<p>Once uncompressed, run from the directory where installed (for example <code>/home/user/funkey/FunKey-sdk-2.3.0</code>):</p>
 <div class="highlight"><pre><span></span><code>./relocate-sdk.sh
 . environment-setup
-sudo ln -s /home/usuario/funkey/FunKey-sdk-2.3.0 /opt/FunKey-sdk
+sudo ln -s /home/user/funkey/FunKey-sdk-2.3.0 /opt/FunKey-sdk
 </code></pre></div>
-<h2 id="compilacion-sdlretro">Compilación sdlretro<a class="headerlink" href="#compilacion-sdlretro" title="Permanent link">&para;</a></h2>
-<p>Se descarga de <a href="https://github.com/DrUm78/sdlretro">aquí</a>.</p>
-<p>Una vez bajado el código se compila siguiendo los pasos (o ejecutando directamente) del script <code>package</code>.</p>
-<p>El OPK resultante es <code>libretro_funkey-s.opk</code>. Copiarlo a la carpeta app de la consola, crear el directorio <code>/mnt/FunKey/.sdlretro/cores</code> y poner allí los cores.</p>
-<h2 id="compilacion-cores-retroarch">Compilación cores RetroArch<a class="headerlink" href="#compilacion-cores-retroarch" title="Permanent link">&para;</a></h2>
+<h2 id="sdlretro-build">sdlretro build<a class="headerlink" href="#sdlretro-build" title="Permanent link">&para;</a></h2>
+<p>Download from <a href="https://github.com/DrUm78/sdlretro">here</a>.</p>
+<p>Once the code is downloaded, it is compiled by following the steps (or by executing directly) of the <code>package</code> script.</p>
+<p>The built OPK is <code>libretro_funkey-s.opk</code>. Copy <code>libretro_funkey-s.opk</code> to app folder, create <code>/mnt/FunKey/.sdlretro/cores</code> and put core files in the directory.</p>
+<h2 id="retroarch-cores-build">RetroArch cores build<a class="headerlink" href="#retroarch-cores-build" title="Permanent link">&para;</a></h2>
 <h3 id="mgba">mgba<a class="headerlink" href="#mgba" title="Permanent link">&para;</a></h3>
-<p>Se descarga de <a href="https://github.com/FunKey-Project/mgba-libretro">aquí</a>. Se compila directamente con <code>make</code>.</p>
+<p>Download from <a href="https://github.com/FunKey-Project/mgba-libretro">here</a>. Built directly with <code>make</code>.</p>
 <h3 id="retro8">retro8<a class="headerlink" href="#retro8" title="Permanent link">&para;</a></h3>
-<p>Se descarga de <a href="https://github.com/FunKey-Project/retro8-libretro">aquí</a>. Se compila directamente con <code>make</code>.</p>
+<p>Download from <a href="https://github.com/FunKey-Project/retro8-libretro">here</a>. Built directly with <code>make</code>.</p>
 
               
             </article>
