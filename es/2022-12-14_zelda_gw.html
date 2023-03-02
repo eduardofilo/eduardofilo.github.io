@@ -2534,6 +2534,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sistema-operativo-de-trabajo" class="md-nav__link">
+    Sistema operativo de trabajo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entorno-pc-ubuntu-2204" class="md-nav__link">
+    Entorno PC - Ubuntu 22.04
+  </a>
+  
+    <nav class="md-nav" aria-label="Entorno PC - Ubuntu 22.04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conexion" class="md-nav__link">
+    Conexión
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparacion-entorno" class="md-nav__link">
+    Preparación entorno
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#documentacion-paletochan" class="md-nav__link">
     Documentación paletochan
   </a>
@@ -2564,6 +2598,20 @@
         <li class="md-nav__item">
   <a href="#con-ofw-en-raspi" class="md-nav__link">
     Con OFW en Raspi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#respaldo-de-savestates" class="md-nav__link">
+    Respaldo de savestates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restauracion-de-savestates" class="md-nav__link">
+    Restauración de savestates
   </a>
   
 </li>
@@ -2610,7 +2658,8 @@
   <h1>G&W Zelda hack</h1>
 
 <p><img alt="Zelda G&amp;W" src="/images/posts/2022-12-14_zelda_gw/zelda_gnw.png" /></p>
-<p>Un conocido fabricante japonés de videojuegos empezó a distribuir hace algo más de dos años, un par de máquinas replicando el aspecto de algunas de las viejas G&amp;W, sobre la base de un STM32H7 que ejecuta un firmware baremetal con emuladores de NES y GB, tres juegos clásicos y una aplicación reloj inspirados en la franquicia Zelda. La máquina resulta muy interesante por las virtudes de estar basada en un microcontrolador, en lugar de un microprocesador, es decir gran duración de la pequeña batería que contiene (la de un joycon de Switch), arranque y modo suspensión instantáneos. El soporte de datos es un pequeño chip flash NOR de 4MB, suficiente para alojar los emuladores y juegos mencionados, pero muy escaso si se quiere sacar partido de la máquina. El firmware original sirve para comprobar la solvencia de la plataforma para emular al menos las máquinas de 8 bit que funcionan originalmente, por lo que en seguida el dispositivo resultó atractivo para la comunidad hacker. Al poco tiempo de empezar a comercializarse ya aparecieron procedimientos para modificar la máquina de manera que se pudieran instalar más emuladores y juegos. Lo más habitual es sustituir el chip flash por otro de 64MB, y los emuladores soportados en la actualidad son:</p>
+<p>Un conocido fabricante japonés de videojuegos empezó a distribuir hace algo más de dos años, un par de máquinas replicando el aspecto de algunas de las viejas G&amp;W, sobre la base de un STM32H7 que ejecuta un firmware baremetal con emuladores de NES y GB, tres juegos clásicos y una aplicación reloj inspirados en la franquicia Zelda. La máquina resulta muy interesante por las virtudes de estar basada en un microcontrolador, en lugar de un microprocesador, es decir gran duración de la pequeña batería que contiene (la de un joycon de Switch), arranque y modo suspensión instantáneos. El soporte de datos es un pequeño chip flash NOR de 4MB, suficiente para alojar los emuladores y juegos mencionados, pero muy escaso si se quiere sacar partido de la máquina y de su relativamente potente microcontrolador.</p>
+<p>El firmware original sirve para comprobar la solvencia de la plataforma para emular al menos las máquinas de 8 bit que funcionan originalmente, por lo que en seguida el dispositivo resultó atractivo para la comunidad hacker. Al poco tiempo de empezar a comercializarse ya aparecieron procedimientos para modificar la máquina de manera que se pudieran instalar más emuladores y juegos. Lo más habitual es sustituir el chip flash por otro de 64MB, y los emuladores soportados en la actualidad son:</p>
 <ul>
 <li>Amstrad CPC6128</li>
 <li>Atari 7800</li>
@@ -2629,6 +2678,120 @@
 <p>En este artículo vamos a ver los pasos para realizar esta modificación.</p>
 <h2 id="modificacion-hardware">Modificación hardware<a class="headerlink" href="#modificacion-hardware" title="Permanent link">&para;</a></h2>
 <p>Toda la modificación del software se hace a través del puerto SWD que habitualmente tienen los microcontroladores STM32 para programar su memoria flash interna y depurar los desarrollos. Este puerto SWD se encuentra en la PCB sin poblar, es decir sin pines o conectores soldados.</p>
+<p><img alt="SWD" src="/images/posts/2022-12-14_zelda_gw/swd.jpg" /></p>
+<p>Para hacer la conexión con dicho puerto hay varias opciones:</p>
+<ul>
+<li>Soldar cables directamente.</li>
+<li>Introducir cables limpios inclinándolos para que hagan contacto y sujetándolos con cinta adhesiva para que se mantenga el contacto.</li>
+<li>Utilizar <a href="https://www.amazon.es/gp/product/B009UOHE1K/">pinzas sonda de conexión</a> especializadas.</li>
+<li>Utilizar <a href="https://es.aliexpress.com/item/1005004869027755.html">pinzas pogo pin</a> (1.27mm Single row5P).</li>
+<li>Rutear los pines SWDIO y SWCLK hacia el puerto USB-C.</li>
+</ul>
+<p>Como mi interés por esta máquina más que para jugar es para experimentar con ella, me decido por realizar el ruteado del puerto SWD al USB-C. Este último puerto sólo tiene conectados los pines de alimentación ya que está previsto únicamente para cargar la máquina. Por tanto se pueden utilizar los pines D+ y D- que están libres para cablearlos a los pines SWDIO y SWCLK que son los únicos imprescindibles del puerto SWD. Necesitaremos también conectar a 5V y GND, pero estos ya se encuentran cableados en el puerto USB-C. El ruteado se hace con un fino cable barnizado de los que se utilizan para construir bobinas. La soldadura a los dos pines centrales del puerto USB-C que son los que corresponden a D+ y D- es complicada al tener un paso muy pequeño, pero con paciencia y flux puede lograrse.</p>
+<p><img alt="Ruteado USB-C" src="/images/posts/2022-12-14_zelda_gw/ruteado_usb-c_1.jpg" /></p>
+<p>Una vez resuelto la única parte difícil del procedimiento, es decir soldar los cables al puerto USB, se van sujetando cada cierta distancia con cinta Kapton y dirigiendo hacia la zona de la batería por donde se aprovecha el rebaje a ambos lados que hay del alojamiento que la rodea para pasar uno de los cables. El otro se conduce por el espacio que hay entre alojamiento de la batería y la PCB. De esta forma se consigue que ambos cables no puedan tocarse, aunque en teoría al estar barnizados no debería haber problema, se adopta este camino separado como precaución adicional.</p>
+<p><img alt="Ruteado USB-C" src="/images/posts/2022-12-14_zelda_gw/ruteado_usb-c_2.jpg" /></p>
+<p>Una vez que los cables alcanzan las proximidades del puerto SWD, se utilizan los dos test pads que pueden verse en la foto para realizar las soldaduras.</p>
+<p><img alt="Ruteado USB-C" src="/images/posts/2022-12-14_zelda_gw/ruteado_usb-c_3.jpg" /></p>
+<p>La correspondencia entre D+ y D- en el puerto USB-C con los SWDIO y SWCLK del puerto SWD, puede hacerse de cualquier forma siempre que tengamos claro donde está cada cual para más tarde hacer el adaptador USB-SWD que necesitaremos. En este montaje se ha optado por la siguiente correspondencia.</p>
+<ul>
+<li>D+ ↔ SWDIO</li>
+<li>D- ↔ SWCLK</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>La idea en un principio era adoptar la correspondencia utilizada en <a href="https://facelesstech.wordpress.com/2022/01/08/game-and-watch-hacking-with-rpi/">esta otra guía</a>, pero por un error cometido al principio, se terminó haciendo justo al revés. Como se comentaba antes, en realidad no es problema siempre que se tenga claro cómo están hechas las conexiones. Este aviso es sólo por si alguien intenta seguir ambas guías de forma simultánea, para que se tenga en cuenta dicha diferencia.</p>
+</div>
+<p>Una vez hecho el ruteado del puerto, necesitaremos construir el adaptador para poder extraer las señales SWDIO y SWCLK del puerto USB-C. Para ello se corta un cable USB-A convencional para tener acceso a los cuatro cables que contiene por separado y se sueldan a ellos conectores hembra de pin. El adaptador se completa con un adaptador USB-A a USB-C que se marca para orientarlo correctamente cuando lo vayamos a utilizar, ya que sólo hemos ruteado los pines D+ y D- de uno de los dos lados (el puerto USB-C es simétrico).</p>
+<p><img alt="Adaptador USB-C SWD" src="/images/posts/2022-12-14_zelda_gw/adaptador_usb-c_swd.jpg" /></p>
+<p>Los colores de los cables suelen estar estandarizados de la siguiente forma:</p>
+<ul>
+<li>Rojo: 5V</li>
+<li>Negro: GND</li>
+<li>Verde: D+</li>
+<li>Blanco: D-</li>
+</ul>
+<h2 id="sistema-operativo-de-trabajo">Sistema operativo de trabajo<a class="headerlink" href="#sistema-operativo-de-trabajo" title="Permanent link">&para;</a></h2>
+<p>Antes de empezar con el procedimiento de desbloqueo y programación propiamente dicho, unos comentarios sobre la plataforma de trabajo. Hay varias posibilidades y desafortunadamente cada una de ellas tiene sus propios problemas. En general todos los repositorios que se verán más adelante están diseñados para trabajar en Linux. Se puede trabajar sobre Windows utilizando máquinas virtuales y desde MacOS adaptando algunos pasos de los procedimientos, pero ninguno de estos caminos fueron probados durante la elaboración de esta guía. Aquí se ha utilizado únicamente la vía de Linux, ya sea en un PC convencional (con Ubuntu 22.04) o en una Raspberry Pi 3+ (con Raspbian Bullseye 32 y 64 bit). A continuación se detalla las plataformas utilizadas y los problemas fundamentales que tiene cada una de ellas:</p>
+<ul>
+<li>PC - Ubuntu 22.04: Sólo se puede utilizar un programador STLink v2. Desgraciadamente las versiones clónicas suelen funcionar mal y ese fue el caso durante las pruebas realizadas aquí.</li>
+<li>Raspberry Pi - Raspbian Bullseye 32bit: No se encuentra compilado el paquete <code>gcc-arm-none-eabi</code> en versión 10 o superior que se necesita y compilarlo sobre una Raspberry Pi 3 es complicado y sobre todo lento.</li>
+<li>Raspberry Pi - Raspbian Bullseye 64bit: No es fácil instalar las dependencias del repositorio <a href="https://github.com/BrianPugh/game-and-watch-patch">game-and-watch-patch</a>, en concreto el módulo Python <code>keystone-engine</code> (hay que utilizar memoria virtual para que no se agote la memoria durante la compilación y se producen errores que requieren modificar las fuentes).</li>
+</ul>
+<p>En general la mejor opción es la primera, ya que no sólo contamos con la mayor potencia de un PC para compilar, sino que la programación por STLink es mucho más rápida. En caso de utilizar la vía de Raspberry Pi (por no tener un buen programador STLink fundamentalmente), si no se va a utilizar el repositorio <a href="https://github.com/BrianPugh/game-and-watch-patch">game-and-watch-patch</a> para hacer dual boot, es mucho más sencillo realizar el procedimiento sobre Raspbian 64bit, ya que encontraremos el compilador <code>gcc-arm-none-eabi</code> en formato binario.</p>
+<p>En todo caso aquí se van a dar instrucciones para las tres vías consideradas y posibles soluciones a algunos de los problemas encontrados.</p>
+<h2 id="entorno-pc-ubuntu-2204">Entorno PC - Ubuntu 22.04<a class="headerlink" href="#entorno-pc-ubuntu-2204" title="Permanent link">&para;</a></h2>
+<h4 id="conexion">Conexión<a class="headerlink" href="#conexion" title="Permanent link">&para;</a></h4>
+<p>Empezamos haciendo la conexión del programador con el adaptador realizado. El cableado es el siguiente:</p>
+<ul>
+<li>Rojo: 5V</li>
+<li>Negro: GND</li>
+<li>Verde: SWDIO</li>
+<li>Blanco: SWCLK</li>
+</ul>
+<p><img alt="STLink - USB-C" src="/images/posts/2022-12-14_zelda_gw/stlink_usb-c.jpg" /></p>
+<h4 id="preparacion-entorno">Preparación entorno<a class="headerlink" href="#preparacion-entorno" title="Permanent link">&para;</a></h4>
+<p>No estoy seguro de si es necesario, ya que no hubo suerte con el STLink v2 clónico adquirido, pero creo que es necesario parchear el firmware del mismo siguiendo alguna de las opciones de <a href="https://www.schuerewegen.tk/download/stlink_v2_clone_hardware_reset_patch_v5.txt">esta guía</a> (en mi caso pude seguir el método #2 sin problemas).</p>
+<p>Empezamos instalando algunos requisitos:</p>
+<div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt upgrade
+sudo apt install libnewlib-arm-none-eabi build-essential git python3-pip libncurses-dev binutils-arm-none-eabi python3 libhidapi-hidraw0 libftdi1 libftdi1-2 libjaylink-dev
+</code></pre></div>
+<p>Crear el fichero <code>/etc/udev/rules.d/49-stlinkv2.rules</code> con el siguiente contenido:</p>
+<div class="highlight"><pre><span></span><code># stm32 discovery boards, with onboard st/linkv2
+# ie, STM32L, STM32F4.
+
+SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;0483&quot;, ATTRS{idProduct}==&quot;3748&quot;, \
+    MODE:=&quot;0666&quot;, \
+    SYMLINK+=&quot;stlinkv2_%n&quot;
+
+# If you share your linux system with other users, or just don&#39;t like the
+# idea of write permission for everybody, you can replace MODE:=&quot;0666&quot; with
+# OWNER:=&quot;yourusername&quot; to create the device owned by you, or with
+# GROUP:=&quot;somegroupname&quot; and mange access using standard unix groups.
+</code></pre></div>
+<p>Instalar compilador cruzado:</p>
+<div class="highlight"><pre><span></span><code>mkdir ~/gnw
+cd ~/gnw
+wget https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
+sudo tar xjf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 -C /usr/share
+</code></pre></div>
+<p>Instalar OpenOCD parcheado. El commit utilizado duante la elaboración de esta guía es el <a href="https://github.com/kbeckmann/ubuntu-openocd-git-builder/commit/9a464c45a746e13dcea41d2b734e0001ecc67c14">9a464c4</a>:</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/kbeckmann/ubuntu-openocd-git-builder.git
+cd ubuntu-openocd-git-builder
+./build.sh
+sudo dpkg -i openocd-git_0.12.0-40-gcda39f929_amd64.deb
+</code></pre></div>
+<p>Ajustar variables de entorno globales (este paso será necesario realizarlo cada vez que cambiemos de sesión):</p>
+<div class="highlight"><pre><span></span><code>export ADAPTER=stlink
+export OPENOCD=&quot;/opt/openocd-git/bin/openocd&quot;
+export GCC_PATH=/usr/share/gcc-arm-none-eabi-10.3-2021.10/bin
+</code></pre></div>
+<p>Desbloquear consola. Los 5 scripts que hay que ejecutar emiten mensajes muy explícitos por consola que habrá que seguir al pie de la letra. El commit utilizado duante la elaboración de esta guía es el <a href="https://github.com/ghidraninja/game-and-watch-backup/commit/7d99781f9081d86bacf976c282ddf4ee2803a266">7d99781</a>:</p>
+<div class="highlight"><pre><span></span><code>cd ~/gnw
+git clone https://github.com/ghidraninja/game-and-watch-backup.git
+cd game-and-watch-backup
+
+./1_sanity_check.sh rpi zelda
+./2_backup_flash.sh rpi zelda
+./3_backup_internal_flash.sh rpi zelda
+./4_unlock_device.sh rpi zelda
+./5_restore.sh rpi zelda
+</code></pre></div>
+<p>Instalar RetroGo. El commit utilizado duante la elaboración de esta guía es el <a href="https://github.com/sylverb/game-and-watch-retro-go/commit/682b60ec73055ebd6738a036d9b243beaea0b2c2">682b60e</a>:</p>
+<div class="highlight"><pre><span></span><code>cd ~/gnw
+git clone --recurse-submodules https://github.com/sylverb/game-and-watch-retro-go
+cd game-and-watch-retro-go
+pip install -r requirements.txt
+</code></pre></div>
+<p>Copiar las ROMs que se quieren instalar en el directorio <code>~/gnw/game-and-watch-retro-go/roms</code> en los directorios correspondientes a cada sistema y compilar:</p>
+<div class="highlight"><pre><span></span><code>make clean GNW_TARGET=zelda
+make romdef GNW_TARGET=zelda
+make COVERFLOW=1 JPG_QUALITY=90 COMPRESS=lzma GNW_TARGET=zelda EXTFLASH_SIZE_MB=64 PT_PT=0 FR_FR=0 IT_IT=0
+</code></pre></div>
+<p>Al final de la compilación se obtiene un informe del espacio ocupado por el binario resultante en la flash externa. Con esto se puede depurar la selección de ROMs hasta encontrar una combinación que quepa en el espacio disponible. Una vez que se encuentre una combinación válida (se recomienda dejar espacio para los savestates), flashear con el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code>make flash COVERFLOW=1 JPG_QUALITY=90 COMPRESS=lzma GNW_TARGET=zelda EXTFLASH_SIZE_MB=64 PT_PT=0 FR_FR=0 IT_IT=0
+</code></pre></div>
 <h2 id="documentacion-paletochan">Documentación paletochan<a class="headerlink" href="#documentacion-paletochan" title="Permanent link">&para;</a></h2>
 <p>bueno, el repositorio es un poco lioso, hay que saltar de un sitio a otro pero, ahora te pongo aqui lo que he conseguido usar con exito
 Este el que lo hizo y su video: https://www.youtube.com/watch?v=Rsi8p5gbaps</p>
@@ -2680,6 +2843,7 @@ ea 🙂</p>
 <ul>
 <li>https://facelesstech.wordpress.com/2022/01/08/game-and-watch-hacking-with-rpi/</li>
 <li>https://community.element14.com/challenges-projects/project14/hacktheholidays/b/blog/posts/the-n-o-before-christmas-upgrade-time</li>
+<li>https://gist.github.com/DNA64/ae58ccdca9416e9eacb8cd392f5cb7fd</li>
 <li>Repositorios:<ul>
 <li><a href="https://github.com/ghidraninja/game-and-watch-backup">backup y restore OFW</a></li>
 <li><a href="https://github.com/sylverb/game-and-watch-retro-go">retrogo</a></li>
@@ -2854,6 +3018,17 @@ cd ~/gnw/game-and-watch-retro-go
 make clean GNW_TARGET=zelda
 make romdef GNW_TARGET=zelda
 make flash COVERFLOW=1 JPG_QUALITY=90 COMPRESS=lzma GNW_TARGET=zelda EXTFLASH_SIZE_MB=60 EXTFLASH_OFFSET=4194304 INTFLASH_BANK=2
+</code></pre></div>
+<h2 id="respaldo-de-savestates">Respaldo de savestates<a class="headerlink" href="#respaldo-de-savestates" title="Permanent link">&para;</a></h2>
+<p>Guardar copia de <code>build/gw_retro_go.elf</code></p>
+<div class="highlight"><pre><span></span><code>cd ~/gnw/game-and-watch-retro-go
+scripts/saves_backup.sh build/gw_retro_go.elf
+</code></pre></div>
+<p>Los savestates quedan en <code>~/gnw/game-and-watch-retro-go/save_states</code>.</p>
+<h2 id="restauracion-de-savestates">Restauración de savestates<a class="headerlink" href="#restauracion-de-savestates" title="Permanent link">&para;</a></h2>
+<p>Utilizar copia de <code>build/gw_retro_go.elf</code>. Los savestates tienen que estar en <code>~/gnw/game-and-watch-retro-go/save_states</code> y coincidir los nombres con los de las ROMs.</p>
+<div class="highlight"><pre><span></span><code>cd ~/gnw/game-and-watch-retro-go
+scripts/saves_restore.sh build/gw_retro_go.elf
 </code></pre></div>
 <h2 id="lista-juegos-gw">Lista juegos G&amp;W<a class="headerlink" href="#lista-juegos-gw" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>gnw_ball.zip        Game &amp; Watch Ball.gw                                        OK
