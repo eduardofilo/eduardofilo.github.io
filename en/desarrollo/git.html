@@ -2896,7 +2896,9 @@ $ git push origin :refs/tags/tag_id
 <li>snapshot vs snapshot: <code>git diff &lt;from_SHA1&gt; &lt;to_SHA1&gt;</code></li>
 </ul>
 <p>Ficheros modificados entre dos commits:</p>
-<div class="highlight"><pre><span></span><code>$ git diff --name-only SHA1 SHA2
+<div class="highlight"><pre><span></span><code>$ git diff --name-status SHA1 SHA2
+$ <span class="c1">#o</span>
+$ git diff --name-only SHA1 SHA2
 $ <span class="c1">#o</span>
 $ git diff --stat SHA1 SHA2
 </code></pre></div>

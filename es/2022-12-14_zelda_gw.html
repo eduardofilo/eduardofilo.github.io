@@ -3025,6 +3025,8 @@ make flash COVERFLOW=1 JPG_QUALITY=90 COMPRESS=lzma GNW_TARGET=zelda EXTFLASH_SI
 scripts/saves_backup.sh build/gw_retro_go.elf
 </code></pre></div>
 <p>Los savestates quedan en <code>~/gnw/game-and-watch-retro-go/save_states</code>.</p>
+<p>So found out you can extract your battery save .srm from the .save file from your G&amp;W. Make sure to create a in game battery save then do a retro go save. Back that up then run this dd command
+dd if=game.save skip=53248 bs=1 of=game.srm</p>
 <h2 id="restauracion-de-savestates">Restauración de savestates<a class="headerlink" href="#restauracion-de-savestates" title="Permanent link">&para;</a></h2>
 <p>Utilizar copia de <code>build/gw_retro_go.elf</code>. Los savestates tienen que estar en <code>~/gnw/game-and-watch-retro-go/save_states</code> y coincidir los nombres con los de las ROMs.</p>
 <div class="highlight"><pre><span></span><code>cd ~/gnw/game-and-watch-retro-go
