@@ -2851,9 +2851,12 @@ $ sudo systemctl start docker
 $ sudo groupadd docker
 $ sudo usermod -aG docker <span class="nv">$USER</span>
 </code></pre></div>
+<p>Hay que reiniciar el sistema para que tenga efecto el último comando que añade el usuario al grupo <code>docker</code>.</p>
 <h3 id="instalacion-de-docker-compose"><a href="https://docs.docker.com/compose/install/">Instalación de Docker compose</a><a class="headerlink" href="#instalacion-de-docker-compose" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>$ sudo curl -L <span class="s2">&quot;https://github.com/docker/compose/releases/download/1.23.2/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&quot;</span> -o /usr/local/bin/docker-compose
-$ sudo chmod +x /usr/local/bin/docker-compose
+<p>Sustituir la versión por el último tag encontrado en la <a href="https://github.com/docker/compose/releases">página de releases del repositorio</a>. En el momento de escribir esto era la <code>v2.17.1</code>.</p>
+<div class="highlight"><pre><span></span><code>$ mkdir -p <span class="nv">$HOME</span>/.docker/cli-plugins
+$ sudo curl -L <span class="s2">&quot;https://github.com/docker/compose/releases/download/v2.17.1/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&quot;</span> -o <span class="nv">$HOME</span>/.docker/cli-plugins/docker-compose
+$ sudo chmod +x <span class="nv">$HOME</span>/.docker/cli-plugins/docker-compose
 </code></pre></div>
 <h3 id="instalacion-portainer">Instalación Portainer<a class="headerlink" href="#instalacion-portainer" title="Permanent link">&para;</a></h3>
 <p>Cerrar y volver a abrir la consola para que se aplique el último cambio del bloque anterior.</p>
