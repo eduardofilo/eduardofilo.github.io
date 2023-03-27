@@ -2436,8 +2436,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#redireccion-de-salidas" class="md-nav__link">
-    Redirección de salidas
+  <a href="#redireccion-de-salidas-en-bash" class="md-nav__link">
+    Redirección de salidas en bash
   </a>
   
 </li>
@@ -2942,8 +2942,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#redireccion-de-salidas" class="md-nav__link">
-    Redirección de salidas
+  <a href="#redireccion-de-salidas-en-bash" class="md-nav__link">
+    Redirección de salidas en bash
   </a>
   
 </li>
@@ -3391,11 +3391,14 @@ zip <span class="s2">&quot;</span><span class="si">${</span><span class="nv">fil
 mv <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">f</span><span class="p">:</span><span class="nv">5</span><span class="p">:</span><span class="si">${#</span><span class="nv">f</span><span class="si">}}</span><span class="s2">&quot;</span>
 <span class="k">done</span>
 </code></pre></div>
-<h2 id="redireccion-de-salidas">Redirección de salidas<a class="headerlink" href="#redireccion-de-salidas" title="Permanent link">&para;</a></h2>
+<h2 id="redireccion-de-salidas-en-bash">Redirección de salidas en bash<a class="headerlink" href="#redireccion-de-salidas-en-bash" title="Permanent link">&para;</a></h2>
 <p>Para redirigir ambas salidas de un programa (estandar y error) hacer lo siguiente:</p>
-<div class="highlight"><pre><span></span><code>$ COMANDO &gt; FICHERO_O_DISPOSITIVO <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+<div class="highlight"><pre><span></span><code>$ COMANDO&gt;FICHERO_O_DISPOSITIVO <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 </code></pre></div>
-<p>En <a href="http://sc.tamu.edu/help/general/unix/redirection.html">esta página</a> se documenta con más detalle este tema.</p>
+<p>Para redirigir la salida de error a un fichero o dispositivo:</p>
+<div class="highlight"><pre><span></span><code>$ COMANDO <span class="m">2</span>&gt;FICHERO_O_DISPOSITIVO
+</code></pre></div>
+<p>En <a href="[http://sc.tamu.edu/help/general/unix/redirection.html](https://web.archive.org/web/20170715100659/http://sc.tamu.edu/help/general/unix/redirection.html)">esta página</a> se documenta con más detalle este tema.</p>
 <h2 id="ejecucion-remota-de-aplicaciones-xwindow">Ejecución remota de aplicaciones XWindow<a class="headerlink" href="#ejecucion-remota-de-aplicaciones-xwindow" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Abrir el servidor X (Cygwin)</li>
