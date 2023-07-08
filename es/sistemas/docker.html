@@ -2922,6 +2922,7 @@ $ docker update --restart<span class="o">=</span>always &lt;hash&gt;            
 $ docker update --restart<span class="o">=</span>no &lt;hash&gt;                   <span class="c1"># Quitar opción de reinicio a un contenedor que ya está creado</span>
 $ docker port &lt;hash&gt;                                  <span class="c1"># Muestra el mapeo de puertos del contenedor</span>
 $ docker inspect &lt;hash&gt;                               <span class="c1"># Muestra todo el JSON con la configuración del contenedor</span>
+$ docker volume prune                                 <span class="c1"># Borra volúmenes sin uso</span>
 </code></pre></div>
 <h2 id="crear-volume-para-persistir-informacion">Crear volume para persistir información<a class="headerlink" href="#crear-volume-para-persistir-informacion" title="Permanent link">&para;</a></h2>
 <p>Para poder recrear el contenedor sin perder la información que haya podido generar, conviene montar los distintos directorios que queremos conservar en volúmenes.</p>
