@@ -12,8 +12,14 @@
         <meta name="author" content="Eduardo Moreno Lamana">
       
       
+      
+        <link rel="prev" href="ubuntu_phone.html">
+      
+      
+        <link rel="next" href="unix.html">
+      
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
@@ -21,13 +27,13 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
-        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
+
     
     
     
@@ -42,10 +48,11 @@
     
       <link rel="stylesheet" href="https://unpkg.com/mermaid@8.5.1/dist/mermaid.css">
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -109,27 +116,31 @@
       </div>
     </div>
     
-      <form class="md-header__option" data-md-component="palette">
-        
+      
+        <form class="md-header__option" data-md-component="palette">
           
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
           
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
           
-            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
-            </label>
-          
-        
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
-          
-            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
-            </label>
-          
-        
-      </form>
+        </form>
+      
     
     
       <div class="md-header__option">
@@ -146,13 +157,13 @@
                     Español
                   </a>
                 </li>
-                
+              
                 <li class="md-select__item">
                   <a href="../../en/sistemas/ubuntu.html" hreflang="en" class="md-select__link">
                     English
                   </a>
                 </li>
-                
+              
             </ul>
           </div>
         </div>
@@ -171,9 +182,9 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Buscar">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -185,7 +196,7 @@
           <div class="md-search-result__meta">
             Inicializando búsqueda
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -197,7 +208,7 @@
         <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     eduardofilo.mkdocs
@@ -216,7 +227,7 @@
           
             
 <nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -366,7 +377,7 @@
       <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     eduardofilo.mkdocs
@@ -387,17 +398,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_1">
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
           Blog
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Blog" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
           Blog
@@ -1233,17 +1245,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_2">
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
           Desarrollo
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Desarrollo" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Desarrollo
@@ -1589,17 +1602,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
           Ingeniería
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Ingeniería" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Ingeniería
@@ -1721,17 +1735,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4">
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
           Proyectos
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Proyectos" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Proyectos
@@ -1797,17 +1812,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5">
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
           Retro-Emulación
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Retro-Emulación" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Retro-Emulación
@@ -2015,17 +2031,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
           Sistemas
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Sistemas" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Sistemas
@@ -2321,7 +2338,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
@@ -2830,17 +2847,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7">
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
           Varios
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Varios" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           Varios
@@ -3424,14 +3442,14 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-  <a href="https://github.com/eduardofilo/eduardofilo.mkdocs/edit/master/docs/sistemas/ubuntu.md" title="Editar esta página" class="md-content__button md-icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+                  
 
+  
+  
 
 
 <h1 id="ubuntu">Ubuntu<a class="headerlink" href="#ubuntu" title="Permanent link">&para;</a></h1>
@@ -3519,17 +3537,17 @@
 <ul>
 <li>Instalar un <a href="http://medibuntu.org/repository.php">repositorio no oficial</a> que contiene los codecs:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ sudo -E wget --output-document<span class="o">=</span>/etc/apt/sources.list.d/medibuntu.list http://www.medibuntu.org/sources.list.d/<span class="k">$(</span>lsb_release -cs<span class="k">)</span>.list <span class="o">&amp;&amp;</span> sudo apt-get --quiet update <span class="o">&amp;&amp;</span> sudo apt-get --yes --quiet --allow-unauthenticated install medibuntu-keyring <span class="o">&amp;&amp;</span> sudo apt-get --quiet update
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>-E<span class="w"> </span>wget<span class="w"> </span>--output-document<span class="o">=</span>/etc/apt/sources.list.d/medibuntu.list<span class="w"> </span>http://www.medibuntu.org/sources.list.d/<span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span>.list<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>--quiet<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>--yes<span class="w"> </span>--quiet<span class="w"> </span>--allow-unauthenticated<span class="w"> </span>install<span class="w"> </span>medibuntu-keyring<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>--quiet<span class="w"> </span>update
 </code></pre></div>
 <ul>
 <li>Instalar el codificador y los codecs:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ sudo aptitude install ffmpeg libavcodec-extra-53
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>aptitude<span class="w"> </span>install<span class="w"> </span>ffmpeg<span class="w"> </span>libavcodec-extra-53
 </code></pre></div>
 <ul>
 <li>Codificar el video:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ ffmpeg -i EspacioMudejar.wmv -s qcif -vcodec h263 -acodec libfaac -ac <span class="m">1</span> -ar <span class="m">8000</span> -r <span class="m">25</span> -ab <span class="m">32</span> -strict experimental -y EspacioMudejar.3gp
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ffmpeg<span class="w"> </span>-i<span class="w"> </span>EspacioMudejar.wmv<span class="w"> </span>-s<span class="w"> </span>qcif<span class="w"> </span>-vcodec<span class="w"> </span>h263<span class="w"> </span>-acodec<span class="w"> </span>libfaac<span class="w"> </span>-ac<span class="w"> </span><span class="m">1</span><span class="w"> </span>-ar<span class="w"> </span><span class="m">8000</span><span class="w"> </span>-r<span class="w"> </span><span class="m">25</span><span class="w"> </span>-ab<span class="w"> </span><span class="m">32</span><span class="w"> </span>-strict<span class="w"> </span>experimental<span class="w"> </span>-y<span class="w"> </span>EspacioMudejar.3gp
 </code></pre></div>
 <p>Las opciones más importantes son:</p>
 <ul>
@@ -3539,29 +3557,29 @@
 </ul>
 <h2 id="convertir-ape-a-wav">Convertir APE a WAV<a class="headerlink" href="#convertir-ape-a-wav" title="Permanent link">&para;</a></h2>
 <p>Los ficheros .ape con que se distribuyen algunos CD's se puede convertir a WAV para poder quemarlo a un CD (con un fichero .cue que normalmente acompaña al .ape se puede quemar directamente con el Burn del Mac por ejemplo) instalando el paquete <code>ffmpeg</code> y ejecutando el siguiente comando:</p>
-<div class="highlight"><pre><span></span><code>$ ffmpeg -i fichero.ape fichero.wav
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ffmpeg<span class="w"> </span>-i<span class="w"> </span>fichero.ape<span class="w"> </span>fichero.wav
 </code></pre></div>
 <p>Hay que acordarse de sustituir dentro del fichero .cue la referencia al fichero original .ape por el nuevo .wav.</p>
 <h2 id="convertir-flac-a-wav">Convertir FLAC a WAV<a class="headerlink" href="#convertir-flac-a-wav" title="Permanent link">&para;</a></h2>
 <p>Los ficheros .flac con que se distribuyen algunos CD's se puede convertir a WAV para poder quemarlo a un CD (con un fichero .cue que normalmente acompaña al .flac se puede quemar directamente con el Burn del Mac por ejemplo) instalando el paquete <code>flac</code> y ejecutando el siguiente comando:</p>
-<div class="highlight"><pre><span></span><code>$ flac -d fichero.flac
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>flac<span class="w"> </span>-d<span class="w"> </span>fichero.flac
 </code></pre></div>
 <p>Hay que acordarse de sustituir dentro del fichero .cue la referencia al fichero original .flac por el nuevo .wav.</p>
 <h2 id="restaurar-panel-gnome">Restaurar panel Gnome<a class="headerlink" href="#restaurar-panel-gnome" title="Permanent link">&para;</a></h2>
 <p>(<a href="http://www.google.com/url?q=http%3A%2F%2Fsuperuser.com%2Fquestions%2F129320%2Fhow-do-i-restore-the-default-applets-to-gnomes-notification-area&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGUVYnYCoUfrVCGX5tIHc5UWBNeDw">fuente 1</a>; <a href="http://www.google.com/url?q=http%3A%2F%2Fwww.watchingthenet.com%2Frestore-panels-in-ubuntu-back-to-their-default-settings.html&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHAEFYUaK7ztqIKEgF563uoWWTHBw">fuente 2</a>)</p>
-<div class="highlight"><pre><span></span><code>$ gconftool --recursive-unset /apps/panel
-$ rm -rf ~/.gconf/apps/panel
-$ pkill gnome-panel
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>gconftool<span class="w"> </span>--recursive-unset<span class="w"> </span>/apps/panel
+$<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>~/.gconf/apps/panel
+$<span class="w"> </span>pkill<span class="w"> </span>gnome-panel
 </code></pre></div>
 <h2 id="concatenar-pdfs">Concatenar PDF's<a class="headerlink" href="#concatenar-pdfs" title="Permanent link">&para;</a></h2>
 <p>Con <code>pdftk</code> programa en linea de comando para procesar ficheros PDF. Está para casi todas las plataformas.</p>
-<div class="highlight"><pre><span></span><code>$ sudo aptitude search pdftk
-i pdftk - A useful tool <span class="k">for</span> manipulating PDF documents
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>aptitude<span class="w"> </span>search<span class="w"> </span>pdftk
+i<span class="w"> </span>pdftk<span class="w"> </span>-<span class="w"> </span>A<span class="w"> </span>useful<span class="w"> </span>tool<span class="w"> </span><span class="k">for</span><span class="w"> </span>manipulating<span class="w"> </span>PDF<span class="w"> </span>documents
 
-$ sudo aptitude install pdftk
+$<span class="w"> </span>sudo<span class="w"> </span>aptitude<span class="w"> </span>install<span class="w"> </span>pdftk
 </code></pre></div>
 <p>Concatenar todos los archivos facilmente que tengas en una carpeta:</p>
-<div class="highlight"><pre><span></span><code>$ pdftk carpeta_con_todos_ficheros/*.pdf cat output fichero_concatenado.pdf
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pdftk<span class="w"> </span>carpeta_con_todos_ficheros/*.pdf<span class="w"> </span>cat<span class="w"> </span>output<span class="w"> </span>fichero_concatenado.pdf
 </code></pre></div>
 <p>Tiene muchas mas funcionalidades consultables con –help, pero si quieres, puedes echarle un vistazo a un <a href="https://www.linux-magazine.es/issue/12/PDFTk.pdf">articulo de Linux-Magazine “PDF a tope”</a>.</p>
 <h2 id="apod">APOD<a class="headerlink" href="#apod" title="Permanent link">&para;</a></h2>
@@ -3578,77 +3596,77 @@ $ sudo aptitude install pdftk
 <span class="c1"># although it&#39;d be nice if you keep the above notice.</span>
 <span class="c1"># Just don&#39;t blame me if it blows your computer.</span>
 
-import urllib
-import gconf
-import os
+import<span class="w"> </span>urllib
+import<span class="w"> </span>gconf
+import<span class="w"> </span>os
 
-<span class="nv">dir</span> <span class="o">=</span> os.getenv<span class="o">(</span><span class="s1">&#39;HOME&#39;</span><span class="o">)</span> + <span class="s1">&#39;/.apod&#39;</span>
+<span class="nv">dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>os.getenv<span class="o">(</span><span class="s1">&#39;HOME&#39;</span><span class="o">)</span><span class="w"> </span>+<span class="w"> </span><span class="s1">&#39;/.apod&#39;</span>
 try:
-    os.mkdir<span class="o">(</span>dir<span class="o">)</span>
+<span class="w">    </span>os.mkdir<span class="o">(</span>dir<span class="o">)</span>
 except:
-    pass
+<span class="w">    </span>pass
 
 try:
-    execfile<span class="o">(</span>dir + <span class="s1">&#39;/options.py&#39;</span><span class="o">)</span>
+<span class="w">    </span>execfile<span class="o">(</span>dir<span class="w"> </span>+<span class="w"> </span><span class="s1">&#39;/options.py&#39;</span><span class="o">)</span>
 except:
-    pass
+<span class="w">    </span>pass
 
-def DoAPOD<span class="o">()</span>:
-    <span class="nv">u</span> <span class="o">=</span> urllib.urlopen<span class="o">(</span><span class="s1">&#39;http://apod.nasa.gov/apod/&#39;</span><span class="o">)</span>
-    <span class="nv">KEY1</span> <span class="o">=</span> <span class="s1">&#39;href=&quot;&#39;</span>
-    <span class="nv">KEY2</span> <span class="o">=</span> <span class="s1">&#39;&quot;&#39;</span>
-    <span class="nv">image</span> <span class="o">=</span> None
-    <span class="k">for</span> line <span class="k">in</span> u.readlines<span class="o">()</span>:
-        <span class="nv">pos1</span> <span class="o">=</span> line.find<span class="o">(</span>KEY1<span class="o">)</span>
-        <span class="k">if</span> <span class="nv">pos1</span> <span class="o">==</span> -1:
-            <span class="k">continue</span>
-        <span class="nv">pos1</span> <span class="o">+=</span> len<span class="o">(</span>KEY1<span class="o">)</span>
-        <span class="nv">pos2</span> <span class="o">=</span> line.find<span class="o">(</span>KEY2, pos1<span class="o">)</span>
-        <span class="k">if</span> <span class="nv">pos2</span> <span class="o">==</span> -1:
-            <span class="k">continue</span>
-        <span class="nv">href</span> <span class="o">=</span> line<span class="o">[</span>pos1:pos2<span class="o">]</span>
-        <span class="nv">hrefl</span> <span class="o">=</span> href.lower<span class="o">()</span>
-        <span class="k">if</span> hrefl.endswith<span class="o">(</span><span class="s1">&#39;.jpg&#39;</span><span class="o">)</span> or hrefl.endswith<span class="o">(</span><span class="s1">&#39;.png&#39;</span><span class="o">)</span>:
-            <span class="nv">image</span> <span class="o">=</span> href
-            <span class="nb">break</span>
-    u.close<span class="o">()</span>
+def<span class="w"> </span>DoAPOD<span class="o">()</span>:
+<span class="w">    </span><span class="nv">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>urllib.urlopen<span class="o">(</span><span class="s1">&#39;http://apod.nasa.gov/apod/&#39;</span><span class="o">)</span>
+<span class="w">    </span><span class="nv">KEY1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;href=&quot;&#39;</span>
+<span class="w">    </span><span class="nv">KEY2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&quot;&#39;</span>
+<span class="w">    </span><span class="nv">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>None
+<span class="w">    </span><span class="k">for</span><span class="w"> </span>line<span class="w"> </span><span class="k">in</span><span class="w"> </span>u.readlines<span class="o">()</span>:
+<span class="w">        </span><span class="nv">pos1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>line.find<span class="o">(</span>KEY1<span class="o">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nv">pos1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>-1:
+<span class="w">            </span><span class="k">continue</span>
+<span class="w">        </span><span class="nv">pos1</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>len<span class="o">(</span>KEY1<span class="o">)</span>
+<span class="w">        </span><span class="nv">pos2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>line.find<span class="o">(</span>KEY2,<span class="w"> </span>pos1<span class="o">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nv">pos2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>-1:
+<span class="w">            </span><span class="k">continue</span>
+<span class="w">        </span><span class="nv">href</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>line<span class="o">[</span>pos1:pos2<span class="o">]</span>
+<span class="w">        </span><span class="nv">hrefl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>href.lower<span class="o">()</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span>hrefl.endswith<span class="o">(</span><span class="s1">&#39;.jpg&#39;</span><span class="o">)</span><span class="w"> </span>or<span class="w"> </span>hrefl.endswith<span class="o">(</span><span class="s1">&#39;.png&#39;</span><span class="o">)</span>:
+<span class="w">            </span><span class="nv">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>href
+<span class="w">            </span><span class="k">break</span>
+<span class="w">    </span>u.close<span class="o">()</span>
 
-    <span class="k">if</span> not image:
-        <span class="k">return</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span>not<span class="w"> </span>image:
+<span class="w">        </span><span class="k">return</span>
 
-    <span class="nv">image_base</span> <span class="o">=</span> os.path.split<span class="o">(</span>image<span class="o">)[</span>-1<span class="o">]</span>
-    <span class="nv">image_base_ext</span> <span class="o">=</span> os.path.splitext<span class="o">(</span>image_base<span class="o">)</span>
-    <span class="nv">image_base</span> <span class="o">=</span> <span class="s1">&#39;apod&#39;</span> + image_base_ext<span class="o">[</span>-1<span class="o">]</span>
+<span class="w">    </span><span class="nv">image_base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>os.path.split<span class="o">(</span>image<span class="o">)[</span>-1<span class="o">]</span>
+<span class="w">    </span><span class="nv">image_base_ext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>os.path.splitext<span class="o">(</span>image_base<span class="o">)</span>
+<span class="w">    </span><span class="nv">image_base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;apod&#39;</span><span class="w"> </span>+<span class="w"> </span>image_base_ext<span class="o">[</span>-1<span class="o">]</span>
 
-    <span class="k">if</span> not <span class="o">(</span>image.startswith<span class="o">(</span><span class="s1">&#39;http:&#39;</span><span class="o">)</span> or image.startswith<span class="o">(</span><span class="s1">&#39;ftp:&#39;</span><span class="o">))</span>:
-        <span class="k">if</span> not image.startswith<span class="o">(</span><span class="s1">&#39;/&#39;</span><span class="o">)</span>:
-            <span class="nv">image</span> <span class="o">=</span> <span class="s1">&#39;/apod.nasa.gov/apod/&#39;</span> + image
-        <span class="nv">image</span> <span class="o">=</span> <span class="s1">&#39;http:/&#39;</span> + image
+<span class="w">    </span><span class="k">if</span><span class="w"> </span>not<span class="w"> </span><span class="o">(</span>image.startswith<span class="o">(</span><span class="s1">&#39;http:&#39;</span><span class="o">)</span><span class="w"> </span>or<span class="w"> </span>image.startswith<span class="o">(</span><span class="s1">&#39;ftp:&#39;</span><span class="o">))</span>:
+<span class="w">        </span><span class="k">if</span><span class="w"> </span>not<span class="w"> </span>image.startswith<span class="o">(</span><span class="s1">&#39;/&#39;</span><span class="o">)</span>:
+<span class="w">            </span><span class="nv">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/apod.nasa.gov/apod/&#39;</span><span class="w"> </span>+<span class="w"> </span>image
+<span class="w">        </span><span class="nv">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;http:/&#39;</span><span class="w"> </span>+<span class="w"> </span>image
 
-    <span class="nv">img</span> <span class="o">=</span> urllib.urlopen<span class="o">(</span>image<span class="o">)</span>
-    <span class="nv">d</span> <span class="o">=</span> img.read<span class="o">()</span>
-    img.close<span class="o">()</span>
+<span class="w">    </span><span class="nv">img</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>urllib.urlopen<span class="o">(</span>image<span class="o">)</span>
+<span class="w">    </span><span class="nv">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>img.read<span class="o">()</span>
+<span class="w">    </span>img.close<span class="o">()</span>
 
-    try:
-        os.unlink<span class="o">(</span><span class="s1">&#39;apod.jpg&#39;</span><span class="o">)</span>
-    except:
-        pass
-    try:
-        os.unlink<span class="o">(</span><span class="s1">&#39;apod.png&#39;</span><span class="o">)</span>
-    except:
-        pass
+<span class="w">    </span>try:
+<span class="w">        </span>os.unlink<span class="o">(</span><span class="s1">&#39;apod.jpg&#39;</span><span class="o">)</span>
+<span class="w">    </span>except:
+<span class="w">        </span>pass
+<span class="w">    </span>try:
+<span class="w">        </span>os.unlink<span class="o">(</span><span class="s1">&#39;apod.png&#39;</span><span class="o">)</span>
+<span class="w">    </span>except:
+<span class="w">        </span>pass
 
-    <span class="nv">name</span> <span class="o">=</span> dir + <span class="s1">&#39;/&#39;</span> + image_base
-    <span class="nv">f</span> <span class="o">=</span> file<span class="o">(</span>name, <span class="s1">&#39;wb&#39;</span><span class="o">)</span>
-    f.write<span class="o">(</span>d<span class="o">)</span>
-    f.close<span class="o">()</span>
+<span class="w">    </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>dir<span class="w"> </span>+<span class="w"> </span><span class="s1">&#39;/&#39;</span><span class="w"> </span>+<span class="w"> </span>image_base
+<span class="w">    </span><span class="nv">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>file<span class="o">(</span>name,<span class="w"> </span><span class="s1">&#39;wb&#39;</span><span class="o">)</span>
+<span class="w">    </span>f.write<span class="o">(</span>d<span class="o">)</span>
+<span class="w">    </span>f.close<span class="o">()</span>
 
-    <span class="nv">cli</span> <span class="o">=</span> gconf.client_get_default<span class="o">()</span>
-    cli.set_string<span class="o">(</span><span class="s1">&#39;/desktop/gnome/background/picture_filename&#39;</span>, name<span class="o">)</span>
-    cli.set_string<span class="o">(</span><span class="s1">&#39;/desktop/gnome/background/picture_options&#39;</span>, <span class="s1">&#39;zoom&#39;</span><span class="o">)</span>
+<span class="w">    </span><span class="nv">cli</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>gconf.client_get_default<span class="o">()</span>
+<span class="w">    </span>cli.set_string<span class="o">(</span><span class="s1">&#39;/desktop/gnome/background/picture_filename&#39;</span>,<span class="w"> </span>name<span class="o">)</span>
+<span class="w">    </span>cli.set_string<span class="o">(</span><span class="s1">&#39;/desktop/gnome/background/picture_options&#39;</span>,<span class="w"> </span><span class="s1">&#39;zoom&#39;</span><span class="o">)</span>
 
-<span class="k">if</span> <span class="nv">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span>:
-    DoAPOD<span class="o">()</span>
+<span class="k">if</span><span class="w"> </span><span class="nv">__name__</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;__main__&#39;</span>:
+<span class="w">    </span>DoAPOD<span class="o">()</span>
 </code></pre></div>
 <p>Por último programar una tarea en cron para ejecutar el script con el usuario al que queramos que se aplique el fondo de escritorio. Por ejemplo introduciendo la siguiente línea en <code>/etc/crontab</code> para que se ejecute a las 10 de la mañana:</p>
 <div class="highlight"><pre><span></span><code>00 10   * * *   edumoreno       /home/edumoreno/.apod/apod
@@ -3657,32 +3675,32 @@ def DoAPOD<span class="o">()</span>:
 <h2 id="instalar-oracle-java">Instalar Oracle Java<a class="headerlink" href="#instalar-oracle-java" title="Permanent link">&para;</a></h2>
 <p>(Fuentes: <a href="http://www.guia-ubuntu.org/index.php?title=Java#Desde_la_web_de_Java">1</a> y <a href="http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html">2</a>)</p>
 <p>Movemos la carpeta creada después de la instalación (llamada <code>jre1.7.0_05</code> en este ejemplo) a una ruta más apropiada:</p>
-<div class="highlight"><pre><span></span><code>$ sudo mv jre1.7.0_05 /usr/lib/jvm
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>mv<span class="w"> </span>jre1.7.0_05<span class="w"> </span>/usr/lib/jvm
 </code></pre></div>
 <p>Establecemos el nuevo Java como una de las "alternativas de java":</p>
-<div class="highlight"><pre><span></span><code>$ sudo update-alternatives --install <span class="s2">&quot;/usr/bin/java&quot;</span> <span class="s2">&quot;java&quot;</span> <span class="s2">&quot;/usr/lib/jvm/jre1.7.0_05/bin/java&quot;</span> <span class="m">1</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span><span class="s2">&quot;/usr/bin/java&quot;</span><span class="w"> </span><span class="s2">&quot;java&quot;</span><span class="w"> </span><span class="s2">&quot;/usr/lib/jvm/jre1.7.0_05/bin/java&quot;</span><span class="w"> </span><span class="m">1</span>
 </code></pre></div>
 <p>Ahora establecemos la "nueva alternativa" como la real de Java. Este paso hace que la versión de Oracle sea la usada por defecto:</p>
-<div class="highlight"><pre><span></span><code>$ sudo update-alternatives --set java /usr/lib/jvm/jre1.7.0_05/bin/java
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--set<span class="w"> </span>java<span class="w"> </span>/usr/lib/jvm/jre1.7.0_05/bin/java
 </code></pre></div>
 <p>Para comprobar si tenemos la versión 1.7.0, tecleamos en la terminal:</p>
-<div class="highlight"><pre><span></span><code>$ java -version
-java version <span class="s2">&quot;1.7.0_05&quot;</span>
-Java<span class="o">(</span>TM<span class="o">)</span> SE Runtime Environment <span class="o">(</span>build <span class="m">1</span>.7.0_05-b05<span class="o">)</span>
-Java HotSpot<span class="o">(</span>TM<span class="o">)</span> <span class="m">64</span>-Bit Server VM <span class="o">(</span>build <span class="m">23</span>.1-b03, mixed mode<span class="o">)</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>java<span class="w"> </span>-version
+java<span class="w"> </span>version<span class="w"> </span><span class="s2">&quot;1.7.0_05&quot;</span>
+Java<span class="o">(</span>TM<span class="o">)</span><span class="w"> </span>SE<span class="w"> </span>Runtime<span class="w"> </span>Environment<span class="w"> </span><span class="o">(</span>build<span class="w"> </span><span class="m">1</span>.7.0_05-b05<span class="o">)</span>
+Java<span class="w"> </span>HotSpot<span class="o">(</span>TM<span class="o">)</span><span class="w"> </span><span class="m">64</span>-Bit<span class="w"> </span>Server<span class="w"> </span>VM<span class="w"> </span><span class="o">(</span>build<span class="w"> </span><span class="m">23</span>.1-b03,<span class="w"> </span>mixed<span class="w"> </span>mode<span class="o">)</span>
 </code></pre></div>
 <p>Para ver cómo ha quedado el estado de las alternativas:</p>
-<div class="highlight"><pre><span></span><code>$ update-alternatives --config java
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>update-alternatives<span class="w"> </span>--config<span class="w"> </span>java
 </code></pre></div>
 <p>Para ver físicamente cómo han quedado las alternativas relativas a <code>java</code>:</p>
-<div class="highlight"><pre><span></span><code>$ ls -l /etc/alternatives/java*
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/etc/alternatives/java*
 </code></pre></div>
 <p>Si nos interesa borrar alguna de las alternativas (por ejemplo una para <code>java</code>):</p>
-<div class="highlight"><pre><span></span><code>$ sudo update-alternatives --remove java /usr/lib/jvm/jdk1.8.0_20/bin/java
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--remove<span class="w"> </span>java<span class="w"> </span>/usr/lib/jvm/jdk1.8.0_20/bin/java
 </code></pre></div>
 <p>Hay un PPA para poder instalar el JDK más fácilmente. Se pueden ver las instrucciones <a href="http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html">aquí</a>. Desafortunadamente dejó de funcionar a mediados de abril de 2019 por cambios en la política de distribución de Java por parte de Oracle. A partir de ahora instalar manualmente siguiendo <a href="https://www.fosstechnix.com/install-oracle-java-8-on-ubuntu-20-04/">estas instrucciones</a> o instalar el JDK que se distribuye en forma de <a href="https://www.oracle.com/java/technologies/javase-jdk15-downloads.html">.deb</a>.</p>
 <h2 id="reparacion-del-sistema-de-archivos-cuando-se-pone-en-modo-solo-lectura">Reparación del sistema de archivos cuando se pone en modo "sólo lectura"<a class="headerlink" href="#reparacion-del-sistema-de-archivos-cuando-se-pone-en-modo-solo-lectura" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ sudo fsck
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>fsck
 </code></pre></div>
 <h2 id="descarga-de-un-video-incrustado-en-un-reproductor-flash">Descarga de un vídeo incrustado en un reproductor Flash<a class="headerlink" href="#descarga-de-un-video-incrustado-en-un-reproductor-flash" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.youtube.com/watch?v=8PuUnQCS7DQ">Fuente</a></p>
@@ -3696,13 +3714,13 @@ Java HotSpot<span class="o">(</span>TM<span class="o">)</span> <span class="m">6
 <div class="highlight"><pre><span></span><code>rtmp://antena3tvfs.fplive.net/antena3mediateca/mp_series1/f1cms/gestorf1/videos/517/VIDEOS_20130512_1315517.mp4
 </code></pre></div>
 <p>Descargar el stream con el comando "rtmpdump":</p>
-<div class="highlight"><pre><span></span><code>$ rtmpdump -r <span class="s2">&quot;rtmp://antena3tvfs.fplive.net/antena3mediateca/mp_series1/f1cms/gestorf1/videos/517/VIDEOS_20130512_1315517.mp4&quot;</span> -o archivo.mp4
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rtmpdump<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;rtmp://antena3tvfs.fplive.net/antena3mediateca/mp_series1/f1cms/gestorf1/videos/517/VIDEOS_20130512_1315517.mp4&quot;</span><span class="w"> </span>-o<span class="w"> </span>archivo.mp4
 </code></pre></div>
 <p>En ocasiones se produce el error siguiente:</p>
 <div class="highlight"><pre><span></span><code>WARNING: Received FLV packet before play()! Ignoring.
 </code></pre></div>
 <p>En estos casos utilizar el siguiente comando que separa las dos porciones de la URL:</p>
-<div class="highlight"><pre><span></span><code>$ rtmpdump -r <span class="s2">&quot;rtmp://alacarta.aragontelevision.es/vod&quot;</span> -y <span class="s2">&quot;mp4:/_archivos/videos/web/15288/15288.mp4&quot;</span> -o archivo.flv
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rtmpdump<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;rtmp://alacarta.aragontelevision.es/vod&quot;</span><span class="w"> </span>-y<span class="w"> </span><span class="s2">&quot;mp4:/_archivos/videos/web/15288/15288.mp4&quot;</span><span class="w"> </span>-o<span class="w"> </span>archivo.flv
 </code></pre></div>
 <p>Para vídeos de emisiones en vivo hay que añadir la opción <code>-v</code>. Por ejemplo, en una emisión de AragónTV, en la captura Wireshark se localizaron los siguientes elementos:</p>
 <ul>
@@ -3710,7 +3728,7 @@ Java HotSpot<span class="o">(</span>TM<span class="o">)</span> <span class="m">6
 <li>Paquete play =&gt; valor = stream_normal_abt</li>
 </ul>
 <p>Así pues la URL final será: <code>rtmp://aragontvlivefs.fplive.net/aragontvlive-live/stream_normal_abt</code> y el comando de descarga:</p>
-<div class="highlight"><pre><span></span><code>$ rtmpdump -v -r <span class="s2">&quot;rtmp://aragontvlivefs.fplive.net/aragontvlive-live/stream_normal_abt&quot;</span> -o archivo.mp4
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rtmpdump<span class="w"> </span>-v<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;rtmp://aragontvlivefs.fplive.net/aragontvlive-live/stream_normal_abt&quot;</span><span class="w"> </span>-o<span class="w"> </span>archivo.mp4
 </code></pre></div>
 <p>Para descargar vídeos desde YouTube, last.fm, Google video, Dailymotion y Vimeo se puede utilizar el comando <code>clive</code>. <a href="http://www.emezeta.com/articulos/10-comandos-interesantes-para-linux">Aquí</a> comentan cómo se usa.</p>
 <h2 id="descarga-video-de-a3player">Descarga vídeo de A3Player<a class="headerlink" href="#descarga-video-de-a3player" title="Permanent link">&para;</a></h2>
@@ -3728,8 +3746,8 @@ Java HotSpot<span class="o">(</span>TM<span class="o">)</span> <span class="m">6
 <h2 id="compresion-batch-de-videos">Compresión batch de vídeos<a class="headerlink" href="#compresion-batch-de-videos" title="Permanent link">&para;</a></h2>
 <p>Instalar el cliente de linea de comando de <a href="http://handbrake.fr/downloads.php">Handbrake</a>.</p>
 <p>Dependiendo de la extensión habrá que cambiar el <code>ls</code> inicial. Los vídeos de salida son MP4, por lo que si la extensión inicial no es esa, habrá que cambiarla en los ficheros finales.</p>
-<div class="highlight"><pre><span></span><code>$ mkdir comp
-$ ls *.mp4 <span class="p">|</span> awk <span class="s1">&#39;{print &quot;HandBrakeCLI -Z Normal -i &quot;$0&quot; -o comp/&quot;$0}&#39;</span> <span class="p">|</span> sh
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mkdir<span class="w"> </span>comp
+$<span class="w"> </span>ls<span class="w"> </span>*.mp4<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print &quot;HandBrakeCLI -Z Normal -i &quot;$0&quot; -o comp/&quot;$0}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
 </code></pre></div>
 <h2 id="resampleado-de-video-con-handbrake">Resampleado de video con HandBrake<a class="headerlink" href="#resampleado-de-video-con-handbrake" title="Permanent link">&para;</a></h2>
 <p>(<a href="http://www.antiscreeners.com/phpBB2/viewtopic.php?p=85974#85974">Fuente</a>)</p>
@@ -3737,17 +3755,17 @@ $ ls *.mp4 <span class="p">|</span> awk <span class="s1">&#39;{print &quot;HandB
 <h2 id="split-de-videos">Split de vídeos<a class="headerlink" href="#split-de-videos" title="Permanent link">&para;</a></h2>
 <p>(<a href="http://askubuntu.com/questions/35605/splitting-an-mp4-file">Fuente</a>)</p>
 <p>Con el siguiente comando:</p>
-<div class="highlight"><pre><span></span><code>$ ffmpeg -acodec copy -vcodec copy -ss <span class="m">00</span>:00:00 -t <span class="m">00</span>:04:09 -i archivo_original.mp4 archivo_recortado.mp4
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ffmpeg<span class="w"> </span>-acodec<span class="w"> </span>copy<span class="w"> </span>-vcodec<span class="w"> </span>copy<span class="w"> </span>-ss<span class="w"> </span><span class="m">00</span>:00:00<span class="w"> </span>-t<span class="w"> </span><span class="m">00</span>:04:09<span class="w"> </span>-i<span class="w"> </span>archivo_original.mp4<span class="w"> </span>archivo_recortado.mp4
 </code></pre></div>
 <p>Donde el valor de la opción -ss es el instante de inicio en hh:mm:ss y el valor de -t es la longitud en hh:mm:ss</p>
 <p>Durante un tiempo en Ubuntu, <code>ffmpeg</code> no estuvo disponible. Su sustituto fue <code>avconv</code>, compatible la mayoría de las veces. No admitía sin embargo la opción de copiar el codec de audio y vídeo. Había que especificarlo. Una lista de encoders soportados se puede obtener ejecutando:</p>
-<div class="highlight"><pre><span></span><code>$ avconv -encoders
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>avconv<span class="w"> </span>-encoders
 </code></pre></div>
 <p>Un par de codecs comprobados que suelen dar buen resultados son h264 y aac:</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -acodec aac -vcodec h264 -ss <span class="m">01</span>:07:38 -t <span class="m">00</span>:01:14 -i archivo_original.mp4 archivo_recortado.mp4
+<div class="highlight"><pre><span></span><code>ffmpeg<span class="w"> </span>-acodec<span class="w"> </span>aac<span class="w"> </span>-vcodec<span class="w"> </span>h264<span class="w"> </span>-ss<span class="w"> </span><span class="m">01</span>:07:38<span class="w"> </span>-t<span class="w"> </span><span class="m">00</span>:01:14<span class="w"> </span>-i<span class="w"> </span>archivo_original.mp4<span class="w"> </span>archivo_recortado.mp4
 </code></pre></div>
 <h2 id="crop-en-video">Crop en video<a class="headerlink" href="#crop-en-video" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ ffmpeg -i input.mp4 -filter:v <span class="s2">&quot;crop=w:h:x:y&quot;</span> output.mp4
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-filter:v<span class="w"> </span><span class="s2">&quot;crop=w:h:x:y&quot;</span><span class="w"> </span>output.mp4
 </code></pre></div>
 <p>donde:</p>
 <ul>
@@ -3757,27 +3775,27 @@ $ ls *.mp4 <span class="p">|</span> awk <span class="s1">&#39;{print &quot;HandB
 <li>y: coordenada y del punto superior izquierdo del recuadro</li>
 </ul>
 <h2 id="extraer-frame-de-video">Extraer frame de video<a class="headerlink" href="#extraer-frame-de-video" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ ffmpeg -ss <span class="m">00</span>:01:00 -i input.mp4 -frames:v <span class="m">1</span> frame.png
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ffmpeg<span class="w"> </span>-ss<span class="w"> </span><span class="m">00</span>:01:00<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-frames:v<span class="w"> </span><span class="m">1</span><span class="w"> </span>frame.png
 </code></pre></div>
 <p>donde el argumento -ss marca el instante del frame en hh:mm:ss</p>
 <h2 id="redimensionado-de-imagenes-en-lote">Redimensionado de imágenes en lote<a class="headerlink" href="#redimensionado-de-imagenes-en-lote" title="Permanent link">&para;</a></h2>
 <p>Por ejemplo a 1080 de alto manteniendo el ratio dentro de un directorio llamado resized:</p>
-<div class="highlight"><pre><span></span><code>$ convert <span class="s1">&#39;*.jpg[x1080]&#39;</span> resized/%03d.jpg
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>convert<span class="w"> </span><span class="s1">&#39;*.jpg[x1080]&#39;</span><span class="w"> </span>resized/%03d.jpg
 </code></pre></div>
 <p>En ocasiones, si hay varios miles de fotos, se puede llenar la memoria. En este caso hacer la conversión con el siguiente comando, que trata las imágenes una a una:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">1</span>
-<span class="k">for</span> i <span class="k">in</span> *.jpg<span class="p">;</span> <span class="k">do</span>
-  <span class="nv">new</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&quot;%04d.jpg&quot;</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span><span class="k">)</span>
-  convert <span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="o">[</span>x1080<span class="o">]</span> resized/<span class="si">${</span><span class="nv">new</span><span class="si">}</span>
-  <span class="nb">let</span> <span class="nv">a</span><span class="o">=</span>a+1
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.jpg<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="nv">new</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;%04d.jpg&quot;</span><span class="w"> </span><span class="si">${</span><span class="nv">a</span><span class="si">}</span><span class="k">)</span>
+<span class="w">  </span>convert<span class="w"> </span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="o">[</span>x1080<span class="o">]</span><span class="w"> </span>resized/<span class="si">${</span><span class="nv">new</span><span class="si">}</span>
+<span class="w">  </span><span class="nb">let</span><span class="w"> </span><span class="nv">a</span><span class="o">=</span>a+1
 <span class="k">done</span>
 </code></pre></div>
 <h2 id="crop-y-resize-de-imagenes-en-lote">Crop y resize de imágenes en lote<a class="headerlink" href="#crop-y-resize-de-imagenes-en-lote" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">1</span>
-<span class="k">for</span> i <span class="k">in</span> *.jpg<span class="p">;</span> <span class="k">do</span>
-  <span class="nv">new</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&quot;%04d.jpg&quot;</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span><span class="k">)</span>
-  convert <span class="si">${</span><span class="nv">i</span><span class="si">}</span> -crop wxh+x+y -resize wsxhs -gravity Center <span class="si">${</span><span class="nv">new</span><span class="si">}</span>
-  <span class="nb">let</span> <span class="nv">a</span><span class="o">=</span>a+1
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.jpg<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="nv">new</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;%04d.jpg&quot;</span><span class="w"> </span><span class="si">${</span><span class="nv">a</span><span class="si">}</span><span class="k">)</span>
+<span class="w">  </span>convert<span class="w"> </span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="w"> </span>-crop<span class="w"> </span>wxh+x+y<span class="w"> </span>-resize<span class="w"> </span>wsxhs<span class="w"> </span>-gravity<span class="w"> </span>Center<span class="w"> </span><span class="si">${</span><span class="nv">new</span><span class="si">}</span>
+<span class="w">  </span><span class="nb">let</span><span class="w"> </span><span class="nv">a</span><span class="o">=</span>a+1
 <span class="k">done</span>
 </code></pre></div>
 <p>donde:</p>
@@ -3790,41 +3808,41 @@ $ ls *.mp4 <span class="p">|</span> awk <span class="s1">&#39;{print &quot;HandB
 <li>hs: alto del reescalado final</li>
 </ul>
 <h2 id="conversion-de-formato-en-lote">Conversión de formato en lote<a class="headerlink" href="#conversion-de-formato-en-lote" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">for</span> file <span class="k">in</span> *.jpg<span class="p">;</span> <span class="k">do</span>
-  <span class="nv">filename</span><span class="o">=</span><span class="k">$(</span>basename <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="k">)</span>
-  <span class="nv">fileid</span><span class="o">=</span><span class="si">${</span><span class="nv">filename</span><span class="p">%%.*</span><span class="si">}</span>
-  convert <span class="si">${</span><span class="nv">filename</span><span class="si">}</span> <span class="si">${</span><span class="nv">fileid</span><span class="si">}</span>.png
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.jpg<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="nv">filename</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="k">)</span>
+<span class="w">  </span><span class="nv">fileid</span><span class="o">=</span><span class="si">${</span><span class="nv">filename</span><span class="p">%%.*</span><span class="si">}</span>
+<span class="w">  </span>convert<span class="w"> </span><span class="si">${</span><span class="nv">filename</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">fileid</span><span class="si">}</span>.png
 <span class="k">done</span>
 </code></pre></div>
 <h2 id="renombrado-de-archivos-en-lote">Renombrado de archivos en lote<a class="headerlink" href="#renombrado-de-archivos-en-lote" title="Permanent link">&para;</a></h2>
 <p>Por ejemplo una serie de archivos jpg:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">1</span>
-<span class="k">for</span> i <span class="k">in</span> *.jpg<span class="p">;</span> <span class="k">do</span>
-  <span class="nv">new</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&quot;%04d.jpg&quot;</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span><span class="k">)</span>
-  mv <span class="si">${</span><span class="nv">i</span><span class="si">}</span> <span class="si">${</span><span class="nv">new</span><span class="si">}</span>
-  <span class="nb">let</span> <span class="nv">a</span><span class="o">=</span>a+1
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.jpg<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="nv">new</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;%04d.jpg&quot;</span><span class="w"> </span><span class="si">${</span><span class="nv">a</span><span class="si">}</span><span class="k">)</span>
+<span class="w">  </span>mv<span class="w"> </span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">new</span><span class="si">}</span>
+<span class="w">  </span><span class="nb">let</span><span class="w"> </span><span class="nv">a</span><span class="o">=</span>a+1
 <span class="k">done</span>
 </code></pre></div>
 <h2 id="compresion-de-ficheros-en-lote">Compresión de ficheros en lote<a class="headerlink" href="#compresion-de-ficheros-en-lote" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">for</span> file <span class="k">in</span> *.col<span class="p">;</span> <span class="k">do</span>
-  <span class="nv">filename</span><span class="o">=</span><span class="k">$(</span>basename <span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span>
-  <span class="nv">fileid</span><span class="o">=</span><span class="si">${</span><span class="nv">filename</span><span class="p">%%.*</span><span class="si">}</span>
-  7z a <span class="s2">&quot;</span><span class="si">${</span><span class="nv">fileid</span><span class="si">}</span><span class="s2">.7z&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">filename</span><span class="si">}</span><span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.col<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="nv">filename</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span>
+<span class="w">  </span><span class="nv">fileid</span><span class="o">=</span><span class="si">${</span><span class="nv">filename</span><span class="p">%%.*</span><span class="si">}</span>
+<span class="w">  </span>7z<span class="w"> </span>a<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">fileid</span><span class="si">}</span><span class="s2">.7z&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">filename</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="k">done</span>
 </code></pre></div>
 <h2 id="sustitucion-de-cadena-en-ficheros-en-lote">Sustitución de cadena en ficheros en lote<a class="headerlink" href="#sustitucion-de-cadena-en-ficheros-en-lote" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">for</span> file <span class="k">in</span> *.cfg<span class="p">;</span> <span class="k">do</span>
-  <span class="nv">filename</span><span class="o">=</span><span class="k">$(</span>basename <span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span>
-  <span class="nv">fileid</span><span class="o">=</span><span class="si">${</span><span class="nv">filename</span><span class="p">%%.*</span><span class="si">}</span>
-  sed -i <span class="s1">&#39;s/ShowFps 1/ShowFps 0/&#39;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="si">}</span><span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.cfg<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="nv">filename</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span>
+<span class="w">  </span><span class="nv">fileid</span><span class="o">=</span><span class="si">${</span><span class="nv">filename</span><span class="p">%%.*</span><span class="si">}</span>
+<span class="w">  </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/ShowFps 1/ShowFps 0/&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="k">done</span>
 </code></pre></div>
 <h2 id="montaje-de-video-stopmotion-a-partir-de-imagenes">Montaje de vídeo StopMotion a partir de imágenes<a class="headerlink" href="#montaje-de-video-stopmotion-a-partir-de-imagenes" title="Permanent link">&para;</a></h2>
 <p>A 10fps por ejemplo (<a href="http://www.dototot.com/compile-stop-motion-animation-image-sequence-avconv/">Fuente</a>):</p>
-<div class="highlight"><pre><span></span><code>$ ffmpeg -f image2 -r <span class="m">10</span> -i %04d.jpg -vf <span class="nv">scale</span><span class="o">=</span><span class="m">1440</span>:1080 -r:v <span class="m">10</span> -c:v libx264 -qp <span class="m">0</span> -preset veryslow -an <span class="s2">&quot;video.mkv&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ffmpeg<span class="w"> </span>-f<span class="w"> </span>image2<span class="w"> </span>-r<span class="w"> </span><span class="m">10</span><span class="w"> </span>-i<span class="w"> </span>%04d.jpg<span class="w"> </span>-vf<span class="w"> </span><span class="nv">scale</span><span class="o">=</span><span class="m">1440</span>:1080<span class="w"> </span>-r:v<span class="w"> </span><span class="m">10</span><span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-qp<span class="w"> </span><span class="m">0</span><span class="w"> </span>-preset<span class="w"> </span>veryslow<span class="w"> </span>-an<span class="w"> </span><span class="s2">&quot;video.mkv&quot;</span>
 </code></pre></div>
 <h2 id="montaje-de-gif-a-partir-de-imagenes">Montaje de gif a partir de imágenes<a class="headerlink" href="#montaje-de-gif-a-partir-de-imagenes" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>convert -delay n -loop <span class="m">0</span> *.jpg output.gif
+<div class="highlight"><pre><span></span><code>convert<span class="w"> </span>-delay<span class="w"> </span>n<span class="w"> </span>-loop<span class="w"> </span><span class="m">0</span><span class="w"> </span>*.jpg<span class="w"> </span>output.gif
 </code></pre></div>
 <p>donde:</p>
 <ul>
@@ -3832,8 +3850,8 @@ $ ls *.mp4 <span class="p">|</span> awk <span class="s1">&#39;{print &quot;HandB
 </ul>
 <h2 id="configurar-wireshark-para-poder-capturar-con-usuarios-no-root">Configurar Wireshark para poder capturar con usuarios no-root<a class="headerlink" href="#configurar-wireshark-para-poder-capturar-con-usuarios-no-root" title="Permanent link">&para;</a></h2>
 <p>Ejecutar lo siguiente:</p>
-<div class="highlight"><pre><span></span><code>$ sudo dpkg-reconfigure wireshark-common
-$ sudo usermod -a -G wireshark &lt;usuario&gt;
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>dpkg-reconfigure<span class="w"> </span>wireshark-common
+$<span class="w"> </span>sudo<span class="w"> </span>usermod<span class="w"> </span>-a<span class="w"> </span>-G<span class="w"> </span>wireshark<span class="w"> </span>&lt;usuario&gt;
 </code></pre></div>
 <p>Reiniciar la sesión.</p>
 <h2 id="solucionar-el-problema-con-wireshark-en-las-ultimas-versiones-de-ubuntu">Solucionar el problema con Wireshark en las últimas versiones de Ubuntu<a class="headerlink" href="#solucionar-el-problema-con-wireshark-en-las-ultimas-versiones-de-ubuntu" title="Permanent link">&para;</a></h2>
@@ -3849,17 +3867,17 @@ $ sudo usermod -a -G wireshark &lt;usuario&gt;
 <ol>
 <li>
 <p>Averiguar la estructura de las particiones:</p>
-<div class="highlight"><pre><span></span><code>$ fdisk -l Rpi_8gb_wheezy_backup.img
-Disco Rpi_8gb_wheezy_backup.img: <span class="m">7</span>,5 GiB, <span class="m">8068792320</span> bytes, <span class="m">15759360</span> sectores
-Unidades: sectores de <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytes
-Tamaño de sector <span class="o">(</span>lógico/físico<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
-Tamaño de E/S <span class="o">(</span>mínimo/óptimo<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
-Tipo de etiqueta de disco: dos
-Identificador del disco: 0x000981cb
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>fdisk<span class="w"> </span>-l<span class="w"> </span>Rpi_8gb_wheezy_backup.img
+Disco<span class="w"> </span>Rpi_8gb_wheezy_backup.img:<span class="w"> </span><span class="m">7</span>,5<span class="w"> </span>GiB,<span class="w"> </span><span class="m">8068792320</span><span class="w"> </span>bytes,<span class="w"> </span><span class="m">15759360</span><span class="w"> </span>sectores
+Unidades:<span class="w"> </span>sectores<span class="w"> </span>de<span class="w"> </span><span class="m">1</span><span class="w"> </span>*<span class="w"> </span><span class="nv">512</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">512</span><span class="w"> </span>bytes
+Tamaño<span class="w"> </span>de<span class="w"> </span>sector<span class="w"> </span><span class="o">(</span>lógico/físico<span class="o">)</span>:<span class="w"> </span><span class="m">512</span><span class="w"> </span>bytes<span class="w"> </span>/<span class="w"> </span><span class="m">512</span><span class="w"> </span>bytes
+Tamaño<span class="w"> </span>de<span class="w"> </span>E/S<span class="w"> </span><span class="o">(</span>mínimo/óptimo<span class="o">)</span>:<span class="w"> </span><span class="m">512</span><span class="w"> </span>bytes<span class="w"> </span>/<span class="w"> </span><span class="m">512</span><span class="w"> </span>bytes
+Tipo<span class="w"> </span>de<span class="w"> </span>etiqueta<span class="w"> </span>de<span class="w"> </span>disco:<span class="w"> </span>dos
+Identificador<span class="w"> </span>del<span class="w"> </span>disco:<span class="w"> </span>0x000981cb
 
-Dispositivo                Inicio Comienzo    Final Sectores Tamaño Id Tipo
-Rpi_8gb_wheezy_backup.img1            <span class="m">8192</span>   <span class="m">122879</span>   <span class="m">114688</span>    56M  c W95 FAT32 <span class="o">(</span>LBA<span class="o">)</span>
-Rpi_8gb_wheezy_backup.img2          <span class="m">122880</span> <span class="m">15759359</span> <span class="m">15636480</span>   <span class="m">7</span>,5G <span class="m">83</span> Linux
+Dispositivo<span class="w">                </span>Inicio<span class="w"> </span>Comienzo<span class="w">    </span>Final<span class="w"> </span>Sectores<span class="w"> </span>Tamaño<span class="w"> </span>Id<span class="w"> </span>Tipo
+Rpi_8gb_wheezy_backup.img1<span class="w">            </span><span class="m">8192</span><span class="w">   </span><span class="m">122879</span><span class="w">   </span><span class="m">114688</span><span class="w">    </span>56M<span class="w">  </span>c<span class="w"> </span>W95<span class="w"> </span>FAT32<span class="w"> </span><span class="o">(</span>LBA<span class="o">)</span>
+Rpi_8gb_wheezy_backup.img2<span class="w">          </span><span class="m">122880</span><span class="w"> </span><span class="m">15759359</span><span class="w"> </span><span class="m">15636480</span><span class="w">   </span><span class="m">7</span>,5G<span class="w"> </span><span class="m">83</span><span class="w"> </span>Linux
 </code></pre></div>
 </li>
 <li>
@@ -3869,26 +3887,26 @@ Rpi_8gb_wheezy_backup.img2          <span class="m">122880</span> <span class="m
 </li>
 <li>
 <p>Montar:</p>
-<div class="highlight"><pre><span></span><code>$ sudo mount -t ext4 -o loop,offset<span class="o">=</span><span class="m">62914560</span>,ro,noexec Rpi_8gb_wheezy_backup.img mnt
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>ext4<span class="w"> </span>-o<span class="w"> </span>loop,offset<span class="o">=</span><span class="m">62914560</span>,ro,noexec<span class="w"> </span>Rpi_8gb_wheezy_backup.img<span class="w"> </span>mnt
 </code></pre></div>
 </li>
 </ol>
 <h2 id="screencast">Screencast<a class="headerlink" href="#screencast" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ avconv -f x11grab -r <span class="m">25</span> -s 910x550 -i :0.0 -vcodec huffyuv screencast.avi
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>avconv<span class="w"> </span>-f<span class="w"> </span>x11grab<span class="w"> </span>-r<span class="w"> </span><span class="m">25</span><span class="w"> </span>-s<span class="w"> </span>910x550<span class="w"> </span>-i<span class="w"> </span>:0.0<span class="w"> </span>-vcodec<span class="w"> </span>huffyuv<span class="w"> </span>screencast.avi
 </code></pre></div>
 <h2 id="gestion-de-modulos">Gestión de módulos<a class="headerlink" href="#gestion-de-modulos" title="Permanent link">&para;</a></h2>
 <h3 id="anadir-un-modulo-al-kernel">Añadir un módulo al kernel<a class="headerlink" href="#anadir-un-modulo-al-kernel" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>$ sudo modprobe &lt;modulo&gt;
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>modprobe<span class="w"> </span>&lt;modulo&gt;
 </code></pre></div>
 <p>Si se quiere añadir de forma permanente, es decir, de forma automática en el arranque, se incorpora el nombre del módulo al fichero <code>/etc/modules</code>.</p>
 <p>Cuando el módulo que se carga es un driver de un dispositivo, el kernel envía un evento al subsistema <code>udev</code>. La monitorización de estos mensajes se puede hacer teniendo abierto un terminal con el siguiente comando lanzado (<a href="https://wiki.ubuntu.com/Kernel/Firmware">fuente</a>):</p>
-<div class="highlight"><pre><span></span><code>$ udevadm monitor --property
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>udevadm<span class="w"> </span>monitor<span class="w"> </span>--property
 </code></pre></div>
 <h3 id="listado-de-modulos">Listado de módulos<a class="headerlink" href="#listado-de-modulos" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>$ lsmod
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>lsmod
 </code></pre></div>
 <h3 id="informacion-de-un-modulo">Información de un módulo<a class="headerlink" href="#informacion-de-un-modulo" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>$ modinfo &lt;modulo&gt;
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>modinfo<span class="w"> </span>&lt;modulo&gt;
 </code></pre></div>
 <h2 id="ficheros-definicion-variables-de-entorno">Ficheros definición variables de entorno<a class="headerlink" href="#ficheros-definicion-variables-de-entorno" title="Permanent link">&para;</a></h2>
 <p>Si se necesita definir una variable global se podrá hacer en los ficheros:</p>
@@ -3904,13 +3922,13 @@ Rpi_8gb_wheezy_backup.img2          <span class="m">122880</span> <span class="m
 <li><code>~/.bash_profile</code></li>
 </ul>
 <h2 id="poner-barras-de-scroll-normales">Poner barras de scroll normales<a class="headerlink" href="#poner-barras-de-scroll-normales" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>gsettings <span class="nb">set</span> com.canonical.desktop.interface scrollbar-mode normal
+<div class="highlight"><pre><span></span><code>gsettings<span class="w"> </span><span class="nb">set</span><span class="w"> </span>com.canonical.desktop.interface<span class="w"> </span>scrollbar-mode<span class="w"> </span>normal
 </code></pre></div>
 <h2 id="skype-en-tray">Skype en tray<a class="headerlink" href="#skype-en-tray" title="Permanent link">&para;</a></h2>
 <p>Instalar los paquetes <code>sni-qt</code> y <code>sni-qt:i386</code>.</p>
 <h2 id="workrave-en-tray">Workrave en tray<a class="headerlink" href="#workrave-en-tray" title="Permanent link">&para;</a></h2>
 <p><a href="https://sourceforge.net/p/workrave/mailman/message/30722930/">Fuente</a></p>
-<div class="highlight"><pre><span></span><code>gsettings <span class="nb">set</span> com.canonical.Unity.Panel systray-whitelist <span class="s2">&quot;[&#39;all&#39;]&quot;</span>
+<div class="highlight"><pre><span></span><code>gsettings<span class="w"> </span><span class="nb">set</span><span class="w"> </span>com.canonical.Unity.Panel<span class="w"> </span>systray-whitelist<span class="w"> </span><span class="s2">&quot;[&#39;all&#39;]&quot;</span>
 </code></pre></div>
 <h2 id="localizacion-de-ficheros-desktop">Localización de ficheros .desktop<a class="headerlink" href="#localizacion-de-ficheros-desktop" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3933,22 +3951,22 @@ gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 <ol>
 <li>
 <p>Instalar <code>apt-file</code>:</p>
-<div class="highlight"><pre><span></span><code>$ sudo apt-get install apt-file
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>apt-file
 </code></pre></div>
 </li>
 <li>
 <p>Actualizar su base de datos:</p>
-<div class="highlight"><pre><span></span><code>$ sudo apt-file update
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt-file<span class="w"> </span>update
 </code></pre></div>
 </li>
 <li>
 <p>Hacer la búsqueda:</p>
-<div class="highlight"><pre><span></span><code>$ apt-file search &lt;fichero_con_ruta&gt;
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>apt-file<span class="w"> </span>search<span class="w"> </span>&lt;fichero_con_ruta&gt;
 </code></pre></div>
 </li>
 </ol>
 <h2 id="configuracion-de-idiomas-del-sistema-locales">Configuración de idiomas del sistema (locales)<a class="headerlink" href="#configuracion-de-idiomas-del-sistema-locales" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ sudo dpkg-reconfigure locales
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>dpkg-reconfigure<span class="w"> </span>locales
 </code></pre></div>
 <h2 id="configuracion-de-swap-en-disco-ssd">Configuración de SWAP en disco SSD<a class="headerlink" href="#configuracion-de-swap-en-disco-ssd" title="Permanent link">&para;</a></h2>
 <p>Siguiendo [esta página], añado lo siguiente al fichero <code>/etc/sysctl.conf</code> para bajar el 60% que usa Ubuntu por defecto a 10%:</p>
@@ -3979,58 +3997,27 @@ chromium (revisión 1781) eliminado
 <p>Normalmente al automontar una partición ext4 se respetarán los ID's de los propietarios:grupos de los ficheros. Para montar temporalmente con permisos ajustados para un usuario, utilizar <code>bindfs</code> de esta forma:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># El punto de partida es una partición automontada de esta forma:</span>
 <span class="c1"># /dev/sdb1                                   306616440      64348   290907216   1% /media/edumoreno/47acea17-841f-42d3-85f2-886543f056db</span>
-sudo bindfs -u <span class="k">$(</span>id -u<span class="k">)</span> -g <span class="k">$(</span>id -g<span class="k">)</span> /media/edumoreno/47acea17-841f-42d3-85f2-886543f056db /home/edumoreno/mnt/
+sudo<span class="w"> </span>bindfs<span class="w"> </span>-u<span class="w"> </span><span class="k">$(</span>id<span class="w"> </span>-u<span class="k">)</span><span class="w"> </span>-g<span class="w"> </span><span class="k">$(</span>id<span class="w"> </span>-g<span class="k">)</span><span class="w"> </span>/media/edumoreno/47acea17-841f-42d3-85f2-886543f056db<span class="w"> </span>/home/edumoreno/mnt/
 </code></pre></div>
 <h2 id="cambiar-id-de-usuario">Cambiar ID de usuario<a class="headerlink" href="#cambiar-id-de-usuario" title="Permanent link">&para;</a></h2>
 <p>Por ejemplo para sincronizar con los IDs de un sistema de archivos montado por NFS y así no tener problemas de permisos. En el siguiente ejemplo se cambia el ID del usuario edumoreno a 1002:</p>
-<div class="highlight"><pre><span></span><code>sudo usermod -u <span class="m">1002</span> edumoreno
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>usermod<span class="w"> </span>-u<span class="w"> </span><span class="m">1002</span><span class="w"> </span>edumoreno
 </code></pre></div>
 
-              
-            </article>
-            
-          </div>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Pie" >
-      
-        
-        <a href="ubuntu_phone.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Ubuntu Phone" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Anterior
-              </span>
-              Ubuntu Phone
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="unix.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: UNIX" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Siguiente
-              </span>
-              UNIX
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -4048,47 +4035,57 @@ sudo bindfs -u <span class="k">$(</span>id -u<span class="k">)</span> -g <span c
   
     
     
+    
+    
       
       
     
     <a href="https://github.com/eduardofilo" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
     </a>
   
+    
+    
     
     
       
       
     
     <a href="https://twitter.com/eduardofilo" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
     </a>
   
+    
+    
     
     
       
       
     
     <a href="https://linkedin.com/in/edumoreno/" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
     </a>
   
+    
+    
     
     
       
       
     
     <a href="http://eduardofilo.es" target="_blank" rel="noopener" title="eduardofilo.es" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M309.8 480.3c-13.6 14.5-50 31.7-97.4 31.7-120.8 0-147-88.8-147-140.6v-144H17.9c-5.5 0-10-4.5-10-10v-68c0-7.2 4.5-13.6 11.3-16 62-21.8 81.5-76 84.3-117.1.8-11 6.5-16.3 16.1-16.3h70.9c5.5 0 10 4.5 10 10v115.2h83c5.5 0 10 4.4 10 9.9v81.7c0 5.5-4.5 10-10 10h-83.4V360c0 34.2 23.7 53.6 68 35.8 4.8-1.9 9-3.2 12.7-2.2 3.5.9 5.8 3.4 7.4 7.9l22 64.3c1.8 5 3.3 10.6-.4 14.5z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M309.8 480.3c-13.6 14.5-50 31.7-97.4 31.7-120.8 0-147-88.8-147-140.6v-144H17.9c-5.5 0-10-4.5-10-10v-68c0-7.2 4.5-13.6 11.3-16 62-21.8 81.5-76 84.3-117.1.8-11 6.5-16.3 16.1-16.3h70.9c5.5 0 10 4.5 10 10v115.2h83c5.5 0 10 4.4 10 9.9v81.7c0 5.5-4.5 10-10 10h-83.4V360c0 34.2 23.7 53.6 68 35.8 4.8-1.9 9-3.2 12.7-2.2 3.5.9 5.8 3.4 7.4 7.9l22 64.3c1.8 5 3.3 10.6-.4 14.5z"/></svg>
     </a>
   
+    
+    
     
     
       
       
     
     <a href="https://www.youtube.com/c/EduardoMorenoLamana" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
     </a>
   
 </div>
@@ -4101,12 +4098,15 @@ sudo bindfs -u <span class="k">$(</span>id -u<span class="k">)</span> -g <span c
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
-        <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+        
+          <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+        
       
     
   </body>
