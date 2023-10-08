@@ -3760,14 +3760,15 @@ $<span class="w"> </span>ls<span class="w"> </span>*.mp4<span class="w"> </span>
 <h2 id="split-de-videos">Split de vídeos<a class="headerlink" href="#split-de-videos" title="Permanent link">&para;</a></h2>
 <p>(<a href="http://askubuntu.com/questions/35605/splitting-an-mp4-file">Fuente</a>)</p>
 <p>Con el siguiente comando:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ffmpeg<span class="w"> </span>-acodec<span class="w"> </span>copy<span class="w"> </span>-vcodec<span class="w"> </span>copy<span class="w"> </span>-ss<span class="w"> </span><span class="m">00</span>:00:00<span class="w"> </span>-t<span class="w"> </span><span class="m">00</span>:04:09<span class="w"> </span>-i<span class="w"> </span>archivo_original.mp4<span class="w"> </span>archivo_recortado.mp4
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ffmpeg<span class="w"> </span>-i<span class="w"> </span>archivo_original.mp4<span class="w"> </span>-codec<span class="w"> </span>copy<span class="w"> </span>-ss<span class="w"> </span><span class="m">00</span>:00:00<span class="w"> </span>-t<span class="w"> </span><span class="m">00</span>:04:09<span class="w"> </span>archivo_recortado.mp4
 </code></pre></div>
 <p>Donde el valor de la opción -ss es el instante de inicio en hh:mm:ss y el valor de -t es la longitud en hh:mm:ss</p>
+<p>Es importante respetar el orden de las opciones, sobre todo poner al principio la opción <code>-i</code> que indica el fichero de entrada. De no hacerlo así (se explica <a href="https://github.com/valekhz/m4b-converter/issues/13">aquí</a>) las opciones de codec no saben localizar bien los codecs del fichero de entrada.</p>
 <p>Durante un tiempo en Ubuntu, <code>ffmpeg</code> no estuvo disponible. Su sustituto fue <code>avconv</code>, compatible la mayoría de las veces. No admitía sin embargo la opción de copiar el codec de audio y vídeo. Había que especificarlo. Una lista de encoders soportados se puede obtener ejecutando:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>avconv<span class="w"> </span>-encoders
 </code></pre></div>
 <p>Un par de codecs comprobados que suelen dar buen resultados son h264 y aac:</p>
-<div class="highlight"><pre><span></span><code>ffmpeg<span class="w"> </span>-acodec<span class="w"> </span>aac<span class="w"> </span>-vcodec<span class="w"> </span>h264<span class="w"> </span>-ss<span class="w"> </span><span class="m">01</span>:07:38<span class="w"> </span>-t<span class="w"> </span><span class="m">00</span>:01:14<span class="w"> </span>-i<span class="w"> </span>archivo_original.mp4<span class="w"> </span>archivo_recortado.mp4
+<div class="highlight"><pre><span></span><code>ffmpeg<span class="w"> </span>-i<span class="w"> </span>archivo_original.mp4<span class="w"> </span>-acodec<span class="w"> </span>aac<span class="w"> </span>-vcodec<span class="w"> </span>h264<span class="w"> </span>-ss<span class="w"> </span><span class="m">01</span>:07:38<span class="w"> </span>-t<span class="w"> </span><span class="m">00</span>:01:14<span class="w"> </span>archivo_recortado.mp4
 </code></pre></div>
 <h2 id="crop-en-video">Crop en video<a class="headerlink" href="#crop-en-video" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-filter:v<span class="w"> </span><span class="s2">&quot;crop=w:h:x:y&quot;</span><span class="w"> </span>output.mp4
@@ -3780,7 +3781,7 @@ $<span class="w"> </span>ls<span class="w"> </span>*.mp4<span class="w"> </span>
 <li>y: coordenada y del punto superior izquierdo del recuadro</li>
 </ul>
 <h2 id="extraer-frame-de-video">Extraer frame de video<a class="headerlink" href="#extraer-frame-de-video" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ffmpeg<span class="w"> </span>-ss<span class="w"> </span><span class="m">00</span>:01:00<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-frames:v<span class="w"> </span><span class="m">1</span><span class="w"> </span>frame.png
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-ss<span class="w"> </span><span class="m">00</span>:01:00<span class="w"> </span>-frames:v<span class="w"> </span><span class="m">1</span><span class="w"> </span>frame.png
 </code></pre></div>
 <p>donde el argumento -ss marca el instante del frame en hh:mm:ss</p>
 <h2 id="redimensionado-de-imagenes-en-lote">Redimensionado de imágenes en lote<a class="headerlink" href="#redimensionado-de-imagenes-en-lote" title="Permanent link">&para;</a></h2>
