@@ -2941,6 +2941,8 @@ $<span class="w"> </span>docker<span class="w"> </span>update<span class="w"> </
 $<span class="w"> </span>docker<span class="w"> </span>port<span class="w"> </span>&lt;hash&gt;<span class="w">                                  </span><span class="c1"># Muestra el mapeo de puertos del contenedor</span>
 $<span class="w"> </span>docker<span class="w"> </span>inspect<span class="w"> </span>&lt;hash&gt;<span class="w">                               </span><span class="c1"># Muestra todo el JSON con la configuración del contenedor</span>
 $<span class="w"> </span>docker<span class="w"> </span>volume<span class="w"> </span>prune<span class="w">                                 </span><span class="c1"># Borra volúmenes sin uso</span>
+$<span class="w"> </span>docker<span class="w"> </span>builder<span class="w"> </span>prune<span class="w">                                </span><span class="c1"># Borra build caché de imágenes</span>
+$<span class="w"> </span>docker<span class="w"> </span>system<span class="w"> </span>prune<span class="w"> </span>-a<span class="w">                              </span><span class="c1"># Borra contenedores parados, networks no usadas, imágenes no usadas y build caché</span>
 </code></pre></div>
 <h2 id="crear-volume-para-persistir-informacion">Crear volume para persistir información<a class="headerlink" href="#crear-volume-para-persistir-informacion" title="Permanent link">&para;</a></h2>
 <p>Para poder recrear el contenedor sin perder la información que haya podido generar, conviene montar los distintos directorios que queremos conservar en volúmenes.</p>
