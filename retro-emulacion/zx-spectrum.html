@@ -2047,13 +2047,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#homebrew" class="md-nav__link">
-    Homebrew
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#megaduino" class="md-nav__link">
     MegaDuino
   </a>
@@ -2077,6 +2070,20 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operaciones-con-ficheros" class="md-nav__link">
+    Operaciones con ficheros
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extraer-pantalla-de-carga-de-un-tzx" class="md-nav__link">
+    Extraer pantalla de carga de un TZX
+  </a>
   
 </li>
       
@@ -2661,13 +2668,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#homebrew" class="md-nav__link">
-    Homebrew
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#megaduino" class="md-nav__link">
     MegaDuino
   </a>
@@ -2691,6 +2691,20 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operaciones-con-ficheros" class="md-nav__link">
+    Operaciones con ficheros
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extraer-pantalla-de-carga-de-un-tzx" class="md-nav__link">
+    Extraer pantalla de carga de un TZX
+  </a>
   
 </li>
       
@@ -2783,10 +2797,6 @@
 <li><a href="https://trastero.speccy.org/cosas/JL/pcf1306p/PCF1306P.html">ZX8401 o AMSTRAD 40058</a>: Sustituto para el chip propietario que se monta a partir de las issue5 hasta el +2 (gris).</li>
 <li><a href="https://www.retroleum.co.uk/spectrum-connectors">Varios repuestos en Retroleum</a></li>
 </ul>
-<h2 id="homebrew">Homebrew<a class="headerlink" href="#homebrew" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://volcanobytes.itch.io/the-curse-of-trasmoz">The Curse of Trasmoz</a></li>
-</ul>
 <h2 id="megaduino">MegaDuino<a class="headerlink" href="#megaduino" title="Permanent link">&para;</a></h2>
 <h4 id="flash-de-megaduino">Flash de MegaDuino<a class="headerlink" href="#flash-de-megaduino" title="Permanent link">&para;</a></h4>
 <ol>
@@ -2828,6 +2838,18 @@
 </li>
 <li>Skip2A: ???</li>
 </ul>
+<h2 id="operaciones-con-ficheros">Operaciones con ficheros<a class="headerlink" href="#operaciones-con-ficheros" title="Permanent link">&para;</a></h2>
+<h2 id="extraer-pantalla-de-carga-de-un-tzx">Extraer pantalla de carga de un TZX<a class="headerlink" href="#extraer-pantalla-de-carga-de-un-tzx" title="Permanent link">&para;</a></h2>
+<p>Con las <a href="https://shredzone.org/docs/tzxtools/">tzxtools</a>:</p>
+<div class="highlight"><pre><span></span><code>$ tzxls Commando.tzx
+  0  Standard Speed Data Block   18 bytes of bogus header, CRC ERROR!
+  1  Standard Speed Data Block   199 bytes of data, CRC ERROR!
+  2  Standard Speed Data Block   18 bytes of bogus header, CRC ERROR!
+  3  Standard Speed Data Block   6913 bytes of data, CRC ERROR!
+  4  Turbo Speed Data Block      489 bytes of data, CRC ERROR!
+  5  Turbo Speed Data Block      39938 bytes of data, CRC ERROR!
+$ tzxcat -b 3 -l 6912 -S -o Commando.png Commando.tzx
+</code></pre></div>
 
 
 
