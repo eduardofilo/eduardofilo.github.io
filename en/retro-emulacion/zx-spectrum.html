@@ -2093,6 +2093,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dandanator" class="md-nav__link">
+    Dandanator
+  </a>
+  
+    <nav class="md-nav" aria-label="Dandanator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#carga-de-fichero-rom-con-minipro" class="md-nav__link">
+    Carga de fichero rom con minipro
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2720,6 +2740,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dandanator" class="md-nav__link">
+    Dandanator
+  </a>
+  
+    <nav class="md-nav" aria-label="Dandanator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#carga-de-fichero-rom-con-minipro" class="md-nav__link">
+    Carga de fichero rom con minipro
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2864,6 +2904,18 @@
   5  Turbo Speed Data Block      39938 bytes of data, CRC ERROR!
 $ tzxcat -b 3 -l 6912 -S -o Commando.png Commando.tzx
 </code></pre></div>
+<h2 id="dandanator">Dandanator<a class="headerlink" href="#dandanator" title="Permanent link">&para;</a></h2>
+<h4 id="carga-de-fichero-rom-con-minipro">Carga de fichero rom con minipro<a class="headerlink" href="#carga-de-fichero-rom-con-minipro" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Instalar el software <a href="https://gitlab.com/DavidGriffith/minipro#installation-on-linux">minipro</a>.</li>
+<li>
+<p>Extraer el chip EEPROM SST39SF040 del Dandanator y montarlo sobre el adaptador PLCC32:</p>
+<p><img alt="Dandanator EEPROM Minipro" src="/images/pages/dandanator_eeprom_minipro.jpg" /></p>
+</li>
+<li>
+<p>Cargar el fichero rom con el siguiente comando: <code>minipro -p SST39SF040@PLCC32 -w ianna-dan.rom</code></p>
+</li>
+</ol>
 
 
 
