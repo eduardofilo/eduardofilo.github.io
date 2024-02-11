@@ -2235,6 +2235,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#diferencias-entre-create-start-run-y-exec" class="md-nav__link">
+    Diferencias entre create, start, run y exec
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2799,6 +2806,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#diferencias-entre-create-start-run-y-exec" class="md-nav__link">
+    Diferencias entre create, start, run y exec
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2944,6 +2958,21 @@ $<span class="w"> </span>docker<span class="w"> </span>volume<span class="w"> </
 $<span class="w"> </span>docker<span class="w"> </span>builder<span class="w"> </span>prune<span class="w">                                </span><span class="c1"># Borra build caché de imágenes</span>
 $<span class="w"> </span>docker<span class="w"> </span>system<span class="w"> </span>prune<span class="w"> </span>-a<span class="w">                              </span><span class="c1"># Borra contenedores parados, networks no usadas, imágenes no usadas y build caché</span>
 </code></pre></div>
+<h3 id="diferencias-entre-create-start-run-y-exec">Diferencias entre create, start, run y exec<a class="headerlink" href="#diferencias-entre-create-start-run-y-exec" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>create</code> se ejecuta sobre una imagen. Crea pero no arranca un contenedor en base a una imagen.</li>
+<li><code>run</code> se ejecuta sobre una imagen. Crea y arranca un contenedor en base a una imagen.</li>
+<li><code>start</code> se ejecuta sobre un contenedor parado. Arranca el contenedor.</li>
+<li><code>exec</code> se ejecuta sobre un contenedor arrancado. Ejecuta un proceso en el contenedor.</li>
+</ul>
+<p>Algunos ejemplos:</p>
+<ul>
+<li><code>docker create --name test-ubuntu ubuntu</code>: Crea un contenedor con una imagen de ubuntu y la nombra <code>test-ubuntu</code>.</li>
+<li><code>docker run -it --name test-ubuntu ubuntu</code>: Crea un contenedor con una imagen de ubuntu, lo nombra <code>test-ubuntu</code> y la arranca en modo interactivo (devuelve prompt).</li>
+<li><code>docker run -it --rm --name test-ubuntu ubuntu</code>: Igual que el anterior pero borrando el contenedor al terminar la sesión interactiva.</li>
+<li><code>docker start -i test-ubuntu</code>: Arranca el contenedor de nombre <code>test-ubuntu</code> en modo interactivo (devuelve prompt). El contenedor debe existir previamente y debe estar parado.</li>
+<li><code>docker exec -it test-ubuntu /bin/bash</code>: Ejecuta el proceso bash en el contenedor de nombre <code>test-ubuntu</code> que debe estar previamente arrancado.</li>
+</ul>
 <h2 id="crear-volume-para-persistir-informacion">Crear volume para persistir información<a class="headerlink" href="#crear-volume-para-persistir-informacion" title="Permanent link">&para;</a></h2>
 <p>Para poder recrear el contenedor sin perder la información que haya podido generar, conviene montar los distintos directorios que queremos conservar en volúmenes.</p>
 <ol>
