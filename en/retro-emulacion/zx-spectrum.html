@@ -2074,11 +2074,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#operaciones-con-ficheros" class="md-nav__link">
-    Operaciones con ficheros
+  <a href="#tzxtools" class="md-nav__link">
+    tzxtools
   </a>
   
-    <nav class="md-nav" aria-label="Operaciones con ficheros">
+    <nav class="md-nav" aria-label="tzxtools">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2088,22 +2088,23 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dandanator" class="md-nav__link">
-    Dandanator
+          <li class="md-nav__item">
+  <a href="#instalacion-tzxtools" class="md-nav__link">
+    Instalación tzxtools
   </a>
   
-    <nav class="md-nav" aria-label="Dandanator">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#carga-de-fichero-rom-con-minipro" class="md-nav__link">
-    Carga de fichero rom con minipro
+  <a href="#conversion-tzx-a-tap" class="md-nav__link">
+    Conversión tzx a tap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listado-bloques" class="md-nav__link">
+    Listado bloques
   </a>
   
 </li>
@@ -2721,11 +2722,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#operaciones-con-ficheros" class="md-nav__link">
-    Operaciones con ficheros
+  <a href="#tzxtools" class="md-nav__link">
+    tzxtools
   </a>
   
-    <nav class="md-nav" aria-label="Operaciones con ficheros">
+    <nav class="md-nav" aria-label="tzxtools">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2735,22 +2736,23 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dandanator" class="md-nav__link">
-    Dandanator
+          <li class="md-nav__item">
+  <a href="#instalacion-tzxtools" class="md-nav__link">
+    Instalación tzxtools
   </a>
   
-    <nav class="md-nav" aria-label="Dandanator">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#carga-de-fichero-rom-con-minipro" class="md-nav__link">
-    Carga de fichero rom con minipro
+  <a href="#conversion-tzx-a-tap" class="md-nav__link">
+    Conversión tzx a tap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listado-bloques" class="md-nav__link">
+    Listado bloques
   </a>
   
 </li>
@@ -2894,17 +2896,34 @@
 </li>
 <li>Skip2A: ???</li>
 </ul>
-<h2 id="operaciones-con-ficheros">Operaciones con ficheros<a class="headerlink" href="#operaciones-con-ficheros" title="Permanent link">&para;</a></h2>
+<h2 id="tzxtools"><a href="https://shredzone.org/docs/tzxtools/">tzxtools</a><a class="headerlink" href="#tzxtools" title="Permanent link">&para;</a></h2>
 <h4 id="extraer-pantalla-de-carga-de-un-tzx">Extraer pantalla de carga de un TZX<a class="headerlink" href="#extraer-pantalla-de-carga-de-un-tzx" title="Permanent link">&para;</a></h4>
-<p>Con las <a href="https://shredzone.org/docs/tzxtools/">tzxtools</a>:</p>
-<div class="highlight"><pre><span></span><code>$ tzxls Commando.tzx
-  0  Standard Speed Data Block   18 bytes of bogus header, CRC ERROR!
-  1  Standard Speed Data Block   199 bytes of data, CRC ERROR!
-  2  Standard Speed Data Block   18 bytes of bogus header, CRC ERROR!
-  3  Standard Speed Data Block   6913 bytes of data, CRC ERROR!
-  4  Turbo Speed Data Block      489 bytes of data, CRC ERROR!
-  5  Turbo Speed Data Block      39938 bytes of data, CRC ERROR!
-$ tzxcat -b 3 -l 6912 -S -o Commando.png Commando.tzx
+<h4 id="instalacion-tzxtools">Instalación tzxtools<a class="headerlink" href="#instalacion-tzxtools" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mkvirtualenv<span class="w"> </span>tzxtools
+<span class="o">(</span>tzxtools<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>tzxtools
+</code></pre></div>
+<h4 id="conversion-tzx-a-tap">Conversión tzx a tap<a class="headerlink" href="#conversion-tzx-a-tap" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>tzxtools<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>tzxtap<span class="w"> </span>-o<span class="w"> </span>Commando.tap<span class="w"> </span>Commando.tzx
+</code></pre></div>
+<h4 id="listado-bloques">Listado bloques<a class="headerlink" href="#listado-bloques" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>tzxtools<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>tzxls<span class="w"> </span>Commando.tzx
+</code></pre></div>
+<h1 id="reproduccion-audio-tzx">Reproducción audio tzx<a class="headerlink" href="#reproduccion-audio-tzx" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>tzxtools<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>tzxplay<span class="w"> </span>Commando.tzx
+</code></pre></div>
+<h1 id="extraccion-pantalla-presentacion">Extracción pantalla presentación<a class="headerlink" href="#extraccion-pantalla-presentacion" title="Permanent link">&para;</a></h1>
+<p>Incluso de un tzx corrupto.</p>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>tzxtools<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>tzxls<span class="w"> </span>Commando.tzx
+<span class="w">  </span><span class="m">0</span><span class="w">  </span>Standard<span class="w"> </span>Speed<span class="w"> </span>Data<span class="w"> </span>Block<span class="w">   </span><span class="m">18</span><span class="w"> </span>bytes<span class="w"> </span>of<span class="w"> </span>bogus<span class="w"> </span>header,<span class="w"> </span>CRC<span class="w"> </span>ERROR!
+<span class="w">  </span><span class="m">1</span><span class="w">  </span>Standard<span class="w"> </span>Speed<span class="w"> </span>Data<span class="w"> </span>Block<span class="w">   </span><span class="m">199</span><span class="w"> </span>bytes<span class="w"> </span>of<span class="w"> </span>data,<span class="w"> </span>CRC<span class="w"> </span>ERROR!
+<span class="w">  </span><span class="m">2</span><span class="w">  </span>Standard<span class="w"> </span>Speed<span class="w"> </span>Data<span class="w"> </span>Block<span class="w">   </span><span class="m">18</span><span class="w"> </span>bytes<span class="w"> </span>of<span class="w"> </span>bogus<span class="w"> </span>header,<span class="w"> </span>CRC<span class="w"> </span>ERROR!
+<span class="w">  </span><span class="m">3</span><span class="w">  </span>Standard<span class="w"> </span>Speed<span class="w"> </span>Data<span class="w"> </span>Block<span class="w">   </span><span class="m">6913</span><span class="w"> </span>bytes<span class="w"> </span>of<span class="w"> </span>data,<span class="w"> </span>CRC<span class="w"> </span>ERROR!
+<span class="w">  </span><span class="m">4</span><span class="w">  </span>Turbo<span class="w"> </span>Speed<span class="w"> </span>Data<span class="w"> </span>Block<span class="w">      </span><span class="m">489</span><span class="w"> </span>bytes<span class="w"> </span>of<span class="w"> </span>data,<span class="w"> </span>CRC<span class="w"> </span>ERROR!
+<span class="w">  </span><span class="m">5</span><span class="w">  </span>Turbo<span class="w"> </span>Speed<span class="w"> </span>Data<span class="w"> </span>Block<span class="w">      </span><span class="m">39938</span><span class="w"> </span>bytes<span class="w"> </span>of<span class="w"> </span>data,<span class="w"> </span>CRC<span class="w"> </span>ERROR!
+<span class="o">(</span>tzxtools<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>tzxcat<span class="w"> </span>-b<span class="w"> </span><span class="m">3</span><span class="w"> </span>-l<span class="w"> </span><span class="m">6912</span><span class="w"> </span>-S<span class="w"> </span>-o<span class="w"> </span>Commando.png<span class="w"> </span>Commando.tzx
+</code></pre></div>
+<h4 id="conversion-wav-a-tzx">Conversión wav a tzx<a class="headerlink" href="#conversion-wav-a-tzx" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>tzxtools<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>tzxwav<span class="w"> </span>-o<span class="w"> </span>Commando.tzx<span class="w"> </span>Commando.wav
 </code></pre></div>
 <h2 id="dandanator">Dandanator<a class="headerlink" href="#dandanator" title="Permanent link">&para;</a></h2>
 <h4 id="carga-de-fichero-rom-con-minipro">Carga de fichero rom con minipro<a class="headerlink" href="#carga-de-fichero-rom-con-minipro" title="Permanent link">&para;</a></h4>
