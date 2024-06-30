@@ -4324,13 +4324,11 @@
 <li><a href="http://code.google.com/intl/es-ES/android/add-ons/google-apis/mapkey.html">Obtener APIKey</a></li>
 </ul>
 <p>Tu clave es:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="mf">0</span><span class="n">V21y2J7NRVSVKA</span><span class="mf">...5</span><span class="n">C9Ag</span>
-</code></pre></div></td></tr></table></div>
-
+<div class="highlight"><pre><span></span><code>0V21y2J7NRVSVKA...5C9Ag
+</code></pre></div>
 <p>Esta clave es válida para todas las aplicaciones firmadas con el certificado cuya huella dactilar sea:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">C2</span><span class="o">:</span><span class="n">EC</span><span class="o">:</span><span class="mi">22</span><span class="o">:</span><span class="mi">8</span><span class="n">F</span><span class="o">:...:</span><span class="mi">56</span><span class="o">:</span><span class="mi">39</span>
-</code></pre></div></td></tr></table></div>
-
+<div class="highlight"><pre><span></span><code>C2:EC:22:8F:...:56:39
+</code></pre></div>
 <p>Incluimos un diseño xml de ejemplo para que puedas iniciarte por los senderos de la creación de mapas:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;com.google.android.maps.MapView</span>
 <span class="w">   </span><span class="na">android:layout_width=</span><span class="s">&quot;fill_parent&quot;</span>
@@ -4340,13 +4338,11 @@
 </code></pre></div>
 <h2 id="depurar">Depurar<a class="headerlink" href="#depurar" title="Permanent link">&para;</a></h2>
 <p>Añadir el atributo siguiente al bloque "application":</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">android</span><span class="o">:</span><span class="n">debuggable</span><span class="o">=</span><span class="s2">&quot;true&quot;</span>
-</code></pre></div></td></tr></table></div>
-
+<div class="highlight"><pre><span></span><code>android:debuggable=&quot;true&quot;
+</code></pre></div>
 <p>Solicitar el permiso siguiente:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;uses-permission android:name=&quot;android.permission.SET_DEBUG_APP&quot; /&gt;
-</code></pre></div></td></tr></table></div>
-
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.SET_DEBUG_APP&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div>
 <h2 id="logcat-filtrado">Logcat filtrado<a class="headerlink" href="#logcat-filtrado" title="Permanent link">&para;</a></h2>
 <p>Ejemplo de una expresión de filtrado que suprime (silencia) todos los mensajes de log excepto los que tienen el tag "ActivityManager" con una prioridad Info o superior, y los que tienen el tag "MyApp" con una prioridad Debug o superior:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>adb<span class="w"> </span>logcat<span class="w"> </span>ActivityManager:I<span class="w"> </span>MyApp:D<span class="w"> </span>*:S
