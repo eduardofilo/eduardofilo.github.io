@@ -5344,8 +5344,7 @@ $ python manage.py runserver 0.0.0.0:8000
 <ol>
 <li>
 <p>Ejecutar:</p>
-<div class="highlight"><pre><span></span><code>$ sudo pip install virtualenv
-$ sudo pip install virtualenvwrapper
+<div class="highlight"><pre><span></span><code>$ sudo pip install --break-system-packages virtualenv virtualenvwrapper
 </code></pre></div>
 </li>
 <li>
@@ -5354,7 +5353,7 @@ $ sudo pip install virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/git
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS=&#39;--no-site-packages&#39;
+#export VIRTUALENVWRAPPER_VIRTUALENV_ARGS=&#39;--no-site-packages&#39;
 source /usr/local/bin/virtualenvwrapper.sh
 </code></pre></div>
 </li>

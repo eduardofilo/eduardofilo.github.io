@@ -3885,9 +3885,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#buscar-paquetes" class="md-nav__link">
+  <a href="#buscar-paquetes-y-ficheros-de-los-mismos" class="md-nav__link">
     <span class="md-ellipsis">
-      Buscar paquetes
+      Buscar paquetes y ficheros de los mismos
     </span>
   </a>
   
@@ -4725,9 +4725,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#buscar-paquetes" class="md-nav__link">
+  <a href="#buscar-paquetes-y-ficheros-de-los-mismos" class="md-nav__link">
     <span class="md-ellipsis">
-      Buscar paquetes
+      Buscar paquetes y ficheros de los mismos
     </span>
   </a>
   
@@ -5304,11 +5304,16 @@ gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 <p>Siguiendo [esta página], añado lo siguiente al fichero <code>/etc/sysctl.conf</code> para bajar el 60% que usa Ubuntu por defecto a 10%:</p>
 <div class="highlight"><pre><span></span><code>vm.swappiness=10
 </code></pre></div>
-<h2 id="buscar-paquetes">Buscar paquetes<a class="headerlink" href="#buscar-paquetes" title="Permanent link">&para;</a></h2>
+<h2 id="buscar-paquetes-y-ficheros-de-los-mismos">Buscar paquetes y ficheros de los mismos<a class="headerlink" href="#buscar-paquetes-y-ficheros-de-los-mismos" title="Permanent link">&para;</a></h2>
+<p><a href="https://serverfault.com/questions/96964/list-of-files-installed-from-apt-package/96965#96965">Fuente</a></p>
 <ul>
 <li>Encontrar un paquete por su nombre: <code>apt-cache search 'cadena'</code></li>
-<li>Encontrar un paquete que contiene un fichero: <code>apt-file search 'fichero'</code></li>
+<li>Encontrar un paquete ya instalado que contiene un fichero: <code>dpkg -S 'fichero'</code></li>
+<li>Encontrar un paquete no instalado que contiene un fichero: <code>apt-file search 'fichero'</code></li>
 <li>Localizar el repositorio del que procede un paquete: <code>apt-cache policy 'paquete'</code></li>
+<li>Listar los ficheros que contiene un paquete ya instalado: <code>dpkg -L paquete</code></li>
+<li>Listar los ficheros que contiene un paquete no instalado: <code>apt-file list paquete</code> (antes hay que hacer <code>apt-file update</code>)</li>
+<li>Listar los ficheros de un fichero .deb: <code>dpkg -c paquete.deb</code></li>
 </ul>
 <h2 id="limpieza-de-paquetes-snap">Limpieza de paquetes snap<a class="headerlink" href="#limpieza-de-paquetes-snap" title="Permanent link">&para;</a></h2>
 <p>Localizar los paquetes desactivados con:</p>
