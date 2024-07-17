@@ -2859,6 +2859,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rutas-interesantes-sistema-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rutas interesantes sistema de archivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activar-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activar SSH
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#emudeck" class="md-nav__link">
     <span class="md-ellipsis">
       EmuDeck
@@ -3759,6 +3777,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rutas-interesantes-sistema-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rutas interesantes sistema de archivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activar-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activar SSH
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#emudeck" class="md-nav__link">
     <span class="md-ellipsis">
       EmuDeck
@@ -3806,6 +3842,36 @@
 <li><a href="https://www.protondb.com/">Proton DB</a>: Lista los juegos compatibles con Steam Deck y ofrece soluciones para los que no lo son.</li>
 <li><a href="https://decky.xyz/">Decky</a>: Plugins.</li>
 </ul>
+<h2 id="rutas-interesantes-sistema-de-archivos">Rutas interesantes sistema de archivos<a class="headerlink" href="#rutas-interesantes-sistema-de-archivos" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>/home/steam/.local/share/Steam/steamapps/compatdata/</code>: Juegos instalados.</li>
+<li><code>/home/steam/.local/share/Steam/steamapps/common/</code>: Juegos instalados.</li>
+<li><code>/home/steam/.local/share/Steam/steamapps/</code>: Juegos instalados.</li>
+<li><code>/home/steam/.local/share/Steam/</code>: Configuración de Steam.</li>
+<li><code>/home/steam/.steam/</code>: Configuración de Steam.</li>
+<li><code>/home/steam/.config/</code>: Configuración de aplicaciones.</li>
+<li><code>/home/steam/.local/share/</code>: Configuración de aplicaciones.</li>
+<li><code>/home/steam/.local/share/Steam/steamapps/compatdata/</code>: Juegos instalados.</li>
+</ul>
+<h2 id="activar-ssh">Activar SSH<a class="headerlink" href="#activar-ssh" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Abrir <code>Konsole</code> en modo escritorio.</li>
+<li>
+<p>Cambiar la contraseña del usuario <code>deck</code>:</p>
+<div class="highlight"><pre><span></span><code>passwd
+</code></pre></div>
+</li>
+<li>
+<p>Habilitar SSHD:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>sshd
+</code></pre></div>
+</li>
+<li>
+<p>Habilitar SSHD en el arranque:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>sshd
+</code></pre></div>
+</li>
+</ol>
 <h2 id="emudeck">EmuDeck<a class="headerlink" href="#emudeck" title="Permanent link">&para;</a></h2>
 <h4 id="enlaces_1">Enlaces<a class="headerlink" href="#enlaces_1" title="Permanent link">&para;</a></h4>
 <ul>
