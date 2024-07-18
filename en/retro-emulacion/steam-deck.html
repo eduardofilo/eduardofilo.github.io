@@ -2910,6 +2910,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#instalar-cualquier-aplicacion-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar cualquier aplicación Windows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#emudeck" class="md-nav__link">
     <span class="md-ellipsis">
       EmuDeck
@@ -3861,6 +3870,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#instalar-cualquier-aplicacion-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar cualquier aplicación Windows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#emudeck" class="md-nav__link">
     <span class="md-ellipsis">
       EmuDeck
@@ -3907,6 +3925,7 @@
 <ul>
 <li><a href="https://www.protondb.com/">Proton DB</a>: Lista los juegos compatibles con Steam Deck y ofrece soluciones para los que no lo son.</li>
 <li><a href="https://decky.xyz/">Decky</a>: Plugins.</li>
+<li><a href="https://github.com/moraroy/NonSteamLaunchers-On-Steam-Deck">NonSteamLaunchers</a>: Instalación de launchers alternativos a Steam. Requiere instalar el navegador Chrome desde Discover para que luego se puedan lanzar algunas de las tiendas instaladas.</li>
 </ul>
 <h2 id="rutas-interesantes-sistema-de-archivos">Rutas interesantes sistema de archivos<a class="headerlink" href="#rutas-interesantes-sistema-de-archivos" title="Permanent link">&para;</a></h2>
 <table>
@@ -3925,13 +3944,17 @@
 <td style="text-align: left;"><code>/home/deck/.steam/steam/</code></td>
 <td style="text-align: left;">Directorio de Steam.</td>
 </tr>
+<tr>
+<td style="text-align: left;"><code>/home/deck/.steam/steam/steamapps/compatdata</code></td>
+<td style="text-align: left;">Directorio de los juegos/aplicaciones instalados donde se crea el sandbox con la estructura de ficheros de Windows para ellos.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="aplicaciones-interesantes">Aplicaciones interesantes<a class="headerlink" href="#aplicaciones-interesantes" title="Permanent link">&para;</a></h2>
 <h4 id="steam-store">Steam Store<a class="headerlink" href="#steam-store" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Proton BattlEye Runtime</li>
-<li>Proton Easy Anti-Cheat Runtime</li>
+<li>Proton BattlEye Runtime: Soluciona restricciones de ejecución de algunos juegos (zona por ejemplo).</li>
+<li>Proton Easy Anti-Cheat Runtime: Soluciona restricciones de ejecución de algunos juegos (zona por ejemplo).</li>
 <li>Proton Experimental: Última versión (no estable) de Proton.</li>
 </ul>
 <h4 id="discover">Discover<a class="headerlink" href="#discover" title="Permanent link">&para;</a></h4>
@@ -3956,6 +3979,26 @@
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>sshd
 </code></pre></div>
 </li>
+</ol>
+<h2 id="instalar-cualquier-aplicacion-windows">Instalar cualquier aplicación Windows<a class="headerlink" href="#instalar-cualquier-aplicacion-windows" title="Permanent link">&para;</a></h2>
+<p>Una vez que tengamos el instalador (.exe o .msi):</p>
+<ol>
+<li>Abrir Steam desde el escritorio.</li>
+<li>Pulsar el botón <code>+ Añadir un producto</code> en la parte inferior izquierda.</li>
+<li>Seleccionar <code>Añadir un programa que no es de Steam...</code>.</li>
+<li>Pulsar <code>Buscar...</code> abajo a la izquierda en la ventana que aparece.</li>
+<li>Seleccionar el ejecutable del programa que se quiere instalar (si el ejecutable no es <code>.exe</code> cambiar el filtro a <code>Todos los archivos</code>).</li>
+<li>Pulsar <code>Añadir seleccionados</code>.</li>
+<li>Seleccionar el programa en la biblioteca de Steam (en <code>Sin categoría</code>), pulsar el icono de rueda dentada (<code>Administrar</code>) y seleccionar <code>Propiedades...</code> en el desplegable.</li>
+<li>Seleccionar el grupo de opciones <code>Compatibilidad</code> y forzar el uso de la última versión de Proton GE que tengamos disponible (para ello previamente deberemos haber instalado <code>ProtonUp-Qt</code> desde la tienda <code>Discover</code> y haber instalado alguna versión de Proton GE).</li>
+<li>Pulsar <code>Jugar</code>.</li>
+<li>Arrancará el instalador cuyo asistente seguiremos como si nos encontráramos en Windows.</li>
+<li>Cuando termine y se cierre el instalador, veremos que vuelve a activarse el botón <code>Jugar</code> en Steam.</li>
+<li>Borramos el ejecutable de la ruta donde lo tuviéramos.</li>
+<li>Lo que acabamos de instalar habrá terminado en el mismo sandbox que se ha creado con los pasos 2 a 6. Si elimináramos la entrada en la biblioteca, se perdería todo, por tanto debemos modificar el lanzador del instalador para que se comporte como el lanzador de lo que hemos instalado. Para ello abrir el explorador de archivos y acudir a la ruta <code>/home/deck/.steam/steam/steamapps/compatdata</code>. Allí encontraremos las carpetas de los juegos/aplicaciones instalados. Averiguamos la carpeta con el identificador correspondiente a la instalación que acabamos de hacer (por ejemplo ayudándonos de las fechas de creación de las carpetas). Dentro de dicha carpeta buscaremos el lanzado de lo que acabamos de instalar (puede ser un <code>.exe</code> o un <code>.lnk</code> que aparezca en el escritorio de Windows o en el menú inicio).</li>
+<li>Deberíamos seguir teniendo delante la entrada correspondiente al instalador en la biblioteca de Steam, si no seleccionarla.</li>
+<li>Pulsar el icono de rueda dentada (<code>Administrar</code>) y seleccionar <code>Propiedades...</code> en el desplegable.</li>
+<li>Cambiar el nombre del Acceso directo y las entradas <code>Destino</code> y <code>Iniciar en</code> por las rutas que hemos averiguado en el paso 13.</li>
 </ol>
 <h2 id="emudeck">EmuDeck<a class="headerlink" href="#emudeck" title="Permanent link">&para;</a></h2>
 <h4 id="enlaces_1">Enlaces<a class="headerlink" href="#enlaces_1" title="Permanent link">&para;</a></h4>
