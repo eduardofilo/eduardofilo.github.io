@@ -2937,6 +2937,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#solucion-de-dependencias-en-juegos-windows-con-proton" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solución de dependencias en juegos Windows con Proton
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#emudeck" class="md-nav__link">
     <span class="md-ellipsis">
       EmuDeck
@@ -2961,9 +2970,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#videotutorial-general" class="md-nav__link">
+  <a href="#videotutorial-general-de-hooandee" class="md-nav__link">
     <span class="md-ellipsis">
-      Videotutorial general
+      Videotutorial general de @Hooandee
     </span>
   </a>
   
@@ -3924,6 +3933,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#solucion-de-dependencias-en-juegos-windows-con-proton" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solución de dependencias en juegos Windows con Proton
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#emudeck" class="md-nav__link">
     <span class="md-ellipsis">
       EmuDeck
@@ -3948,9 +3966,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#videotutorial-general" class="md-nav__link">
+  <a href="#videotutorial-general-de-hooandee" class="md-nav__link">
     <span class="md-ellipsis">
-      Videotutorial general
+      Videotutorial general de @Hooandee
     </span>
   </a>
   
@@ -4056,7 +4074,7 @@
 <li><code>HLTB for Deck</code>: Muestra la duración de los juegos.</li>
 <li><code>PlayTime</code>: Muestra el tiempo jugado en juegos que no son de Steam.</li>
 <li><code>ProtonDB Badges</code>: Muestra la compatibilidad de los juegos con Steam Deck según <a href="https://www.protondb.com/">ProtonDB</a>.</li>
-<li><code>SteamGridDB</code>: Para poder cambiar las portadas de los juegos.</li>
+<li><code>SteamGridDB</code>: Para poder cambiar las portadas y el arte de los juegos en la biblioteca de Steam.</li>
 <li><code>Storage Cleaner</code>: Limpieza de archivos residuales.</li>
 </ul>
 <h2 id="activar-ssh">Activar SSH<a class="headerlink" href="#activar-ssh" title="Permanent link">&para;</a></h2>
@@ -4093,19 +4111,40 @@
 <li>Arrancará el instalador cuyo asistente seguiremos como si nos encontráramos en Windows.</li>
 <li>Cuando termine y se cierre el instalador, veremos que vuelve a activarse el botón <code>Jugar</code> en Steam.</li>
 <li>Borramos el ejecutable de la ruta donde lo tuviéramos.</li>
-<li>Lo que acabamos de instalar habrá terminado en el mismo sandbox que se ha creado con los pasos 2 a 6. Si elimináramos la entrada en la biblioteca, se perdería todo, por tanto debemos modificar el lanzador del instalador para que se comporte como el lanzador de lo que hemos instalado. Para ello abrir el explorador de archivos y acudir a la ruta <code>/home/deck/.steam/steam/steamapps/compatdata</code>. Allí encontraremos las carpetas de los juegos/aplicaciones instalados. Averiguamos la carpeta con el identificador correspondiente a la instalación que acabamos de hacer (por ejemplo ayudándonos de las fechas de creación de las carpetas). Dentro de dicha carpeta buscaremos el lanzado de lo que acabamos de instalar (puede ser un <code>.exe</code> o un <code>.lnk</code> que aparezca en el escritorio de Windows o en el menú inicio).</li>
+<li>Lo que acabamos de instalar habrá terminado en el mismo sandbox que se ha creado con los pasos 1 a 8. Si elimináramos la entrada en la biblioteca, se perdería todo, por tanto debemos modificar el lanzador del instalador para que se comporte como el lanzador de lo que hemos instalado. Para ello abrir el explorador de archivos y acudir a la ruta <code>/home/deck/.steam/steam/steamapps/compatdata</code>. Allí encontraremos las carpetas de los juegos/aplicaciones instalados. Averiguamos la carpeta con el identificador correspondiente a la instalación que acabamos de hacer (por ejemplo ayudándonos de las fechas de creación de las carpetas). Dentro de dicha carpeta buscaremos el lanzado de lo que acabamos de instalar (puede ser un <code>.exe</code> o un <code>.lnk</code> que aparezca en el escritorio de Windows o en el menú inicio).</li>
 <li>Deberíamos seguir teniendo delante la entrada correspondiente al instalador en la biblioteca de Steam, si no seleccionarla.</li>
 <li>Pulsar el icono de rueda dentada (<code>Administrar</code>) y seleccionar <code>Propiedades...</code> en el desplegable.</li>
 <li>Cambiar el nombre del Acceso directo y las entradas <code>Destino</code> y <code>Iniciar en</code> por las rutas que hemos averiguado en el paso 13.</li>
+<li>Cambiar el arte del juego para que tenga un mejor aspecto en la biblioteca de Steam (para ello deberemos tener instalado <a href="#plugins-interesantes"><code>Decky</code></a> y el plugin <code>SteamGridDB</code>)</li>
 </ol>
+<h2 id="solucion-de-dependencias-en-juegos-windows-con-proton">Solución de dependencias en juegos Windows con Proton<a class="headerlink" href="#solucion-de-dependencias-en-juegos-windows-con-proton" title="Permanent link">&para;</a></h2>
+<p>Si un juego no arranca por falta de alguna dependencia, podemos instalarla y luego vincularla al lanzador del juego de la siguiente forma. Vamos a verlo por ejemplo con el <code>Microsoft Windows C++ Runtime</code>:</p>
+<ol>
+<li>Buscar la dependencia. En el caso del <code>Micrsoft Windows C++ Runtime</code> podemos descargarlo de <a href="https://learn.microsoft.com/es-es/cpp/windows/latest-supported-vc-redist">esta página</a>.</li>
+<li>Creamos un lanzador en Steam para el instalador de la dependencia utilizando los pasos 1 a 8 del <a href="#instalar-cualquier-aplicacion-windows">apartado anterior</a> (no olvidar seleccionar ProtonGE como herramienta de compatibilidad).</li>
+<li>Abrimos el lanzador para instalar la dependencia.</li>
+<li>Averiguamos la carpeta con el identificador correspondiente a la instalación que acabamos de hacer dentro del directorio <code>/home/deck/.steam/steam/steamapps/compatdata</code> (por ejemplo ayudándonos de las fechas de creación de las carpetas). Imaginamos para el ejemplo que la ruta donde ha terminado instalada la dependencia es <code>/home/deck/.steam/steam/steamapps/compatdata/12345678/</code></li>
+<li>Borrar el lanzador creado en el paso 2.</li>
+<li>Seleccionar el juego en la biblioteca de Steam que requiera la dependencia, pulsar el icono de rueda dentada (<code>Administrar</code>) y seleccionar <code>Propiedades...</code> en el desplegable.</li>
+<li>
+<p>En la sección <code>Acceso directo</code>, en el campo <code>Parámetros de lanzamiento</code>, introducir lo siguiente (cambiando la ruta por la que corresponda):</p>
+<div class="highlight"><pre><span></span><code><span class="nv">STEAM_COMPAT_DATA_PATH</span><span class="o">=</span><span class="s2">&quot;/home/deck/.steam/steam/steamapps/compatdata/12345678&quot;</span><span class="w"> </span>%command%
+</code></pre></div>
+</li>
+<li>
+<p>Cerrar la ventana de Propiedades y pulsar <code>Jugar</code>.</p>
+</li>
+</ol>
+<p>En caso de que un juego requiriera varias dependencias, podemos incorporar tantas entradas <code>STEAM_COMPAT_DATA_PATH</code> como sean necesarias separadas por un espacio.</p>
+<p><a href="https://www.youtube.com/watch?v=WBjUcVzknQg">Tutorial en vídeo de @Hooandee</a></p>
 <h2 id="emudeck">EmuDeck<a class="headerlink" href="#emudeck" title="Permanent link">&para;</a></h2>
 <h4 id="enlaces_1">Enlaces<a class="headerlink" href="#enlaces_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="https://emudeck.com/">EmuDeck</a></li>
 <li><a href="https://emudeck.github.io/">EmuDeck Wiki</a></li>
-<li><a href="https://www.youtube.com/watch?v=N6BGOOLV7-Y">Tutorial vídeo instalación</a></li>
+<li><a href="https://www.youtube.com/watch?v=N6BGOOLV7-Y">Tutorial vídeo instalación de @Hooandee</a></li>
 </ul>
-<h2 id="videotutorial-general">Videotutorial general<a class="headerlink" href="#videotutorial-general" title="Permanent link">&para;</a></h2>
+<h2 id="videotutorial-general-de-hooandee">Videotutorial general de @Hooandee<a class="headerlink" href="#videotutorial-general-de-hooandee" title="Permanent link">&para;</a></h2>
 <iframe width="531" height="298" src="https://www.youtube.com/embed/GHwpTh-cReE" title="¡El tutorial más completo DEL MUNDO para STEAM DECK! De CERO a EXPERTO 2024 ❤️‍🔥" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
