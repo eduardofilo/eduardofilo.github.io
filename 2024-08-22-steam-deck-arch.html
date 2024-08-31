@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="es" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -13,25 +13,21 @@
       
       
       
-        <link rel="prev" href="2016-02-25-los-innovadores.html">
       
       
-        <link rel="next" href="2015-01-09-moviles.html">
-      
-      
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
     
     
       
-        <title>Raspberry Pi 2 + KODI + Tvheadend - Apuntes de eduardófilo</title>
+        <title>2024 08 22 steam deck arch - Apuntes de eduardófilo</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.7e359304.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,7 +48,7 @@
     
       <link rel="stylesheet" href="https://unpkg.com/mermaid@8.5.1/dist/mermaid.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,8 +74,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#elementos-necesarios" class="md-skip">
-          Skip to content
+        <a href="#loadkeys-es" class="md-skip">
+          Saltar a contenido
         </a>
       
     </div>
@@ -91,10 +87,10 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Apuntes de eduardófilo" class="md-header__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="." title="Apuntes de eduardófilo" class="md-header__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
       
-  <img src="../images/eduardofilo.png" alt="logo">
+  <img src="images/eduardofilo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -111,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Raspberry Pi 2 + KODI + Tvheadend
+              2024 08 22 steam deck arch
             
           </span>
         </div>
@@ -151,20 +147,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Select language">
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../2015-03-14-raspi2-kodi-tvheadend.html" hreflang="es" class="md-select__link">
+            <a href="2024-08-22-steam-deck-arch.html" hreflang="es" class="md-select__link">
               Español
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="2015-03-14-raspi2-kodi-tvheadend.html" hreflang="en" class="md-select__link">
+            <a href="en/2024-08-22-steam-deck-arch.html" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -183,16 +179,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Buscar">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
@@ -203,7 +199,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Inicializando búsqueda
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -214,7 +210,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -235,19 +231,17 @@
         
           
             
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="2024-05-31_campus_aula_dei_en_bici.html" class="md-tabs__link">
           
   
@@ -387,18 +381,18 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Apuntes de eduardófilo" class="md-nav__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+    <a href="." title="Apuntes de eduardófilo" class="md-nav__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
       
-  <img src="../images/eduardofilo.png" alt="logo">
+  <img src="images/eduardofilo.png" alt="logo">
 
     </a>
     Apuntes de eduardófilo
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -415,28 +409,23 @@
       
   
   
-    
   
   
-  
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -447,7 +436,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Blog
@@ -465,7 +454,7 @@
         
   
   <span class="md-ellipsis">
-    Zaragoza - Campus routes by bike
+    Vías Zaragoza - Campus en bicicleta
   </span>
   
 
@@ -486,7 +475,7 @@
         
   
   <span class="md-ellipsis">
-    Podcast Linux Interview
+    Entrevista en Podcast Linux
   </span>
   
 
@@ -1571,28 +1560,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Raspberry Pi 2 + KODI + Tvheadend
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="2015-03-14-raspi2-kodi-tvheadend.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="2015-03-14-raspi2-kodi-tvheadend.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1601,132 +1572,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#elementos-necesarios" class="md-nav__link">
-    <span class="md-ellipsis">
-      Elementos necesarios
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Elementos necesarios">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hardware" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hardware
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#software" class="md-nav__link">
-    <span class="md-ellipsis">
-      Software
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Instalación">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#instalacion-openelec" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación OpenELEC
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#conexion-de-piezas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conexión de piezas
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuracion-kodi" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuración Kodi
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuración Kodi">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#instalacion-de-tvheadend" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación de TVheadend
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuracion-de-tvheadend" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuración de Tvheadend
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#instalacion-licencia-mpeg-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación licencia MPEG-2
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3807,126 +3652,12 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#elementos-necesarios" class="md-nav__link">
-    <span class="md-ellipsis">
-      Elementos necesarios
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Elementos necesarios">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hardware" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hardware
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#software" class="md-nav__link">
-    <span class="md-ellipsis">
-      Software
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Instalación">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#instalacion-openelec" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación OpenELEC
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#conexion-de-piezas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conexión de piezas
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuracion-kodi" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuración Kodi
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuración Kodi">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#instalacion-de-tvheadend" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación de TVheadend
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuracion-de-tvheadend" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuración de Tvheadend
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#instalacion-licencia-mpeg-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación licencia MPEG-2
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -3944,199 +3675,80 @@
   
 
 
-  <h1>Raspberry Pi 2 + KODI + Tvheadend</h1>
-
-<p><img alt="KODI Logo" src="/images/posts/kodi-logo.png" /></p>
-<p>(Última actualización: 2016-03-25 16:00)</p>
-<p><em>Actualización: A partir de la versión 3 de Raspberry Pi la placa incluye un adaptador Wifi, por lo que no será necesario disponerlo. Si además optamos por no instalar el decodificador TDT también podremos prescindir del concentrador USB. En <a href="/2016/12/06/raspi3-kodi.html">este post</a> se detallan las instrucciones para esta versión más simplificada del sistema, así como se complementan con una configuración más detallada del propio Kodi.</em></p>
-<p><em>Nota: Si estás usando la versión 7 de OpenELEC que incluye la versión 16 de Kodi, utiliza <a href="/2017/01/14/raspi2-kodi-16-tvheadend.html">este otro post</a>.</em></p>
-<p>A continuación se describe el montaje de un media center ejecutándose sobre <a href="http://www.raspberrypi.org/raspberry-pi-2-on-sale/">Raspberry Pi 2</a> basado en la distribución <a href="http://openelec.tv/">OpenELEC</a> que implementa de forma muy ligera el software media center <a href="http://kodi.tv/">Kodi</a> (anteriormente llamado XBMC). Se incorpora un decodificador TDT gestionado con el software <a href="https://tvheadend.org/">Tvheadend</a>.</p>
-<p>En la instalación se incluye un adaptador Wifi que no será necesario en caso de tener el router cerca y poder llevar un cable ethernet hasta la Raspberry Pi. De hecho es lo más recomendable ya que será habitual consumir contenidos pesados por red. Si se puede prescindir del adaptador Wifi, seguramente tampoco será necesario el concentrador USB que se colocó por precaución al ver como la Raspberry Pi se quejaba de deficiencias en la alimentación (aparece en pantalla un cuadro de colores arriba a la derecha) al conectar directamente el adaptador Wifi y el TDT.</p>
-<p>Para el airmouse o teclado/ratón inalámbrico también hay alternativas:</p>
-<ul>
-<li>Aplicaciones para el móvil: <a href="https://play.google.com/store/apps/details?id=org.xbmc.kore">Kore</a> o <a href="https://play.google.com/store/apps/details?id=org.leetzone.android.yatsewidgetfree">Yatse</a></li>
-<li>Mando a distancia del TV: Si nuestro TV soporta el protocolo <a href="http://kodi.wiki/view/CEC">CEC</a>, puede comandar Kodi a través del cable HDMI</li>
-</ul>
-<h2 id="elementos-necesarios">Elementos necesarios<a class="headerlink" href="#elementos-necesarios" title="Permanent link">&para;</a></h2>
-<p>Empezamos con la lista de piezas que vamos a necesitar.</p>
-<h3 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Raspberry Pi 2: En <a href="http://www.raspipc.es/public/home/index.php?ver=tienda&amp;accion=verArticulo&amp;idProducto=1210">Raspipc.es</a> o en <a href="http://www.cooking-hacks.com/shop/raspberry-pi/raspberry-pi-2-model-b">Cooking-Hacks.com</a></li>
-<li>Tarjeta microSD: En <a href="http://www.raspipc.es/public/home/index.php?ver=tienda&amp;accion=verArticulo&amp;idProducto=1016">Raspipc.es</a> o en <a href="http://www.amazon.es/Samsung-Evo-MB-MP16DA-EU-adaptador/dp/B00J2BU7WO">Amazon.es</a></li>
-<li><a href="http://www.raspipc.es/public/home/index.php?ver=tienda&amp;accion=verArticulo&amp;idProducto=1079">Dongle Wifi</a></li>
-<li>Hub USB alimentado: En <a href="http://www.raspipc.es/public/home/index.php?ver=tienda&amp;accion=verArticulo&amp;idProducto=1065">Raspipc.es</a> o en <a href="http://www.pccomponentes.com/conceptronic_stylish_hub_4_puertos_usb_2_0_azul.html">Pccomponentes.com</a></li>
-<li>Sintonizador TDT USB: En <a href="http://www.pccomponentes.com/conceptronic_sintonizador_tdt_usb.html">Pccomponentes.com</a> o en <a href="http://www.amazon.es/Conceptronic-C08-096-receptor-Dvb-T-radio/dp/B003KCKERE">Amazon.es</a></li>
-<li><a href="http://www.raspipc.es/public/home/index.php?ver=tienda&amp;accion=verArticulo&amp;idProducto=1115">Cable HDMI</a>. Vamos a suponer que el televisor donde se va a instalar posee una entrada HDMI de tamaño estándar. En caso contrario necesitaremos el adaptador correspondiente.</li>
-<li>Airmouse o teclado/ratón inalámbricos: En <a href="https://www.amazon.es/dp/B017LUBR6W/">Amazon.es</a></li>
-</ul>
-<h3 id="software">Software<a class="headerlink" href="#software" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="http://releases.openelec.tv/OpenELEC-RPi2.arm-6.0.3.tar?mirrorlist">OpenELEC para Raspberry Pi 2</a></li>
-<li><a href="http://www.raspberrypi.com/mpeg-2-license-key/">Licencia MPEG-2</a>: Necesaria para reproducir la señal TDT.</li>
-</ul>
-<h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
-<p>A continuación se indica el proceso de montaje paso a paso. Vamos a dividirlo en cuatro bloques.</p>
-<h3 id="instalacion-openelec">Instalación OpenELEC<a class="headerlink" href="#instalacion-openelec" title="Permanent link">&para;</a></h3>
-<p>Las instrucciones que siguen se corresponden con una instalación desde un equipo con Linux. En caso de utilizar Windows o MacOSX habrá que buscar las alternativas. Por ejemplo en las <a href="http://wiki.openelec.tv/index.php/HOW-TO:Installing_OpenELEC/Creating_The_Install_Key#tab=DiskImage">instrucciones oficiales de instalación de OpenELEC</a> sí que se dan instrucciones específicas para cada sistema. La web oficial de Raspberry Pi también tiene una <a href="http://www.raspberrypi.org/documentation/installation/installing-images/README.md">guía bastante buena</a>.</p>
-<ol>
-<li>Abrimos un terminal.</li>
-<li>
-<p>Bajamos la imagen de OpenELEC para Raspberry Pi 2:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>wget<span class="w"> </span>http://releases.openelec.tv/OpenELEC-RPi2.arm-6.0.3.img.gz
-</code></pre></div></td></tr></table></div>
-
-</li>
-<li>
-<p>Insertamos la tarjeta microSD en el lector de tarjetas del ordenador.</p>
-</li>
-<li>
-<p>Averiguamos la ruta del dispositivo de la tarjeta:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>df<span class="w"> </span>-h
-S.ficheros<span class="w">             </span>Tamaño<span class="w"> </span>Usados<span class="w">  </span>Disp<span class="w"> </span>Uso%<span class="w"> </span>Montado<span class="w"> </span>en
-/dev/sda3<span class="w">                 </span>61G<span class="w">    </span>44G<span class="w">   </span>14G<span class="w">  </span><span class="m">76</span>%<span class="w"> </span>/
-none<span class="w">                     </span><span class="m">4</span>,0K<span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="m">4</span>,0K<span class="w">   </span><span class="m">0</span>%<span class="w"> </span>/sys/fs/cgroup
-udev<span class="w">                     </span><span class="m">1</span>,9G<span class="w">    </span>12K<span class="w">  </span><span class="m">1</span>,9G<span class="w">   </span><span class="m">1</span>%<span class="w"> </span>/dev
-tmpfs<span class="w">                    </span>390M<span class="w">   </span><span class="m">1</span>,3M<span class="w">  </span>389M<span class="w">   </span><span class="m">1</span>%<span class="w"> </span>/run
-none<span class="w">                     </span><span class="m">5</span>,0M<span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="m">5</span>,0M<span class="w">   </span><span class="m">0</span>%<span class="w"> </span>/run/lock
-none<span class="w">                     </span><span class="m">2</span>,0G<span class="w">    </span>27M<span class="w">  </span><span class="m">1</span>,9G<span class="w">   </span><span class="m">2</span>%<span class="w"> </span>/run/shm
-none<span class="w">                     </span>100M<span class="w">    </span>84K<span class="w">  </span>100M<span class="w">   </span><span class="m">1</span>%<span class="w"> </span>/run/user
-/dev/mmcblk0p2<span class="w">           </span><span class="m">3</span>,4G<span class="w">   </span><span class="m">1</span>,6M<span class="w">  </span><span class="m">3</span>,4G<span class="w">   </span><span class="m">1</span>%<span class="w"> </span>/media/edumoreno/3f46971c-8bb7-4f8a-9095-2862537e6191
-/dev/mmcblk0p1<span class="w">           </span>256M<span class="w">   </span>104M<span class="w">  </span>153M<span class="w">  </span><span class="m">41</span>%<span class="w"> </span>/media/edumoreno/1765-7DD1
-</code></pre></div></td></tr></table></div>
-
-</li>
-<li>
-<p>La mejor forma de averiguar los dispositivos correctos es ejecutar <code>df -h</code> antes y después de insertar la tarjeta. En mi caso aparecen dos particiones sobre el dispositivo <code>/dev/mmcblk0</code> (p1 y p2 son el sufijo de las particiones; en algunos lectores de tarjetas nos podría aparecer <code>/dev/sdb1</code> y <code>/dev/sdb2</code> por ejemplo, lo que indicaría que el dispositivo es <code>/dev/sdb</code>).</p>
-</li>
-<li>
-<p>Desmontamos las particiones montadas de la tarjeta:</p>
+<p>--- Sesión sobre el liveUSB</p>
+<h1 id="loadkeys-es">loadkeys es<a class="headerlink" href="#loadkeys-es" title="Permanent link">&para;</a></h1>
+<h1 id="iwctl">iwctl<a class="headerlink" href="#iwctl" title="Permanent link">&para;</a></h1>
+<p>[iwd]# station wlan0 scan
+[iwd]# station wlan0 get-networks
+[iwd]# station wlan0 connect <SSID>
+[iwd]# exit</p>
+<h1 id="ping-archlinuxorg">ping archlinux.org<a class="headerlink" href="#ping-archlinuxorg" title="Permanent link">&para;</a></h1>
+<h1 id="fdisk-devnvme0n1">fdisk /dev/nvme0n1<a class="headerlink" href="#fdisk-devnvme0n1" title="Permanent link">&para;</a></h1>
+<p>Command: n
+Partition number: 9
+First sector: default
+Last sector: +4G
+Command: n
+Partition number: 10
+First sector: default
+Last sector: default
+w</p>
+<h1 id="mkfsext4-devnvme0n1p10">mkfs.ext4 /dev/nvme0n1p10<a class="headerlink" href="#mkfsext4-devnvme0n1p10" title="Permanent link">&para;</a></h1>
+<h1 id="mkswap-devnvme0n1p9">mkswap /dev/nvme0n1p9<a class="headerlink" href="#mkswap-devnvme0n1p9" title="Permanent link">&para;</a></h1>
+<h1 id="mount-devnvme0n1p10-mnt">mount /dev/nvme0n1p10 /mnt<a class="headerlink" href="#mount-devnvme0n1p10-mnt" title="Permanent link">&para;</a></h1>
+<h1 id="mount-mkdir-devnvme0n1p1-mntbootefi">mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi<a class="headerlink" href="#mount-mkdir-devnvme0n1p1-mntbootefi" title="Permanent link">&para;</a></h1>
+<h1 id="swapon-devnvme0n1p9">swapon /dev/nvme0n1p9<a class="headerlink" href="#swapon-devnvme0n1p9" title="Permanent link">&para;</a></h1>
+<h1 id="pacstrap-k-mnt-base-base-devel-linux-linux-firmware-sudo-vi-ntfs-3g-networkmanager-amd-ucode-grub-efibootmgr-git-cmake">pacstrap -K /mnt base base-devel linux linux-firmware sudo vi ntfs-3g networkmanager amd-ucode grub efibootmgr git cmake<a class="headerlink" href="#pacstrap-k-mnt-base-base-devel-linux-linux-firmware-sudo-vi-ntfs-3g-networkmanager-amd-ucode-grub-efibootmgr-git-cmake" title="Permanent link">&para;</a></h1>
+<h1 id="genfstab-u-mnt-mntetcfstab">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab<a class="headerlink" href="#genfstab-u-mnt-mntetcfstab" title="Permanent link">&para;</a></h1>
+<h1 id="arch-chroot-mnt">arch-chroot /mnt<a class="headerlink" href="#arch-chroot-mnt" title="Permanent link">&para;</a></h1>
+<h1 id="ln-sf-usrsharezoneinfoeuropemadrid-etclocaltime">ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime<a class="headerlink" href="#ln-sf-usrsharezoneinfoeuropemadrid-etclocaltime" title="Permanent link">&para;</a></h1>
+<h1 id="hwclock-systohc">hwclock --systohc<a class="headerlink" href="#hwclock-systohc" title="Permanent link">&para;</a></h1>
+<h1 id="vi-etclocalegen-descomentar-en_usutf-8-utf-8-y-es_esutf-8-utf-8">vi /etc/locale.gen    # descomentar <code>en_US.UTF-8 UTF-8</code> y <code>es_ES.UTF-8 UTF-8</code><a class="headerlink" href="#vi-etclocalegen-descomentar-en_usutf-8-utf-8-y-es_esutf-8-utf-8" title="Permanent link">&para;</a></h1>
+<h1 id="locale-gen">locale-gen<a class="headerlink" href="#locale-gen" title="Permanent link">&para;</a></h1>
+<h1 id="vi-etclocaleconf-anadir-langes_esutf-8">vi /etc/locale.conf   # Añadir <code>LANG=es_ES.UTF-8</code><a class="headerlink" href="#vi-etclocaleconf-anadir-langes_esutf-8" title="Permanent link">&para;</a></h1>
+<h1 id="vi-etcvconsoleconf-anadir-keymapes">vi /etc/vconsole.conf # Añadir <code>KEYMAP=es</code><a class="headerlink" href="#vi-etcvconsoleconf-anadir-keymapes" title="Permanent link">&para;</a></h1>
+<h1 id="vi-etchostname-anadir-deck">vi /etc/hostname      # Añadir <code>deck</code><a class="headerlink" href="#vi-etchostname-anadir-deck" title="Permanent link">&para;</a></h1>
+<h1 id="vi-etchosts-anadir-127001-localhost">vi /etc/hosts         # Añadir `127.0.0.1        localhost<a class="headerlink" href="#vi-etchosts-anadir-127001-localhost" title="Permanent link">&para;</a></h1>
 <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>umount<span class="w"> </span>/dev/mmcblk0p1
-$<span class="w"> </span>sudo<span class="w"> </span>umount<span class="w"> </span>/dev/mmcblk0p2
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>                              ::1              localhost
+                              127.0.1.1        deck`
 </code></pre></div></td></tr></table></div>
 
-</li>
-<li>
-<p>Copiamos a la tarjeta la imagen de OpenELEC bajada en el paso 2:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>gunzip<span class="w"> </span>OpenELEC-RPi2.arm-6.0.3.img.gz<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M
-$<span class="w"> </span>sudo<span class="w"> </span>sync
-</code></pre></div></td></tr></table></div>
-
-</li>
-</ol>
-<h3 id="conexion-de-piezas">Conexión de piezas<a class="headerlink" href="#conexion-de-piezas" title="Permanent link">&para;</a></h3>
-<p>Cuando termine el último punto de la sección anterior (tardará más o menos dependiendo de la velocidad de la tarjeta), sacaremos la tarjeta microSD del lector y la insertaremos en la ranura de la Raspberry. Conectamos el cable HDMI entre el televisor y la Raspberry. Conectamos el adaptador TDT y el adaptador Wifi al concentrador USB. Alimentamos el concentrador y enlazamos la entrada del concentrador con una de las entradas USB de la Raspberry. Finalmente alimentamos la Raspberry con un cable USB - microUSB desde el concentrador hacia la Raspberry. El primer arranque de OpenELEC sirve para redimensionar las particiones de la tarjeta microSD para aprovechar toda su capacidad. Al terminar el proceso se reiniciará automáticamente y esta vez sí, terminará apareciendo el interfaz de Kodi.</p>
-<p><img alt="Hard" src="/images/posts/kodi-hard.jpg" /></p>
-<p>En la foto sólo vemos el adaptador Wifi y el decodificador TDT, directamente conectados a la Raspberry. Esta configuración se terminó descartando porque la Raspberry tenía problemas de alimentación, aún utilizando un alimentador de 2 Amperios. El elemento que más pico de corriente exige es el decodificador TDT. Los problemas se detectan por un cuadrado de colores que aparece en la esquina superior derecha de la pantalla. Normalmente el sistema no es capaz de arrancar en esta situación (aparecen unos errores en la consola) y lo que es peor se termina corrompiendo el sistema de archivos de la microSD. Con el concentrador USB alimentado se evitan estos problemas.</p>
-<p>A partir de ahora trabajaremos con Kodi para configurar una serie de cosas.</p>
-<h3 id="configuracion-kodi">Configuración Kodi<a class="headerlink" href="#configuracion-kodi" title="Permanent link">&para;</a></h3>
-<p>El primer arranque muestra un asistente en el que entre otras cosas se selecciona el idioma de los menús, la conexión a internet y si queremos activar los servicios SSH y Samba. Necesitamos activar el primero para poder averiguar más adelante el número de serie de la Raspberry para contratar la licencia MPEG-2.</p>
-<p>Una vez terminado el asistente acudimos a la siguiente ruta de los menús para activar el adaptador Wifi:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Sistema / OpenELEC / Red / Redes inalámbricas / Activo
-</code></pre></div></td></tr></table></div>
-
-<p>Una vez activo conectamos a nuestro punto de acceso siguiendo esta secuencia de menús:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Sistema / OpenELEC / Conexiones / engancho mi AP
-</code></pre></div></td></tr></table></div>
-
-<h4 id="instalacion-de-tvheadend">Instalación de TVheadend<a class="headerlink" href="#instalacion-de-tvheadend" title="Permanent link">&para;</a></h4>
-<p>Lo siguientes pasos nos permiten activar el sistema de gestión del TDT:  </p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Sistema</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Ajustes</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Add</span><span class="o">-</span><span class="n">ons</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Instalar</span><span class="w"> </span><span class="n">desde</span><span class="w"> </span><span class="n">repositorio</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">OpenELEC</span><span class="w"> </span><span class="n">Add</span><span class="o">-</span><span class="n">ons</span><span class="w"> </span><span class="p">(</span><span class="n">official</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Repositorio</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">Add</span><span class="o">-</span><span class="n">ons</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">OpenELEC</span><span class="w"> </span><span class="n">Add</span><span class="o">-</span><span class="n">ons</span><span class="w"> </span><span class="p">(</span><span class="n">unofficial</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Instalar</span>
-<span class="n">Sistema</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Ajustes</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Add</span><span class="o">-</span><span class="n">ons</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Instalar</span><span class="w"> </span><span class="n">desde</span><span class="w"> </span><span class="n">repositorio</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Todos</span><span class="w"> </span><span class="n">los</span><span class="w"> </span><span class="n">repositorios</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Servicios</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">tvheadend</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Instalar</span>
-<span class="n">Sistema</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Ajustes</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Add</span><span class="o">-</span><span class="n">ons</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Instalar</span><span class="w"> </span><span class="n">desde</span><span class="w"> </span><span class="n">repositorio</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Todos</span><span class="w"> </span><span class="n">los</span><span class="w"> </span><span class="n">repositorios</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Clientes</span><span class="w"> </span><span class="n">PVR</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Tvheadend</span><span class="w"> </span><span class="n">HTSP</span><span class="w"> </span><span class="n">Client</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Instalar</span>
-<span class="n">Sistema</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Ajustes</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Add</span><span class="o">-</span><span class="n">ons</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Mis</span><span class="w"> </span><span class="n">add</span><span class="o">-</span><span class="n">ons</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Clientes</span><span class="w"> </span><span class="n">PVR</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Tvheadend</span><span class="w"> </span><span class="n">HTSP</span><span class="w"> </span><span class="n">Client</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Configurar</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">OK</span>
-<span class="n">Sistema</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Ajustes</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Add</span><span class="o">-</span><span class="n">ons</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Mis</span><span class="w"> </span><span class="n">add</span><span class="o">-</span><span class="n">ons</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Clientes</span><span class="w"> </span><span class="n">PVR</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Tvheadend</span><span class="w"> </span><span class="n">HTSP</span><span class="w"> </span><span class="n">Client</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Activar</span>
-<span class="n">Sistema</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Ajustes</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">TV</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">directo</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">General</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Activado</span>
-</code></pre></div></td></tr></table></div>
-
-<h4 id="configuracion-de-tvheadend">Configuración de Tvheadend<a class="headerlink" href="#configuracion-de-tvheadend" title="Permanent link">&para;</a></h4>
-<p>Tvheadend tiene arquitectura cliente/servidor. Lo que manipulamos a través de Kodi es la parte cliente. El servicio se sirve por TCP/IP a través de los puertos 9981 y 9982. El segundo puerto ofrece una API que utilizan los clientes gráficos como el de Kodi o las aplicaciones para dispositivos móviles. Así pues en las configuraciones de estos programas habrá que indicar el puerto 9982. El primero ofrece un interfaz web al que podemos pues entrar con un navegador accediendo a la dirección http://ip-de-raspberry:9981</p>
-<p>La IP de la raspberry la podremos averiguar acudiendo a la ruta:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Sistema / OpenELEC / Conexiones
-</code></pre></div></td></tr></table></div>
-
-<p>Por cierto que ya que estamos en esta ruta, se recomienda editar la conexión y poner una IP fija en el apartado IPv4, ya que como veremos, el interfaz web de Tvheadend es muy potente y nos convendrá utilizarlo para algunas tareas. También nos conviene tener una IP fija si vamos a consumir el servicio de televisor desde otros dispositivos como un ordenador (en ese caso utilizaremos el interfaz web) o un dispositivo móvil.</p>
-<p>Antes de continuar, comentar que me he encontrado con varios chips dentro del mismo adaptador Conceptronic. En concreto los dos siguientes identificadores:</p>
+<h1 id="passwd">passwd<a class="headerlink" href="#passwd" title="Permanent link">&para;</a></h1>
+<h1 id="grub-install-targetx86_64-efi-efi-directorybootefi-bootloader-idarch">grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch<a class="headerlink" href="#grub-install-targetx86_64-efi-efi-directorybootefi-bootloader-idarch" title="Permanent link">&para;</a></h1>
+<h1 id="grub-mkconfig-o-bootgrubgrubcfg">grub-mkconfig -o /boot/grub/grub.cfg<a class="headerlink" href="#grub-mkconfig-o-bootgrubgrubcfg" title="Permanent link">&para;</a></h1>
+<h1 id="systemctl-enable-networkmanager">systemctl enable NetworkManager<a class="headerlink" href="#systemctl-enable-networkmanager" title="Permanent link">&para;</a></h1>
+<h1 id="useradd-m-g-wheel-edumoreno">useradd -m -G wheel edumoreno<a class="headerlink" href="#useradd-m-g-wheel-edumoreno" title="Permanent link">&para;</a></h1>
+<h1 id="passwd-edumoreno">passwd edumoreno<a class="headerlink" href="#passwd-edumoreno" title="Permanent link">&para;</a></h1>
+<h1 id="chmod-uw-etcsudoers">chmod u+w /etc/sudoers<a class="headerlink" href="#chmod-uw-etcsudoers" title="Permanent link">&para;</a></h1>
+<h1 id="vi-etcsudoers-descomentar-wheel-allall-all">vi /etc/sudoers       # Descomentar <code>%wheel ALL=(ALL) ALL</code><a class="headerlink" href="#vi-etcsudoers-descomentar-wheel-allall-all" title="Permanent link">&para;</a></h1>
+<h1 id="chmod-u-w-etcsudoers">chmod u-w /etc/sudoers<a class="headerlink" href="#chmod-u-w-etcsudoers" title="Permanent link">&para;</a></h1>
+<h1 id="pacman-s-xorg-server">pacman -S xorg-server<a class="headerlink" href="#pacman-s-xorg-server" title="Permanent link">&para;</a></h1>
+<h1 id="pacman-s-xf86-video-amdgpu">pacman -S xf86-video-amdgpu<a class="headerlink" href="#pacman-s-xf86-video-amdgpu" title="Permanent link">&para;</a></h1>
+<h1 id="pacman-s-plasma-meta-a-la-tercera-pregunta-responder-2-noto-fonts">pacman -S plasma-meta # A la tercera pregunta responder <code>2) noto-fonts</code><a class="headerlink" href="#pacman-s-plasma-meta-a-la-tercera-pregunta-responder-2-noto-fonts" title="Permanent link">&para;</a></h1>
+<h1 id="systemctl-enable-sddm">systemctl enable sddm<a class="headerlink" href="#systemctl-enable-sddm" title="Permanent link">&para;</a></h1>
+<h1 id="pacman-s-firefox-konsole-kate">pacman -S firefox konsole kate<a class="headerlink" href="#pacman-s-firefox-konsole-kate" title="Permanent link">&para;</a></h1>
+<h1 id="exit">exit<a class="headerlink" href="#exit" title="Permanent link">&para;</a></h1>
+<h1 id="umount-r-mnt">umount -R /mnt<a class="headerlink" href="#umount-r-mnt" title="Permanent link">&para;</a></h1>
+<h1 id="reboot">reboot<a class="headerlink" href="#reboot" title="Permanent link">&para;</a></h1>
+<p>--- Una vez arrancado el sistema</p>
 <ul>
-<li>Realtek RTL2832</li>
-<li>Siano Mobile Digital MDTV Receiver</li>
+<li>Configurar la escala de la pantalla a 100% en <code>Preferencias &gt; Preferencias del sistema &gt; Pantalla y monitor &gt; Escalar</code></li>
+<li>Configurar la distribución de teclado al español en <code>Preferencias &gt; Preferencias del sistema &gt; Teclado &gt; Distribuciones &gt; Configurar distribuciones &gt; Añadir (Español)</code></li>
+<li>
+<p>Crear fichero <code>/etc/sddm.conf.d/virtualkbd.conf</code> con el siguiente contenido:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[General]</span>
+<span class="na">InputMethod</span><span class="o">=</span><span class="s">qtvirtualkeyboard</span>
+</code></pre></div>
+</li>
+<li>
+<p>Instalación de qtvkbd:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/qtvkbd.git
+<span class="nb">cd</span><span class="w"> </span>qtvkbd
+makepkg<span class="w"> </span>-si
+</code></pre></div>
+</li>
 </ul>
-<p>El primero funcionó directamente, pero en el segundo fue necesario modificar un parámetro de uno de los módulos que lo controlan. Para ello tuve que añadir el fichero <code>/etc/modprobe.d/smsmdtv.conf</code> con el siguiente contenido:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>options smsmdtv default_mode=4
-</code></pre></div></td></tr></table></div>
-
-<p>Una vez dentro de la consola web de Tvheadend seguimos los siguientes pasos para activar el decodificador de TDT y añadir los canales:  </p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Configuration</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">General</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Language</span><span class="w"> </span><span class="n">settings</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Available</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Spanish</span><span class="p">;</span><span class="w"> </span><span class="n">Castilian</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Selected</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Save</span><span class="w"> </span><span class="n">configuration</span>
-<span class="n">Configuration</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">DVB</span><span class="w"> </span><span class="n">Inputs</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">TV</span><span class="w"> </span><span class="n">Adapters</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Realtek</span><span class="w"> </span><span class="n">RTL2832</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Parameters</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Basic</span><span class="w"> </span><span class="n">Settings</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Enabled</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Save</span>
-<span class="n">Configuration</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">DVB</span><span class="w"> </span><span class="n">Inputs</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Networks</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Add</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="kr">Type</span><span class="o">:</span><span class="w"> </span><span class="n">DVB</span><span class="o">-</span><span class="n">T</span><span class="w"> </span><span class="n">Network</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Network</span><span class="w"> </span><span class="n">Name</span><span class="o">:</span><span class="w"> </span><span class="n">TDT</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Create</span>
-<span class="n">Configuration</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">DVB</span><span class="w"> </span><span class="n">Inputs</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Muxes</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Add</span><span class="w"> </span><span class="p">(</span><span class="n">ver</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="n">más</span><span class="w"> </span><span class="n">adelante</span><span class="p">)</span>
-<span class="n">Configuration</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">DVB</span><span class="w"> </span><span class="n">Inputs</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">TV</span><span class="w"> </span><span class="n">Adapters</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Realtek</span><span class="w"> </span><span class="n">RTL2832</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Parameters</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Basic</span><span class="w"> </span><span class="n">Settings</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Networks</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">seleccionamos</span><span class="w"> </span><span class="n">TDT</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Save</span>
-</code></pre></div></td></tr></table></div>
-
-<p>Los muxes o multiplexes son las frecuencias sobre las que viajan empaquetadas los canales y una serie de parámetros de codificación. La tecnología TDT (o DVB-T más propiamente) permite codificar varios canales en una misma frecuencia. Algunos decodificadores de TDT permiten sintonización automática como hacen los televisores, pero el que he elegido para este montaje no. Así, hay que introducir la lista de muxes manualmente. Las frecuencias dependen de la provincia en la que nos encontremos. <a href="http://www.tdt1.com/">Aquí</a> por ejemplo podemos encontrarlas. Los muxes que utilizo en Zaragoza son los siguientes:</p>
-<p><img alt="TDT Muxes" src="/images/posts/kodi-muxes.png" /></p>
-<p>Todos ellos se han introducido con los siguientes parámetros:</p>
-<ul>
-<li>Bandwidth: 8MHz</li>
-<li>Constellation: QAM/64</li>
-<li>Transmission Mode: 8k</li>
-<li>Resto de parámetros: AUTO</li>
-</ul>
-<p>Una vez introducidos los muxes, hay que esperar a que el sistema los escanee. El proceso suele tardar un buen rato y se observa su evolución en las columnas <code>Scan Status</code> y <code>Scan Result</code> del pantallazo anterior. Una vez que veamos que todos los muxes han sido analizados, tenemos que indicar a Tvheadend que mapee los servicios encontrados con canales. Esto lo haremos pulsando el botón <code>Map All</code> que se encuentra en la ruta:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Configuration / DVB Inputs / Services / Map All / Check availability / Map
-</code></pre></div></td></tr></table></div>
-
-<p>Para ordenar la lista de canales, hay que acudir a la siguiente ruta y asignar números correlativos a la columna <code>Number</code>:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Configuration / Channel/EPG / Channels
-</code></pre></div></td></tr></table></div>
-
-<p>Cuando hayamos terminado de numerar los canales pulsaremos el botón <code>Save</code>.</p>
-<h3 id="instalacion-licencia-mpeg-2">Instalación licencia MPEG-2<a class="headerlink" href="#instalacion-licencia-mpeg-2" title="Permanent link">&para;</a></h3>
-<p>Aunque por la arquitectura cliente/servidor de Tvheadend podremos visualizar la señal TDT desde otros dispositivos que tengamos en la misma red (como por ejemplo con nuestro teléfono Android con <a href="https://play.google.com/store/apps/details?id=org.tvheadend.tvhguide">esta aplicación</a> instalada), si queremos ver la televisión en el propio Kodi, vamos a necesitar adquirir la licencia para utilizar el hardware de decodificación MPEG-2 que hay incluido en el procesador Broadcom 2836 de la Raspberry Pi 2. La licencia tiene un coste de £2.40 Para ello necesitamos primero averiguar el número de serie de la Raspberry siguiendo estos pasos:</p>
-<ol>
-<li>
-<p>Conectamos por SSH con la Raspberry (password = <code>openelec</code>):</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>root@ip-de-raspberry
-</code></pre></div></td></tr></table></div>
-
-</li>
-<li>
-<p>Obtenemos el número de serie:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>OpenELEC:~ # cat /proc/cpuinfo | fgrep Serial
-Serial      : 0000000029bcaeeb
-</code></pre></div></td></tr></table></div>
-
-</li>
-<li>
-<p>Adquirimos la licencia acudiendo a la <a href="http://www.raspberrypi.com/mpeg-2-license-key/">Raspberry Pi Store</a>.</p>
-</li>
-<li>Aproximadamente un día después recibiremos por correo un código que ahora tendremos que instalar en la Raspberry.</li>
-<li>Apagamos Kodi/OpenELEC desde menú.</li>
-<li>Cuando se termine de apagar la Raspberry, quitamos la alimentación y sacamos la tarjeta microSD.</li>
-<li>Insertamos la tarjeta en el lector del ordenador. Se montarán las dos nuevas particiones que contiene la distribución OpenELEC. La partición más pequeña es la de arranque donde está el kernel Linux y una serie de ficheros de configuración de Raspberry Pi que actúan a modo de BIOS. Entre esos ficheros vamos a modificar el <code>config.txt</code>. Casi al final hay una serie de claves que comienzan por <code>decode_</code>. La primera de ellas es <code>decode_MPG2</code>. Descomentaremos la línea quitando la almohadilla que hay al principio y sustituiremos el valor por el que hemos obtenido por correo al adquirir la licencia. Guardamos el fichero, extraemos la tarjeta microSD y la volvemos a insertar en la Raspberry.</li>
-</ol>
-<p>FIN</p>
 
 
 
@@ -4258,10 +3870,10 @@ Serial      : 0000000029bcaeeb
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "navigation.tabs"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tracking", "navigation.tabs"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
+      <script src="assets/javascripts/bundle.bd41221c.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
       
