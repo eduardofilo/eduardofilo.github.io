@@ -3006,6 +3006,27 @@
   
   
     <li class="md-nav__item">
+      <a href="sistemas/archlinux.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arch Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="sistemas/buildroot.html" class="md-nav__link">
         
   
@@ -3698,7 +3719,7 @@ w</p>
 <h1 id="mount-devnvme0n1p10-mnt">mount /dev/nvme0n1p10 /mnt<a class="headerlink" href="#mount-devnvme0n1p10-mnt" title="Permanent link">&para;</a></h1>
 <h1 id="mount-mkdir-devnvme0n1p1-mntbootefi">mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi<a class="headerlink" href="#mount-mkdir-devnvme0n1p1-mntbootefi" title="Permanent link">&para;</a></h1>
 <h1 id="swapon-devnvme0n1p9">swapon /dev/nvme0n1p9<a class="headerlink" href="#swapon-devnvme0n1p9" title="Permanent link">&para;</a></h1>
-<h1 id="pacstrap-k-mnt-base-base-devel-linux-linux-firmware-sudo-vi-ntfs-3g-networkmanager-amd-ucode-grub-efibootmgr-git-cmake">pacstrap -K /mnt base base-devel linux linux-firmware sudo vi ntfs-3g networkmanager amd-ucode grub efibootmgr git cmake<a class="headerlink" href="#pacstrap-k-mnt-base-base-devel-linux-linux-firmware-sudo-vi-ntfs-3g-networkmanager-amd-ucode-grub-efibootmgr-git-cmake" title="Permanent link">&para;</a></h1>
+<h1 id="pacstrap-k-mnt-base-base-devel-linux-linux-firmware-sudo-vi-ntfs-3g-networkmanager-amd-ucode-grub-efibootmgr-git-cmake-qt5-wayland">pacstrap -K /mnt base base-devel linux linux-firmware sudo vi ntfs-3g networkmanager amd-ucode grub efibootmgr git cmake qt5-wayland<a class="headerlink" href="#pacstrap-k-mnt-base-base-devel-linux-linux-firmware-sudo-vi-ntfs-3g-networkmanager-amd-ucode-grub-efibootmgr-git-cmake-qt5-wayland" title="Permanent link">&para;</a></h1>
 <h1 id="genfstab-u-mnt-mntetcfstab">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab<a class="headerlink" href="#genfstab-u-mnt-mntetcfstab" title="Permanent link">&para;</a></h1>
 <h1 id="arch-chroot-mnt">arch-chroot /mnt<a class="headerlink" href="#arch-chroot-mnt" title="Permanent link">&para;</a></h1>
 <h1 id="ln-sf-usrsharezoneinfoeuropemadrid-etclocaltime">ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime<a class="headerlink" href="#ln-sf-usrsharezoneinfoeuropemadrid-etclocaltime" title="Permanent link">&para;</a></h1>
@@ -3718,16 +3739,33 @@ w</p>
 <h1 id="grub-install-targetx86_64-efi-efi-directorybootefi-bootloader-idarch">grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch<a class="headerlink" href="#grub-install-targetx86_64-efi-efi-directorybootefi-bootloader-idarch" title="Permanent link">&para;</a></h1>
 <h1 id="grub-mkconfig-o-bootgrubgrubcfg">grub-mkconfig -o /boot/grub/grub.cfg<a class="headerlink" href="#grub-mkconfig-o-bootgrubgrubcfg" title="Permanent link">&para;</a></h1>
 <h1 id="systemctl-enable-networkmanager">systemctl enable NetworkManager<a class="headerlink" href="#systemctl-enable-networkmanager" title="Permanent link">&para;</a></h1>
-<h1 id="useradd-m-g-wheel-edumoreno">useradd -m -G wheel edumoreno<a class="headerlink" href="#useradd-m-g-wheel-edumoreno" title="Permanent link">&para;</a></h1>
-<h1 id="passwd-edumoreno">passwd edumoreno<a class="headerlink" href="#passwd-edumoreno" title="Permanent link">&para;</a></h1>
+<h1 id="useradd-m-g-wheel-edu">useradd -m -G wheel edu<a class="headerlink" href="#useradd-m-g-wheel-edu" title="Permanent link">&para;</a></h1>
+<h1 id="passwd-edu">passwd edu<a class="headerlink" href="#passwd-edu" title="Permanent link">&para;</a></h1>
 <h1 id="chmod-uw-etcsudoers">chmod u+w /etc/sudoers<a class="headerlink" href="#chmod-uw-etcsudoers" title="Permanent link">&para;</a></h1>
 <h1 id="vi-etcsudoers-descomentar-wheel-allall-all">vi /etc/sudoers       # Descomentar <code>%wheel ALL=(ALL) ALL</code><a class="headerlink" href="#vi-etcsudoers-descomentar-wheel-allall-all" title="Permanent link">&para;</a></h1>
 <h1 id="chmod-u-w-etcsudoers">chmod u-w /etc/sudoers<a class="headerlink" href="#chmod-u-w-etcsudoers" title="Permanent link">&para;</a></h1>
-<h1 id="pacman-s-xorg-server">pacman -S xorg-server<a class="headerlink" href="#pacman-s-xorg-server" title="Permanent link">&para;</a></h1>
-<h1 id="pacman-s-xf86-video-amdgpu">pacman -S xf86-video-amdgpu<a class="headerlink" href="#pacman-s-xf86-video-amdgpu" title="Permanent link">&para;</a></h1>
-<h1 id="pacman-s-plasma-meta-a-la-tercera-pregunta-responder-2-noto-fonts">pacman -S plasma-meta # A la tercera pregunta responder <code>2) noto-fonts</code><a class="headerlink" href="#pacman-s-plasma-meta-a-la-tercera-pregunta-responder-2-noto-fonts" title="Permanent link">&para;</a></h1>
-<h1 id="systemctl-enable-sddm">systemctl enable sddm<a class="headerlink" href="#systemctl-enable-sddm" title="Permanent link">&para;</a></h1>
-<h1 id="pacman-s-firefox-konsole-kate">pacman -S firefox konsole kate<a class="headerlink" href="#pacman-s-firefox-konsole-kate" title="Permanent link">&para;</a></h1>
+<h1 id="pacman-syy">pacman -Syy<a class="headerlink" href="#pacman-syy" title="Permanent link">&para;</a></h1>
+<h1 id="pacman-s-xorg-server-xf86-video-amdgpu">pacman -S xorg-server xf86-video-amdgpu<a class="headerlink" href="#pacman-s-xorg-server-xf86-video-amdgpu" title="Permanent link">&para;</a></h1>
+<h1 id="su-edu">su - edu<a class="headerlink" href="#su-edu" title="Permanent link">&para;</a></h1>
+<p>@@ plasma-mobile</p>
+<p>$ sudo pacman -S plasma-workspace kcontacts kirigami2 kpeople libphonenumber qt5-wayland</p>
+<p>$ git clone https://aur.archlinux.org/plasma-nano.git
+$ cd plasma-mobile
+$ makepkg -si
+$ cd ~
+$ git clone https://aur.archlinux.org/plasma-settings.git
+$ cd plasma-mobile
+$ makepkg -si
+$ cd ~
+$ git clone https://aur.archlinux.org/plasma-mobile.git
+$ cd plasma-mobile
+$ makepkg -si
+$ sudo pacman -S sddm</p>
+<p>@@ plasma-desktop</p>
+<p>$ sudo pacman -S plasma-meta    # A la tercera pregunta responder <code>2) noto-fonts</code></p>
+<p>$ sudo systemctl enable sddm
+$ sudo pacman -S firefox konsole kate
+$ exit</p>
 <h1 id="exit">exit<a class="headerlink" href="#exit" title="Permanent link">&para;</a></h1>
 <h1 id="umount-r-mnt">umount -R /mnt<a class="headerlink" href="#umount-r-mnt" title="Permanent link">&para;</a></h1>
 <h1 id="reboot">reboot<a class="headerlink" href="#reboot" title="Permanent link">&para;</a></h1>
@@ -3736,19 +3774,30 @@ w</p>
 <li>Configurar la escala de la pantalla a 100% en <code>Preferencias &gt; Preferencias del sistema &gt; Pantalla y monitor &gt; Escalar</code></li>
 <li>Configurar la distribución de teclado al español en <code>Preferencias &gt; Preferencias del sistema &gt; Teclado &gt; Distribuciones &gt; Configurar distribuciones &gt; Añadir (Español)</code></li>
 <li>
+<p>Crear fichero <code>/etc/sddm.conf.d/10-wayland.conf</code> con el siguiente contenido:</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">[General]</span>
+<span class="na">DisplayServer</span><span class="o">=</span><span class="s">wayland</span>
+<span class="na">GreeterEnvironment</span><span class="o">=</span><span class="s">QT_WAYLAND_SHELL_INTEGRATION=layer-shell</span>
+
+<span class="k">[Wayland]</span>
+<span class="na">CompositorCommand</span><span class="o">=</span><span class="s">kwin_wayland --drm --no-lockscreen --no-global-shortcuts --locale1 --inputmethod maliit-keyboard</span>
+</code></pre></div>
+* Ejecutar:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cp<span class="w"> </span>/home/<span class="nv">$USER</span>/.config/kwinoutputconfig.json<span class="w"> </span>/var/lib/sddm/.config/
+</code></pre></div>
+</li>
+<li>
+<p>Abrir <code>Preferencias &gt; Pantalla de inicio de sesión (SDDM)</code>, seleccionar Brisa como theme y pulsar el botón <code>Aplicar las preferencias de Plasma...</code> arriba a la derecha.</p>
+</li>
+<li>
 <p>Crear fichero <code>/etc/sddm.conf.d/virtualkbd.conf</code> con el siguiente contenido:</p>
 <div class="highlight"><pre><span></span><code><span class="k">[General]</span>
 <span class="na">InputMethod</span><span class="o">=</span><span class="s">qtvirtualkeyboard</span>
 </code></pre></div>
 </li>
-<li>
-<p>Instalación de qtvkbd:</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/qtvkbd.git
-<span class="nb">cd</span><span class="w"> </span>qtvkbd
-makepkg<span class="w"> </span>-si
-</code></pre></div>
-</li>
 </ul>
+<p>@@ Instalación yay</p>
+<p>https://aur.archlinux.org/yay.git</p>
 
 
 
