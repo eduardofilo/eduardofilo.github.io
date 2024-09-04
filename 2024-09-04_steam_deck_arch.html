@@ -14,13 +14,15 @@
       
       
       
+        <link rel="next" href="2024-05-31_campus_aula_dei_en_bici.html">
+      
       
       <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
     
     
       
-        <title>2024 08 22 steam deck arch - Apuntes de eduardófilo</title>
+        <title>Instalación Arch Linux en Steam Deck - Apuntes de eduardófilo</title>
       
     
     
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#loadkeys-es" class="md-skip">
+        <a href="#tecladoraton" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -107,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2024 08 22 steam deck arch
+              Instalación Arch Linux en Steam Deck
             
           </span>
         </div>
@@ -154,13 +156,13 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="2024-08-22-steam-deck-arch.html" hreflang="es" class="md-select__link">
+            <a href="2024-09-04_steam_deck_arch.html" hreflang="es" class="md-select__link">
               Español
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="en/2024-08-22-steam-deck-arch.html" hreflang="en" class="md-select__link">
+            <a href="en/2024-09-04_steam_deck_arch.html" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -238,11 +240,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="2024-05-31_campus_aula_dei_en_bici.html" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="2024-09-04_steam_deck_arch.html" class="md-tabs__link">
           
   
   Blog
@@ -409,23 +413,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -436,12 +445,174 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Blog
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Instalación Arch Linux en Steam Deck
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="2024-09-04_steam_deck_arch.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Instalación Arch Linux en Steam Deck
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tecladoraton" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teclado/ratón
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reparticionado-del-disco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reparticionado del disco
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación base
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-entorno-grafico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación entorno gráfico
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación entorno gráfico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plasma" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plasma
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plasma-mobile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plasma Mobile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fin-de-instalacion-entorno-grafico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fin de instalación entorno gráfico
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración básica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-sddm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de SDDM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-gestor-dualboot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación gestor dualboot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
             
               
                 
@@ -3677,8 +3848,119 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tecladoraton" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teclado/ratón
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reparticionado-del-disco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reparticionado del disco
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación base
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-entorno-grafico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación entorno gráfico
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación entorno gráfico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plasma" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plasma
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plasma-mobile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plasma Mobile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fin-de-instalacion-entorno-grafico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fin de instalación entorno gráfico
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración básica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-sddm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de SDDM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-gestor-dualboot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación gestor dualboot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3696,108 +3978,207 @@
   
 
 
-<p>--- Sesión sobre el liveUSB</p>
-<h1 id="loadkeys-es">loadkeys es<a class="headerlink" href="#loadkeys-es" title="Permanent link">&para;</a></h1>
-<h1 id="iwctl">iwctl<a class="headerlink" href="#iwctl" title="Permanent link">&para;</a></h1>
-<p>[iwd]# station wlan0 scan
-[iwd]# station wlan0 get-networks
-[iwd]# station wlan0 connect <SSID>
-[iwd]# exit</p>
-<h1 id="ping-archlinuxorg">ping archlinux.org<a class="headerlink" href="#ping-archlinuxorg" title="Permanent link">&para;</a></h1>
-<h1 id="fdisk-devnvme0n1">fdisk /dev/nvme0n1<a class="headerlink" href="#fdisk-devnvme0n1" title="Permanent link">&para;</a></h1>
-<p>Command: n
-Partition number: 9
-First sector: default
-Last sector: +4G
-Command: n
-Partition number: 10
-First sector: default
-Last sector: default
-w</p>
-<h1 id="mkfsext4-devnvme0n1p10">mkfs.ext4 /dev/nvme0n1p10<a class="headerlink" href="#mkfsext4-devnvme0n1p10" title="Permanent link">&para;</a></h1>
-<h1 id="mkswap-devnvme0n1p9">mkswap /dev/nvme0n1p9<a class="headerlink" href="#mkswap-devnvme0n1p9" title="Permanent link">&para;</a></h1>
-<h1 id="mount-devnvme0n1p10-mnt">mount /dev/nvme0n1p10 /mnt<a class="headerlink" href="#mount-devnvme0n1p10-mnt" title="Permanent link">&para;</a></h1>
-<h1 id="mount-mkdir-devnvme0n1p1-mntbootefi">mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi<a class="headerlink" href="#mount-mkdir-devnvme0n1p1-mntbootefi" title="Permanent link">&para;</a></h1>
-<h1 id="swapon-devnvme0n1p9">swapon /dev/nvme0n1p9<a class="headerlink" href="#swapon-devnvme0n1p9" title="Permanent link">&para;</a></h1>
-<h1 id="pacstrap-k-mnt-base-base-devel-linux-linux-firmware-sudo-vi-ntfs-3g-networkmanager-amd-ucode-grub-efibootmgr-git-cmake-qt5-wayland">pacstrap -K /mnt base base-devel linux linux-firmware sudo vi ntfs-3g networkmanager amd-ucode grub efibootmgr git cmake qt5-wayland<a class="headerlink" href="#pacstrap-k-mnt-base-base-devel-linux-linux-firmware-sudo-vi-ntfs-3g-networkmanager-amd-ucode-grub-efibootmgr-git-cmake-qt5-wayland" title="Permanent link">&para;</a></h1>
-<h1 id="genfstab-u-mnt-mntetcfstab">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab<a class="headerlink" href="#genfstab-u-mnt-mntetcfstab" title="Permanent link">&para;</a></h1>
-<h1 id="arch-chroot-mnt">arch-chroot /mnt<a class="headerlink" href="#arch-chroot-mnt" title="Permanent link">&para;</a></h1>
-<h1 id="ln-sf-usrsharezoneinfoeuropemadrid-etclocaltime">ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime<a class="headerlink" href="#ln-sf-usrsharezoneinfoeuropemadrid-etclocaltime" title="Permanent link">&para;</a></h1>
-<h1 id="hwclock-systohc">hwclock --systohc<a class="headerlink" href="#hwclock-systohc" title="Permanent link">&para;</a></h1>
-<h1 id="vi-etclocalegen-descomentar-en_usutf-8-utf-8-y-es_esutf-8-utf-8">vi /etc/locale.gen    # descomentar <code>en_US.UTF-8 UTF-8</code> y <code>es_ES.UTF-8 UTF-8</code><a class="headerlink" href="#vi-etclocalegen-descomentar-en_usutf-8-utf-8-y-es_esutf-8-utf-8" title="Permanent link">&para;</a></h1>
-<h1 id="locale-gen">locale-gen<a class="headerlink" href="#locale-gen" title="Permanent link">&para;</a></h1>
-<h1 id="vi-etclocaleconf-anadir-langes_esutf-8">vi /etc/locale.conf   # Añadir <code>LANG=es_ES.UTF-8</code><a class="headerlink" href="#vi-etclocaleconf-anadir-langes_esutf-8" title="Permanent link">&para;</a></h1>
-<h1 id="vi-etcvconsoleconf-anadir-keymapes">vi /etc/vconsole.conf # Añadir <code>KEYMAP=es</code><a class="headerlink" href="#vi-etcvconsoleconf-anadir-keymapes" title="Permanent link">&para;</a></h1>
-<h1 id="vi-etchostname-anadir-deck">vi /etc/hostname      # Añadir <code>deck</code><a class="headerlink" href="#vi-etchostname-anadir-deck" title="Permanent link">&para;</a></h1>
-<h1 id="vi-etchosts-anadir-127001-localhost">vi /etc/hosts         # Añadir `127.0.0.1        localhost<a class="headerlink" href="#vi-etchosts-anadir-127001-localhost" title="Permanent link">&para;</a></h1>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>                              ::1              localhost
-                              127.0.1.1        deck`
-</code></pre></div></td></tr></table></div>
+  <h1>Instalación Arch Linux en Steam Deck</h1>
 
-<h1 id="passwd">passwd<a class="headerlink" href="#passwd" title="Permanent link">&para;</a></h1>
-<h1 id="grub-install-targetx86_64-efi-efi-directorybootefi-bootloader-idarch">grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch<a class="headerlink" href="#grub-install-targetx86_64-efi-efi-directorybootefi-bootloader-idarch" title="Permanent link">&para;</a></h1>
-<h1 id="grub-mkconfig-o-bootgrubgrubcfg">grub-mkconfig -o /boot/grub/grub.cfg<a class="headerlink" href="#grub-mkconfig-o-bootgrubgrubcfg" title="Permanent link">&para;</a></h1>
-<h1 id="systemctl-enable-networkmanager">systemctl enable NetworkManager<a class="headerlink" href="#systemctl-enable-networkmanager" title="Permanent link">&para;</a></h1>
-<h1 id="useradd-m-g-wheel-edu">useradd -m -G wheel edu<a class="headerlink" href="#useradd-m-g-wheel-edu" title="Permanent link">&para;</a></h1>
-<h1 id="passwd-edu">passwd edu<a class="headerlink" href="#passwd-edu" title="Permanent link">&para;</a></h1>
-<h1 id="chmod-uw-etcsudoers">chmod u+w /etc/sudoers<a class="headerlink" href="#chmod-uw-etcsudoers" title="Permanent link">&para;</a></h1>
-<h1 id="vi-etcsudoers-descomentar-wheel-allall-all">vi /etc/sudoers       # Descomentar <code>%wheel ALL=(ALL) ALL</code><a class="headerlink" href="#vi-etcsudoers-descomentar-wheel-allall-all" title="Permanent link">&para;</a></h1>
-<h1 id="chmod-u-w-etcsudoers">chmod u-w /etc/sudoers<a class="headerlink" href="#chmod-u-w-etcsudoers" title="Permanent link">&para;</a></h1>
-<h1 id="pacman-syy">pacman -Syy<a class="headerlink" href="#pacman-syy" title="Permanent link">&para;</a></h1>
-<h1 id="pacman-s-xorg-server-xf86-video-amdgpu">pacman -S xorg-server xf86-video-amdgpu<a class="headerlink" href="#pacman-s-xorg-server-xf86-video-amdgpu" title="Permanent link">&para;</a></h1>
-<h1 id="su-edu">su - edu<a class="headerlink" href="#su-edu" title="Permanent link">&para;</a></h1>
-<p>@@ plasma-mobile</p>
-<p>$ sudo pacman -S plasma-workspace kcontacts kirigami2 kpeople libphonenumber qt5-wayland</p>
-<p>$ git clone https://aur.archlinux.org/plasma-nano.git
-$ cd plasma-mobile
-$ makepkg -si
-$ cd ~
-$ git clone https://aur.archlinux.org/plasma-settings.git
-$ cd plasma-mobile
-$ makepkg -si
-$ cd ~
-$ git clone https://aur.archlinux.org/plasma-mobile.git
-$ cd plasma-mobile
-$ makepkg -si
-$ sudo pacman -S sddm</p>
-<p>@@ plasma-desktop</p>
-<p>$ sudo pacman -S plasma-meta    # A la tercera pregunta responder <code>2) noto-fonts</code></p>
-<p>$ sudo systemctl enable sddm
-$ sudo pacman -S firefox konsole kate
-$ exit</p>
-<h1 id="exit">exit<a class="headerlink" href="#exit" title="Permanent link">&para;</a></h1>
-<h1 id="umount-r-mnt">umount -R /mnt<a class="headerlink" href="#umount-r-mnt" title="Permanent link">&para;</a></h1>
-<h1 id="reboot">reboot<a class="headerlink" href="#reboot" title="Permanent link">&para;</a></h1>
-<p>--- Una vez arrancado el sistema</p>
+<p><img alt="Steam Deck con Arch Linux" src="/images/posts/2024-09-04_steam_deck_arch/steam_deck_logo.png" /></p>
+<p>En julio de 2024 durante unas semanas, el modelo de 512GB de la Steam Deck LCD pudo adquirirse por debajo de los 400€. Un precio muy atractivo para una <a href="https://www.steamdeck.com/es/tech/deck">máquina muy decente</a> con procesador AMD de arquitectura x86 (AMD64), 16GB de RAM, disco SSD tipo NVMe de la capacidad mencionada antes, pantalla táctil y controles de juego integrados. Es decir un PC consolizado, pero un PC al fin y al cabo. Pero sobre todo lo que hace para mi especialmente atractiva la máquina es su soporte Linux completo, lo que la convierte en una plataforma ideal para cacharrear con distribuciones Linux o utilizarlo como PC portátil secundario. Todo esto naturalmente además de su uso convencional para jugar y <a href="https://www.emudeck.com/">emular</a> videojuegos.</p>
+<p>SteamOS, el sistema operativo que trae de serie, está basado en Arch Linux, y en su modo escritorio, puede utilizarse prácticamente como un Arch Linux normal. La principal restricción es que está construido en modo inmutable y a pesar de que este tipo de configuración de sistema tiene sus virtudes y se entiende perfectamente que Valve lo haya escogido para su máquina, todavía prefiero un sistema normal (mutable), por lo que me decidí por instalar un Arch normal y aprender a instalar de paso esta distribución. Según el <a href="https://wiki.archlinux.org/title/Steam_Deck">wiki de Arch</a>, el hardware del modelo LCD de la Steam Deck está soportado al 100% en Arch.</p>
+<p>Lo que sigue es el procedimiento completo que he utilizado.</p>
+<h2 id="tecladoraton">Teclado/ratón<a class="headerlink" href="#tecladoraton" title="Permanent link">&para;</a></h2>
+<p>Aunque gran parte de las operaciones pueden hacerse utilizando la pantalla táctil y los trackpads de la Steam Deck, es muy recomendable conectar un teclado y ratón a la consola para facilitar la instalación, sobre todo durante la sesión de terminal con la que instalaremos el sistema base. La Steam Deck sólo posee un puerto USB-C, por lo que lo más práctico es utilizar un dock. También puede ser suficiente (sobre todo si ejecutamos los sistemas live desde una microSD) con un dongle de teclado/ratón inalámbricos conectados con un adaptador USB&lt;-&gt;USB-C.</p>
+<p>En mi caso utilicé un dock <a href="https://www.dell.com/es-es/shop/adaptador-multipuerto-usb-c-de-dell-7-en-1-da310/apd/470-aeup/conexi%C3%B3n-wifi-y-redes">DA310z</a> de Dell.</p>
+<h2 id="reparticionado-del-disco">Reparticionado del disco<a class="headerlink" href="#reparticionado-del-disco" title="Permanent link">&para;</a></h2>
+<p>El disco SSD de la Steam Deck que adquirí es de 512GB y de tipo NVMe. Es el tamaño mínimo si queremos instalar otro sistema junto a SteamOS.</p>
+<p>Antes de empezar con la instalación debemos hacer hueco para la misma encogiendo la partición principal (la número 8). Para ello podemos utilizar prácticamente cualquier distribución live Linux que arranquemos desde una unidad extraíble (USB o microSD) ya que todas ellas llevan algún programa para gestionar particiones. En mi caso utilicé una ISO del programa <code>gparted</code>.</p>
+<p>El procedimiento completo puede verse a continuación:</p>
+<ol>
+<li>Descargar la <a href="https://gparted.org/download.php">ISO de gparted</a>. En concreto en mi caso utilicé <a href="https://downloads.sourceforge.net/gparted/gparted-live-1.6.0-3-amd64.iso">ésta versión</a>.</li>
+<li>Instalar la ISO en un pendrive o mejor aún en una microSD (ya que la Steam Deck posee una ranura para éstas). Puede utilizarse un programa como <a href="https://www.balena.io/etcher/">Balena Etcher</a> o el comando <code>dd</code> de Linux si se <a href="/sistemas/raspi.html#backup-de-la-sd-comprimiendo-al-vuelo">sabe manejar</a>.</li>
+<li>Arrancar la Steam Deck con el pendrive o la microSD insertada manteniendo pulsado el botón de bajar el volumen hasta que se escuchen los tonos de encendido. Esto hace que la consola arranque en el menú <code>Boot Manager</code>.</li>
+<li>Seleccionar la opción de arrancar desde el dispositivo extraíble que aparecerá en el menú como <code>EFI USB Device (USB)</code> o <code>EFI SD/MMC Card (XX XXXX XXXX)</code> según si utilizamos un pendrive o una microSD respectivamente.</li>
+<li>
+<p>Aparece una pantalla de configuración  en la que hacemos las siguientes selecciones:</p>
 <ul>
-<li>Configurar la escala de la pantalla a 100% en <code>Preferencias &gt; Preferencias del sistema &gt; Pantalla y monitor &gt; Escalar</code></li>
-<li>Configurar la distribución de teclado al español en <code>Preferencias &gt; Preferencias del sistema &gt; Teclado &gt; Distribuciones &gt; Configurar distribuciones &gt; Añadir (Español)</code></li>
+<li>Policy for handling keymaps =&gt; Don't touch keymap</li>
+<li>Which language do you prefer? =&gt; 25</li>
+<li>Which mode do you prefer? =&gt; 0</li>
+</ul>
+</li>
+<li>
+<p>Tras aceptar la última opción anterior, arrancará el programa <code>gparted</code> en modo gráfico (con la pantalla girada, eso sí). Haremos cambios hasta dejar las particiones como se ve en la foto. Básicamente lo que haremos será encoger la partición #8 unos 100GB, crear la #9 de 4GB para swap y la #10 con el espacio restante para el sistema raíz de Arch:</p>
+<p><img alt="Particiones de la Steam Deck" src="/images/posts/2024-09-04_steam_deck_arch/steam-deck-partitions.png" /></p>
+</li>
+</ol>
+<p>Destacar a la vista de las particiones que utiliza SteamOS que hace uso de un <a href="https://blog.davidbyrne.dev/2018/08/16/linux-ab-partitions">sistema de particiones A/B</a>, habitual en Android, por el cual la mayoría de las particiones del sistema (excepto la de usuario) están duplicadas. Dicho sistema está pensado para facilitar las actualizaciones, o más bien para volver atrás en caso de problemas durante las mismas.</p>
+<h2 id="instalacion-base">Instalación base<a class="headerlink" href="#instalacion-base" title="Permanent link">&para;</a></h2>
+<p>Para el proceso de instalación del sistema base me decanté por el camino convencional siguiendo las instrucciones de la <a href="https://wiki.archlinux.org/title/Installation_guide">guía de instalación</a> en el wiki de Arch. Dicha instalación utiliza una ISO de un sistema Arch que podremos arrancar desde una unidad extraíble (USB o microSD) con el que instalaremos los paquetes básicos para tener un sistema arrancable y muy básico.</p>
+<p>Antes de comenzar, comentar que por las características tan dinámicas de la distribución Arch Linux, es muy posible que esta guía quede desactualizada en poco tiempo. Por lo que recomiendo consultar la <a href="https://wiki.archlinux.org/title/Installation_guide">guía oficial</a> en caso de encontrar que algo no sale como se supone.</p>
+<p>A continuación vemos paso a paso el proceso de instalación:</p>
+<ol>
+<li>Descargar la <a href="https://archlinux.org/download/">ISO de Arch Linux</a>. En concreto en mi caso utilicé <a href="https://es.mirrors.cicku.me/archlinux/iso/2024.08.01/archlinux-2024.08.01-x86_64.iso">ésta versión</a>.</li>
+<li>Instalar la ISO en un pendrive o mejor aún en una microSD para utilizar la ranura que posee la Steam Deck. Puede utilizarse un programa como <a href="https://www.balena.io/etcher/">Balena Etcher</a> o el comando <code>dd</code> de Linux si se <a href="/sistemas/raspi.html#backup-de-la-sd-comprimiendo-al-vuelo">sabe manejar</a>.</li>
+<li>Arrancar la Steam Deck con el pendrive o la microSD insertada manteniendo pulsado el botón de bajar el volumen hasta que se escuchen los tonos de encendido. Esto hace que la consola arranque en el menú <code>Boot Manager</code>.</li>
+<li>Seleccionar la opción de arrancar desde el dispositivo extraíble que aparecerá en el menú como <code>EFI USB Device (USB)</code> o <code>EFI SD/MMC Card (XX XXXX XXXX)</code> según si utilizamos un pendrive o una microSD respectivamente.</li>
+<li>
+<p>Una vez que termine de arrancar el sistema live de instalación de Arch, ejecutar los siguiente comandos en orden (en la sesión con <code>iwctl</code> sustituiremos <code>&lt;SSID&gt;</code> por el nuestro e introduciremos la contraseña cuando se nos pida; también sustituiremos el identificador de usuario <code>&lt;USER&gt;</code> por el que queramos utilizar):</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># loadkeys es</span>
+<span class="c1"># iwctl</span>
+<span class="o">[</span>iwd<span class="o">]</span><span class="c1"># station wlan0 scan</span>
+<span class="o">[</span>iwd<span class="o">]</span><span class="c1"># station wlan0 get-networks</span>
+<span class="o">[</span>iwd<span class="o">]</span><span class="c1"># station wlan0 connect &lt;SSID&gt;</span>
+<span class="o">[</span>iwd<span class="o">]</span><span class="c1"># exit</span>
+<span class="c1"># mkfs.ext4 /dev/nvme0n1p10</span>
+<span class="c1"># mkswap /dev/nvme0n1p9</span>
+<span class="c1"># mount /dev/nvme0n1p10 /mnt</span>
+<span class="c1"># mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi</span>
+<span class="c1"># swapon /dev/nvme0n1p9</span>
+<span class="c1"># pacstrap -K /mnt base base-devel linux linux-firmware sudo vi ntfs-3g networkmanager amd-ucode grub efibootmgr git cmake qt5-wayland</span>
+<span class="c1"># genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span>
+<span class="c1"># arch-chroot /mnt</span>
+<span class="c1"># ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime</span>
+<span class="c1"># hwclock --systohc</span>
+<span class="c1"># vi /etc/locale.gen    # descomentar &#39;en_US.UTF-8 UTF-8&#39; y &#39;es_ES.UTF-8 UTF-8&#39;</span>
+<span class="c1"># locale-gen</span>
+<span class="c1"># echo &quot;LANG=es_ES.UTF-8&quot; &gt; /etc/locale.conf</span>
+<span class="c1"># echo &quot;KEYMAP=es&quot; &gt; /etc/vconsole.conf</span>
+<span class="c1"># echo &quot;deck&quot; &gt; /etc/hostname</span>
+<span class="c1"># echo -e &quot;\n127.0.0.1    localhost\n::1    localhost\n127.0.1.1    deck&quot; &gt;&gt; /etc/hosts</span>
+<span class="c1"># passwd</span>
+<span class="c1"># grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch</span>
+<span class="c1"># grub-mkconfig -o /boot/grub/grub.cfg</span>
+<span class="c1"># systemctl enable NetworkManager</span>
+<span class="c1"># useradd -m -G wheel &lt;USER&gt;</span>
+<span class="c1"># passwd &lt;USER&gt;</span>
+<span class="c1"># chmod u+w /etc/sudoers</span>
+<span class="c1"># vi /etc/sudoers       # Descomentar &#39;%wheel ALL=(ALL) ALL&#39;</span>
+<span class="c1"># chmod u-w /etc/sudoers</span>
+<span class="c1"># pacman -Syy</span>
+<span class="c1"># pacman -S xorg-server xf86-video-amdgpu maliit-keyboard qt5-wayland</span>
+<span class="c1"># su - &lt;USER&gt;</span>
+</code></pre></div>
+</li>
+</ol>
+<p>El password que elegiremos cuando ejecutemos el comando <code>passwd &lt;USER&gt;</code> debe ser numérico si queremos utilizar Plasma Mobile, ya que la pantalla de desbloqueo sólo nos permite introducir un PIN.</p>
+<h2 id="instalacion-entorno-grafico">Instalación entorno gráfico<a class="headerlink" href="#instalacion-entorno-grafico" title="Permanent link">&para;</a></h2>
+<p>Continuamos donde nos habíamos quedado, es decir en la sesión chroot desde el sistema live de instalación de Arch Linux. Lo haremos ya con el usuario normal (no root) por lo que a partir de ahora haremos uso con frecuencia de <code>sudo</code>.</p>
+<p>Ahora vamos a instalar los entornos gráficos. Lo digo en plural porque vamos a instalar dos, Plasma y Plasma Mobile. Hago esto porque dependiendo de si vamos a utilizar la Steam Deck con Arch en modo escritorio (con teclado/ratón y posiblemente pantalla) o portátil (sin teclado/ratón), nos convendrá más un sistema u otro, dado que Plasma Mobile presenta un interfaz diseñado para ser manejado con una pantalla táctil (estilo tablet).</p>
+<p>En realidad no es necesario instalar los dos escritorios, por eso se han separado sus pasos de instalación. Podemos instalar uno, el otro o ambos.</p>
+<h4 id="plasma">Plasma<a class="headerlink" href="#plasma" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>plasma-meta
+</code></pre></div>
+<p>Durante la instalación del paquete anterior se nos harán una serie de preguntas. A la tercera pregunta responder <code>2) noto-fonts</code>. En el resto ofrecer la respuesta predeterminada (pulsando retorno).</p>
+<h4 id="plasma-mobile">Plasma Mobile<a class="headerlink" href="#plasma-mobile" title="Permanent link">&para;</a></h4>
+<p>Plasma Mobile no se encuentra todavía en los repositorios oficiales. Tenemos que utilizar <a href="https://aur.archlinux.org/">AUR</a>:</p>
+<ol>
+<li>
+<p>Empezamos instalando algunas dependencias:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>plasma-workspace<span class="w"> </span>kcontacts<span class="w"> </span>kirigami2<span class="w"> </span>kpeople<span class="w"> </span>libphonenumber
+</code></pre></div>
+</li>
+<li>
+<p>Instalamos los paquetes de AUR <code>plasma-nano</code>, <code>plasma-settings</code> y <code>plasma-mobile</code> en este orden:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~
+$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/plasma-nano.git
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>plasma-nano
+$<span class="w"> </span>makepkg<span class="w"> </span>-si
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~
+$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/plasma-settings.git
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>plasma-settings
+$<span class="w"> </span>makepkg<span class="w"> </span>-si
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~
+$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/plasma-mobile.git
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>plasma-mobile
+$<span class="w"> </span>makepkg<span class="w"> </span>-si
+</code></pre></div>
+</li>
+</ol>
+<h4 id="fin-de-instalacion-entorno-grafico">Fin de instalación entorno gráfico<a class="headerlink" href="#fin-de-instalacion-entorno-grafico" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Instalamos el gestor de sesiones SDDM y Konsole que nos hará falta para terminar la instalación desde el modo gráfico:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>sddm<span class="w"> </span>konsole
+$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>sddm
+$<span class="w"> </span><span class="nb">exit</span>
+</code></pre></div>
+</li>
+<li>
+<p>Cerramos la sesión chroot, desmontamos las particiones y reiniciamos el sistema:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># exit</span>
+<span class="c1"># umount -R /mnt</span>
+<span class="c1"># reboot</span>
+</code></pre></div>
+</li>
+</ol>
+<h2 id="configuracion-basica">Configuración básica<a class="headerlink" href="#configuracion-basica" title="Permanent link">&para;</a></h2>
+<p>Tras reiniciar deberíamos ver el gestor de sesiones SDDM, inicialmente con la pantalla girada y sin posibilidad de utilizar el teclado en pantalla, por lo que todavía continuaremos utilizando el teclado y ratón externos.</p>
+<p>Una vez que hayamos iniciado sesión en Plasma (o Plasma Mobile), abrimos la aplicación Konsole y ejecutamos los siguientes comandos para instalar el paquete de aplicaciones básico de KDE y el navegador Firefox:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>firefox<span class="w"> </span>kde-applications-meta
+</code></pre></div>
+<p>Finalmente hacemos las dos siguientes configuraciones para ajustar la resolución de pantalla (que inicialmente escala las cosas para que se vean más grandes) y la distribución de teclado:</p>
+<ul>
+<li>Configurar la escala de la pantalla a 100% en <code>Preferencias &gt; Preferencias del sistema &gt; Pantalla y monitor &gt; Escalar</code>.</li>
+<li>Añadir la distribución de teclado español en <code>Preferencias &gt; Preferencias del sistema &gt; Teclado &gt; Distribuciones &gt; Configurar distribuciones &gt; Añadir (Español)</code>.</li>
+</ul>
+<h2 id="configuracion-de-sddm">Configuración de SDDM<a class="headerlink" href="#configuracion-de-sddm" title="Permanent link">&para;</a></h2>
+<p>Finalmente vamos a mejorar la configuración del gestor de sesiones SDDM para que permita el teclado en pantalla, tenga mejor aspecto y muestre la pantalla en la orientación correcta:</p>
+<ol>
 <li>
 <p>Crear fichero <code>/etc/sddm.conf.d/10-wayland.conf</code> con el siguiente contenido:</p>
-<p><div class="highlight"><pre><span></span><code><span class="k">[General]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[General]</span>
 <span class="na">DisplayServer</span><span class="o">=</span><span class="s">wayland</span>
 <span class="na">GreeterEnvironment</span><span class="o">=</span><span class="s">QT_WAYLAND_SHELL_INTEGRATION=layer-shell</span>
 
 <span class="k">[Wayland]</span>
 <span class="na">CompositorCommand</span><span class="o">=</span><span class="s">kwin_wayland --drm --no-lockscreen --no-global-shortcuts --locale1 --inputmethod maliit-keyboard</span>
 </code></pre></div>
-* Ejecutar:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cp<span class="w"> </span>/home/<span class="nv">$USER</span>/.config/kwinoutputconfig.json<span class="w"> </span>/var/lib/sddm/.config/
-</code></pre></div>
 </li>
 <li>
 <p>Abrir <code>Preferencias &gt; Pantalla de inicio de sesión (SDDM)</code>, seleccionar Brisa como theme y pulsar el botón <code>Aplicar las preferencias de Plasma...</code> arriba a la derecha.</p>
 </li>
+</ol>
+<h2 id="instalacion-gestor-dualboot">Instalación gestor dualboot<a class="headerlink" href="#instalacion-gestor-dualboot" title="Permanent link">&para;</a></h2>
+<p>El sistema Arch ya está listo y podemos arrancarlo encendiendo la consola en modo Boot Manager (manteniendo pulsada la tecla de bajar volumen) y seleccionando la opción <code>Arch</code>. Pero para facilitar el arranque de SteamOS, vamos a instalar un gestor de arranque dualboot llamado <a href="https://github.com/jlobue10/SteamDeck_rEFInd">rEFInd</a>.</p>
+<ol>
+<li>Arrancar SteamOS (con Volume- + Power).</li>
 <li>
-<p>Crear fichero <code>/etc/sddm.conf.d/virtualkbd.conf</code> con el siguiente contenido:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[General]</span>
-<span class="na">InputMethod</span><span class="o">=</span><span class="s">qtvirtualkeyboard</span>
+<p>Desde una terminal en modo escritorio ejecutar:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="nv">$HOME</span>/SteamDeck_rEFInd/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/jlobue10/SteamDeck_rEFInd<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>SteamDeck_rEFInd<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>install-GUI.sh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./install-GUI.sh
 </code></pre></div>
 </li>
+<li>
+<p>Descargar o crear un icono de Arch Linux de 128x128px.</p>
+</li>
+<li>Abrir el lanzador del escritorio que encontraremos en el escritorio.</li>
+<li>
+<p>Configurar de la siguiente forma (seleccionar en el campo <code>Boot Option #2 Icon</code> el icono descargado o creado anteriormente):</p>
+<p><img alt="Configuración de rEFInd" src="/images/posts/2024-09-04_steam_deck_arch/rEFInd_conf.png" /></p>
+</li>
+<li>
+<p>Pulsar botón <code>Create Config</code>.</p>
+</li>
+<li>
+<p>Editar el fichero que encontraremos en <code>~/.local/SteamDeck_rEFInd/GUI/refind.conf</code> y modificar la última entrada de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code>menuentry &quot;Arch&quot; {
+    icon /EFI/refind/os_icon2.png
+    loader /EFI/Arch/grubx64.efi
+    graphics on
+}
+</code></pre></div>
+</li>
+<li>
+<p>Pulsar el botón <code>Install rEFInd</code>.</p>
+</li>
+<li>Pulsar el botón <code>Install Config</code></li>
+</ol>
+<p>La ruta <code>/EFI/Arch/grubx64.efi</code> del paso 6 puede cambiar si en el comando <code>grub-install</code> ejecutado durante la <a href="#instalacion-base">instalación del sistema base</a> se eligió otro identificador que no fuera <code>Arch</code>. En ese caso habría que adaptar la ruta.</p>
+<h2 id="conclusion">Conclusión<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>Y esto sería todo. Ahora tenemos un sistema Arch Linux en nuestra Steam Deck con un gestor de arranque dualboot que nos permite arrancar también SteamOS. A partir de aquí tendremos una máquina con una naturaleza doble, una (SteamOS) para jugar y otra (Arch) para ser utilizada como un PC (Plasma) o tabletPC (Plasma Mobile).</p>
+<p>Para elegir el entorno gráfico Plasma normal o el Plasma Mobile, utilizaremos el menú desplegable que aparece abajo a la izquierda en el gestor de inicios de sesión SDDM.</p>
+<p>Algunos enlaces de interés consultados durante la elaboración de esta guía:</p>
+<ul>
+<li><a href="https://www.freecodecamp.org/news/how-to-install-arch-linux/">The Arch Linux Handbook – Learn Arch Linux for Beginners</a></li>
+<li><a href="https://asgardius.company/?p=1783">Instalando Arch Linux con KDE en Steam Deck</a></li>
 </ul>
-<p>@@ Instalación yay</p>
-<p>https://aur.archlinux.org/yay.git</p>
 
 
 
