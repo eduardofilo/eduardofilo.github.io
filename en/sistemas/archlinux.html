@@ -3776,17 +3776,24 @@
 <h1 id="arch-linux">Arch Linux<a class="headerlink" href="#arch-linux" title="Permanent link">&para;</a></h1>
 <h2 id="comandos-utiles">Comandos útiles<a class="headerlink" href="#comandos-utiles" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>pacman -Syy</code>: Actualizar la base de datos de paquetes. Equivalente a <code>apt update</code>.</li>
-<li><code>pacman -Syu</code>: Actualizar el sistema. Equivalente a <code>apt upgrade</code>.</li>
-<li><code>pacman -S &lt;paquete&gt;</code>: Instalar un paquete. Equivalente a <code>apt install</code>.</li>
-<li><code>pacman -R &lt;paquete&gt;</code>: Desinstalar un paquete. Equivalente a <code>apt remove</code>.</li>
+<li><code>sudo pacman -Syy</code>: Actualizar la base de datos de paquetes. Equivalente a <code>apt update</code>.</li>
+<li><code>sudo pacman -Syu</code>: Actualizar el sistema. Equivalente a <code>apt upgrade</code>.</li>
+<li><code>sudo pacman -S &lt;paquete&gt;</code>: Instalar un paquete. Equivalente a <code>apt install</code>.</li>
+<li><code>sudo pacman -R &lt;paquete&gt;</code>: Desinstalar un paquete dejando sus dependencia. Equivalente a <code>apt remove</code>.</li>
+<li><code>sudo pacman -Rs &lt;paquete&gt;</code>: Desinstalar un paquete y sus dependencias.</li>
+<li><code>sudo pacman -Rns &lt;paquete&gt;</code>: Desinstalar un paquete, sus dependencias y archivos de configuración. Equivalente a <code>apt purge</code>.</li>
+<li><code>pacman -Qdt</code>: Listar paquetes huérfanos. Equivalente a <code>apt autoremove</code>.</li>
+<li><code>sudo pacman -Rns $(pacman -Qdtq)</code>: Eliminar paquetes huérfanos. Equivalente a <code>apt autoremove</code>.</li>
 <li><code>pacman -Q &lt;paquete&gt;</code>: Comprobar si un paquete está instalado. Equivalente a <code>dpkg -l | grep &lt;paquete&gt;</code>.</li>
 <li><code>pacman -Ql &lt;paquete&gt;</code>: Listar los archivos de un paquete. Equivalente a <code>dpkg -L &lt;paquete&gt;</code>.</li>
 <li><code>pacman -Qo &lt;archivo&gt;</code>: Comprobar a qué paquete pertenece un archivo. Equivalente a <code>dpkg -S &lt;archivo&gt;</code>.</li>
 <li><code>pacman -Ss &lt;paquete&gt;</code>: Buscar un paquete. Equivalente a <code>apt search</code>.</li>
-<li><code>pacman -Qdt</code>: Listar paquetes huérfanos. Equivalente a <code>apt autoremove</code>.</li>
-<li><code>pacman -Rns $(pacman -Qdtq)</code>: Eliminar paquetes huérfanos. Equivalente a <code>apt autoremove</code>.</li>
 <li><code>pacman -Qm</code>: Listar paquetes instalados desde AUR. Equivalente a <code>apt list --installed | grep -v /</code>.</li>
+<li><code>sudo yay -Syu</code>: Actualizar el sistema, incluyendo paquetes de AUR. Equivalente a <code>apt upgrade</code>.</li>
+<li><code>sudo yay -S &lt;paquete&gt;</code>: Instalar un paquete desde AUR. Equivalente a <code>apt install</code>.</li>
+<li><code>sudo pacman -R &lt;paquete&gt;</code>: Desinstalar un paquete de AUR dejando sus dependencia. Equivalente a <code>apt remove</code>.</li>
+<li><code>sudo pacman -Rs &lt;paquete&gt;</code>: Desinstalar un paquete de AUR y sus dependencias.</li>
+<li><code>sudo yay -Rns &lt;paquete&gt;</code>: Desinstalar un paquete de AUR, sus dependencias y archivos de configuración. Equivalente a <code>apt purge</code>.</li>
 </ul>
 
 
