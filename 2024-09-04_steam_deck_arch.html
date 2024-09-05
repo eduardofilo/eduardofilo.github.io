@@ -588,6 +588,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configuracion-sonido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración sonido
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#instalacion-gestor-dualboot" class="md-nav__link">
     <span class="md-ellipsis">
       Instalación gestor dualboot
@@ -3943,6 +3952,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configuracion-sonido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración sonido
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#instalacion-gestor-dualboot" class="md-nav__link">
     <span class="md-ellipsis">
       Instalación gestor dualboot
@@ -4112,8 +4130,10 @@ $<span class="w"> </span><span class="nb">exit</span>
 <h2 id="configuracion-basica">Configuración básica<a class="headerlink" href="#configuracion-basica" title="Permanent link">&para;</a></h2>
 <p>Tras reiniciar deberíamos ver el gestor de sesiones SDDM, inicialmente con la pantalla girada y sin posibilidad de utilizar el teclado en pantalla, por lo que todavía continuaremos utilizando el teclado y ratón externos.</p>
 <p>Una vez que hayamos iniciado sesión en Plasma o Plasma Mobile, lo primero que tenemos que hacer es configurar la conexión a internet. Para ello hacemos click sobre el icono correspondiente en la bandeja del sistema abajo a la derecha en Plasma o arriba a la derecha en Plasma Mobile.</p>
-<p>Una vez que tengamos conexión, abrimos la aplicación Konsole y ejecutamos los siguientes comandos para instalar el paquete de aplicaciones básico de KDE y el navegador Firefox:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>firefox<span class="w"> </span>kde-applications-meta
+<p>Una vez que tengamos conexión, abrimos la aplicación Konsole y ejecutamos los siguientes comandos para instalar el paquete de aplicaciones básico de KDE, el navegador Firefox y el servidor SSH:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>firefox<span class="w"> </span>kde-applications-meta<span class="w"> </span>openssh
+$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>sshd
+$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>sshd
 </code></pre></div>
 <p>Finalmente hacemos las dos siguientes configuraciones para ajustar la resolución de pantalla (que inicialmente escala las cosas para que se vean más grandes) y la distribución de teclado:</p>
 <ul>
@@ -4137,6 +4157,52 @@ $<span class="w"> </span><span class="nb">exit</span>
 <p>Abrir <code>Preferencias &gt; Pantalla de inicio de sesión (SDDM)</code>, seleccionar Brisa como theme y pulsar el botón <code>Aplicar las preferencias de Plasma...</code> arriba a la derecha.</p>
 </li>
 </ol>
+<h2 id="configuracion-sonido">Configuración sonido<a class="headerlink" href="#configuracion-sonido" title="Permanent link">&para;</a></h2>
+<p>Tal y como <a href="https://wiki.archlinux.org/title/Steam_Deck#Audio">comenta el wiki de Arch</a>, el volumen por defecto en la Steam Deck es muy bajo. Para solucionarlo hay que instalar el paquete <code>alsa-utils</code> y ejecutar el comando <code>alsamixer</code> para ajustar el volumen de algunos de los canales.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>alsa-utils
+$<span class="w"> </span>alsamixer
+</code></pre></div>
+<p>Para acceder a los mismos, una vez en <code>alsamixer</code>, hay que pulsar <code>F6</code> para poder seleccionar el dispositivo de audio <code>acp5x</code> ya que por defecto aparecen seleccionado el dispositivo 0 que es el asociado a la salida HDMI del chip gráfico:</p>
+<p><img alt="alsamixer" src="/images/posts/2024-09-04_steam_deck_arch/alsamixer-select-device.png" /></p>
+<p>Una vez seleccionado el dispositivo correcto, veremos todos sus canales que son muy numerosos. Localizaremos los que <a href="https://wiki.archlinux.org/title/Steam_Deck#Audio">menciona el wiki</a> para ajustarlos a los siguientes valores:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Canal</th>
+<th style="text-align: right;">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Analog PCM</td>
+<td style="text-align: right;">85%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Digital</td>
+<td style="text-align: right;">86%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Digital PCM</td>
+<td style="text-align: right;">85%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Left Analog PCM</td>
+<td style="text-align: right;">85%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Left Digital PCM</td>
+<td style="text-align: right;">85%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Right Analog PCM</td>
+<td style="text-align: right;">85%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Right Digital PCM</td>
+<td style="text-align: right;">85%</td>
+</tr>
+</tbody>
+</table>
 <h2 id="instalacion-gestor-dualboot">Instalación gestor dualboot<a class="headerlink" href="#instalacion-gestor-dualboot" title="Permanent link">&para;</a></h2>
 <p>El sistema Arch ya está listo y podemos arrancarlo encendiendo la consola en modo Boot Manager (manteniendo pulsada la tecla de bajar volumen) y seleccionando la opción <code>Arch</code>. Pero para facilitar el arranque de SteamOS, vamos a instalar un gestor de arranque dualboot llamado <a href="https://github.com/jlobue10/SteamDeck_rEFInd">rEFInd</a>.</p>
 <ol>
@@ -4179,6 +4245,7 @@ $<span class="w"> </span><span class="nb">exit</span>
 <ul>
 <li><a href="https://www.freecodecamp.org/news/how-to-install-arch-linux/">The Arch Linux Handbook – Learn Arch Linux for Beginners</a></li>
 <li><a href="https://asgardius.company/?p=1783">Instalando Arch Linux con KDE en Steam Deck</a></li>
+<li><a href="https://wiki.archlinux.org/title/Steam_Deck">Steam Deck - ArchWiki</a></li>
 </ul>
 
 
