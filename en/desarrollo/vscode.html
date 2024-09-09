@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="es" class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -13,23 +13,25 @@
       
       
       
+        <link rel="prev" href="vr.html">
       
-        <link rel="next" href="2024-05-31_campus_aula_dei_en_bici.html">
+      
+        <link rel="next" href="yii.html">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
     
     
       
-        <title>Instalación Arch Linux en Steam Deck - Apuntes de eduardófilo</title>
+        <title>VSCode / VSCodium - Apuntes de eduardófilo</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,7 +52,7 @@
     
       <link rel="stylesheet" href="https://unpkg.com/mermaid@8.5.1/dist/mermaid.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,8 +78,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#tecladoraton" class="md-skip">
-          Saltar a contenido
+        <a href="#vscode-vscodium" class="md-skip">
+          Skip to content
         </a>
       
     </div>
@@ -89,10 +91,10 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href="." title="Apuntes de eduardófilo" class="md-header__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Apuntes de eduardófilo" class="md-header__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
       
-  <img src="images/eduardofilo.png" alt="logo">
+  <img src="../../images/eduardofilo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -109,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Instalación Arch Linux en Steam Deck
+              VSCode / VSCodium
             
           </span>
         </div>
@@ -149,20 +151,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+    <button class="md-header__button md-icon" aria-label="Select language">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="2024-09-04_steam_deck_arch.html" hreflang="es" class="md-select__link">
+            <a href="../../desarrollo/vscode.html" hreflang="es" class="md-select__link">
               Español
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="en/2024-09-04_steam_deck_arch.html" hreflang="en" class="md-select__link">
+            <a href="vscode.html" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -181,16 +183,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Buscar">
+      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
@@ -201,7 +203,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Inicializando búsqueda
+            Initializing search
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -212,7 +214,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
+        <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -233,20 +235,18 @@
         
           
             
-<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="2024-09-04_steam_deck_arch.html" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../2024-09-04_steam_deck_arch.html" class="md-tabs__link">
           
   
   Blog
@@ -260,11 +260,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="desarrollo/android.html" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="android.html" class="md-tabs__link">
           
   
   Desarrollo
@@ -282,7 +284,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="ingenieria/3d_printing.html" class="md-tabs__link">
+        <a href="../ingenieria/3d_printing.html" class="md-tabs__link">
           
   
   Ingeniería
@@ -300,7 +302,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="proyectos/headsetcomm.html" class="md-tabs__link">
+        <a href="../proyectos/headsetcomm.html" class="md-tabs__link">
           
   
   Proyectos
@@ -318,7 +320,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="retro-emulacion/c64.html" class="md-tabs__link">
+        <a href="../retro-emulacion/c64.html" class="md-tabs__link">
           
   
   Retro-Emulación
@@ -336,7 +338,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="sistemas/android_system.html" class="md-tabs__link">
+        <a href="../sistemas/android_system.html" class="md-tabs__link">
           
   
   Sistemas
@@ -354,7 +356,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="varios/bici.html" class="md-tabs__link">
+        <a href="../varios/bici.html" class="md-tabs__link">
           
   
   Varios
@@ -385,18 +387,18 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Apuntes de eduardófilo" class="md-nav__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+    <a href="../.." title="Apuntes de eduardófilo" class="md-nav__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
       
-  <img src="images/eduardofilo.png" alt="logo">
+  <img src="../../images/eduardofilo.png" alt="logo">
 
     </a>
     Apuntes de eduardófilo
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
+      <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -413,28 +415,23 @@
       
   
   
-    
   
   
-  
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -445,7 +442,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Blog
@@ -456,185 +453,14 @@
                 
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Instalación Arch Linux en Steam Deck
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="2024-09-04_steam_deck_arch.html" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Instalación Arch Linux en Steam Deck
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tecladoraton" class="md-nav__link">
-    <span class="md-ellipsis">
-      Teclado/ratón
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reparticionado-del-disco" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reparticionado del disco
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-base" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación base
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-entorno-grafico" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación entorno gráfico
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Instalación entorno gráfico">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#plasma" class="md-nav__link">
-    <span class="md-ellipsis">
-      Plasma
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#plasma-mobile" class="md-nav__link">
-    <span class="md-ellipsis">
-      Plasma Mobile
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fin-de-instalacion-entorno-grafico" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fin de instalación entorno gráfico
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuracion-basica" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuración básica
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuracion-de-sddm" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuración de SDDM
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuracion-sonido" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuración sonido
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-gestor-dualboot" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación gestor dualboot
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusión
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
-      <a href="2024-05-31_campus_aula_dei_en_bici.html" class="md-nav__link">
+      <a href="../2024-09-04_steam_deck_arch.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Vías Zaragoza - Campus en bicicleta
+    Installing Arch Linux on Steam Deck
   </span>
   
 
@@ -651,11 +477,11 @@
   
   
     <li class="md-nav__item">
-      <a href="2022-10-05_entrevista_podcast_linux.html" class="md-nav__link">
+      <a href="../2024-05-31_campus_aula_dei_en_bici.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Entrevista en Podcast Linux
+    Zaragoza - Campus routes by bike
   </span>
   
 
@@ -672,7 +498,28 @@
   
   
     <li class="md-nav__item">
-      <a href="2022-08-08_mmiyoo_uart.html" class="md-nav__link">
+      <a href="../2022-10-05_entrevista_podcast_linux.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Podcast Linux Interview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-08-08_mmiyoo_uart.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -693,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2022-04-17_vr.html" class="md-nav__link">
+      <a href="../2022-04-17_vr.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -714,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2021-10-30_raspi_zero_2_upgrade.html" class="md-nav__link">
+      <a href="../2021-10-30_raspi_zero_2_upgrade.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -735,7 +582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2021-04-03_RG350_imagen.html" class="md-nav__link">
+      <a href="../2021-04-03_RG350_imagen.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -756,7 +603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2021-02-28_pico_fuzix.html" class="md-nav__link">
+      <a href="../2021-02-28_pico_fuzix.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -777,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2021-01-19-retroconsolas.html" class="md-nav__link">
+      <a href="../2021-01-19-retroconsolas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -798,7 +645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2021-01-16-rg350_ra_installer.html" class="md-nav__link">
+      <a href="../2021-01-16-rg350_ra_installer.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -819,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-12-13-rg351_wifi_mod.html" class="md-nav__link">
+      <a href="../2020-12-13-rg351_wifi_mod.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -840,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-09-27-rg350_xmame_sm_bridge.html" class="md-nav__link">
+      <a href="../2020-09-27-rg350_xmame_sm_bridge.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -861,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-08-31-cancion_herb_alpert.html" class="md-nav__link">
+      <a href="../2020-08-31-cancion_herb_alpert.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -882,7 +729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-08-15-rg350_scummvm_launchers.html" class="md-nav__link">
+      <a href="../2020-08-15-rg350_scummvm_launchers.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -903,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-08-12-rg350_py_backup.html" class="md-nav__link">
+      <a href="../2020-08-12-rg350_py_backup.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -924,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-07-12-rg350_screen_mod.html" class="md-nav__link">
+      <a href="../2020-07-12-rg350_screen_mod.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -945,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-07-09-rg350_fba_vertical_mod.html" class="md-nav__link">
+      <a href="../2020-07-09-rg350_fba_vertical_mod.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -966,7 +813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-07-02-rg350_primeros_pasos.html" class="md-nav__link">
+      <a href="../2020-07-02-rg350_primeros_pasos.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -987,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-06-04-rg350_raspi_image.html" class="md-nav__link">
+      <a href="../2020-06-04-rg350_raspi_image.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1008,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-05-31-rg350_compile.html" class="md-nav__link">
+      <a href="../2020-05-31-rg350_compile.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1029,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-05-25-rg350_docker_buildroot.html" class="md-nav__link">
+      <a href="../2020-05-25-rg350_docker_buildroot.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1050,7 +897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-05-14-rg350_mame4all.html" class="md-nav__link">
+      <a href="../2020-05-14-rg350_mame4all.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1071,7 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-05-08-rg350_dosbox.html" class="md-nav__link">
+      <a href="../2020-05-08-rg350_dosbox.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1092,7 +939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-05-06-rg350_openbor.html" class="md-nav__link">
+      <a href="../2020-05-06-rg350_openbor.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1113,7 +960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-05-04-rg350_daphne.html" class="md-nav__link">
+      <a href="../2020-05-04-rg350_daphne.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1134,7 +981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-04-15-rg350_xmame.html" class="md-nav__link">
+      <a href="../2020-04-15-rg350_xmame.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1155,7 +1002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-04-14-rg350_scummvm.html" class="md-nav__link">
+      <a href="../2020-04-14-rg350_scummvm.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1176,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-03-28-rg350_pymenu.html" class="md-nav__link">
+      <a href="../2020-03-28-rg350_pymenu.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1197,7 +1044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-03-19-rg350_backup.html" class="md-nav__link">
+      <a href="../2020-03-19-rg350_backup.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1218,7 +1065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-02-16-panelizar_pcb.html" class="md-nav__link">
+      <a href="../2020-02-16-panelizar_pcb.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1239,7 +1086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-02-13-rg350_emulationstation.html" class="md-nav__link">
+      <a href="../2020-02-13-rg350_emulationstation.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1260,7 +1107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-02-09-rg350_network.html" class="md-nav__link">
+      <a href="../2020-02-09-rg350_network.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1281,7 +1128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-02-08-eduzebox.html" class="md-nav__link">
+      <a href="../2020-02-08-eduzebox.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1302,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-01-31-rg350_fba.html" class="md-nav__link">
+      <a href="../2020-01-31-rg350_fba.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1323,7 +1170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-01-25-rg350_simplemenu.html" class="md-nav__link">
+      <a href="../2020-01-25-rg350_simplemenu.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1344,7 +1191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2020-01-11-rg350_scraper.html" class="md-nav__link">
+      <a href="../2020-01-11-rg350_scraper.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1365,7 +1212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2019-08-06-django_site.html" class="md-nav__link">
+      <a href="../2019-08-06-django_site.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1386,7 +1233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2019-07-07-crankshaft-build.html" class="md-nav__link">
+      <a href="../2019-07-07-crankshaft-build.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1407,7 +1254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2019-04-20-pong_composite_mod.html" class="md-nav__link">
+      <a href="../2019-04-20-pong_composite_mod.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1428,7 +1275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2019-01-29-bloqueo_telsome.html" class="md-nav__link">
+      <a href="../2019-01-29-bloqueo_telsome.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1449,7 +1296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2019-01-26-conversion_apuntes_mkdocs.html" class="md-nav__link">
+      <a href="../2019-01-26-conversion_apuntes_mkdocs.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1470,7 +1317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2018-10-20-Octoprint-en-Anet-A8.html" class="md-nav__link">
+      <a href="../2018-10-20-Octoprint-en-Anet-A8.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1491,7 +1338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2018-10-19-crankshaft.html" class="md-nav__link">
+      <a href="../2018-10-19-crankshaft.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1512,7 +1359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2018-05-05-otto.html" class="md-nav__link">
+      <a href="../2018-05-05-otto.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1533,7 +1380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2017-01-14-raspi2-kodi-16-tvheadend.html" class="md-nav__link">
+      <a href="../2017-01-14-raspi2-kodi-16-tvheadend.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1554,7 +1401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2016-12-06-raspi3-kodi.html" class="md-nav__link">
+      <a href="../2016-12-06-raspi3-kodi.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1575,7 +1422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2016-10-17-raspi-switch.html" class="md-nav__link">
+      <a href="../2016-10-17-raspi-switch.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1596,7 +1443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2016-08-17-el-mundo-de-ayer.html" class="md-nav__link">
+      <a href="../2016-08-17-el-mundo-de-ayer.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1617,7 +1464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2016-08-02-stm32-vl-discovery.html" class="md-nav__link">
+      <a href="../2016-08-02-stm32-vl-discovery.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1638,7 +1485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2016-07-21-PIGRRL-2.html" class="md-nav__link">
+      <a href="../2016-07-21-PIGRRL-2.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1659,7 +1506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2016-07-10-wild.html" class="md-nav__link">
+      <a href="../2016-07-10-wild.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1680,7 +1527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2016-07-02-virus-android.html" class="md-nav__link">
+      <a href="../2016-07-02-virus-android.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1701,7 +1548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2016-04-10-un-antropologo-en-marte.html" class="md-nav__link">
+      <a href="../2016-04-10-un-antropologo-en-marte.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1722,7 +1569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2016-02-25-los-innovadores.html" class="md-nav__link">
+      <a href="../2016-02-25-los-innovadores.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1743,7 +1590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2015-03-14-raspi2-kodi-tvheadend.html" class="md-nav__link">
+      <a href="../2015-03-14-raspi2-kodi-tvheadend.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1764,7 +1611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2015-01-09-moviles.html" class="md-nav__link">
+      <a href="../2015-01-09-moviles.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1785,7 +1632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2015-01-08-jekyll.html" class="md-nav__link">
+      <a href="../2015-01-08-jekyll.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1806,7 +1653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2014-12-26-dokuwiki-raspi.html" class="md-nav__link">
+      <a href="../2014-12-26-dokuwiki-raspi.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1827,7 +1674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2014-12-20-micro-placas.html" class="md-nav__link">
+      <a href="../2014-12-20-micro-placas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1848,7 +1695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2014-12-15-presentacion.html" class="md-nav__link">
+      <a href="../2014-12-15-presentacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1873,23 +1720,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1900,7 +1752,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Desarrollo
@@ -1914,7 +1766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/android.html" class="md-nav__link">
+      <a href="android.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1935,7 +1787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/db.html" class="md-nav__link">
+      <a href="db.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1956,7 +1808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/diseno.html" class="md-nav__link">
+      <a href="diseno.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1977,7 +1829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/dokuwiki.html" class="md-nav__link">
+      <a href="dokuwiki.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1998,7 +1850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/eclipse.html" class="md-nav__link">
+      <a href="eclipse.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2019,7 +1871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/projects.html" class="md-nav__link">
+      <a href="projects.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2040,7 +1892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/git.html" class="md-nav__link">
+      <a href="git.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2061,7 +1913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/html.html" class="md-nav__link">
+      <a href="html.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2082,7 +1934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/ia.html" class="md-nav__link">
+      <a href="ia.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2103,7 +1955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/java.html" class="md-nav__link">
+      <a href="java.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2124,7 +1976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/javaee.html" class="md-nav__link">
+      <a href="javaee.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2145,7 +1997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/javascript.html" class="md-nav__link">
+      <a href="javascript.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2166,7 +2018,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/joomla.html" class="md-nav__link">
+      <a href="joomla.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2187,7 +2039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/phonegap.html" class="md-nav__link">
+      <a href="phonegap.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2208,7 +2060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/php.html" class="md-nav__link">
+      <a href="php.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2229,7 +2081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/python.html" class="md-nav__link">
+      <a href="python.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2250,7 +2102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/ror.html" class="md-nav__link">
+      <a href="ror.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2271,7 +2123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/spree.html" class="md-nav__link">
+      <a href="spree.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2292,7 +2144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/subl.html" class="md-nav__link">
+      <a href="subl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2313,7 +2165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/svn.html" class="md-nav__link">
+      <a href="svn.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2334,7 +2186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/vagrant.html" class="md-nav__link">
+      <a href="vagrant.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2355,7 +2207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/vr.html" class="md-nav__link">
+      <a href="vr.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2373,10 +2225,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="desarrollo/vscode.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    VSCode / VSCodium
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="vscode.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2385,6 +2257,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preferencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preferencias
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2397,7 +2298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="desarrollo/yii.html" class="md-nav__link">
+      <a href="yii.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2463,7 +2364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ingenieria/3d_printing.html" class="md-nav__link">
+      <a href="../ingenieria/3d_printing.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2484,7 +2385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ingenieria/arduino.html" class="md-nav__link">
+      <a href="../ingenieria/arduino.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2505,7 +2406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ingenieria/freecad.html" class="md-nav__link">
+      <a href="../ingenieria/freecad.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2526,7 +2427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ingenieria/herramientas.html" class="md-nav__link">
+      <a href="../ingenieria/herramientas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2547,7 +2448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ingenieria/kicad.html" class="md-nav__link">
+      <a href="../ingenieria/kicad.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2568,7 +2469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ingenieria/modulos.html" class="md-nav__link">
+      <a href="../ingenieria/modulos.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2589,7 +2490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ingenieria/stm32.html" class="md-nav__link">
+      <a href="../ingenieria/stm32.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2655,7 +2556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="proyectos/headsetcomm.html" class="md-nav__link">
+      <a href="../proyectos/headsetcomm.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2676,7 +2577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="proyectos/dicom.html" class="md-nav__link">
+      <a href="../proyectos/dicom.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2697,7 +2598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="proyectos/minecraft.html" class="md-nav__link">
+      <a href="../proyectos/minecraft.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2763,7 +2664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="retro-emulacion/c64.html" class="md-nav__link">
+      <a href="../retro-emulacion/c64.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2784,7 +2685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="retro-emulacion/fpga.html" class="md-nav__link">
+      <a href="../retro-emulacion/fpga.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2805,7 +2706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="retro-emulacion/funkey-s.html" class="md-nav__link">
+      <a href="../retro-emulacion/funkey-s.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2826,7 +2727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="retro-emulacion/general.html" class="md-nav__link">
+      <a href="../retro-emulacion/general.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2847,7 +2748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="retro-emulacion/juegos.html" class="md-nav__link">
+      <a href="../retro-emulacion/juegos.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2868,7 +2769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="retro-emulacion/microconsolas.html" class="md-nav__link">
+      <a href="../retro-emulacion/microconsolas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2889,7 +2790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="retro-emulacion/miyoo-mini.html" class="md-nav__link">
+      <a href="../retro-emulacion/miyoo-mini.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2910,7 +2811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="retro-emulacion/retroarch.html" class="md-nav__link">
+      <a href="../retro-emulacion/retroarch.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2931,7 +2832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="retro-emulacion/rg-350.html" class="md-nav__link">
+      <a href="../retro-emulacion/rg-350.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2952,7 +2853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="retro-emulacion/rg-351.html" class="md-nav__link">
+      <a href="../retro-emulacion/rg-351.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2973,7 +2874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="retro-emulacion/rg-503.html" class="md-nav__link">
+      <a href="../retro-emulacion/rg-503.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2994,7 +2895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="retro-emulacion/steam-deck.html" class="md-nav__link">
+      <a href="../retro-emulacion/steam-deck.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3015,7 +2916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="retro-emulacion/z80-computer.html" class="md-nav__link">
+      <a href="../retro-emulacion/z80-computer.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3036,7 +2937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="retro-emulacion/zx-spectrum.html" class="md-nav__link">
+      <a href="../retro-emulacion/zx-spectrum.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3057,7 +2958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="retro-emulacion/zx-spectrum-next.html" class="md-nav__link">
+      <a href="../retro-emulacion/zx-spectrum-next.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3078,7 +2979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="retro-emulacion/zx-uno.html" class="md-nav__link">
+      <a href="../retro-emulacion/zx-uno.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3144,7 +3045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/android_system.html" class="md-nav__link">
+      <a href="../sistemas/android_system.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3165,7 +3066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/soft_imprescindible.html" class="md-nav__link">
+      <a href="../sistemas/soft_imprescindible.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3186,7 +3087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/appletv.html" class="md-nav__link">
+      <a href="../sistemas/appletv.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3207,7 +3108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/archlinux.html" class="md-nav__link">
+      <a href="../sistemas/archlinux.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3228,7 +3129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/buildroot.html" class="md-nav__link">
+      <a href="../sistemas/buildroot.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3249,7 +3150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/docker.html" class="md-nav__link">
+      <a href="../sistemas/docker.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3270,7 +3171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/email.html" class="md-nav__link">
+      <a href="../sistemas/email.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3291,7 +3192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/impresoras.html" class="md-nav__link">
+      <a href="../sistemas/impresoras.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3312,7 +3213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/iot.html" class="md-nav__link">
+      <a href="../sistemas/iot.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3333,7 +3234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/kodi.html" class="md-nav__link">
+      <a href="../sistemas/kodi.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3354,7 +3255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/macosx.html" class="md-nav__link">
+      <a href="../sistemas/macosx.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3375,7 +3276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/mysql.html" class="md-nav__link">
+      <a href="../sistemas/mysql.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3396,7 +3297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/nas.html" class="md-nav__link">
+      <a href="../sistemas/nas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3417,7 +3318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/oculus.html" class="md-nav__link">
+      <a href="../sistemas/oculus.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3438,7 +3339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/odroid.html" class="md-nav__link">
+      <a href="../sistemas/odroid.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3459,7 +3360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/office.html" class="md-nav__link">
+      <a href="../sistemas/office.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3480,7 +3381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/raspi.html" class="md-nav__link">
+      <a href="../sistemas/raspi.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3501,7 +3402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/raspi_pico.html" class="md-nav__link">
+      <a href="../sistemas/raspi_pico.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3522,7 +3423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/redes.html" class="md-nav__link">
+      <a href="../sistemas/redes.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3543,7 +3444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/router_xiaomi.html" class="md-nav__link">
+      <a href="../sistemas/router_xiaomi.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3564,7 +3465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/ubuntu_phone.html" class="md-nav__link">
+      <a href="../sistemas/ubuntu_phone.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3585,7 +3486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/ubuntu.html" class="md-nav__link">
+      <a href="../sistemas/ubuntu.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3606,7 +3507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/unix.html" class="md-nav__link">
+      <a href="../sistemas/unix.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3627,7 +3528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sistemas/trucos_windows.html" class="md-nav__link">
+      <a href="../sistemas/trucos_windows.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3693,7 +3594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="varios/bici.html" class="md-nav__link">
+      <a href="../varios/bici.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3714,7 +3615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="varios/links.html" class="md-nav__link">
+      <a href="../varios/links.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3735,7 +3636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="varios/excursionismo.html" class="md-nav__link">
+      <a href="../varios/excursionismo.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3756,7 +3657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="varios/hogar.html" class="md-nav__link">
+      <a href="../varios/hogar.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3777,7 +3678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="varios/english.html" class="md-nav__link">
+      <a href="../varios/english.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3798,7 +3699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="varios/corsa_d.html" class="md-nav__link">
+      <a href="../varios/corsa_d.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3819,7 +3720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="varios/recetas.html" class="md-nav__link">
+      <a href="../varios/recetas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3840,7 +3741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="varios/viajes.html" class="md-nav__link">
+      <a href="../varios/viajes.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3874,126 +3775,23 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tecladoraton" class="md-nav__link">
+  <a href="#preferencias" class="md-nav__link">
     <span class="md-ellipsis">
-      Teclado/ratón
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reparticionado-del-disco" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reparticionado del disco
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-base" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación base
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-entorno-grafico" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación entorno gráfico
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Instalación entorno gráfico">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#plasma" class="md-nav__link">
-    <span class="md-ellipsis">
-      Plasma
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#plasma-mobile" class="md-nav__link">
-    <span class="md-ellipsis">
-      Plasma Mobile
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fin-de-instalacion-entorno-grafico" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fin de instalación entorno gráfico
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuracion-basica" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuración básica
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuracion-de-sddm" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuración de SDDM
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuracion-sonido" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuración sonido
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-gestor-dualboot" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación gestor dualboot
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusión
+      Preferencias
     </span>
   </a>
   
@@ -4017,258 +3815,13 @@
   
 
 
-  <h1>Instalación Arch Linux en Steam Deck</h1>
-
-<p><img alt="Steam Deck con Arch Linux" src="/images/posts/2024-09-04_steam_deck_arch/steam_deck_logo.png" /></p>
-<p>En julio de 2024 durante unas semanas, el modelo de 512GB de la Steam Deck LCD pudo adquirirse por debajo de los 400€. Un precio muy atractivo para una <a href="https://www.steamdeck.com/es/tech/deck">máquina decente</a> con procesador AMD de arquitectura x86 (AMD64), 16GB de RAM, disco SSD tipo NVMe de la capacidad mencionada antes, pantalla táctil y controles de juego integrados. Es decir un PC consolizado, pero un PC al fin y al cabo. Pero sobre todo lo que hace para mi especialmente atractiva la máquina es su soporte Linux completo, lo que la convierte en una plataforma ideal para cacharrear con distribuciones Linux o utilizarlo como PC portátil secundario. Todo esto naturalmente además de su uso convencional para jugar y <a href="https://www.emudeck.com/">emular</a> videojuegos.</p>
-<p>SteamOS, el sistema operativo que trae de serie, está basado en Arch Linux, y en su modo escritorio, puede utilizarse prácticamente como un Arch Linux normal. La principal restricción es que está construido en modo inmutable y a pesar de que este tipo de configuración de sistema tiene sus virtudes y se entiende perfectamente que Valve lo haya escogido para su máquina, todavía prefiero un sistema normal (mutable), por lo que me decidí por instalar un Arch normal y aprender a instalar de paso esta distribución. Según el <a href="https://wiki.archlinux.org/title/Steam_Deck">wiki de Arch</a>, el hardware del modelo LCD de la Steam Deck está soportado al 100% en Arch.</p>
-<p>Lo que sigue es el procedimiento completo que he utilizado.</p>
-<h2 id="tecladoraton">Teclado/ratón<a class="headerlink" href="#tecladoraton" title="Permanent link">&para;</a></h2>
-<p>Aunque gran parte de las operaciones pueden hacerse utilizando la pantalla táctil y los trackpads de la Steam Deck, es muy recomendable conectar un teclado y ratón a la consola para facilitar la instalación, sobre todo durante la sesión de terminal con la que instalaremos el sistema base. La Steam Deck sólo posee un puerto USB-C, por lo que lo más práctico es utilizar un dock. También puede ser suficiente (sobre todo si ejecutamos los sistemas live desde una microSD) con un dongle de teclado/ratón inalámbricos conectados con un adaptador USB&lt;-&gt;USB-C, aunque en ese caso conviene asegurarse de que la Steam Deck tiene la batería completamente cargada.</p>
-<p>En mi caso utilicé un dock <a href="https://www.dell.com/es-es/shop/adaptador-multipuerto-usb-c-de-dell-7-en-1-da310/apd/470-aeup/conexi%C3%B3n-wifi-y-redes">DA310z</a> de Dell.</p>
-<h2 id="reparticionado-del-disco">Reparticionado del disco<a class="headerlink" href="#reparticionado-del-disco" title="Permanent link">&para;</a></h2>
-<p>El disco SSD de la Steam Deck que adquirí es de 512GB y de tipo NVMe. Es el tamaño mínimo si queremos instalar otro sistema junto a SteamOS.</p>
-<p>Antes de empezar con la instalación debemos hacer hueco para la misma encogiendo la partición principal (la número 8). Para ello podemos utilizar prácticamente cualquier distribución live Linux que arranquemos desde una unidad extraíble (USB o microSD) ya que todas ellas llevan algún programa para gestionar particiones. En mi caso utilicé una ISO del programa <code>gparted</code>.</p>
-<p>El procedimiento completo puede verse a continuación:</p>
-<ol>
-<li>Descargar la <a href="https://gparted.org/download.php">ISO de gparted</a>. En concreto en mi caso utilicé <a href="https://downloads.sourceforge.net/gparted/gparted-live-1.6.0-3-amd64.iso">ésta versión</a>.</li>
-<li>Instalar la ISO en un pendrive o mejor aún en una microSD (ya que la Steam Deck posee una ranura para éstas). Puede utilizarse un programa como <a href="https://www.balena.io/etcher/">Balena Etcher</a> o el comando <code>dd</code> de Linux si se <a href="/sistemas/raspi.html#backup-de-la-sd-comprimiendo-al-vuelo">sabe manejar</a>.</li>
-<li>Arrancar la Steam Deck con el pendrive o la microSD insertada manteniendo pulsado el botón de bajar el volumen hasta que se escuchen los tonos de encendido. Esto hace que la consola arranque en el menú <code>Boot Manager</code>.</li>
-<li>Seleccionar la opción de arrancar desde el dispositivo extraíble que aparecerá en el menú como <code>EFI USB Device (USB)</code> o <code>EFI SD/MMC Card (XX XXXX XXXX)</code> según si utilizamos un pendrive o una microSD respectivamente.</li>
-<li>
-<p>Aparece una pantalla de configuración  en la que hacemos las siguientes selecciones:</p>
+<h1 id="vscode-vscodium">VSCode / VSCodium<a class="headerlink" href="#vscode-vscodium" title="Permanent link">&para;</a></h1>
+<h2 id="preferencias">Preferencias<a class="headerlink" href="#preferencias" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Policy for handling keymaps =&gt; Don't touch keymap</li>
-<li>Which language do you prefer? =&gt; 25</li>
-<li>Which mode do you prefer? =&gt; 0</li>
-</ul>
-</li>
-<li>
-<p>Tras aceptar la última opción anterior, arrancará el programa <code>gparted</code> en modo gráfico (con la pantalla girada, eso sí). Haremos cambios hasta dejar las particiones como se ve en la foto. Básicamente lo que haremos será encoger la partición #8 unos 100GB, crear la #9 de 4GB para swap y la #10 con el espacio restante para el sistema raíz de Arch:</p>
-<p><img alt="Particiones de la Steam Deck" src="/images/posts/2024-09-04_steam_deck_arch/steam-deck-partitions.png" /></p>
-</li>
-</ol>
-<p>Destacar a la vista de las particiones que utiliza SteamOS que hace uso de un <a href="https://blog.davidbyrne.dev/2018/08/16/linux-ab-partitions">sistema de particiones A/B</a>, habitual en Android, por el cual la mayoría de las particiones del sistema (excepto la de usuario) están duplicadas. Dicho sistema está pensado para facilitar las actualizaciones, o más bien para volver atrás en caso de problemas durante las mismas.</p>
-<h2 id="instalacion-base">Instalación base<a class="headerlink" href="#instalacion-base" title="Permanent link">&para;</a></h2>
-<p>Para el proceso de instalación del sistema base me decanté por el camino convencional siguiendo las instrucciones de la <a href="https://wiki.archlinux.org/title/Installation_guide">guía de instalación</a> en el wiki de Arch. Dicha instalación utiliza una ISO de un sistema Arch que podremos arrancar desde una unidad extraíble (USB o microSD) con el que instalaremos los paquetes básicos para tener un sistema arrancable y muy básico.</p>
-<p>Antes de comenzar, comentar que por las características tan dinámicas de la distribución Arch Linux, es muy posible que esta guía quede desactualizada en poco tiempo. Por lo que recomiendo consultar la <a href="https://wiki.archlinux.org/title/Installation_guide">guía oficial</a> en caso de encontrar que algo no sale como se supone.</p>
-<p>A continuación vemos paso a paso el proceso de instalación:</p>
-<ol>
-<li>Descargar la <a href="https://archlinux.org/download/">ISO de Arch Linux</a>. En concreto en mi caso utilicé <a href="https://es.mirrors.cicku.me/archlinux/iso/2024.08.01/archlinux-2024.08.01-x86_64.iso">ésta versión</a>.</li>
-<li>Instalar la ISO en un pendrive o mejor aún en una microSD para utilizar la ranura que posee la Steam Deck. Puede utilizarse un programa como <a href="https://www.balena.io/etcher/">Balena Etcher</a> o el comando <code>dd</code> de Linux si se <a href="/sistemas/raspi.html#backup-de-la-sd-comprimiendo-al-vuelo">sabe manejar</a>.</li>
-<li>Arrancar la Steam Deck con el pendrive o la microSD insertada manteniendo pulsado el botón de bajar el volumen hasta que se escuchen los tonos de encendido. Esto hace que la consola arranque en el menú <code>Boot Manager</code>.</li>
-<li>Seleccionar la opción de arrancar desde el dispositivo extraíble que aparecerá en el menú como <code>EFI USB Device (USB)</code> o <code>EFI SD/MMC Card (XX XXXX XXXX)</code> según si utilizamos un pendrive o una microSD respectivamente.</li>
-<li>
-<p>Una vez que termine de arrancar el sistema live de instalación de Arch, ejecutar los siguiente comandos en orden (en la sesión con <code>iwctl</code> sustituiremos <code>&lt;SSID&gt;</code> por el nuestro e introduciremos la contraseña cuando se nos pida; también sustituiremos el identificador de usuario <code>&lt;USER&gt;</code> por el que queramos utilizar):</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># loadkeys es</span>
-<span class="c1"># iwctl</span>
-<span class="o">[</span>iwd<span class="o">]</span><span class="c1"># station wlan0 scan</span>
-<span class="o">[</span>iwd<span class="o">]</span><span class="c1"># station wlan0 get-networks</span>
-<span class="o">[</span>iwd<span class="o">]</span><span class="c1"># station wlan0 connect &lt;SSID&gt;</span>
-<span class="o">[</span>iwd<span class="o">]</span><span class="c1"># exit</span>
-<span class="c1"># mkfs.ext4 /dev/nvme0n1p10</span>
-<span class="c1"># mkswap /dev/nvme0n1p9</span>
-<span class="c1"># mount /dev/nvme0n1p10 /mnt</span>
-<span class="c1"># mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi</span>
-<span class="c1"># swapon /dev/nvme0n1p9</span>
-<span class="c1"># pacstrap -K /mnt base base-devel linux linux-firmware sudo vi ntfs-3g networkmanager amd-ucode grub efibootmgr git cmake qt5-wayland</span>
-<span class="c1"># genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span>
-<span class="c1"># arch-chroot /mnt</span>
-<span class="c1"># ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime</span>
-<span class="c1"># hwclock --systohc</span>
-<span class="c1"># vi /etc/locale.gen    # descomentar &#39;en_US.UTF-8 UTF-8&#39; y &#39;es_ES.UTF-8 UTF-8&#39;</span>
-<span class="c1"># locale-gen</span>
-<span class="c1"># echo &quot;LANG=es_ES.UTF-8&quot; &gt; /etc/locale.conf</span>
-<span class="c1"># echo &quot;KEYMAP=es&quot; &gt; /etc/vconsole.conf</span>
-<span class="c1"># echo &quot;deck&quot; &gt; /etc/hostname</span>
-<span class="c1"># echo -e &quot;\n127.0.0.1    localhost\n::1    localhost\n127.0.1.1    deck&quot; &gt;&gt; /etc/hosts</span>
-<span class="c1"># passwd</span>
-<span class="c1"># grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch</span>
-<span class="c1"># grub-mkconfig -o /boot/grub/grub.cfg</span>
-<span class="c1"># systemctl enable NetworkManager</span>
-<span class="c1"># useradd -m -G wheel &lt;USER&gt;</span>
-<span class="c1"># passwd &lt;USER&gt;</span>
-<span class="c1"># chmod u+w /etc/sudoers</span>
-<span class="c1"># vi /etc/sudoers       # Descomentar &#39;%wheel ALL=(ALL) ALL&#39;</span>
-<span class="c1"># chmod u-w /etc/sudoers</span>
-<span class="c1"># pacman -Syy</span>
-<span class="c1"># pacman -S xorg-server xf86-video-amdgpu maliit-keyboard qt5-wayland</span>
-<span class="c1"># su - &lt;USER&gt;</span>
-</code></pre></div>
-</li>
-</ol>
-<p>El password que elegiremos cuando ejecutemos el comando <code>passwd &lt;USER&gt;</code> debe ser numérico si queremos utilizar Plasma Mobile, ya que la pantalla de desbloqueo sólo nos permite introducir un PIN.</p>
-<h2 id="instalacion-entorno-grafico">Instalación entorno gráfico<a class="headerlink" href="#instalacion-entorno-grafico" title="Permanent link">&para;</a></h2>
-<p>Continuamos donde nos habíamos quedado, es decir en la sesión chroot desde el sistema live de instalación de Arch Linux. Lo haremos ya con el usuario normal (no root) por lo que a partir de ahora haremos uso con frecuencia de <code>sudo</code>.</p>
-<p>Ahora vamos a instalar los entornos gráficos. Lo digo en plural porque vamos a instalar dos, Plasma y Plasma Mobile. Hago esto porque dependiendo de si vamos a utilizar la Steam Deck con Arch en modo escritorio (con teclado/ratón y posiblemente pantalla) o portátil (sin teclado/ratón), nos convendrá más un sistema u otro, dado que Plasma Mobile presenta un interfaz diseñado para ser manejado con una pantalla táctil (estilo tablet).</p>
-<p>En realidad no es necesario instalar los dos escritorios, por eso se han separado sus pasos de instalación. Podemos instalar uno, el otro o ambos.</p>
-<h4 id="plasma">Plasma<a class="headerlink" href="#plasma" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>plasma-meta
-</code></pre></div>
-<p>Durante la instalación del paquete anterior se nos harán una serie de preguntas. A la tercera pregunta responder <code>2) noto-fonts</code>. En el resto ofrecer la respuesta predeterminada (pulsando retorno).</p>
-<h4 id="plasma-mobile">Plasma Mobile<a class="headerlink" href="#plasma-mobile" title="Permanent link">&para;</a></h4>
-<p>Plasma Mobile no se encuentra todavía en los repositorios oficiales. Tenemos que utilizar <a href="https://aur.archlinux.org/">AUR</a>:</p>
-<ol>
-<li>
-<p>Empezamos instalando algunas dependencias:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>plasma-workspace<span class="w"> </span>kcontacts<span class="w"> </span>kirigami2<span class="w"> </span>kpeople<span class="w"> </span>libphonenumber
-</code></pre></div>
-</li>
-<li>
-<p>Instalamos los paquetes de AUR <code>plasma-nano</code>, <code>plasma-settings</code> y <code>plasma-mobile</code> en este orden:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~
-$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/plasma-nano.git
-$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>plasma-nano
-$<span class="w"> </span>makepkg<span class="w"> </span>-si
-$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~
-$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/plasma-settings.git
-$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>plasma-settings
-$<span class="w"> </span>makepkg<span class="w"> </span>-si
-$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~
-$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/plasma-mobile.git
-$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>plasma-mobile
-$<span class="w"> </span>makepkg<span class="w"> </span>-si
-</code></pre></div>
-</li>
-</ol>
-<h4 id="fin-de-instalacion-entorno-grafico">Fin de instalación entorno gráfico<a class="headerlink" href="#fin-de-instalacion-entorno-grafico" title="Permanent link">&para;</a></h4>
-<ol>
-<li>
-<p>Instalamos el gestor de sesiones SDDM y Konsole que nos hará falta para terminar la instalación desde el modo gráfico:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>sddm<span class="w"> </span>konsole
-$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>sddm
-$<span class="w"> </span><span class="nb">exit</span>
-</code></pre></div>
-</li>
-<li>
-<p>Cerramos la sesión chroot, desmontamos las particiones y reiniciamos el sistema:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># exit</span>
-<span class="c1"># umount -R /mnt</span>
-<span class="c1"># reboot</span>
-</code></pre></div>
-</li>
-</ol>
-<h2 id="configuracion-basica">Configuración básica<a class="headerlink" href="#configuracion-basica" title="Permanent link">&para;</a></h2>
-<p>Tras reiniciar deberíamos ver el gestor de sesiones SDDM, inicialmente con la pantalla girada y sin posibilidad de utilizar el teclado en pantalla, por lo que todavía continuaremos utilizando el teclado y ratón externos.</p>
-<p>Una vez que hayamos iniciado sesión en Plasma o Plasma Mobile, lo primero que tenemos que hacer es configurar la conexión a internet. Para ello hacemos click sobre el icono correspondiente en la bandeja del sistema abajo a la derecha en Plasma o arriba a la derecha en Plasma Mobile.</p>
-<p>Una vez que tengamos conexión, abrimos la aplicación Konsole y ejecutamos los siguientes comandos para instalar el paquete de aplicaciones básico de KDE, el navegador Firefox y el servidor SSH:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>firefox<span class="w"> </span>kde-applications-meta<span class="w"> </span>openssh
-$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>sshd
-$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>sshd
-</code></pre></div>
-<p>Finalmente hacemos las dos siguientes configuraciones para ajustar la resolución de pantalla (que inicialmente escala las cosas para que se vean más grandes) y la distribución de teclado:</p>
-<ul>
-<li>Configurar la escala de la pantalla a 100% en <code>Preferencias &gt; Preferencias del sistema &gt; Pantalla y monitor &gt; Escalar</code>.</li>
-<li>Añadir la distribución de teclado español en <code>Preferencias &gt; Preferencias del sistema &gt; Teclado &gt; Distribuciones &gt; Configurar distribuciones &gt; Añadir (Español)</code>.</li>
-</ul>
-<h2 id="configuracion-de-sddm">Configuración de SDDM<a class="headerlink" href="#configuracion-de-sddm" title="Permanent link">&para;</a></h2>
-<p>Finalmente vamos a mejorar la configuración del gestor de sesiones SDDM para que permita el teclado en pantalla, tenga mejor aspecto y muestre la pantalla en la orientación correcta:</p>
-<ol>
-<li>
-<p>Crear fichero <code>/etc/sddm.conf.d/10-wayland.conf</code> con el siguiente contenido:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[General]</span>
-<span class="na">DisplayServer</span><span class="o">=</span><span class="s">wayland</span>
-<span class="na">GreeterEnvironment</span><span class="o">=</span><span class="s">QT_WAYLAND_SHELL_INTEGRATION=layer-shell</span>
-
-<span class="k">[Wayland]</span>
-<span class="na">CompositorCommand</span><span class="o">=</span><span class="s">kwin_wayland --drm --no-lockscreen --no-global-shortcuts --locale1 --inputmethod maliit-keyboard</span>
-</code></pre></div>
-</li>
-<li>
-<p>Abrir <code>Preferencias &gt; Pantalla de inicio de sesión (SDDM)</code>, seleccionar Brisa como theme y pulsar el botón <code>Aplicar las preferencias de Plasma...</code> arriba a la derecha.</p>
-</li>
-</ol>
-<h2 id="configuracion-sonido">Configuración sonido<a class="headerlink" href="#configuracion-sonido" title="Permanent link">&para;</a></h2>
-<p>Tal y como <a href="https://wiki.archlinux.org/title/Steam_Deck#Audio">comenta el wiki de Arch</a>, el volumen por defecto en la Steam Deck es muy bajo. Para solucionarlo hay que instalar el paquete <code>alsa-utils</code> y ejecutar el comando <code>alsamixer</code> para ajustar el volumen de algunos de los canales.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>alsa-utils
-$<span class="w"> </span>alsamixer
-</code></pre></div>
-<p>Para acceder a los mismos, una vez en <code>alsamixer</code>, hay que pulsar <code>F6</code> para poder seleccionar el dispositivo de audio <code>acp5x</code> ya que por defecto aparecen seleccionado el dispositivo 0 que es el asociado a la salida HDMI del chip gráfico:</p>
-<p><img alt="alsamixer" src="/images/posts/2024-09-04_steam_deck_arch/alsamixer-select-device.png" /></p>
-<p>Una vez seleccionado el dispositivo correcto, veremos todos sus canales que son muy numerosos. Localizaremos los que <a href="https://wiki.archlinux.org/title/Steam_Deck#Audio">menciona el wiki</a> para ajustarlos a los siguientes valores:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Canal</th>
-<th style="text-align: right;">Valor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Analog PCM</td>
-<td style="text-align: right;">85%</td>
-</tr>
-<tr>
-<td style="text-align: left;">Digital</td>
-<td style="text-align: right;">86%</td>
-</tr>
-<tr>
-<td style="text-align: left;">Digital PCM</td>
-<td style="text-align: right;">85%</td>
-</tr>
-<tr>
-<td style="text-align: left;">Left Analog PCM</td>
-<td style="text-align: right;">85%</td>
-</tr>
-<tr>
-<td style="text-align: left;">Left Digital PCM</td>
-<td style="text-align: right;">85%</td>
-</tr>
-<tr>
-<td style="text-align: left;">Right Analog PCM</td>
-<td style="text-align: right;">85%</td>
-</tr>
-<tr>
-<td style="text-align: left;">Right Digital PCM</td>
-<td style="text-align: right;">85%</td>
-</tr>
-</tbody>
-</table>
-<h2 id="instalacion-gestor-dualboot">Instalación gestor dualboot<a class="headerlink" href="#instalacion-gestor-dualboot" title="Permanent link">&para;</a></h2>
-<p>El sistema Arch ya está listo y podemos arrancarlo encendiendo la consola en modo Boot Manager (manteniendo pulsada la tecla de bajar volumen) y seleccionando la opción <code>Arch</code>. Pero para facilitar el arranque de SteamOS, vamos a instalar un gestor de arranque dualboot llamado <a href="https://github.com/jlobue10/SteamDeck_rEFInd">rEFInd</a>.</p>
-<ol>
-<li>Arrancar SteamOS (con Volume- + Power).</li>
-<li>
-<p>Desde una terminal en modo escritorio ejecutar:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="nv">$HOME</span>/SteamDeck_rEFInd/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/jlobue10/SteamDeck_rEFInd<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>SteamDeck_rEFInd<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>install-GUI.sh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./install-GUI.sh
-</code></pre></div>
-</li>
-<li>
-<p>Descargar o crear un icono de Arch Linux de 128x128px.</p>
-</li>
-<li>Abrir el lanzador del escritorio que encontraremos en el escritorio.</li>
-<li>
-<p>Configurar de la siguiente forma (seleccionar en el campo <code>Boot Option #2 Icon</code> el icono descargado o creado anteriormente):</p>
-<p><img alt="Configuración de rEFInd" src="/images/posts/2024-09-04_steam_deck_arch/rEFInd_conf.png" /></p>
-</li>
-<li>
-<p>Pulsar botón <code>Create Config</code>.</p>
-</li>
-<li>
-<p>Editar el fichero que encontraremos en <code>~/.local/SteamDeck_rEFInd/GUI/refind.conf</code> y modificar la última entrada de la siguiente forma:</p>
-<div class="highlight"><pre><span></span><code>menuentry &quot;Arch&quot; {
-    icon /EFI/refind/os_icon2.png
-    loader /EFI/Arch/grubx64.efi
-    graphics on
-}
-</code></pre></div>
-</li>
-<li>
-<p>Pulsar el botón <code>Install rEFInd</code>.</p>
-</li>
-<li>Pulsar el botón <code>Install Config</code></li>
-</ol>
-<p>La ruta <code>/EFI/Arch/grubx64.efi</code> del paso 6 puede cambiar si en el comando <code>grub-install</code> ejecutado durante la <a href="#instalacion-base">instalación del sistema base</a> se eligió otro identificador que no fuera <code>Arch</code>. En ese caso habría que adaptar la ruta.</p>
-<h2 id="conclusion">Conclusión<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
-<p>Y esto sería todo. Ahora tenemos un sistema Arch Linux en nuestra Steam Deck con un gestor de arranque dualboot que nos permite arrancar también SteamOS. A partir de aquí tendremos una máquina con una naturaleza doble, una (SteamOS) para jugar y otra (Arch) para ser utilizada como un PC (Plasma) o tabletPC (Plasma Mobile).</p>
-<p>Para elegir el entorno gráfico Plasma normal o el Plasma Mobile, utilizaremos el menú desplegable que aparece abajo a la izquierda en el gestor de inicios de sesión SDDM.</p>
-<iframe width="688" height="387" src="https://www.youtube.com/embed/hColcI3rv38" title="Arch Linux en Steam Deck" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-<p>Algunos enlaces de interés consultados durante la elaboración de esta guía:</p>
-<ul>
-<li><a href="https://www.freecodecamp.org/news/how-to-install-arch-linux/">The Arch Linux Handbook – Learn Arch Linux for Beginners</a></li>
-<li><a href="https://asgardius.company/?p=1783">Instalando Arch Linux con KDE en Steam Deck</a></li>
-<li><a href="https://wiki.archlinux.org/title/Steam_Deck">Steam Deck - ArchWiki</a></li>
+<li><code>explorer.autoReveal</code>: false  # No resaltar el archivo en el explorador al abrirlo.</li>
+<li><code>editor.tabSize</code>: 4  # Tamaño de tabulación.</li>
+<li><code>editor.fontFamily</code>: "'IntelOne Mono', 'Droid Sans Mono', 'monospace', monospace"  # Instalar antes <a href="https://github.com/intel/intel-one-mono">intel-one-mono</a>.</li>
+<li><code>files.trimTrailingWhitespace</code>: true  # Eliminar espacios en blanco al final de las líneas.</li>
 </ul>
 
 
@@ -4391,10 +3944,10 @@ $<span class="w"> </span>alsamixer
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tracking", "navigation.tabs"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.bd41221c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.bd41221c.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
       
