@@ -2614,6 +2614,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -4041,11 +4062,11 @@
 
   <h1>RG350 PyMenu</h1>
 
-<p><img alt="PyMenu" src="/images/posts/pymenu_logo.png" /></p>
+<p><img alt="PyMenu" src="../images/posts/pymenu_logo.png" /></p>
 <p>Se ilustra a continuación el proceso de instalación y configuración del launcher <a href="https://github.com/JackD83/PyMenu">PyMenu</a> para RG350.</p>
 <div class="admonition warning">
 <p class="admonition-title">Aviso</p>
-<p>PyMenu al contrario que <a href="/2020-01-25-rg350_simplemenu.html">SimpleMenu</a> y <a href="/2020-02-13-rg350_emulationstation.html">EmulationStation</a>, trata de autoconfigurarse localizando los emuladores, ports y aplicaciones que hay en la consola y contrastándolos con un fichero de configuración que contiene la mayoría de los sistemas. Desafortunadamente no es perfecto y no lo logra en todos los casos, haciendo que los que fallan sean más difíciles de configurar. En este artículo se desvelan algunas de las técnicas que usa el programa para que sepamos cómo terminar de adaptar la configuración.</p>
+<p>PyMenu al contrario que <a href="2020-01-25-rg350_simplemenu.html">SimpleMenu</a> y <a href="2020-02-13-rg350_emulationstation.html">EmulationStation</a>, trata de autoconfigurarse localizando los emuladores, ports y aplicaciones que hay en la consola y contrastándolos con un fichero de configuración que contiene la mayoría de los sistemas. Desafortunadamente no es perfecto y no lo logra en todos los casos, haciendo que los que fallan sean más difíciles de configurar. En este artículo se desvelan algunas de las técnicas que usa el programa para que sepamos cómo terminar de adaptar la configuración.</p>
 </div>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
 <p>La instalación es sencilla ya que el programador ofrece un OPK para ello en las <a href="https://github.com/JackD83/PyMenu/releases">releases del repositorio</a>. En concreto el OPK adecuado para instalar en RG350 es éste:</p>
@@ -4056,18 +4077,18 @@
 <li><code>/media/sdcard/apps</code></li>
 </ul>
 <p>Preferiblemente en el segundo que corresponde al directorio <code>apps</code> de la tarjeta externa, ya que el OPK lo podremos borrar una vez hecha la instalación. En GMenu2X nos aparecerá este lanzador:</p>
-<p><img alt="PyMenu Installer" src="/images/posts/pymenu_installer.png" /></p>
+<p><img alt="PyMenu Installer" src="../images/posts/pymenu_installer.png" /></p>
 <p>Lo abriremos y veremos una pantalla de terminal en la que es posible que aparezcan algunos errores. Al principio creía que se trataba del proceso de búsqueda de OPKs para la autoconfiguración, pero analizando el script de instalación veo que sólo las últimas 4 líneas corresponden a la verdadera instalación:</p>
-<p><img alt="PyMenu Installing" src="/images/posts/pymenu_installing.png" /></p>
+<p><img alt="PyMenu Installing" src="../images/posts/pymenu_installing.png" /></p>
 <p>Las líneas anteriores pertenecen a GMenu2X y en mi caso indicaban que tenía ficheros residuales en <code>/media/data/local/home/.gmenu2x/sections</code>. Son lanzadores de aplicaciones que en su día instalé y borré. Haciendo limpieza de los ficheros correspondientes consigo un log de instalación más limpio:</p>
-<p><img alt="PyMenu Installing Clean" src="/images/posts/pymenu_installing_clean.png" /></p>
+<p><img alt="PyMenu Installing Clean" src="../images/posts/pymenu_installing_clean.png" /></p>
 <p>En cualquier caso estos errores no son importantes.</p>
 <p>El instalador copia todo el código y recursos de PyMenu en el directorio <code>/media/data/pymenu</code>. También copia un lanzador en <code>/media/data/local/home/.gmenu2x/sections/applications</code>, motivo por el que nos aparecerá lo siguiente:</p>
-<p><img alt="PyMenu Launcher" src="/images/posts/pymenu_launcher.png" /></p>
+<p><img alt="PyMenu Launcher" src="../images/posts/pymenu_launcher.png" /></p>
 <h2 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h2>
 <p>Una vez instalado, si ejecutamos PyMenu a través de su lanzador seguramente arrancará, no como SimpleMenu o EmulationStation que hasta que no tienen una configuración perfecta suelen cerrarse. Otra ventaja de PyMenu es que puede configurarse desde el propio interfaz gráfico del programa. Para ello basta situarse sobre el sistema a configurar y pulsar <code>Select</code> para seleccionar la entrada <code>edit entry</code>:</p>
-<p><img alt="PyMenu Config1" src="/images/posts/pymenu_config1.png" />
-<img alt="PyMenu Config2" src="/images/posts/pymenu_config2.png" /></p>
+<p><img alt="PyMenu Config1" src="../images/posts/pymenu_config1.png" />
+<img alt="PyMenu Config2" src="../images/posts/pymenu_config2.png" /></p>
 <p>Allí veremos los parámetros que contiene el fichero de configuración para ese sistema. El fichero de configuración es <code>/media/data/pymenu/config/config.json</code>. Como vemos es un fichero JSON (mucho más amigable que los XML de SimpleMenu y EmulationStation). Al principio encontramos unos parámetros generales:</p>
 <div class="highlight"><pre><span></span><code>    &quot;batteryHigh&quot;: 3900000,
     &quot;batteryLow&quot;: 3300000,
@@ -4093,7 +4114,7 @@
         },
 </code></pre></div>
 <p>Como vemos se corresponde con lo que veíamos en el pantallazo anterior. Será por tanto equivalente modificar la configuración desde el programa o desde el fichero. Si PyMenu no encuentra un OPK compatible con la configuración del emulador correspondiente ocultará el sistema en el interfaz gráfico, pero podemos forzar su aparición activando la opción <code>Show All</code> en <code>General Settings</code>:</p>
-<p><img alt="PyMenu Show All" src="/images/posts/pymenu_show_all.png" /></p>
+<p><img alt="PyMenu Show All" src="../images/posts/pymenu_show_all.png" /></p>
 <p>A pesar de poder configurar los sistemas desde el propio frontend, prefiero hacerlo manipulando el fichero de configuración directamente, ya que permite ajustar todos los sistemas de una vez. Para editar este fichero, como siempre, podemos hacerlo conectando con la consola por SSH para manipularlo con <code>vi</code> o copiarlo con DinguxCmdr, FTP o SCP para editarlo desde el ordenador.</p>
 <p>A continuación menciono algunos de los problemas que tuve haciendo la configuración.</p>
 <h4 id="problema-con-la-identificador-de-sistema-en-rogue">Problema con la Identificador de sistema en ROGUE<a class="headerlink" href="#problema-con-la-identificador-de-sistema-en-rogue" title="Permanent link">&para;</a></h4>
@@ -4150,13 +4171,13 @@ X-OD-Manual=readmegcw.txt
 <p>La solución consiste en desempaquetar el OPK (con <code>unsquashfs</code>) y cambiar la <code>F</code> final del parámetro <code>Exec</code> del fichero <code>default.gcw0.desktop</code> poniéndola en minúsculas. Luego hay que volver a empaquetar en squashfs el OPK (<code>mksquashfs</code>).</p>
 <h4 id="soporte-de-varios-emuladores">Soporte de varios emuladores<a class="headerlink" href="#soporte-de-varios-emuladores" title="Permanent link">&para;</a></h4>
 <p>Una cosa buena que tiene PyMenu es que admite varios valores en este parámetro separados por comas. Así se pueden escribir varias posibilidades para dar más oportunidades a PyMenu para encontrar los emuladores. Cuando lo hacemos nos permite seleccionar el emulador que queremos utilizar para lanzar el juego. Por ejemplo si tenemos instalado ReGBA y GPSP, al pulsar <code>Start</code> en la pantalla de selección de ROMs, nos aparecerá un desplegable en el que podremos seleccionar el emulador a utilizar:</p>
-<p><img alt="PyMenu System Select" src="/images/posts/pymenu_system_select.png" /></p>
+<p><img alt="PyMenu System Select" src="../images/posts/pymenu_system_select.png" /></p>
 <p>Como punto de partida dejo aquí mi fichero de configuración que contiene la mayoría de los emuladores que se utilizan habitualmente.</p>
 <ul>
-<li><a href="/files/posts/config.json">config.json</a></li>
+<li><a href="../files/posts/config.json">config.json</a></li>
 </ul>
 <h2 id="arranque">Arranque<a class="headerlink" href="#arranque" title="Permanent link">&para;</a></h2>
-<p>Para conseguir que PyMenu arranque como lanzador predeterminado, al igual que con <a href="/2020-01-25-rg350_simplemenu.html#como-lanzador-predeterminado">SimpleMenu</a> y <a href="/2020-02-13-rg350_emulationstation.html#arranque">EmulationStation</a> tenemos que incorporar un script de nombre <code>frontend_start</code> en el directorio <code>/media/data/local/sbin</code>. El contenido del script será el siguiente:</p>
+<p>Para conseguir que PyMenu arranque como lanzador predeterminado, al igual que con <a href="2020-01-25-rg350_simplemenu.html#como-lanzador-predeterminado">SimpleMenu</a> y <a href="2020-02-13-rg350_emulationstation.html#arranque">EmulationStation</a> tenemos que incorporar un script de nombre <code>frontend_start</code> en el directorio <code>/media/data/local/sbin</code>. El contenido del script será el siguiente:</p>
 <div class="highlight"><pre><span></span><code>#!/bin/sh
 
 export HOME=`cat /etc/passwd |head -1 |cut -d&#39;:&#39; -f 6`
@@ -4199,7 +4220,7 @@ exec /media/data/pymenu/pymenu.dge
 ...
 </code></pre></div>
 <h2 id="temas">Temas<a class="headerlink" href="#temas" title="Permanent link">&para;</a></h2>
-<p>PyMenu tiene un sistema de temas como <a href="/2020-02-13-rg350_emulationstation.html#temas">EmulationStation</a>. Se basa en unos ficheros JSON que hay en la ruta <code>/media/data/pymenu/theme/themes</code>. Internamente estos ficheros hacen referencia a recursos de imagen que pueden estar en cualquier lugar, aunque suelen estar bajo el directorio <code>/media/data/pymenu/images</code>. Por ejemplo lo siguiente es la definición del sistema GameBoy en el tema Pixel:</p>
+<p>PyMenu tiene un sistema de temas como <a href="2020-02-13-rg350_emulationstation.html#temas">EmulationStation</a>. Se basa en unos ficheros JSON que hay en la ruta <code>/media/data/pymenu/theme/themes</code>. Internamente estos ficheros hacen referencia a recursos de imagen que pueden estar en cualquier lugar, aunque suelen estar bajo el directorio <code>/media/data/pymenu/images</code>. Por ejemplo lo siguiente es la definición del sistema GameBoy en el tema Pixel:</p>
 <div class="highlight"><pre><span></span><code>    &quot;GAMEBOY&quot;: {
         &quot;background&quot;: &quot;images/pixel/backgrounds/gbc.png&quot;,
         &quot;folderIcon&quot;: &quot;images/pixel/icons/gbc.png&quot;,
@@ -4207,22 +4228,22 @@ exec /media/data/pymenu/pymenu.dge
     },
 </code></pre></div>
 <p>El tema se selecciona desde el icono de rueda dentada que hay abajo a la izquierda en la pantalla principal. Al pulsar sobre ella aparecen los <code>General Settings</code>, siendo el tema uno de ellos. Una vez seleccionado, como siempre en PyMenu, hay que confirmar los cambios pulsando <code>Start</code>:</p>
-<p><img alt="PyMenu General Settings" src="/images/posts/pymenu_general_settings.png" /></p>
+<p><img alt="PyMenu General Settings" src="../images/posts/pymenu_general_settings.png" /></p>
 <p>Vamos a ver ejemplos de cada uno:</p>
 <h4 id="tft">tft<a class="headerlink" href="#tft" title="Permanent link">&para;</a></h4>
-<p><img alt="PyMenu tft1" src="/images/posts/pymenu_tft1.png" />
-<img alt="PyMenu tft2" src="/images/posts/pymenu_tft2.png" /></p>
+<p><img alt="PyMenu tft1" src="../images/posts/pymenu_tft1.png" />
+<img alt="PyMenu tft2" src="../images/posts/pymenu_tft2.png" /></p>
 <h4 id="pixel">pixel<a class="headerlink" href="#pixel" title="Permanent link">&para;</a></h4>
-<p><img alt="PyMenu pixel1" src="/images/posts/pymenu_pixel1.png" />
-<img alt="PyMenu pixel2" src="/images/posts/pymenu_pixel2.png" /></p>
+<p><img alt="PyMenu pixel1" src="../images/posts/pymenu_pixel1.png" />
+<img alt="PyMenu pixel2" src="../images/posts/pymenu_pixel2.png" /></p>
 <h4 id="default">default<a class="headerlink" href="#default" title="Permanent link">&para;</a></h4>
-<p><img alt="PyMenu default1" src="/images/posts/pymenu_default1.png" />
-<img alt="PyMenu default2" src="/images/posts/pymenu_default2.png" /></p>
+<p><img alt="PyMenu default1" src="../images/posts/pymenu_default1.png" />
+<img alt="PyMenu default2" src="../images/posts/pymenu_default2.png" /></p>
 <h2 id="funcionalidades">Funcionalidades<a class="headerlink" href="#funcionalidades" title="Permanent link">&para;</a></h2>
 <p>PyMenu tiene un par de funcionalidades de las que carece EmulationStation (al menos en la versión compilada para RG350 que circula por ahí) y es que guarda un histórico de los juegos lanzados así como una lista de favoritos. Para añadir un juego a favoritos tenemos que pulsar <code>Select</code> cuando estemos seleccionando el juego. Aparecerá un desplegable con la opción <code>Add to favourites</code>:</p>
-<p><img alt="PyMenu Favorites" src="/images/posts/pymenu_favorites.png" /></p>
+<p><img alt="PyMenu Favorites" src="../images/posts/pymenu_favorites.png" /></p>
 <p>También es operativo el menú para reiniciar y apagar la consola. Se obtiene pulsando en el típico símbolo de Power que hay abajo a la derecha en la pantalla principal:</p>
-<p><img alt="PyMenu Power" src="/images/posts/pymenu_power.png" /></p>
+<p><img alt="PyMenu Power" src="../images/posts/pymenu_power.png" /></p>
 <p>La opción <code>Exit to Gmenu2x</code> la he incorporado yo modificando el código, es decir, no aparecerá si se instala el código original siguiendo este artículo.</p>
 <iframe width="853" height="480" src="https://www.youtube.com/embed/tpu2ppqb2JE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

@@ -2611,6 +2611,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -4035,8 +4056,8 @@
 
   <h1>Raspberry Pi 3 + KODI 16 + Tvheadend</h1>
 
-<p><img alt="KODI Logo" src="/images/posts/kodi-logo.png" /></p>
-<p><em>Nota: Este post es una especie de actualización de <a href="/2015/03/14/raspi2-kodi-tvheadend.html">este otro</a> que correspondía a la versión 6.0.3 de OpenELEC (Kodi 15). Si estás usando esa versión, utiliza <a href="/2015/03/14/raspi2-kodi-tvheadend.html">el post anterior</a> en lugar de éste.</em></p>
+<p><img alt="KODI Logo" src="../images/posts/kodi-logo.png" /></p>
+<p><em>Nota: Este post es una especie de actualización de <a href="2015-03-14-raspi2-kodi-tvheadend.html">este otro</a> que correspondía a la versión 6.0.3 de OpenELEC (Kodi 15). Si estás usando esa versión, utiliza <a href="2015-03-14-raspi2-kodi-tvheadend.html">el post anterior</a> en lugar de éste.</em></p>
 <p>A continuación se describe el montaje de un media center ejecutándose sobre <a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/">Raspberry Pi 3</a> basado en la distribución <a href="http://openelec.tv/">OpenELEC</a> que implementa de forma muy ligera el software media center <a href="http://kodi.tv/">Kodi</a> (anteriormente llamado XBMC). Se incorpora un decodificador TDT gestionado con el software <a href="https://tvheadend.org/">Tvheadend</a>.</p>
 <p>En caso de tener el router cerca y poder llevar un cable ethernet hasta la Raspberry Pi se recomienda, ya que será habitual consumir contenidos pesados por red.</p>
 <p>Para el airmouse o teclado/ratón inalámbrico hay alternativas:</p>
@@ -4130,7 +4151,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>sync
 </code></pre></div></td></tr></table></div>
 
 <h4 id="instalacion-de-tvheadend">Instalación de TVheadend<a class="headerlink" href="#instalacion-de-tvheadend" title="Permanent link">&para;</a></h4>
-<p>Lo siguientes pasos nos permiten activar el sistema de gestión del TDT:  </p>
+<p>Lo siguientes pasos nos permiten activar el sistema de gestión del TDT:</p>
 <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -4173,7 +4194,7 @@ Sistema / Ajustes / TV / General / Activado
 </code></pre></div></td></tr></table></div>
 
 <p>Los muxes o multiplexes son las frecuencias sobre las que viajan empaquetadas los canales y una serie de parámetros de codificación. La tecnología TDT (o DVB-T más propiamente) permite codificar varios canales en una misma frecuencia. Algunos decodificadores de TDT permiten sintonización automática como hacen los televisores, pero el que he elegido para este montaje no. Así, hay que introducir la lista de muxes manualmente. Las frecuencias dependen de la provincia en la que nos encontremos. <a href="http://www.tdt1.com/">Aquí</a> por ejemplo podemos encontrarlas. Los muxes que utilizo en Zaragoza son los siguientes:</p>
-<p><img alt="TDT Muxes" src="/images/posts/kodi-muxes.png" /></p>
+<p><img alt="TDT Muxes" src="../images/posts/kodi-muxes.png" /></p>
 <p>Todos ellos se han introducido con los siguientes parámetros:</p>
 <ul>
 <li>Bandwidth: 8MHz</li>

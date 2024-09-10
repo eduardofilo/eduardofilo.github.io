@@ -2557,6 +2557,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -3927,7 +3948,7 @@
 
   <h1>RG350/RG280 Imagen</h1>
 
-<p><img alt="RG350" src="/images/pages/rg350.png" /></p>
+<p><img alt="RG350" src="images/pages/rg350.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Actualización 2021-04-25</p>
 <p>Se actualiza el artículo para reflejar los cambios introducidos en la v10.1 de la imagen presentada en esta fecha. Para convertir la v10.0 original en la nueva v10.1, existe un parche que realiza las mejoras y cambios. El parche puede descargarse desde <a href="https://drive.google.com/file/d/1CkzcEoEHl-cVUe2p58uNHw3Q_ijnLjJY/view?usp=sharing">este enlace</a>.</p>
@@ -3943,10 +3964,10 @@
 </ul>
 <p>Alternativamente todas las imágenes y parches también pueden encontrarse en el canal Telegram <a href="https://t.me/code_animal_images">Code Animal images</a>. Utilizar el canal tiene la ventaja adicional de que se reciben notificaciones cuando aparecen parches o nuevas versiones de las imágenes.</p>
 <p>Los emuladores y los cores RetroArch tienen lanzadores personalizados con iconos que representan las máquinas que emulan para mejor identificación. Los nombres de los emuladores y cores también se han modificado con esta misma idea.</p>
-<p><img alt="Emulators" src="/images/posts/2021-04-02_RG350_imagen/emulators.png" />
-<img alt="RetroArch cores" src="/images/posts/2021-04-02_RG350_imagen/retroarch_cores.png" /></p>
+<p><img alt="Emulators" src="images/posts/2021-04-02_RG350_imagen/emulators.png" />
+<img alt="RetroArch cores" src="images/posts/2021-04-02_RG350_imagen/retroarch_cores.png" /></p>
 <p>Los ports o juegos instalados son los siguientes (algunos como <code>Cannonball</code>, <code>OpenBOR</code>, <code>OpenJazz</code> y <code>Solarus</code> necesitan ROMs en la tarjeta externa):</p>
-<p><img alt="Ports" src="/images/posts/2021-04-02_RG350_imagen/ports.png" /></p>
+<p><img alt="Ports" src="images/posts/2021-04-02_RG350_imagen/ports.png" /></p>
 <p>Por último, en <a href="https://docs.google.com/spreadsheets/d/1tXUCsvTqmq3SW0RjlzgE1kZbiWu5ykyYXIhSVtvRM0g/edit?usp=sharing">este documento</a> pueden encontrarse detalles de los emuladores instalados y las configuraciones de RetroArch para los cores disponibles en la imagen.</p>
 <h2 id="backup-de-partidas-antes-de-flashear">Backup de partidas antes de flashear<a class="headerlink" href="#backup-de-partidas-antes-de-flashear" title="Permanent link">&para;</a></h2>
 <p>Si se ha estado utilizando la consola con otro sistema, seguramente nos interese guardar los savestates de las partidas que hayamos jugado. Así pues, antes de flashear esta imagen, conviene hacer backup de los mismos. Para facilitar esta tarea se ha creado la aplicación <code>Py Backup</code> que se describe en <a href="http://apuntes.eduardofilo.es/2020-08-12-rg350_py_backup.html">este artículo</a> y que viene preconfigurada con todos los directorios de savestates de los emuladores instalados en la imagen.</p>
@@ -3955,11 +3976,11 @@
 <li>Instalar el <a href="https://github.com/eduardofilo/RG350_py_backup/releases/download/1.4.3/py_backup_1.4.3.opk">OPK</a>.</li>
 <li>
 <p>Localizar la aplicación instalada en el paso anterior. Se encontrará en la sección <code>applications</code> de los distintos launchers. Una vez encontrada abrirla.</p>
-<p><img alt="PyBackup launcher" src="/images/posts/2021-04-02_RG350_imagen/py_backup_launcher.png" /></p>
+<p><img alt="PyBackup launcher" src="images/posts/2021-04-02_RG350_imagen/py_backup_launcher.png" /></p>
 </li>
 <li>
 <p>Pulsar <code>B</code> para empezar el backup y confirmar con <code>A</code> (al llegar a PCSX4All suele engancharse un buen rato porque los savestates de este emulador son pesados). Se pueden desactivar previamente los backups de los sistemas que no nos interesen, pero es más seguro dejar todos activos para evitar disgustos.</p>
-<p><img alt="PyBackup begin backup" src="/images/posts/2021-04-02_RG350_imagen/py_backup_begin_backup.png" /></p>
+<p><img alt="PyBackup begin backup" src="images/posts/2021-04-02_RG350_imagen/py_backup_begin_backup.png" /></p>
 </li>
 </ol>
 <p>Hasta aquí para generar el backup. Éste se deja en el directorio <code>backups</code> de la tarjeta externa, dentro del cual aparecerán una serie de ficheros con extensión <code>.tgz</code>. Una vez flasheada la imagen tendremos que hacer la restauración. Para ello proceder de la siguiente forma:</p>
@@ -3967,7 +3988,7 @@
 <li>Abrir la aplicación <code>Py Backup</code> que ya está preinstalada en la imagen.</li>
 <li>
 <p>Pulsar <code>X</code> para empezar la restauración del backup y confirmar con <code>A</code>.</p>
-<p><img alt="PyBackup begin restore" src="/images/posts/2021-04-02_RG350_imagen/py_backup_begin_restore.png" /></p>
+<p><img alt="PyBackup begin restore" src="images/posts/2021-04-02_RG350_imagen/py_backup_begin_restore.png" /></p>
 </li>
 </ol>
 <p><strong>Advertencia</strong>: La correspondencia de las partidas o <em>savestates</em> depende de los nombres de las ROMs. Si guardamos una partida cuando por ejemplo la ROM se llamaba "001. Catrap.gb" si luego tratamos de recuperarla desde una ROM llamada "Catrap.gb" no nos va a funcionar. En ese caso tocará revisar el directorio de savestate correspondiente (en el caso de GB es <code>/media/data/local/home/.gambatte/saves</code>) y renombrar el fichero para que corresponda con el nuevo nombre de la ROM.</p>
@@ -3985,11 +4006,11 @@ $ gunzip panda_v10.1.img.gz -c | sudo dd of=/dev/mmcblk0 bs=2M status=progress c
 <p>En <a href="http://www.youtube.com/watch?v=VWJU3KR5MW4">este vídeo</a> puede verse el proceso de apertura de la consola y extracción de la tarjeta interna en la RG350 original (en RG350P/M y RG280V/M no es necesario), así como el flasheo de una imagen con Balena Etcher en Windows. En el vídeo la imagen que se utiliza es la de ROGUE limpio (fichero <code>sd_image.bin</code>), pero el proceso para la imagen que se comenta aquí (fichero <code>panda_v10.1.img.gz</code>, <code>mapache_v10.1.img.gz</code>, <code>vison_v10.1.img.gz</code> o <code>musarana_v10.1.img.gz</code> dependiendo de la versión de la consola) sería el mismo sin más que seleccionar el fichero correspondiente en Balena Etcher. El formateo de la tarjeta que se hace en el vídeo en realidad no es necesario. El video sólo es necesario seguirlo hasta el minuto 11:20, ya que a partir de ese punto lo que se hace es añadir emuladores y juegos a la consola, cosas que en la imagen ya están incluidas.</p>
 <h2 id="seleccion-de-frontend-predeterminado">Selección de frontend predeterminado<a class="headerlink" href="#seleccion-de-frontend-predeterminado" title="Permanent link">&para;</a></h2>
 <p>Durante el primer arranque de la imagen, se ejecutan los procesos de ROGUE para consolidar el sistema. Esto supone varios reinicios. En algún momento aparece un selector con cuatro opciones para elegir el launcher o frontend predeterminado:</p>
-<p><img alt="Launcher Selector" src="/images/posts/2021-04-02_RG350_imagen/launchsel.png" /></p>
+<p><img alt="Launcher Selector" src="images/posts/2021-04-02_RG350_imagen/launchsel.png" /></p>
 <p>Sólo hay que seleccionar el launcher preferido con la cruceta (arriba/abajo) y confirmar con <code>Start</code>. En ese momento la consola se reiniciará de nuevo y apareceremos en el launcher elegido. Si en cualquier momento se quiere cambiar de launcher se puede volver a lanzar el selector por medio de la aplicación <code>Launcher selector</code>:</p>
-<p><img alt="Launcher Selector GMenu2X launcher" src="/images/posts/2021-04-02_RG350_imagen/launchersel_gmenu2x_launcher.png" />
-<img alt="Launcher Selector SimpleMenu launcher" src="/images/posts/2021-04-02_RG350_imagen/launchersel_sm_launcher.png" />
-<img alt="Launcher Selector PyMenu launcher" src="/images/posts/2021-04-02_RG350_imagen/launchersel_pm_launcher.png" /></p>
+<p><img alt="Launcher Selector GMenu2X launcher" src="images/posts/2021-04-02_RG350_imagen/launchersel_gmenu2x_launcher.png" />
+<img alt="Launcher Selector SimpleMenu launcher" src="images/posts/2021-04-02_RG350_imagen/launchersel_sm_launcher.png" />
+<img alt="Launcher Selector PyMenu launcher" src="images/posts/2021-04-02_RG350_imagen/launchersel_pm_launcher.png" /></p>
 <h2 id="anadir-roms">Añadir ROMs<a class="headerlink" href="#anadir-roms" title="Permanent link">&para;</a></h2>
 <p>La imagen no incorpora ROMs ni BIOS, por lo que deberemos incorporarlas nosotros. Todos los emuladores y frontends están preconfigurados para encontrar las ROMs en rutas concretas pertenecientes a la tarjeta externa. Estos son los directorios que hay que respetar para instalar ROMs (se muestra la ruta relativa a la tarjeta externa; como sabemos <code>roms/NEOGEO</code> por ejemplo, se corresponde con <code>/media/sdcard/roms/NEOGEO</code> en el sistema de la consola):</p>
 <table>

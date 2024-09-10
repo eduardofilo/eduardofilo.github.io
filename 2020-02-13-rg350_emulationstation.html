@@ -2614,6 +2614,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -4041,7 +4062,7 @@
 
   <h1>RG350 EmulationStation</h1>
 
-<p><img alt="EmulationStation" src="/images/posts/emulationstation.png" /></p>
+<p><img alt="EmulationStation" src="images/posts/emulationstation.png" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Advertencia</p>
 <p>Comentar antes de empezar, que EmulationStation es pesado de configurar y el resultado final con frecuencia resulta lento (sobre todo si se tiene un gran número de emuladores y ROMs en la consola). También es propenso a <a href="https://www.reddit.com/r/RG350/comments/f12llb/emulationstation_crashes_with_some_roms_with/">errores extraños</a>. Se encuentran problemas con ROMs concretas y sobre todo con los ficheros <code>gamelist.xml</code> que aparecen con el scraping por exigencias en el formato del mismo que no están claras. A menudo la única forma de solucionarlos es por ensayo/error introduciendo las ROMs o los <code>gamelist.xml</code> por lotes para aislar los problemas. Algunos emuladores como la <a href="https://github.com/nobk/fba-sdl/releases/tag/r19">última versión de FBA</a> no son capaces de <a href="https://boards.dingoonity.org/retro-game-350rg-350/fba-for-rg-350-by-nobk-with-new-features-since-jan-2-to-jan-11/msg193105/#msg193105">lanzar las ROMs directamente</a>.</p>
@@ -4058,29 +4079,29 @@
 <li>Desmontar la SD del PC para devolverla a la ranura externa de la consola.</li>
 <li>
 <p>Abrir <code>DinguxCmdr</code>. Moverse por la estructura de ficheros hasta localizar a la izquierda la ruta <code>/media/sdcard/Internal SD Card</code> y a la derecha <code>/media/sdcard/apps</code>. La ruta de la derecha es donde vamos a instalar el OPK. En este caso hemos indicado la ruta donde están los OPKs en la tarjeta externa. Alternativamente se puede utilizar la ruta donde están los OPKs en la interna que es <code>/media/data/apps</code>, si se prefiere instalar en esta tarjeta:</p>
-<p><img alt="EmulationStation Instalación 1" src="/images/posts/emulationstation_install1.png" /></p>
+<p><img alt="EmulationStation Instalación 1" src="images/posts/emulationstation_install1.png" /></p>
 </li>
 <li>
 <p>Seleccionar el fichero <code>emulationstation.opk</code> en el panel izquierdo y pulsar <code>X</code>. En el menú que aparece seleccionar <code>Copy &gt;</code> y confirmar con <code>A</code>:</p>
-<p><img alt="EmulationStation Instalación 2" src="/images/posts/emulationstation_install2.png" /></p>
+<p><img alt="EmulationStation Instalación 2" src="images/posts/emulationstation_install2.png" /></p>
 </li>
 <li>
 <p>Cambiar en el panel derecho la ruta a <code>/media/data/local/home</code>:</p>
-<p><img alt="EmulationStation Instalación 4" src="/images/posts/emulationstation_install4.png" /></p>
+<p><img alt="EmulationStation Instalación 4" src="images/posts/emulationstation_install4.png" /></p>
 </li>
 <li>
 <p>Seleccionar en el panel izquierdo el directorio <code>.emulationstation</code> y pulsar <code>X</code>. En el menú que aparece seleccionar <code>Copy &gt;</code> y confirmar con <code>A</code>:</p>
-<p><img alt="EmulationStation Instalación 5" src="/images/posts/emulationstation_install5.png" /></p>
+<p><img alt="EmulationStation Instalación 5" src="images/posts/emulationstation_install5.png" /></p>
 </li>
 <li>
 <p>Finalmente salir de <code>DinguxCmdr</code> pulsando <code>Y</code> y seleccionando <code>Quit</code>:</p>
-<p><img alt="EmulationStation Instalación 6" src="/images/posts/emulationstation_install6.png" /></p>
+<p><img alt="EmulationStation Instalación 6" src="images/posts/emulationstation_install6.png" /></p>
 </li>
 </ol>
 <p>Con esto finaliza la instalación de la aplicación.</p>
 <h2 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h2>
 <p>Para que EmulationStation reconozca los distintos sistemas de emulación, deben estar correctamente registrados en uno de los ficheros de configuración que hemos copiado durante la instalación, concretamente el que queda en la ruta <code>/usr/local/home/.emulationstation/es_systems.cfg</code>. Desafortunadamente no hay ningún medio para hacer esta configuración automáticamente. Nos va a tocar hacerlo manualmente.</p>
-<p>Estamos en una situación muy similar a la de <a href="/2020-01-25-rg350_simplemenu.html">SimpleMenu</a>. De hecho el apartado de <a href="/2020-01-25-rg350_simplemenu.html#configuracion">Configuración</a> de ese artículo, conceptualmente nos sirve aquí. Sólo cambia el formato concreto de la configuración que necesita EmulationStation. Se recomienda por tanto hacer como en el caso de <a href="/2020-01-25-rg350_simplemenu.html#configuracion">SimpleMenu</a>, es decir, transferir el fichero de configuración <code>/usr/local/home/.emulationstation/es_systems.cfg</code> al ordenador para editarlo allí con un editor que soporte directamente el formato de texto de Linux. Por ejemplo <a href="https://notepad-plus-plus.org/">Notepad++</a>. En realidad podemos aprovechar la copia que todavía tendremos en la tarjeta externa que hay dentro de la carpeta <code>.emulationstation</code> que renombramos durante la instalación.</p>
+<p>Estamos en una situación muy similar a la de <a href="2020-01-25-rg350_simplemenu.html">SimpleMenu</a>. De hecho el apartado de <a href="2020-01-25-rg350_simplemenu.html#configuracion">Configuración</a> de ese artículo, conceptualmente nos sirve aquí. Sólo cambia el formato concreto de la configuración que necesita EmulationStation. Se recomienda por tanto hacer como en el caso de <a href="2020-01-25-rg350_simplemenu.html#configuracion">SimpleMenu</a>, es decir, transferir el fichero de configuración <code>/usr/local/home/.emulationstation/es_systems.cfg</code> al ordenador para editarlo allí con un editor que soporte directamente el formato de texto de Linux. Por ejemplo <a href="https://notepad-plus-plus.org/">Notepad++</a>. En realidad podemos aprovechar la copia que todavía tendremos en la tarjeta externa que hay dentro de la carpeta <code>.emulationstation</code> que renombramos durante la instalación.</p>
 <p>El fichero <code>es_systems.cfg</code>, aunque no lo indique la extensión, internamente tiene formato XML. Se trata por tanto de una serie de bloques anidados que comienzan y terminan con etiquetas encerradas entre los símbolos <code>&lt;</code> y <code>&gt;</code>. El bloque raíz se define con la etiqueta <code>&lt;systemList&gt;</code> y dentro de él hay un bloque <code>&lt;system&gt;</code> para cada emulador. Dentro de este bloque ya directamente se encuentran los distintos parámetros del emulador. Como vemos la filosofía es muy similar a la del fichero de configuración de SimpleMenu, sólo que en éste último el formato del archivo no era XML, sino el que se utiliza habitualmente para los ficheros de configuración tipo <a href="https://es.wikipedia.org/wiki/INI_(extensi%C3%B3n_de_archivo)">INI</a>. De hecho si ya tenemos SimpleMenu instalado y configurado, podemos utilizar su fichero de configuración como plantilla para transplantar todos los parámetros (que son prácticamente los mismos) a <code>es_systems.cfg</code>.</p>
 <p>Un bloque <code>&lt;system&gt;</code> de un sistema como Game Boy podría ser el siguiente:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;system&gt;</span>
@@ -4103,23 +4124,20 @@
 <li><code>platform</code>: Plataforma utilizada cuando se hace scraping. Esta etiqueta es opcional. La lista completa de los códigos de plataforma se encuentra en la <a href="https://emulationstation.org/gettingstarted.html#config">página de documentación de EmulationStation</a>. Se pueden poner varias plataformas separadas por comas, por ejemplo <code>genesis,megadrive</code>.</li>
 </ul>
 <p>Una vez que devolvamos el fichero de configuración <code>es_systems.cfg</code> a su lugar en <code>/usr/local/home/.emulationstation</code>, el resultado al abrir EmulationStation será éste:</p>
-<p><img alt="EmulationStation Running 1" src="/images/posts/emulationstation_running1.png" />
-<img alt="EmulationStation Running 2" src="/images/posts/emulationstation_running2.png" /></p>
+<p><img alt="EmulationStation Running 1" src="images/posts/emulationstation_running1.png" />
+<img alt="EmulationStation Running 2" src="images/posts/emulationstation_running2.png" /></p>
 <p>Como se ve en las fotos, al menos en mi sistema algunos de los textos se ven ligeramente distorsionados. Esto se puede solucionar o mejorar cambiando el tema. La instalación que hemos hecho lleva 4 temas preinstalados. Desafortunadamente, el que viene por defecto y que produce esos pequeños defectos gráficos es el que me parecería más recomendable si no fuera por este problema.</p>
-<p>Como punto de partida dejo aquí mi fichero de configuración que contiene la mayoría de los emuladores y la <a href="/retro-emulacion/rg-350.html#las-roms-y-su-organizacion">estructura de directorios para las ROMs</a> que se utilizan habitualmente.</p>
+<p>Como punto de partida dejo aquí mi fichero de configuración que contiene la mayoría de los emuladores y la <a href="retro-emulacion/rg-350.html#las-roms-y-su-organizacion">estructura de directorios para las ROMs</a> que se utilizan habitualmente.</p>
 <ul>
-<li><a href="/files/posts/es_systems.cfg">es_systems.cfg</a></li>
+<li><a href="files/posts/es_systems.cfg">es_systems.cfg</a></li>
 </ul>
 <h2 id="arranque">Arranque<a class="headerlink" href="#arranque" title="Permanent link">&para;</a></h2>
-<p>EmulationStation aparecerá como aplicación en la sección <code>Emulators</code> de GMenu2X (no como <a href="/2020-01-25-rg350_simplemenu.html#desde-gmenu2x">SimpleMenu</a> cuyo lanzador tenemos que añadir a mano). Si queremos que EmulationStation se autoarranque en el inicio de la consola tenemos que proceder como sigue:</p>
+<p>EmulationStation aparecerá como aplicación en la sección <code>Emulators</code> de GMenu2X (no como <a href="2020-01-25-rg350_simplemenu.html#desde-gmenu2x">SimpleMenu</a> cuyo lanzador tenemos que añadir a mano). Si queremos que EmulationStation se autoarranque en el inicio de la consola tenemos que proceder como sigue:</p>
 <ol>
 <li>Bajar el fichero <a href="https://github.com/ManuelSch81/RG350-EmulationStation_configured/blob/master/frontend_start/frontend_start_menu">frontend_start</a>.</li>
 <li>Copiarlo a la raíz de la microSD externa.</li>
 <li>Montar la microSD externa en la RG350 y arrancar. La ruta del fichero que acabamos de copiar, se encuentra en <code>/media/sdcard/frontend_start</code>.</li>
-<li>
-<p>Abrir <code>DinguxCmdr</code>y copiar el fichero <code>frontend_start</code> a la ruta <code>/media/data/local/sbin</code>:</p>
-<p><img alt="Copiando frontend_start" src="/images/posts/simplemenu_screenshot003.png" /></p>
-</li>
+<li>Abrir <code>DinguxCmdr</code>y copiar el fichero <code>frontend_start</code> a la ruta <code>/media/data/local/sbin</code>.</li>
 <li>
 <p>Hacer ejecutable el fichero instalado. Desafortunadamente DinguxCmdr no nos ayuda en este caso. Tendremos que ejecutar el siguiente comando desde consola, ya sea por SSH o utilizando una aplicación de terminal como <code>ST-SDL</code>:</p>
 <div class="highlight"><pre><span></span><code># chmod +x /media/data/local/sbin/frontend_start
@@ -4154,7 +4172,7 @@ RG350:/media/data/local/home # chmod +x /media/data/local/sbin/frontend_start
 </ul>
 <p>Vamos a detallar el uso de los dos últimos para generar los ficheros <code>gamelist.xml</code> y las imágenes de previsualización de los sistemas que tengamos instalados en la consola. Skraper ofrece más posibilidades de configuración y mejor experiencia que Universal XML Scraper. Incluyo el segundo por ofrecer más posibilidades (por ejemplo Skraper no se ofrece compilado en versión 32 bit).</p>
 <h4 id="skraper">Skraper<a class="headerlink" href="#skraper" title="Permanent link">&para;</a></h4>
-<p>Seguiremos los 8 pasos vistos en el post anterior <a href="/2020-01-11-rg350_scraper.html">RG350 Scraper</a>, añadiendo las siguientes opciones al paso 7:</p>
+<p>Seguiremos los 8 pasos vistos en el post anterior <a href="2020-01-11-rg350_scraper.html">RG350 Scraper</a>, añadiendo las siguientes opciones al paso 7:</p>
 <ul>
 <li>Apartado <code>Lista de juegos</code><ul>
 <li><code>Tipo de Lista de Juego</code>: <code>EmulationStation gamelist.xml</code></li>
@@ -4167,46 +4185,46 @@ RG350:/media/data/local/home # chmod +x /media/data/local/sbin/frontend_start
 </li>
 </ul>
 <p>De esta forma, además de las imágenes en los subdirectorios <code>.previews</code> dentro de los directorios de ROMs de los sistemas (compatible por tanto en este caso con las previsualizaciones de GMenu2X), aparecerá también el fichero <code>gamelist.xml</code> que contiene la metainformación de los juegos y el enlace a las imágenes. A partir de que se incorpore el fichero <code>gamelist.xml</code> en los distintos sistemas empezaremos a ver el menú de ROMs correspondiente con la metainformación y las imágenes:</p>
-<p><img alt="EmulationStation Boxart" src="/images/posts/emulationstation_boxart.png" /></p>
+<p><img alt="EmulationStation Boxart" src="images/posts/emulationstation_boxart.png" /></p>
 <h4 id="universal-xml-scraper">Universal XML Scraper<a class="headerlink" href="#universal-xml-scraper" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Extraer la tarjeta externa de la RG350 y montarla con un adaptador o lector en el PC.</li>
 <li>Descargar <a href="https://github.com/Universal-Rom-Tools/Universal-XML-Scraper/releases">Universal XML Scraper V2</a> y ejecutar.</li>
 <li>
 <p>Al abrirlo lo primero que se nos pregunta es por el idioma. Elegir <code>English (US)</code> porque en todas las pruebas que hice en <code>Español</code> EmulationStation se cerraba cuando seleccionaba un juego en cuya descripción había acentos:</p>
-<p><img alt="UXS 1" src="/images/posts/uxs_1.png" /></p>
+<p><img alt="UXS 1" src="images/posts/uxs_1.png" /></p>
 </li>
 <li>
 <p>Después se inicia una especia de asistente. En él seleccionar <code>Recalbox</code> como Sistema Operativo:</p>
-<p><img alt="UXS 2" src="/images/posts/uxs_2.png" /></p>
+<p><img alt="UXS 2" src="images/posts/uxs_2.png" /></p>
 </li>
 <li>
 <p>En la segunda pantalla del asistente seleccionar el tipo de previsualización que más nos guste y si es un mix el tipo de mix:</p>
-<p><img alt="UXS 3" src="/images/posts/uxs_3.png" />
-<img alt="UXS 4" src="/images/posts/uxs_4.png" /></p>
+<p><img alt="UXS 3" src="images/posts/uxs_3.png" />
+<img alt="UXS 4" src="images/posts/uxs_4.png" /></p>
 </li>
 <li>
 <p>Lo siguiente es localizar la ruta de las ROMs. Seleccionaremos <code>Localy</code> (imagen de PC) y acto seguido localizamos el diretorio <code>roms</code> de la tarjeta montada en el punto 1:</p>
-<p><img alt="UXS 5" src="/images/posts/uxs_5.png" />
-<img alt="UXS 6" src="/images/posts/uxs_6.png" /></p>
+<p><img alt="UXS 5" src="images/posts/uxs_5.png" />
+<img alt="UXS 6" src="images/posts/uxs_6.png" /></p>
 </li>
 <li>
-<p>Nos pregunta si estamos registrados en ScreenScraper. Si en el pasado seguimos el post anterior <a href="/2020-01-11-rg350_scraper.html">RG350 Scraper</a>, ya tendremos la cuenta creada. Si no, nos permite continuar sin cuenta:</p>
-<p><img alt="UXS 7" src="/images/posts/uxs_7.png" />
-<img alt="UXS 8" src="/images/posts/uxs_8.png" /></p>
+<p>Nos pregunta si estamos registrados en ScreenScraper. Si en el pasado seguimos el post anterior <a href="2020-01-11-rg350_scraper.html">RG350 Scraper</a>, ya tendremos la cuenta creada. Si no, nos permite continuar sin cuenta:</p>
+<p><img alt="UXS 7" src="images/posts/uxs_7.png" />
+<img alt="UXS 8" src="images/posts/uxs_8.png" /></p>
 </li>
 <li>
 <p>Por último aparece una última pantalla de confirmación para inciar el scraping:</p>
-<p><img alt="UXS 9" src="/images/posts/uxs_9.png" /></p>
+<p><img alt="UXS 9" src="images/posts/uxs_9.png" /></p>
 </li>
 <li>
 <p>Al comenzar se nos preguntará por el directorio de ROMs del que queremos hacer el scraping y el sistema al que pertenece:</p>
-<p><img alt="UXS 10" src="/images/posts/uxs_10.png" />
-<img alt="UXS 11" src="/images/posts/uxs_11.png" /></p>
+<p><img alt="UXS 10" src="images/posts/uxs_10.png" />
+<img alt="UXS 11" src="images/posts/uxs_11.png" /></p>
 </li>
 <li>
 <p>Sobre la ventana principal veremos el progreso del scraping:</p>
-<p><img alt="UXS 12" src="/images/posts/uxs_12.png" /></p>
+<p><img alt="UXS 12" src="images/posts/uxs_12.png" /></p>
 </li>
 <li>
 <p>Tras un tiempo durante el cual se generarán y bajarán las previsualizaciones, cerraremos el programa. En ese momento veremos que junto a las ROMs del sistema seleccionado se habrán creado dos cosas:</p>
@@ -4218,24 +4236,24 @@ RG350:/media/data/local/home # chmod +x /media/data/local/sbin/frontend_start
 </ol>
 <p>Podríamos pensar que renombrando el directorio <code>downloaded_images</code> por <code>.previews</code> conseguiremos que las previsualizaciones sean compatibles con GMenu2X, pero no es así porque los nombres de las imágenes incluyen el sufijo <code>-image</code> antes de la extensión.</p>
 <p>Ya podemos extraer la microSD del PC y devolverla a la RG350. Ya deberíamos poder ver las previsualizaciones y la metainformación de los juegos scrapeados:</p>
-<p><img alt="EmulationStation Boxart UXS" src="/images/posts/emulationstation_boxart_uxs.png" /></p>
+<p><img alt="EmulationStation Boxart UXS" src="images/posts/emulationstation_boxart_uxs.png" /></p>
 <h2 id="temas">Temas<a class="headerlink" href="#temas" title="Permanent link">&para;</a></h2>
 <p>Por último vamos a hacer un muestrario de los temas que trae precargados la versión de EmulationStation que acabamos de instalar. El tema se cambia dentro de la sección <code>UI Settings</code> del <code>Main Menu</code> que aparece al pulsar <code>Start</code>:</p>
-<p><img alt="EmulationStation Tema 1" src="/images/posts/emulationstation_tema1.png" /></p>
+<p><img alt="EmulationStation Tema 1" src="images/posts/emulationstation_tema1.png" /></p>
 <p>Es la última opción de esa pantalla:</p>
-<p><img alt="EmulationStation Tema 2" src="/images/posts/emulationstation_tema2.png" /></p>
+<p><img alt="EmulationStation Tema 2" src="images/posts/emulationstation_tema2.png" /></p>
 <p>Los temas disponibles son estos cuatro, aunque los dos últimos parecen ser el mismo:</p>
-<p><img alt="EmulationStation Tema 3" src="/images/posts/emulationstation_tema3.png" /></p>
+<p><img alt="EmulationStation Tema 3" src="images/posts/emulationstation_tema3.png" /></p>
 <p>Vamos a ver ejemplos de cada uno:</p>
 <h4 id="pixelperfect">PixelPerfect<a class="headerlink" href="#pixelperfect" title="Permanent link">&para;</a></h4>
-<p><img alt="EmulationStation Tema 6" src="/images/posts/emulationstation_tema6.png" />
-<img alt="EmulationStation Tema 7" src="/images/posts/emulationstation_tema7.png" /></p>
+<p><img alt="EmulationStation Tema 6" src="images/posts/emulationstation_tema6.png" />
+<img alt="EmulationStation Tema 7" src="images/posts/emulationstation_tema7.png" /></p>
 <h4 id="pixel">Pixel<a class="headerlink" href="#pixel" title="Permanent link">&para;</a></h4>
-<p><img alt="EmulationStation Tema 8" src="/images/posts/emulationstation_tema8.png" />
-<img alt="EmulationStation Tema 9" src="/images/posts/emulationstation_tema9.png" /></p>
+<p><img alt="EmulationStation Tema 8" src="images/posts/emulationstation_tema8.png" />
+<img alt="EmulationStation Tema 9" src="images/posts/emulationstation_tema9.png" /></p>
 <h4 id="simple-y-simplegcw">Simple y SimpleGCW<a class="headerlink" href="#simple-y-simplegcw" title="Permanent link">&para;</a></h4>
-<p><img alt="EmulationStation Tema 4" src="/images/posts/emulationstation_tema4.png" />
-<img alt="EmulationStation Tema 5" src="/images/posts/emulationstation_tema5.png" /></p>
+<p><img alt="EmulationStation Tema 4" src="images/posts/emulationstation_tema4.png" />
+<img alt="EmulationStation Tema 5" src="images/posts/emulationstation_tema5.png" /></p>
 <h2 id="personalizacion-de-los-temas">Personalización de los Temas<a class="headerlink" href="#personalizacion-de-los-temas" title="Permanent link">&para;</a></h2>
 <p>Los temas se encuentran instalados en la ruta <code>/media/data/local/home/.emulationstation/themes</code>. Dentro de ella encontramos un directorio por cada tema disponible:</p>
 <div class="highlight"><pre><span></span><code>RG350:/media/data/local/home/.emulationstation/themes # ls -l
@@ -4245,7 +4263,7 @@ drwx------   62 root     root          4096 Feb 10 21:38 simple
 drwx------   64 root     root          4096 Feb 10 21:38 simplegcw
 </code></pre></div>
 <p>El nombre del directorio será el que luego aparezca en el listado de temas en los ajustes de ES:</p>
-<p><img alt="EmulationStation Tema 3" src="/images/posts/emulationstation_tema3.png" /></p>
+<p><img alt="EmulationStation Tema 3" src="images/posts/emulationstation_tema3.png" /></p>
 <p>Dentro de cada uno de los temas encontramos los siguientes elementos:</p>
 <ul>
 <li>Fichero <code>simple.xml</code>: Configuración general del tema. El nombre del fichero puede ser cualquiera pero hay que tener en cuenta que se hace referencia a él dentro de la configuración particular de cada sistema que luego veremos, por lo que si ya hemos empezado a adaptar los mismos no podremos cambiar su nombre a no ser que lo reemplacemos en todos ellos.</li>

@@ -2581,6 +2581,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -3975,10 +3996,10 @@
 
   <h1>RG350 Primeros pasos</h1>
 
-<p><img alt="RG350" src="/images/pages/rg350.png" /></p>
-<p>En este artículo vamos a tratar las dudas iniciales que se suelen tener cuando se comienza con esta consola. En <a href="/retro-emulacion/rg-350.html">este documento</a> ya se encuentran descritos unos cuantos <a href="/retro-emulacion/rg-350.html#conceptos">conceptos</a> y respondidas algunas <a href="/retro-emulacion/rg-350.html#faq">preguntas frecuentes</a>, pero aquí vamos a centrarnos en las dudas iniciales, es decir las que suelen surgir nada más sacar la consola de la caja.</p>
+<p><img alt="RG350" src="../images/pages/rg350.png" /></p>
+<p>En este artículo vamos a tratar las dudas iniciales que se suelen tener cuando se comienza con esta consola. En <a href="retro-emulacion/rg-350.html">este documento</a> ya se encuentran descritos unos cuantos <a href="retro-emulacion/rg-350.html#conceptos">conceptos</a> y respondidas algunas <a href="retro-emulacion/rg-350.html#faq">preguntas frecuentes</a>, pero aquí vamos a centrarnos en las dudas iniciales, es decir las que suelen surgir nada más sacar la consola de la caja.</p>
 <h2 id="instalacionactualizacion-de-emuladoresopks">Instalación/actualización de emuladores/OPKs<a class="headerlink" href="#instalacionactualizacion-de-emuladoresopks" title="Permanent link">&para;</a></h2>
-<p>De fábrica la consola suele venir con muchos emuladores instalados, aunque no suelen ser las versiones más actualizadas. Así pues, una de las primeras inquietudes suele ser la de actualizar los emuladores preinstalados o añadir otros nuevos. Lo primero sería entender el formato de los mismos. En el <a href="/retro-emulacion/rg-350.html#emuladores-juegos-ports-aplicaciones">documento general sobre RG350</a> ya se comenta algo sobre ello. Aunque no es obligatorio, la mayoría de los emuladores los vamos a encontrar en formato OPK. Es la forma más sencilla y conveniente para distribuir aplicaciones de cualquier tipo en el sistema operativo de la consola (OpenDingux). Los OPKs son ficheros únicos que internamente contienen todos los ficheros que necesita el emulador (ejecutables, configuraciones, imágenes, sonidos, etc.). Así pues si queremos actualizar por ejemplo el emulador de Game Boy, simplemente tenemos que localizar el fichero OPK y copiarlo a la consola (más adelante diremos dónde).</p>
+<p>De fábrica la consola suele venir con muchos emuladores instalados, aunque no suelen ser las versiones más actualizadas. Así pues, una de las primeras inquietudes suele ser la de actualizar los emuladores preinstalados o añadir otros nuevos. Lo primero sería entender el formato de los mismos. En el <a href="retro-emulacion/rg-350.html#emuladores-juegos-ports-aplicaciones">documento general sobre RG350</a> ya se comenta algo sobre ello. Aunque no es obligatorio, la mayoría de los emuladores los vamos a encontrar en formato OPK. Es la forma más sencilla y conveniente para distribuir aplicaciones de cualquier tipo en el sistema operativo de la consola (OpenDingux). Los OPKs son ficheros únicos que internamente contienen todos los ficheros que necesita el emulador (ejecutables, configuraciones, imágenes, sonidos, etc.). Así pues si queremos actualizar por ejemplo el emulador de Game Boy, simplemente tenemos que localizar el fichero OPK y copiarlo a la consola (más adelante diremos dónde).</p>
 <h4 id="donde-encontramos-los-ficheros-opk">¿Dónde encontramos los ficheros OPK?<a class="headerlink" href="#donde-encontramos-los-ficheros-opk" title="Permanent link">&para;</a></h4>
 <p>Desafortunadamente, el concepto tan habitual en otros sistemas de tienda de aplicaciones, en OpenDingux no existe. Bueno, el primer intento serio de montar algo equivalente es el trabajo de <a href="https://github.com/rafavico">Rafa Vico</a> integrado en las últimas versiones de <a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/">ROGUE</a>, pero vamos a suponer que aún no tenemos acceso a ello (ya que requiere haber instalado este sistema y disponer de un adaptador Wifi funcional).</p>
 <p>Así pues nos va a tocar localizar por nuestra cuenta los OPK. Normalmente, siendo una consola/sistema de concepción "open", el código de los emuladores suele estar publicado en repositorios de código como GitHub. Por ejemplo en el caso del emulador de Game Boy, uno de los más populares es Gambatte, cuyo repositorio de código se encuentra <a href="https://github.com/bardeci/gambatte-dms">aquí</a>. Si acudimos a la sección <a href="https://github.com/bardeci/gambatte-dms/releases">releases</a> del repositorio, encontraremos algunas compilaciones del código hechas por su autor para varias máquinas. En concreto la adecuada para RG350 sería ésta:</p>
@@ -4030,14 +4051,14 @@
 </tbody>
 </table>
 <p>Lo mismo visto de forma gráfica (a la izquierda lo que vemos en el PC y a la derecha en la RG con la aplicación DinguxCmdr):</p>
-<p><img alt="External SD in PC" src="/images/posts/rg350_101/external_sd_pc.png" />
-<img alt="External SD in RG" src="/images/posts/rg350_101/external_sd_rg.png" /></p>
+<p><img alt="External SD in PC" src="../images/posts/rg350_101/external_sd_pc.png" />
+<img alt="External SD in RG" src="../images/posts/rg350_101/external_sd_rg.png" /></p>
 <p>Para terminar con el ejemplo de la instalación de la última versión de Gambatte, este sería el lugar donde copiaríamos el fichero sobre la tarjeta externa montada en el PC:</p>
-<p><img alt="Install emulator in PC" src="/images/posts/rg350_101/install_emulator_pc.png" /></p>
+<p><img alt="Install emulator in PC" src="../images/posts/rg350_101/install_emulator_pc.png" /></p>
 <p>Si ahora expulsamos la SD del PC y la insertamos en la RG350, debería aparecer un nuevo icono en el lanzador:</p>
-<p><img alt="Install emulator in RG" src="/images/posts/rg350_101/install_emulator_rg.png" /></p>
+<p><img alt="Install emulator in RG" src="../images/posts/rg350_101/install_emulator_rg.png" /></p>
 <p>Como vemos, ahora aparecen dos iconos para el emulador Gambatte, el que había instalado originalmente en la tarjeta interna y el que acabamos de incorporar a la externa. El emulador original debe encontrarse en la ruta indicada al principio de la tarjeta interna dedicada a la instalación de OPKs, es decir <code>/media/data/apps</code>. Si queremos deshacernos de él lo haremos utilizando DinguxCmdr, localizando dicha ruta y borrando el fichero desde el menú que aparece al pulsar la tecla <code>X</code>:</p>
-<p><img alt="Delete old Gambatte" src="/images/posts/rg350_101/delete_gambatte.png" /></p>
+<p><img alt="Delete old Gambatte" src="../images/posts/rg350_101/delete_gambatte.png" /></p>
 <h4 id="hay-algun-sitio-dedicado-a-recopilar-repositorios-de-emuladores">¿Hay algún sitio dedicado a recopilar repositorios de emuladores?<a class="headerlink" href="#hay-algun-sitio-dedicado-a-recopilar-repositorios-de-emuladores" title="Permanent link">&para;</a></h4>
 <p>Como comentábamos al principio, el repositorio de emuladores y aplicaciones más evolucionado actualmente es la App Store incluida en las últimas versiones del <a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/">Custom Firmware ROGUE</a>. Aunque no tengamos acceso a ella, podemos explorar manualmente la base de datos que utiliza por debajo esta aplicación acudiendo al siguiente repositorio:</p>
 <ul>
@@ -4063,8 +4084,8 @@
 <li>Tarjeta externa: <code>/media/sdcard</code></li>
 </ul>
 <p>Por tanto las ROMs las podremos copiar a cualquier lugar al nivel de los dos directorios anteriores o cualquiera de sus subdirectorios. Al igual que con los emuladores, resulta más cómodo copiarlos a la tarjeta externa. En este caso, aunque no es obligatorio (como sí lo era con los emuladores u OPKs en general que debían ir en un subdirectorio <code>apps</code>) se recomienda por organización crear un directorio llamado <code>roms</code> en la raíz de la tarjeta externa (cuando la montamos en el PC) y colocar dentro de él las ROMs de los distintos sistemas con un directorio propio para cada uno de ellos. Por ejemplo:</p>
-<p><img alt="ROMs in PC" src="/images/posts/rg350_101/roms_pc.png" />
-<img alt="ROMs in RG" src="/images/posts/rg350_101/roms_rg.png" /></p>
+<p><img alt="ROMs in PC" src="../images/posts/rg350_101/roms_pc.png" />
+<img alt="ROMs in RG" src="../images/posts/rg350_101/roms_rg.png" /></p>
 <p>Una vez que hayamos insertado la microSD en la ranura externa de la consola, encontraremos el directorio <code>roms</code> y su contenido montado en la ruta <code>/media/sdcard/roms</code> del sistema OpenDingux. Al abrir un emulador, la mayoría de ellos nos mostrará un explorador de ficheros para recorrer el árbol de directorios del sistema. Como vemos en el siguiente video tendremos que seguir la ruta indicada anteriormente. La entrada con dos puntos (<code>..</code>) permite subir en el árbol de directorios hacia arriba:</p>
 <iframe width="640" height="480" src="https://www.youtube.com/embed/qObq4Woinss" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -4114,7 +4135,7 @@
 <p>Como vemos las mejoras de ROGUE son numerosas, pero si nos fijamos son casi todas algo accesorias, es decir no producen mejoras en la experiencia de juego (salvo el overclock) sino en la gestión que podemos hacer con la consola preparándola para ejecutar nuevos juegos o emuladores. Comento esto para valorar adecuadamente la conveniencia de actualizar y evaluar los riesgos de proceder con el cambio. La consola no se puede <em>brickear</em>, dado que no tiene almacenamiento flash en la propia placa. Todo está en la microSD interna, por lo que todos los problemas se solucionan flasheando correctamente esta tarjeta con un sistema válido (sea el que sea). A pesar de ello, el proceso puede resultar complicado o confuso si no se ha flasheado antes una tarjeta SD. Además, al menos en el modelo normal de la consola, hay que desatornillar la tapa trasera para acceder a la microSD interna.</p>
 <p>Mi consejo sería mantener el firmware BASE durante las primeras semanas al menos, para no tener impedimentos claros para optar a la garantía en caso de que aparezcan problemas. Aunque el modelo M no es necesario abrirlo, si queremos flashear la tarjeta de la ranura INT, vamos a tener que romper igualmente el precinto de garantía. Si se tienen dudas sobre el proceso de flasheo, aprovechar ese tiempo para ir conociéndolo consultando foros o leyendo lo que sigue a continuación.</p>
 <h2 id="actualizacion-del-firmware">Actualización del firmware<a class="headerlink" href="#actualizacion-del-firmware" title="Permanent link">&para;</a></h2>
-<p>Como hemos comentado antes, a fecha de publicación de este artículo, la única opción para actualizar el firmware de RG350 es ROGUE. Este custom firmware ofrece tres formas para ser instalado. Dos de ellas no requieren extraer la tarjeta interna (y por tanto en el modelo normal ni siquiera será necesario abrir la consola). Se detallan en <a href="/retro-emulacion/rg-350.html#opciones-para-actualizar-el-firmware-rg350-rogue-cfw">este documento</a>, pero vamos a repetirlo aquí para no perder el hilo de este artículo:</p>
+<p>Como hemos comentado antes, a fecha de publicación de este artículo, la única opción para actualizar el firmware de RG350 es ROGUE. Este custom firmware ofrece tres formas para ser instalado. Dos de ellas no requieren extraer la tarjeta interna (y por tanto en el modelo normal ni siquiera será necesario abrir la consola). Se detallan en <a href="retro-emulacion/rg-350.html#opciones-para-actualizar-el-firmware-rg350-rogue-cfw">este documento</a>, pero vamos a repetirlo aquí para no perder el hilo de este artículo:</p>
 <table>
 <thead>
 <tr>
@@ -4143,7 +4164,7 @@
 </table>
 <p>Así pues, para la primera actualización (y posteriores) se puede utilizar cualquier método. Dependiendo de la situación es más recomendable uno que otro. En general empezar por la opción 1, si no queda bien pasar a la 2 y si tampoco queda bien o no es posible utilizarlo porque la consola no arranca, usar el método 3.</p>
 <p>De la experiencia de muchos usuarios pasando de BASE a ROGUE se puede deducir que si no se utiliza el tercer método es muy fácil acabar teniendo problemas. Parece que tiene que ver con que la tarjeta Toshiba que trae la consola de fábrica no es de buena calidad. La recomendación mayoritaria es apartar esa tarjeta dejándola con el firmware BASE (para reponerla además en caso de que aparezcan problemas, para así tener con qué comparar) y utilizar el método 3 (flasheo convencional) sobre una tarjeta microSD nueva de calidad.</p>
-<p>Si al final nos decidimos a dar el paso, en <a href="/retro-emulacion/rg-350.html#flash-de-sd-interna">este documento</a> se ofrecen detalles sobre el proceso de flasheo. De nuevo los repetimos aquí para mantenernos centrados en este post:</p>
+<p>Si al final nos decidimos a dar el paso, en <a href="retro-emulacion/rg-350.html#flash-de-sd-interna">este documento</a> se ofrecen detalles sobre el proceso de flasheo. De nuevo los repetimos aquí para mantenernos centrados en este post:</p>
 <ol>
 <li>En el modelo normal, abrir la consola. El tornillo inferior izquierdo tiene encima un sello que no se puede despegar entero; se desintegra. Sólo hay que tener cuidado con no partir el cable de la batería por darle un tirón. Es perfectamente normal que se descuelguen los gatillos L y R. No pasa nada, nos ocuparemos de ello justo antes de cerrar.</li>
 <li>Sacar la SD rompiendo un nuevo sello que no se puede despegar de una pieza. Sale a cachos. Si no se ha flasheado anteriormente la tarjeta interna por otros medios, se recomienda apartarla, es decir guardarla como está y flashear otra tarjeta. Las recomendaciones para la tarjeta son que tenga 16GB class 10. Sería suficiente con una tarjeta de 4GB, ya que el sistema ocupa menos de 1GB, pero tarjetas de esa capacidad ya no se suelen encontrar y de hacerlo, lo más probable es que sea una tarjeta vieja y lenta.</li>

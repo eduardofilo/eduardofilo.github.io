@@ -2557,6 +2557,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -3927,15 +3948,15 @@
 
   <h1>Raspberry Pi Zero 2 W upgrade</h1>
 
-<p><img alt="Octoprint" src="/images/posts/2021-10-30_raspi_zero_2/octoprint.jpg" /></p>
-<p>Justo hace tres años realicé una <a href="/2018-10-20-Octoprint-en-Anet-A8.html">instalación de una Raspberry Pi Zero</a> en una impresora 3D Anet A8 para gestionar las impresiones con el software OctoPrint. El uso de este modelo de Raspberry Pi no está recomendado, ya que la potencia de la misma es un poco ajustada. Yo mismo había notado que algunas impresiones complejas (sobre todo cuando hay muchas curvas), se ralentizaban ligeramente. No tanto como para que dejara de merecer la pena la instalación, pero ciertamente la situación no era conveniente. Tras el anuncio del nuevo modelo <a href="https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/">Raspberry Pi Zero 2 W</a> en seguida pensé que sería perfecto para esta función, así que he procedido a la actualización. Aquí describo los detalles del cambio.</p>
+<p><img alt="Octoprint" src="images/posts/2021-10-30_raspi_zero_2/octoprint.jpg" /></p>
+<p>Justo hace tres años realicé una <a href="2018-10-20-Octoprint-en-Anet-A8.html">instalación de una Raspberry Pi Zero</a> en una impresora 3D Anet A8 para gestionar las impresiones con el software OctoPrint. El uso de este modelo de Raspberry Pi no está recomendado, ya que la potencia de la misma es un poco ajustada. Yo mismo había notado que algunas impresiones complejas (sobre todo cuando hay muchas curvas), se ralentizaban ligeramente. No tanto como para que dejara de merecer la pena la instalación, pero ciertamente la situación no era conveniente. Tras el anuncio del nuevo modelo <a href="https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/">Raspberry Pi Zero 2 W</a> en seguida pensé que sería perfecto para esta función, así que he procedido a la actualización. Aquí describo los detalles del cambio.</p>
 <h2 id="flasheo-octoprint">Flasheo OctoPrint<a class="headerlink" href="#flasheo-octoprint" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Antes de flashear</p>
-<p>En esta instalación vamos a rescatar la configuración de la <a href="/2018-10-20-Octoprint-en-Anet-A8.html">instalación anterior</a>, por lo que si queremos flashear sobre la misma tarjeta, habrá que adelantar los pasos que se comentan en el apartado <a href="#configuracion-octoprint">Configuración OctoPrint</a></p>
+<p>En esta instalación vamos a rescatar la configuración de la <a href="2018-10-20-Octoprint-en-Anet-A8.html">instalación anterior</a>, por lo que si queremos flashear sobre la misma tarjeta, habrá que adelantar los pasos que se comentan en el apartado <a href="#configuracion-octoprint">Configuración OctoPrint</a></p>
 </div>
 <p>Al igual que en la instalación original, se utiliza la distribución oficial que además se puede instalar desde la utilidad <a href="https://www.raspberrypi.com/software/">Raspberry Pi Imager</a> (se encuentra dentro de la sección <code>Other specific purpose OS</code>).</p>
-<p><img alt="Raspberry Pi Imager" src="/images/posts/2021-10-30_raspi_zero_2/raspi-imager.png" /></p>
+<p><img alt="Raspberry Pi Imager" src="images/posts/2021-10-30_raspi_zero_2/raspi-imager.png" /></p>
 <h2 id="configuracion-de-red">Configuración de red<a class="headerlink" href="#configuracion-de-red" title="Permanent link">&para;</a></h2>
 <p>Una vez flasheado OctoPrint, lo primero que interesa es conseguir conectividad a través de Wifi para poder continuar haciendo ajustes por SSH. El servicio SSH está activado por defecto en la imagen de OctoPrint. Para conseguir que la nueva instalación de OctoPrint se conecte a mi router con una IP fija, hacemos lo siguiente:</p>
 <ol>
@@ -3955,7 +3976,7 @@ static domain_name_servers=DNS
 </ol>
 <p>Tras hacer estos cambios, insertar la tarjeta en la Pi Zero 2 y alimentándola (y esperando a que se reinicie un par de veces, ya que en el primer arranque se expande la partición rootfs para ocupar toda la tarjeta), se consigue acceder por SSH con el usuario <code>pi</code> y el habitual password <code>raspberry</code>. Lo primero que conviene hacer como el propio sistema se encarga de recomendar, es cambiar el password del usuario <code>pi</code> con el comando <code>passwd</code>.</p>
 <h2 id="configuracion-de-puerto-serie">Configuración de puerto serie<a class="headerlink" href="#configuracion-de-puerto-serie" title="Permanent link">&para;</a></h2>
-<p>Tal y como se comentó en el <a href="/2018-10-20-Octoprint-en-Anet-A8.html#desactivacion-de-bt-y-activacion-de-puerto-serie">artículo de la instalación original</a>, el puerto serie físico que hay en el GPIO de Raspberry Pi está en uso por el adaptador Bluetooth integrado. Hay que desactivar este adaptador y la consola serie que se asocia al mismo que nos da la posibilidad de iniciar sesión por el puerto serie. Para ello hacemos lo siguiente:</p>
+<p>Tal y como se comentó en el <a href="2018-10-20-Octoprint-en-Anet-A8.html#desactivacion-de-bt-y-activacion-de-puerto-serie">artículo de la instalación original</a>, el puerto serie físico que hay en el GPIO de Raspberry Pi está en uso por el adaptador Bluetooth integrado. Hay que desactivar este adaptador y la consola serie que se asocia al mismo que nos da la posibilidad de iniciar sesión por el puerto serie. Para ello hacemos lo siguiente:</p>
 <ol>
 <li>Volver a montar la microSD en el PC.</li>
 <li>Editar el fichero <code>config.txt</code> que hay en la partición boot.</li>
@@ -3981,10 +4002,10 @@ enable_uart=1
 </li>
 </ol>
 <h2 id="conexion-fisica">Conexión física<a class="headerlink" href="#conexion-fisica" title="Permanent link">&para;</a></h2>
-<p>Vamos a aprovechar el viejo adaptador artesanal que se realizó para la <a href="/2018-10-20-Octoprint-en-Anet-A8.html#conexion-serie-entre-anet-a8-y-raspberry-pi">instalación original</a>. Tras desoldarlo, esta vez instalamos una tira de pins hembra en el adaptador y una macho en la Raspi Zero 2, para poder extraerla de la impresora y utilizarla para otros proyectos cuando la impresora esté parada.</p>
-<p><img alt="Adaptador J3-GPIO" src="/images/posts/2021-10-30_raspi_zero_2/octoprint_adaptador.jpg" /></p>
-<p><img alt="Raspberry Pi Zero 2" src="/images/posts/2021-10-30_raspi_zero_2/raspberry.jpg" /></p>
-<p><img alt="Adaptador J3-Raspberry" src="/images/posts/2021-10-30_raspi_zero_2/octoprint_adaptador_raspberry.jpg" /></p>
+<p>Vamos a aprovechar el viejo adaptador artesanal que se realizó para la <a href="2018-10-20-Octoprint-en-Anet-A8.html#conexion-serie-entre-anet-a8-y-raspberry-pi">instalación original</a>. Tras desoldarlo, esta vez instalamos una tira de pins hembra en el adaptador y una macho en la Raspi Zero 2, para poder extraerla de la impresora y utilizarla para otros proyectos cuando la impresora esté parada.</p>
+<p><img alt="Adaptador J3-GPIO" src="images/posts/2021-10-30_raspi_zero_2/octoprint_adaptador.jpg" /></p>
+<p><img alt="Raspberry Pi Zero 2" src="images/posts/2021-10-30_raspi_zero_2/raspberry.jpg" /></p>
+<p><img alt="Adaptador J3-Raspberry" src="images/posts/2021-10-30_raspi_zero_2/octoprint_adaptador_raspberry.jpg" /></p>
 <h2 id="configuracion-octoprint">Configuración OctoPrint<a class="headerlink" href="#configuracion-octoprint" title="Permanent link">&para;</a></h2>
 <p>En este caso vamos a aprovechar la configuración anterior de OctoPrint generando un backup y cargándolo en la nueva instalación. Para ello:</p>
 <ol>
@@ -3993,7 +4014,7 @@ enable_uart=1
 <li>Allí pulsar el botón <code>Create backup now</code>.</li>
 <li>
 <p>Tras esperar un buen rato aparecerá una entrada en el listado de backups realizados:</p>
-<p><img alt="Backups OctoPrint" src="/images/posts/2021-10-30_raspi_zero_2/backups_octoprint.png" /></p>
+<p><img alt="Backups OctoPrint" src="images/posts/2021-10-30_raspi_zero_2/backups_octoprint.png" /></p>
 </li>
 <li>
 <p>Pulsar el icono de descarga para obtener el fichero zip.</p>

@@ -2557,6 +2557,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -3927,7 +3948,7 @@
 
   <h1>RG350 FBA</h1>
 
-<p><img alt="FBA Logo" src="/images/posts/fba_logo.png" /></p>
+<p><img alt="FBA Logo" src="images/posts/fba_logo.png" /></p>
 <p>Final Burn Alpha o FBA es un emulador de múltiples máquinas arcade, sobre todo Neo-Geo, Konami y Capcom. Vamos a ver cómo instalarlo y configurarlo en la consola RG350.</p>
 <p>El repositorio donde se publican versiones especiales para RG350 es <a href="https://github.com/nobk/fba-sdl">éste</a>. En concreto las releases se descargan de <a href="https://github.com/nobk/fba-sdl/releases">aquí</a>. En la sección de assets de cada release podemos encontrar un OPK creado especialmente para esta consola.</p>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
@@ -3938,56 +3959,56 @@
 </ol>
 <p>También puede copiarse en la tarjeta interna (en la ruta <code>/media/data/apps</code>, pero particularmente prefiero instalar las aplicaciones en la externa).</p>
 <p>Una vez instalado, reiniciar Gmenu2x pulsando <code>Power+Select</code> para asegurar el que aparezca:</p>
-<p><img alt="Icono FBA" src="/images/posts/fba_launcher.png" /></p>
+<p><img alt="Icono FBA" src="images/posts/fba_launcher.png" /></p>
 <h2 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h2>
 <p>La primera vez que lo abramos nos mostrará las 5807 ROMs que es capaz de reconocer (al menos en la <a href="https://github.com/nobk/fba-sdl/releases/download/r19/fba-RG350-r19-8e351b8b.opk">r19</a>), pero seguramente no nos permitirá abrirlas y las representará en rojo.</p>
-<p><img alt="Primer arranque FBA" src="/images/posts/fba_primer_arranque.png" /></p>
+<p><img alt="Primer arranque FBA" src="images/posts/fba_primer_arranque.png" /></p>
 <p>Si pulsamos la tecla <code>X</code> (y no la <code>Y</code> como sugiere el propio programa) veremos la ayuda en la que se explica que las ROMs que aparecen en rojo están <em>missing</em>, es decir que no han sido localizadas en la consola.</p>
-<p><img alt="Ayuda FBA" src="/images/posts/fba_help.png" /></p>
+<p><img alt="Ayuda FBA" src="images/posts/fba_help.png" /></p>
 <p>Hay que configurar en los ajustes de FBA la ruta de las ROMs. Para ello seguir estos pasos:</p>
 <ol>
 <li>
 <p>Pulsar <code>Start</code>. Aparecen las <code>Main settings</code>. Bajamos hasta seleccionar la entrada <code>ROMs Paths --&gt;</code>:</p>
-<p><img alt="ROMs paths" src="/images/posts/fba_roms_paths.png" /></p>
+<p><img alt="ROMs paths" src="images/posts/fba_roms_paths.png" /></p>
 </li>
 <li>
 <p>Entrar con <code>A</code> para ver la serie de 20 rutas que nos permite configurar FBA. Como vemos, por defecto tiene algunas rutas habituales ya definidas. Curiosamente la ruta número 4 hubiera funcionado en mi máquina cuando tenía la tarjeta externa en formato FAT32, ya que la ruta de mis ROMs de FBA es <code>/media/sdcard/roms/FBA</code> y ese formato no es sensible a mayúsculas/minúsculas:</p>
-<p><img alt="ROMs paths" src="/images/posts/fba_roms_paths_in.png" /></p>
+<p><img alt="ROMs paths" src="images/posts/fba_roms_paths_in.png" /></p>
 </li>
 <li>
 <p>Hacer limpieza de las rutas que no nos sirvan seleccionándolas y borrándolas con la tecla <code>X</code>:</p>
-<p><img alt="ROMs paths" src="/images/posts/fba_roms_paths_clean.png" /></p>
+<p><img alt="ROMs paths" src="images/posts/fba_roms_paths_clean.png" /></p>
 </li>
 <li>
 <p>Seleccionar la primera entrada (por ejemplo) y pulsar <code>A</code>. Aparecerá una especie de explorador de ficheros que nos permitirá navegar por la estructura de directorios. Subiremos por el árbol seleccionando la entrada de los dos puntos <code>..</code> hasta llegar a la raíz y luego comenzaremos a descender por la ruta que nos lleve hasta nuestras ROMs, en mi caso <code>/media/sdcard/roms/FBA</code>. Las subidas y bajadas por el árbol se hacen con la tecla <code>A</code>. Cuando lleguemos a la ruta deseada pulsar <code>Start</code>:</p>
-<p><img alt="ROMs paths" src="/images/posts/fba_roms_paths.gif" /></p>
+<p><img alt="ROMs paths" src="images/posts/fba_roms_paths.gif" /></p>
 </li>
 <li>
 <p>Tras haber indicado al menos una ruta válida volver al menú <code>Main settings</code> pulsando <code>B</code>. Allí bajar hasta la opción <code>Clear ROMs list cache and rescaning</code>:</p>
-<p><img alt="ROMs paths" src="/images/posts/fba_rescan.png" /></p>
+<p><img alt="ROMs paths" src="images/posts/fba_rescan.png" /></p>
 </li>
 <li>
 <p>Esto nos hará volver a la lista de ROMs, pero si en la ruta configurada tenemos ROMs válidas empezaremos a ver algunos nombres en amarillo y/o naranja. Son las ROMs que el emulador puede ejecutar:</p>
-<p><img alt="ROMs paths" src="/images/posts/fba_rom_list_full.png" /></p>
+<p><img alt="ROMs paths" src="images/posts/fba_rom_list_full.png" /></p>
 </li>
 <li>
 <p>A no ser que tengamos el romset completo de FBA que soporta la versión que hayamos instalado, veremos varias ROMs en rojo que no vamos a poder jugar. Para esconderlas volver al menú de settings con la tecla <code>Start</code> y entrar en la sección <code>Filter settings --&gt;</code> con la tecla <code>A</code>:</p>
-<p><img alt="Filter settings" src="/images/posts/fba_filter_settings.png" /></p>
+<p><img alt="Filter settings" src="images/posts/fba_filter_settings.png" /></p>
 </li>
 <li>
 <p>En la nueva pantalla cambiar el ajuste <code>Show roms</code> con las teclas izquierda/derecha de la cruceta hasta que aparezca la opción <code>Available only</code>:</p>
-<p><img alt="Filter settings" src="/images/posts/fba_available_only.png" /></p>
+<p><img alt="Filter settings" src="images/posts/fba_available_only.png" /></p>
 </li>
 <li>
 <p>Al volver a la lista de ROMs (esta vez no hace falta provocar el rescaning) veremos sólo las ROMs que podemos ejecutar:</p>
-<p><img alt="Filter settings" src="/images/posts/fba_available_roms.png" /></p>
+<p><img alt="Filter settings" src="images/posts/fba_available_roms.png" /></p>
 </li>
 </ol>
 <p>En realidad los pasos 7 a 9 se pueden realizar con la combinación de teclas <code>Y+Arriba/Abajo</code> que veremos luego.</p>
 <h2 id="controles">Controles<a class="headerlink" href="#controles" title="Permanent link">&para;</a></h2>
 <p>A continuación se describen los controles que aparecen en las pantallas de ayuda.</p>
-<p><img alt="Ayuda FBA" src="/images/posts/fba_help.png" />
-<img alt="Ayuda FBA" src="/images/posts/fba_help2.png" /></p>
+<p><img alt="Ayuda FBA" src="images/posts/fba_help.png" />
+<img alt="Ayuda FBA" src="images/posts/fba_help2.png" /></p>
 <table>
 <thead>
 <tr>
@@ -4090,15 +4111,15 @@
 </tbody>
 </table>
 <p>La combinación de teclas <code>L1+R1+Start</code> es importante ya que es la que muestra el menú de la aplicación una vez que hemos arrancado una ROM. Será el que nos permita hacer ajustes en los controles, guardar y recuperar estados de partidas y salir de la ROM para volver a la lista:</p>
-<p><img alt="Game menu" src="/images/posts/fba_game_menu.png" /></p>
+<p><img alt="Game menu" src="images/posts/fba_game_menu.png" /></p>
 <h2 id="previews">Previews<a class="headerlink" href="#previews" title="Permanent link">&para;</a></h2>
 <p>FBA, como muchos emuladores, soporta imágenes para ilustrar los juegos que puede ejecutar. En realidad esta función tiene un efecto mayor que en otros emuladores, ya que al venir precargado con un romset, es decir, con una base de datos de juegos, aunque no tengamos las ROMs correspondientes, podremos explorar y filtrar el catálogo para ver esas previsualizaciones. Vamos pues a ver cómo instalarlas.</p>
 <p>La clave está en ponerlas en el directorio <code>/media/data/local/home/.fba/previews</code>. Allí tendrá que haber ficheros de imagen en un formato soportado (como <code>.png</code> por ejemplo). El nombre del archivo tendrá que coincidir con el de la ROM que represente. Los nombres están predefinidos en el romset. El programa nos los muestra cuando recorremos el listado. Por ejemplo:</p>
-<p><img alt="Bombjack ROM name" src="/images/posts/fba_rom_name.png" /></p>
+<p><img alt="Bombjack ROM name" src="images/posts/fba_rom_name.png" /></p>
 <p>Para que se previsualice este juego por tanto deberá existir el siguiente fichero:</p>
 <div class="highlight"><pre><span></span><code>/media/data/local/home/.fba/previews/bombjack.png
 </code></pre></div>
-<p>Como estamos hablando de 5807 ROMs en la versión 44 de FBA, naturalmente no podemos preparar las imágenes una a una. O bien conseguimos un pack de previews (el que busca encuentra) o bien las intentamos preparar nosotros mismos con un <a href="/2020-01-11-rg350_scraper.html">Scrapper</a>. Si optamos por esto último, las imágenes las tenemos que generar con un tamaño de 192x112 pixeles, es decir sin mantener la relación de aspecto.</p>
+<p>Como estamos hablando de 5807 ROMs en la versión 44 de FBA, naturalmente no podemos preparar las imágenes una a una. O bien conseguimos un pack de previews (el que busca encuentra) o bien las intentamos preparar nosotros mismos con un <a href="2020-01-11-rg350_scraper.html">Scrapper</a>. Si optamos por esto último, las imágenes las tenemos que generar con un tamaño de 192x112 pixeles, es decir sin mantener la relación de aspecto.</p>
 <p>Vamos a suponer que ya disponemos de un directorio con todas esas imágenes preparadas. Vamos a ver cómo instalarlo.</p>
 <ol>
 <li>Partimos del directorio con las imagenes en nuestro ordenador. Renombrarlo como <code>previews</code>.</li>
@@ -4106,32 +4127,32 @@
 <li>Extraer del ordenador la tarjeta y volverla a pinchar en la consola, mejor con ella apagada.</li>
 <li>
 <p>Tras arrancar abrir la aplicación <code>DinguxCmdr</code>. Navegar por los directorios hasta colocar a un lado la ruta <code>/media/sdcard</code> y en el otro <code>/media/data/local/home/.fba</code>. En ese momento seleccionar el directorio <code>previews</code> del lado correspondiente a la ruta de la SD, pulsar <code>X</code>, seleccionar <code>Move &gt;</code> y confirmar con <code>A</code>:</p>
-<p><img alt="Copy previews" src="/images/posts/fba_copy_previews.png" /></p>
+<p><img alt="Copy previews" src="images/posts/fba_copy_previews.png" /></p>
 </li>
 <li>
 <p>Como seguramente el directorio ya existirá, se nos pedira confirmación para sobreescribirlo. Seleccionar <code>Yes to all</code> y confirmar con <code>A</code>:</p>
-<p><img alt="Confirm overwrite" src="/images/posts/fba_confirm_overwrite.png" /></p>
+<p><img alt="Confirm overwrite" src="images/posts/fba_confirm_overwrite.png" /></p>
 </li>
 <li>
 <p>Si como en mi caso tenemos en el directorio más de 11.000 ficheros, el proceso tardará un rato (alrededor de un minuto):</p>
-<p><img alt="Waiting" src="/images/posts/fba_waiting.png" /></p>
+<p><img alt="Waiting" src="images/posts/fba_waiting.png" /></p>
 </li>
 </ol>
 <p>Si todo ha ido bien, tras salir de DinguxCmdr (tecla <code>Y</code> y comando <code>Quit</code>), al abrir FBA empezaremos a ver esto:</p>
-<p><img alt="Previews" src="/images/posts/fba_previews.gif" /></p>
+<p><img alt="Previews" src="images/posts/fba_previews.gif" /></p>
 <h2 id="roms">ROMs<a class="headerlink" href="#roms" title="Permanent link">&para;</a></h2>
-<p>Como hemos comentado, FBA funciona en base a un <a href="/retro-emulacion/rg-350.html#que-es-un-romset">romset</a>, es decir un listado cerrado de ROMs que es capaz de ejecutar en una versión determinada. Las ROMs son identificadas haciendo cálculos con el contenido de los ficheros, de manera que si se detecta algún pequeño cambio, la ROM se descarta, apareciendo en rojo en el listado. Para lograr depurar un romset, es decir, encontrar los ficheros que falten o se detecten como inválidos, conviene utilizar un programa que nos asista en la tarea. Son los llamados ROM Managers, de los que hay varios, como por ejemplo:</p>
+<p>Como hemos comentado, FBA funciona en base a un <a href="retro-emulacion/rg-350.html#que-es-un-romset">romset</a>, es decir un listado cerrado de ROMs que es capaz de ejecutar en una versión determinada. Las ROMs son identificadas haciendo cálculos con el contenido de los ficheros, de manera que si se detecta algún pequeño cambio, la ROM se descarta, apareciendo en rojo en el listado. Para lograr depurar un romset, es decir, encontrar los ficheros que falten o se detecten como inválidos, conviene utilizar un programa que nos asista en la tarea. Son los llamados ROM Managers, de los que hay varios, como por ejemplo:</p>
 <ul>
 <li><a href="https://www.romcenter.com/">Romcenter</a></li>
 <li><a href="https://mamedev.emulab.it/clrmamepro/">Clrmamepro</a></li>
 <li><a href="https://www.romvault.com/">RomVault</a></li>
 <li><a href="https://github.com/cosmo0/arcade-manager">Arcade Manager</a></li>
 </ul>
-<p>Existe un proyecto en marcha para listar e identificar el grado de compatibilidad de los juegos del romset de FBA y <a href="/2020-04-15-rg350_xmame.html">xMAME</a> en la RG350. Puede encontrarse y colaborar a través de este <a href="https://docs.google.com/spreadsheets/d/1UZF7DN73u4MxgaU9UT4yRVQZP3kAoVqDFrYgjH3btbA/edit?usp=sharing">documento Google Docs</a>.</p>
+<p>Existe un proyecto en marcha para listar e identificar el grado de compatibilidad de los juegos del romset de FBA y <a href="2020-04-15-rg350_xmame.html">xMAME</a> en la RG350. Puede encontrarse y colaborar a través de este <a href="https://docs.google.com/spreadsheets/d/1UZF7DN73u4MxgaU9UT4yRVQZP3kAoVqDFrYgjH3btbA/edit?usp=sharing">documento Google Docs</a>.</p>
 <h2 id="bios-neogeo">BIOS NeoGeo<a class="headerlink" href="#bios-neogeo" title="Permanent link">&para;</a></h2>
 <p>Como muchos emuladores, algunas de las máquinas que emula FBA necesitan las BIOS que existían en la placa, por ejemplo NeoGeo. Hay que por tanto conseguir esta BIOS (el que busca encuentra) y copiarla al mismo directorio donde están las ROMs, es decir, siguiendo el ejemplo de todo el artículo, en mi caso sería <code>/media/sdcard/roms/FBA</code>. La BIOS de NeoGeo en realidad consiste en un conjunto de ficheros comprimidos en uno de nombre <code>neogeo.zip</code>.</p>
 <p>Existe una BIOS modificada para NeoGeo llamada UNIBIOS con la que al abrir un juego de esta máquina y pulsar <code>Select+Start</code> aparece un menú de cheats. También se puede cambiar la región y los idiomas de los juegos.</p>
-<p><img alt="Cheats" src="/images/posts/fba_cheats.png" /></p>
+<p><img alt="Cheats" src="images/posts/fba_cheats.png" /></p>
 
 
 

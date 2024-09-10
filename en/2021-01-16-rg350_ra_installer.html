@@ -2539,6 +2539,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -3891,12 +3912,12 @@
 
   <h1>RG350 Instalador RA</h1>
 
-<p><img alt="Icono" src="/images/posts/rg350_ra_installer/icon_big.png" /></p>
+<p><img alt="Icono" src="../images/posts/rg350_ra_installer/icon_big.png" /></p>
 <p>A finales de diciembre empezaron a aparecer distribuciones oficiales de RetroArch para RG350 y RG280. De momento en versión beta en forma de nightly builds que pueden obtenerse de <a href="https://buildbot.libretro.com/nightly/dingux/mips32/">este sitio</a> para stock/ROGUE o <a href="https://buildbot.libretro.com/nightly/dingux/mips32-odbeta/">este otro</a> para <a href="http://od.abstraction.se/opendingux/latest/">ODBeta</a>.</p>
 <p>Los zips que distribuyen contienen un único OPK, un binario (opcional) y un directorio (con toda la configuración y los cores) destinado a copiarse al home de la consola:</p>
-<p><img alt="Files" src="/images/posts/rg350_ra_installer/files.png" /></p>
+<p><img alt="Files" src="../images/posts/rg350_ra_installer/files.png" /></p>
 <p>Una vez que todo está instalado en su sitio, la única manera de ejecutar las ROMs con los cores que incluye la distribución es por medio del único OPK que lanza RetroArch a modo frontend (el interfaz UX que suele decirse en otros emuladores):</p>
-<p><img alt="Frontend" src="/images/posts/rg350_ra_installer/frontend.png" /></p>
+<p><img alt="Frontend" src="../images/posts/rg350_ra_installer/frontend.png" /></p>
 <p>Para lograr una integración más completa de RetroArch, que respete la experiencia normal de los frontends habituales en RG350/RG280 (GMenu2X, SimpleMenu, PyMenu, EmulationStation, etc.) se pueden crear unos OPKs tipo wrapper que permitan seleccionar las ROMs y lanzar el core de RetroArch correspondiente, ya que el binario opcional admite los mismos argumentos que RetroArch en otras plataformas.</p>
 <h2 id="wrappers-opk">Wrappers OPK<a class="headerlink" href="#wrappers-opk" title="Permanent link">&para;</a></h2>
 <p>Para lograrlo, primero hubo que averiguar la forma de parametrizar el core y la ROM. Cargar un core y una ROM desde el propio RetroArch no sirve porque no exterioriza estos datos en forma de argumentos sobre el ejecutable. Lo que se hizo fue suponer que serviría el mismo formato de argumentos que utiliza el binario <code>retroarch_rg350</code> (dentro del directorio <code>bin</code>; en la distribución correspondiente a ODBeta, el binario es <code>retroarch_rg350_odbeta</code>) en otros sistemas como EmuELEC en RG351P. Allí el frontend habitual EmulationStation sí que parametriza el core y la ROM a ejecutar por medio de argumentos en la llamada. Por ejemplo ejecutando Tetris de Game Boy con el core gambatte en EmuELEC sobre RG3551P se encuentra que el proceso se invoca de esta forma:</p>
@@ -4327,7 +4348,7 @@ X-OD-NeedsDownscaling=true
 <li>Sección nueva con el icono de RetroArch en todos los skins instalados en GMenu2X donde aparecen todos los lanzadores de los OPKs.</li>
 </ul>
 <p>Cuando se lanza, pregunta por dos opciones que están desactivadas por defecto:</p>
-<p><img alt="Installing options" src="/images/posts/rg350_ra_installer/installing_options.png" /></p>
+<p><img alt="Installing options" src="../images/posts/rg350_ra_installer/installing_options.png" /></p>
 <ul>
 <li>Install config: Para instalar las configuraciones comentadas en el tercer punto de la lista anterior. Se recomienda instalar las configuraciones la primera vez y no instalarlas en reinstalaciones posteriores para evitar la pérdida de los ajustes personales hechos sobre la configuración básica.</li>
 <li>Install unofficial cores: Para instalar los 31 nuevos pero no oficiales cores compilados por <a href="https://github.com/Poligraf/opendingux_ra_cores_unofficial">Poligraf</a>.</li>

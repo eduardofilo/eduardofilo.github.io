@@ -2539,6 +2539,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -3891,7 +3912,7 @@
 
   <h1>RG350 OpenBOR</h1>
 
-<p><img alt="OpenBOR logo" src="/images/posts/openbor_logo.png" /></p>
+<p><img alt="OpenBOR logo" src="images/posts/openbor_logo.png" /></p>
 <p>OpenBOR es un motor para juegos de scroll horizontal basados en sprites publicado con una licencia libre de royalties. Surgió a partir de que unos aficionados hicieran un homenaje al juego de SEGA <a href="https://en.wikipedia.org/wiki/Streets_of_Rage">Streets of Rage</a> al que llamaron <a href="https://en.wikipedia.org/wiki/Beats_of_Rage">Beats of Rage</a>. A partir de él desarrollaron el motor de juegos llamado <a href="https://github.com/DCurrent/openbor">Open Beats of Rage</a> u OpenBOR.</p>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
 <p>El emulador tiene forma de OPK, como la mayoría de los emuladores para el sistema de la RG350 (OpenDingux). Por tanto sólo tenemos que bajarlo de <a href="https://github.com/SeongGino/RetroGame350-AppRepo/raw/master/Games-Ports/OpenBOR_3.0_r4165_GCW0_Edition.opk">este enlace</a> y copiarlo a una de las dos rutas que explora GMenu2X para mostrar los lanzadores, es decir:</p>
@@ -3900,7 +3921,7 @@
 <li>Tarjeta externa: <code>/media/sdcard/apps</code></li>
 </ul>
 <h2 id="juegos">Juegos<a class="headerlink" href="#juegos" title="Permanent link">&para;</a></h2>
-<p>Los juegos de OpenBOR se encuentran como unos ficheros de extensión <code>.pak</code>. La gestión de los juegos se tiene que hacer desde el propio interfaz o frontend de OpenBOR (de manera parecida a como ocurre con xMAME o FBA). Al igual que ocurre en <a href="/2020-04-15-rg350_xmame.html">xMAME</a> las rutas donde deben estar estos ficheros son fijas. Concretamente:</p>
+<p>Los juegos de OpenBOR se encuentran como unos ficheros de extensión <code>.pak</code>. La gestión de los juegos se tiene que hacer desde el propio interfaz o frontend de OpenBOR (de manera parecida a como ocurre con xMAME o FBA). Al igual que ocurre en <a href="2020-04-15-rg350_xmame.html">xMAME</a> las rutas donde deben estar estos ficheros son fijas. Concretamente:</p>
 <ul>
 <li>Interna: <code>/usr/local/share/OpenBOR/Paks/</code></li>
 <li>Externa: <code>/media/sdcard/OpenBOR/Paks</code></li>
@@ -3915,12 +3936,12 @@
 </code></pre></div>
 </div>
 <h2 id="integracion-en-frontends">Integración en frontends<a class="headerlink" href="#integracion-en-frontends" title="Permanent link">&para;</a></h2>
-<p>Como hemos comentado antes, OpenBOR tiene su propio frontend y no parece que haya una forma de lanzar una ROM concreta por línea de comando (o al menos yo no la he encontrado), por lo que no tenemos más remedio que abrir el propio OpenBOR, y luego a través de su interfaz, lanzar los juegos. Afortunadamente, de forma predeterminada, el OPK de OpenBOR se instala en la sección <code>games</code> de GMenu2X, por lo que frontends como <a href="/2020-01-25-rg350_simplemenu.html">SimpleMenu</a> muestran el lanzador en la sección de ese mismo nombre.</p>
-<p><img alt="OpenBOR SimpleMenu" src="/images/posts/openbor_simplemenu.png" /></p>
+<p>Como hemos comentado antes, OpenBOR tiene su propio frontend y no parece que haya una forma de lanzar una ROM concreta por línea de comando (o al menos yo no la he encontrado), por lo que no tenemos más remedio que abrir el propio OpenBOR, y luego a través de su interfaz, lanzar los juegos. Afortunadamente, de forma predeterminada, el OPK de OpenBOR se instala en la sección <code>games</code> de GMenu2X, por lo que frontends como <a href="2020-01-25-rg350_simplemenu.html">SimpleMenu</a> muestran el lanzador en la sección de ese mismo nombre.</p>
+<p><img alt="OpenBOR SimpleMenu" src="images/posts/openbor_simplemenu.png" /></p>
 <h2 id="controles">Controles<a class="headerlink" href="#controles" title="Permanent link">&para;</a></h2>
 <p>En el frontend de OpenBOR se nos informa en la barra inferior sobre los controles, pero hay que tener en cuenta que <code>X</code> e <code>Y</code> están intercambiados (no así <code>A</code> y <code>B</code>).</p>
-<p><img alt="OpenBOR Controls 1" src="/images/posts/openbor_controls1.png" />
-<img alt="OpenBOR Controls 2" src="/images/posts/openbor_controls2.png" /></p>
+<p><img alt="OpenBOR Controls 1" src="images/posts/openbor_controls1.png" />
+<img alt="OpenBOR Controls 2" src="images/posts/openbor_controls2.png" /></p>
 
 
 

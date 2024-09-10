@@ -2557,6 +2557,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -3927,7 +3948,7 @@
 
   <h1>RG350 DOSBox</h1>
 
-<p><img alt="DOSBox logo" src="/images/posts/dosbox/logo.png" /></p>
+<p><img alt="DOSBox logo" src="../images/posts/dosbox/logo.png" /></p>
 <p>DOSBox recrea un entorno MS-DOS virtual para permitir ejecutar los viejos juegos aparecidos en los 80-90 para esta plataforma. Soporta sonido, controles de entrada y gráficos.</p>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
 <p>El emulador tiene forma de OPK, como la mayoría de los emuladores para el sistema de la RG350 (OpenDingux). Por tanto sólo tenemos que bajarlo de <a href="https://github.com/retrogamehandheld/OpenDingux/raw/master/Emulators/Dosbox(Explorer)_2019-11-12%20.opk">este enlace</a> y copiarlo a una de las dos rutas que explora GMenu2X para mostrar los lanzadores, es decir:</p>
@@ -3936,13 +3957,13 @@
 <li>Tarjeta externa: <code>/media/sdcard/apps</code></li>
 </ul>
 <p>Una vez instalado se puede ejecutar el entorno sin ningún juego para así alcanzar algunas utilidades que ayudan a la configuración del mismo. Para conseguir llegar al prompt, hay que editar el lanzador de GMenu2X, dejar en blanco el parámetro <code>Selector Directory</code> (ojo porque cada vez que se arranca toma el valor <code>/media</code>, por lo que hay que limpiarlo cada vez) y poner <code>OFF</code> en el parámetro <code>Selector Browser</code>:</p>
-<p><img alt="DOSBox Launcher options" src="/images/posts/dosbox/launcher_options.png" /></p>
+<p><img alt="DOSBox Launcher options" src="../images/posts/dosbox/launcher_options.png" /></p>
 <p>Cuando lo lancemos aparecerá la típica pantalla de DOS. La pantalla tiene una resolución de 640x400 por lo que en la pantalla de la RG350 se verá muy mal por el reescalado a 320x240 (para esto puede venir bien la reciente publicación de un <a href="https://drive.google.com/file/d/1U8sOjJ1ReTG2ciFywVkEURO1GqHqf6pj/view">update</a> que permite activar la salida de video HDMI que soporta esta resolución):</p>
-<p><img alt="DOSBox prompt" src="/images/posts/dosbox/prompt.png" /></p>
+<p><img alt="DOSBox prompt" src="../images/posts/dosbox/prompt.png" /></p>
 <p>Como se puede leer ahí, tecleando <code>INTRO</code> mediante el teclado virtual (que aparece pulsando <code>L1</code>) se nos muestran varias pantallas con información:</p>
-<p><img alt="DOSBox Intro1" src="/images/posts/dosbox/intro1.png" />
-<img alt="DOSBox Intro2" src="/images/posts/dosbox/intro2.png" />
-<img alt="DOSBox Intro3" src="/images/posts/dosbox/intro3.png" /></p>
+<p><img alt="DOSBox Intro1" src="../images/posts/dosbox/intro1.png" />
+<img alt="DOSBox Intro2" src="../images/posts/dosbox/intro2.png" />
+<img alt="DOSBox Intro3" src="../images/posts/dosbox/intro3.png" /></p>
 <h2 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h2>
 <p>El concepto más importante de entender en DOSBox es el del fichero de configuración o <a href="https://www.dosbox.com/wiki/Dosbox.conf"><code>dosbox.conf</code></a>. Cuando arrancamos por primera vez DOSBox, se genera un fichero de configuración genérico en el directorio <code>/media/data/local/home/.dosbox</code>. En concreto en la versión compilada para la RG350 este fichero tiene de nombre <code>dosbox-SVN.conf</code>. Dentro de él están todos los ajustes que aplicarán a los programas o juegos que ejecutemos en DOSBox. En particular hay un ajuste de la configuración que se volverá fundamental en la mayoría de los juegos y es el del mapeado del teclado. En la <a href="https://www.dosbox.com/wiki/Dosbox.conf">documentación</a> de este fichero vemos que los controles tienen su propio fichero de configuración al que se apunta desde el <code>dosbox.conf</code> mediante el parámetro <code>mapperfile</code>.</p>
 <p>Un fichero mapper típico contiene la relación entre los códigos de las teclas de un teclado de PC y las de los controles de la consola. En cada línea del fichero se indica un código de teclado de PC y a continuación entre comillas el código del pulsador de la RG350 con la palabra <code>key</code> delante separada del código por un espacio (más adelante se muestran ejemplos).</p>
@@ -3957,7 +3978,7 @@
 <li><code>key_lalt</code>, <code>key_lctrl</code>, <code>key_lshift</code>, <code>key_alt</code>, <code>key_ctrl</code>, <code>key_shift</code> para las teclas modificadoras</li>
 <li><code>key_enter</code>, <code>key_esc</code>, <code>key_space</code>, <code>key_tab</code></li>
 </ul>
-<p>Se adjunta <a href="/files/posts/dosbox/dos_key_codes.txt">aquí</a> un fichero todos los códigos de teclado y joystick de PC que soporta DOSBox.</p>
+<p>Se adjunta <a href="../files/posts/dosbox/dos_key_codes.txt">aquí</a> un fichero todos los códigos de teclado y joystick de PC que soporta DOSBox.</p>
 <p>Los códigos de los controles de la RG350 son los siguientes:</p>
 <table>
 <thead>
@@ -4239,9 +4260,9 @@ key_q &quot;key 8&quot;
 </ul>
 <h2 id="juegos">Juegos<a class="headerlink" href="#juegos" title="Permanent link">&para;</a></h2>
 <p>Los juegos para DOSBox consisten simplemente en los ficheros originales del juego sin modificar, normalmente dentro de un directorio. DOSBox soporta el montaje de imágenes de CD-ROM para los juegos que venían en este formato, pero de momento no nos vamos a complicar con eso (estudiar los enlaces indicados un poco más arriba). Una vez que tengamos los ficheros del juego en un directorio sólo tendremos que abrir el OPK desde GMenu2X y explorar hasta localizar el directorio. Por defecto se nos filtrarán los ficheros con extensiones <code>.exe</code>, <code>.com</code> y <code>.bat</code> que eran los típicos ficheros ejecutables en MS-DOS. Seleccionando el ejecutable adecuado el juego arrancará. Por ejemplo en una instalación del juego <code>Prince of Persia</code> aparecen los siguientes ficheros como ejecutables:</p>
-<p><img alt="Prince of Persia" src="/images/posts/dosbox/prince_of_persia.png" /></p>
+<p><img alt="Prince of Persia" src="../images/posts/dosbox/prince_of_persia.png" /></p>
 <p>El que tendremos que seleccionar es el de nombre <code>prince</code>.</p>
-<p><img alt="Prince of Persia" src="/images/posts/dosbox/prince_of_persia2.png" /></p>
+<p><img alt="Prince of Persia" src="../images/posts/dosbox/prince_of_persia2.png" /></p>
 <h2 id="integracion-en-frontends">Integración en frontends<a class="headerlink" href="#integracion-en-frontends" title="Permanent link">&para;</a></h2>
 <p>DOSBox se integra bien con frontends puesto que permite seleccionar el ejecutable a lanzar mediante el explorador. Se recomienda filtrar únicamente la extensión <code>.bat</code> y generar un fichero de este tipo si no existe ya entre los ficheros del juego. De esta forma sólo aparecerá una entrada para arrancar el juego (y no 4 como hemos visto en el ejemplo anterior).</p>
 <h2 id="personalizacion-de-controles-para-juegos">Personalización de controles para juegos<a class="headerlink" href="#personalizacion-de-controles-para-juegos" title="Permanent link">&para;</a></h2>
@@ -4259,7 +4280,7 @@ fi
 <p>En <code>default.gcw0.desktop</code> sustituiremos la línea correspondiente al parámetro <code>Exec</code> por lo siguiente:</p>
 <div class="highlight"><pre><span></span><code>Exec=set_conf.sh %f
 </code></pre></div>
-<p>El OPK resultante con estos cambios, que se puede utilizar en lugar del que se distribuye habitualmente, se puede descargar desde aquí: <a href="/files/posts/dosbox/Dosbox_conf_mod.opk">Dosbox_conf_mod.opk</a></p>
+<p>El OPK resultante con estos cambios, que se puede utilizar en lugar del que se distribuye habitualmente, se puede descargar desde aquí: <a href="../files/posts/dosbox/Dosbox_conf_mod.opk">Dosbox_conf_mod.opk</a></p>
 <p>Con este OPK simplemente tendremos que colocar el <code>dosbox.conf</code> que queremos que aplique en el mismo directorio del juego. El mapper al que se apunte desde este fichero (parámetro <code>mapperfile</code>, recordemos) también se deberá encontrar en el directorio del juego.</p>
 <h2 id="configuracion-de-scalers">Configuración de scalers<a class="headerlink" href="#configuracion-de-scalers" title="Permanent link">&para;</a></h2>
 <p>Un parámetro interesante del <code>dosbox.conf</code> es el <code>scaler</code> que se encuentra dentro de la sección <code>[render]</code>. Permite seleccionar de entre una serie de filtros para producir efectos en la pantalla (como los típicos scanlines de los televisores CRT). Por ejemplo en el <code>dosbox.conf</code> predeterminado se ve esto:</p>
@@ -4276,27 +4297,27 @@ scaler=none
 </code></pre></div>
 <p>Cambiando ese parámetro se pueden conseguir los distintos efectos, aunque al probarlos se ve que no resultan de mucha utilidad en la RG350. Supongo que dependerá mucho de la resolución original del juego. Es decir, si el juego se dibuja a 320x240, la mayoría de esos scalers no tienen mucho sentido.</p>
 <p>A continuación se muestra el efecto de cada uno de los scalers sobre la pantalla de presentación del Prince of Persia que sin scaler aplicado se ve así:</p>
-<p><img alt="scaler none" src="/images/posts/dosbox/scaler_none.png" /></p>
+<p><img alt="scaler none" src="../images/posts/dosbox/scaler_none.png" /></p>
 <p><strong>normal2x</strong></p>
-<p><img alt="scaler normal2x" src="/images/posts/dosbox/scaler_normal2x.png" /></p>
+<p><img alt="scaler normal2x" src="../images/posts/dosbox/scaler_normal2x.png" /></p>
 <p><strong>advmame2x</strong></p>
-<p><img alt="scaler advmame2x" src="/images/posts/dosbox/scaler_advmame2x.png" /></p>
+<p><img alt="scaler advmame2x" src="../images/posts/dosbox/scaler_advmame2x.png" /></p>
 <p><strong>advinterp2x</strong></p>
-<p><img alt="scaler advinterp2x" src="/images/posts/dosbox/scaler_advinterp2x.png" /></p>
+<p><img alt="scaler advinterp2x" src="../images/posts/dosbox/scaler_advinterp2x.png" /></p>
 <p><strong>hq2x</strong></p>
-<p><img alt="scaler hq2x" src="/images/posts/dosbox/scaler_hq2x.png" /></p>
+<p><img alt="scaler hq2x" src="../images/posts/dosbox/scaler_hq2x.png" /></p>
 <p><strong>2xsai</strong></p>
-<p><img alt="scaler 2xsai" src="/images/posts/dosbox/scaler_2xsai.png" /></p>
+<p><img alt="scaler 2xsai" src="../images/posts/dosbox/scaler_2xsai.png" /></p>
 <p><strong>super2xsai</strong></p>
-<p><img alt="scaler super2xsai" src="/images/posts/dosbox/scaler_super2xsai.png" /></p>
+<p><img alt="scaler super2xsai" src="../images/posts/dosbox/scaler_super2xsai.png" /></p>
 <p><strong>supereagle</strong></p>
-<p><img alt="scaler supereagle" src="/images/posts/dosbox/scaler_supereagle.png" /></p>
+<p><img alt="scaler supereagle" src="../images/posts/dosbox/scaler_supereagle.png" /></p>
 <p><strong>scaler_tv2x</strong></p>
-<p><img alt="scaler tv2x" src="/images/posts/dosbox/scaler_tv2x.png" /></p>
+<p><img alt="scaler tv2x" src="../images/posts/dosbox/scaler_tv2x.png" /></p>
 <p><strong>rgb2x</strong></p>
-<p><img alt="scaler rgb2x" src="/images/posts/dosbox/scaler_rgb2x.png" /></p>
+<p><img alt="scaler rgb2x" src="../images/posts/dosbox/scaler_rgb2x.png" /></p>
 <p><strong>scan2x</strong></p>
-<p><img alt="scaler scan2x" src="/images/posts/dosbox/scaler_scan2x.png" /></p>
+<p><img alt="scaler scan2x" src="../images/posts/dosbox/scaler_scan2x.png" /></p>
 <p>Los siguientes scalers parecen no funcionar (supongo que porque será necesario que la resolución de pantalla sea el triple al menos de la del juego):</p>
 <ul>
 <li>normal3x</li>

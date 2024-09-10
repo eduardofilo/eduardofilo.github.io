@@ -2530,6 +2530,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -3873,11 +3894,11 @@
 
   <h1>RG350 Compilar aplicaciones</h1>
 
-<p><img alt="OpenDingux logo" src="/images/posts/rg350_compile/logo.png" /></p>
-<p>En el <a href="/2020-05-25-rg350_docker_buildroot.html">post anterior</a> vimos cómo construir un entorno para hacer compilación cruzada para el procesador y el sistema operativo de la RG350. En este post separado vamos a ver cómo utilizar el entorno anterior para compilar algunos programas.</p>
+<p><img alt="OpenDingux logo" src="images/posts/rg350_compile/logo.png" /></p>
+<p>En el <a href="2020-05-25-rg350_docker_buildroot.html">post anterior</a> vimos cómo construir un entorno para hacer compilación cruzada para el procesador y el sistema operativo de la RG350. En este post separado vamos a ver cómo utilizar el entorno anterior para compilar algunos programas.</p>
 <p>Aclarar que este entorno es necesario para compilar código en C y C++ que es el habitual en sistemas embebidos Linux. Puede haber programas pensados para la RG350 que estén programados en otros lenguajes. Por ejemplo el frontend PyMenu está programado en Python. En ese caso no necesitamos un compilador; en todo caso algunas herramientas como el empaquetador de OPK para montar el instalador de PyMenu, pero no el compilador.</p>
-<p>Por supuesto el toolchain será imprescindible para construir una imagen completa para la consola. En el <a href="/2020-05-25-rg350_docker_buildroot.html">post anterior</a> ya se relataron los pasos para realizar esta operación. En este artículo vamos a centrarnos en la compilación de aplicaciones, ya que tiene su propia complejidad. Uno de los problemas del ambiente C es que existen multitud de gestores de compilación que además se pueden utilizar de múltiples formas, por lo que será habitual que cada aplicación se compile de una forma particular. Aquí vamos a ver algunos ejemplos habituales.</p>
-<p>En el <a href="/2020-05-25-rg350_docker_buildroot.html">post anterior</a> se comenta que el toolchain, una vez compilado queda en el directorio <code>~/git/RG350_buildroot/output/host/usr/bin</code>. Si listamos el contenido de ese directorio veremos muchos binarios y otros tantos enlaces simbólicos para que algunos de los binarios tengan nombres habituales. Uno de los más importantes es el binario <code>toolchain-wrapper</code> que adopta múltiples nombres a través de los enlaces simbólicos:</p>
+<p>Por supuesto el toolchain será imprescindible para construir una imagen completa para la consola. En el <a href="2020-05-25-rg350_docker_buildroot.html">post anterior</a> ya se relataron los pasos para realizar esta operación. En este artículo vamos a centrarnos en la compilación de aplicaciones, ya que tiene su propia complejidad. Uno de los problemas del ambiente C es que existen multitud de gestores de compilación que además se pueden utilizar de múltiples formas, por lo que será habitual que cada aplicación se compile de una forma particular. Aquí vamos a ver algunos ejemplos habituales.</p>
+<p>En el <a href="2020-05-25-rg350_docker_buildroot.html">post anterior</a> se comenta que el toolchain, una vez compilado queda en el directorio <code>~/git/RG350_buildroot/output/host/usr/bin</code>. Si listamos el contenido de ese directorio veremos muchos binarios y otros tantos enlaces simbólicos para que algunos de los binarios tengan nombres habituales. Uno de los más importantes es el binario <code>toolchain-wrapper</code> que adopta múltiples nombres a través de los enlaces simbólicos:</p>
 <div class="highlight"><pre><span></span><code>$ ls -l |fgrep toolchain-wrapper
 lrwxrwxrwx 1 root root      17 may 29 00:19 mipsel-gcw0-linux-uclibc-c++ -&gt; toolchain-wrapper
 lrwxrwxrwx 1 root root      17 may 29 00:19 mipsel-gcw0-linux-uclibc-cc -&gt; toolchain-wrapper

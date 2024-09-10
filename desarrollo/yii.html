@@ -3059,6 +3059,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -5378,7 +5399,7 @@ RewriteRule . index.php
 <h4 id="activerecord-relacional">ActiveRecord relacional<a class="headerlink" href="#activerecord-relacional" title="Permanent link">&para;</a></h4>
 <h5 id="declaracion-de-relaciones">Declaración de relaciones<a class="headerlink" href="#declaracion-de-relaciones" title="Permanent link">&para;</a></h5>
 <p>Para ilustrar los ejemplos de esta sección se utilizará el siguiente modelo de datos:
-<img alt="er.png" src="/images/pages/er.png" /></p>
+<img alt="er.png" src="../images/pages/er.png" /></p>
 <p>Las relaciones entre dos clases AR tienen que ver con la relación entre las tablas en base de datos. En base de datos tendremos las relaciones:</p>
 <ul>
 <li>one-to-many: entre tbl_user y tbl_post por ejemplo.</li>
@@ -5564,7 +5585,7 @@ RewriteRule . index.php
 </ul>
 <p><code>through</code> puede utilizarse en relaciones <code>HAS_ONE</code> y <code>HAS_MANY</code>.</p>
 <p>Para ilustrar el caso HAS_MANY se utilizará el siguiente modelo de datos:
-<img alt="has_many_through.png" src="/images/pages/has_many_through.png" /></p>
+<img alt="has_many_through.png" src="../images/pages/has_many_through.png" /></p>
 <p>Por ejemplo, para obtener los usuarios de un grupo en concreto:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">Group</span> <span class="k">extends</span> <span class="nx">CActiveRecord</span> <span class="p">{</span>
@@ -5585,7 +5606,7 @@ RewriteRule . index.php
 <span class="p">),</span>
 </code></pre></div>
 <p>Una variante del <code>HAS_MANY through</code> es cuando el modelo origen y destino es el mismo. Por ejemplo, dado el siguiente modelo de datos:
-<img alt="through_self.png" src="/images/pages/through_self.png" /></p>
+<img alt="through_self.png" src="../images/pages/through_self.png" /></p>
 <p>Podríamos definir las siguientes relaciones:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">User</span> <span class="k">extends</span> <span class="nx">CActiveRecord</span> <span class="p">{</span>
@@ -5609,7 +5630,7 @@ RewriteRule . index.php
 <span class="nv">$students</span><span class="o">=</span><span class="nv">$teacher</span><span class="o">-&gt;</span><span class="na">students</span><span class="p">;</span>
 </code></pre></div>
 <p>Para ilustrar el caso de <code>HAS_ONE through</code> nos basaremos en:
-<img alt="has_one_through.png" src="/images/pages/has_one_through.png" /></p>
+<img alt="has_one_through.png" src="../images/pages/has_one_through.png" /></p>
 <p>Por ejemplo, obtener la dirección de un usuario cuando ésta está relacionada con el usuario por medio de un profile:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">User</span> <span class="k">extends</span> <span class="nx">CActiveRecord</span> <span class="p">{</span>

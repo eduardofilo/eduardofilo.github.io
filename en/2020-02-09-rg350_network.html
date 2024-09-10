@@ -2530,6 +2530,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -3873,11 +3894,11 @@
 
   <h1>RG350 Conexión a internet</h1>
 
-<p>Vamos a ver en este artículo un par de posibilidades para conectar la consola <a href="/retro-emulacion/rg-350.html">RG350</a> a internet.</p>
+<p>Vamos a ver en este artículo un par de posibilidades para conectar la consola <a href="retro-emulacion/rg-350.html">RG350</a> a internet.</p>
 <h2 id="a-traves-de-cable-usb">A través de cable USB<a class="headerlink" href="#a-traves-de-cable-usb" title="Permanent link">&para;</a></h2>
 <p>Cuando la RG350 se conecta por USB a través del puerto USB2 al ordenador, se monta como un adaptador de red nuevo en el PC con una configuración de punto a punto. Es decir, se define una nueva red entre los dos equipos, con sólo dos IPs posibles, <code>10.1.1.1</code> para el PC y <code>10.1.1.2</code> para la RG350.</p>
 <p>Así es por ejemplo como se ve el adaptador desde la RG350:</p>
-<div class="highlight"><pre><span></span><code>usb0      Link encap:Ethernet  HWaddr 7E:5B:3B:17:C7:7A  
+<div class="highlight"><pre><span></span><code>usb0      Link encap:Ethernet  HWaddr 7E:5B:3B:17:C7:7A
           inet addr:10.1.1.2  Bcast:0.0.0.0  Mask:255.255.255.252
           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
           RX packets:62 errors:0 dropped:12 overruns:0 frame:0
@@ -3897,7 +3918,7 @@
 </code></pre></div>
 <p>Como vemos por la netmask sólo se dejan los dos últimos bits para definir direcciones, lo que sólo permite como IPs posibles las terminadas en 1 y 2 (0 es la dirección de red y 3 la de broadcast).</p>
 <p>En lo que sigue, voy a ilustrar la situación con mi infraestructura, en la que mi PC sale a internet a través del adaptador <code>wlan0</code> con la IP <code>192.168.1.40</code>. Sustituir estos dos datos por los que corresponda.</p>
-<p><img alt="RG350 esquema de red" src="/images/posts/rg350_network.png" /></p>
+<p><img alt="RG350 esquema de red" src="../images/posts/rg350_network.png" /></p>
 <p>Así las cosas, la RG350 no tiene salida a internet, ya que tenemos dos redes que no están interconectadas. Para conseguirla tenemos que establecer un puente entre las dos redes y configurar que se haga NAT para poder enviar los paquetes de una red a través de la otra. Es decir, en realidad tenemos que convertir el PC que hay entre la RG y la salida a internet en un router.</p>
 <p>A continuación se describen los pasos para hacerlo. Desgraciadamente sólo he podido diseñar el procedimiento para un equipo con Linux, que es lo que yo uso. Los usuarios de Windows parece que pueden conseguir el mismo efecto por medio de la utilidad <a href="http://www.nat32.com/">NAT32</a> tal y como se explica en <a href="https://www.youtube.com/watch?v=-umciPSAw6E">este video</a>.</p>
 <ol>
@@ -3952,7 +3973,7 @@ Saving to: &#39;index.html&#39;
 <li><code>X</code>: Delete</li>
 <li><code>Y</code>: Copy/install</li>
 </ul>
-<p><img alt="OPKManager" src="/images/posts/rg350_network_opkmanager.png" /></p>
+<p><img alt="OPKManager" src="../images/posts/rg350_network_opkmanager.png" /></p>
 
 
 

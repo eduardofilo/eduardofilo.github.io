@@ -2548,6 +2548,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -3909,7 +3930,7 @@
 
   <h1>RG350 Daphne</h1>
 
-<p><img alt="Daphne" src="/images/posts/daphne_logo.png" /></p>
+<p><img alt="Daphne" src="images/posts/daphne_logo.png" /></p>
 <p>Daphne es un emulador de múltiples máquinas arcade basadas en LaserDisc. Vamos a ver cómo instalarlo y configurarlo en la consola RG350.</p>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
 <p>El emulador tiene forma de OPK, como la mayoría de los emuladores para el sistema de la RG350 (OpenDingux). Por tanto sólo tenemos que bajarlo de <a href="https://github.com/retrogamehandheld/OpenDingux/raw/master/Emulators/Daphne_2015-05-07.opk">este enlace</a> y copiarlo a una de las dos rutas que explora GMenu2X para mostrar los lanzadores, es decir:</p>
@@ -3918,7 +3939,7 @@
 <li>Tarjeta externa: <code>/media/sdcard/apps</code></li>
 </ul>
 <h2 id="juegos">Juegos<a class="headerlink" href="#juegos" title="Permanent link">&para;</a></h2>
-<p>Los juegos de Daphne se parecen mucho a las ROMs de <a href="/2020-04-15-rg350_xmame.html">xMAME</a> o <a href="/2020-01-31-rg350_fba.html">FBA</a>, es decir consisten en una serie de ficheros con el volcado de los chips ROM de memoria que tenía la máquina del juego. A estos ficheros que normalmente se reúnen en un archivo ZIP, hay que acompañarlos en el caso de Daphne con los medios (audio y video) que iban grabados en un LaserDisc. Para que Daphne funcione, deberemos disponer los ficheros de medios y las ROMs en ZIP del juego en un mismo directorio. Dentro del directorio, cada juego constará de los siguientes 4 tipos de ficheros:</p>
+<p>Los juegos de Daphne se parecen mucho a las ROMs de <a href="2020-04-15-rg350_xmame.html">xMAME</a> o <a href="2020-01-31-rg350_fba.html">FBA</a>, es decir consisten en una serie de ficheros con el volcado de los chips ROM de memoria que tenía la máquina del juego. A estos ficheros que normalmente se reúnen en un archivo ZIP, hay que acompañarlos en el caso de Daphne con los medios (audio y video) que iban grabados en un LaserDisc. Para que Daphne funcione, deberemos disponer los ficheros de medios y las ROMs en ZIP del juego en un mismo directorio. Dentro del directorio, cada juego constará de los siguientes 4 tipos de ficheros:</p>
 <ul>
 <li><code>juego.zip</code>: Las ROMs del juego.</li>
 <li><code>juego.txt</code>: Fichero de texto que contiene una referencia interna al de video.</li>
@@ -3935,10 +3956,10 @@
 </code></pre></div>
 <p>Hay que adaptar el fichero de video (<code>.m2v</code>) a la resolución de la consola (en el caso de la RG350 320x240). En <a href="https://boards.dingoonity.org/gcw-releases/daphne/">este tutorial</a> encontramos instrucciones detalladas para hacerlo mediante la utilidad <code>ffmpeg</code>.</p>
 <p>La primera vez que ejecutemos el juego, Daphne generará el fichero <code>.dat</code> en el directorio del juego. Nos pedirá que pulsemos <code>Y</code> para iniciar el proceso, pero la indicación es incorrecta. Es <code>X</code> o <code>Start</code> lo que debemos pulsar. El proceso tardará unos pocos segundos.</p>
-<p><img alt="Daphne DAT" src="/images/posts/daphne_dat.png" />
-<img alt="Daphne DAT Progress" src="/images/posts/daphne_dat_progress.png" /></p>
+<p><img alt="Daphne DAT" src="images/posts/daphne_dat.png" />
+<img alt="Daphne DAT Progress" src="images/posts/daphne_dat_progress.png" /></p>
 <p>Tras terminar este proceso el juego arrancará.</p>
-<p><img alt="Interestellar" src="/images/posts/daphne_interstellar.png" /></p>
+<p><img alt="Interestellar" src="images/posts/daphne_interstellar.png" /></p>
 <p>Por último incluyo a continuación una valoración personal de algunos juegos que he podido probar:</p>
 <table>
 <thead>

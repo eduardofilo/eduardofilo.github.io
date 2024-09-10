@@ -2572,6 +2572,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -3957,7 +3978,7 @@
 
   <h1>RG350 SimpleMenu</h1>
 
-<p><img alt="SimpleMenu" src="/images/posts/simplemenu.png" /></p>
+<p><img alt="SimpleMenu" src="images/posts/simplemenu.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Actualización 2020-04-29</p>
 <p>Se modifica el artículo para que las instrucciones correspondan con la nueva <a href="https://github.com/fgl82/simplemenu/releases/tag/5.5">versión 5.5</a>.</p>
@@ -3970,12 +3991,12 @@
 <li>Tarjeta externa: <code>/media/sdcard/apps</code></li>
 </ul>
 <p>Tras hacerlo aparece el lanzador en la sección <code>applications</code> de GMenu2X:</p>
-<p><img alt="SimpleMenu Launching1" src="/images/posts/simplemenu_launching1.png" /></p>
+<p><img alt="SimpleMenu Launching1" src="images/posts/simplemenu_launching1.png" /></p>
 <p>Si lo abrimos en este momento, reconocerá las aplicaciones y ports que tengamos instalados, dado que la ruta y extensión de los mismos es previsible:</p>
-<p><img alt="SimpleMenu Games" src="/images/posts/simplemenu_games.png" />
-<img alt="SimpleMenu Apps" src="/images/posts/simplemenu_apps.png" /></p>
+<p><img alt="SimpleMenu Games" src="images/posts/simplemenu_games.png" />
+<img alt="SimpleMenu Apps" src="images/posts/simplemenu_apps.png" /></p>
 <p>Si nos desplazamos hasta alguno de los sistemas de emulación seguramente veremos que no reconoce los emuladores y/o ROMs que tengamos instalados. Esto es normal puesto que todavía no hemos adaptado la configuración:</p>
-<p><img alt="SimpleMenu Launching2" src="/images/posts/simplemenu_launching2.png" /></p>
+<p><img alt="SimpleMenu Launching2" src="images/posts/simplemenu_launching2.png" /></p>
 <h2 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Aviso</p>
@@ -4019,13 +4040,13 @@ romExts = .gb,.gz,.zip
 <li><code>romExts</code>: Extensiones de los ficheros que se incluirán en el listado de ROMs, separadas por comas.</li>
 </ul>
 <p>Una vez que devolvamos los ficheros de configuración a su lugar en <code>/media/data/local/home/.simplemenu/section_groups</code>, ya podremos tratar de ejecutarlo para comprobar si ha cargado bien los sistemas y previews de las ROMs. Al menos en mi caso lo que me encuentro en este momento es:</p>
-<p><img alt="SimpleMenu First Launch" src="/images/posts/simplemenu_first_launch.png" /></p>
+<p><img alt="SimpleMenu First Launch" src="images/posts/simplemenu_first_launch.png" /></p>
 <p>Como vemos en la definición de los parámetros, ahora puede haber varios emuladores y varios directorios de ROMs en cada sistema. En el primer caso podremos elegir el emulador a utilizar pulsando <code>Select</code> cuando esté seleccionada la ROM que queremos emular. Por ejemplo, tras añadir el emulador GPSP a la configuración de GBA podemos ver lo siguiente al pulsar <code>Select</code> en el listado de ROMs de GBA y pulsar arriba/abajo en la cruceta:</p>
-<p><img alt="SimpleMenu GBA1" src="/images/posts/simplemenu_gba1.png" />
-<img alt="SimpleMenu GBA2" src="/images/posts/simplemenu_gba2.png" /></p>
-<p>Como punto de partida dejo aquí mis ficheros de configuración que contienen la mayoría de los emuladores y la <a href="/retro-emulacion/rg-350.html#las-roms-y-su-organizacion">estructura de directorios para las ROMs</a> que se utilizan habitualmente.</p>
+<p><img alt="SimpleMenu GBA1" src="images/posts/simplemenu_gba1.png" />
+<img alt="SimpleMenu GBA2" src="images/posts/simplemenu_gba2.png" /></p>
+<p>Como punto de partida dejo aquí mis ficheros de configuración que contienen la mayoría de los emuladores y la <a href="retro-emulacion/rg-350.html#las-roms-y-su-organizacion">estructura de directorios para las ROMs</a> que se utilizan habitualmente.</p>
 <ul>
-<li><a href="/files/posts/simplemenu.zip">simplemenu.zip</a></li>
+<li><a href="files/posts/simplemenu.zip">simplemenu.zip</a></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
@@ -4038,7 +4059,7 @@ romExts = .gb,.gz,.zip
 <h4 id="configuracion-general">Configuración general<a class="headerlink" href="#configuracion-general" title="Permanent link">&para;</a></h4>
 <p>Dentro de <code>/media/data/local/home/.simplemenu</code> hay otro fichero que nos interesa modificar. Se trata del <code>config.ini</code>.</p>
 <p>A partir de la versión 5.0 esta configuración general se puede hacer desde el propio frontend. Accedemos a ella pulsando <code>Start</code> desde el listado de ROMs de un sistema:</p>
-<p><img alt="SimpleMenu Settings" src="/images/posts/simplemenu_settings.png" /></p>
+<p><img alt="SimpleMenu Settings" src="images/posts/simplemenu_settings.png" /></p>
 <p>La mayoría de estos ajustes tienen su correspondencia en el fichero de configuración. Vamos a empezar estudiando las opciones directamente sobre el fichero y al final veremos las opciones del menú de settings que no están en él.</p>
 <p>El contenido del fichero es el siguiente por defecto:</p>
 <div class="highlight"><pre><span></span><code>[GENERAL]
@@ -4069,32 +4090,32 @@ sleep_speed = 200
 <li><code>allow_shutdown</code>: Antes de la versión 5.0 esta opción servía para configurar el efecto de la combinación de teclas <code>Start+Select</code> para cerrar la aplicación o apagar la consola. A partir de esta versión este comportamiento se gestiona de forma diferente como veremos dentro de poco.</li>
 </ul>
 <p>Por último comentamos las opciones del menú de settings que muestra el frontend que son independientes del fichero de configuración. Son las siguientes:</p>
-<p><img alt="SimpleMenu Settings" src="/images/posts/simplemenu_settings.png" /></p>
+<p><img alt="SimpleMenu Settings" src="images/posts/simplemenu_settings.png" /></p>
 <p>Confirmando este menú cerraremos SimpleMenu y regresaremos al programa desde el que lo hayamos lanzado (GMenu2X habitualmente).</p>
-<p><img alt="SimpleMenu Settings" src="/images/posts/simplemenu_autohide.png" /></p>
+<p><img alt="SimpleMenu Settings" src="images/posts/simplemenu_autohide.png" /></p>
 <p>Cuando estamos navegando entre los sistemas de un grupo, si esta opción está a <code>YES</code> el logo del sistema se verá durante un segundo antes de aparecer el listado de ROMs de ese sistema. Si está a <code>NO</code> el logo se mantendrá visible hasta que pulsemos <code>A</code> para pasar al listado de ROMs.</p>
-<p><img alt="SimpleMenu Layout" src="/images/posts/simplemenu_layout.png" /></p>
+<p><img alt="SimpleMenu Layout" src="images/posts/simplemenu_layout.png" /></p>
 <p>Permite seleccionar entre tres tipos de disposiciones de los listados de ROMs y sus previews. La visualización dependerá del tema activo. Por ejemplo para el tema <code>default</code> las tres disposiciones tienen el siguiente aspecto:</p>
 <ul>
 <li>
 <p>Layout SimpleMenu</p>
-<p><img alt="SimpleMenu Layout SimpleMenu" src="/images/posts/simplemenu_layout_sm.png" /></p>
+<p><img alt="SimpleMenu Layout SimpleMenu" src="images/posts/simplemenu_layout_sm.png" /></p>
 </li>
 <li>
 <p>Layout Traditional</p>
-<p><img alt="SimpleMenu Layout Traditional" src="/images/posts/simplemenu_layout_traditional.png" /></p>
+<p><img alt="SimpleMenu Layout Traditional" src="images/posts/simplemenu_layout_traditional.png" /></p>
 </li>
 <li>
 <p>Layout Drunken Monkey</p>
-<p><img alt="SimpleMenu Layout Drunken Monkey" src="/images/posts/simplemenu_layout_drunkenmonkey.png" /></p>
+<p><img alt="SimpleMenu Layout Drunken Monkey" src="images/posts/simplemenu_layout_drunkenmonkey.png" /></p>
 </li>
 </ul>
-<p><img alt="SimpleMenu Settings" src="/images/posts/simplemenu_default.png" /></p>
+<p><img alt="SimpleMenu Settings" src="images/posts/simplemenu_default.png" /></p>
 <p>Esta entrada del menú de settings nos permite configurar SimpleMenu como frontend predeterminado en el sistema. Cuando lo configuramos de este modo, la primera entrada del menú de settings pasa de <code>QUIT</code> a <code>SHUTDOWN</code> permitiéndonos apagar la máquina.</p>
-<p><img alt="SimpleMenu Settings" src="/images/posts/simplemenu_shutdown.png" /></p>
+<p><img alt="SimpleMenu Settings" src="images/posts/simplemenu_shutdown.png" /></p>
 <h2 id="manejo">Manejo<a class="headerlink" href="#manejo" title="Permanent link">&para;</a></h2>
 <p>Como hemos visto durante la configuración, a partir de la versión 4.5 se pueden definir varios grupos de máquinas. Por defecto existen 5 grupos definidos por tipo de máquinas. Entramos en el modo de selección de un grupo pulsando <code>B</code>. En ese momento vemos por ejemplo:</p>
-<p><img alt="SimpleMenu Group" src="/images/posts/simplemenu_group.png" /></p>
+<p><img alt="SimpleMenu Group" src="images/posts/simplemenu_group.png" /></p>
 <p>En esta situación cambiamos de grupo pulsando <code>Arriba</code> y <code>Abajo</code> en la cruceta, y entramos en el grupo pulsando <code>A</code>.</p>
 <h2 id="previews">Previews<a class="headerlink" href="#previews" title="Permanent link">&para;</a></h2>
 <p>SimpleMenu soporta previsualización de las ROMs. Para que aparezcan hay que hacer dos cosas:</p>

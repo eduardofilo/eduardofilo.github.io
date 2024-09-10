@@ -2611,6 +2611,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -4035,7 +4056,7 @@
 
   <h1>RG350 Raspi Imagen</h1>
 
-<p><img alt="microSD logo" src="/images/posts/rg350_raspi_image/microsd.png" /></p>
+<p><img alt="microSD logo" src="../images/posts/rg350_raspi_image/microsd.png" /></p>
 <p>Muchas de las placas <a href="https://es.wikipedia.org/wiki/Linux_embebido">Linux Embedded</a>, como RG350 o Raspberry Pi, contienen el sistema operativo en una microSD con una distribución de particiones y archivos determinada. Una vez que tenemos un sistema configurado a nuestro gusto nos puede interesar hacer una imagen de la misma por si se corrompe o estropea la tarjeta que estamos utilizando o por si queremos distribuir el sistema a otras personas.</p>
 <p>En este artículo se comenta el procedimiento para obtener un dump o imagen de una tarjeta SD, consistente en producir un fichero con el contenido y estructura de una tarjeta dada, es decir el proceso opuesto al flasheo.</p>
 <h2 id="teoria">Teoría<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h2>
@@ -4089,7 +4110,7 @@ Dispositivo    Inicio Comienzo    Final Sectores Tamaño Id Tipo
 </code></pre></div>
 <p>Los datos que nos interesan son el sector de comienzo y el número de sectores de la última partición, en este caso 819200 y 29147136 respectivamente.</p>
 <p>En Windows obtendremos esta misma información con DiskGenius seleccionando la última partición de la tarjeta:</p>
-<p><img alt="DiskGenius Partition info" src="/images/posts/rg350_raspi_image/diskgenius_fdisk.png" /></p>
+<p><img alt="DiskGenius Partition info" src="../images/posts/rg350_raspi_image/diskgenius_fdisk.png" /></p>
 <p>En este caso los datos que nos interesan son los valores <code>Total Sectors</code> y <code>Starting Sector</code>. Como vemos coinciden con los valores 29147136 y 819200 que habíamos localizado en Linux.</p>
 <p>Una vez que tenemos estos valores, el número de sectores a copiar en el dump será la suma de los mismos, es decir 819200 + 29147136 = 29966336 sectores. En la información que ofrecía el comando <code>fdisk</code> de Linux, vemos claramente que cada sector ocupa 512 bytes. DiskGenius también ofrece ese dato en el valor <code>Sector Size</code>. Por tanto el dump tiene que hacerse de 29966336 * 512 = 15342764032 bytes = 14983168 KB = 14632 MB.</p>
 <p>Así pues, el dump que haremos en este caso será de <strong>29966336 sectores</strong> o lo que es lo mismo de <strong>14632 MB</strong>.</p>
@@ -4101,7 +4122,7 @@ Dispositivo    Inicio Comienzo    Final Sectores Tamaño Id Tipo
 <ol>
 <li>
 <p>Reducimos con <code>gparted</code> el tamaño de la última partición para dejar espacio libre al final de la tarjeta. Según los datos mostrados en la <a href="#tamano-de-la-tarjeta">teoría</a> dejaríamos 200MB libres en la tarjeta Toshiba del ejemplo.</p>
-<p><img alt="Gparted" src="/images/posts/rg350_raspi_image/gparted.png" /></p>
+<p><img alt="Gparted" src="../images/posts/rg350_raspi_image/gparted.png" /></p>
 </li>
 <li>
 <p>Montamos la tarjeta en nuestro sistema y averiguamos los directorios donde se anclan las particiones (en sistemas como los de la RG350 y Raspberry Pi serán dos casi siempre), por ejemplo en mi máquina (filtro la salida del comando <code>df</code> por <code>mmcblk0</code> porque es el nombre de dispositivo que adopta siempre el lector de tarjetas de mi portátil, pero puede cambiar en otras máquinas; retirar el <code>grep</code> si se desconoce):</p>
@@ -4146,31 +4167,31 @@ $ sudo zerofree -v -f 0xFF /dev/mmcblk0p2
 <ol>
 <li>
 <p>Reducimos con DiskGenius el tamaño de la última partición para dejar espacio libre al final de la tarjeta. Según los datos mostrados en la <a href="#tamano-de-la-tarjeta">teoría</a> dejaríamos 200MB libres en la tarjeta Toshiba del ejemplo.</p>
-<p><img alt="DiskGenius" src="/images/posts/rg350_raspi_image/diskgenius.png" /></p>
+<p><img alt="DiskGenius" src="../images/posts/rg350_raspi_image/diskgenius.png" /></p>
 </li>
 <li>
 <p>Escribimos ceros en el espacio no utilizado de la tarjeta. Para ello en DiskGenius seleccionamos el menú <code>Tools &gt; Erase Free Space</code>. Aparece una ventana mostrándonos todas las particiones de los discos detectados en el sistema. Seleccionamos en primer lugar la primera partición:</p>
-<p><img alt="DiskGenius Erase Free Space 1" src="/images/posts/rg350_raspi_image/diskgenius_erase_free_space1.png" /></p>
+<p><img alt="DiskGenius Erase Free Space 1" src="../images/posts/rg350_raspi_image/diskgenius_erase_free_space1.png" /></p>
 </li>
 <li>
 <p>Al pulsar OK aparece otra ventana que nos permite seleccionar el valor que se escribirá en el espacio no utilizado. Dejamos el valor <code>00</code> que nos ofrece y pulsamos <code>OK</code>:</p>
-<p><img alt="DiskGenius Erase Free Space 2" src="/images/posts/rg350_raspi_image/diskgenius_erase_free_space2.png" /></p>
+<p><img alt="DiskGenius Erase Free Space 2" src="../images/posts/rg350_raspi_image/diskgenius_erase_free_space2.png" /></p>
 </li>
 <li>
 <p>Se nos informa del progreso hasta que el proceso termina y podemos cerrar pulsando <code>Complete</code>:</p>
-<p><img alt="DiskGenius Erase Free Space 3" src="/images/posts/rg350_raspi_image/diskgenius_erase_free_space3.png" /></p>
+<p><img alt="DiskGenius Erase Free Space 3" src="../images/posts/rg350_raspi_image/diskgenius_erase_free_space3.png" /></p>
 </li>
 <li>
 <p>Repetimos el proceso para borrar el espacio no utilizado de la segunda partición. Esta vez tardará más tiempo:</p>
-<p><img alt="DiskGenius Erase Free Space 4" src="/images/posts/rg350_raspi_image/diskgenius_erase_free_space4.png" /></p>
+<p><img alt="DiskGenius Erase Free Space 4" src="../images/posts/rg350_raspi_image/diskgenius_erase_free_space4.png" /></p>
 </li>
 <li>
 <p>Para hacer el dump final abandonamos DiskGenius porque la función que necesitamos para ello (<code>Tools &gt; Copy Sectors</code>) sólo está disponible en la versión de pago. Pasamos a utilizar Win32DiskImager. Abrimos la utilidad y la configuramos indicando en <code>Image File</code> el destino y nombre del fichero de imagen, en <code>Device</code> seleccionamos la letra de la unidad donde se monta la partición FAT de la tarjeta y finalmente marcamos la opción <code>Read Only Allocated Partitions</code> para que el dump no incluya el espacio libre que hemos dejado al final en el paso 1.</p>
-<p><img alt="Win32DiskImager" src="/images/posts/rg350_raspi_image/win32diskimager.png" /></p>
+<p><img alt="Win32DiskImager" src="../images/posts/rg350_raspi_image/win32diskimager.png" /></p>
 </li>
 <li>
 <p>Finalmente pulsamos <code>Read</code> y esperamos a que el proceso termine:</p>
-<p><img alt="Win32DiskImager 1" src="/images/posts/rg350_raspi_image/win32diskimager1.png" /></p>
+<p><img alt="Win32DiskImager 1" src="../images/posts/rg350_raspi_image/win32diskimager1.png" /></p>
 </li>
 </ol>
 <h2 id="compresion-y-troceo-de-la-imagen">Compresión y troceo de la imagen<a class="headerlink" href="#compresion-y-troceo-de-la-imagen" title="Permanent link">&para;</a></h2>
@@ -4193,11 +4214,11 @@ $ sudo zerofree -v -f 0xFF /dev/mmcblk0p2
 <ul>
 <li>
 <p>7z: Naturalmente para que esto funcione debemos tener instalado <a href="https://www.7-zip.org/">7-Zip</a>. Pulsamos con el botón derecho del ratón sobre el fichero de imagen y seleccionamos <code>7-Zip &gt; Añadir al archivo...</code> en el menu contextual. Aparece una ventana en la que lo único que tenemos que cambiar es introducir el número de MBs que queremos tengan los trozos. Por ejemplo 1400MB se indica en 7-Zip con 1400M:</p>
-<p><img alt="7-Zip" src="/images/posts/rg350_raspi_image/7zip.png" /></p>
+<p><img alt="7-Zip" src="../images/posts/rg350_raspi_image/7zip.png" /></p>
 </li>
 <li>
 <p>WinRAR: Igualmente necesitaremos tener instalado <a href="https://www.winrar.es/descargas">WinRAR</a>. Pulsamos con el botón derecho del ratón sobre el fichero de imagen y seleccionamos <code>Añadir al archivo...</code> en el menu contextual que tiene al lado el icono de WinRAR. Aparece una ventana en la que lo único que tenemos que cambiar es introducir el número de MBs que queremos tengan los trozos. Por ejemplo 1400MB:</p>
-<p><img alt="WinRAR" src="/images/posts/rg350_raspi_image/winrar.png" /></p>
+<p><img alt="WinRAR" src="../images/posts/rg350_raspi_image/winrar.png" /></p>
 </li>
 </ul>
 

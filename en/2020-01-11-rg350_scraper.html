@@ -2470,6 +2470,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -3778,17 +3799,17 @@
 
   <h1>RG350 Scraper</h1>
 
-<p><img alt="ScreenScraper" src="/images/posts/ScreenScraper.png" /></p>
+<p><img alt="ScreenScraper" src="../images/posts/ScreenScraper.png" /></p>
 <p>El lanzador de aplicaciones Gmenu2x de OpenDingux en la RG350, soporta previsualización de ROMs (creo que también Esoteric, pero no estoy seguro), es decir, permite mostrar una imagen para ayudar a la identificación de los juegos. Normalmente se utiliza un frame del gameplay, el logo, el cartucho, la caja o una combinación de todo ello.</p>
 <p>Para que funcione simplemente hay que colocar una carpeta con las imágenes al mismo nivel donde queden las ROMs para las que queramos que se muestre la previsualización. Antes de la versión <a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/releases/tag/1.7.9.4">1.7.9.4</a> del firmware <a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW">RG350-ROGUE-CFW</a> la carpeta se debía llamar <code>previews</code>, y a partir de dicha versión (incluida) lleva un punto delante para que se oculte en el explorador de archivos, es decir <code>.previews</code>. A partir de ahora vamos a suponer que estamos trabajando con las últimas versiones de ROGUE para representar las rutas en lo que queda de artículo. Para versiones anteriores simplemente retirar el punto de delante en las rutas.</p>
 <p>El nombre de archivo de las imágenes tiene que ser el mismo que la ROM sustituyendo la extensión de la ROM por <code>.png</code> ya que las imágenes serán de este formato. Por ejemplo la miniatura de la ROM <code>/media/sdcard/roms/GB/DKLAND.gb</code> iría en <code>/media/sdcard/roms/GB/.previews/DKLAND.png</code>.</p>
 <p>Desde la versión <a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW/releases/tag/1.7.9.4">1.7.9.4</a> del firmware <a href="https://github.com/Ninoh-FOX/RG350-ROGUE-CFW">RG350-ROGUE-CFW</a>, la previsualización puede verse de dos modos. El ajuste del modo se hace abriendo el lanzador <code>GMenu2X</code> que hay en la sección <code>Settings</code> y cambiando el parámetro <code>Preview type</code>:</p>
-<p><img alt="ScreenScraper" src="/images/posts/ScreenScraper_screenshot006.png" />
-<img alt="ScreenScraper" src="/images/posts/ScreenScraper_screenshot003.png" /></p>
+<p><img alt="ScreenScraper" src="../images/posts/ScreenScraper_screenshot006.png" />
+<img alt="ScreenScraper" src="../images/posts/ScreenScraper_screenshot003.png" /></p>
 <p>En el tipo 1 las previsualizaciones se ven de fondo a toda pantalla:</p>
-<p><img alt="ScreenScraper" src="/images/posts/ScreenScraper_screenshot005.png" /></p>
+<p><img alt="ScreenScraper" src="../images/posts/ScreenScraper_screenshot005.png" /></p>
 <p>Y en el tipo 2 se ven en miniatura en la esquina superior derecha:</p>
-<p><img alt="ScreenScraper" src="/images/posts/ScreenScraper_screenshot004.png" /></p>
+<p><img alt="ScreenScraper" src="../images/posts/ScreenScraper_screenshot004.png" /></p>
 <p>Como suele ser habitual que haya muchas ROMs cargadas en la máquina, existe una forma de automatizar la generación de estas miniaturas para los juegos por medio un programa que se suele llamar scraper. A continuación se muestra una lista con varios de ellos:</p>
 <ul>
 <li><a href="https://github.com/sselph/scraper">Steven Selph's Scraper</a>: <a href="https://retropie.org.uk/docs/Scraper/#steven-selphs-scraper">Instrucciones</a></li>
@@ -3804,11 +3825,11 @@
 <li>Abrir ScreenScraperUI. Se iniciará con un asistente. Lo primero que nos pedirá es la cuenta de <a href="https://www.screenscraper.fr/">ScreenScraper</a>.</li>
 <li>
 <p>En el siguiente paso nos pedirá el tipo de sistema para el que vamos a scrapear las ROMs. Le diremos "Emulación Genérica".</p>
-<p><img alt="generica" src="/images/posts/ScreenScraper_conf1.png" /></p>
+<p><img alt="generica" src="../images/posts/ScreenScraper_conf1.png" /></p>
 </li>
 <li>
 <p>Lo siguiente será indicar el lugar donde están las ROMs. Al hacerlo he tenido un problema y es que aun marcando la opción "Inspeccionar sub-carpetas", el asistente sólo ha sido capaz de reconocer 6 sistemas. Luego he podido comprobar que el problema es que cada sistema utiliza una sub-carpeta específica que si no coincide con la que nosotros tenemos, no será reconocido. Esto se puede solucionar más adelante añadiendo los sistemas que falten a mano.</p>
-<p><img alt="directorio_roms" src="/images/posts/ScreenScraper_conf2.png" /></p>
+<p><img alt="directorio_roms" src="../images/posts/ScreenScraper_conf2.png" /></p>
 </li>
 <li>
 <p>Una vez terminado el asistente configuraremos lo siguiente en el apartado MEDIA:</p>
@@ -3817,11 +3838,11 @@
 <li>Indicamos <code>%ROMROOTFOLDER%\.previews</code> en el parámetro <code>Carpeta de Destino</code>.</li>
 <li>Marcamos las opciones <code>Redimensionar altura a: 240</code> y <code>Mantener relación de aspecto de imagen</code>.</li>
 </ul>
-<p><img alt="configuracion_media" src="/images/posts/ScreenScraper_media_conf.png" /></p>
+<p><img alt="configuracion_media" src="../images/posts/ScreenScraper_media_conf.png" /></p>
 </li>
 <li>
 <p>Finalmente pulsamos el botón con forma de Play que hay abajo a la derecha para comenzar el proceso. Dependiendo de las ROMs y sistemas que vayamos a reconocer el proceso puede tardar bastante.</p>
-<p><img alt="scraping" src="/images/posts/ScreenScraper_scraping.png" /></p>
+<p><img alt="scraping" src="../images/posts/ScreenScraper_scraping.png" /></p>
 </li>
 </ol>
 <p>Como hemos comentado antes, el programa a la hora de reconocer los sistemas, utiliza unas rutas de directorios predefinidas. Vamos a ver cómo se añadiría manualmente un sistema que no haya sido reconocido automáticamente por este motivo. Por ejemplo la NES. El directorio que utilizo yo para almacenar esas ROMs es <code>FC</code> (por Famicom).</p>
@@ -3830,7 +3851,7 @@
 <li>Aparece una ventana popup con la lista de todos los sistemas reconocidos por el programa. Buscamos el sistema que queremos añadir. En el caso de NES se encuentra en la sección <code>Console</code>. Pulsamos OK.</li>
 <li>
 <p>Volveremos a la pantalla principal con el sistema instalado y seleccionado en la lista de la izquierda. Como vemos la ruta que espera la aplicación para las ROMs de NES es <code>D:\roms\Nintendo Entertainment System</code>.</p>
-<p><img alt="add_system" src="/images/posts/ScreenScraper_add_nes.png" /></p>
+<p><img alt="add_system" src="../images/posts/ScreenScraper_add_nes.png" /></p>
 </li>
 <li>
 <p>Sustituimos la ruta por la correcta (<code>D:\roms\FC</code>) y pulsamos el botón Play.</p>

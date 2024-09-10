@@ -2621,6 +2621,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -4098,7 +4119,7 @@
 <li><a href="https://github.com/jdutil/spree_contact_us">SpreeContactUs</a>: A Rails 3+ Engine providing a basic contact form as a Spree Extension.</li>
 </ul>
 <h2 id="instalacion-en-ubuntu">Instalación en Ubuntu<a class="headerlink" href="#instalacion-en-ubuntu" title="Permanent link">&para;</a></h2>
-<p>A los paquetes necesarios para la instalación de <a href="/desarrollo/ror.html">Rails</a> hay que añadir:</p>
+<p>A los paquetes necesarios para la instalación de <a href="ror.html">Rails</a> hay que añadir:</p>
 <ul>
 <li><code>libxml2-dev</code></li>
 <li><code>libxslt1-dev</code></li>
@@ -4127,7 +4148,7 @@ $<span class="w"> </span>bundle<span class="w"> </span><span class="nb">exec</sp
 <ul>
 <li><code>bundle exec rake assets:precompile:nondigest</code>: Mejora el rendimiento en el entorno de desarrollo a costa de no refrescar en tiempo real los cambios en los assets.</li>
 <li><code>bundle exec rake assets:clean</code>: Borra el directorio <code>public/assets</code>.</li>
-<li><code>bundle exec rake assets:precompile</code>: Reconstruye el directorio <code>public/assets</code>. </li>
+<li><code>bundle exec rake assets:precompile</code>: Reconstruye el directorio <code>public/assets</code>.</li>
 <li><code>bundle exec rake spree_auth:admin:create</code>: Crea un usuario administrador.</li>
 <li><code>bundle exec rake spree_sample:load</code>: Cargar los datos de ejemplo. Exige ejecutar previamente <code>bundle exec rake db:seed</code></li>
 </ul>
@@ -4189,8 +4210,8 @@ gem &#39;spree_auth_devise&#39;, :github =&gt; &#39;spree/spree_auth_devise&#39;
 </code></pre></div>
 <p>Como siempre que se tocan las preferencias, hay que vigilar si ya existe versión de la misma en la tabla <code>spree_preferences</code> y si está la consulta a esta tabla cacheada, por lo que habrá que borrar el directorio <code>tmp/cache</code>.</p>
 <p>Luego deberemos acudir en el backend a la siguiente ruta: "Configuraciones / Preferencias métodos de email". Hay que tener en cuenta que este grupo de opciones sólo aparece si la opción <code>override_actionmailer_config</code> tiene el valor true. A continuación se muestran pantallazos de un par de configuraciones que se ha probado que funcionan:</p>
-<p><img alt="Conf con GMail" src="/images/pages/conf_gmail.png" title="Configuración con GMail" /></p>
-<p><img alt="Conf con DH" src="/images/pages/conf_dh.png" title="Configuración con DinaHosting" /></p>
+<p><img alt="Conf con GMail" src="../images/pages/conf_gmail.png" title="Configuración con GMail" /></p>
+<p><img alt="Conf con DH" src="../images/pages/conf_dh.png" title="Configuración con DinaHosting" /></p>
 <h3 id="configuracion-segun-entorno">Configuración según entorno<a class="headerlink" href="#configuracion-segun-entorno" title="Permanent link">&para;</a></h3>
 <p>Si queremos ajustar algunas preferencias en el initializer <code>config/initializers/spree.rb</code> de manera que su valor dependa del environment, podemos hacer lo siguiente:</p>
 <div class="highlight"><pre><span></span><code><span class="no">Spree</span><span class="o">.</span><span class="n">config</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">config</span><span class="o">|</span>

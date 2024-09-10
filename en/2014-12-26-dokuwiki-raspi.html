@@ -2470,6 +2470,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -3778,7 +3799,7 @@
 
   <h1>Dokuwiki en Raspberry Pi manteniendo los ficheros en NAS</h1>
 
-<p><img alt="Dokuwiki Logo" src="/images/posts/dokuwiki-logo.png" /></p>
+<p><img alt="Dokuwiki Logo" src="../images/posts/dokuwiki-logo.png" /></p>
 <p>Tengo desde hace años un <a href="https://www.dokuwiki.org/dokuwiki">Dokuwiki</a> corriendo en el NAS, pero <a href="http://support.netgear.com/product/RND2000v1%2b%2428ReadyNAS%2bDuo%2bv1%2429">el que utilizo</a> tiene un procesador muy poco potente y funcionaba muy lento. Sin embargo me gustaba que estuviera en el NAS por ser el sitio más seguro para tener la importante información que en el <a href="https://www.dokuwiki.org/dokuwiki">Dokuwiki</a> mantengo. La forma de tener la información asegurada y disponible permanentemente es combinar el almacenamiento en el NAS con la ejecución de los procesos en una de las Raspberry Pi que tengo en marcha permanentemente. Describo a continuación cómo ha sido el proceso en mi caso.</p>
 <p>Antes de empezar, un comentario. Voy a utilizar el paquete <code>dokuwiki</code> de la distribución porque de <a href="https://www.dokuwiki.org/dokuwiki">Dokuwiki</a> salen continuas ediciones y parches. De esta forma la actualización se hará con un simple <code>apt-get upgrade</code>. <a href="https://www.dokuwiki.org/dokuwiki">Dokuwiki</a>, en su versión empaquetada para <a href="http://www.raspbian.org/">Raspbian</a>, puede correr sobre Apache o sobre <a href="http://www.lighttpd.net/">Lighttpd</a>. Si instalo directamente <code>dokuwiki</code>, el paquete prioriza la dependencia con Apache, pero prefiero utilizar <a href="http://www.lighttpd.net/">Lighttpd</a> en la Raspberry. Así pues la instalación la hago por etapas para forzar la dependencia con <a href="http://www.lighttpd.net/">Lighttpd</a>. En otro caso hubiera sido tan sencillo como hacer <code>apt-get install dokuwiki</code>.</p>
 <ol>

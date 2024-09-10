@@ -2470,6 +2470,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -3779,55 +3800,55 @@
   <h1>RG351P Wifi mod</h1>
 
 <p>Las primeras unidades vendidas de la consola <a href="https://www.anbernic.com/phone/eac_phone_sel_one?eng_ApplianceVo.eac_id=53">RG351P</a> traían instalado en el interior un módulo Wifi. Concretamente <a href="https://es.aliexpress.com/item/32966526853.html">éste</a>:</p>
-<p><img alt="Módulo antiguo" src="/images/posts/rg351_wifi/M7601NU4.jpg" /></p>
+<p><img alt="Módulo antiguo" src="../images/posts/rg351_wifi/M7601NU4.jpg" /></p>
 <p>En una revisión posterior fue retirado por las interferencias en forma de ruido que provocaba en los altavoces. La PCB de la consola no fue modificada, por lo que sigue vendiéndose con el espacio y las conexiones necesarias para montarlo:</p>
-<p><img alt="Wifi footprint" src="/images/posts/rg351_wifi/wifi_footprint.jpg" /></p>
+<p><img alt="Wifi footprint" src="../images/posts/rg351_wifi/wifi_footprint.jpg" /></p>
 <p>El <a href="https://es.aliexpress.com/item/32966526853.html">módulo original</a> ya no se encuentra a la venta, pero de todas formas pensé en instalar mejor uno con antena integrada por su mayor sencillez de instalación y para evitar colocar más cables en el interior de la consola que pudieran absorber o provocar más interferencias. Buscando por el código del chipset <code>MT7601UN</code> se encuentran numerosos modelos compatibles (conviene utilizar el mismo chipset para asegurar la compatibilidad de los firmwares de la consola). El elegido en mi caso fue el siguiente:</p>
-<p><img alt="Módulo" src="/images/posts/rg351_wifi/M7601NU1.jpg" /></p>
+<p><img alt="Módulo" src="../images/posts/rg351_wifi/M7601NU1.jpg" /></p>
 <p>Que se puede encontrar en el siguiente enlace: <a href="https://es.aliexpress.com/item/32967895240.html">https://es.aliexpress.com/item/32967895240.html</a></p>
 <p>La razón principal para hacer esta modificación es que necesito con mucha frecuencia tener acceso por red a la consola para utilizar la terminal por SSH. El dongle externo que suelen regalar los vendedores de esta consola, sobresale demasiado y tarde o temprano hubiera podido estropear el puerto al hacer palanca el conjunto dongle+adaptador, además de tenerlo que poner y quitar continuamente. Por último, dado que esta consola soporta Linux y Android, tengo la idea de hacer una imagen para ella que consista en un sistema completo de escritorio que poder utilizar por SSH/VNC a modo de ordenador portátil que podría llevar siempre encima. En esos casos la conectividad es imprescindible.</p>
 <p>A continuación se describe el proceso de instalación. En todo momento cuando hable de la orientación de la consola me referiré a la vista desde la parte inferior cuando está abierta, es decir ésta:</p>
-<p><img alt="Vista consola" src="/images/posts/rg351_wifi/vista_consola.jpg" /></p>
+<p><img alt="Vista consola" src="../images/posts/rg351_wifi/vista_consola.jpg" /></p>
 <ol>
 <li>
 <p>Lo primero fue encontrar una buena ubicación. Por el temor a las interferencias pretendía alejar todo lo posible la antena de los cables de los altavoces y del circuito de audio que sospecho se encuentra en el lado donde está el potenciómetro de volumen (mismo lado donde se montaba el módulo original). Teniendo en cuenta lo anterior y la situación de la batería así como lo despejado de componentes de la PCB de la consola en esa parte, me pareció que el mejor sitio era colocar el módulo en el lado derecho en posición vertical con la antena apuntando hacia arriba y hacia afuera de la consola (hacia la tapa):</p>
-<p><img alt="Ubicación módulo" src="/images/posts/rg351_wifi/ubicacion_modulo.jpg" /></p>
+<p><img alt="Ubicación módulo" src="../images/posts/rg351_wifi/ubicacion_modulo.jpg" /></p>
 </li>
 <li>
 <p>Para alzar un poco el módulo y aislarlo de los componentes de la PCB utilicé tres alturas de cinta de doble cara gruesa (de esa que tiene una tira de espuma de alrededor de 1mm entre las caras adhesivas):</p>
-<p><img alt="Cinta de doble cara" src="/images/posts/rg351_wifi/cinta_doble_cara.jpg" /></p>
+<p><img alt="Cinta de doble cara" src="../images/posts/rg351_wifi/cinta_doble_cara.jpg" /></p>
 </li>
 <li>
 <p>En la primera de las tres tiras que utilicé hice un corte diagonal para salvar la mayor altura del componente (un transistor creo) que había en esa zona:</p>
-<p><img alt="Primera altura" src="/images/posts/rg351_wifi/primera_altura.jpg" /></p>
+<p><img alt="Primera altura" src="../images/posts/rg351_wifi/primera_altura.jpg" /></p>
 </li>
 <li>
 <p>En realidad esto no es necesario ya que la anchura del módulo queda justo a ras de ese componente, pero era más difícil recortar la cinta de doble cara a lo largo que hacer ese corte diagonal. La longitud de las tiras de doble cara serán las adecuadas para dejar la zona de las conexiones al aire. Aquí puede verse la disposición final de las tres tiras de cinta y la situación del módulo:</p>
-<p><img alt="Ubicación módulo 2" src="/images/posts/rg351_wifi/ubicacion_modulo2.jpg" /></p>
+<p><img alt="Ubicación módulo 2" src="../images/posts/rg351_wifi/ubicacion_modulo2.jpg" /></p>
 </li>
 <li>
 <p>Lo siguiente era fabricar un cable para conectar el módulo. Digo fabricar porque tenía claro que no quería utilizar los típicos cables de parcheo de circuitos por el temor a las interferencias. Localicé un viejo cable miniUSB-USB de calidad de los muchos que es habitual tener de cuando era un cable que se utilizaba más. Corté una porción de longitud adecuada para pasarlo por la parte inferior de la consola. Como tiene un grosor considerable por estar apantallado (unos 4mm de diámetro exterior), había que evitar el plano de la batería y por esa zona existía un canal de espacio vacío. Tras retirar la pantalla hubo que proteger la salida de los cables con un par de trozos de termoretráctil para aislar los extremos de los hilos de la pantalla que era muy difícil recortar completamente:</p>
-<p><img alt="Cable" src="/images/posts/rg351_wifi/cable.jpg" /></p>
+<p><img alt="Cable" src="../images/posts/rg351_wifi/cable.jpg" /></p>
 </li>
 <li>
 <p>Los cables negro y rojo eran muy gruesos (por ser un cable de calidad) por lo que no pasaban por los pequeños agujeros de conexión del módulo. Así pues los de datos (blanco y verde) los soldé atravesando y los de alimentación (negro y rojo) superficialmente:</p>
-<p><img alt="Soldadura módulo" src="/images/posts/rg351_wifi/soldadura_modulo.jpg" /></p>
+<p><img alt="Soldadura módulo" src="../images/posts/rg351_wifi/soldadura_modulo.jpg" /></p>
 </li>
 <li>
 <p>Una vez soldado el cableado al módulo sólo quedaba pegarlo sobre el cojín de tres tiras de cinta de doble cara:</p>
-<p><img alt="Ubicación módulo 3" src="/images/posts/rg351_wifi/ubicacion_modulo3.jpg" /></p>
+<p><img alt="Ubicación módulo 3" src="../images/posts/rg351_wifi/ubicacion_modulo3.jpg" /></p>
 </li>
 <li>
 <p>Lo último fue encajar el cable y soldar sobre los pads del hueco previsto en la PCB de la consola para el módulo original. Aquí hay que estar atento a la correspondencia con los pads del módulo:</p>
-<p><img alt="Soldadura PCB" src="/images/posts/rg351_wifi/soldadura_pcb.jpg" /></p>
+<p><img alt="Soldadura PCB" src="../images/posts/rg351_wifi/soldadura_pcb.jpg" /></p>
 </li>
 <li>
 <p>El codo inferior derecho se puede encajar muy bien aprovechando las aristas de la PCB del stick que hay en ese lado y el conector del altavoz:</p>
-<p><img alt="Final" src="/images/posts/rg351_wifi/final.jpg" /></p>
+<p><img alt="Final" src="../images/posts/rg351_wifi/final.jpg" /></p>
 </li>
 <li>
 <p>El módulo ya está instalado. Una comprobación final antes de cerrar la tapa muestra que funciona:</p>
-<p><img alt="Comprobación final" src="/images/posts/rg351_wifi/comprobacion.jpg" /></p>
+<p><img alt="Comprobación final" src="../images/posts/rg351_wifi/comprobacion.jpg" /></p>
 </li>
 </ol>
 

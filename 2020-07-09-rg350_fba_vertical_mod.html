@@ -2548,6 +2548,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -3909,7 +3930,7 @@
 
   <h1>RG350 FBA mod</h1>
 
-<p><img alt="FBA Logo" src="/images/posts/fba_logo.png" /></p>
+<p><img alt="FBA Logo" src="images/posts/fba_logo.png" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Versión de FBA mejorada</p>
 <p>La modificación realizada en FBA que se describe en este artículo ya no merece la pena desde que apareció la versión que puede encontrarse <a href="https://github.com/goldmojo/fba-sdl/releases">aquí</a> y del que se habla en <a href="https://boards.dingoonity.org/retro-game-350rg-350/fba-for-rg-350-by-nobk-with-new-features-since-jan-2-to-jan-11/msg195207/#msg195207">este foro</a>. El artículo se mantiene ya que ilustra el proceso de modificación de un OPK por medio de un script wrapper que puede resolver muchas necesidades.</p>
@@ -3917,13 +3938,13 @@
 <h2 id="descripcion-del-problema">Descripción del problema<a class="headerlink" href="#descripcion-del-problema" title="Permanent link">&para;</a></h2>
 <p>FBA permite rotar la pantalla para poder jugar más cómodamente los juegos verticales (modo TATE). De hecho detecta automáticamente este tipo de juegos y los muestra rotados por defecto. El problema es que lo hace hacia la parte izquierda de la consola y al menos en la RG350/M resultaría más cómodo que lo hiciera hacia la derecha donde están los botones en lugar de la cruceta.</p>
 <p>Por ejemplo al arrancar 1941 aparece así:</p>
-<p><img alt="1941 Left" src="/images/posts/fba_mod/1941_left.png" /></p>
+<p><img alt="1941 Left" src="images/posts/fba_mod/1941_left.png" /></p>
 <p>En la versión <a href="https://github.com/nobk/fba-sdl/releases/tag/r19">r19</a> de FBA están duplicados todos los settings para poder ajustar los juegos verticales de forma independiente:</p>
-<p><img alt="FBA Settings" src="/images/posts/fba_mod/fba_settings.png" /></p>
+<p><img alt="FBA Settings" src="images/posts/fba_mod/fba_settings.png" /></p>
 <p>En concreto en <code>Default Vertical Run Game settings</code> podemos encontrar el parámetro para rotar la pantalla. Allí nos interesa poner el valor <code>-180</code> en el parámetro <code>Rotate vertical game</code>:</p>
-<p><img alt="FBA Vertical Settings" src="/images/posts/fba_mod/fba_vertical_settings.png" /></p>
+<p><img alt="FBA Vertical Settings" src="images/posts/fba_mod/fba_vertical_settings.png" /></p>
 <p>Tras hacerlo, si lanzamos el juego desde el interfaz propio de FBA conseguimos la orientación deseada:</p>
-<p><img alt="1941 Right" src="/images/posts/fba_mod/1941_right.png" /></p>
+<p><img alt="1941 Right" src="images/posts/fba_mod/1941_right.png" /></p>
 <p>Hasta aquí bien. El problema viene cuando integramos FBA en frontends como SimpleMenu o PyMenu. En esos casos el emulador se lanzará por linea de comando pasando como argumento la ruta de la ROM. Cuando se lanzan así los juegos, FBA no aplica los ajustes que hemos podido hacer en su interfaz propio. Así siempre se van a ver girados hacia la izquierda.</p>
 <p>Como en otros artículos, a partir de aquí voy a mostrar detalles técnicos del problema que hay debajo de lo anterior y cómo se ha hecho la modificación del emulador. Si no te interesan y sólo quieres aprovechar la modificación del emulador puedes saltar hasta el apartado <a href="#utilizacion-del-mod-de-fba">Utilización del mod de FBA</a>.</p>
 <h2 id="descripcion-tecnica-del-problema">Descripción técnica del problema<a class="headerlink" href="#descripcion-tecnica-del-problema" title="Permanent link">&para;</a></h2>
@@ -4031,9 +4052,9 @@ X-OD-NeedsDownscaling=true
 <div class="highlight"><pre><span></span><code>$ mksquashfs squashfs-root/ fba-RG350-r19-mod.opk -all-root -noappend -no-exports -no-xattrs
 </code></pre></div>
 <p>Si sustituimos el OPK original instalado en la consola por el que acabamos de re-ensamblar con el comando anterior, veremos que ahora nos aparecen dos lanzadores en GMenu2X:</p>
-<p><img alt="FBA New launchers" src="/images/posts/fba_mod/fba_new_launchers.png" /></p>
+<p><img alt="FBA New launchers" src="images/posts/fba_mod/fba_new_launchers.png" /></p>
 <p>El que tiene la etiqueta <code>FBA UX</code> se comportará como el original y el nuevo <code>FBA Explorer</code> mostrará un explorador de ficheros como la mayoría de los emuladores:</p>
-<p><img alt="FBA Explorer launcher" src="/images/posts/fba_mod/fba_explorer_launcher.png" /></p>
+<p><img alt="FBA Explorer launcher" src="images/posts/fba_mod/fba_explorer_launcher.png" /></p>
 <p>Con esto tendríamos resuelto el primer problema dado que ahora launchers como SimpleMenu, PyMenu o EmulationStation podrán integrar este OPK modificado de FBA para ejecutar los juegos.</p>
 <h2 id="2-localizar-opcion-para-rotar-pantalla">2. Localizar opción para rotar pantalla<a class="headerlink" href="#2-localizar-opcion-para-rotar-pantalla" title="Permanent link">&para;</a></h2>
 <p>El segundo problema podía no haber tenido solución pero hubo suerte. Como veíamos, según el Readme no parecía haber un parámetro que permitiera controlar la rotación de la pantalla por linea de comando. A pesar de ello echando un vistazo al código fuente de FBA encontramos la siguiente estructura en el fichero <a href="https://github.com/nobk/fba-sdl/blob/master/src/sdl-dingux/main.cpp">src/sdl-dingux/main.cpp</a>:</p>
@@ -4061,7 +4082,7 @@ X-OD-NeedsDownscaling=true
 </code></pre></div>
 <p>El valor 2 se obtiene de observar el valor que toma el parámetro <code>FBA_ROTATE</code> en los ficheros que aparecen en <code>/media/data/local/home/.fba/configs</code> y que son los que aplican cuando ejecutamos los juegos desde el interfaz propio de FBA (<code>FBA UX</code>).</p>
 <p>Ya sabemos cómo podemos indicar por linea de comando cómo rotar la pantalla. Ahora tenemos un último problema y es que este parámetro sólo nos interesa para los juegos en vertical. Si ponemos este argumento en los juegos horizontales, veremos la pantalla de esta forma:</p>
-<p><img alt="Metal Slug" src="/images/posts/fba_mod/metal_slug.png" /></p>
+<p><img alt="Metal Slug" src="images/posts/fba_mod/metal_slug.png" /></p>
 <p>Una opción sería crear un tercer <code>.desktop</code> con la opción (dejando el que hemos creado antes sin la opción) y utilizar ese lanzador para los juegos verticales pero esto nos obligaría a separar en secciones distintas los juegos verticales de los horizontales en los frontends como SimpleMenu. La solución por la que se ha optado aquí es intercalar un pequeño script que analice si el juego es vertical o no y en función de eso aplique la opción <code>--rotate=2</code> o no. La forma de averiguar si el juego es vertical será declarándolo en un pequeño fichero de texto en el directorio de las ROMs.</p>
 <p>Lo primero que haremos será modificar el <code>default.gcw0.desktop</code> para que en lugar de ejecutar el binario del emulador directamente se ejecute un pequeño script:</p>
 <div class="highlight"><pre><span></span><code>[Desktop Entry]
@@ -4107,11 +4128,11 @@ varth.zip
 </code></pre></div>
 <h2 id="utilizacion-del-mod-de-fba">Utilización del mod de FBA<a class="headerlink" href="#utilizacion-del-mod-de-fba" title="Permanent link">&para;</a></h2>
 <p>Vamos a dar instrucciones para utilizar el emulador FBA modificado a lo largo de este artículo.</p>
-<p>Una versión empaquetada con todas las modificaciones ya hechas puede descargarse de <a href="/files/posts/fba_mod/fba-RG350-r19-mod.opk">aquí</a>.</p>
+<p>Una versión empaquetada con todas las modificaciones ya hechas puede descargarse de <a href="files/posts/fba_mod/fba-RG350-r19-mod.opk">aquí</a>.</p>
 <p>Una vez instalado en la consola, veremos que ahora aparecen dos lanzadores (al menos en GMenu2X):</p>
-<p><img alt="FBA New launchers" src="/images/posts/fba_mod/fba_new_launchers.png" /></p>
+<p><img alt="FBA New launchers" src="images/posts/fba_mod/fba_new_launchers.png" /></p>
 <p>El lanzador <code>FBA UX</code> se comporta como el habitual, es decir muestra el interfaz propio de FBA donde podemos hacer el ajuste de la rotación de la pantalla (y muchos otros) antes de lanzar los juegos. El nuevo <code>FBA Explorer</code> será el que nos permitirá seleccionar la ROM por medio del explorador de archivos de GMenu2X, de la misma forma que hacen la mayoría de los emuladores:</p>
-<p><img alt="FBA Explorer launcher" src="/images/posts/fba_mod/fba_explorer_launcher.png" /></p>
+<p><img alt="FBA Explorer launcher" src="images/posts/fba_mod/fba_explorer_launcher.png" /></p>
 <p>Si queremos que el juego rote la pantalla -180º para que se puedan utilizar los controles de la parte derecha de la pantalla, sólo tendremos que crear un fichero de texto de nombre <code>vertical_games.txt</code> en el mismo directorio donde se encuentren las ROMs, e incorporar a él los nombres de las ROMs que queramos girar, uno por línea y con la extensión <code>.zip</code> incluida. Por ejemplo:</p>
 <iframe width="640" height="480" src="https://www.youtube.com/embed/7KNSdOCnF1w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

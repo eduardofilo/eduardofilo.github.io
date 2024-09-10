@@ -2470,6 +2470,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -3778,7 +3799,7 @@
 
   <h1>Compilación OpenAuto para solucionar touch screen</h1>
 
-<p>Tras una reciente actualización de los Google Play Services de Android, ha dejado de funcionar el touch screen en <a href="/2018-10-19-crankshaft.html">Crankshaft</a>. Parece ser que el problema tiene que ver con el uso de la librería <a href="https://developers.google.com/protocol-buffers/">Protocol Buffers</a>, que ha pasado a ser más estricto en esta última versión de los Play Services y parece que no se había implementado de forma rigurosa en OpenAuto.</p>
+<p>Tras una reciente actualización de los Google Play Services de Android, ha dejado de funcionar el touch screen en <a href="2018-10-19-crankshaft.html">Crankshaft</a>. Parece ser que el problema tiene que ver con el uso de la librería <a href="https://developers.google.com/protocol-buffers/">Protocol Buffers</a>, que ha pasado a ser más estricto en esta última versión de los Play Services y parece que no se había implementado de forma rigurosa en OpenAuto.</p>
 <p><a href="https://github.com/opencardev/crankshaft/issues/352">Esta es la issue</a> de Crankshaft donde se trata el tema.</p>
 <p>La solución pasa por compilar un fork de OpenAuto que uno de los usuarios ha preparado. A continuación se describe el paso a paso para hacer la compilación. El punto de partida es una instalación de la <a href="https://github.com/opencardev/crankshaft/releases">última versión de Crankshaft</a> en el momento de escribir esto (la <code>NG Alpha-5 2019-06-08</code>).</p>
 <ol>

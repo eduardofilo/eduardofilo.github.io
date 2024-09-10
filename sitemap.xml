@@ -101,11 +101,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://apuntes.eduardofilo.es/en/2018-11-03-cambio_router_lowi.html</loc>
-         <lastmod>2024-09-10</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://apuntes.eduardofilo.es/en/2019-01-26-conversion_apuntes_mkdocs.html</loc>
          <lastmod>2024-09-10</lastmod>
          <changefreq>daily</changefreq>
@@ -221,16 +216,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://apuntes.eduardofilo.es/en/2020-06-25-rg350_screen_mirroring.html</loc>
-         <lastmod>2024-09-10</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://apuntes.eduardofilo.es/en/2020-06-27-rg350_rom_checking.html</loc>
-         <lastmod>2024-09-10</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://apuntes.eduardofilo.es/en/2020-07-02-rg350_primeros_pasos.html</loc>
          <lastmod>2024-09-10</lastmod>
          <changefreq>daily</changefreq>
@@ -307,16 +292,6 @@
     </url>
     <url>
          <loc>https://apuntes.eduardofilo.es/en/2022-10-05_entrevista_podcast_linux.html</loc>
-         <lastmod>2024-09-10</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://apuntes.eduardofilo.es/en/2022-12-04_picomputer_zx.html</loc>
-         <lastmod>2024-09-10</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://apuntes.eduardofilo.es/en/2022-12-14_zelda_gw.html</loc>
          <lastmod>2024-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -522,11 +497,6 @@
     </url>
     <url>
          <loc>https://apuntes.eduardofilo.es/en/retro-emulacion/funkey-s.html</loc>
-         <lastmod>2024-09-10</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://apuntes.eduardofilo.es/en/retro-emulacion/garbage.html</loc>
          <lastmod>2024-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -747,11 +717,6 @@
     </url>
     <url>
          <loc>https://apuntes.eduardofilo.es/en/varios/recetas.html</loc>
-         <lastmod>2024-09-10</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://apuntes.eduardofilo.es/en/varios/suenyo.html</loc>
          <lastmod>2024-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>

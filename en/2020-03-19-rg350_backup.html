@@ -2539,6 +2539,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -3891,10 +3912,10 @@
 
   <h1>RG350 Backup</h1>
 
-<p><img alt="Backup logo" src="/images/posts/backup_logo.png" /></p>
+<p><img alt="Backup logo" src="../images/posts/backup_logo.png" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Aplicación de gestión de backup</p>
-<p>Existe la aplicación <a href="https://github.com/eduardofilo/RG350_py_backup">Py Backup</a> que facilita enormemente la gestión de los backups en RG350. Ver <a href="/2020-08-12-rg350_py_backup.html">este artículo</a> para más detalles.</p>
+<p>Existe la aplicación <a href="https://github.com/eduardofilo/RG350_py_backup">Py Backup</a> que facilita enormemente la gestión de los backups en RG350. Ver <a href="2020-08-12-rg350_py_backup.html">este artículo</a> para más detalles.</p>
 </div>
 <p>Vamos a hablar de algo de lo que nunca se habla lo suficiente, de backups.</p>
 <p>Algunas de las acciones que hacemos con la RG350 tienen su contrapartida en forma de ficheros que suelen quedar almacenados en el directorio Home del sistema que se encuentra en la tarjeta interna, concretamente en <code>/media/data/local/home</code>.</p>
@@ -3944,15 +3965,15 @@ echo &quot;Backup done.&quot;
 </div>
 <p>Lo siguiente será transferirlo al directorio <code>/media/data/local/home/.scriptrunner</code> por algún medio como copiándolo desde la tarjeta externa con DinguxCmdr o por cable por FTP o SCP.</p>
 <p>Una vez copiado lo veremos en el listado que muestra Scriptrunner al abrirlo:</p>
-<p><img alt="Scriptrunner" src="/images/posts/backup_scriptrunner1.png" /></p>
+<p><img alt="Scriptrunner" src="../images/posts/backup_scriptrunner1.png" /></p>
 <p>Desde allí podremos ejecutarlo seleccionándolo como se ve en el pantallazo anterior y pulsando <code>A</code>, lo que habrá que confirmar de nuevo con <code>A</code>:</p>
-<p><img alt="Scriptrunner" src="/images/posts/backup_scriptrunner2.png" /></p>
+<p><img alt="Scriptrunner" src="../images/posts/backup_scriptrunner2.png" /></p>
 <p>Veremos el progreso mediante un icono giratorio que aparece arriba a la derecha:</p>
-<p><img alt="Scriptrunner" src="/images/posts/backup_scriptrunner3.png" /></p>
+<p><img alt="Scriptrunner" src="../images/posts/backup_scriptrunner3.png" /></p>
 <p>Hasta que el backup finalmente se complete:</p>
-<p><img alt="Scriptrunner" src="/images/posts/backup_scriptrunner4.png" /></p>
+<p><img alt="Scriptrunner" src="../images/posts/backup_scriptrunner4.png" /></p>
 <p>Podemos comprobar con DinguxCmdr que se ha creado el fichero de backup:</p>
-<p><img alt="Comprobación" src="/images/posts/backup_dinguxcmdr.png" /></p>
+<p><img alt="Comprobación" src="../images/posts/backup_dinguxcmdr.png" /></p>
 <h2 id="restauracion">Restauración<a class="headerlink" href="#restauracion" title="Permanent link">&para;</a></h2>
 <p>La forma más cómoda de restaurar el backup en caso de ser necesario es utilizar el script <code>Restore home folder</code> precargado en Scriptrunner. Esta vez no es necesario modificarlo, funcionará tal cual. El único inconveniente es que restaurará el backup completo, y puede ser que nos interese recuperar un sólo fichero (un savestate de un emulador concreto por ejemplo). En ese caso se recomienda pinchar en el PC la tarjeta externa para tener acceso al fichero <code>home_backup.tar</code> y abrirlo con un gestor de compresión multiformato como WinRAR. Localizar el fichero que nos interesa y transferirlo a la consola por los medios habituales (DinguxCmdr, FTP o SCP).</p>
 

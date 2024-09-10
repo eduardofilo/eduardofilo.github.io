@@ -2530,6 +2530,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ingenieria/stm32.html" class="md-nav__link">
         
   
@@ -3873,17 +3894,17 @@
 
   <h1>RG350 ScummVM en lanzadores</h1>
 
-<p><img alt="Logo" src="/images/posts/scummvm-launchers/scummvm_logo.png" /></p>
+<p><img alt="Logo" src="../images/posts/scummvm-launchers/scummvm_logo.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>Este artículo ha sido posible gracias a la investigación realizada sobre el tema por <a href="https://linkedin.com/in/jvalberca">José Vicente Alberca</a> y a los detalles y ficheros preparados que me ha entregado. Gracias.</p>
 </div>
 <p>ScummVM es uno de esos sistemas de emulación que en RG350, al igual que otros como OpenBOR, utiliza un interfaz propio para seleccionar y arrancar los juegos, lo que dificulta su integración en lanzadores como SimpleMenu, EmulationStation o PyMenu. A pesar de ello, en las últimas versiones existe un mecanismo previsto para poder realizar la integración con los selectores de ROMs de los lanzadores. Vamos a ver cómo.</p>
-<p>Partimos de una instalación como la vista en <a href="/2020-04-14-rg350_scummvm.html">este artículo</a> anterior.</p>
+<p>Partimos de una instalación como la vista en <a href="2020-04-14-rg350_scummvm.html">este artículo</a> anterior.</p>
 <h2 id="instalacion-de-opk-con-soporte-de-argumentos">Instalación de OPK con soporte de argumentos<a class="headerlink" href="#instalacion-de-opk-con-soporte-de-argumentos" title="Permanent link">&para;</a></h2>
 <p>Necesitamos una versión del emulador que admita o mejor dicho que lea argumentos o parámetros que se le pasen al ejecutable y que por medio de los mismos se le pueda indicar el juego a abrir. Esta es justo la mejora realizada en la versión de ScummVM que encontramos en este repositorio:</p>
 <p><a href="https://github.com/goldmojo/scummvm-rg350/releases/tag/2.2gitRC2-params">https://github.com/goldmojo/scummvm-rg350/releases/tag/2.2gitRC2-params</a></p>
-<p>Bajamos pues el OPK (desde <a href="https://github.com/goldmojo/scummvm-rg350/releases/download/2.2gitRC2-params/scummvm-2.2-git-rg350-01132020-params.opk">este enlace</a>) y sustituimos el emulador de ScummVM que teníamos instalado antes. Como siempre, para <a href="/2020-07-02-rg350_primeros_pasos.html#dondecomo-instalo-el-fichero-opk-del-emulador-que-he-bajado">instalar un nuevo OPK</a>, lo que tenemos que hacer es copiarlo a uno de estos dos directorios:</p>
+<p>Bajamos pues el OPK (desde <a href="https://github.com/goldmojo/scummvm-rg350/releases/download/2.2gitRC2-params/scummvm-2.2-git-rg350-01132020-params.opk">este enlace</a>) y sustituimos el emulador de ScummVM que teníamos instalado antes. Como siempre, para <a href="2020-07-02-rg350_primeros_pasos.html#dondecomo-instalo-el-fichero-opk-del-emulador-que-he-bajado">instalar un nuevo OPK</a>, lo que tenemos que hacer es copiarlo a uno de estos dos directorios:</p>
 <ul>
 <li>En tarjeta interna: <code>/media/data/apps</code></li>
 <li>En tarjeta externa: <code>/media/sdcard/apps</code></li>
@@ -3911,7 +3932,7 @@ drwxr-xr-x    2 root     root          4096 Feb  5  1970 MANIAC
 -rw-r--r--    1 root     root             0 Aug 15 22:47 tentacle.svm
 </code></pre></div>
 <p>Sólo queda configurar el launcher que utilicemos para que filtre la extensión que hayamos elegido (<code>svm</code> en el ejemplo anterior) para que no nos permita seleccionar el resto de ficheros del juego que podrían no tener el nombre correspondiente al target.</p>
-<p><img alt="GMenu2X filter" src="/images/posts/scummvm-launchers/gmenu2x_filter.png" /></p>
+<p><img alt="GMenu2X filter" src="../images/posts/scummvm-launchers/gmenu2x_filter.png" /></p>
 <p>A partir de ese momento, si vamos al directorio del juego, sólo nos debería aparecer el fichero correspondiente al target. Abriéndolo arrancará el juego directamente sin mediar el interfaz clásico de ScummVM:</p>
 <iframe width="640" height="480" src="https://www.youtube.com/embed/HQKXA7SM2oM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -3928,7 +3949,7 @@ romExts = .svm
 aliasFile = /media/home/.simplemenu/alias.txt
 </code></pre></div>
 <p>No hay que olvidar añadir el nuevo sistema al parámetro <code>consoleList</code> dentro del bloque <code>[CONSOLES]</code> que hay al principio del fichero.</p>
-<p>Naturalmente habrá que adaptar en cada caso las rutas de OPK y ROMs. Como vemos, hemos incluido en la configuración el fichero <code>alias.txt</code> para que los targets sean convertidos a los nombres largos de los juegos. Para que esto funcione hay que incorporar el listado de targets al fichero. José Javier ha extraído todos los nombres posibles de la <a href="https://www.scummvm.org/compatibility/">web de ScummVM</a> por lo que sólo tenemos que sustituir <a href="/files/posts/scummvm-launchers/alias.txt">este fichero</a> en el directorio de home de SimpleMenu, es decir: <code>/media/data/local/home/.simplemenu</code></p>
+<p>Naturalmente habrá que adaptar en cada caso las rutas de OPK y ROMs. Como vemos, hemos incluido en la configuración el fichero <code>alias.txt</code> para que los targets sean convertidos a los nombres largos de los juegos. Para que esto funcione hay que incorporar el listado de targets al fichero. José Javier ha extraído todos los nombres posibles de la <a href="https://www.scummvm.org/compatibility/">web de ScummVM</a> por lo que sólo tenemos que sustituir <a href="../files/posts/scummvm-launchers/alias.txt">este fichero</a> en el directorio de home de SimpleMenu, es decir: <code>/media/data/local/home/.simplemenu</code></p>
 <p>Por último hay que comprobar que el theme que estemos utilizando contenga la definición del sistema <code>SCUMMVM</code>. Afortunadamente el theme oficial <code>GBZ35Remix</code> ya lo incorpora. En caso de utilizar uno que no lo contenga habrá que incorporar una entrada en el fichero de definición del theme (<code>theme.ini</code>) y los recursos necesarios.</p>
 <p>Ya sólo queda abrir SimpleMenu y comprobar el resultado:</p>
 <iframe width="640" height="480" src="https://www.youtube.com/embed/7-B7dmMirV8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
