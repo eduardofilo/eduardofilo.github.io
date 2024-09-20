@@ -4222,7 +4222,7 @@ $<span class="w"> </span><span class="nb">exit</span>
 <p>After rebooting, you should see the SDDM session manager, initially with the screen rotated and without the ability to use the on-screen keyboard, so we'll still be using the external keyboard and mouse.</p>
 <p>Once we have logged into Plasma or Plasma Mobile, the first thing we need to do is configure the internet connection. To do this, click on the corresponding icon in the system tray at the bottom right in Plasma or at the top right in Plasma Mobile.</p>
 <p>Once connected, open the Konsole application and run the following commands to install the basic KDE application package, Firefox browser and the SSH server:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>firefox<span class="w"> </span>kde-applications-meta<span class="w"> </span>openssh<span class="w"> </span>usbutils
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>firefox<span class="w"> </span>kde-applications-meta<span class="w"> </span>openssh<span class="w"> </span>usbutils<span class="w"> </span>man-db
 $<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>sshd
 $<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>sshd
 </code></pre></div>
