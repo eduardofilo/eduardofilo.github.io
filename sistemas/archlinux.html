@@ -3190,6 +3190,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#paquetes-interesantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paquetes interesantes
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3883,6 +3892,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#paquetes-interesantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paquetes interesantes
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3912,7 +3930,7 @@
 <li><code>sudo pacman -Syu</code>: Actualizar el sistema. Equivalente a <code>apt upgrade</code>.</li>
 <li><code>sudo pacman -S &lt;paquete&gt;</code>: Instalar un paquete. Equivalente a <code>apt install</code>.</li>
 <li><code>sudo pacman -R &lt;paquete&gt;</code>: Desinstalar un paquete dejando sus dependencia. Equivalente a <code>apt remove</code>.</li>
-<li><code>sudo pacman -Rs &lt;paquete&gt;</code>: Desinstalar un paquete y sus dependencias.</li>
+<li><code>sudo pacman -Rs &lt;paquete&gt;</code>: Desinstalar un paquete y sus dependencias dejando las que son usadas por otros paquetes.</li>
 <li><code>sudo pacman -Rns &lt;paquete&gt;</code>: Desinstalar un paquete, sus dependencias y archivos de configuración. Equivalente a <code>apt purge</code>.</li>
 <li><code>pacman -Qdt</code>: Listar paquetes huérfanos. Equivalente a <code>apt autoremove</code>.</li>
 <li><code>sudo pacman -Rns $(pacman -Qdtq)</code>: Eliminar paquetes huérfanos. Equivalente a <code>apt autoremove</code>.</li>
@@ -3926,6 +3944,10 @@
 <li><code>sudo pacman -R &lt;paquete&gt;</code>: Desinstalar un paquete de AUR dejando sus dependencia. Equivalente a <code>apt remove</code>.</li>
 <li><code>sudo pacman -Rs &lt;paquete&gt;</code>: Desinstalar un paquete de AUR y sus dependencias.</li>
 <li><code>yay -Rns &lt;paquete&gt;</code>: Desinstalar un paquete de AUR, sus dependencias y archivos de configuración. Equivalente a <code>apt purge</code>.</li>
+</ul>
+<h2 id="paquetes-interesantes">Paquetes interesantes<a class="headerlink" href="#paquetes-interesantes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>pamac-aur</code> (AUR): Interfaz gráfica para pacman/yay.</li>
 </ul>
 
 

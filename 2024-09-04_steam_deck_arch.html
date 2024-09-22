@@ -625,6 +625,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#instalacion-pamac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación pamac
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#instalacion-gestor-dualboot" class="md-nav__link">
     <span class="md-ellipsis">
       Instalación gestor dualboot
@@ -4052,6 +4061,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#instalacion-pamac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación pamac
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#instalacion-gestor-dualboot" class="md-nav__link">
     <span class="md-ellipsis">
       Instalación gestor dualboot
@@ -4222,7 +4240,7 @@ $<span class="w"> </span><span class="nb">exit</span>
 <p>Tras reiniciar deberíamos ver el gestor de sesiones SDDM, inicialmente con la pantalla girada y sin posibilidad de utilizar el teclado en pantalla, por lo que todavía continuaremos utilizando el teclado y ratón externos.</p>
 <p>Una vez que hayamos iniciado sesión en Plasma o Plasma Mobile, lo primero que tenemos que hacer es configurar la conexión a internet. Para ello hacemos click sobre el icono correspondiente en la bandeja del sistema abajo a la derecha en Plasma o arriba a la derecha en Plasma Mobile.</p>
 <p>Una vez que tengamos conexión, abrimos la aplicación Konsole y ejecutamos los siguientes comandos para instalar el paquete de aplicaciones básico de KDE, el navegador Firefox y el servidor SSH:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>firefox<span class="w"> </span>kde-applications-meta<span class="w"> </span>openssh<span class="w"> </span>usbutils<span class="w"> </span>lshw<span class="w"> </span>man-db<span class="w"> </span>htop
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>firefox<span class="w"> </span>kde-applications-meta<span class="w"> </span>openssh<span class="w"> </span>usbutils<span class="w"> </span>lshw<span class="w"> </span>man-db<span class="w"> </span>htop<span class="w"> </span>spectacle
 $<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>sshd
 $<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>sshd
 </code></pre></div>
@@ -4312,6 +4330,11 @@ $<span class="w"> </span>alsamixer
 </tr>
 </tbody>
 </table>
+<h2 id="instalacion-pamac">Instalación pamac<a class="headerlink" href="#instalacion-pamac" title="Permanent link">&para;</a></h2>
+<p>Para facilitar la instalación de paquetes desde la interfaz gráfica, vamos a instalar <code>pamac</code>:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>yay<span class="w"> </span>-S<span class="w"> </span>pamac-aur
+</code></pre></div>
+<p>Una vez instalado lo abrimos (buscando <code>Añadir/Quitar software</code> en el cajón de aplicaciones) y activamos el soporte AUR en <code>Preferencias &gt; Terceros &gt; Activar soporte de AUR</code>.</p>
 <h2 id="instalacion-gestor-dualboot">Instalación gestor dualboot<a class="headerlink" href="#instalacion-gestor-dualboot" title="Permanent link">&para;</a></h2>
 <p>El sistema Arch ya está listo y podemos arrancarlo encendiendo la consola en modo Boot Manager (manteniendo pulsada la tecla de bajar volumen) y seleccionando la opción <code>Arch</code>. Pero para facilitar el arranque de SteamOS, vamos a instalar un gestor de arranque dualboot llamado <a href="https://github.com/jlobue10/SteamDeck_rEFInd">rEFInd</a>.</p>
 <ol>
