@@ -4205,7 +4205,7 @@ $<span class="w"> </span>makepkg<span class="w"> </span>-si
 <ol>
 <li>
 <p>Instalamos el gestor de sesiones SDDM y algunas aplicaciones que nos harán falta para terminar la instalación desde el modo gráfico:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>sddm<span class="w"> </span>konsole<span class="w"> </span>dolphin<span class="w"> </span>kwrite<span class="w"> </span>partitionmanager<span class="w"> </span>htop<span class="w"> </span>power-profiles-daemon
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>sddm<span class="w"> </span>konsole<span class="w"> </span>dolphin<span class="w"> </span>kwrite<span class="w"> </span>partitionmanager<span class="w"> </span>power-profiles-daemon
 $<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>sddm
 $<span class="w"> </span><span class="nb">exit</span>
 </code></pre></div>
@@ -4222,7 +4222,7 @@ $<span class="w"> </span><span class="nb">exit</span>
 <p>Tras reiniciar deberíamos ver el gestor de sesiones SDDM, inicialmente con la pantalla girada y sin posibilidad de utilizar el teclado en pantalla, por lo que todavía continuaremos utilizando el teclado y ratón externos.</p>
 <p>Una vez que hayamos iniciado sesión en Plasma o Plasma Mobile, lo primero que tenemos que hacer es configurar la conexión a internet. Para ello hacemos click sobre el icono correspondiente en la bandeja del sistema abajo a la derecha en Plasma o arriba a la derecha en Plasma Mobile.</p>
 <p>Una vez que tengamos conexión, abrimos la aplicación Konsole y ejecutamos los siguientes comandos para instalar el paquete de aplicaciones básico de KDE, el navegador Firefox y el servidor SSH:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>firefox<span class="w"> </span>kde-applications-meta<span class="w"> </span>openssh<span class="w"> </span>usbutils<span class="w"> </span>lshw<span class="w"> </span>man-db
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>firefox<span class="w"> </span>kde-applications-meta<span class="w"> </span>openssh<span class="w"> </span>usbutils<span class="w"> </span>lshw<span class="w"> </span>man-db<span class="w"> </span>htop
 $<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>sshd
 $<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>sshd
 </code></pre></div>
@@ -4230,6 +4230,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> <
 <ul>
 <li><code>Preferencias &gt; Preferencias del sistema &gt; Entrada y salida &gt; Pantalla y monitor &gt; Escalar</code>: Configurar la escala de la pantalla a 100%.</li>
 <li><code>Preferencias &gt; Preferencias del sistema &gt; Entrada y salida &gt; Teclado &gt; Distribuciones &gt; Configurar distribuciones &gt; Añadir</code>: Añadir la distribución de teclado español.</li>
+<li><code>Preferencias &gt; Preferencias del sistema &gt; Entrada y salida &gt; Teclado &gt; Teclado virtual</code>: Seleccionar <code>Maliit</code>.</li>
 <li><code>Preferencias &gt; Preferencias del sistema &gt; Idioma y hora &gt; Fecha y hora &gt; Zona horaria</code>: Seleccionar Madrid.</li>
 <li><code>Preferencias &gt; Preferencias del sistema &gt; Aspecto y estilo &gt; Texto y tipos de letra &gt; Tipos de letra</code>. Ajustar estos valores:<ul>
 <li><code>General</code>: <code>Noto Sans 11pt</code></li>

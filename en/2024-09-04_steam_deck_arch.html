@@ -4205,7 +4205,7 @@ $<span class="w"> </span>makepkg<span class="w"> </span>-si
 <ol>
 <li>
 <p>Install the SDDM session manager and some applications, which we'll need to finish the installation from the graphical mode:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>sddm<span class="w"> </span>konsole<span class="w"> </span>dolphin<span class="w"> </span>kwrite<span class="w"> </span>partitionmanager<span class="w"> </span>htop<span class="w"> </span>power-profiles-daemon
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>sddm<span class="w"> </span>konsole<span class="w"> </span>dolphin<span class="w"> </span>kwrite<span class="w"> </span>partitionmanager<span class="w"> </span>power-profiles-daemon
 $<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>sddm
 $<span class="w"> </span><span class="nb">exit</span>
 </code></pre></div>
@@ -4222,7 +4222,7 @@ $<span class="w"> </span><span class="nb">exit</span>
 <p>After rebooting, you should see the SDDM session manager, initially with the screen rotated and without the ability to use the on-screen keyboard, so we'll still be using the external keyboard and mouse.</p>
 <p>Once we have logged into Plasma or Plasma Mobile, the first thing we need to do is configure the internet connection. To do this, click on the corresponding icon in the system tray at the bottom right in Plasma or at the top right in Plasma Mobile.</p>
 <p>Once connected, open the Konsole application and run the following commands to install the basic KDE application package, Firefox browser and the SSH server:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>firefox<span class="w"> </span>kde-applications-meta<span class="w"> </span>openssh<span class="w"> </span>usbutils<span class="w"> </span>lshw<span class="w"> </span>man-db
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>firefox<span class="w"> </span>kde-applications-meta<span class="w"> </span>openssh<span class="w"> </span>usbutils<span class="w"> </span>lshw<span class="w"> </span>man-db<span class="w"> </span>htop
 $<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>sshd
 $<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>sshd
 </code></pre></div>
@@ -4230,6 +4230,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> <
 <ul>
 <li><code>Preferences &gt; System Preferences &gt; Input &amp; Output &gt; Display &amp; Monitor &gt; Scale</code>: Set the screen scale to 110%.</li>
 <li><code>Preferences &gt; System Preferences &gt; Input &amp; Output &gt; Keyboard &gt; Layouts &gt; Configure Layouts &gt; Add</code>: Add the English keyboard layout.</li>
+<li><code>Preferences &gt; System Preferences &gt; Input &amp; Output &gt; Keyboard &gt; Virtual Keyboard</code>: Select <code>Maliit</code>.</li>
 <li><code>Preferences &gt; System Preferences &gt; Language &amp; Time &gt; Date &amp; Time &gt; Time Zone</code>: Select your city.</li>
 <li><code>Preferences &gt; System Preferences &gt; Appearance &amp; Style &gt; Text &amp; Fonts &gt; Fonts</code>. Set this values:<ul>
 <li><code>General</code>: <code>Noto Sans 11pt</code></li>
