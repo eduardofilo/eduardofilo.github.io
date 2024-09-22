@@ -4156,7 +4156,7 @@
 <span class="c1"># grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch</span>
 <span class="c1"># grub-mkconfig -o /boot/grub/grub.cfg</span>
 <span class="c1"># systemctl enable NetworkManager</span>
-<span class="c1"># useradd -m -G wheel &lt;USER&gt;</span>
+<span class="c1"># useradd -m -G wheel,audio,video,storage &lt;USER&gt;</span>
 <span class="c1"># passwd &lt;USER&gt;</span>
 <span class="c1"># chmod u+w /etc/sudoers</span>
 <span class="c1"># vi /etc/sudoers       # Descomentar &#39;%wheel ALL=(ALL) ALL&#39;</span>
