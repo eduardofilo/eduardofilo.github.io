@@ -4383,15 +4383,15 @@ apt-get<span class="w"> </span>install<span class="w"> </span>vim<span class="w"
 <p>Para encapsular sesiones de terminal en distintas distribuciones de Linux, se puede utilizar <a href="https://distrobox.it/#distrobox">distrobox</a>. Utiliza por debajo Docker o podman.</p>
 <p>Se puede <a href="https://distrobox.it/#installation">instalar</a> desde el gestor de paquetes de la mayoría de distribuciones de Linux, aunque también se puede instalar <a href="https://distrobox.it/#alternative-methods">manualmente</a>.</p>
 <p>Una vez instalado, para obtener una terminal en una distribución concreta, se puede ejecutar:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>distrobox<span class="w"> </span>create<span class="w"> </span>-i<span class="w"> </span>ubuntu:20.04
-$<span class="w"> </span>distrobox<span class="w"> </span>enter<span class="w"> </span>ubuntu-20-04
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>distrobox<span class="w"> </span>create<span class="w"> </span>-i<span class="w"> </span>ubuntu:20.04<span class="w"> </span>-n<span class="w"> </span>ubuntu
+$<span class="w"> </span>distrobox<span class="w"> </span>enter<span class="w"> </span>ubuntu
 </code></pre></div>
 <p>Otros comandos útiles:</p>
 <ul>
 <li><code>distrobox list</code>: Listar las sesiones activas.</li>
-<li><code>distrobox stop ubuntu-20-04</code>: Parar una sesión.</li>
-<li><code>distrobox start ubuntu-20-04</code>: Arrancar una sesión.</li>
-<li><code>distrobox remove ubuntu-20-04</code>: Eliminar una sesión.</li>
+<li><code>distrobox stop ubuntu</code>: Parar una sesión.</li>
+<li><code>distrobox start ubuntu</code>: Arrancar una sesión.</li>
+<li><code>distrobox rm ubuntu</code>: Eliminar una sesión.</li>
 </ul>
 
 
