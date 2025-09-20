@@ -2626,6 +2626,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#instalacion-rtl-sdr-en-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación RTL-SDR en Linux
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4123,6 +4132,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#instalacion-rtl-sdr-en-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación RTL-SDR en Linux
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4260,6 +4278,27 @@
 <li>IF Noise Reduction: Voice</li>
 <li>Low Pass: ON</li>
 </ul>
+<h2 id="instalacion-rtl-sdr-en-linux">Instalación RTL-SDR en Linux<a class="headerlink" href="#instalacion-rtl-sdr-en-linux" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>purge<span class="w"> </span>^librtlsdr
+sudo<span class="w"> </span>rm<span class="w"> </span>-rvf<span class="w"> </span>/usr/lib/librtlsdr*
+sudo<span class="w"> </span>rm<span class="w"> </span>-rvf<span class="w"> </span>/usr/include/rtl-sdr*
+sudo<span class="w"> </span>rm<span class="w"> </span>-rvf<span class="w"> </span>/usr/local/lib/librtlsdr*
+sudo<span class="w"> </span>rm<span class="w"> </span>-rvf<span class="w"> </span>/usr/local/include/rtl-sdr*
+sudo<span class="w"> </span>rm<span class="w"> </span>-rvf<span class="w"> </span>/usr/local/include/rtl_*
+sudo<span class="w"> </span>rm<span class="w"> </span>-rvf<span class="w"> </span>/usr/local/bin/rtl_*
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libusb-1.0-0-dev<span class="w"> </span>git<span class="w"> </span>cmake<span class="w"> </span>pkg-config<span class="w"> </span>build-essential
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/rtlsdrblog/rtl-sdr-blog
+<span class="nb">cd</span><span class="w"> </span>rtl-sdr-blog/
+mkdir<span class="w"> </span>build
+<span class="nb">cd</span><span class="w"> </span>build
+cmake<span class="w"> </span>../<span class="w"> </span>-DINSTALL_UDEV_RULES<span class="o">=</span>ON
+make
+sudo<span class="w"> </span>make<span class="w"> </span>install
+sudo<span class="w"> </span>cp<span class="w"> </span>../rtl-sdr.rules<span class="w"> </span>/etc/udev/rules.d/
+sudo<span class="w"> </span>ldconfig
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;blacklist dvb_usb_rtl28xxu&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>--append<span class="w"> </span>/etc/modprobe.d/blacklist-dvb_usb_rtl28xxu.conf
+</code></pre></div>
+<p>Reiniciar el sistema para que los cambios surtan efecto.</p>
 
 
 
