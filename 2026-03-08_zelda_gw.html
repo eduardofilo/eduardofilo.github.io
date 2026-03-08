@@ -1,0 +1,4836 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes varios sobre algunas de las cosas que necesito recordar, principalmente sobre Desarrollo y Sistemas.">
+      
+      
+        <meta name="author" content="Eduardo Moreno Lamana">
+      
+      
+        <link rel="canonical" href="https://apuntes.eduardofilo.es/2026-03-08_zelda_gw.html">
+      
+      
+      
+        <link rel="next" href="2025-06-28_thinkpad_t480.html">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="Fuente RSS" href="feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="Fuente RSS de contenido actualizado" href="feed_rss_updated.xml">
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    
+    
+      
+        <title>G&W Zelda hack - Apuntes de eduardófilo</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@8.5.1/dist/mermaid.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#conexion-al-puerto-swd" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="." title="Apuntes de eduardófilo" class="md-header__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+      
+  <img src="images/eduardofilo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apuntes de eduardófilo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              G&W Zelda hack
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="2026-03-08_zelda_gw.html" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="en/2026-03-08_zelda_gw.html" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="2026-03-08_zelda_gw.html" class="md-tabs__link">
+          
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="desarrollo/android.html" class="md-tabs__link">
+          
+  
+  Desarrollo
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="ingenieria/3d_printing.html" class="md-tabs__link">
+          
+  
+  Ingeniería
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="proyectos/headsetcomm.html" class="md-tabs__link">
+          
+  
+  Proyectos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="retro-emulacion/c64.html" class="md-tabs__link">
+          
+  
+  Retro-Emulación
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="sistemas/android_system.html" class="md-tabs__link">
+          
+  
+  Sistemas
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="varios/bici.html" class="md-tabs__link">
+          
+  
+  Varios
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="vr/oculus.html" class="md-tabs__link">
+          
+  
+  VR
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Apuntes de eduardófilo" class="md-nav__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+      
+  <img src="images/eduardofilo.png" alt="logo">
+
+    </a>
+    Apuntes de eduardófilo
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    G&W Zelda hack
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="2026-03-08_zelda_gw.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    G&W Zelda hack
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-al-puerto-swd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión al puerto SWD
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conexión al puerto SWD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-dificil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versión difícil
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-facil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versión fácil
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sonda-de-programacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sonda de programación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desbloqueo-del-microcontrolador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desbloqueo del microcontrolador
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modificacion-1-retro-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificación 1: retro-go
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modificación 1: retro-go">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sustitucion-de-la-flash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sustitución de la flash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flasheo-retro-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flasheo retro-go
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#respaldar-savestates-retro-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      Respaldar savestates retro-go
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modificacion-2-retro-go-sd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificación 2: retro-go-sd
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modificación 2: retro-go-sd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-modulo-slot-microsd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación módulo slot microSD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flasheo-bootloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flasheo bootloader
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-retro-go-sd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de Retro-Go SD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carcasa-trasera" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carcasa trasera
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referencias
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2025-06-28_thinkpad_t480.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalación Arch Linux en Lenovo ThinkPad T480
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2024-09-09_zx_mechtrum.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ZX Mechtrum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2024-09-04_steam_deck_arch.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalación Arch Linux en Steam Deck
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2024-05-31_campus_aula_dei_en_bici.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vías Zaragoza - Campus en bicicleta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2022-10-05_entrevista_podcast_linux.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entrevista en Podcast Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2022-08-08_mmiyoo_uart.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Miyoo Mini UART
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2022-04-17_vr.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aventuras en VR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2021-10-30_raspi_zero_2_upgrade.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raspberry Pi Zero 2 W upgrade
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2021-04-03_RG350_imagen.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350/RG280 Imagen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2021-02-28_pico_fuzix.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FUZIX en Raspberry Pi Pico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2021-01-19-retroconsolas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Retroconsolas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2021-01-16-rg350_ra_installer.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Instalador RA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-12-13-rg351_wifi_mod.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG351P Wifi mod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-09-27-rg350_xmame_sm_bridge.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Interfaz xMAME SimpleMenu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-08-31-cancion_herb_alpert.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    La canción que merece la pena escuchar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-08-15-rg350_scummvm_launchers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 ScummVM en lanzadores
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-08-12-rg350_py_backup.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Py Backup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-07-12-rg350_screen_mod.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Sustitución de pantalla 480p
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-07-09-rg350_fba_vertical_mod.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 FBA mod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-07-02-rg350_primeros_pasos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Primeros pasos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-06-04-rg350_raspi_image.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Raspi Imagen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-05-31-rg350_compile.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Compilar aplicaciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-05-25-rg350_docker_buildroot.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Docker Buildroot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-05-14-rg350_mame4all.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 MAME4All
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-05-08-rg350_dosbox.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 DOSBox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-05-06-rg350_openbor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 OpenBOR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-05-04-rg350_daphne.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Daphne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-04-15-rg350_xmame.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 xMAME
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-04-14-rg350_scummvm.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 ScummVM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-03-28-rg350_pymenu.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 PyMenu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-03-19-rg350_backup.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Backup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-02-16-panelizar_pcb.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Panelizar PCB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-02-13-rg350_emulationstation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 EmulationStation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-02-09-rg350_network.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Conexión a internet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-02-08-eduzebox.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EdUzebox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-01-31-rg350_fba.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 FBA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-01-25-rg350_simplemenu.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 SimpleMenu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-01-11-rg350_scraper.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Scraper
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2019-08-06-django_site.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creación de un sitio Django desde cero
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2019-07-07-crankshaft-build.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compilación OpenAuto para solucionar touch screen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2019-04-20-pong_composite_mod.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Composite mod en consola Pong
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2019-01-29-bloqueo_telsome.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bloqueo de llamadas entrantes en Telsome
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2019-01-26-conversion_apuntes_mkdocs.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conversión del sitio de Apuntes a MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2018-10-20-Octoprint-en-Anet-A8.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Octoprint en Anet A8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2018-10-19-crankshaft.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crankshaft - AndroidAuto sobre Raspberry Pi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2018-05-05-otto.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Otto DIY
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2017-01-14-raspi2-kodi-16-tvheadend.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raspberry Pi 3 + KODI 16 + Tvheadend
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-12-06-raspi3-kodi.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raspberry Pi 3 + KODI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-10-17-raspi-switch.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interruputor de encendido para Raspberry Pi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-08-17-el-mundo-de-ayer.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    El mundo de ayer - Stefan Zweig
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-08-02-stm32-vl-discovery.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entorno desarrollo STM32 VL Discovery sobre Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-07-21-PIGRRL-2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuración PiGRRL-2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-07-10-wild.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wild - Cheryl Strayed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-07-02-virus-android.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alertas por supuestos virus en Android
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-04-10-un-antropologo-en-marte.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Un antropólogo en Marte - Oliver Sacks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-02-25-los-innovadores.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Los Innovadores - Walter Isaacson
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2015-03-14-raspi2-kodi-tvheadend.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raspberry Pi 2 + KODI + Tvheadend
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2015-01-09-moviles.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Móviles recomendables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2015-01-08-jekyll.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jekyll+GitHub Pages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2014-12-26-dokuwiki-raspi.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dokuwiki en Raspberry Pi manteniendo los ficheros en NAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2014-12-20-micro-placas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Micro placas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2014-12-15-presentacion.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Presentación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Desarrollo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Desarrollo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/android.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Android
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/db.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bases de Datos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/diseno.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diseño
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/dokuwiki.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dokuwiki
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/eclipse.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eclipse
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/projects.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestión de Proyectos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/git.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/html.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTML+CSS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/ia.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/java.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/javaee.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JavaEE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/javascript.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JavaScript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/joomla.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Joomla
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/phonegap.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Phonegap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/php.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/python.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python/Django
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/ror.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ruby on Rails
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/spree.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/subl.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sublime Text 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/svn.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SVN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/vagrant.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vagrant
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/vr.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/vscode.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VSCode / VSCodium
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/yii.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yii
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ingeniería
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ingeniería
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/3d_printing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Printing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/arduino.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arduino
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/freecad.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FreeCAD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/herramientas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Herramientas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/kicad.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KiCad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/modulos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/stm32.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STM32
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyectos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Proyectos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="proyectos/headsetcomm.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Headset Commander
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="proyectos/dicom.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Impresión 3D de ecografías
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="proyectos/minecraft.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minecraft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Retro-Emulación
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Retro-Emulación
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/c64.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commodore 64
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/fpga.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FPGA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/funkey-s.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FunKey S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/general.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/juegos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Juegos destacados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/microconsolas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Micro consolas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/miyoo-mini.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Miyoo Mini
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/retroarch.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RetroArch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/rg-350.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350/RG280
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/rg-351.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG351
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/rg-503.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG503
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/rgb2hdmi.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RGBtoHDMI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/steam-deck.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Steam Deck
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/z80-computer.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Z80 Computer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/zx-spectrum.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ZX Spectrum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/zx-spectrum-next.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ZX Spectrum Next / N-GO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/zx-uno.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ZX-UNO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sistemas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Sistemas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/android_system.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Android
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/soft_imprescindible.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aplicaciones interesantes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/appletv.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AppleTV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/archlinux.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arch Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/buildroot.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Buildroot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/docker.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/email.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    e-mail
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/impresoras.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Impresoras
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/iot.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IOT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/kodi.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kodi/OpenELEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/macosx.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mac OS X
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/mysql.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MySQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/nas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/odroid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ODROID
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/office.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Office
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/raspi.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raspberry Pi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/raspi_pico.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raspberry Pi Pico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/redes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/router_xiaomi.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Router Xiaomi MiWiFi 3G
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/ubuntu_phone.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubuntu Phone
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/ubuntu.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubuntu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/uconsole.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    uConsole
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/unix.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UNIX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/trucos_windows.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Varios
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Varios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/bici.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bicicleta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/links.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enlaces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/excursionismo.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Excursionismo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/hogar.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hogar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/english.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inglés
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/corsa_d.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Opel Corsa D
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/recetas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recetas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/viajes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Viajes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    VR
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            VR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vr/oculus.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Oculus Quest 2/3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vr/viture.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Viture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-al-puerto-swd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión al puerto SWD
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conexión al puerto SWD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-dificil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versión difícil
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-facil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versión fácil
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sonda-de-programacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sonda de programación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desbloqueo-del-microcontrolador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desbloqueo del microcontrolador
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modificacion-1-retro-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificación 1: retro-go
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modificación 1: retro-go">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sustitucion-de-la-flash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sustitución de la flash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flasheo-retro-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flasheo retro-go
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#respaldar-savestates-retro-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      Respaldar savestates retro-go
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modificacion-2-retro-go-sd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificación 2: retro-go-sd
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modificación 2: retro-go-sd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-modulo-slot-microsd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación módulo slot microSD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flasheo-bootloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flasheo bootloader
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-retro-go-sd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de Retro-Go SD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carcasa-trasera" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carcasa trasera
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referencias
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>G&W Zelda hack</h1>
+
+<p><img alt="Zelda G&amp;W" src="images/posts/2026-03-08_zelda_gw/zelda_gnw.png" /></p>
+<p>Un conocido fabricante japonés de videojuegos empezó a comercializar a finales de 2022, un par de máquinas replicando el aspecto de algunas de las viejas G&amp;W, sobre la base de un microcontrolador STM32H7 que ejecuta un firmware baremetal con emuladores de NES y GB, tres juegos clásicos y una aplicación reloj inspirados en la franquicia Zelda. La máquina resulta muy interesante por las virtudes de estar basada en un microcontrolador, en lugar de un microprocesador, es decir gran duración de la pequeña batería que contiene (la de un joycon de Switch), arranque y modo suspensión instantáneos. El soporte de datos es un pequeño chip flash NOR de 4MB (en el caso del modelo Zelda), suficiente para alojar los emuladores y juegos mencionados, pero muy escaso si se quiere sacar partido de la máquina y de su relativamente potente CPU.</p>
+<p>El firmware original sirve para comprobar la solvencia de la plataforma para emular al menos las máquinas de 8 bit que funcionan originalmente, por lo que en seguida el dispositivo resultó atractivo para la comunidad hacker. Al poco tiempo de empezar a comercializarse ya <a href="https://www.youtube.com/watch?v=Rsi8p5gbaps">aparecieron procedimientos para desbloquear y modificar la máquina</a> de manera que se pudieran instalar más emuladores y juegos.</p>
+<p>La primera modificación importante propuesta por la comunidad consistía en sustituir el chip flash por otro de 64MB para disponer de más espacio para juegos y emuladores. Tiempo después la modificación evolucionó para incluir un slot de tarjetas microSD donde almacenar los juegos y savestates, así como para simplificar enormemente el proceso de actualización, convirtiendo a la máquina así modificada en una máquina de emulación portátil inigualable en aspectos como portabilidad, tamaño, duración de la batería y tiempos de arranque.</p>
+<p>Con cualquiera de las dos modificaciones se consigue emular las siguientes máquinas:</p>
+<ul>
+<li>Amstrad CPC6128 (beta)</li>
+<li>Atari 2600</li>
+<li>Atari 7800</li>
+<li>ColecoVision</li>
+<li>Gameboy / Gameboy Color</li>
+<li>Game &amp; Watch / LCD Games</li>
+<li>MSX1/2/2+</li>
+<li>Nintendo Entertainment System</li>
+<li>PC Engine / TurboGrafx-16</li>
+<li>Pokémon Mini</li>
+<li>Sega Game Gear</li>
+<li>Sega Genesis / Megadrive</li>
+<li>Sega Master System</li>
+<li>Sega SG-1000</li>
+<li>Tamagotchi P1</li>
+<li>Watara Supervision</li>
+</ul>
+<p>En este artículo vamos a describir los pasos para realizar las dos modificaciones. La modificación para añadir el slot microSD requiere también la sustitución de la flash, ya que cada vez que carguemos un juego nuevo de la microSD se grabará en el chip flash, y el original de 4MB soporta pocos ciclos de escritura dado que no estaba previsto que se utilizara de esta forma.</p>
+<h2 id="conexion-al-puerto-swd">Conexión al puerto SWD<a class="headerlink" href="#conexion-al-puerto-swd" title="Permanent link">&para;</a></h2>
+<p>El desbloqueo del procesador y la modificación del firmware se hacen a través del puerto SWD que habitualmente tienen los microcontroladores STM32 para programar su memoria flash interna y depurar los desarrollos. Este puerto SWD se encuentra en la PCB sin poblar, es decir sin pines o conectores soldados.</p>
+<p><img alt="SWD" src="images/posts/2026-03-08_zelda_gw/swd.jpg" /></p>
+<p>Para hacer la conexión con dicho puerto hay varias opciones:</p>
+<ul>
+<li>Soldar cables directamente.</li>
+<li>Introducir cables limpios o cables de pin macho, inclinándolos para forzar el contacto.</li>
+<li>Utilizar <a href="https://www.amazon.es/gp/product/B009UOHE1K/">pinzas sonda de conexión</a> especializadas.</li>
+<li>Utilizar <a href="https://es.aliexpress.com/item/1005007602295920.html">pinzas pogo pin</a> (Single row 5pin).</li>
+<li>Rutear los pines SWDIO y SWCLK hacia el puerto USB-C.</li>
+</ul>
+<h4 id="version-dificil">Versión difícil<a class="headerlink" href="#version-dificil" title="Permanent link">&para;</a></h4>
+<p>Como empecé a cacharrear con la máquina antes de que apareciera el mod de microSD, en su momento realicé el ruteado del puerto SWD al USB-C. Si se va a terminar realizando el mod de microSD no merece la pena el esfuerzo, dado que a partir de entonces el flasheo del firmware se realizará desde la propia microSD. De todas formas, a propósitos de documentación vamos a describir cómo se haría el ruteado.</p>
+<p>El puerto USB-C sólo tiene conectados los pines de alimentación ya que está previsto únicamente para cargar la máquina. Por tanto se pueden utilizar los pines D+ y D- que están libres para cablearlos a los pines SWDIO y SWCLK que son los únicos imprescindibles del puerto SWD. Necesitaremos también conectar a 5V y GND, pero estos ya se encuentran cableados en el puerto USB-C. El ruteado se hace con un fino cable barnizado (enamel) de los que se utilizan para construir bobinas. La soldadura a los dos pines centrales del puerto USB-C que son los que corresponden a D+ y D- es complicada al tener un paso muy pequeño, pero con paciencia y flux puede lograrse.</p>
+<p><img alt="Ruteado USB-C" src="images/posts/2026-03-08_zelda_gw/ruteado_usb-c_1.jpg" /></p>
+<p>Una vez resuelto la única parte difícil del procedimiento, es decir soldar los cables al puerto USB, estos se van sujetando cada cierta distancia con cinta Kapton y dirigiendo hacia la zona de la batería por donde se aprovecha el rebaje a ambos lados que hay del alojamiento que la rodea para pasar uno de los cables. El otro se conduce por el espacio que hay entre alojamiento de la batería y la PCB. De esta forma se consigue que ambos cables no puedan tocarse, aunque en teoría al estar barnizados no debería haber problema, se adopta este camino separado como precaución adicional.</p>
+<p><img alt="Ruteado USB-C" src="images/posts/2026-03-08_zelda_gw/ruteado_usb-c_2.jpg" /></p>
+<p>Una vez que los cables alcanzan las proximidades del puerto SWD, se utilizan los dos test pads que pueden verse en la foto para realizar las soldaduras.</p>
+<p><img alt="Ruteado USB-C" src="images/posts/2026-03-08_zelda_gw/ruteado_usb-c_3.jpg" /></p>
+<p>La correspondencia entre D+ y D- en el puerto USB-C con los SWDIO y SWCLK del puerto SWD, puede hacerse de cualquier forma siempre que tengamos claro donde está cada cual para más tarde hacer el adaptador USB-SWD que necesitaremos. En este montaje se ha optado por la siguiente correspondencia.</p>
+<ul>
+<li>D+ ↔ SWDIO</li>
+<li>D- ↔ SWCLK</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>La idea en un principio era adoptar la correspondencia utilizada en <a href="https://facelesstech.wordpress.com/2022/01/08/game-and-watch-hacking-with-rpi/">esta otra guía</a>, pero por un error cometido al principio, se terminó haciendo justo al revés. Como se comentaba antes, en realidad no es problema siempre que se tenga claro cómo están hechas las conexiones. Este aviso es sólo por si alguien intenta seguir ambas guías de forma simultánea, para que se tenga en cuenta dicha diferencia.</p>
+</div>
+<p>Una vez hecho el ruteado del puerto, necesitaremos construir el adaptador para poder extraer las señales SWDIO y SWCLK del puerto USB-C. Para ello se corta un cable USB-A convencional para tener acceso a los cuatro cables que contiene por separado y se sueldan a ellos conectores hembra de pin. El adaptador se completa con un adaptador USB-A a USB-C que se marca para orientarlo correctamente cuando lo vayamos a utilizar, ya que sólo hemos ruteado los pines D+ y D- de uno de los dos lados (el puerto USB-C es reversible).</p>
+<p><img alt="Adaptador USB-C SWD" src="images/posts/2026-03-08_zelda_gw/adaptador_usb-c_swd.jpg" /></p>
+<p>Los colores de los cables suelen estar estandarizados de la siguiente forma:</p>
+<ul>
+<li>Rojo: 5V</li>
+<li>Negro: GND</li>
+<li>Verde: D+</li>
+<li>Blanco: D-</li>
+</ul>
+<h4 id="version-facil">Versión fácil<a class="headerlink" href="#version-facil" title="Permanent link">&para;</a></h4>
+<p>La manera recomendada para hacer la conexión al puerto SWD (si no se quiere soldar, que es la opción más fiable) es mediante <a href="https://www.amazon.es/gp/product/B009UOHE1K/">pinzas sonda de conexión</a> especializadas. Para aplicar dichas pinzas, es recomendable desconectar previamente la batería de la consola. El conector de la batería salta fácilmente al introducir una pieza fina de plástico por debajo del mismo.</p>
+<p><img alt="Pinzas conexión GnW" src="images/posts/2026-03-08_zelda_gw/pinzas_conexion_gnw.jpg" /></p>
+<h2 id="sonda-de-programacion">Sonda de programación<a class="headerlink" href="#sonda-de-programacion" title="Permanent link">&para;</a></h2>
+<p>Ya tenemos resuelto dónde conectar en la consola. Ahora necesitamos un dispositivo capaz de comunicarse con ese puerto SWD del microcontrolador. Las opciones son:</p>
+<ul>
+<li><a href="https://www.raspberrypi.com/products/raspberry-pi-pico/">Raspberry Pi Pico</a> (Recomendado)</li>
+<li><a href="https://www.st.com/en/development-tools/st-link-v2.html">STLink</a></li>
+<li><a href="https://www.segger.com/products/debug-probes/j-link/#models">JLink</a></li>
+<li><a href="https://daplink.io/">DAPLink</a></li>
+<li><a href="https://projects.raspberrypi.org/en/projects/physical-computing/1">Raspberry Pi (GPIO)</a></li>
+</ul>
+<p>En mi caso me decanté por usar una Raspberry Pi Pico. Para que funcione como sonda de programación SWD hay que cargarle el firmware <a href="https://github.com/raspberrypi/debugprobe">debugprobe</a>. En mi caso utilicé el fichero <a href="https://github.com/raspberrypi/debugprobe/releases/download/picoprobe-cmsis-v1.0.3/picoprobe.uf2">picoprobe.uf2</a> de <a href="https://github.com/raspberrypi/debugprobe/releases/tag/picoprobe-cmsis-v1.0.3">esta release</a> en concreto. Para flashear la Pico sólo hay que conectarla al ordenador por USB mientras pulsamos el botón <code>BOOTSEL</code> para forzar el modo en el que se monta como una unidad de almacenamiento y arrastrar el fichero <code>.uf2</code> a esa unidad.</p>
+<p>Una vez programada la Pico, solo queda hacer las conexiones de los cables que habíamos conectado al puerto SWD de la Game&amp;Watch. Podemos utilizar el mismo tipo de pinzas que aplicamos a la consola, aunque en mi caso utilicé otras similares pero un poco más robustas, ya que el espaciado de los pines GPIO de la Pico es mucho mayor.</p>
+<p><img alt="Pinzas conexión Pico" src="images/posts/2026-03-08_zelda_gw/pinzas_conexion_pico.jpg" /></p>
+<p>El conexionado entre Game&amp;Watch y Raspberry Pi Pico es:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pico</th>
+<th style="text-align: left;">GnW</th>
+<th style="text-align: left;">Color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Negro</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Blanco</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Verde</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="GnW - Pico" src="images/posts/2026-03-08_zelda_gw/gnw_pico.png" /></p>
+<h2 id="desbloqueo-del-microcontrolador">Desbloqueo del microcontrolador<a class="headerlink" href="#desbloqueo-del-microcontrolador" title="Permanent link">&para;</a></h2>
+<p>Una vez resuelta la conectividad a la placa, el primer paso en la modificación es el desbloqueo del microcontrolador STM32H7 para que podamos sustituir el firmware que hay en su memoria flash interna así como poder escribir en la memoria flash externa (con código que inyectaremos en el propio microcontrolador).</p>
+<p>Esta tarea se efectúa con el conjunto de utilidades <a href="https://github.com/BrianPugh/gnwmanager">gnwmanager</a>. Este paquete se encuentra registrado en <a href="https://pypi.org/project/gnwmanager/">PyPI</a> por lo que se puede instalar muy fácilmente con <code>pip</code> (preferiblemente dentro de un entorno virtual Python).</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>gnwmanager
+$<span class="w"> </span>gnwmanager<span class="w"> </span>install<span class="w"> </span>openocd
+</code></pre></div>
+<p>Ahora, tras volver a conectar la batería de la consola si la habíamos desconectado, ejecutaremos el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code>(gnwmanager) $ gnwmanager unlock
+</code></pre></div>
+<p>El proceso se interrumpirá en un par de ocasiones dando instrucciones por la terminal que deberemos seguir. Una salida típica sería:</p>
+<div class="highlight"><pre><span></span><code>(gnwmanager) [edu@thinkpad ~]$ gnwmanager unlock
+
+If interrupted, resume unlocking with:
+    gnwmanager unlock --backup-dir=backups-2025-10-27-19-28-14
+
+Detected ZELDA game and watch.
+Backing up itcm to &quot;backups-2025-10-27-19-28-14/itcm_backup_zelda.bin&quot;... complete!
+Backing up external flash to &quot;backups-2025-10-27-19-28-14/flash_backup_zelda.bin&quot;... complete!
+Flashing payload to external flash... complete!
+
+
+Payload successfully flashed. Perform the following steps:
+
+1. Fully remove power, then re-apply power.
+2. Press the power button to turn on the device; the screen should turn blue.
+
+Press the &quot;enter&quot; key when the screen is blue: 
+Backing up internal flash to &quot;backups-2025-10-27-19-28-14/internal_flash_backup_zelda.bin&quot;... complete!
+Unlocking device... complete!
+Restoring firmware... complete!
+Unlocking complete!
+Pressing the power button should launch the original firmware.
+</code></pre></div>
+<p>Aparecerán los ficheros <code>internal_flash_backup_zelda.bin</code>, <code>flash_backup_zelda.bin</code> y <code>itcm_backup_zelda.bin</code> en un directorio <code>backups-FECHA-HORA</code> que conviene guardar.</p>
+<p>Si encendemos en este momento la consola, no notaremos ningún cambio, es decir ejecutará el firmware original, pero ahora el chip estará desprotegido y podremos flashearle otro firmware.</p>
+<h2 id="modificacion-1-retro-go">Modificación 1: retro-go<a class="headerlink" href="#modificacion-1-retro-go" title="Permanent link">&para;</a></h2>
+<h4 id="sustitucion-de-la-flash">Sustitución de la flash<a class="headerlink" href="#sustitucion-de-la-flash" title="Permanent link">&para;</a></h4>
+<p>En este momento toca empezar a modificar la consola seriamente. Como se comentaba al principio, el chip de almacenamiento externo del microcontrolador es una memoria flash de solo 4MB (modelo Zelda). No solo es pequeño para poder cargar muchos juegos, sino que tiene pocos ciclos de escritura, por lo que sustituir los juegos frecuentemente, o cachearlos cuando se hace la modificación para añadir la microSD, puede desgastarlo rápidamente. La modificación habitual es desoldar el chip flash de 4MB original y sustituirlo por otro de 64MB, concretamente el modelo <a href="https://es.aliexpress.com/item/1005005138227815.html">MX25U51245GZ4I00</a>.</p>
+<p>Para retirar el chip flash original, es muy recomendable extraer la placa de la consola, desconectando las dos fajas de datos de la pantalla, desoldando el altavoz y retirando todos los tornillos. Una vez que tengamos la placa sobre la mesa de trabajo, protegemos con cinta kapton los alrededores del chip y lo extraemos aplicando flux y aire caliente con una pistola.</p>
+<p><img alt="Retirar chip flash original 1" src="images/posts/2026-03-08_zelda_gw/mod_flash_1.jpg" /></p>
+<p><img alt="Retirar chip flash original 2" src="images/posts/2026-03-08_zelda_gw/mod_flash_2.jpg" /></p>
+<p>A continuación limpiamos con malla desoldadora la huella del chip que acabamos de retirar. También, aunque hay que hacerlo con sumo cuidado, ayuda rascar (con la punta de las pinzas por ejemplo) la máscara de soldadura de la PCB para ampliar hacia el exterior la superficie soldable de la huella de soldadura del chip.</p>
+<p><img alt="Retirar chip flash original 3" src="images/posts/2026-03-08_zelda_gw/mod_flash_3.jpg" /></p>
+<p>El nuevo chip flash tiene formato QFN-8 de soldadura superficial que no resulta sencillo de soldar. Es recomendable aplicar flux y preestañar los pads de dicho chip por la parte inferior. También recomiendo poner una tira de cinta kapton en la parte inferior de manera que este no quede directamente apoyado sobre la PCB, lo que dificultaría el flujo de estaño por los pads.</p>
+<p><img alt="Nuevo chip flash" src="images/posts/2026-03-08_zelda_gw/new_flash.jpg" /></p>
+<p>Hay que fijarse bien en el punto que lleva el chip en su encapsulado que marca el pin número 1 que se corresponde con el que tiene un triángulo indicador en la PCB como se puede ver en la segunda foto de las siguientes.</p>
+<p><img alt="Retirar chip flash original 4" src="images/posts/2026-03-08_zelda_gw/mod_flash_4.jpg" /></p>
+<p><img alt="Retirar chip flash original 5" src="images/posts/2026-03-08_zelda_gw/mod_flash_5.jpg" /></p>
+<h4 id="flasheo-retro-go">Flasheo retro-go<a class="headerlink" href="#flasheo-retro-go" title="Permanent link">&para;</a></h4>
+<p>Una vez instalado el chip, es hora de flashear el firmware. Para esta modificación, me decanto por no hacer dual boot, es decir no instalar el firmware original parcheado junto a retro-go, para así tener todo el espacio de la memoria flash dedicado a los juegos. Para ello empezamos bajando el repositorio del mismo:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/git
+git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/sylverb/game-and-watch-retro-go
+<span class="nb">cd</span><span class="w"> </span>game-and-watch-retro-go
+</code></pre></div>
+<p>Una vez bajado el código, toca instalar las ROMs en los directorios correspondientes a las distintas máquinas soportadas que encontraremos en <code>~/git/game-and-watch-retro-go/roms/</code>. Por ejemplo, para instalar las ROMs de NES, copiamos las ROMs a <code>~/git/game-and-watch-retro-go/roms/nes/</code>. Si queremos portadillas para los juegos, situaremos en los mismos directorios y con los mismos nombres de fichero de las ROMs correspondientes, las imágenes en formato jpg o png. Por ejemplo, para la ROM <code>zelda.nes</code>, situaremos la portada en <code>~/git/game-and-watch-retro-go/roms/nes/zelda.jpg</code>.</p>
+<p>Tenemos que tener en cuenta que todas las ROMs y sus portadillas tienen que caber en el chip flash de 64 MB que hemos instalado a la consola. La mayoría de las ROMs se comprimen, por lo que como regla de partida, utilizaremos el criterio de elegir ROMs por un tamaño total de aproximadamente el doble (128MB).</p>
+<p>Ahora toca compilar el firmware (si no vamos a utilizar portadillas para aprovechar el espacio de sus ficheros para poder poner más ROMs, no incluir las variables de entorno <code>COVERFLOW</code> y <code>JPG_QUALITY</code> en los comandos de compilación y flasheo):</p>
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>docker_build
+make<span class="w"> </span>docker
+
+<span class="o">(</span>docker<span class="o">)</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">GNW_TARGET</span><span class="o">=</span>zelda
+<span class="o">(</span>docker<span class="o">)</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">ADAPTER</span><span class="o">=</span>cmsis-dap
+<span class="o">(</span>docker<span class="o">)</span><span class="w"> </span>make<span class="w"> </span>clean
+<span class="o">(</span>docker<span class="o">)</span><span class="w"> </span><span class="nv">COVERFLOW</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">JPG_QUALITY</span><span class="o">=</span><span class="m">90</span><span class="w"> </span><span class="nv">EXTFLASH_SIZE_MB</span><span class="o">=</span><span class="m">64</span><span class="w"> </span>make<span class="w"> </span>-j<span class="k">$(</span>nproc<span class="k">)</span>
+</code></pre></div>
+<p>Al terminar la compilación se nos informará del tamaño resultante del binario que se flasheará en el chip. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code>External flash usage
+    Capacity:     61050880 Bytes ( 58.223 MB)
+    Usage:        54335345 Bytes ( 51.818 MB)
+    Free:          6715535 Bytes (  6.404 MB)
+</code></pre></div>
+<p>Con esa información a la vista podremos iterar el proceso añadiendo o retirando ROMs hasta obtener un binario de unos 55MB, ya que hay que prever algo para los savestates de los juegos.</p>
+<p>Una vez que estemos satisfechos con la ocupación del espacio, flashearemos el firmware volviendo a conectar la sonda de programación que comentamos en el apartado <a href="#sonda-de-programacion">Sonda de programación</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>docker<span class="o">)</span><span class="w"> </span><span class="nv">COVERFLOW</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">JPG_QUALITY</span><span class="o">=</span><span class="m">90</span><span class="w"> </span><span class="nv">EXTFLASH_SIZE_MB</span><span class="o">=</span><span class="m">64</span><span class="w"> </span>make<span class="w"> </span>flash_gnwmanager
+<span class="o">(</span>docker<span class="o">)</span><span class="w"> </span>gnwmanager<span class="w"> </span>disable-debug
+</code></pre></div>
+<p>Una salida típica sería:</p>
+<div class="highlight"><pre><span></span><code>docker@53335bdd9199:/opt/workdir$<span class="w"> </span><span class="nv">COVERFLOW</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">JPG_QUALITY</span><span class="o">=</span><span class="m">90</span><span class="w"> </span><span class="nv">EXTFLASH_SIZE_MB</span><span class="o">=</span><span class="m">64</span><span class="w"> </span>make<span class="w"> </span>flash_gnwmanager
+Entering<span class="w"> </span><span class="s1">&#39;LCD-Game-Emulator&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;blueMSX-go&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;caprice32-go&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;fceumm-go&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;gwenesis&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;potator&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;prosystem-go&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;retro-go-stm32&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;smw&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;tamalib&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;zelda3&#39;</span>
+<span class="o">[</span><span class="w"> </span>BASH<span class="w"> </span><span class="o">]</span><span class="w"> </span>Checking<span class="w"> </span><span class="k">for</span><span class="w"> </span>updated<span class="w"> </span>roms
+<span class="m">100</span>%<span class="p">|</span>█████████████████████████████████████████████████████████████████<span class="p">|</span><span class="w"> </span><span class="m">208</span>/208<span class="w"> </span><span class="o">[</span><span class="m">04</span>:20&lt;<span class="m">00</span>:00,<span class="w">  </span><span class="m">1</span>.25s/it<span class="o">]</span>
+docker@53335bdd9199:/opt/workdir$<span class="w"> </span>gnwmanager<span class="w"> </span>disable-debug
+docker@53335bdd9199:/opt/workdir$
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>En la <a href="https://github.com/sylverb/game-and-watch-retro-go/tree/b80630d0d1b3fbdeeb5e2e6e78bf5643a7de211e">versión de retro-go</a> en el momento de escribir esto, al finalizar el comando <code>make flash_gnwmanager</code> aparecía un error (haciendo mención al parámetro <code>OFFSET</code>). Investigando parecía tratarse de un problema menor que sólo impedía la desactivación del modo debug del procesador. Esto puede tener implicaciones en el consumo de batería, y por eso incluyo la ejecución manual de la desactivación del debug al final. Conseguí que no apareciera el error sustituyendo las líneas 1028 a 1031 del archivo <code>Makefile.common</code>:
+    <div class="highlight"><pre><span></span><code>    @$(GNWMANAGER) flash $(INTFLASH_ADDRESS) $(BUILD_DIR)/$(TARGET)_intflash.bin \
+-- flash ext $(BUILD_DIR)/$(TARGET)_extflash.bin --offset=$(EXTFLASH_OFFSET) \
+-- start $(INTFLASH_ADDRESS) \
+$(RESET_DBGMCU_CMD)
+</code></pre></div>
+por:
+    <div class="highlight"><pre><span></span><code>    @$(GNWMANAGER) flash $(INTFLASH_ADDRESS) $(BUILD_DIR)/$(TARGET)_intflash.bin \
+-- flash ext $(BUILD_DIR)/$(TARGET)_extflash.bin --offset=$(EXTFLASH_OFFSET) \
+-- start $(INTFLASH_ADDRESS)
+</code></pre></div></p>
+</div>
+<p>Es importante que guardemos el fichero <code>build/gw_retro_go.elf</code> porque lo necesitaremos para extraer los savestates en el futuro.</p>
+<h4 id="respaldar-savestates-retro-go">Respaldar savestates retro-go<a class="headerlink" href="#respaldar-savestates-retro-go" title="Permanent link">&para;</a></h4>
+<p>Si más adelante queremos extraer los savestates de los juegos, para poder volverlos a instalar tras flashear un nuevo firmware, en primer lugar necesitaremos depositar en el directorio <code>build</code> el fichero <code>gw_retro_go.elf</code> que obtuvimos en el paso anterior. Después podremos arrancar de nuevo el entorno docker y ejecutar el script de backup:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/git/game-and-watch-retro-go
+make<span class="w"> </span>docker
+
+<span class="o">(</span>docker<span class="o">)</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">GNW_TARGET</span><span class="o">=</span>zelda
+<span class="o">(</span>docker<span class="o">)</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">ADAPTER</span><span class="o">=</span>cmsis-dap
+<span class="o">(</span>docker<span class="o">)</span><span class="w"> </span>./scripts/saves_backup.sh<span class="w"> </span>build/gw_retro_go.elf
+</code></pre></div>
+<p>Los savestates aparecerán en el subdirectorio <code>~/git/game-and-watch-retro-go/save_states</code>. Una vez que hayamos compilado y flasheado un nuevo firmware, podremos restaurarlos ejecutando el script de restauración:</p>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>docker<span class="o">)</span><span class="w"> </span>./scripts/saves_restore.sh
+</code></pre></div>
+<p>La restauración se hace de forma inteligente, es decir, si tenemos savestates de un juego que no está en el nuevo firmware, dicho savestate no se instalará en la consola, para evitar desperdiciar espacio de la memoria flash.</p>
+<h2 id="modificacion-2-retro-go-sd">Modificación 2: retro-go-sd<a class="headerlink" href="#modificacion-2-retro-go-sd" title="Permanent link">&para;</a></h2>
+<h4 id="instalacion-modulo-slot-microsd">Instalación módulo slot microSD<a class="headerlink" href="#instalacion-modulo-slot-microsd" title="Permanent link">&para;</a></h4>
+<p>Al igual que con la modificación para el retro-go normal, para utilizar retro-go-sd hay que empezar haciendo una modificación hardware a la consola. Esta vez es más complicada, sobre todo la fase final de soldadura del módulo directamente sobre las patitas del microcontrolador, que tienen un paso muy pequeño.</p>
+<p>El módulo se compone del propio lector de tarjetas microSD y 4 componentes. Todo ello soldado sobre una PCB tipo flex. La lista de componentes completa es:</p>
+<ul>
+<li>1 <a href="https://es.aliexpress.com/item/1005008902154552.html">lector de tarjetas microSD</a></li>
+<li>1 <a href="https://es.aliexpress.com/item/1005005677654015.html">resistencia 100kΩ 0603</a> o 0805</li>
+<li>2 <a href="https://es.aliexpress.com/item/1005003512666695.html">condensadores de 1μF 0603</a> o 0805</li>
+<li>1 <a href="https://es.aliexpress.com/item/1005007136710461.html">regulador de tensión RT9193-28GB</a>. Hay personas que han reportado problemas con este modelo comprado en Aliexpress y recomiendan como reemplazo el "MIC5504-2.8YM5-TR".</li>
+<li>1 PCB flex: Aquí se utiliza la versión de <a href="https://github.com/sylverb/game-and-watch-retro-go-sd/raw/refs/heads/main/assets/MicroSD_Zelda_Final.zip">PrimoAngelo</a>. La original que suele referenciarse en la mayoría de las guías es la de <a href="https://github.com/sylverb/game-and-watch-retro-go-sd/raw/refs/heads/main/assets/GnW_SD_v2.zip">Tim Schuerewegen / hundshamer</a>.</li>
+</ul>
+<p>Empezaremos soldando los componentes sobre el PCB flex.</p>
+<p><img alt="Módulo microSD" src="images/posts/2026-03-08_zelda_gw/mod_msd_1.jpg" /></p>
+<p>Lo siguiente como decíamos al principio será el difícil paso de instalar el módulo en la consola. Retiramos los cuatro tornillos que caen en su superficie y lo presentamos de forma que consigamos que los pads de la flex se encuentren alineados con las patitas del microcontrolador a la vez que estos quedan a sus pies, es decir de esta forma.</p>
+<p><img alt="Módulo microSD" src="images/posts/2026-03-08_zelda_gw/mod_msd_2.png" /></p>
+<p>Una vez que se encuentre alineado a nuestro gusto, procederemos a fijarlo en su posición atornillando los cuatro tornillos. Ahora será cuando tendremos que armarnos de paciencia y flux de buena calidad para lograr hacer las soldaduras de los pads del flex y evitar a la vez los puentes entre las mismas. Será necesario comprobar continuidad de las soldaduras así como la no existencia de puentes entre las patitas adyacentes. Si finalmente lo conseguimos, solo resta añadir un punto de soldadura entre el pad marcado con <code>+4V</code> y el terminal del condensador que queda a su lado.</p>
+<h4 id="flasheo-bootloader">Flasheo bootloader<a class="headerlink" href="#flasheo-bootloader" title="Permanent link">&para;</a></h4>
+<p>Lo siguiente será flashear el bootloader junto al firmware original parcheado de la consola para permitir el dual boot (esta vez sí merece la pena al contar con espacio prácticamente ilimitado para ROMs en la microSD). Desde el directorio donde estén los ficheros de backup de la consola y con un entorno Python que tenga instalado <code>gnwmanager</code>, ejecutaremos el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>gnwmanager<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>gnwmanager<span class="w"> </span>flash-patch<span class="w"> </span>zelda<span class="w"> </span>internal_flash_backup_zelda.bin<span class="w"> </span>flash_backup_zelda.bin<span class="w"> </span>--bootloader
+</code></pre></div>
+<p>Una salida típica sería:</p>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>gnwmanager<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>gnwmanager<span class="w"> </span>flash-patch<span class="w"> </span>zelda<span class="w"> </span>internal_flash_backup_zelda.bin<span class="w"> </span>flash_backup_zelda.bin<span class="w"> </span>--bootloader
+<span class="m">100</span>%<span class="p">|</span>███████████████████████████████████████████████████████████████████<span class="p">|</span><span class="w"> </span><span class="m">16</span>/16<span class="w"> </span><span class="o">[</span><span class="m">00</span>:58&lt;<span class="m">00</span>:00,<span class="w">  </span><span class="m">3</span>.66s/it<span class="o">]</span>
+</code></pre></div>
+<p>Si encendemos en ese momento la consola, tras haber retirado la sonda de programación, veremos que arranca el bootloader y nos muestra el siguiente aviso:</p>
+<p><img alt="Aviso del bootloader" src="images/posts/2026-03-08_zelda_gw/bootloader_warning.jpg" /></p>
+<h4 id="instalacion-de-retro-go-sd">Instalación de Retro-Go SD<a class="headerlink" href="#instalacion-de-retro-go-sd" title="Permanent link">&para;</a></h4>
+<p>Solo nos restará instalar el firmware de Retro-Go SD. Para ello, copiaremos el fichero <code>retro-go_update.bin</code> que descargaremos de la última release publicada por Sylverb en el <a href="https://github.com/sylverb/game-and-watch-retro-go-sd/releases">repositorio de Retro-Go SD</a> al directorio raíz de la microSD. Al arrancar por primera vez, veremos en pantalla cómo se copian los ficheros de retro-go y los cores de los emuladores a la misma microSD.</p>
+<p><img alt="Instalación de Retro-Go SD" src="images/posts/2026-03-08_zelda_gw/retro-go_update.jpg" /></p>
+<p>A la vez se creará en la microSD la estructura de directorios siguiente:</p>
+<div class="highlight"><pre><span></span><code>retro-go/
+├── CONFIG
+├── bios/
+│   ├── coleco/
+│   ├── msx/
+│   ├── nes/
+├── cores/
+│   ├── mappers/
+│   ├── a2600.bin
+│   ├── a2600_defprops.bin
+│   ├── a7800.bin
+│   └── ...
+├── data/
+│   ├── a2600/
+│   ├── a7800/
+│   ├── amstrad/
+│   └── ...
+├── fonts/
+│   ├── cp1251_greybeard.bin
+│   ├── cp1251_sans_serif.bin
+│   ├── cp1251_sans_serif_bold.bin
+│   └── ...
+└── roms/
+    ├── a2600/
+    ├── a7800/
+    ├── amstrad/
+    └── ...
+</code></pre></div>
+<p>Sólo restará copiar las ROMs que queramos emular en los directorios correspondientes. Si queremos portadillas para los juegos, tendremos que crear el subdirectorio <code>covers</code> con los mismos subdirectorios del directorio <code>roms</code> y colocar allí las imágenes. Estas tienen que estar en un formato especial IMG que generaremos con un <a href="https://github.com/sylverb/game-and-watch-retro-go-sd/blob/main/README.md#cover-art-generator-gencoverspy">script que se incluye en el repositorio de Retro-Go SD</a>. Los nombres de los archivos IMG tendrán que coincidir con los de las ROMs en su correspondiente directorio.</p>
+<h4 id="carcasa-trasera">Carcasa trasera<a class="headerlink" href="#carcasa-trasera" title="Permanent link">&para;</a></h4>
+<p>Al colocar el slot microSD hay que modificar la tapa trasera de la consola puesto que el lector cae sobre unos postes de apoyo de la cruceta. También hay que perforar el lateral para dejar paso a la microSD para poder extraerla e insertarla cuando queramos cambiar los juegos, rescatar savestates o actualizar el firmware. Para realizar la perforación <a href="https://www.printables.com/model/1269910-zelda-game-and-watch-sd-card-drill-jig/files">existen unos utillajes</a> diseñados por el usuario facelesstech que ayudan mucho a que la ranura quede limpia. En el vídeo que hay al final de este artículo, puede verse cómo se realiza esta modificación.</p>
+<p>Existe una alternativa si no queremos arriesgarnos a estropear definitivamente la tapa original, y es imprimir en 3D el modelo creado por el usuario Aradia y que puede descargarse de <a href="https://github.com/sylverb/game-and-watch-retro-go-sd/raw/refs/heads/main/assets/GnW_Zelda_back_shell.stl">aquí</a>.</p>
+<h2 id="controles">Controles<a class="headerlink" href="#controles" title="Permanent link">&para;</a></h2>
+<p>Indicamos a continuación las combinaciones de teclas de manejo de Retro-go. Manteniendo pulsado el botón <code>PAUSE/SET</code> mientras se presionan otros botones se realizan las siguientes acciones:</p>
+<table>
+<thead>
+<tr>
+<th>Combinación de teclas</th>
+<th>Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PAUSE/SET</code> + <code>GAME</code></td>
+<td>Guardar una captura de pantalla (deshabilitado por defecto en builds con flash de 1MB)</td>
+</tr>
+<tr>
+<td><code>PAUSE/SET</code> + <code>TIME</code></td>
+<td>Cambiar velocidad de ejecución (1x/1.5x)</td>
+</tr>
+<tr>
+<td><code>PAUSE/SET</code> + <code>UP</code></td>
+<td>Aumentar brillo</td>
+</tr>
+<tr>
+<td><code>PAUSE/SET</code> + <code>DOWN</code></td>
+<td>Disminuir brillo</td>
+</tr>
+<tr>
+<td><code>PAUSE/SET</code> + <code>RIGHT</code></td>
+<td>Aumentar volumen</td>
+</tr>
+<tr>
+<td><code>PAUSE/SET</code> + <code>LEFT</code></td>
+<td>Disminuir volumen</td>
+</tr>
+<tr>
+<td><code>PAUSE/SET</code> + <code>B</code></td>
+<td>Cargar state</td>
+</tr>
+<tr>
+<td><code>PAUSE/SET</code> + <code>A</code></td>
+<td>Guardar state</td>
+</tr>
+<tr>
+<td><code>PAUSE/SET</code> + <code>A</code></td>
+<td>Autodisparo en botón A</td>
+</tr>
+<tr>
+<td><code>PAUSE/SET</code> + <code>B</code></td>
+<td>Autodisparo en botón B</td>
+</tr>
+<tr>
+<td><code>PAUSE/SET</code> + <code>POWER</code></td>
+<td>Poweroff without save-state</td>
+</tr>
+</tbody>
+</table>
+<h2 id="referencias">Referencias<a class="headerlink" href="#referencias" title="Permanent link">&para;</a></h2>
+<p>No quiero terminar sin hacer mención al servidor de Discord de <a href="https://discord.gg/TKjHZ5yV">stacksmashing</a> y a los siguientes usuarios cuyo trabajo ha hecho posible estas modificaciones:</p>
+<ul>
+<li>stacksmashing</li>
+<li>kbeckmann</li>
+<li>Tim Schuerewegen</li>
+<li>GMMan</li>
+<li>tfmoe__</li>
+<li>Sylver Bruneau</li>
+<li>facelesstech</li>
+<li>DasBoss</li>
+<li>bxhxx</li>
+<li>Benjamin Solberg</li>
+<li>orzeus</li>
+<li>ducalex</li>
+<li>ZimM</li>
+<li>PrimoAngelo</li>
+<li>Aradia</li>
+</ul>
+<p>En el siguiente video de Macho Nacho se puede ver el todo el proceso de modificación de la consola (el flex del módulo microSD es el modelo que no se sujeta con los tornillos sino con puntos de soldadura sobre la PCB de la G&amp;W):</p>
+<iframe width="688" height="387" src="https://www.youtube.com/embed/8YIHjUM8Qms" title="Making The Zelda G&W Into A MODERN Emulation Powerhouse" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/eduardofilo" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://mastodon.social/@eduardofilo" target="_blank" rel="noopener me" title="mastodon.social" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/eduardofilo" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/edumoreno/" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="http://eduardofilo.es" target="_blank" rel="noopener" title="eduardofilo.es" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M309.8 480.3c-13.6 14.5-50 31.7-97.4 31.7-120.8 0-147-88.8-147-140.6v-144H17.9c-5.5 0-10-4.5-10-10v-68c0-7.2 4.5-13.6 11.3-16 62-21.8 81.5-76 84.3-117.1.8-11 6.5-16.3 16.1-16.3h70.9c5.5 0 10 4.5 10 10v115.2h83c5.5 0 10 4.4 10 9.9v81.7c0 5.5-4.5 10-10 10h-83.4V360c0 34.2 23.7 53.6 68 35.8 4.8-1.9 9-3.2 12.7-2.2 3.5.9 5.8 3.4 7.4 7.9l22 64.3c1.8 5 3.3 10.6-.4 14.5z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/c/EduardoMorenoLamana" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="rss.xml" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64zm0 352a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm32-256c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tracking", "navigation.tabs"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
