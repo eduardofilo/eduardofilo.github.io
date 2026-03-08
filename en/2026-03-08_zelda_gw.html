@@ -4552,7 +4552,7 @@ make<span class="w"> </span>docker
 <span class="o">(</span>docker<span class="o">)</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">ADAPTER</span><span class="o">=</span>cmsis-dap
 <span class="o">(</span>docker<span class="o">)</span><span class="w"> </span>./scripts/saves_backup.sh<span class="w"> </span>build/gw_retro_go.elf
 </code></pre></div>
-<p>The savestates will appear in the <code>~/git/game-and-watch-retro-go/save_states</code> subdirectory. Once we have compiled and flashed a new firmware, we can restore them by running the restoration script:</p>
+<p>The savestates will appear in the <code>~/git/game-and-watch-retro-go/save_states</code> subdirectory. Once we have built and flashed a new firmware, we can restore them by running the restoration script:</p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>docker<span class="o">)</span><span class="w"> </span>./scripts/saves_restore.sh
 </code></pre></div>
 <p>Restoration is done intelligently, that is, if we have savestates of a game that is not in the new firmware, that savestate will not be installed on the console, to avoid wasting flash memory space.</p>
