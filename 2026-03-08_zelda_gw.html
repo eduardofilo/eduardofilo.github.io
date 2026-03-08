@@ -4619,7 +4619,7 @@ make<span class="w"> </span>docker
 <p>Al colocar el slot microSD hay que modificar la tapa trasera de la consola puesto que el lector cae sobre unos postes de apoyo de la cruceta. También hay que perforar el lateral para dejar paso a la microSD para poder extraerla e insertarla cuando queramos cambiar los juegos, rescatar savestates o actualizar el firmware. Para realizar la perforación <a href="https://www.printables.com/model/1269910-zelda-game-and-watch-sd-card-drill-jig/files">existen unos utillajes</a> diseñados por el usuario facelesstech que ayudan mucho a que la ranura quede limpia. En el vídeo que hay al final de este artículo, puede verse cómo se realiza esta modificación.</p>
 <p>Existe una alternativa si no queremos arriesgarnos a estropear definitivamente la tapa original, y es imprimir en 3D el modelo creado por el usuario Aradia y que puede descargarse de <a href="https://github.com/sylverb/game-and-watch-retro-go-sd/raw/refs/heads/main/assets/GnW_Zelda_back_shell.stl">aquí</a>.</p>
 <h2 id="controles">Controles<a class="headerlink" href="#controles" title="Permanent link">&para;</a></h2>
-<p>Indicamos a continuación las combinaciones de teclas de manejo de Retro-go. Manteniendo pulsado el botón <code>PAUSE/SET</code> mientras se presionan otros botones se realizan las siguientes acciones:</p>
+<p>Indicamos a continuación las combinaciones de teclas de manejo de Retro-go SD (aunque muchas de ellas funcionan también en Retro-go). Manteniendo pulsado el botón <code>PAUSE/SET</code> mientras se presionan otros botones se realizan las siguientes acciones:</p>
 <table>
 <thead>
 <tr>
@@ -4670,7 +4670,11 @@ make<span class="w"> </span>docker
 </tr>
 <tr>
 <td><code>PAUSE/SET</code> + <code>POWER</code></td>
-<td>Poweroff without save-state</td>
+<td>Apagar sin guardar save-state</td>
+</tr>
+<tr>
+<td><code>PAUSE/SET</code> + <code>POWER</code></td>
+<td>Después de haber hecho <code>PAUSE/SET</code> y seleccionar <code>Power off</code>, arrancará el bootloader sin llegar a llamar a Retro-go, lo que nos permitirá ver la versión del bootloader así como información sobre la detección de la microSD y el estado de las memorias flash interna y externa</td>
 </tr>
 </tbody>
 </table>

@@ -4619,7 +4619,7 @@ make<span class="w"> </span>docker
 <p>When installing the microSD slot, you need to modify the back cover of the console because the reader falls over some support posts on the cruceta. You also need to drill a hole in the side to allow access to the microSD so you can extract and insert it when you want to change games, rescue savestates, or update the firmware. To perform the drilling, <a href="https://www.printables.com/model/1269910-zelda-game-and-watch-sd-card-drill-jig/files">there are some tools</a> designed by the user facelesstech that help keep the slot clean. You can see how this modification is performed in the video at the end of this article.</p>
 <p>There is an alternative if we don't want to risk permanently damaging the original cover, and that is to 3D print the model created by the user Aradia, which can be downloaded <a href="https://github.com/sylverb/game-and-watch-retro-go-sd/raw/refs/heads/main/assets/GnW_Zelda_back_shell.stl">here</a>.</p>
 <h2 id="controls">Controls<a class="headerlink" href="#controls" title="Permanent link">&para;</a></h2>
-<p>Below we indicate the Retro-go control key combinations. Holding down the <code>PAUSE/SET</code> button while pressing other buttons performs the following actions:</p>
+<p>Below we indicate the key combinations for controlling Retro-go SD (although many of them also work in Retro-go). Holding down the <code>PAUSE/SET</code> button while pressing other buttons performs the following actions:</p>
 <table>
 <thead>
 <tr>
@@ -4671,6 +4671,10 @@ make<span class="w"> </span>docker
 <tr>
 <td><code>PAUSE/SET</code> + <code>POWER</code></td>
 <td>Poweroff without save-state</td>
+</tr>
+<tr>
+<td><code>PAUSE/SET</code> + <code>POWER</code></td>
+<td>After having done <code>PAUSE/SET</code> and selected <code>Power off</code>, the bootloader will start without calling Retro-go, allowing us to see the bootloader version as well as information about the microSD detection and the state of the internal and external flash memories</td>
 </tr>
 </tbody>
 </table>
