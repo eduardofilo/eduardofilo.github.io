@@ -4569,10 +4569,11 @@ make<span class="w"> </span>docker
 <li>1 flex PCB: Here the version by <a href="https://github.com/sylverb/game-and-watch-retro-go-sd/raw/refs/heads/main/assets/MicroSD_Zelda_Final.zip">PrimoAngelo</a> is used. The original one usually referenced in most guides is the one by <a href="https://github.com/sylverb/game-and-watch-retro-go-sd/raw/refs/heads/main/assets/GnW_SD_v2.zip">Tim Schuerewegen / hundshamer</a>.</li>
 </ul>
 <p>We will begin by soldering the components onto the flex PCB.</p>
-<p><img alt="Módulo microSD" src="../images/posts/2026-03-08_zelda_gw/mod_msd_1.jpg" /></p>
+<p><img alt="microSD module" src="../images/posts/2026-03-08_zelda_gw/mod_msd_1.jpg" /></p>
 <p>The next step as we said at the beginning will be the difficult step of installing the module in the console. We remove the four screws that fall on its surface and present it in a way that we get the pads of the flex to align with the pins of the microcontroller while these end up at their feet, that is, like this.</p>
-<p><img alt="Módulo microSD" src="../images/posts/2026-03-08_zelda_gw/mod_msd_2.png" /></p>
+<p><img alt="microSD module" src="../images/posts/2026-03-08_zelda_gw/mod_msd_2.png" /></p>
 <p>Once it is aligned to our liking, we will proceed to fix it in its position by driving in the four screws. Now is when we will have to arm ourselves with patience and high-quality flux to manage to solder the pads of the flex and simultaneously avoid bridges between them. It will be necessary to check the continuity of the solders as well as the non-existence of bridges between adjacent pins. If we finally succeed, all that remains is to add a solder point between the pad marked with <code>+4V</code> and the capacitor terminal next to it.</p>
+<p><img alt="microSD module" src="../images/posts/2026-03-08_zelda_gw/mod_msd_3.jpg" /></p>
 <h4 id="bootloader-flashing">Bootloader flashing<a class="headerlink" href="#bootloader-flashing" title="Permanent link">&para;</a></h4>
 <p>The next step will be to flash the bootloader along with the console's patched original firmware to allow dual boot (this time it is worthwhile as we have practically unlimited space for ROMs on the microSD). From the directory where the console backup files are located and with a Python environment that has <code>gnwmanager</code> installed, we will execute the following command:</p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>gnwmanager<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>gnwmanager<span class="w"> </span>flash-patch<span class="w"> </span>zelda<span class="w"> </span>internal_flash_backup_zelda.bin<span class="w"> </span>flash_backup_zelda.bin<span class="w"> </span>--bootloader
@@ -4582,10 +4583,10 @@ make<span class="w"> </span>docker
 <span class="m">100</span>%<span class="p">|</span>███████████████████████████████████████████████████████████████████<span class="p">|</span><span class="w"> </span><span class="m">16</span>/16<span class="w"> </span><span class="o">[</span><span class="m">00</span>:58&lt;<span class="m">00</span>:00,<span class="w">  </span><span class="m">3</span>.66s/it<span class="o">]</span>
 </code></pre></div>
 <p>If we turn on the console at that moment, after removing the programming probe, we will see that the (patched) original firmware starts. After pressing <code>GAME + LEFT</code>, the bootloader will execute and, as Retro-Go SD is not yet installed in the internal flash of the STM32 at that moment, we will be shown the following warning:</p>
-<p><img alt="Aviso del bootloader" src="../images/posts/2026-03-08_zelda_gw/bootloader_warning.jpg" /></p>
+<p><img alt="Bootloader warning" src="../images/posts/2026-03-08_zelda_gw/bootloader_warning.jpg" /></p>
 <h4 id="retro-go-sd-installation">Retro-Go SD installation<a class="headerlink" href="#retro-go-sd-installation" title="Permanent link">&para;</a></h4>
 <p>All that remains is to install the Retro-Go SD firmware. To do this, we will copy the <code>retro-go_update.bin</code> file that we will download from the latest release published by Sylverb in the <a href="https://github.com/sylverb/game-and-watch-retro-go-sd/releases">Retro-Go SD repository</a> to the root directory of the microSD. When booting for the first time, we will see on screen how the retro-go files and emulator cores are copied to the microSD itself.</p>
-<p><img alt="Instalación de Retro-Go SD" src="../images/posts/2026-03-08_zelda_gw/retro-go_update.jpg" /></p>
+<p><img alt="Retro-Go SD installation" src="../images/posts/2026-03-08_zelda_gw/retro-go_update.jpg" /></p>
 <p>At the same time, the following directory structure will be created on the microSD:</p>
 <div class="highlight"><pre><span></span><code>retro-go/
 ├── CONFIG
