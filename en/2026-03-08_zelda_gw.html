@@ -4490,7 +4490,7 @@ git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="
 </code></pre></div>
 <p>Once the code is downloaded, it's time to install the ROMs in the directories corresponding to the different supported machines that we will find in <code>~/git/game-and-watch-retro-go/roms/</code>. For example, to install the NES ROMs, we copy the ROMs to <code>~/git/game-and-watch-retro-go/roms/nes/</code>. If we want cover art for the games, we will place the images in jpg or png format in the same directories and with the same file names of the corresponding ROMs. For example, for the <code>zelda.nes</code> ROM, we will place the cover at <code>~/git/game-and-watch-retro-go/roms/nes/zelda.jpg</code>.</p>
 <p>We have to keep in mind that all ROMs and their covers must fit in the 64 MB flash chip we installed in the console. Most ROMs compress, so as a starting rule, we will use the criteria of choosing ROMs for a total size of roughly double (128MB).</p>
-<p>Now it's time to compile the firmware (if we are not going to use covers to take advantage of the space of their files to be able to put more ROMs, do not include the <code>COVERFLOW</code> and <code>JPG_QUALITY</code> environment variables in the build and flash commands):</p>
+<p>Now it's time to build the firmware (if we are not going to use covers to take advantage of the space of their files to be able to put more ROMs, do not include the <code>COVERFLOW</code> and <code>JPG_QUALITY</code> environment variables in the build and flash commands):</p>
 <div class="highlight"><pre><span></span><code>make<span class="w"> </span>docker_build
 make<span class="w"> </span>docker
 
@@ -4499,7 +4499,7 @@ make<span class="w"> </span>docker
 <span class="o">(</span>docker<span class="o">)</span><span class="w"> </span>make<span class="w"> </span>clean
 <span class="o">(</span>docker<span class="o">)</span><span class="w"> </span><span class="nv">COVERFLOW</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">JPG_QUALITY</span><span class="o">=</span><span class="m">90</span><span class="w"> </span><span class="nv">EXTFLASH_SIZE_MB</span><span class="o">=</span><span class="m">64</span><span class="w"> </span>make<span class="w"> </span>-j<span class="k">$(</span>nproc<span class="k">)</span>
 </code></pre></div>
-<p>When compilation finishes, we will be informed of the resulting binary size that will be flashed to the chip. For example:</p>
+<p>When building finishes, we will be informed of the resulting binary size that will be flashed to the chip. For example:</p>
 <div class="highlight"><pre><span></span><code>External flash usage
     Capacity:     61050880 Bytes ( 58.223 MB)
     Usage:        54335345 Bytes ( 51.818 MB)
