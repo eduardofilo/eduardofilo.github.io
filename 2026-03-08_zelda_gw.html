@@ -4484,9 +4484,9 @@ Pressing the power button should launch the original firmware.
 <p><img alt="Retirar chip flash original 4" src="images/posts/2026-03-08_zelda_gw/mod_flash_4.jpg" /></p>
 <p><img alt="Retirar chip flash original 5" src="images/posts/2026-03-08_zelda_gw/mod_flash_5.jpg" /></p>
 <h4 id="flasheo-retro-go">Flasheo retro-go<a class="headerlink" href="#flasheo-retro-go" title="Permanent link">&para;</a></h4>
-<p>Una vez instalado el chip, es hora de flashear el firmware. Para esta modificación, me decanto por no hacer dual boot, es decir no instalar el firmware original parcheado junto a retro-go, para así tener todo el espacio de la memoria flash dedicado a los juegos. Para ello empezamos bajando el repositorio del mismo:</p>
+<p>Una vez instalado el chip, es hora de flashear el firmware. Para esta modificación, me decanto por no hacer dual boot, es decir no instalar el firmware original parcheado junto a retro-go, para así tener todo el espacio de la memoria flash dedicado a los juegos. Para ello empezamos bajando el repositorio del mismo, en la rama <code>filesystem_wip</code> que según su autor es la más recomendable:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/git
-git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/sylverb/game-and-watch-retro-go
+git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/sylverb/game-and-watch-retro-go<span class="w"> </span>-b<span class="w"> </span>filesystem_wip
 <span class="nb">cd</span><span class="w"> </span>game-and-watch-retro-go
 </code></pre></div>
 <p>Una vez bajado el código, toca instalar las ROMs en los directorios correspondientes a las distintas máquinas soportadas que encontraremos en <code>~/git/game-and-watch-retro-go/roms/</code>. Por ejemplo, para instalar las ROMs de NES, copiamos las ROMs a <code>~/git/game-and-watch-retro-go/roms/nes/</code>. Si queremos portadillas para los juegos, situaremos en los mismos directorios y con los mismos nombres de fichero de las ROMs correspondientes, las imágenes en formato jpg o png. Por ejemplo, para la ROM <code>zelda.nes</code>, situaremos la portada en <code>~/git/game-and-watch-retro-go/roms/nes/zelda.jpg</code>.</p>
