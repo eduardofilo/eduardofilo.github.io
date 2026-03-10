@@ -4486,7 +4486,7 @@ Pressing the power button should launch the original firmware.
 <h4 id="flashing-retro-go">Flashing retro-go<a class="headerlink" href="#flashing-retro-go" title="Permanent link">&para;</a></h4>
 <p>Once the chip is installed, it's time to flash the firmware. For this modification, I choose not to set up dual boot, that is, not to install the patched original firmware alongside retro-go, to have all the flash memory space dedicated to games. To do this we start by downloading its repository:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/git
-git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/sylverb/game-and-watch-retro-go
+git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/sylverb/game-and-watch-retro-go<span class="w"> </span>-b<span class="w"> </span>filesystem_wip
 <span class="nb">cd</span><span class="w"> </span>game-and-watch-retro-go
 </code></pre></div>
 <p>Once the code is downloaded, it's time to install the ROMs in the directories corresponding to the different supported machines that we will find in <code>~/git/game-and-watch-retro-go/roms/</code>. For example, to install the NES ROMs, we copy the ROMs to <code>~/git/game-and-watch-retro-go/roms/nes/</code>. If we want cover art for the games, we will place the images in jpg or png format in the same directories and with the same file names of the corresponding ROMs. For example, for the <code>zelda.nes</code> ROM, we will place the cover at <code>~/git/game-and-watch-retro-go/roms/nes/zelda.jpg</code>.</p>
@@ -4495,6 +4495,7 @@ git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="
 <div class="highlight"><pre><span></span><code>make<span class="w"> </span>docker_build
 make<span class="w"> </span>docker
 
+<span class="o">(</span>docker<span class="o">)</span><span class="w"> </span>gnwmanager<span class="w"> </span>install<span class="w"> </span>openocd
 <span class="o">(</span>docker<span class="o">)</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">GNW_TARGET</span><span class="o">=</span>zelda
 <span class="o">(</span>docker<span class="o">)</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">ADAPTER</span><span class="o">=</span>cmsis-dap
 <span class="o">(</span>docker<span class="o">)</span><span class="w"> </span>make<span class="w"> </span>clean
@@ -4508,8 +4509,7 @@ make<span class="w"> </span>docker
 </code></pre></div>
 <p>With that information in sight we can iterate the process adding or removing ROMs until obtaining a binary of about 55MB, since something must be anticipated for the game savestates.</p>
 <p>Once we are satisfied with the space usage, we will flash the firmware reconnecting the programming probe discussed in the <a href="#programming-probe">Programming probe</a> section.</p>
-<div class="highlight"><pre><span></span><code><span class="o">(</span>docker<span class="o">)</span><span class="w"> </span><span class="nv">COVERFLOW</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">JPG_QUALITY</span><span class="o">=</span><span class="m">90</span><span class="w"> </span><span class="nv">EXTFLASH_SIZE_MB</span><span class="o">=</span><span class="m">64</span><span class="w"> </span>make<span class="w"> </span>flash_gnwmanager
-<span class="o">(</span>docker<span class="o">)</span><span class="w"> </span>gnwmanager<span class="w"> </span>disable-debug
+<div class="highlight"><pre><span></span><code><span class="o">(</span>docker<span class="o">)</span><span class="w"> </span><span class="nv">COVERFLOW</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">JPG_QUALITY</span><span class="o">=</span><span class="m">90</span><span class="w"> </span><span class="nv">EXTFLASH_SIZE_MB</span><span class="o">=</span><span class="m">64</span><span class="w"> </span>make<span class="w"> </span>flash
 </code></pre></div>
 <p>A typical output would be:</p>
 <div class="highlight"><pre><span></span><code>docker@53335bdd9199:/opt/workdir$<span class="w"> </span><span class="nv">COVERFLOW</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">JPG_QUALITY</span><span class="o">=</span><span class="m">90</span><span class="w"> </span><span class="nv">EXTFLASH_SIZE_MB</span><span class="o">=</span><span class="m">64</span><span class="w"> </span>make<span class="w"> </span>flash_gnwmanager
@@ -4526,23 +4526,7 @@ Entering<span class="w"> </span><span class="s1">&#39;tamalib&#39;</span>
 Entering<span class="w"> </span><span class="s1">&#39;zelda3&#39;</span>
 <span class="o">[</span><span class="w"> </span>BASH<span class="w"> </span><span class="o">]</span><span class="w"> </span>Checking<span class="w"> </span><span class="k">for</span><span class="w"> </span>updated<span class="w"> </span>roms
 <span class="m">100</span>%<span class="p">|</span>█████████████████████████████████████████████████████████████████<span class="p">|</span><span class="w"> </span><span class="m">208</span>/208<span class="w"> </span><span class="o">[</span><span class="m">04</span>:20&lt;<span class="m">00</span>:00,<span class="w">  </span><span class="m">1</span>.25s/it<span class="o">]</span>
-docker@53335bdd9199:/opt/workdir$<span class="w"> </span>gnwmanager<span class="w"> </span>disable-debug
-docker@53335bdd9199:/opt/workdir$
 </code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>In the <a href="https://github.com/sylverb/game-and-watch-retro-go/tree/b80630d0d1b3fbdeeb5e2e6e78bf5643a7de211e">retro-go version</a> at the time of writing this, when finishing the <code>make flash_gnwmanager</code> command an error appeared (mentioning the <code>OFFSET</code> parameter). Investigating it seemed to be a minor problem that only prevented the deactivation of the processor's debug mode. This can have implications on battery consumption, and that's why I include the manual execution of debug deactivation at the end. I managed to stop the error from appearing by replacing lines 1028 to 1031 of the <code>Makefile.common</code> file:
-    <div class="highlight"><pre><span></span><code>    @$(GNWMANAGER) flash $(INTFLASH_ADDRESS) $(BUILD_DIR)/$(TARGET)_intflash.bin \
--- flash ext $(BUILD_DIR)/$(TARGET)_extflash.bin --offset=$(EXTFLASH_OFFSET) \
--- start $(INTFLASH_ADDRESS) \
-$(RESET_DBGMCU_CMD)
-</code></pre></div>
-with:
-    <div class="highlight"><pre><span></span><code>    @$(GNWMANAGER) flash $(INTFLASH_ADDRESS) $(BUILD_DIR)/$(TARGET)_intflash.bin \
--- flash ext $(BUILD_DIR)/$(TARGET)_extflash.bin --offset=$(EXTFLASH_OFFSET) \
--- start $(INTFLASH_ADDRESS)
-</code></pre></div></p>
-</div>
 <p>It is important that we keep the <code>build/gw_retro_go.elf</code> file because we will need it to extract the savestates in the future.</p>
 <h4 id="backup-retro-go-savestates">Backup retro-go savestates<a class="headerlink" href="#backup-retro-go-savestates" title="Permanent link">&para;</a></h4>
 <p>If later we want to extract the game savestates, to be able to reinstall them after flashing a new firmware, first we will need to place the <code>gw_retro_go.elf</code> file we obtained in the previous step in the <code>build</code> directory. Then we can restart the docker environment and run the backup script:</p>
