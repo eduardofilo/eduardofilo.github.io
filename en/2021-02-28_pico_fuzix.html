@@ -29,7 +29,7 @@
     
     
       
-        <title>FUZIX en Raspberry Pi Pico - Apuntes de eduardófilo</title>
+        <title>FUZIX on Raspberry Pi Pico - Apuntes de eduardófilo</title>
       
     
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lector-microsd" class="md-skip">
+        <a href="#microsd-reader" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              FUZIX en Raspberry Pi Pico
+              FUZIX on Raspberry Pi Pico
             
           </span>
         </div>
@@ -635,7 +635,7 @@
         
   
   <span class="md-ellipsis">
-    Aventuras en VR
+    Adventures in VR
   </span>
   
 
@@ -656,7 +656,7 @@
         
   
   <span class="md-ellipsis">
-    Raspberry Pi Zero 2 W upgrade
+    Raspberry Pi Zero 2 W Upgrade
   </span>
   
 
@@ -677,7 +677,7 @@
         
   
   <span class="md-ellipsis">
-    RG350/RG280 Imagen
+    RG350/RG280 Image
   </span>
   
 
@@ -705,7 +705,7 @@
           
   
   <span class="md-ellipsis">
-    FUZIX en Raspberry Pi Pico
+    FUZIX on Raspberry Pi Pico
   </span>
   
 
@@ -716,7 +716,7 @@
         
   
   <span class="md-ellipsis">
-    FUZIX en Raspberry Pi Pico
+    FUZIX on Raspberry Pi Pico
   </span>
   
 
@@ -736,36 +736,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#lector-microsd" class="md-nav__link">
+  <a href="#microsd-reader" class="md-nav__link">
     <span class="md-ellipsis">
-      Lector microSD
+      microSD reader
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#imagen-de-la-microsd" class="md-nav__link">
+  <a href="#microsd-image" class="md-nav__link">
     <span class="md-ellipsis">
-      Imagen de la microSD
+      microSD image
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#firmware-para-raspberry-pi-pico" class="md-nav__link">
+  <a href="#firmware-for-raspberry-pi-pico" class="md-nav__link">
     <span class="md-ellipsis">
-      Firmware para Raspberry Pi Pico
+      Firmware for Raspberry Pi Pico
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#conexion-serie" class="md-nav__link">
+  <a href="#serial-connection" class="md-nav__link">
     <span class="md-ellipsis">
-      Conexión serie
+      Serial connection
     </span>
   </a>
   
@@ -4025,36 +4025,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#lector-microsd" class="md-nav__link">
+  <a href="#microsd-reader" class="md-nav__link">
     <span class="md-ellipsis">
-      Lector microSD
+      microSD reader
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#imagen-de-la-microsd" class="md-nav__link">
+  <a href="#microsd-image" class="md-nav__link">
     <span class="md-ellipsis">
-      Imagen de la microSD
+      microSD image
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#firmware-para-raspberry-pi-pico" class="md-nav__link">
+  <a href="#firmware-for-raspberry-pi-pico" class="md-nav__link">
     <span class="md-ellipsis">
-      Firmware para Raspberry Pi Pico
+      Firmware for Raspberry Pi Pico
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#conexion-serie" class="md-nav__link">
+  <a href="#serial-connection" class="md-nav__link">
     <span class="md-ellipsis">
-      Conexión serie
+      Serial connection
     </span>
   </a>
   
@@ -4078,24 +4078,24 @@
   
 
 
-  <h1>FUZIX en Raspberry Pi Pico</h1>
+  <h1>FUZIX on Raspberry Pi Pico</h1>
 
 <p><img alt="Raspberry Pi Pico" src="../images/posts/fuzix/raspberry-pi-pico.jpg" /></p>
-<p>En el sitio de la Fundación Raspberry Pi apareció hace poco <a href="https://www.raspberrypi.org/blog/how-to-get-started-with-fuzix-on-raspberry-pi-pico/">este artículo</a> explicando cómo instalar la variante UNIX llamada FUZIX en el microcontrolador de reciente aparición Raspberry Pi Pico. Al parecer FUZIX es un proyecto surgido en torno al microprocesador de 8 bit Z-80 al que tengo un cariño especial ya que es el único procesador del que he llegado a conocer su código máquina. Decidido a realizar el montaje para probarlo, encontré que se puede simplificar bastante en tres puntos:</p>
+<p>Recently, <a href="https://www.raspberrypi.org/blog/how-to-get-started-with-fuzix-on-raspberry-pi-pico/">this article</a> appeared on the Raspberry Pi Foundation website explaining how to install the UNIX variant called FUZIX on the newly released Raspberry Pi Pico microcontroller. Apparently, FUZIX is a project that arose around the 8-bit Z-80 microprocessor, for which I have special affection since it is the only processor whose machine code I have come to know. Determined to build it to try it out, I found that it can be simplified quite a bit in three ways:</p>
 <ol>
-<li>El dump que proporcionan para la microSD es de la segunda partición, cuando podrían haber proporcionado una imagen de la tarjeta completa que ahorraría los pasos de la sesión con <code>fdisk</code> para crear sus particiones y el posterior <code>dd</code> para cargar el dump de la segunda.</li>
-<li>El módulo que utilizan para conectar la microSD no es en realidad necesario ya que al funcionar Raspberry Pi Pico a 3,3V no hace falta ninguna adaptación de las señales, es decir se puede cablear directamente la microSD a Raspberry Pi Pico.</li>
-<li>Como adaptador para el puerto serie, en lugar de utilizar una Raspberry Pi, utilizo un Arduino Nano con el típico truco de puentear el pin de RESET a GND. En este caso sí que habrá que adaptar la linea RX ya que Arduino trabaja a 5V. Esto se puede hacer mejor con un buen módulo UART-USB capaz de trabajar a 3,3V, pero no contaba con él en el momento de escribir este artículo.</li>
+<li>The dump they provide for the microSD is for the second partition, when they could have provided an image of the whole card, which would save the <code>fdisk</code> session steps needed to create the partitions and the subsequent <code>dd</code> used to load the dump of the second one.</li>
+<li>The module they use to connect the microSD is not actually necessary, since Raspberry Pi Pico works at 3.3V and no signal level adaptation is needed, that is, the microSD can be wired directly to Raspberry Pi Pico.</li>
+<li>As a serial port adapter, instead of using a Raspberry Pi, I use an Arduino Nano with the typical trick of bridging the RESET pin to GND. In this case, the RX line will indeed need to be adapted since Arduino works at 5V. This can be done better with a good UART-USB module capable of working at 3.3V, but I did not have one when writing this article.</li>
 </ol>
-<p>Sin más veamos los pasos simplificados para ejecutar FUZIX en Raspberry Pi Pico.</p>
-<h2 id="lector-microsd">Lector microSD<a class="headerlink" href="#lector-microsd" title="Permanent link">&para;</a></h2>
-<p>Como comentaba antes, la conexión de una tarjeta microSD se puede hacer realizando el patillaje directo y correcto entre los terminales de la microSD y los pines 16 a 20 de Raspberry Pi Pico. En esos pines se encuentra uno de los puertos SPI que tiene el microcontrolador. Las tarjetas SD y microSD pueden funcionar en dos modos, el nativo SD y como puerto SPI. Utilizaremos pues éste último. Tan sólo necesitamos conocer el patillaje a utilizar en este modo. Haciendo una búsqueda rápida en cualquier buscador, en la modalidad de imágenes, por ejemplo por la cadena "spi microsd pinout", encontramos la respuesta:</p>
+<p>Without further ado, let us look at the simplified steps to run FUZIX on Raspberry Pi Pico.</p>
+<h2 id="microsd-reader">microSD reader<a class="headerlink" href="#microsd-reader" title="Permanent link">&para;</a></h2>
+<p>As I mentioned before, connecting a microSD card can be done by directly wiring the microSD terminals correctly to pins 16 through 20 of Raspberry Pi Pico. Those pins host one of the SPI ports available on the microcontroller. SD and microSD cards can work in two modes, native SD and SPI. We will therefore use the latter. We only need to know the pinout to use in this mode. By doing a quick image search, for example for the string "spi microsd pinout", we find the answer:</p>
 <p><img alt="Microsd_pinout" src="../images/posts/fuzix/Microsd_pinout.png" /></p>
-<p>En la tabla anterior se ve además la correspondencia entre los pines de las tarjetas en formato SD y microSD. Vamos a aprovechar esta correspondencia para construir un lector de tarjetas microSD utilizando uno de los típicos adaptadores que suelen venir con las tarjetas microSD. Soldaremos directamente 7 cables entre los terminales 1 y 7 que más tarde conectaremos a Raspberry Pi Pico. La correspondencia entre los terminales del adaptador SD y Raspberry Pi Pico es como sigue:</p>
+<p>The previous table also shows the correspondence between the pins of SD-format and microSD cards. We are going to take advantage of this correspondence to build a microSD card reader using one of the typical adapters that usually come with microSD cards. We will solder 7 wires directly to terminals 1 through 7, which we will later connect to Raspberry Pi Pico. The correspondence between the SD adapter terminals and Raspberry Pi Pico is as follows:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Pin adaptador SD</th>
+<th style="text-align: left;">SD adapter pin</th>
 <th style="text-align: left;">SPI</th>
 <th style="text-align: left;">Raspberry Pi Pico</th>
 </tr>
@@ -4118,7 +4118,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">4</td>
-<td style="text-align: left;">3,3V</td>
+<td style="text-align: left;">3.3V</td>
 <td style="text-align: left;">Pin 36 (3V3 OUT)</td>
 </tr>
 <tr>
@@ -4148,35 +4148,35 @@
 </tr>
 </tbody>
 </table>
-<p>Haciendo un cableado sobre una tira de pin de 1x6 (unificamos los dos terminales GND de la SD) reordenando los cables para que los pines de Raspberry Pi Pico queden en secuencia (pin 16 a 20) y dejando el pin de 3,3V a continuación del pin 20, podremos conectar el adaptador directamente. El adaptador resultante es el siguiente:</p>
+<p>By wiring it onto a 1x6 pin header strip (we merge the two SD GND terminals), rearranging the wires so that the Raspberry Pi Pico pins remain in sequence (pins 16 to 20), and leaving the 3.3V pin after pin 20, we will be able to connect the adapter directly. The resulting adapter is the following:</p>
 <p><img alt="Adaptador" src="../images/posts/fuzix/adaptador.jpg" /></p>
-<p>Se puede incluso hacer más fácil y flexible el conexionado aprovechando que la separación de los terminales de la SD es de una décima de pulgada, como en las típicas tiras de pin y las breadboard, por lo que puede soldarse directamente una tira de pin. La idea y la foto siguiente están sacadas de <a href="https://www.esp8266.com/viewtopic.php?t=16016">este sitio</a>:</p>
+<p>The wiring can be made even easier and more flexible by taking advantage of the fact that the spacing of the SD terminals is one tenth of an inch, just like typical pin headers and breadboards, so a pin header strip can be soldered directly. The idea and the following photo are taken from <a href="https://www.esp8266.com/viewtopic.php?t=16016">this site</a>:</p>
 <p><img alt="led_matrix_SmartMatrix_Micro_SD_Pinout_1" src="../images/posts/fuzix/led_matrix_SmartMatrix_Micro_SD_Pinout_1.jpg" /></p>
-<p>El adaptador construido se puede conectar directamente a Raspberry Pi Pico. Observad que el pin que recibe la alimentación de 3,3V (cable rojo) queda fuera de la planta de Raspberry Pi Pico de manera que por medio de un par de puentes blancos se lleva hasta el pin 36 que es de donde obtenemos los 3,3V de alimentación.</p>
+<p>The built adapter can be connected directly to Raspberry Pi Pico. Note that the pin receiving the 3.3V supply (red wire) remains outside the footprint of Raspberry Pi Pico so that, using a pair of white jumpers, it is taken to pin 36, which is where we obtain the 3.3V supply.</p>
 <p><img alt="conexion_adaptador" src="../images/posts/fuzix/conexion_adaptador.jpg" /></p>
-<h2 id="imagen-de-la-microsd">Imagen de la microSD<a class="headerlink" href="#imagen-de-la-microsd" title="Permanent link">&para;</a></h2>
-<p>En las instrucciones del <a href="https://www.raspberrypi.org/blog/how-to-get-started-with-fuzix-on-raspberry-pi-pico/">artículo original</a> se incluye un proceso que por medio del comando <code>fdisk</code> utilizado desde una Raspberry Pi (desde cualquier Linux en realidad), permite construir dos particiones en la microSD (una para la swap y otra para el sistema de archivos). Se nos ofrece un dump de la segunda partición que se carga con el comando <code>dd</code>. Todo esto se podría haber evitado generando el dump de las dos particiones juntas. Es lo que puede encontrarse en el siguiente fichero que podremos flashear directamente sobre una microSD con programas como <a href="https://www.balena.io/etcher/">Balena Etcher</a>.</p>
+<h2 id="microsd-image">microSD image<a class="headerlink" href="#microsd-image" title="Permanent link">&para;</a></h2>
+<p>The instructions in the <a href="https://www.raspberrypi.org/blog/how-to-get-started-with-fuzix-on-raspberry-pi-pico/">original article</a> include a process which, using the <code>fdisk</code> command from a Raspberry Pi (or really from any Linux), allows two partitions to be created on the microSD (one for swap and one for the filesystem). We are given a dump of the second partition, which is loaded with the <code>dd</code> command. All of this could have been avoided by generating a dump of both partitions together. That is what can be found in the following file, which we can flash directly onto a microSD with programs such as <a href="https://www.balena.io/etcher/">Balena Etcher</a>.</p>
 <blockquote>
 <p><a href="../files/posts/fuzix/card.img.gz">card.img.gz</a></p>
 </blockquote>
-<p>En Linux podemos flashear directamente con el siguiente comando, sustituyendo el dispositivo (<code>/dev/mmcblk0</code> en el ejemplo) por el que corresponda:</p>
+<p>On Linux we can flash it directly with the following command, replacing the device (<code>/dev/mmcblk0</code> in the example) with the appropriate one:</p>
 <div class="highlight"><pre><span></span><code>gunzip card.img.gz -c | sudo dd of=/dev/mmcblk0 bs=1M status=progress conv=fsync
 </code></pre></div>
-<h2 id="firmware-para-raspberry-pi-pico">Firmware para Raspberry Pi Pico<a class="headerlink" href="#firmware-para-raspberry-pi-pico" title="Permanent link">&para;</a></h2>
-<p>Aunque puede encontrarse en el <a href="https://www.raspberrypi.org/blog/how-to-get-started-with-fuzix-on-raspberry-pi-pico/">artículo original</a> lo incluyo aquí de nuevo para que todo el proceso pueda seguirse sin salir de aquí:</p>
+<h2 id="firmware-for-raspberry-pi-pico">Firmware for Raspberry Pi Pico<a class="headerlink" href="#firmware-for-raspberry-pi-pico" title="Permanent link">&para;</a></h2>
+<p>Although it can be found in the <a href="https://www.raspberrypi.org/blog/how-to-get-started-with-fuzix-on-raspberry-pi-pico/">original article</a>, I include it here again so the whole process can be followed without leaving this page:</p>
 <blockquote>
 <p><a href="../files/posts/fuzix/fuzix.uf2">fuzix.uf2</a></p>
 </blockquote>
-<p>La forma de cargar el firmware en Raspberry Pi Pico es conectar por USB al ordenador mientras se mantiene pulsada la tecla <code>BOOTSEL</code>. En ese momento se montará una unidad de almacenamiento externa en el ordenador donde copiaremos el fichero anterior.</p>
-<h2 id="conexion-serie">Conexión serie<a class="headerlink" href="#conexion-serie" title="Permanent link">&para;</a></h2>
-<p>Ya tenemos todo instalado y preparado. Tan sólo necesitamos una manera de conectar con el sistema. El único medio para conectar con él es por medio del puerto serie que hay en los pines 1 y 2 (GP0 y GP1 respectivamente) de Raspberry Pi Pico. Desconzco si hay algún motivo que haya impedido utilizar el puerto USB de Pico para este propósito. Desde luego hubiera sido mucho más cómodo.</p>
-<p>Para conectar el puerto serie de Pico al ordenador, lo mejor es utilizar un módulo adaptador USB como <a href="https://www.banggood.com/RobotDyn-USB-TTL-UART-Serial-Adapter-CP2102-5V-3_3V-USB-A-Module-p-1244766.html">éste</a>. Al no tener uno a mano utilicé el típico <a href="ingenieria/arduino.html#adaptador-serie">truco de usar un Arduino en modo RESET permanente</a>. Si utilizamos esta técnica nos tocará montar un divisor de tensión con un par de resistencias para adaptar el nivel de tensión para que la linea RX de Pico no reciba directamente los 5V con que trabaja Arduino. En la linea TX no será necesario, ya que los 3,3V de Pico son suficientes para que Arduino interprete ese nivel de tensión como un 1 digital en 5V.</p>
-<p>El siguiente esquema completo muestra el divisor de tensión así como la forma de alimentar Raspberry Pi Pico desde los 5V de salida que ofrece Arduino en uno de sus pins. Llevaremos esos 5V hasta el pin VSYS de Pico que admite entre 1,8V y 5,5V. Las resistencias del divisor de tensión pueden ser prácticamente de cualquier valor con tal de que la que está en serie en la linea RX tenga aproximadamente la mitad de valor que la que deriva a GND.</p>
+<p>The way to load the firmware onto Raspberry Pi Pico is to connect it by USB to the computer while holding down the <code>BOOTSEL</code> button. At that moment, an external storage drive will be mounted on the computer where we will copy the previous file.</p>
+<h2 id="serial-connection">Serial connection<a class="headerlink" href="#serial-connection" title="Permanent link">&para;</a></h2>
+<p>We already have everything installed and prepared. We only need a way to connect to the system. The only means to connect to it is through the serial port on pins 1 and 2 (GP0 and GP1 respectively) of Raspberry Pi Pico. I do not know whether there is any reason that prevented the Pico USB port from being used for this purpose. It certainly would have been much more convenient.</p>
+<p>To connect the Pico serial port to the computer, the best thing is to use a USB adapter module like <a href="https://www.banggood.com/RobotDyn-USB-TTL-UART-Serial-Adapter-CP2102-5V-3_3V-USB-A-Module-p-1244766.html">this one</a>. Since I did not have one at hand, I used the typical <a href="ingenieria/arduino.html#adaptador-serie">trick of using an Arduino in permanent RESET mode</a>. If we use this technique, we will need to build a voltage divider with a pair of resistors to adapt the voltage level so that the Pico RX line does not directly receive the 5V at which Arduino works. On the TX line this will not be necessary, since the Pico's 3.3V are enough for Arduino to interpret that voltage level as a digital 1 at 5V.</p>
+<p>The following complete schematic shows the voltage divider as well as the way to power Raspberry Pi Pico from the 5V output that Arduino offers on one of its pins. We will bring those 5V to the Pico VSYS pin, which accepts between 1.8V and 5.5V. The divider resistors can be practically any value as long as the one in series on the RX line has approximately half the value of the one going to GND.</p>
 <p><img alt="Esquema" src="../images/posts/fuzix/fuzix_bb.png" /></p>
-<p>Ya sólo queda conectar por USB el Arduino al ordenador y conectar con nuestro cliente serie favorito a 115200 baudios. Por ejemplo en Linux puede hacerse con el siguiente comando:</p>
+<p>All that remains is to connect the Arduino to the computer over USB and use our favorite serial client at 115200 baud. For example, on Linux this can be done with the following command:</p>
 <div class="highlight"><pre><span></span><code>screen /dev/ttyUSB0 115200 8N1
 </code></pre></div>
-<p>Si todo va bien, en pantalla veremos lo siguiente. El sistema, antes de pedirnos el usuario (<code>root</code>) y password (vacío) nos pedirá el día y hora para poner la fecha al sistema:</p>
+<p>If everything goes well, we will see the following on screen. Before asking for the username (<code>root</code>) and password (empty), the system will ask us for the date and time in order to set the system date:</p>
 <div class="highlight"><pre><span></span><code>FUZIX version 0.4pre1
 Copyright (c) 1988-2002 by H.F.Bower, D.Braun, S.Nitschke, H.Peraza
 Copyright (c) 1997-2001 by Arcady Schekochikhin, Adriano C. R. da Cunha
