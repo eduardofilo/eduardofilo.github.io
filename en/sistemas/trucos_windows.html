@@ -4297,8 +4297,7 @@
 <h1 id="trucos-windows">Trucos Windows<a class="headerlink" href="#trucos-windows" title="Permanent link">&para;</a></h1>
 <h2 id="acelerar-la-exploracion-de-equipos-en-red-e-incrementar-el-rendimiento-general">Acelerar la exploración de equipos en red e incrementar el rendimiento general<a class="headerlink" href="#acelerar-la-exploracion-de-equipos-en-red-e-incrementar-el-rendimiento-general" title="Permanent link">&para;</a></h2>
 <p>Borrar la clave siguiente (<a href="http://www.pc-soluciones.com.ar/acelerarequiposenredxp.htm">fuente</a>):</p>
-<div class="highlight"><pre><span></span><code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RemoteComputer\NameSpace\{D6277990-4C6A-11CF-8D87-00AA0060F5BF}
-</code></pre></div>
+<p><code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RemoteComputer\NameSpace\{D6277990-4C6A-11CF-8D87-00AA0060F5BF}</code></p>
 <h2 id="cambiar-la-clave-de-producto-en-windows-xp">Cambiar la clave de producto en Windows XP<a class="headerlink" href="#cambiar-la-clave-de-producto-en-windows-xp" title="Permanent link">&para;</a></h2>
 <p>Proceder como sigue (<a href="http://www.pc-soluciones.com.ar/cambiarclavexp.htm">fuente</a>):</p>
 <ol>
@@ -4317,8 +4316,7 @@
 <h2 id="sustituir-archivos-en-uso-en-windows-xp">Sustituir archivos en uso en Windows XP<a class="headerlink" href="#sustituir-archivos-en-uso-en-windows-xp" title="Permanent link">&para;</a></h2>
 <p>"inuse.exe” es una herramienta que antaño formaba parte del kit de recursos de Windows 2000, y que con la liberación de Windows XP Microsoft ha decidido ponerla a disposición de forma gratuita.<br />
 Su cometido es permitir la sustitución de archivos que estén en uso por parte del Sistema Operativo y que de otra manera no podrían ser sustituidos. Su sintaxis es:</p>
-<div class="highlight"><pre><span></span><code>INUSE origen destino /y
-</code></pre></div>
+<p><code>INUSE origen destino /y</code></p>
 <ul>
 <li>origen: especifica el nombre del archivo actualizado</li>
 <li>destino: especifica el nombre del archivo existente que será reemplazado</li>
@@ -4339,36 +4337,32 @@ Esta utilidad junto a todas las del kit de recursos de Windows 2000 se puede obt
 </ol>
 <h2 id="evitar-colapsos-de-conexion-de-red">Evitar colapsos de conexión de red<a class="headerlink" href="#evitar-colapsos-de-conexion-de-red" title="Permanent link">&para;</a></h2>
 <p>Activar el servicio "Programador de paquetes QoS". Se puede configurar el valor de reserva de ancho de banda con:</p>
-<div class="highlight"><pre><span></span><code>gpedit.msc / Configuración del equipo / Plantillas administrativas /
-Red / Programador de paquetes QoS / Limitar ancho de banda reservado
-</code></pre></div>
+<p><code>gpedit.msc / Configuración del equipo / Plantillas administrativas /
+Red / Programador de paquetes QoS / Limitar ancho de banda reservado</code></p>
 <h2 id="reparar-registro-de-windows">Reparar registro de Windows<a class="headerlink" href="#reparar-registro-de-windows" title="Permanent link">&para;</a></h2>
 <p>(<a href="http://support.microsoft.com/kb/307545/es">Fuente</a>)</p>
 <ul>
 <li>Arrancar con la consola de reparación del CD de instalación.</li>
 <li>Copiar los archivos del registro de la versión de instalación:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>copy c:\windows\repair\system c:\windows\system32\config\system
+<p><code>copy c:\windows\repair\system c:\windows\system32\config\system
 copy c:\windows\repair\software c:\windows\system32\config\software
 copy c:\windows\repair\sam c:\windows\system32\config\sam
 copy c:\windows\repair\security c:\windows\system32\config\security
-copy c:\windows\repair\default c:\windows\system32\config\default
-</code></pre></div>
+copy c:\windows\repair\default c:\windows\system32\config\default</code></p>
 <ul>
 <li>Con esta configuración se puede arrancar en Modo a Prueba de Fallos. Elegir un conjunto de archivos de un punto de restauración en la ruta:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>C:\System Volume Information\_restore{27BBF476-A824-438F-93A9-39BC37483C34}\RPn\Snapshot
-(el ClassID y el n de RPn son variables)
-</code></pre></div>
+<p><code>C:\System Volume Information\_restore{27BBF476-A824-438F-93A9-39BC37483C34}\RPn\Snapshot
+(el ClassID y el n de RPn son variables)</code></p>
 <ul>
 <li>Copiar los siguientes ficheros a una carpeta accesible como C:\Windows\tmp renombrándolos como se indica:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>_REGISTRY_USER_.DEFAULT -&gt; default
+<p><code>_REGISTRY_USER_.DEFAULT -&gt; default
 _REGISTRY_MACHINE_SECURITY -&gt; security
 _REGISTRY_MACHINE_SOFTWARE -&gt; software
 _REGISTRY_MACHINE_SYSTEM -&gt; system
-_REGISTRY_MACHINE_SAM -&gt; sam
-</code></pre></div>
+_REGISTRY_MACHINE_SAM -&gt; sam</code></p>
 <ul>
 <li>Volver a arrancar con la consola de reparación y sustituir los ficheros de C:\Windows\tmp a c:\windows\system32\config.</li>
 </ul>
@@ -4389,71 +4383,60 @@ _REGISTRY_MACHINE_SAM -&gt; sam
 <ul>
 <li>Mostrar lista de procesos con servicios asociados:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>tasklist /svc
-</code></pre></div>
+<p><code>tasklist /svc</code></p>
 <ul>
 <li>Lista de conexiones con PID de procesos asociados:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>netstat -aon
-</code></pre></div>
+<p><code>netstat -aon</code></p>
 <ul>
 <li>Eliminar unidades de red:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>net use /d A:
-</code></pre></div>
+<p><code>net use /d A:</code></p>
 <ul>
 <li>Añadir unidades de red:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>net use A: \\Servidor\Directorio
-</code></pre></div>
+<p><code>net use A: \\Servidor\Directorio</code></p>
 <ul>
 <li>Muestra la diferencia de hora del sistema con un servidor NTP externo:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>w32tm /stripchart /computer:es.pool.ntp.org /samples:3 /dataonly
-</code></pre></div>
+<p><code>w32tm /stripchart /computer:es.pool.ntp.org /samples:3 /dataonly</code></p>
 <ul>
 <li>Utilidad de configuración del sistema (WinXP):</li>
 </ul>
-<div class="highlight"><pre><span></span><code>msconfig
-</code></pre></div>
+<p><code>msconfig</code></p>
 <h2 id="bloqueo-y-desbloqueo-del-registro">Bloqueo y desbloqueo del Registro<a class="headerlink" href="#bloqueo-y-desbloqueo-del-registro" title="Permanent link">&para;</a></h2>
 <p>Para deshabilitarlo, accedemos al registro, nos situamos en HKEY_CURENT_USER/Software/Microsoft/Windows/CurrentVersion/Policies/System. En la parte de la derecha creamos un nuevo valor DWORD y le damos el nombre DisableRegistryTools, otorgándole el 1 para deshabilitar las funciones de edición del Registro.<br />
 Una vez realizada esta operación, nadie podrá acceder a él hasta que no lo volvamos a activar. Para habilitarlo, abrimos un editor de texto y escribimos:</p>
-<div class="highlight"><pre><span></span><code>Windows Registry Editor Version 5.00
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\system] &quot;DisableRegistryTools&quot;=dword:00000000
-</code></pre></div>
+<p><code>Windows Registry Editor Version 5.00
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\system] "DisableRegistryTools"=dword:00000000</code></p>
 <p>Ahora, guardamos el archivo con el nombre unlock.reg y, a partir de ese momento, cuando queramos activar el Registro de Windows, después de haberlo deshabilitado, sólo tendremos que hacer doble clic sobre el archivo que acabamos de crear.</p>
 <h2 id="escritorio-remoto-editar-registro-con-comandos">Escritorio Remoto / Editar registro con comandos<a class="headerlink" href="#escritorio-remoto-editar-registro-con-comandos" title="Permanent link">&para;</a></h2>
 <p>La funcionalidad "Escritorio Remoto" se encuentra desactivada por defecto. Se puede activar editando el registro del ordenador que nos interese. Esto se puede hacer remotamente por medio del siguiente comando:</p>
-<div class="highlight"><pre><span></span><code>reg add \\[NombreEquipo]\HKLM\SYSTEM\CurrentControlSet\Services\PolicyAgent /V EnableRemoteMgmt /T REG_DWORD /F /D 1
-</code></pre></div>
+<p><code>reg add \\[NombreEquipo]\HKLM\SYSTEM\CurrentControlSet\Services\PolicyAgent /V EnableRemoteMgmt /T REG_DWORD /F /D 1</code></p>
 <h2 id="edicion-ficheros-bks-de-la-utilidad-copia-de-seguridad">Edición ficheros BKS de la utilidad Copia de Seguridad<a class="headerlink" href="#edicion-ficheros-bks-de-la-utilidad-copia-de-seguridad" title="Permanent link">&para;</a></h2>
 <p>En estos ficheros se almacena la selección de directorios/ficheros que entran en el backup. Hay que respetar el formato que les da la utilidad cuando los genera. Es texto Unicode, pero si se edita con Notepad no queda exactamente en el formato esperado y luego aparece en el log el error "No se encontró el archivo de selección...". Una forma de conseguirlo es editando con Notepad, guardando en formato "Codificación: Unicode" y luego usar un editor hexadecimal para eliminar los dos primeros bytes que se incluyen con este formato.</p>
 <h2 id="procesos-de-inicio">Procesos de inicio<a class="headerlink" href="#procesos-de-inicio" title="Permanent link">&para;</a></h2>
 <p>En las siguientes rutas del registro:</p>
-<div class="highlight"><pre><span></span><code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+<p>```
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunServices
-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce
-
-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce</p>
+<p>HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
 HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\RunServices
 HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce
-</code></pre></div>
+```</p>
 <p>En el caso de Windows 98 y Windows ME será necesario revisar también en los 2 archivos:</p>
-<div class="highlight"><pre><span></span><code>WIN.INI
-</code></pre></div>
+<p><code>WIN.INI</code></p>
 <p>Son las entradas que inician con "run=" o "load="</p>
-<div class="highlight"><pre><span></span><code>SYSTEM.INI
-</code></pre></div>
+<p><code>SYSTEM.INI</code></p>
 <p>Son las entradas que inician con "shell=" . Hay que tener en cuenta que la única entrada legal es shell=Explorer.exe y que algún virus podría agregar una línea del tipo shell=Explorer.exe %Windows% ombredelviruse.exe</p>
 <p>Otro lugar donde se debería revisar son las carpetas de los programas de inicio que por ejemplo en Windows XP serán:</p>
-<div class="highlight"><pre><span></span><code>C:\Documents and Settings\tucuenta\Menú Inicio\Programas\Inicio
-
-C:\Documents and Settings\All Users\Menú Inicio\Programas\Inicio
-</code></pre></div>
+<p>```
+C:\Documents and Settings\tucuenta\Menú Inicio\Programas\Inicio</p>
+<p>C:\Documents and Settings\All Users\Menú Inicio\Programas\Inicio
+```</p>
 <p>y en Windows 98 será:</p>
-<div class="highlight"><pre><span></span><code>C:\Windows\Menú Inicio\Programas\Inicio
-</code></pre></div>
+<p><code>C:\Windows\Menú Inicio\Programas\Inicio</code></p>
 <p>(<a href="http://www.trucoswindows.net/explicapro.html">Fuente</a>)</p>
 <h2 id="ajustes-tras-instalacion-windows-10">Ajustes tras instalación Windows 10<a class="headerlink" href="#ajustes-tras-instalacion-windows-10" title="Permanent link">&para;</a></h2>
 <p>Recien instalado, Windows 10 trae preconfiguradas unas cuantas cosas que estarían mejor desactivadas. <a href="http://www.adslzone.net/2016/06/14/9-cosas-desactivar-windows-10/">Aquí</a> tenemos una lista de ajustes a efectuar tras la instalación o actualización.</p>

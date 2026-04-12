@@ -4910,131 +4910,124 @@
 <h2 id="comandos-utiles">Comandos útiles<a class="headerlink" href="#comandos-utiles" title="Permanent link">&para;</a></h2>
 <h3 id="comprobar-asignaciones-de-cliente-no-ip">Comprobar asignaciones de cliente No-IP<a class="headerlink" href="#comprobar-asignaciones-de-cliente-no-ip" title="Permanent link">&para;</a></h3>
 <p>Las asignaciones dejan marca en el log <code>syslog</code>:</p>
-<div class="highlight"><pre><span></span><code>edumoreno@raspi-git<span class="w"> </span>/var/log<span class="w"> </span>$<span class="w"> </span>sudo<span class="w"> </span>fgrep<span class="w"> </span>noip<span class="w"> </span>syslog
-Oct<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">12</span>:18:57<span class="w"> </span>raspi-git<span class="w"> </span>noip2<span class="o">[</span><span class="m">2165</span><span class="o">]</span>:<span class="w"> </span>v2.1.9<span class="w"> </span>daemon<span class="w"> </span>ended.
-Oct<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">12</span>:19:19<span class="w"> </span>raspi-git<span class="w"> </span>noip2<span class="o">[</span><span class="m">2186</span><span class="o">]</span>:<span class="w"> </span>v2.1.9<span class="w"> </span>daemon<span class="w"> </span>started<span class="w"> </span>with<span class="w"> </span>NAT<span class="w"> </span>enabled
-Oct<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">12</span>:19:35<span class="w"> </span>raspi-git<span class="w"> </span>noip2<span class="o">[</span><span class="m">2186</span><span class="o">]</span>:<span class="w"> </span>eduardofilo.no-ip.biz<span class="w"> </span><span class="nb">set</span><span class="w"> </span>to<span class="w"> </span><span class="m">88</span>.19.216.95
-Oct<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">12</span>:53:06<span class="w"> </span>raspi-git<span class="w"> </span>noip2<span class="o">[</span><span class="m">2186</span><span class="o">]</span>:<span class="w"> </span>v2.1.9<span class="w"> </span>daemon<span class="w"> </span>ended.
-Oct<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">13</span>:15:23<span class="w"> </span>raspi-git<span class="w"> </span>noip2<span class="o">[</span><span class="m">2217</span><span class="o">]</span>:<span class="w"> </span>v2.1.9<span class="w"> </span>daemon<span class="w"> </span>started<span class="w"> </span>with<span class="w"> </span>NAT<span class="w"> </span>enabled
-Oct<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">13</span>:15:25<span class="w"> </span>raspi-git<span class="w"> </span>noip2<span class="o">[</span><span class="m">2217</span><span class="o">]</span>:<span class="w"> </span>eduardofilo.no-ip.biz<span class="w"> </span>was<span class="w"> </span>already<span class="w"> </span><span class="nb">set</span><span class="w"> </span>to<span class="w"> </span><span class="m">88</span>.19.216.95.
-</code></pre></div>
+<p><code>bash
+edumoreno@raspi-git /var/log $ sudo fgrep noip syslog
+Oct 16 12:18:57 raspi-git noip2[2165]: v2.1.9 daemon ended.
+Oct 16 12:19:19 raspi-git noip2[2186]: v2.1.9 daemon started with NAT enabled
+Oct 16 12:19:35 raspi-git noip2[2186]: eduardofilo.no-ip.biz set to 88.19.216.95
+Oct 16 12:53:06 raspi-git noip2[2186]: v2.1.9 daemon ended.
+Oct 16 13:15:23 raspi-git noip2[2217]: v2.1.9 daemon started with NAT enabled
+Oct 16 13:15:25 raspi-git noip2[2217]: eduardofilo.no-ip.biz was already set to 88.19.216.95.</code></p>
 <h3 id="utilidad-de-configuracion">Utilidad de configuración<a class="headerlink" href="#utilidad-de-configuracion" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>raspi-config
-</code></pre></div>
+<p><code>bash
+$ sudo raspi-config</code></p>
 <h3 id="backup-de-la-sd-comprimiendo-al-vuelo">Backup de la SD (comprimiendo al vuelo)<a class="headerlink" href="#backup-de-la-sd-comprimiendo-al-vuelo" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="c1">#Backup:</span>
-$<span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M<span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress<span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>-9<span class="w"> </span>-<span class="w"> </span>&gt;<span class="w"> </span>Rpi_8gb_backup.img.gz
-$<span class="w"> </span><span class="c1">#Backup sólo de 4GB (si por ejemplo la tarjeta es más grande pero no aprovecha toda la superficie)</span>
-$<span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">2048</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>pv<span class="w"> </span>-s<span class="w"> </span>4g<span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>-9<span class="w"> </span>-<span class="w"> </span>&gt;<span class="w"> </span>Rpi_4gb_backup.img.gz
-$<span class="w"> </span><span class="c1">#Restauración (comprimido con gzip):</span>
-$<span class="w"> </span>gunzip<span class="w"> </span>Rpi_8gb_backup.img.gz<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M<span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress<span class="w"> </span><span class="nv">conv</span><span class="o">=</span>fsync
-$<span class="w"> </span><span class="c1">#Restauración (comprimido con xz):</span>
-$<span class="w"> </span>xzcat<span class="w"> </span>Rpi_8gb_backup.img.xz<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M<span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress<span class="w"> </span><span class="nv">conv</span><span class="o">=</span>fsync
-$<span class="w"> </span><span class="c1">#Restauración (comprimido con zip):</span>
-$<span class="w"> </span>unzip<span class="w"> </span>-p<span class="w"> </span>Rpi_8gb_backup.zip<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M<span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress<span class="w"> </span><span class="nv">conv</span><span class="o">=</span>fsync
-$<span class="w"> </span><span class="c1">#Restauración (comprimido con 7z):</span>
-$<span class="w"> </span>7z<span class="w"> </span>e<span class="w"> </span>-so<span class="w"> </span>Rpi_8gb_backup.7z<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M<span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress<span class="w"> </span><span class="nv">conv</span><span class="o">=</span>fsync
-$<span class="w"> </span><span class="c1">#Restauración (comprimido con rar):</span>
-$<span class="w"> </span>rar<span class="w"> </span>p<span class="w"> </span>Rpi_8gb_backup.rar<span class="w"> </span>-idq<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M<span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress<span class="w"> </span><span class="nv">conv</span><span class="o">=</span>fsync
-</code></pre></div>
+<p><code>bash
+$ #Backup:
+$ sudo dd if=/dev/mmcblk0 bs=2M status=progress | gzip -9 - &gt; Rpi_8gb_backup.img.gz
+$ #Backup sólo de 4GB (si por ejemplo la tarjeta es más grande pero no aprovecha toda la superficie)
+$ sudo dd if=/dev/mmcblk0 bs=2M count=2048 | pv -s 4g | gzip -9 - &gt; Rpi_4gb_backup.img.gz
+$ #Restauración (comprimido con gzip):
+$ gunzip Rpi_8gb_backup.img.gz -c | sudo dd of=/dev/mmcblk0 bs=2M status=progress conv=fsync
+$ #Restauración (comprimido con xz):
+$ xzcat Rpi_8gb_backup.img.xz | sudo dd of=/dev/mmcblk0 bs=2M status=progress conv=fsync
+$ #Restauración (comprimido con zip):
+$ unzip -p Rpi_8gb_backup.zip | sudo dd of=/dev/mmcblk0 bs=2M status=progress conv=fsync
+$ #Restauración (comprimido con 7z):
+$ 7z e -so Rpi_8gb_backup.7z | sudo dd of=/dev/mmcblk0 bs=2M status=progress conv=fsync
+$ #Restauración (comprimido con rar):
+$ rar p Rpi_8gb_backup.rar -idq | sudo dd of=/dev/mmcblk0 bs=2M status=progress conv=fsync</code></p>
 <p>Para hacer un backup parcial los cálculos se harían así. Primero sacamos los datos de la estructura de la tarjeta con <code>fdisk</code>:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>fdisk<span class="w"> </span>-l<span class="w"> </span>/dev/mmcblk0
-Disco<span class="w"> </span>/dev/mmcblk0:<span class="w"> </span><span class="m">14</span>,4<span class="w"> </span>GiB,<span class="w"> </span><span class="m">15502147584</span><span class="w"> </span>bytes,<span class="w"> </span><span class="m">30277632</span><span class="w"> </span>sectores
-Unidades:<span class="w"> </span>sectores<span class="w"> </span>de<span class="w"> </span><span class="m">1</span><span class="w"> </span>*<span class="w"> </span><span class="nv">512</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">512</span><span class="w"> </span>bytes
-Tamaño<span class="w"> </span>de<span class="w"> </span>sector<span class="w"> </span><span class="o">(</span>lógico/físico<span class="o">)</span>:<span class="w"> </span><span class="m">512</span><span class="w"> </span>bytes<span class="w"> </span>/<span class="w"> </span><span class="m">512</span><span class="w"> </span>bytes
-Tamaño<span class="w"> </span>de<span class="w"> </span>E/S<span class="w"> </span><span class="o">(</span>mínimo/óptimo<span class="o">)</span>:<span class="w"> </span><span class="m">512</span><span class="w"> </span>bytes<span class="w"> </span>/<span class="w"> </span><span class="m">512</span><span class="w"> </span>bytes
-Tipo<span class="w"> </span>de<span class="w"> </span>etiqueta<span class="w"> </span>de<span class="w"> </span>disco:<span class="w"> </span>dos
-Identificador<span class="w"> </span>del<span class="w"> </span>disco:<span class="w"> </span>0xa125a0dc
-
-Dispositivo<span class="w">    </span>Inicio<span class="w"> </span>Comienzo<span class="w">    </span>Final<span class="w"> </span>Sectores<span class="w"> </span>Tamaño<span class="w"> </span>Id<span class="w"> </span>Tipo
-/dev/mmcblk0p1<span class="w">            </span><span class="m">8192</span><span class="w">    </span><span class="m">96663</span><span class="w">    </span><span class="m">88472</span><span class="w">  </span><span class="m">43</span>,2M<span class="w">  </span>c<span class="w"> </span>W95<span class="w"> </span>FAT32<span class="w"> </span><span class="o">(</span>LBA<span class="o">)</span>
-/dev/mmcblk0p2<span class="w">           </span><span class="m">98304</span><span class="w"> </span><span class="m">15550463</span><span class="w"> </span><span class="m">15452160</span><span class="w">   </span><span class="m">7</span>,4G<span class="w"> </span><span class="m">83</span><span class="w"> </span>Linux
-</code></pre></div>
+<p>```bash
+$ sudo fdisk -l /dev/mmcblk0
+Disco /dev/mmcblk0: 14,4 GiB, 15502147584 bytes, 30277632 sectores
+Unidades: sectores de 1 * 512 = 512 bytes
+Tamaño de sector (lógico/físico): 512 bytes / 512 bytes
+Tamaño de E/S (mínimo/óptimo): 512 bytes / 512 bytes
+Tipo de etiqueta de disco: dos
+Identificador del disco: 0xa125a0dc</p>
+<p>Dispositivo    Inicio Comienzo    Final Sectores Tamaño Id Tipo
+/dev/mmcblk0p1            8192    96663    88472  43,2M  c W95 FAT32 (LBA)
+/dev/mmcblk0p2           98304 15550463 15452160   7,4G 83 Linux
+```</p>
 <p>Aquí vemos que cada sector ocupa 512 bytes. Nos fijamos en el último sector utilizado que en este caso es 15550463. Multiplicando este sector por el tamaño del sector (y sumando 1 al número de sectores por si empiezan a contar en 0) obtendremos el número de bytes que tendremos que copiar. Como el block size que vamos a utilizar es 2MB tendremos que truncar por lo alto (también servirá de medida de seguidad). Los cálculos en este caso resultarían:</p>
 <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>(15550463 + 1) (sector) * 512 (Byte/sector) / 1024 (Byte/KB) / 1024 (KB/MB) / 2 (MB/bloque) = 3796,5 bloques
 </code></pre></div></td></tr></table></div>
 
 <p>Por tanto en este caso copiaremos 3797 bloques para cubrir esos 15550464 sectores.</p>
 <h3 id="backup-de-la-sd-comprimiendo-al-vuelo-con-gzip-y-diviendo-en-trozos-el-fichero-resultante">Backup de la SD (comprimiendo al vuelo con gzip y diviendo en trozos el fichero resultante)<a class="headerlink" href="#backup-de-la-sd-comprimiendo-al-vuelo-con-gzip-y-diviendo-en-trozos-el-fichero-resultante" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="c1">#Backup:</span>
-$<span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M<span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress<span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>-9<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>split<span class="w"> </span>--bytes<span class="o">=</span>2G<span class="w"> </span>-<span class="w"> </span>Rpi_8gb_backup.img.gz.part_
-$<span class="w"> </span><span class="c1">#Restauración:</span>
-$<span class="w"> </span>cat<span class="w"> </span>Rpi_8gb_backup.img.gz.part_*<span class="w"> </span><span class="p">|</span><span class="w"> </span>gunzip<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M<span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress<span class="w"> </span><span class="nv">conv</span><span class="o">=</span>fsync
-</code></pre></div>
+<p><code>bash
+$ #Backup:
+$ sudo dd if=/dev/mmcblk0 bs=2M status=progress | gzip -9 - | split --bytes=2G - Rpi_8gb_backup.img.gz.part_
+$ #Restauración:
+$ cat Rpi_8gb_backup.img.gz.part_* | gunzip -c | sudo dd of=/dev/mmcblk0 bs=2M status=progress conv=fsync</code></p>
 <h3 id="backup-de-la-sd-comprimiendo-al-vuelo-con-7z-y-diviendo-en-trozos-el-fichero-resultante">Backup de la SD (comprimiendo al vuelo con 7z y diviendo en trozos el fichero resultante)<a class="headerlink" href="#backup-de-la-sd-comprimiendo-al-vuelo-con-7z-y-diviendo-en-trozos-el-fichero-resultante" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="c1">#Backup:</span>
-$<span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">7350</span><span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress<span class="w"> </span><span class="p">|</span><span class="w"> </span>7z<span class="w"> </span>-si<span class="w"> </span>-v1400m<span class="w"> </span>a<span class="w"> </span>Rpi_8gb_backup.img.7z
-$<span class="w"> </span><span class="c1">#Restauración:</span>
-$<span class="w"> </span>7z<span class="w"> </span>e<span class="w"> </span>-so<span class="w"> </span>Rpi_8gb_backup.7z.001<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M<span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress<span class="w"> </span><span class="nv">conv</span><span class="o">=</span>fsync
-</code></pre></div>
+<p><code>bash
+$ #Backup:
+$ sudo dd if=/dev/mmcblk0 bs=2M count=7350 status=progress | 7z -si -v1400m a Rpi_8gb_backup.img.7z
+$ #Restauración:
+$ 7z e -so Rpi_8gb_backup.7z.001 | sudo dd of=/dev/mmcblk0 bs=2M status=progress conv=fsync</code></p>
 <h3 id="backup-de-la-sd-comprimiendo-al-vuelo-con-rar-y-diviendo-en-trozos-el-fichero-resultante">Backup de la SD (comprimiendo al vuelo con rar y diviendo en trozos el fichero resultante)<a class="headerlink" href="#backup-de-la-sd-comprimiendo-al-vuelo-con-rar-y-diviendo-en-trozos-el-fichero-resultante" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="c1">#Backup:</span>
-$<span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">7350</span><span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress<span class="w"> </span><span class="p">|</span><span class="w"> </span>rar<span class="w"> </span>a<span class="w"> </span>-m5<span class="w"> </span>-sRpi_8gb_backup.img<span class="w"> </span>-v1400000k<span class="w"> </span>Rpi_8gb_backup.img.rar
-$<span class="w"> </span><span class="c1">#Restauración:</span>
-$<span class="w"> </span>rar<span class="w"> </span>p<span class="w"> </span>Rpi_8gb_backup.img.part1.rar<span class="w"> </span>-idq<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M<span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress<span class="w"> </span><span class="nv">conv</span><span class="o">=</span>fsync
-</code></pre></div>
+<p><code>bash
+$ #Backup:
+$ sudo dd if=/dev/mmcblk0 bs=2M count=7350 status=progress | rar a -m5 -sRpi_8gb_backup.img -v1400000k Rpi_8gb_backup.img.rar
+$ #Restauración:
+$ rar p Rpi_8gb_backup.img.part1.rar -idq | sudo dd of=/dev/mmcblk0 bs=2M status=progress conv=fsync</code></p>
 <h3 id="control-de-progreso-durante-flasheo">Control de progreso durante flasheo<a class="headerlink" href="#control-de-progreso-durante-flasheo" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pkill<span class="w"> </span>-USR1<span class="w"> </span>-n<span class="w"> </span>-x<span class="w"> </span>dd
-</code></pre></div>
+<p><code>bash
+$ sudo pkill -USR1 -n -x dd</code></p>
 <p>Como alternativa se puede instalar el comando <code>dcfldd</code> para sustituir a <code>dd</code>, con lo que obtendremos una indicación del progreso de la copia. <code>dcfldd</code> informa cada 256 bloques escritos por defecto. Para que lo haga con más frecuencia hay que pasarle la opción <code>statusinterval</code> de esta forma:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="c1">#Backup:</span>
-$<span class="w"> </span>sudo<span class="w"> </span>dcfldd<span class="w"> </span><span class="nv">statusinterval</span><span class="o">=</span><span class="m">10</span><span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M<span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>-9<span class="w"> </span>-<span class="w"> </span>&gt;<span class="w"> </span>Rpi_8gb_backup.img.gz
-</code></pre></div>
+<p><code>bash
+$ #Backup:
+$ sudo dcfldd statusinterval=10 if=/dev/mmcblk0 bs=2M | gzip -9 - &gt; Rpi_8gb_backup.img.gz</code></p>
 <h3 id="redimensionar-particiones-en-imagen">Redimensionar particiones en imagen<a class="headerlink" href="#redimensionar-particiones-en-imagen" title="Permanent link">&para;</a></h3>
 <p>Fuente: Apartado <strong>Resizing a partition within an image file</strong> en <a href="http://www.aoakley.com/articles/2015-10-09-resizing-sd-images.php">Shrinking Raspberry Pi SD Card Images</a>.</p>
 <ol>
 <li>
 <p>Obtenemos los parámetros de las particiones de la imagen:</p>
-<div class="highlight"><pre><span></span><code>$ sudo fdisk -l Octoprint_niubit.img
+<p>```
+$ sudo fdisk -l Octoprint_niubit.img
 Disco Octoprint_niubit.img: 7,5 GiB, 8010072064 bytes, 15644672 sectores
 Unidades: sectores de 1 * 512 = 512 bytes
 Tamaño de sector (lógico/físico): 512 bytes / 512 bytes
 Tamaño de E/S (mínimo/óptimo): 512 bytes / 512 bytes
 Tipo de etiqueta de disco: dos
-Identificador del disco: 0x15f1d664
-
-Dispositivo           Inicio Comienzo    Final Sectores Tamaño Id Tipo
+Identificador del disco: 0x15f1d664</p>
+<p>Dispositivo           Inicio Comienzo    Final Sectores Tamaño Id Tipo
 Octoprint_niubit.img1            8192    98045    89854  43,9M  c W95 FAT32 (LBA)
 Octoprint_niubit.img2           98304 15644671 15546368   7,4G 83 Linux
-</code></pre></div>
+```</p>
 </li>
 <li>
 <p>Localizamos el primer dispositivo loop libre:</p>
-<div class="highlight"><pre><span></span><code>$ ls -l /dev/loop*
-</code></pre></div>
+<p><code>$ ls -l /dev/loop*</code></p>
 </li>
 <li>
 <p>Conectamos la partición que queremos redimensionar con el primer dispositivo loop libre aplicando un offset en base al sector de comienzo de la partición que queremos encoger (<code>98304</code> en este ejemplo):</p>
-<div class="highlight"><pre><span></span><code>$ sudo losetup /dev/loop12 Octoprint_niubit.img -o $((98304*512))
-</code></pre></div>
+<p><code>$ sudo losetup /dev/loop12 Octoprint_niubit.img -o $((98304*512))</code></p>
 </li>
 <li>
 <p>Montamos la partición en el sistema de archivos para hacer limpieza (por ejemplo <code>/var/cache/apt/archives</code>) y desmontamos al final.</p>
 </li>
 <li>
 <p>Editamos la partición con <code>gparted</code> y la encogemos todo lo posible:</p>
-<div class="highlight"><pre><span></span><code>$ sudo gparted /dev/loop12
-</code></pre></div>
+<p><code>$ sudo gparted /dev/loop12</code></p>
 </li>
 <li>
 <p>Aunque hemos encogido la partición, en la tabla de asignación de la imagen continuará con el antiguo tamaño, motivo por el que <code>gparted</code> muestra un icono de aviso. Lo solucionaremos a continuación. Tomamos nota del tamaño final en KB que se ha dado a la partición fijándonos en el comando <code>resize2fs</code> que <code>gparted</code> ha ejecutado mirando los detalles al finalizar la operación anterior. Por ejemplo:</p>
-<div class="highlight"><pre><span></span><code>resize2fs -p &#39;/dev/loop12&#39; 3250176K
-</code></pre></div>
+<p><code>resize2fs -p '/dev/loop12' 3250176K</code></p>
 </li>
 <li>
 <p>Eliminar el dispositivo loop que hemos estado utilizando:</p>
-<div class="highlight"><pre><span></span><code>$ sudo losetup -d /dev/loop12
-</code></pre></div>
+<p><code>$ sudo losetup -d /dev/loop12</code></p>
 </li>
 <li>
 <p>Conectar ahora la imagen completa de nuevo al dispositivo loop:</p>
-<div class="highlight"><pre><span></span><code>$ sudo losetup /dev/loop12 Octoprint_niubit.img
-</code></pre></div>
+<p><code>$ sudo losetup /dev/loop12 Octoprint_niubit.img</code></p>
 </li>
 <li>
 <p>Editamos con <code>fdisk</code> la imagen:</p>
-<div class="highlight"><pre><span></span><code>sudo fdisk /dev/loop12
-</code></pre></div>
+<p><code>sudo fdisk /dev/loop12</code></p>
 </li>
 <li>
 <p>Borramos la partición que hemos redimensionado pulsando <code>d 2</code>.</p>
@@ -5042,43 +5035,40 @@ Octoprint_niubit.img2           98304 15644671 15546368   7,4G 83 Linux
 <li>Creamos de nuevo la partición pulsando <code>n p 2</code>. Nos pedirá el primer sector. Introduciremos el obtenido en el paso 1 (<code>98304</code> en este ejemplo). A continuación nos pedirá el tamaño. Introduciremos el obtenido en el paso 6 con un <code>+</code> delante (<code>+3250176K</code> en este ejemplo). Si nos pregunta en ese momento <code>¿Desea eliminar la firma?</code> respondemos <code>No</code>. Finalmente pulsamos <code>w</code> para registrar los cambios.</li>
 <li>
 <p>Volvemos a obtener los parámetros de las particiones de la imagen:</p>
-<div class="highlight"><pre><span></span><code>$ sudo fdisk -l Octoprint_niubit.img
+<p>```
+$ sudo fdisk -l Octoprint_niubit.img
 Disco Octoprint_niubit.img: 7,5 GiB, 8010072064 bytes, 15644672 sectores
 Unidades: sectores de 1 * 512 = 512 bytes
 Tamaño de sector (lógico/físico): 512 bytes / 512 bytes
 Tamaño de E/S (mínimo/óptimo): 512 bytes / 512 bytes
 Tipo de etiqueta de disco: dos
-Identificador del disco: 0x15f1d664
-
-Dispositivo           Inicio Comienzo   Final Sectores Tamaño Id Tipo
+Identificador del disco: 0x15f1d664</p>
+<p>Dispositivo           Inicio Comienzo   Final Sectores Tamaño Id Tipo
 Octoprint_niubit.img1            8192   98045    89854  43,9M  c W95 FAT32 (LBA)
 Octoprint_niubit.img2           98304 6598655  6500352   3,1G 83 Linux
-</code></pre></div>
+```</p>
 </li>
 <li>
 <p>Tomamos nota del sector final de la segunda partición (<code>6598655</code> en este ejemplo).</p>
 </li>
 <li>
 <p>Eliminamos el dispositivo loop que hemos utilizado:</p>
-<div class="highlight"><pre><span></span><code>$ sudo losetup -d /dev/loop12
-</code></pre></div>
+<p><code>$ sudo losetup -d /dev/loop12</code></p>
 </li>
 <li>
 <p>Truncamos la imagen para retirar la parte que ya no está cubierta por la partición que hemos encogido:</p>
-<div class="highlight"><pre><span></span><code>$ truncate -s $(((6598655+1)*512)) Octoprint_niubit.img
-</code></pre></div>
+<p><code>$ truncate -s $(((6598655+1)*512)) Octoprint_niubit.img</code></p>
 </li>
 <li>
 <p>Ya habríamos terminado, pero todavía se puede mejorar la imagen rellenando con ceros los sectores no utilizados. Para ello proceder como sigue (sustituyendo el sector de comienzo <code>98304</code> del ejemplo por el que corresponda):</p>
-<div class="highlight"><pre><span></span><code>$ sudo losetup /dev/loop12 Octoprint_niubit.img -o $((98304*512))
+<p><code>$ sudo losetup /dev/loop12 Octoprint_niubit.img -o $((98304*512))
 $ sudo mkdir -p /mnt/imageroot
 $ sudo mount /dev/loop12 /mnt/imageroot
 $ sudo dd if=/dev/zero of=/mnt/imageroot/zero.txt status=progress
 $ sudo rm /mnt/imageroot/zero.txt
 $ sudo umount /mnt/imageroot
 $ sudo rmdir /mnt/imageroot
-$ sudo losetup -d /dev/loop12
-</code></pre></div>
+$ sudo losetup -d /dev/loop12</code></p>
 </li>
 </ol>
 <p>Ya tenemos lista la imagen para poderla flashear sobre tarjetas. Si la comprimimos con <code>gzip</code> se comprimirá mejor si hemos realizado el paso final.</p>
@@ -5089,30 +5079,29 @@ $ sudo losetup -d /dev/loop12
 </ul>
 <h3 id="gestion-de-la-swap">Gestión de la SWAP<a class="headerlink" href="#gestion-de-la-swap" title="Permanent link">&para;</a></h3>
 <p>Para redimensionar la Swap predeterminada (fichero de 100MB en <code>/var/swap</code>):</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/dphys-swapfile
-$<span class="w"> </span>sudo<span class="w"> </span>dphys-swapfile<span class="w"> </span>setup
-$<span class="w"> </span>sudo<span class="w"> </span>dphys-swapfile<span class="w"> </span>swapon
-</code></pre></div>
+<p><code>bash
+$ sudo nano /etc/dphys-swapfile
+$ sudo dphys-swapfile setup
+$ sudo dphys-swapfile swapon</code></p>
 <p>Para consultar el estado de la swap:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>swapon<span class="w"> </span>-s
-</code></pre></div>
+<p><code>bash
+$ swapon -s</code></p>
 <p>Para dejar de usar swap:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>swapoff<span class="w"> </span>-a
-</code></pre></div>
+<p><code>bash
+$ sudo swapoff -a</code></p>
 <p>Para activar la swap tal y como está definida en ''/etc/fstab'':</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>swapon<span class="w"> </span>-a
-</code></pre></div>
+<p><code>bash
+$ sudo swapon -a</code></p>
 <p>Para activar swap con un fichero en concreto:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>swapon<span class="w"> </span>/var/swap
-</code></pre></div>
+<p><code>bash
+$ sudo swapon /var/swap</code></p>
 <h3 id="escaneo-de-raspberry-pis-en-red">Escaneo de Raspberry Pi's en red<a class="headerlink" href="#escaneo-de-raspberry-pis-en-red" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>arp<span class="w"> </span>-a<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>b8:27:eb
-$<span class="w"> </span>sudo<span class="w"> </span>nmap<span class="w"> </span>-PR<span class="w"> </span>-sP<span class="w"> </span><span class="m">192</span>.168.1.0/24<span class="w"> </span><span class="p">|</span><span class="w"> </span>fgrep<span class="w"> </span>-B<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="s2">&quot;Raspberry&quot;</span>
-</code></pre></div>
+<p><code>bash
+$ arp -a | grep b8:27:eb
+$ sudo nmap -PR -sP 192.168.1.0/24 | fgrep -B 2 "Raspberry"</code></p>
 <h2 id="pulsador-encendidoapagado">Pulsador encendido/apagado<a class="headerlink" href="#pulsador-encendidoapagado" title="Permanent link">&para;</a></h2>
 <p>Existe una configuración accesible mediante un <a href="https://github.com/raspberrypi/firmware/blob/master/boot/overlays/README">Device Tree overlay</a> que permite arrancar y parar el sistema controladamente con un pulsador entre los pines #5 (GPIO03 o SCL) y GND. Para que funcione hay que añadir lo siguiente al fichero <code>/boot/config.txt</code>:</p>
-<div class="highlight"><pre><span></span><code>dtoverlay=gpio-shutdown
-</code></pre></div>
+<p><code>dtoverlay=gpio-shutdown</code></p>
 <p><a href="https://www.stderr.nl/Blog/Hardware/RaspberryPi/PowerButton.html">Aquí</a> se documenta en profundidad.</p>
 <h2 id="pi-top">Pi-top<a class="headerlink" href="#pi-top" title="Permanent link">&para;</a></h2>
 <h3 id="enlaces_1">Enlaces<a class="headerlink" href="#enlaces_1" title="Permanent link">&para;</a></h3>
@@ -5137,23 +5126,22 @@ $<span class="w"> </span>sudo<span class="w"> </span>nmap<span class="w"> </span
 <p>Crear un fichero vacío con nombre <code>ssh</code> en partición boot.</p>
 <h4 id="conexion-a-punto-de-acceso-wifi">Conexión a punto de acceso Wifi<a class="headerlink" href="#conexion-a-punto-de-acceso-wifi" title="Permanent link">&para;</a></h4>
 <p>Crear un fichero con nombre <code>wpa_supplicant.conf</code> en partición boot con el siguiente contenido:</p>
-<div class="highlight"><pre><span></span><code>country=ES
+<p>```
+country=ES
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-
-network={
-    ssid=&quot;&lt;el_ssid&gt;&quot;
-    psk=&quot;&lt;el_pwd&gt;&quot;
+update_config=1</p>
+<p>network={
+    ssid="<el_ssid>"
+    psk="<el_pwd>"
     key_mgmt=WPA-PSK
 }
-</code></pre></div>
+```</p>
 <h4 id="ip-estatica">IP estática<a class="headerlink" href="#ip-estatica" title="Permanent link">&para;</a></h4>
 <p>Primero averiguamos el nombre del interfaz al que queremos poner la IP estática consultando <code>ifconfig</code>. Luego editamos <code>/etc/dhcpcd.conf</code> y al final añadimos:</p>
-<div class="highlight"><pre><span></span><code>interface &lt;nombre_interfaz&gt;
+<p><code>interface &lt;nombre_interfaz&gt;
 static ip_address=&lt;ip&gt;/24
 static routers=&lt;gateway&gt;
-static domain_name_servers=&lt;dns separadas por espacios&gt;
-</code></pre></div>
+static domain_name_servers=&lt;dns separadas por espacios&gt;</code></p>
 <h3 id="raspi-config">raspi-config<a class="headerlink" href="#raspi-config" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Network Options &gt; Hostname</li>
@@ -5165,37 +5153,37 @@ static domain_name_servers=&lt;dns separadas por espacios&gt;
 <ul>
 <li>
 <p>Crear una nueva cuenta:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>adduser<span class="w"> </span>usuario
-$<span class="w"> </span>sudo<span class="w"> </span>adduser<span class="w"> </span>usuario<span class="w"> </span>adm
-$<span class="w"> </span>sudo<span class="w"> </span>adduser<span class="w"> </span>usuario<span class="w"> </span>dialout
-$<span class="w"> </span>sudo<span class="w"> </span>adduser<span class="w"> </span>usuario<span class="w"> </span>cdrom
-$<span class="w"> </span>sudo<span class="w"> </span>adduser<span class="w"> </span>usuario<span class="w"> </span>sudo
-$<span class="w"> </span>sudo<span class="w"> </span>adduser<span class="w"> </span>usuario<span class="w"> </span>audio
-$<span class="w"> </span>sudo<span class="w"> </span>adduser<span class="w"> </span>usuario<span class="w"> </span>video
-$<span class="w"> </span>sudo<span class="w"> </span>adduser<span class="w"> </span>usuario<span class="w"> </span>plugdev
-$<span class="w"> </span>sudo<span class="w"> </span>adduser<span class="w"> </span>usuario<span class="w"> </span>games
-$<span class="w"> </span>sudo<span class="w"> </span>adduser<span class="w"> </span>usuario<span class="w"> </span>users
-$<span class="w"> </span>sudo<span class="w"> </span>adduser<span class="w"> </span>usuario<span class="w"> </span>input
-$<span class="w"> </span>sudo<span class="w"> </span>adduser<span class="w"> </span>usuario<span class="w"> </span>netdev
-$<span class="w"> </span>sudo<span class="w"> </span>adduser<span class="w"> </span>usuario<span class="w"> </span>gpio
-$<span class="w"> </span>sudo<span class="w"> </span>adduser<span class="w"> </span>usuario<span class="w"> </span>i2c
-$<span class="w"> </span>sudo<span class="w"> </span>adduser<span class="w"> </span>usuario<span class="w"> </span>spi
-</code></pre></div>
+<p><code>bash
+$ sudo adduser usuario
+$ sudo adduser usuario adm
+$ sudo adduser usuario dialout
+$ sudo adduser usuario cdrom
+$ sudo adduser usuario sudo
+$ sudo adduser usuario audio
+$ sudo adduser usuario video
+$ sudo adduser usuario plugdev
+$ sudo adduser usuario games
+$ sudo adduser usuario users
+$ sudo adduser usuario input
+$ sudo adduser usuario netdev
+$ sudo adduser usuario gpio
+$ sudo adduser usuario i2c
+$ sudo adduser usuario spi</code></p>
 </li>
 <li>
 <p>Cambiar UID de usuario edumoreno para que coincida con el del NAS:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>usermod<span class="w"> </span>-u<span class="w"> </span><span class="m">1002</span><span class="w"> </span>usuario
-</code></pre></div>
+<p><code>bash
+sudo usermod -u 1002 usuario</code></p>
 </li>
 <li>
 <p>Borrar la cuenta <code>pi</code> desde la nueva:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>deluser<span class="w"> </span>-remove-home<span class="w"> </span>pi
-</code></pre></div>
+<p><code>bash
+$ sudo deluser -remove-home pi</code></p>
 </li>
 <li>
 <p>Copia de clave pública para SSH automático (desde máquina host):</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh-copy-id<span class="w"> </span>-i<span class="w"> </span>~/.ssh/id_rsa.pub<span class="w"> </span>usuario@IP_RASPBERRY
-</code></pre></div>
+<p><code>bash
+$ ssh-copy-id -i ~/.ssh/id_rsa.pub usuario@IP_RASPBERRY</code></p>
 </li>
 </ul>
 <h3 id="instalacion-de-paquetes">Instalación de paquetes<a class="headerlink" href="#instalacion-de-paquetes" title="Permanent link">&para;</a></h3>
@@ -5216,11 +5204,10 @@ $<span class="w"> </span>sudo<span class="w"> </span>adduser<span class="w"> </s
 
 <h3 id="ssh">SSH<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h3>
 <p>Editar el fichero <code>/etc/ssh/sshd_config</code> y modificar/añadir las siguientes líneas (<a href="http://blog.zoogon.net/2013/01/protegiendo-un-poco-nuestra-raspberry.html">fuente</a>):</p>
-<div class="highlight"><pre><span></span><code>PermitRootLogin no
+<p><code>PermitRootLogin no
 MaxAuthTries 3
 MaxStartups 5
-AllowUsers edumoreno
-</code></pre></div>
+AllowUsers edumoreno</code></p>
 <p>Medidas de protección:</p>
 <ul>
 <li><a href="http://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html">Top 20 OpenSSH Server Best Security Practices</a></li>
@@ -5270,71 +5257,66 @@ AllowUsers edumoreno
 <p>Para conseguir emular el clic derecho del ratón procedemos como sigue (fuentes: <a href="https://maker-tutorials.com/en/raspberry-ri-touch-screen-setup-right-click-with-twofing/">1</a> y <a href="https://www.diskiopi.com/forum/viewtopic.php?id=30">2</a>):</p>
 <ol>
 <li>Instalamos los siguientes paquetes:
-    <div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>libx11-dev<span class="w"> </span>libxtst-dev<span class="w"> </span>libxi-dev<span class="w"> </span>x11proto-randr-dev<span class="w"> </span>libxrandr-dev<span class="w"> </span>xserver-xorg-input-evdev<span class="w"> </span>xinput-calibrator
-</code></pre></div></li>
+    <code>bash
+    $ sudo apt-get update &amp;&amp; sudo apt-get install build-essential libx11-dev libxtst-dev libxi-dev x11proto-randr-dev libxrandr-dev xserver-xorg-input-evdev xinput-calibrator</code></li>
 <li>Descargamos el código de twofing y lo extraemos:
-    <div class="highlight"><pre><span></span><code>$<span class="w"> </span>wget<span class="w"> </span>http://plippo.de/dwl/twofing/twofing-0.1.2.tar.gz
-$<span class="w"> </span>tar<span class="w"> </span>-xvzf<span class="w"> </span>twofing-0.1.2.tar.gz
-$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>twofing-0.1.2
-</code></pre></div></li>
+    <code>bash
+    $ wget http://plippo.de/dwl/twofing/twofing-0.1.2.tar.gz
+    $ tar -xvzf twofing-0.1.2.tar.gz
+    $ cd twofing-0.1.2</code></li>
 <li>Compilamos:
-    <div class="highlight"><pre><span></span><code>$<span class="w"> </span>make<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span>install
-</code></pre></div></li>
+    <code>bash
+    $ make &amp;&amp; sudo make install</code></li>
 <li>Creamos el fichero <code>/etc/udev/rules.d/70-touchscreen-ilitek.rules</code> con el siguiente contenido:
-    <div class="highlight"><pre><span></span><code>SUBSYSTEMS==&quot;usb&quot;,ACTION==&quot;add&quot;,KERNEL==&quot;event*&quot;,ATTRS{idVendor}==&quot;222a&quot;,ATTRS{idProduct}==&quot;0001&quot;,SYMLINK+=&quot;twofingtouch&quot;,RUN+=&quot;/bin/chmod a+r /dev/twofingtouch&quot;
-KERNEL==&quot;event*&quot;,ATTRS{name}==&quot;ILITEK Multi-Touch-V3000&quot;,SYMLINK+=&quot;twofingtouch&quot;,RUN+=&quot;/bin/chmod a+r /dev/twofingtouch&quot;
-</code></pre></div></li>
+    <code>SUBSYSTEMS=="usb",ACTION=="add",KERNEL=="event*",ATTRS{idVendor}=="222a",ATTRS{idProduct}=="0001",SYMLINK+="twofingtouch",RUN+="/bin/chmod a+r /dev/twofingtouch"
+    KERNEL=="event*",ATTRS{name}=="ILITEK Multi-Touch-V3000",SYMLINK+="twofingtouch",RUN+="/bin/chmod a+r /dev/twofingtouch"</code></li>
 <li>Creamos el fichero <code>/usr/share/X11/xorg.conf.d/90-touchinput.conf</code> con el siguiente contenido:
-    <div class="highlight"><pre><span></span><code>Section &quot;InputClass&quot;
-Identifier &quot;calibration&quot;
-Driver &quot;evdev&quot;
-MatchProduct &quot;ILITEK ILITEK-TP&quot;
-MatchDevicePath &quot;/dev/input/event*&quot;
-Option &quot;Emulate3Buttons&quot; &quot;True&quot;
-Option &quot;EmulateThirdButton&quot; &quot;1&quot;
-Option &quot;EmulateThirdButtonTimeout&quot; &quot;750&quot;
-Option &quot;EmulateThirdButtonMoveThreshold&quot; &quot;30&quot;
-EndSection
-</code></pre></div></li>
+    <code>Section "InputClass"
+    Identifier "calibration"
+    Driver "evdev"
+    MatchProduct "ILITEK ILITEK-TP"
+    MatchDevicePath "/dev/input/event*"
+    Option "Emulate3Buttons" "True"
+    Option "EmulateThirdButton" "1"
+    Option "EmulateThirdButtonTimeout" "750"
+    Option "EmulateThirdButtonMoveThreshold" "30"
+    EndSection</code></li>
 <li>Creamos el fichero <code>/etc/udev/rules.d/ 99-input-tagging.rules</code> con el siguiente contenido:
-    <div class="highlight"><pre><span></span><code>ACTION==&quot;add&quot;, KERNEL==&quot;event*&quot;, SUBSYSTEM==&quot;input&quot;, TAG+=&quot;systemd&quot;, , ENV{SYSTEMD_ALIAS}+=&quot;/sys/subsystem/input/devices/$env{ID_SERIAL}&quot;
-</code></pre></div></li>
+    <code>ACTION=="add", KERNEL=="event*", SUBSYSTEM=="input", TAG+="systemd", , ENV{SYSTEMD_ALIAS}+="/sys/subsystem/input/devices/$env{ID_SERIAL}"</code></li>
 <li>Creamos el fichero <code>~/.config/autostart/twofing.desktop</code> con el siguiente contenido:
-    <div class="highlight"><pre><span></span><code>[Desktop Entry]
-Type=Application
-Name=Twofing
-Exec=twofing
-StartupNotify=false
-</code></pre></div></li>
+    <code>[Desktop Entry]
+    Type=Application
+    Name=Twofing
+    Exec=twofing
+    StartupNotify=false</code></li>
 </ol>
 <h2 id="raspi-camera">Raspi Camera<a class="headerlink" href="#raspi-camera" title="Permanent link">&para;</a></h2>
 <p>La documentación de la librería picamera en Python está <a href="https://picamera.readthedocs.io/en/release-1.10/index.html">aquí</a>. Concretamente las recetas para hacer la foto están <a href="https://picamera.readthedocs.io/en/release-1.10/recipes1.html">aquí</a>.</p>
 <p>Por ejemplo, para hacer fotos que luego vayan a formar parte de un timelapse:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">picamera</span>
-<span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
-
-<span class="k">with</span> <span class="n">picamera</span><span class="o">.</span><span class="n">PiCamera</span><span class="p">()</span> <span class="k">as</span> <span class="n">camera</span><span class="p">:</span>
-    <span class="n">camera</span><span class="o">.</span><span class="n">resolution</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1280</span><span class="p">,</span> <span class="mi">720</span><span class="p">)</span>
-    <span class="n">camera</span><span class="o">.</span><span class="n">framerate</span> <span class="o">=</span> <span class="mi">30</span>
-    <span class="c1"># calentamiento/enfoque de la camara</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="c1"># fijamos valores para que salga mejor el timelapse</span>
-    <span class="n">camera</span><span class="o">.</span><span class="n">shutter_speed</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">exposure_speed</span>
-    <span class="n">camera</span><span class="o">.</span><span class="n">exposure_mode</span> <span class="o">=</span> <span class="s1">&#39;off&#39;</span>
-    <span class="n">g</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">awb_gains</span>
-    <span class="n">camera</span><span class="o">.</span><span class="n">awb_mode</span> <span class="o">=</span> <span class="s1">&#39;off&#39;</span>
-    <span class="n">camera</span><span class="o">.</span><span class="n">awb_gains</span> <span class="o">=</span> <span class="n">g</span>
-    <span class="n">camera</span><span class="o">.</span><span class="n">annotate_background</span> <span class="o">=</span> <span class="n">picamera</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
-    <span class="n">camera</span><span class="o">.</span><span class="n">annotate_text</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span>
-    <span class="n">filename</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">_%H%M.jpg&quot;</span><span class="p">)</span>
-    <span class="n">camera</span><span class="o">.</span><span class="n">capture</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-</code></pre></div>
+<p>``` python
+import time
+import picamera
+import datetime as dt</p>
+<p>with picamera.PiCamera() as camera:
+    camera.resolution = (1280, 720)
+    camera.framerate = 30
+    # calentamiento/enfoque de la camara
+    time.sleep(2)
+    # fijamos valores para que salga mejor el timelapse
+    camera.shutter_speed = camera.exposure_speed
+    camera.exposure_mode = 'off'
+    g = camera.awb_gains
+    camera.awb_mode = 'off'
+    camera.awb_gains = g
+    camera.annotate_background = picamera.Color('black')
+    camera.annotate_text = dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    filename = time.strftime("%Y-%m-%d_%H%M.jpg")
+    camera.capture(filename)
+```</p>
 <h2 id="activar-consola-en-puerto-serie">Activar consola en puerto serie<a class="headerlink" href="#activar-consola-en-puerto-serie" title="Permanent link">&para;</a></h2>
 <p>Las Raspberry Pi Zero W, Pi 3 y Pi 4 traen un adaptador Bluetooth que en Raspbian está conectado precisamente a los pines #08 y #10 donde tradicionalmente se encontraba el puerto serie. En <a href="https://www.raspberrypi.org/documentation/configuration/uart.md">este documento</a> se explican los cambios en estas versiones. En <a href="https://raspberrypi.stackexchange.com/a/54766">este otro artículo</a> se dan opciones para modificar este comportamiento. Lo que sigue es una versión personal.</p>
 <p>Para liberar esta conexión debemos editar el fichero <code>config.txt</code> que hay en la partición boot y añadir (al final por ejemplo) lo siguiente:</p>
-<div class="highlight"><pre><span></span><code>dtoverlay=pi3-disable-bt
-</code></pre></div>
+<p><code>dtoverlay=pi3-disable-bt</code></p>
 <p>Esto podemos hacerlo sin necesidad de arrancar el sistema, montando la microSD en el ordenador. Para el siguiente paso sí necesitamos arrancar el sistema de la tarjeta en la Raspberry. Una vez estemos en la consola (por SSH o conectando una pantalla/teclado/ratón de alguna manera), ejecutaremos:</p>
 <p>sudo raspi-config</p>
 <p>Allí acudiremos a la sección Interfacing options &gt; Serial y responderemos de la siguiente forma a las dos preguntas que nos hará:</p>
@@ -5356,64 +5338,26 @@ StartupNotify=false
 <ol>
 <li>
 <p>Copiar el siguiente script en la ruta <code>/etc/switch.sh</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-
-<span class="c1">#this is the GPIO pin connected to the lead on switch labeled OUT</span>
-<span class="nv">GPIOpin1</span><span class="o">=</span><span class="m">23</span>
-
-<span class="c1">#this is the GPIO pin connected to the lead on switch labeled IN</span>
-<span class="nv">GPIOpin2</span><span class="o">=</span><span class="m">24</span>
-
-<span class="c1">#Enter the shutdown delay in minutes</span>
-<span class="nv">delay</span><span class="o">=</span><span class="m">0</span>
-
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$GPIOpin1</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/export
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;in&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/gpio<span class="nv">$GPIOpin1</span>/direction
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$GPIOpin2</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/export
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;out&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/gpio<span class="nv">$GPIOpin2</span>/direction
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/gpio<span class="nv">$GPIOpin2</span>/value
-<span class="nb">let</span><span class="w"> </span><span class="nv">minute</span><span class="o">=</span><span class="nv">$delay</span>*60
-<span class="nv">SD</span><span class="o">=</span><span class="m">0</span>
-<span class="nv">SS</span><span class="o">=</span><span class="m">0</span>
-<span class="nv">SS2</span><span class="o">=</span><span class="m">0</span>
-<span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="nv">power</span><span class="o">=</span><span class="k">$(</span>cat<span class="w"> </span>/sys/class/gpio/gpio<span class="nv">$GPIOpin1</span>/value<span class="k">)</span>
-<span class="nv">uptime</span><span class="o">=</span><span class="k">$(</span>&lt;/proc/uptime<span class="k">)</span>
-<span class="nv">uptime</span><span class="o">=</span><span class="si">${</span><span class="nv">uptime</span><span class="p">%%.*</span><span class="si">}</span>
-<span class="nv">current</span><span class="o">=</span><span class="nv">$uptime</span>
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$power</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$SD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span>
-<span class="k">then</span>
-<span class="nv">SD</span><span class="o">=</span><span class="m">1</span>
-<span class="nv">SS</span><span class="o">=</span><span class="si">${</span><span class="nv">uptime</span><span class="p">%%.*</span><span class="si">}</span>
-<span class="k">fi</span>
-
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$power</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$SD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span>
-<span class="k">then</span>
-<span class="nv">SS2</span><span class="o">=</span><span class="si">${</span><span class="nv">uptime</span><span class="p">%%.*</span><span class="si">}</span>
-<span class="k">fi</span>
-
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$((</span><span class="nv">uptime</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">SS</span><span class="k">))</span><span class="s2">&quot;</span><span class="w"> </span>-gt<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$minute</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$SD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$power</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span>
-<span class="k">then</span>
-poweroff
-<span class="nv">SD</span><span class="o">=</span><span class="m">3</span>
-<span class="k">fi</span>
-
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$((</span><span class="nv">uptime</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">SS2</span><span class="k">))</span><span class="s2">&quot;</span><span class="w"> </span>-gt<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$SD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span>
-<span class="k">then</span>
-<span class="nv">SD</span><span class="o">=</span><span class="m">0</span>
-<span class="k">fi</span>
-
-sleep<span class="w"> </span><span class="m">1</span>
-<span class="k">done</span>
-</code></pre></div>
-</li>
-<li>
-<p>Darle permisos de ejecución.</p>
-</li>
-<li>
-<p>Añadir lo siguiente al final del fichero <code>/etc/rc.local</code> (justo antes del <code>exit 0</code>) para que se ejecute en el arranque:</p>
-<div class="highlight"><pre><span></span><code>/etc/switch.sh &amp;
-</code></pre></div>
+<p>```bash</p>
+<h1 id="binbash">!/bin/bash<a class="headerlink" href="#binbash" title="Permanent link">&para;</a></h1>
+<h1 id="this-is-the-gpio-pin-connected-to-the-lead-on-switch-labeled-out">this is the GPIO pin connected to the lead on switch labeled OUT<a class="headerlink" href="#this-is-the-gpio-pin-connected-to-the-lead-on-switch-labeled-out" title="Permanent link">&para;</a></h1>
+<p>GPIOpin1=23</p>
+<h1 id="this-is-the-gpio-pin-connected-to-the-lead-on-switch-labeled-in">this is the GPIO pin connected to the lead on switch labeled IN<a class="headerlink" href="#this-is-the-gpio-pin-connected-to-the-lead-on-switch-labeled-in" title="Permanent link">&para;</a></h1>
+<p>GPIOpin2=24</p>
+<h1 id="enter-the-shutdown-delay-in-minutes">Enter the shutdown delay in minutes<a class="headerlink" href="#enter-the-shutdown-delay-in-minutes" title="Permanent link">&para;</a></h1>
+<p>delay=0</p>
+<p>echo "$GPIOpin1" &gt; /sys/class/gpio/export
+echo "in" &gt; /sys/class/gpio/gpio$GPIOpin1/direction
+echo "$GPIOpin2" &gt; /sys/class/gpio/export
+echo "out" &gt; /sys/class/gpio/gpio$GPIOpin2/direction
+echo "1" &gt; /sys/class/gpio/gpio$GPIOpin2/value
+let minute=$delay*60
+SD=0
+SS=0
+SS2=0
+while [ 1 = 1 ]; do
+power=$(cat /sys/class/gpio/gpio$GPIOpin1/value)
+uptime=$(</p>
 </li>
 </ol>
 </li>

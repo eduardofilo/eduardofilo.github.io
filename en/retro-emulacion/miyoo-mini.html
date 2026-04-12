@@ -2944,66 +2944,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#cheatsheets" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cheatsheets
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Cheatsheets">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#interesting-firmware-directoriesfiles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interesting firmware directories/files
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#interesting-onionui-directoriesfiles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interesting OnionUI directories/files
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gpios" class="md-nav__link">
-    <span class="md-ellipsis">
-      GPIOs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#keys" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keys
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#framebuffer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Framebuffer
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -4156,66 +4096,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#cheatsheets" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cheatsheets
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Cheatsheets">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#interesting-firmware-directoriesfiles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interesting firmware directories/files
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#interesting-onionui-directoriesfiles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interesting OnionUI directories/files
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gpios" class="md-nav__link">
-    <span class="md-ellipsis">
-      GPIOs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#keys" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keys
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#framebuffer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Framebuffer
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -4285,27 +4165,26 @@
 <li>Locate inside the ZIP the <code>.img</code> file. In the case of the 2022-04-19 update the file is located in <code>The firmware0419</code> directory and is named <code>myoo283_fw.img</code>.</li>
 <li>
 <p>Open the file with an hex editor to read the beginning of it which contains information in text form with the blocks inside the image and where they are flashed on the NAND. In particular we are interested in the section describing the <code>rootfs</code> partition which contains the following information:</p>
-<div class="highlight"><pre><span></span><code># File Partition: rootfs
-mxp r.info rootfs
+<p>```</p>
+<h1 id="file-partition-rootfs">File Partition: rootfs<a class="headerlink" href="#file-partition-rootfs" title="Permanent link">&para;</a></h1>
+<p>mxp r.info rootfs
 sf probe 0
 sf erase ${sf_part_start} ${sf_part_size}
 fatload mmc 0 0x21000000 $(SdUpgradeImage) 0x1ae000 0x22b000
 sf write 0x21000000 ${sf_part_start} 0x1AE000
-</code></pre></div>
+```</p>
 </li>
 <li>
 <p>According to the U-boot <code>fatload</code> command <a href="https://u-boot.readthedocs.io/en/v2022.04/usage/cmd/fatload.html">documentation</a>, the last two parameters in hexadecimal are the size and the position of the rootfs partition inside the <code>.img</code> file.</p>
 </li>
 <li>
 <p>Create a directory (for example <code>mnt</code>) and run the following command to mount the firmware rootfs in it:</p>
-<div class="highlight"><pre><span></span><code>sudo mount -o loop,sizelimit=0x1ae000,offset=0x22b000,ro,noexec miyoo283_fw.img mnt
-</code></pre></div>
+<p><code>sudo mount -o loop,sizelimit=0x1ae000,offset=0x22b000,ro,noexec miyoo283_fw.img mnt</code></p>
 </li>
 </ol>
 <p>Using the same method you can also mount the <code>miservice</code> and <code>customer</code> partitions:</p>
-<div class="highlight"><pre><span></span><code>sudo mount -o loop,sizelimit=0x32f000,offset=0x3d9000,ro,noexec miyoo283_fw.img mnt2
-sudo mount -o loop,sizelimit=0x6c5000,offset=0x708000,ro,noexec miyoo283_fw.img mnt3
-</code></pre></div>
+<p><code>sudo mount -o loop,sizelimit=0x32f000,offset=0x3d9000,ro,noexec miyoo283_fw.img mnt2
+sudo mount -o loop,sizelimit=0x6c5000,offset=0x708000,ro,noexec miyoo283_fw.img mnt3</code></p>
 <h2 id="cheatsheets">Cheatsheets<a class="headerlink" href="#cheatsheets" title="Permanent link">&para;</a></h2>
 <h4 id="interesting-firmware-directoriesfiles">Interesting firmware directories/files<a class="headerlink" href="#interesting-firmware-directoriesfiles" title="Permanent link">&para;</a></h4>
 <table>
@@ -4394,7 +4273,7 @@ sudo mount -o loop,sizelimit=0x6c5000,offset=0x708000,ro,noexec miyoo283_fw.img 
 </tbody>
 </table>
 <h4 id="gpios">GPIOs<a class="headerlink" href="#gpios" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>/ # cat /sys/kernel/debug/gpio
+<p><code>/ # cat /sys/kernel/debug/gpio
 gpiochip0: GPIOs 0-90, gpio:
  gpio-1   (                    |GPIO Key Up         ) in  hi
  gpio-5   (                    |GPIO Key Right      ) in  hi
@@ -4413,8 +4292,7 @@ gpiochip0: GPIOs 0-90, gpio:
  gpio-70  (                    |GPIO Key Left       ) in  hi
  gpio-72  (                    |                    ) out lo
  gpio-86  (                    |GPIO Key POWER      ) in  lo
- gpio-90  (                    |GPIO Key R          ) in  hi
-</code></pre></div>
+ gpio-90  (                    |GPIO Key R          ) in  hi</code></p>
 <h4 id="keys">Keys<a class="headerlink" href="#keys" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -4519,16 +4397,16 @@ gpiochip0: GPIOs 0-90, gpio:
 </tbody>
 </table>
 <h4 id="framebuffer">Framebuffer<a class="headerlink" href="#framebuffer" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>/ # fbset
-
-mode &quot;640x480-100&quot;
+<p>```
+/ # fbset</p>
+<p>mode "640x480-100"
         # D: 45.455 MHz, H: 54.633 kHz, V: 100.060 Hz
         geometry 640 480 640 1440 32
         timings 22000 64 64 32 32 64 2
         accel false
         rgba 8/16,8/8,8/0,8/24
 endmode
-</code></pre></div>
+```</p>
 <p>The frambuffer (<code>/dev/fb0</code>) contains 3 images (640x1440) and is rotated 180º. Each pixel occupies 4 bytes encoded in the following order: <code>BBGGRRAA</code> where <code>AA</code> (alpha) is always <code>FF</code>.</p>
 
 

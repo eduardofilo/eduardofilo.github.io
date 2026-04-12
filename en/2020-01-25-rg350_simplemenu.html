@@ -4176,7 +4176,7 @@
 <p>De serie SimpleMenu trae una configuración con varios sistemas precargados, pero como apunta de forma estática a las rutas de los distintos emuladores y ROMs, es casi seguro que nos va a tocar ajustar esta configuración a los que nosotros tengamos instalados en la consola. Aún así interesa que lo ejecutemos al menos una vez para que se genere el directorio <code>.simplemenu</code> dentro del home de la consola para que tengamos la plantilla sobre la que empezar a modificar.</p>
 <h4 id="sistemas">Sistemas<a class="headerlink" href="#sistemas" title="Permanent link">&para;</a></h4>
 <p>Los ficheros clave son los que se encuentran en la ruta <code>/media/data/local/home/.simplemenu/section_groups</code>. Allí encontramos los siguientes ficheros:</p>
-<div class="highlight"><pre><span></span><code>RG350:/media/data/local/home/.simplemenu/section_groups # ls -l
+<p><code>RG350:/media/data/local/home/.simplemenu/section_groups # ls -l
 -rw-r--r--    1 root     root           235 Jan 28 17:35 apps and games.ini
 -rw-r--r--    1 root     root         10716 Jan 28 17:35 apps and games.png
 -rw-r--r--    1 root     root           936 Jan 28 17:35 arcades.ini
@@ -4186,21 +4186,18 @@
 -rw-r--r--    1 root     root          1188 Jan 28 17:35 handhelds.ini
 -rw-r--r--    1 root     root          8626 Jan 28 17:35 handhelds.png
 -rw-r--r--    1 root     root           949 Jan 28 17:35 home computers.ini
--rw-r--r--    1 root     root         17383 Jan 28 17:35 home computers.png
-</code></pre></div>
+-rw-r--r--    1 root     root         17383 Jan 28 17:35 home computers.png</code></p>
 <p>Como vemos hay una imagen y un fichero <code>.ini</code> para 5 grupos de sistemas. Esta agrupación es flexible, es decir, podemos ampliar o reducir el número de tipos a nuestro gusto. El fichero de imagen tiene que llamarse exactamente igual que el de configuración. Será lo que se vea en la pantalla al seleccionar el tipo correspondiente.</p>
 <p>A no ser que seamos expertos con el editor <code>vi</code> que podemos ejecutar por SSH, lo mejor será transferir los ficheros al ordenador de alguna manera (pasándolos a la tarjeta externa con DinguxCmdr si no se conoce otra forma más directa) y editarlos allí con un editor que soporte los finales de línea y la codificación utilizada habitualmente en sistemas Linux (como <a href="https://notepad-plus-plus.org/">Notepad++</a>).</p>
 <p>A partir de aquí nos vamos a centrar en el tipo <code>handhelds</code> para seguir la explicación, pero todo lo que digamos se puede aplicar exactamente igual a cualquiera de los otros tipos.</p>
 <p>En el fichero <code>handhelds.ini</code> tenemos al principio la lista de sistemas en la propiedad <code>consoleList</code> del apartado <code>[CONSOLES]</code>. En esta propiedad se van añadiendo los distintos sistemas que definiremos a continuación, separados por comas. Podemos <em>seleccionar</em> un subconjunto de los sistemas definidos más abajo, es decir, podemos ocultar algunos simplemente no incluyéndolos en <code>consoleList</code>.</p>
-<div class="highlight"><pre><span></span><code>[CONSOLES]
-consoleList =GAME BOY,GAME BOY COLOR,GAME BOY ADVANCE,GAME &amp; WATCH,GAME GEAR,NEO GEO POCKET,WONDERSWAN,LYNX
-</code></pre></div>
+<p><code>[CONSOLES]
+consoleList =GAME BOY,GAME BOY COLOR,GAME BOY ADVANCE,GAME &amp; WATCH,GAME GEAR,NEO GEO POCKET,WONDERSWAN,LYNX</code></p>
 <p>Luego por cada sistema tenemos un bloque como el siguiente:</p>
-<div class="highlight"><pre><span></span><code>[GAME BOY]
+<p><code>[GAME BOY]
 execs = /media/data/apps/gambatte-multi-r572u4-20200127.opk
 romDirs = /media/data/roms/GB/
-romExts = .gb,.gz,.zip
-</code></pre></div>
+romExts = .gb,.gz,.zip</code></p>
 <p>El formato del archivo es el que se utiliza habitualmente para los ficheros de configuración tipo <a href="https://es.wikipedia.org/wiki/INI_(extensi%C3%B3n_de_archivo)">INI</a>. El significado de los parámetros es:</p>
 <ul>
 <li><code>execs</code>: OPKs de los emuladores del sistema con sus rutas, separados por comas.</li>
@@ -4230,24 +4227,22 @@ romExts = .gb,.gz,.zip
 <p><img alt="SimpleMenu Settings" src="../images/posts/simplemenu_settings.png" /></p>
 <p>La mayoría de estos ajustes tienen su correspondencia en el fichero de configuración. Vamos a empezar estudiando las opciones directamente sobre el fichero y al final veremos las opciones del menú de settings que no están en él.</p>
 <p>El contenido del fichero es el siguiente por defecto:</p>
-<div class="highlight"><pre><span></span><code>[GENERAL]
+<p>```
+[GENERAL]
 media_folder = media
-theme = default
-
-[FULLSCREEN_MODE]
+theme = default</p>
+<p>[FULLSCREEN_MODE]
 display_footer = 0
-display_menu = 1
-
-[SYSTEM]
+display_menu = 1</p>
+<p>[SYSTEM]
 screen_timeout_in_seconds = 30
-allow_shutdown = 0
-
-[CPU]
+allow_shutdown = 0</p>
+<p>[CPU]
 underclocked_speed = 408
 normal_speed = 702
 overclocked_speed = 732
 sleep_speed = 200
-</code></pre></div>
+```</p>
 <p>Los parámetros dentro del grupo <code>[CPU]</code> son ignorados en RG350 (en principio son para modificar las frecuencias del procesador). El resto de parámetros sí los podemos modificar. Su significado es el siguiente:</p>
 <ul>
 <li><code>media_folder</code>: Directorio donde se buscan las previsualizaciones de las ROMs. Interesa cambiar este valor del <code>media</code> que viene por defecto a <code>.previews</code> para que sea compatible con la ruta utilizada por Gmenu2x.</li>

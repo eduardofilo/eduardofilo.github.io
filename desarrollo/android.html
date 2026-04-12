@@ -4644,29 +4644,29 @@
 <li><a href="http://code.google.com/intl/es-ES/android/add-ons/google-apis/mapkey.html">Obtener APIKey</a></li>
 </ul>
 <p>Tu clave es:</p>
-<div class="highlight"><pre><span></span><code>0V21y2J7NRVSVKA...5C9Ag
-</code></pre></div>
+<p><code>text
+0V21y2J7NRVSVKA...5C9Ag</code></p>
 <p>Esta clave es válida para todas las aplicaciones firmadas con el certificado cuya huella dactilar sea:</p>
-<div class="highlight"><pre><span></span><code>C2:EC:22:8F:...:56:39
-</code></pre></div>
+<p><code>text
+C2:EC:22:8F:...:56:39</code></p>
 <p>Incluimos un diseño xml de ejemplo para que puedas iniciarte por los senderos de la creación de mapas:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;com.google.android.maps.MapView</span>
-<span class="w">   </span><span class="na">android:layout_width=</span><span class="s">&quot;fill_parent&quot;</span>
-<span class="w">   </span><span class="na">android:layout_height=</span><span class="s">&quot;fill_parent&quot;</span>
-<span class="w">   </span><span class="na">android:apiKey=</span><span class="s">&quot;0V21y2J7NRVSVKA...5C9Ag&quot;</span>
-<span class="w">   </span><span class="nt">/&gt;</span>
-</code></pre></div>
+<p><code>xml
+&lt;com.google.android.maps.MapView
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent"
+   android:apiKey="0V21y2J7NRVSVKA...5C9Ag"
+   /&gt;</code></p>
 <h2 id="depurar">Depurar<a class="headerlink" href="#depurar" title="Permanent link">&para;</a></h2>
 <p>Añadir el atributo siguiente al bloque "application":</p>
-<div class="highlight"><pre><span></span><code>android:debuggable=&quot;true&quot;
-</code></pre></div>
+<p><code>xml
+android:debuggable="true"</code></p>
 <p>Solicitar el permiso siguiente:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.SET_DEBUG_APP&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</code></pre></div>
+<p><code>xml
+&lt;uses-permission android:name="android.permission.SET_DEBUG_APP" /&gt;</code></p>
 <h2 id="logcat-filtrado">Logcat filtrado<a class="headerlink" href="#logcat-filtrado" title="Permanent link">&para;</a></h2>
 <p>Ejemplo de una expresión de filtrado que suprime (silencia) todos los mensajes de log excepto los que tienen el tag "ActivityManager" con una prioridad Info o superior, y los que tienen el tag "MyApp" con una prioridad Debug o superior:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>adb<span class="w"> </span>logcat<span class="w"> </span>ActivityManager:I<span class="w"> </span>MyApp:D<span class="w"> </span>*:S
-</code></pre></div>
+<p><code>bash
+$ adb logcat ActivityManager:I MyApp:D *:S</code></p>
 <p>Las prioridades de log son:</p>
 <ul>
 <li>V — Verbose (lowest priority)</li>
@@ -4679,18 +4679,18 @@
 </ul>
 <h2 id="dumpsys-y-dumpstate">Dumpsys y Dumpstate<a class="headerlink" href="#dumpsys-y-dumpstate" title="Permanent link">&para;</a></h2>
 <p>Hace un volcado de los datos del sistema. Viene bien para encontrar componentes instalados (Aplicaciones, ContentProvider's, etc.):</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>adb<span class="w"> </span>shell<span class="w"> </span>dumpsys
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>adb<span class="w"> </span>shell<span class="w"> </span>dumpstate
-</code></pre></div>
+<p><code>bash
+$ adb shell dumpsys</code></p>
+<p><code>bash
+$ adb shell dumpstate</code></p>
 <h2 id="buscar-callerid">Buscar CallerID<a class="headerlink" href="#buscar-callerid" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">android.database.Cursor</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">android.net.Uri</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">android.provider.ContactsContract</span><span class="p">;</span>
-
-<span class="n">Uri</span><span class="w"> </span><span class="n">uri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Uri</span><span class="p">.</span><span class="na">withAppendedPath</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">PhoneLookup</span><span class="p">.</span><span class="na">CONTENT_FILTER_URI</span><span class="p">,</span><span class="w"> </span><span class="n">Uri</span><span class="p">.</span><span class="na">encode</span><span class="p">(</span><span class="s">&quot;+34976010101&quot;</span><span class="p">));</span>
-<span class="n">Cursor</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getContentResolver</span><span class="p">().</span><span class="na">query</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="p">{</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">PhoneLookup</span><span class="p">.</span><span class="na">DISPLAY_NAME</span><span class="p">},</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
-</code></pre></div>
+<p>```java
+import android.database.Cursor;
+import android.net.Uri;
+import android.provider.ContactsContract;</p>
+<p>Uri uri = Uri.withAppendedPath(ContactsContract.PhoneLookup.CONTENT_FILTER_URI, Uri.encode("+34976010101"));
+Cursor c = getContentResolver().query(uri, new String[]{ContactsContract.PhoneLookup.DISPLAY_NAME}, null, null, null);
+```</p>
 <h2 id="manejo-de-uris-de-contactos">Manejo de URI's de contactos<a class="headerlink" href="#manejo-de-uris-de-contactos" title="Permanent link">&para;</a></h2>
 <p>La API de Contacts de Android es muy potente y compleja. Los conceptos básicos se describen <a href="http://developer.android.com/resources/articles/contacts.html">aquí</a>.</p>
 <p>Se manejan dos tipos de URI's:</p>
@@ -4699,38 +4699,38 @@
 <li>URI's de tipo item: Apuntan a un registro concreto de una tabla, por ejemplo un RawContact.</li>
 </ul>
 <h3 id="uri-de-la-tabla-raiz-contacts">URI de la tabla raíz Contacts<a class="headerlink" href="#uri-de-la-tabla-raiz-contacts" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">android.net.Uri</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">android.provider.ContactsContract</span><span class="p">;</span>
-<span class="n">Uri</span><span class="w"> </span><span class="n">contactsUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Contacts</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">;</span>
-</code></pre></div>
+<p><code>java
+import android.net.Uri;
+import android.provider.ContactsContract;
+Uri contactsUri = ContactsContract.Contacts.CONTENT_URI;</code></p>
 <h3 id="uri-de-la-subtabla-rawcontacts">URI de la subtabla RawContacts<a class="headerlink" href="#uri-de-la-subtabla-rawcontacts" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">android.net.Uri</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">android.provider.ContactsContract</span><span class="p">;</span>
-<span class="n">Uri</span><span class="w"> </span><span class="n">rawContactsUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">RawContacts</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">;</span>
-</code></pre></div>
+<p><code>java
+import android.net.Uri;
+import android.provider.ContactsContract;
+Uri rawContactsUri = ContactsContract.RawContacts.CONTENT_URI;</code></p>
 <h3 id="uri-de-la-subtabla-data">URI de la subtabla Data<a class="headerlink" href="#uri-de-la-subtabla-data" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">android.net.Uri</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">android.provider.ContactsContract</span><span class="p">;</span>
-<span class="n">Uri</span><span class="w"> </span><span class="n">datasUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">;</span>
-</code></pre></div>
+<p><code>java
+import android.net.Uri;
+import android.provider.ContactsContract;
+Uri datasUri = ContactsContract.Data.CONTENT_URI;</code></p>
 <h3 id="uri-de-la-subtabla-data-solo-con-los-registros-de-un-rawcontact-concreto">URI de la subtabla Data sólo con los registros de un RawContact concreto<a class="headerlink" href="#uri-de-la-subtabla-data-solo-con-los-registros-de-un-rawcontact-concreto" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">android.net.Uri</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">android.provider.ContactsContract</span><span class="p">;</span>
-<span class="c1">// Tenemos en rawContactUri el URI de un RawContact. Será del tipo content://com.android.contacts/raw_contacts/_id</span>
-<span class="n">Uri</span><span class="w"> </span><span class="n">datasUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Uri</span><span class="p">.</span><span class="na">withAppendedPath</span><span class="p">(</span><span class="n">rawContactUri</span><span class="p">,</span><span class="w"> </span><span class="n">RawContacts</span><span class="p">.</span><span class="na">Entity</span><span class="p">.</span><span class="na">CONTENT_DIRECTORY</span><span class="p">);</span>
-</code></pre></div>
+<p><code>java
+import android.net.Uri;
+import android.provider.ContactsContract;
+// Tenemos en rawContactUri el URI de un RawContact. Será del tipo content://com.android.contacts/raw_contacts/_id
+Uri datasUri = Uri.withAppendedPath(rawContactUri, RawContacts.Entity.CONTENT_DIRECTORY);</code></p>
 <h3 id="obtener-id-a-partir-de-una-uri-de-tipo-item">Obtener ID a partir de una URI de tipo item<a class="headerlink" href="#obtener-id-a-partir-de-una-uri-de-tipo-item" title="Permanent link">&para;</a></h3>
 <p>Por ejemplo el método para insertar un RawContact devuelve una URI de tipo item (no tabla). Para obtener el ID de dicho elemento podemos usar algunas funciones que hay en la clase ''android.content.ContentUris''.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">android.content.ContentUris</span><span class="p">;</span>
-<span class="kt">long</span><span class="w"> </span><span class="n">rawContactId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContentUris</span><span class="p">.</span><span class="na">parseId</span><span class="p">(</span><span class="n">rawContactUri</span><span class="p">);</span>
-</code></pre></div>
+<p><code>java
+import android.content.ContentUris;
+long rawContactId = ContentUris.parseId(rawContactUri);</code></p>
 <h3 id="obtener-la-uri-de-tipo-item-de-un-elemento-concreto-a-partir-de-la-tabla">Obtener la URI de tipo item de un elemento concreto a partir de la tabla<a class="headerlink" href="#obtener-la-uri-de-tipo-item-de-un-elemento-concreto-a-partir-de-la-tabla" title="Permanent link">&para;</a></h3>
 <p>Por ejemplo tenemos el ID de un elemento y queremos una URI para él.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">android.net.Uri</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">android.provider.ContactsContract</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">android.content.ContentUris</span><span class="p">;</span>
-<span class="n">Uri</span><span class="w"> </span><span class="n">rawContactUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContentUris</span><span class="p">.</span><span class="na">withAppendedId</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">RawContacts</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">,</span><span class="w"> </span><span class="n">rawContactId</span><span class="p">);</span>
-</code></pre></div>
+<p><code>java
+import android.net.Uri;
+import android.provider.ContactsContract;
+import android.content.ContentUris;
+Uri rawContactUri = ContentUris.withAppendedId(ContactsContract.RawContacts.CONTENT_URI, rawContactId);</code></p>
 <p>Resumiendo:</p>
 <table>
 <thead>
@@ -4759,227 +4759,259 @@
 </tbody>
 </table>
 <h2 id="obtener-el-id-de-un-recurso-en-el-contentprovider-de-audio-externo">Obtener el ID de un recurso en el ContentProvider de audio externo<a class="headerlink" href="#obtener-el-id-de-un-recurso-en-el-contentprovider-de-audio-externo" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">outText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
-<span class="n">Uri</span><span class="w"> </span><span class="n">externalMediaUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">android</span><span class="p">.</span><span class="na">provider</span><span class="p">.</span><span class="na">MediaStore</span><span class="p">.</span><span class="na">Audio</span><span class="p">.</span><span class="na">Media</span><span class="p">.</span><span class="na">EXTERNAL_CONTENT_URI</span><span class="p">;</span>
-<span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">projection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">android</span><span class="p">.</span><span class="na">provider</span><span class="p">.</span><span class="na">BaseColumns</span><span class="p">.</span><span class="na">_ID</span><span class="p">};</span>
-<span class="n">String</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">android</span><span class="p">.</span><span class="na">provider</span><span class="p">.</span><span class="na">MediaStore</span><span class="p">.</span><span class="na">MediaColumns</span><span class="p">.</span><span class="na">TITLE</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;=?&quot;</span><span class="p">;</span>
-<span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">whereArgs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Space Oddity&quot;</span><span class="w"> </span><span class="p">};</span>
-<span class="n">Cursor</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">managedQuery</span><span class="p">(</span><span class="n">externalMediaUri</span><span class="p">,</span><span class="w"> </span><span class="n">projection</span><span class="p">,</span><span class="w"> </span><span class="n">where</span><span class="p">,</span><span class="w"> </span><span class="n">whereArgs</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
-<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="na">moveToNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="na">getColumnCount</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">outText</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="na">getColumnName</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;= &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<p><code>java
+String outText = "";
+Uri externalMediaUri = android.provider.MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
+String[] projection = new String[] {android.provider.BaseColumns._ID};
+String where = android.provider.MediaStore.MediaColumns.TITLE + "=?";
+String[] whereArgs = new String[] { "Space Oddity" };
+Cursor c = managedQuery(externalMediaUri, projection, where, whereArgs, null);
+while (c.moveToNext()) {
+    for (int i = 0; i &lt; c.getColumnCount(); i++) {
+        outText += c.getColumnName(i) + "= " + c.getString(i) + "\n";
+    }
+}</code></p>
 <h2 id="insercion-de-un-rawcontact-de-tipo-vndseccontactphone">Inserción de un RawContact de tipo "vnd.sec.contact.phone"<a class="headerlink" href="#insercion-de-un-rawcontact-de-tipo-vndseccontactphone" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ContentProviderOperation</span><span class="o">&gt;</span><span class="w"> </span><span class="n">operationList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ContentProviderOperation</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">Builder</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContentProviderOperation</span><span class="p">.</span><span class="na">newInsert</span><span class="p">(</span><span class="n">RawContacts</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValue</span><span class="p">(</span><span class="n">RawContacts</span><span class="p">.</span><span class="na">ACCOUNT_NAME</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;vnd.sec.contact.phone&quot;</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValue</span><span class="p">(</span><span class="n">RawContacts</span><span class="p">.</span><span class="na">ACCOUNT_TYPE</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;vnd.sec.contact.phone&quot;</span><span class="p">);</span>
-<span class="n">operationList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="na">build</span><span class="p">());</span>
-
-<span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContentProviderOperation</span><span class="p">.</span><span class="na">newInsert</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValueBackReference</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">RAW_CONTACT_ID</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValue</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">MIMETYPE</span><span class="p">,</span>
-<span class="w">        </span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">CommonDataKinds</span><span class="p">.</span><span class="na">StructuredName</span><span class="p">.</span><span class="na">CONTENT_ITEM_TYPE</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValue</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">CommonDataKinds</span><span class="p">.</span><span class="na">StructuredName</span><span class="p">.</span><span class="na">DISPLAY_NAME</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Felipito&quot;</span><span class="p">);</span>
-<span class="n">operationList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="na">build</span><span class="p">());</span>
-
-<span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContentProviderOperation</span><span class="p">.</span><span class="na">newInsert</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValueBackReference</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">RAW_CONTACT_ID</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValue</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">MIMETYPE</span><span class="p">,</span><span class="w"> </span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Phone</span><span class="p">.</span><span class="na">CONTENT_ITEM_TYPE</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValue</span><span class="p">(</span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Phone</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span><span class="w"> </span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Phone</span><span class="p">.</span><span class="na">TYPE_MAIN</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValue</span><span class="p">(</span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Phone</span><span class="p">.</span><span class="na">NUMBER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;976010101&quot;</span><span class="p">);</span>
-<span class="n">operationList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="na">build</span><span class="p">());</span>
-
-<span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContentProviderOperation</span><span class="p">.</span><span class="na">newInsert</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValueBackReference</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">RAW_CONTACT_ID</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValue</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">MIMETYPE</span><span class="p">,</span><span class="w"> </span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Photo</span><span class="p">.</span><span class="na">CONTENT_ITEM_TYPE</span><span class="p">);</span>
-<span class="n">ByteArrayOutputStream</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ByteArrayOutputStream</span><span class="p">();</span>
-<span class="n">bitmap</span><span class="p">.</span><span class="na">compress</span><span class="p">(</span><span class="n">Bitmap</span><span class="p">.</span><span class="na">CompressFormat</span><span class="p">.</span><span class="na">JPEG</span><span class="p">,</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span><span class="w"> </span><span class="n">stream</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValue</span><span class="p">(</span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Photo</span><span class="p">.</span><span class="na">PHOTO</span><span class="p">,</span><span class="w"> </span><span class="n">stream</span><span class="p">.</span><span class="na">toByteArray</span><span class="p">());</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValue</span><span class="p">(</span><span class="n">RawContacts</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">IS_SUPER_PRIMARY</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-<span class="n">operationList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="na">build</span><span class="p">());</span>
-
-<span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">getContentResolver</span><span class="p">().</span><span class="na">applyBatch</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">AUTHORITY</span><span class="p">,</span><span class="w"> </span><span class="n">operationList</span><span class="p">);</span>
-<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">RemoteException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
-<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">OperationApplicationException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div>
+<p>```java
+ArrayList<ContentProviderOperation> operationList = new ArrayList<ContentProviderOperation>();
+Builder builder = ContentProviderOperation.newInsert(RawContacts.CONTENT_URI);
+builder.withValue(RawContacts.ACCOUNT_NAME, "vnd.sec.contact.phone");
+builder.withValue(RawContacts.ACCOUNT_TYPE, "vnd.sec.contact.phone");
+operationList.add(builder.build());</p>
+<p>builder = ContentProviderOperation.newInsert(ContactsContract.Data.CONTENT_URI);
+builder.withValueBackReference(ContactsContract.Data.RAW_CONTACT_ID, 0);
+builder.withValue(ContactsContract.Data.MIMETYPE,
+        ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE);
+builder.withValue(ContactsContract.CommonDataKinds.StructuredName.DISPLAY_NAME, "Felipito");
+operationList.add(builder.build());</p>
+<p>builder = ContentProviderOperation.newInsert(ContactsContract.Data.CONTENT_URI);
+builder.withValueBackReference(ContactsContract.Data.RAW_CONTACT_ID, 0);
+builder.withValue(ContactsContract.Data.MIMETYPE, CommonDataKinds.Phone.CONTENT_ITEM_TYPE);
+builder.withValue(CommonDataKinds.Phone.TYPE, CommonDataKinds.Phone.TYPE_MAIN);
+builder.withValue(CommonDataKinds.Phone.NUMBER, "976010101");
+operationList.add(builder.build());</p>
+<p>builder = ContentProviderOperation.newInsert(ContactsContract.Data.CONTENT_URI);
+builder.withValueBackReference(ContactsContract.Data.RAW_CONTACT_ID, 0);
+builder.withValue(ContactsContract.Data.MIMETYPE, CommonDataKinds.Photo.CONTENT_ITEM_TYPE);
+ByteArrayOutputStream stream = new ByteArrayOutputStream();
+bitmap.compress(Bitmap.CompressFormat.JPEG, 75, stream);
+builder.withValue(CommonDataKinds.Photo.PHOTO, stream.toByteArray());
+builder.withValue(RawContacts.Data.IS_SUPER_PRIMARY, 1);
+operationList.add(builder.build());</p>
+<p>try {
+    getContentResolver().applyBatch(ContactsContract.AUTHORITY, operationList);
+} catch (RemoteException e) {
+    e.printStackTrace();
+} catch (OperationApplicationException e) {
+    e.printStackTrace();
+}
+```</p>
 <h2 id="extraer-el-nombre-el-numero-y-la-foto-de-los-contacts-de-tipo-vndseccontactphone">Extraer el nombre, el número y la foto de los Contacts de tipo "vnd.sec.contact.phone"<a class="headerlink" href="#extraer-el-nombre-el-numero-y-la-foto-de-los-contacts-de-tipo-vndseccontactphone" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">Uri</span><span class="w"> </span><span class="n">rawContactsUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">RawContacts</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">;</span>
-<span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">projection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">RawContacts</span><span class="p">.</span><span class="na">_ID</span><span class="w"> </span><span class="p">};</span>
-<span class="n">String</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">RawContacts</span><span class="p">.</span><span class="na">ACCOUNT_TYPE</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;=? AND &quot;</span>
-<span class="w">        </span><span class="o">+</span><span class="w"> </span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">RawContacts</span><span class="p">.</span><span class="na">ACCOUNT_NAME</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;=? AND &quot;</span>
-<span class="w">        </span><span class="o">+</span><span class="w"> </span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">RawContacts</span><span class="p">.</span><span class="na">DELETED</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;=?&quot;</span><span class="p">;</span>
-<span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">whereArgs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;vnd.sec.contact.phone&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;vnd.sec.contact.phone&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="p">};</span>
-<span class="n">String</span><span class="w"> </span><span class="n">sortOrder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;display_name ASC&quot;</span><span class="p">;</span>
-<span class="n">Cursor</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">managedQuery</span><span class="p">(</span><span class="n">rawContactsUri</span><span class="p">,</span><span class="w"> </span><span class="n">projection</span><span class="p">,</span><span class="w"> </span><span class="n">where</span><span class="p">,</span><span class="w"> </span><span class="n">whereArgs</span><span class="p">,</span><span class="w"> </span><span class="n">sortOrder</span><span class="p">);</span>
-<span class="n">outText</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">rawContactsUri</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">;</span>
-<span class="n">outText</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="na">getCount</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">;</span>
-<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="na">moveToNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">colPos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="na">getColumnIndex</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">RawContacts</span><span class="p">.</span><span class="na">_ID</span><span class="p">);</span>
-<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="n">rawContactId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Long</span><span class="p">.</span><span class="na">parseLong</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="n">colPos</span><span class="p">));</span>
-<span class="w">    </span><span class="n">Uri</span><span class="w"> </span><span class="n">rawContactUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContentUris</span><span class="p">.</span><span class="na">withAppendedId</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">RawContacts</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">,</span>
-<span class="w">            </span><span class="n">rawContactId</span><span class="p">);</span>
-<span class="w">    </span><span class="n">Uri</span><span class="w"> </span><span class="n">datasUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Uri</span><span class="p">.</span><span class="na">withAppendedPath</span><span class="p">(</span><span class="n">rawContactUri</span><span class="p">,</span><span class="w"> </span><span class="n">RawContacts</span><span class="p">.</span><span class="na">Entity</span><span class="p">.</span><span class="na">CONTENT_DIRECTORY</span><span class="p">);</span>
-<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="n">Bitmap</span><span class="w"> </span><span class="n">bitmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<p>```java
+Uri rawContactsUri = ContactsContract.RawContacts.CONTENT_URI;
+String[] projection = new String[] { ContactsContract.RawContacts._ID };
+String where = ContactsContract.RawContacts.ACCOUNT_TYPE + "=? AND "
+        + ContactsContract.RawContacts.ACCOUNT_NAME + "=? AND "
+        + ContactsContract.RawContacts.DELETED + "=?";
+String[] whereArgs = new String[] { "vnd.sec.contact.phone", "vnd.sec.contact.phone", "0" };
+String sortOrder = "display_name ASC";
+Cursor c = managedQuery(rawContactsUri, projection, where, whereArgs, sortOrder);
+outText += rawContactsUri.toString() + "\n";
+outText += c.getCount() + "\n";
+while (c.moveToNext()) {
+    int colPos = c.getColumnIndex(ContactsContract.RawContacts._ID);
+    long rawContactId = Long.parseLong(c.getString(colPos));
+    Uri rawContactUri = ContentUris.withAppendedId(ContactsContract.RawContacts.CONTENT_URI,
+            rawContactId);
+    Uri datasUri = Uri.withAppendedPath(rawContactUri, RawContacts.Entity.CONTENT_DIRECTORY);
+    String name = "";
+    String number = "";
+    Bitmap bitmap = null;</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code>String[] projection1 = new String[] { CommonDataKinds.StructuredName.DISPLAY_NAME };
+String where1 = Data.MIMETYPE + &quot;=?&quot;;
+String[] whereArgs1 = new String[] { CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE };
+Cursor c1 = managedQuery(datasUri, projection1, where1, whereArgs1, null);
+if (c1.moveToNext()) {
+    name = c1.getString(c1.getColumnIndex(CommonDataKinds.StructuredName.DISPLAY_NAME));
+    c1.close();
+}
 
-<span class="w">    </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">projection1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">StructuredName</span><span class="p">.</span><span class="na">DISPLAY_NAME</span><span class="w"> </span><span class="p">};</span>
-<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">where1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Data</span><span class="p">.</span><span class="na">MIMETYPE</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;=?&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">whereArgs1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">StructuredName</span><span class="p">.</span><span class="na">CONTENT_ITEM_TYPE</span><span class="w"> </span><span class="p">};</span>
-<span class="w">    </span><span class="n">Cursor</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">managedQuery</span><span class="p">(</span><span class="n">datasUri</span><span class="p">,</span><span class="w"> </span><span class="n">projection1</span><span class="p">,</span><span class="w"> </span><span class="n">where1</span><span class="p">,</span><span class="w"> </span><span class="n">whereArgs1</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c1</span><span class="p">.</span><span class="na">moveToNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c1</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="n">c1</span><span class="p">.</span><span class="na">getColumnIndex</span><span class="p">(</span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">StructuredName</span><span class="p">.</span><span class="na">DISPLAY_NAME</span><span class="p">));</span>
-<span class="w">        </span><span class="n">c1</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
+String[] projection2 = new String[] { CommonDataKinds.Phone.NUMBER };
+String where2 = Data.MIMETYPE + &quot;=?&quot;;
+String[] whereArgs2 = new String[] { CommonDataKinds.Phone.CONTENT_ITEM_TYPE };
+Cursor c2 = managedQuery(datasUri, projection2, where2, whereArgs2, null);
+if (c2.moveToNext()) {
+    number = c2.getString(c2.getColumnIndex(CommonDataKinds.Phone.NUMBER));
+    c2.close();
+}
 
-<span class="w">    </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">projection2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Phone</span><span class="p">.</span><span class="na">NUMBER</span><span class="w"> </span><span class="p">};</span>
-<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">where2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Data</span><span class="p">.</span><span class="na">MIMETYPE</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;=?&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">whereArgs2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Phone</span><span class="p">.</span><span class="na">CONTENT_ITEM_TYPE</span><span class="w"> </span><span class="p">};</span>
-<span class="w">    </span><span class="n">Cursor</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">managedQuery</span><span class="p">(</span><span class="n">datasUri</span><span class="p">,</span><span class="w"> </span><span class="n">projection2</span><span class="p">,</span><span class="w"> </span><span class="n">where2</span><span class="p">,</span><span class="w"> </span><span class="n">whereArgs2</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c2</span><span class="p">.</span><span class="na">moveToNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c2</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="n">c2</span><span class="p">.</span><span class="na">getColumnIndex</span><span class="p">(</span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Phone</span><span class="p">.</span><span class="na">NUMBER</span><span class="p">));</span>
-<span class="w">        </span><span class="n">c2</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
+String[] projection3 = new String[] { CommonDataKinds.Photo.PHOTO };
+String where3 = Data.MIMETYPE + &quot;=?&quot;;
+String[] whereArgs3 = new String[] { CommonDataKinds.Photo.CONTENT_ITEM_TYPE };
+Cursor c3 = managedQuery(datasUri, projection3, where3, whereArgs3, null);
+if (c3.moveToNext()) {
+    byte[] photo = c3.getBlob(c3.getColumnIndex(CommonDataKinds.Photo.PHOTO));
+    bitmap = BitmapFactory.decodeByteArray(photo, 0, photo.length);
+    c3.close();
+}
 
-<span class="w">    </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">projection3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Photo</span><span class="p">.</span><span class="na">PHOTO</span><span class="w"> </span><span class="p">};</span>
-<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">where3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Data</span><span class="p">.</span><span class="na">MIMETYPE</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;=?&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">whereArgs3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Photo</span><span class="p">.</span><span class="na">CONTENT_ITEM_TYPE</span><span class="w"> </span><span class="p">};</span>
-<span class="w">    </span><span class="n">Cursor</span><span class="w"> </span><span class="n">c3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">managedQuery</span><span class="p">(</span><span class="n">datasUri</span><span class="p">,</span><span class="w"> </span><span class="n">projection3</span><span class="p">,</span><span class="w"> </span><span class="n">where3</span><span class="p">,</span><span class="w"> </span><span class="n">whereArgs3</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c3</span><span class="p">.</span><span class="na">moveToNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">photo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c3</span><span class="p">.</span><span class="na">getBlob</span><span class="p">(</span><span class="n">c3</span><span class="p">.</span><span class="na">getColumnIndex</span><span class="p">(</span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Photo</span><span class="p">.</span><span class="na">PHOTO</span><span class="p">));</span>
-<span class="w">        </span><span class="n">bitmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BitmapFactory</span><span class="p">.</span><span class="na">decodeByteArray</span><span class="p">(</span><span class="n">photo</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">photo</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
-<span class="w">        </span><span class="n">c3</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
+outText += &quot;ID= &quot; + rawContactId + &quot;; Nombre= &quot; + name + &quot;; Número= &quot; + number;
+if (bitmap != null) {
+    outText += &quot;; Ancho foto= &quot; + bitmap.getWidth() + &quot;; Alto foto= &quot; + bitmap.getHeight();
+}
+outText += &quot;\n&quot;;
+</code></pre></div></td></tr></table></div>
 
-<span class="w">    </span><span class="n">outText</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;ID= &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rawContactId</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;; Nombre= &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;; Número= &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number</span><span class="p">;</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bitmap</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">outText</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;; Ancho foto= &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bitmap</span><span class="p">.</span><span class="na">getWidth</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;; Alto foto= &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bitmap</span><span class="p">.</span><span class="na">getHeight</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="n">outText</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="n">c</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-</code></pre></div>
+<p>}
+c.close();
+```</p>
 <h2 id="borrado-de-los-contactos-de-un-tipo">Borrado de los contactos de un tipo<a class="headerlink" href="#borrado-de-los-contactos-de-un-tipo" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">Uri</span><span class="w"> </span><span class="n">rawContacts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">RawContacts</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">;</span>
-<span class="n">String</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">RawContacts</span><span class="p">.</span><span class="na">ACCOUNT_TYPE</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;=?&quot;</span><span class="p">;</span>
-<span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">whereArgs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;es.eduardofilo.app&quot;</span><span class="w"> </span><span class="p">};</span>
-<span class="n">getContentResolver</span><span class="p">().</span><span class="na">delete</span><span class="p">(</span><span class="n">rawContacts</span><span class="p">,</span><span class="w"> </span><span class="n">where</span><span class="p">,</span><span class="w"> </span><span class="n">whereArgs</span><span class="p">);</span>
-</code></pre></div>
+<p><code>java
+Uri rawContacts = ContactsContract.RawContacts.CONTENT_URI;
+String where = ContactsContract.RawContacts.ACCOUNT_TYPE + "=?";
+String[] whereArgs = new String[] { "es.eduardofilo.app" };
+getContentResolver().delete(rawContacts, where, whereArgs);</code></p>
 <h2 id="borrado-de-un-contacto">Borrado de un contacto<a class="headerlink" href="#borrado-de-un-contacto" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">Uri</span><span class="w"> </span><span class="n">rawContacts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">RawContacts</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">;</span>
-<span class="n">Uri</span><span class="w"> </span><span class="n">rawContactUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContentUris</span><span class="p">.</span><span class="na">withAppendedId</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">RawContacts</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">);</span>
-<span class="n">getContentResolver</span><span class="p">().</span><span class="na">delete</span><span class="p">(</span><span class="n">rawContactUri</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
-</code></pre></div>
+<p><code>java
+Uri rawContacts = ContactsContract.RawContacts.CONTENT_URI;
+Uri rawContactUri = ContentUris.withAppendedId(ContactsContract.RawContacts.CONTENT_URI, 13);
+getContentResolver().delete(rawContactUri, null, null);</code></p>
 <h2 id="actualizar-el-nombre-de-un-contacto">Actualizar el nombre de un contacto<a class="headerlink" href="#actualizar-el-nombre-de-un-contacto" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="n">rawContactId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">14</span><span class="p">;</span>
-<span class="n">Uri</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">;</span>
-<span class="n">ContentValues</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ContentValues</span><span class="p">();</span>
-<span class="n">values</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">StructuredName</span><span class="p">.</span><span class="na">DISPLAY_NAME</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jorgito&quot;</span><span class="p">);</span>
-<span class="n">String</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Data</span><span class="p">.</span><span class="na">MIMETYPE</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;=? AND &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">RAW_CONTACT_ID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;=?&quot;</span><span class="p">;</span>
-<span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">whereArgs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">StructuredName</span><span class="p">.</span><span class="na">CONTENT_ITEM_TYPE</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">rawContactId</span><span class="p">)</span><span class="w"> </span><span class="p">};</span>
-<span class="n">getContentResolver</span><span class="p">().</span><span class="na">update</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="n">where</span><span class="p">,</span><span class="w"> </span><span class="n">whereArgs</span><span class="p">);</span>
-</code></pre></div>
+<p><code>java
+long rawContactId = 14;
+Uri data = ContactsContract.Data.CONTENT_URI;
+ContentValues values = new ContentValues();
+values.put(CommonDataKinds.StructuredName.DISPLAY_NAME, "Jorgito");
+String where = Data.MIMETYPE + "=? AND " + ContactsContract.Data.RAW_CONTACT_ID + "=?";
+String[] whereArgs = new String[] { CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE, Long.toString(rawContactId) };
+getContentResolver().update(data, values, where, whereArgs);</code></p>
 <h2 id="insercion-de-un-rawcontact-de-tipo-vndseccontactphone_1">Inserción de un RawContact de tipo "vnd.sec.contact.phone"<a class="headerlink" href="#insercion-de-un-rawcontact-de-tipo-vndseccontactphone_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">ContentValues</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ContentValues</span><span class="p">();</span>
-<span class="n">values</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">RawContacts</span><span class="p">.</span><span class="na">ACCOUNT_TYPE</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;vnd.sec.contact.phone&quot;</span><span class="p">);</span>
-<span class="n">values</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">RawContacts</span><span class="p">.</span><span class="na">ACCOUNT_NAME</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;vnd.sec.contact.phone&quot;</span><span class="p">);</span>
-<span class="n">Uri</span><span class="w"> </span><span class="n">rawContactUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getContentResolver</span><span class="p">().</span><span class="na">insert</span><span class="p">(</span><span class="n">RawContacts</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="p">);</span>
-<span class="kt">long</span><span class="w"> </span><span class="n">rawContactId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContentUris</span><span class="p">.</span><span class="na">parseId</span><span class="p">(</span><span class="n">rawContactUri</span><span class="p">);</span>
-
-<span class="n">values</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span>
-<span class="n">values</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">Data</span><span class="p">.</span><span class="na">RAW_CONTACT_ID</span><span class="p">,</span><span class="w"> </span><span class="n">rawContactId</span><span class="p">);</span>
-<span class="n">values</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">Data</span><span class="p">.</span><span class="na">MIMETYPE</span><span class="p">,</span><span class="w"> </span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">StructuredName</span><span class="p">.</span><span class="na">CONTENT_ITEM_TYPE</span><span class="p">);</span>
-<span class="n">values</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">StructuredName</span><span class="p">.</span><span class="na">DISPLAY_NAME</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Pepito&quot;</span><span class="p">);</span>
-<span class="n">Uri</span><span class="w"> </span><span class="n">data1Uri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getContentResolver</span><span class="p">().</span><span class="na">insert</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="p">);</span>
-<span class="n">values</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span>
-
-<span class="n">values</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">Data</span><span class="p">.</span><span class="na">RAW_CONTACT_ID</span><span class="p">,</span><span class="w"> </span><span class="n">rawContactId</span><span class="p">);</span>
-<span class="n">values</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">Data</span><span class="p">.</span><span class="na">MIMETYPE</span><span class="p">,</span><span class="w"> </span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Phone</span><span class="p">.</span><span class="na">CONTENT_ITEM_TYPE</span><span class="p">);</span>
-<span class="n">values</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Phone</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span><span class="w"> </span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Phone</span><span class="p">.</span><span class="na">TYPE_MAIN</span><span class="p">);</span>
-<span class="n">values</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Phone</span><span class="p">.</span><span class="na">NUMBER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;976010101&quot;</span><span class="p">);</span>
-<span class="n">Uri</span><span class="w"> </span><span class="n">data2Uri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getContentResolver</span><span class="p">().</span><span class="na">insert</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="p">);</span>
-</code></pre></div>
+<p>```java
+ContentValues values = new ContentValues();
+values.put(RawContacts.ACCOUNT_TYPE, "vnd.sec.contact.phone");
+values.put(RawContacts.ACCOUNT_NAME, "vnd.sec.contact.phone");
+Uri rawContactUri = getContentResolver().insert(RawContacts.CONTENT_URI, values);
+long rawContactId = ContentUris.parseId(rawContactUri);</p>
+<p>values.clear();
+values.put(Data.RAW_CONTACT_ID, rawContactId);
+values.put(Data.MIMETYPE, CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE);
+values.put(CommonDataKinds.StructuredName.DISPLAY_NAME, "Pepito");
+Uri data1Uri = getContentResolver().insert(ContactsContract.Data.CONTENT_URI, values);
+values.clear();</p>
+<p>values.put(Data.RAW_CONTACT_ID, rawContactId);
+values.put(Data.MIMETYPE, CommonDataKinds.Phone.CONTENT_ITEM_TYPE);
+values.put(CommonDataKinds.Phone.TYPE, CommonDataKinds.Phone.TYPE_MAIN);
+values.put(CommonDataKinds.Phone.NUMBER, "976010101");
+Uri data2Uri = getContentResolver().insert(ContactsContract.Data.CONTENT_URI, values);
+```</p>
 <h2 id="insercion-de-un-rawcontact-de-tipo-vndseccontactphone_2">Inserción de un RawContact de tipo "vnd.sec.contact.phone"<a class="headerlink" href="#insercion-de-un-rawcontact-de-tipo-vndseccontactphone_2" title="Permanent link">&para;</a></h2>
 <p>Igual que antes pero hecho con el sistema de operaciones por lotes de los ContentProvider's.</p>
-<div class="highlight"><pre><span></span><code><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ContentProviderOperation</span><span class="o">&gt;</span><span class="w"> </span><span class="n">operationList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ContentProviderOperation</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">Builder</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContentProviderOperation</span><span class="p">.</span><span class="na">newInsert</span><span class="p">(</span><span class="n">RawContacts</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValue</span><span class="p">(</span><span class="n">RawContacts</span><span class="p">.</span><span class="na">ACCOUNT_NAME</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;vnd.sec.contact.phone&quot;</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValue</span><span class="p">(</span><span class="n">RawContacts</span><span class="p">.</span><span class="na">ACCOUNT_TYPE</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;vnd.sec.contact.phone&quot;</span><span class="p">);</span>
-<span class="n">operationList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="na">build</span><span class="p">());</span>
-
-<span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContentProviderOperation</span><span class="p">.</span><span class="na">newInsert</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValueBackReference</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">RAW_CONTACT_ID</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValue</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">MIMETYPE</span><span class="p">,</span>
-<span class="w">        </span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">CommonDataKinds</span><span class="p">.</span><span class="na">StructuredName</span><span class="p">.</span><span class="na">CONTENT_ITEM_TYPE</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValue</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">CommonDataKinds</span><span class="p">.</span><span class="na">StructuredName</span><span class="p">.</span><span class="na">DISPLAY_NAME</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Debianito&quot;</span><span class="p">);</span>
-<span class="n">operationList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="na">build</span><span class="p">());</span>
-
-<span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContentProviderOperation</span><span class="p">.</span><span class="na">newInsert</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">CONTENT_URI</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValueBackReference</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">RAW_CONTACT_ID</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValue</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">Data</span><span class="p">.</span><span class="na">MIMETYPE</span><span class="p">,</span><span class="w"> </span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Phone</span><span class="p">.</span><span class="na">CONTENT_ITEM_TYPE</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValue</span><span class="p">(</span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Phone</span><span class="p">.</span><span class="na">TYPE</span><span class="p">,</span><span class="w"> </span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Phone</span><span class="p">.</span><span class="na">TYPE_MAIN</span><span class="p">);</span>
-<span class="n">builder</span><span class="p">.</span><span class="na">withValue</span><span class="p">(</span><span class="n">CommonDataKinds</span><span class="p">.</span><span class="na">Phone</span><span class="p">.</span><span class="na">NUMBER</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;976010101&quot;</span><span class="p">);</span>
-<span class="n">operationList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="na">build</span><span class="p">());</span>
-
-<span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">getContentResolver</span><span class="p">().</span><span class="na">applyBatch</span><span class="p">(</span><span class="n">ContactsContract</span><span class="p">.</span><span class="na">AUTHORITY</span><span class="p">,</span><span class="w"> </span><span class="n">operationList</span><span class="p">);</span>
-<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">RemoteException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
-<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">OperationApplicationException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div>
+<p>```java
+ArrayList<ContentProviderOperation> operationList = new ArrayList<ContentProviderOperation>();
+Builder builder = ContentProviderOperation.newInsert(RawContacts.CONTENT_URI);
+builder.withValue(RawContacts.ACCOUNT_NAME, "vnd.sec.contact.phone");
+builder.withValue(RawContacts.ACCOUNT_TYPE, "vnd.sec.contact.phone");
+operationList.add(builder.build());</p>
+<p>builder = ContentProviderOperation.newInsert(ContactsContract.Data.CONTENT_URI);
+builder.withValueBackReference(ContactsContract.Data.RAW_CONTACT_ID, 0);
+builder.withValue(ContactsContract.Data.MIMETYPE,
+        ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE);
+builder.withValue(ContactsContract.CommonDataKinds.StructuredName.DISPLAY_NAME, "Debianito");
+operationList.add(builder.build());</p>
+<p>builder = ContentProviderOperation.newInsert(ContactsContract.Data.CONTENT_URI);
+builder.withValueBackReference(ContactsContract.Data.RAW_CONTACT_ID, 0);
+builder.withValue(ContactsContract.Data.MIMETYPE, CommonDataKinds.Phone.CONTENT_ITEM_TYPE);
+builder.withValue(CommonDataKinds.Phone.TYPE, CommonDataKinds.Phone.TYPE_MAIN);
+builder.withValue(CommonDataKinds.Phone.NUMBER, "976010101");
+operationList.add(builder.build());</p>
+<p>try {
+    getContentResolver().applyBatch(ContactsContract.AUTHORITY, operationList);
+} catch (RemoteException e) {
+    e.printStackTrace();
+} catch (OperationApplicationException e) {
+    e.printStackTrace();
+}
+```</p>
 <h2 id="localizar-un-launcher-que-no-sea-el-nuestro">Localizar un Launcher que no sea el nuestro<a class="headerlink" href="#localizar-un-launcher-que-no-sea-el-nuestro" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">PackageManager</span><span class="w"> </span><span class="n">pm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getPackageManager</span><span class="p">();</span>
-<span class="n">Intent</span><span class="w"> </span><span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">ACTION_MAIN</span><span class="p">);</span>
-<span class="n">intent</span><span class="p">.</span><span class="na">addCategory</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">CATEGORY_HOME</span><span class="p">);</span>
-<span class="n">List</span><span class="o">&lt;</span><span class="n">ResolveInfo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">launchers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pm</span><span class="p">.</span><span class="na">queryIntentActivities</span><span class="p">(</span><span class="n">intent</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<span class="n">String</span><span class="w"> </span><span class="n">packageName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
-<span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
-<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">ResolveInfo</span><span class="w"> </span><span class="n">ri</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">launchers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">ri</span><span class="p">.</span><span class="na">activityInfo</span><span class="p">.</span><span class="na">name</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;es.eduardofilo.app.mobile.IdentificarTerminal&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ri</span><span class="p">.</span><span class="na">activityInfo</span><span class="p">.</span><span class="na">name</span><span class="p">;</span>
-<span class="w">        </span><span class="n">packageName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ri</span><span class="p">.</span><span class="na">activityInfo</span><span class="p">.</span><span class="na">packageName</span><span class="p">;</span>
-<span class="w">        </span><span class="k">break</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="n">Intent</span><span class="w"> </span><span class="n">myIntent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Intent</span><span class="p">();</span>
-<span class="n">myIntent</span><span class="p">.</span><span class="na">setClassName</span><span class="p">(</span><span class="n">packageName</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
-<span class="n">startActivity</span><span class="p">(</span><span class="n">myIntent</span><span class="p">);</span>
-</code></pre></div>
+<p>```java
+PackageManager pm = getPackageManager();
+Intent intent = new Intent(Intent.ACTION_MAIN);
+intent.addCategory(Intent.CATEGORY_HOME);
+List<ResolveInfo> launchers = pm.queryIntentActivities(intent, 0);
+String packageName = null;
+String name = null;
+for (ResolveInfo ri : launchers) {
+    if (!ri.activityInfo.name.equals("es.eduardofilo.app.mobile.IdentificarTerminal")) {
+        name = ri.activityInfo.name;
+        packageName = ri.activityInfo.packageName;
+        break;
+    }
+}</p>
+<p>Intent myIntent = new Intent();
+myIntent.setClassName(packageName, name);
+startActivity(myIntent);
+```</p>
 <h2 id="obtener-un-authtoken-de-un-account">Obtener un authToken de un Account<a class="headerlink" href="#obtener-un-authtoken-de-un-account" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">mAccountManager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountManager</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-<span class="n">Account</span><span class="o">[]</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mAccountManager</span><span class="p">.</span><span class="na">getAccountsByType</span><span class="p">(</span><span class="n">ACCOUNT_TYPE</span><span class="p">);</span>
-<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Account</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">accounts</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">outText</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">account</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="n">AccountManagerFuture</span><span class="o">&lt;</span><span class="n">Bundle</span><span class="o">&gt;</span><span class="w"> </span><span class="n">accountManagerFuture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mAccountManager</span><span class="p">.</span><span class="na">getAuthToken</span><span class="p">(</span><span class="n">account</span><span class="p">,</span>
-<span class="w">                    </span><span class="s">&quot;es.eduardofilo.app&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
-<span class="w">    </span><span class="n">Bundle</span><span class="w"> </span><span class="n">authTokenBundle</span><span class="p">;</span>
-<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
-<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">authTokenBundle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accountManagerFuture</span><span class="p">.</span><span class="na">getResult</span><span class="p">();</span>
-<span class="w">        </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">authTokenBundle</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">AccountManager</span><span class="p">.</span><span class="na">KEY_AUTHTOKEN</span><span class="p">).</span><span class="na">toString</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">OperationCanceledException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">AuthenticatorException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
+<p>```java
+mAccountManager = AccountManager.get(this);
+Account[] accounts = mAccountManager.getAccountsByType(ACCOUNT_TYPE);
+for (Account account : accounts) {
+    outText += account.toString() + "\n";
+    AccountManagerFuture<Bundle> accountManagerFuture = mAccountManager.getAuthToken(account,
+                    "es.eduardofilo.app", true, null, null);
+    Bundle authTokenBundle;
+    String token = null;
+    try {
+        authTokenBundle = accountManagerFuture.getResult();
+        token = authTokenBundle.get(AccountManager.KEY_AUTHTOKEN).toString();
+    } catch (OperationCanceledException e) {
+        e.printStackTrace();
+    } catch (AuthenticatorException e) {
+        e.printStackTrace();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="o">!</span><span class="nv">TextUtils</span>.<span class="nv">isEmpty</span><span class="ss">(</span><span class="nv">token</span><span class="ss">))</span><span class="w"> </span>{
+<span class="w">    </span><span class="nv">outText</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nv">token</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;\n&quot;</span><span class="c1">;</span>
+}
+</code></pre></div></td></tr></table></div>
 
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">TextUtils</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">(</span><span class="n">token</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">outText</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<p>}
+```</p>
 
 
 

@@ -4156,20 +4156,19 @@
 <p><img alt="xMAME 1" src="../images/posts/xmame_sm_bridge/xmame_1.png" />
 <img alt="xMAME 2" src="../images/posts/xmame_sm_bridge/xmame_rom_settings.png" /></p>
 <p>Tras la segunda pantalla se ejecuta el proceso correspondiente al romset elegido al principio, que se corresponde con uno de los tres procesos restantes de la lista anterior. Por ejemplo, tal y como se ha ajustado el juego que se selecciona en los dos pantallazos anteriores, el proceso que se ejecuta finalmente es:</p>
-<div class="highlight"><pre><span></span><code>xmame.SDL.84 bombjack -ipu_scaler 2 -nodirty -triplebuf -rol
-</code></pre></div>
+<p><code>xmame.SDL.84 bombjack -ipu_scaler 2 -nodirty -triplebuf -rol</code></p>
 <p>Así pues tenemos todo el poder en nuestras manos para ejecutar una ROM con los ajustes que deseemos siempre que se conozca la correspondencia entre los distintos ajustes con los argumentos a pasar al proceso a la hora de ejecutarlo. Esto fue lo primero que fue necesario hacer. El resultado está codificado en la estructura de datos que se ve a partir de la linea 36 de este fichero fuente: <a href="https://github.com/eduardofilo/RG350_xmame_sm_bridge/blob/master/settings.py">https://github.com/eduardofilo/RG350_xmame_sm_bridge/blob/master/settings.py</a></p>
 <p>Como ejemplo vamos a ver cómo se interpreta la parte correspondiente al ajuste <code>Video Rotation</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;file_pos&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;desc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Video Rotation&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;descs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Auto&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Landscape&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Portrait (L)&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Portrait (R)&quot;</span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-autoror&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-rol&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-ror&quot;</span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
-<span class="p">},</span>
-</code></pre></div>
+<p><code>json
+{
+    "file_pos": 0,
+    "desc": "Video Rotation",
+    "enabled": True,
+    "values": [0, 1, 2, 3],
+    "descs": ["Auto", "Landscape", "Portrait (L)", "Portrait (R)"],
+    "args": ["-autoror", "", "-rol", "-ror"],
+    "value": 0
+},</code></p>
 <p>Los valores de las claves <code>values</code>, <code>descs</code> y <code>args</code> se corresponden entre sí según el orden en que aparecen. Es decir:</p>
 <table>
 <thead>
@@ -4205,12 +4204,10 @@
 <li><code>/media/data/local/share/xmame/xmame84/frontend</code></li>
 </ul>
 <p>Por ejemplo el fichero que aparece cuando configuramos el juego del ejemplo del romset 84 como se veía en los pantallazos anteriores es <code>/media/data/local/share/xmame/xmame84/frontend/bombjack.cfg</code> y tiene el siguiente contenido:</p>
-<div class="highlight"><pre><span></span><code>2,0,0,0,0,0,0,0,0,0,0,0,0,1,0
-</code></pre></div>
+<p><code>2,0,0,0,0,0,0,0,0,0,0,0,0,1,0</code></p>
 <p>El parámetro <code>file_pos</code> del JSON nos indica en qué posición se almacena el ajuste. Por ejemplo el ajuste <code>Video Rotation</code> que estamos utilizando de ejemplo está en la posición <code>0</code> (el primero). Como vemos en el fichero tiene el valor <code>2</code> que según la tabla anterior corresponde a <code>Portrait (L)</code>.</p>
 <p>Finalmente el argumento será el que se añada a la hora de ejecutar el emulador con la ROM. En el caso del ejemplo será el argumento <code>-rol</code> que veíamos en el proceso que se ejecuta al final y que repetimos de nuevo:</p>
-<div class="highlight"><pre><span></span><code>xmame.SDL.84 bombjack -ipu_scaler 2 -nodirty -triplebuf -rol
-</code></pre></div>
+<p><code>xmame.SDL.84 bombjack -ipu_scaler 2 -nodirty -triplebuf -rol</code></p>
 <p>La forma de averiguar todos los valores posibles fue ajustándolos uno a uno cambiando uno cada vez y analizando el proceso ejecutado al final con el comando <code>ps</code> de Linux.</p>
 <h3 id="programacion">Programación<a class="headerlink" href="#programacion" title="Permanent link">&para;</a></h3>
 <p>Una vez reunida toda la información llegó el momento de programar. La idea era reproducir de la forma más fiel posible el interfaz de ajustes de la ROM que tiene xMAME. Para la programación se ha elegido el entorno Python más la librería <a href="https://www.pygame.org/wiki/about"><code>pygame</code></a> que ofrece primitivas para dibujar en pantalla y controlar eventos (básicamente es una envoltura Python a la librería SDL). Ambos se encuentran preinstalados en OpenDingux.</p>
@@ -4227,15 +4224,14 @@
 <li><a href="https://github.com/eduardofilo/RG350_xmame_sm_bridge/blob/master/romset.84">https://github.com/eduardofilo/RG350_xmame_sm_bridge/blob/master/romset.84</a></li>
 </ul>
 <p>Todos los ficheros necesarios deben instalarse en la ruta siguiente en el sistema de la consola:</p>
-<div class="highlight"><pre><span></span><code>/media/data/local/share/xmame/sm_bridge
-</code></pre></div>
+<p><code>/media/data/local/share/xmame/sm_bridge</code></p>
 <p>Así pues la configuración de SimpleMenu para integrar este sistema debería invocar los scripts anteriores instalados en esta ruta, por ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[MAME]</span>
-<span class="na">execs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/media/data/local/share/xmame/sm_bridge/romset.84,/media/data/local/share/xmame/sm_bridge/romset.69,/media/data/local/share/xmame/sm_bridge/romset.52</span>
-<span class="na">romDirs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/media/data/roms/ARCADE/</span>
-<span class="na">romExts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">.zip,.ZIP</span>
-<span class="na">aliasFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/media/home/.simplemenu/alias.txt</span>
-</code></pre></div>
+<p><code>ini
+[MAME]
+execs = /media/data/local/share/xmame/sm_bridge/romset.84,/media/data/local/share/xmame/sm_bridge/romset.69,/media/data/local/share/xmame/sm_bridge/romset.52
+romDirs = /media/data/roms/ARCADE/
+romExts = .zip,.ZIP
+aliasFile = /media/home/.simplemenu/alias.txt</code></p>
 <p>El instalador comentado al principio de este artículo se encarga tanto de copiar los ficheros necesarios a la ruta indicada antes, como de ajustar los ficheros de definición de sistemas de SimpleMenu para que se llame a los scripts que lanzan el interfaz de ajustes.</p>
 
 

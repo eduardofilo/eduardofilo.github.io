@@ -2219,44 +2219,8 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#con-comillas-dobles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Con comillas dobles
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#en-bloque" class="md-nav__link">
-    <span class="md-ellipsis">
-      En bloque
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#volcado-de-variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      Volcado de variables
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comparadores" class="md-nav__link">
-    <span class="md-ellipsis">
-      Comparadores
-    </span>
-  </a>
   
 </li>
       
@@ -4091,44 +4055,8 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#con-comillas-dobles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Con comillas dobles
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#en-bloque" class="md-nav__link">
-    <span class="md-ellipsis">
-      En bloque
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#volcado-de-variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      Volcado de variables
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comparadores" class="md-nav__link">
-    <span class="md-ellipsis">
-      Comparadores
-    </span>
-  </a>
   
 </li>
       
@@ -4156,46 +4084,62 @@
 <h2 id="cadenas">Cadenas<a class="headerlink" href="#cadenas" title="Permanent link">&para;</a></h2>
 <p>Se pueden definir de tres formas:</p>
 <h5 id="con-comillas-simples">Con comillas simples<a class="headerlink" href="#con-comillas-simples" title="Permanent link">&para;</a></h5>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="nv">$cadena</span> <span class="o">=</span> <span class="s1">&#39;Esto es una cadena.&#39;</span><span class="p">;</span>
-</code></pre></div>
-<p>Para incluir el caracter comilla simple hay que escaparlo:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="nv">$cadena</span> <span class="o">=</span> <span class="s1">&#39;Esto es una comilla: \&#39;.&#39;</span><span class="p">;</span>
-</code></pre></div>
-<h5 id="con-comillas-dobles">Con comillas dobles<a class="headerlink" href="#con-comillas-dobles" title="Permanent link">&para;</a></h5>
-<p>Permiten incluir variables:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="nv">$i</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
-<span class="nv">$cadena</span> <span class="o">=</span> <span class="s2">&quot;Un año tiene </span><span class="si">$i</span><span class="s2"> meses.&quot;</span><span class="p">;</span>
-</code></pre></div>
-<p>También permite escapar una serie de caracteres como:</p>
-<ul>
-<li>\": Comilla doble</li>
-<li>\n: Retorno de carro</li>
-<li>\t: Tabulador</li>
-<li>\$: Símbolo de dolar</li>
-</ul>
-<h5 id="en-bloque">En bloque<a class="headerlink" href="#en-bloque" title="Permanent link">&para;</a></h5>
-<p>Ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="nv">$i</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
-<span class="nv">$cadena</span> <span class="o">=</span> <span class="s">&lt;&lt;&lt;</span><span class="dl">CADENA</span>
-<span class="s">Esto es una cadena</span>
-<span class="s">definida en bloque.</span>
-<span class="s">Podemos utilizar variables como</span>
-<span class="s">en las cadenas de comillas dobles.</span>
-<span class="s">Esto es un ejemplo: $i.</span>
-<span class="dl">CADENA</span><span class="p">;</span>
-</code></pre></div>
-<h2 id="volcado-de-variables">Volcado de variables<a class="headerlink" href="#volcado-de-variables" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>var_dump($var);</code>: Para variables normales</li>
-<li><code>print_r($array);</code>: Para arrays</li>
-<li><code>CVarDumper::dump($param, 10, true);</code>: Sólo en Yii</li>
-</ul>
-<h2 id="comparadores">Comparadores<a class="headerlink" href="#comparadores" title="Permanent link">&para;</a></h2>
-<p>Debido a la flexibilidad de PHP con los tipos de datos, los comparadores normales (<code>==</code> por ejemplo) pueden producir resultados erróneos si no forzamos que además del valor se compare el tipo. Por ejemplo la función <code>strpos()</code> devuelve 0 si se encuentra la subcadena al principio y FALSE si no lo encuentra, pero en PHP, ambos tienen el mismo significado. El operador <code>==</code> compara si la expresión de la izquierda y la derecha tienen el mismo valor, mientras que <code>===</code> compara además que sean del mismo tipo. Así se distingue 0 (entero) de FALSE (lógico). <a href="http://php.net/manual/es/language.operators.comparison.php">Aquí</a> se encuentra la documentación completa de los operadores de comparación.</p>
+<p>```php</p>
+<?php
+$cadena = 'Esto es una cadena.';
+```
+
+Para incluir el caracter comilla simple hay que escaparlo:
+
+```php
+<?php
+$cadena = 'Esto es una comilla: \'.';
+```
+
+##### Con comillas dobles
+
+Permiten incluir variables:
+
+```php
+<?php
+$i = 12;
+$cadena = "Un año tiene $i meses.";
+```
+
+También permite escapar una serie de caracteres como:
+
+*  \": Comilla doble
+*  \n: Retorno de carro
+*  \t: Tabulador
+*  \$: Símbolo de dolar
+
+##### En bloque
+
+Ejemplo:
+
+```php
+<?php
+$i = 12;
+$cadena = <<<CADENA
+Esto es una cadena
+definida en bloque.
+Podemos utilizar variables como
+en las cadenas de comillas dobles.
+Esto es un ejemplo: $i.
+CADENA;
+```
+
+## Volcado de variables
+
+*  `var_dump($var);`: Para variables normales
+*  `print_r($array);`: Para arrays
+*  `CVarDumper::dump($param, 10, true);`: Sólo en Yii
+
+## Comparadores
+
+Debido a la flexibilidad de PHP con los tipos de datos, los comparadores normales (`==` por ejemplo) pueden producir resultados erróneos si no forzamos que además del valor se compare el tipo. Por ejemplo la función `strpos()` devuelve 0 si se encuentra la subcadena al principio y FALSE si no lo encuentra, pero en PHP, ambos tienen el mismo significado. El operador `==` compara si la expresión de la izquierda y la derecha tienen el mismo valor, mientras que `===` compara además que sean del mismo tipo. Así se distingue 0 (entero) de FALSE (lógico). [Aquí](http://php.net/manual/es/language.operators.comparison.php) se encuentra la documentación completa de los operadores de comparación.
+
+?>
 
 
 

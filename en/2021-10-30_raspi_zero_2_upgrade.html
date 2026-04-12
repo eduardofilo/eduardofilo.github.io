@@ -4135,11 +4135,10 @@
 <li>Edit the <code>etc/dhcpcd.conf</code> file in the rootfs partition.</li>
 <li>
 <p>Add the following lines at the end of the file (replacing <code>IP</code>, <code>GATEWAY</code>, and <code>DNS</code> as appropriate):</p>
-<div class="highlight"><pre><span></span><code>interface wlan0
+<p><code>interface wlan0
 static ip_address=IP/24
 static routers=GATEWAY
-static domain_name_servers=DNS
-</code></pre></div>
+static domain_name_servers=DNS</code></p>
 </li>
 </ol>
 <p>After making these changes, insert the card into the Pi Zero 2 and power it on (and wait for it to reboot a couple of times, since on the first boot the rootfs partition is expanded to fill the whole card), and you will be able to access it over SSH with the user <code>pi</code> and the usual password <code>raspberry</code>. The first thing worth doing, as the system itself recommends, is changing the password of user <code>pi</code> with the <code>passwd</code> command.</p>
@@ -4150,9 +4149,8 @@ static domain_name_servers=DNS
 <li>Edit the <code>config.txt</code> file in the boot partition.</li>
 <li>
 <p>Add the following lines at the end:</p>
-<div class="highlight"><pre><span></span><code>dtoverlay=pi3-miniuart-bt
-enable_uart=1
-</code></pre></div>
+<p><code>dtoverlay=pi3-miniuart-bt
+enable_uart=1</code></p>
 </li>
 <li>
 <p>Put the microSD back into the Raspberry and boot the system.</p>

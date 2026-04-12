@@ -4084,21 +4084,19 @@
 <li>Nombre del fichero sin extensión a modo de target.</li>
 </ol>
 <p>Vamos a verlo con un ejemplo. Cogemos como muestra el juego <strong>Day Of The Tentacle</strong>. Según la <a href="https://www.scummvm.org/compatibility/">página que lista los IDs</a>, a este juego le corresponde el ID <code>tentacle</code>. En mi máquina por ejemplo los ficheros del juego se encuentran en <code>/media/data/roms/SCUMMVM/Day Of The Tentacle</code>. En concreto esto es lo que allí hay:</p>
-<div class="highlight"><pre><span></span><code>RG350M:/media/data/roms/SCUMMVM/Day Of The Tentacle # ls -l
+<p><code>RG350M:/media/data/roms/SCUMMVM/Day Of The Tentacle # ls -l
 drwxr-xr-x    2 root     root          4096 Feb  5  1970 MANIAC
 -rw-r--r--    1 root     root     268965339 Feb  5  1970 MONSTER.SOU
 -rw-r--r--    1 root     root          7932 Feb  5  1970 TENTACLE.000
--rw-r--r--    1 root     root      11378198 Feb  5  1970 TENTACLE.001
-</code></pre></div>
+-rw-r--r--    1 root     root      11378198 Feb  5  1970 TENTACLE.001</code></p>
 <p>Creamos pues el fichero que se convertirá en el target. Del fichero sólo nos interesa el nombre. Puede estar vacío. Como hemos dicho el nombre del fichero tiene que ser <code>tentacle</code> y la extensión cualquiera, aunque parece que existe una convención para utilizar <code>svm</code>. Así pues creamos el fichero con un simple <code>touch</code> (esa es la forma rápida de hacerlo por SSH, pero como siempre se puede hacer por otros medios como FTP, SCP o DinguxCmdr):</p>
-<div class="highlight"><pre><span></span><code>RG350M:/media/data/roms/SCUMMVM/Day Of The Tentacle # touch tentacle.svm
+<p><code>RG350M:/media/data/roms/SCUMMVM/Day Of The Tentacle # touch tentacle.svm
 RG350M:/media/data/roms/SCUMMVM/Day Of The Tentacle # ls -l
 drwxr-xr-x    2 root     root          4096 Feb  5  1970 MANIAC
 -rw-r--r--    1 root     root     268965339 Feb  5  1970 MONSTER.SOU
 -rw-r--r--    1 root     root          7932 Feb  5  1970 TENTACLE.000
 -rw-r--r--    1 root     root      11378198 Feb  5  1970 TENTACLE.001
--rw-r--r--    1 root     root             0 Aug 15 22:47 tentacle.svm
-</code></pre></div>
+-rw-r--r--    1 root     root             0 Aug 15 22:47 tentacle.svm</code></p>
 <p>Sólo queda configurar el launcher que utilicemos para que filtre la extensión que hayamos elegido (<code>svm</code> en el ejemplo anterior) para que no nos permita seleccionar el resto de ficheros del juego que podrían no tener el nombre correspondiente al target.</p>
 <p><img alt="GMenu2X filter" src="images/posts/scummvm-launchers/gmenu2x_filter.png" /></p>
 <p>A partir de ese momento, si vamos al directorio del juego, sólo nos debería aparecer el fichero correspondiente al target. Abriéndolo arrancará el juego directamente sin mediar el interfaz clásico de ScummVM:</p>
@@ -4107,15 +4105,13 @@ drwxr-xr-x    2 root     root          4096 Feb  5  1970 MANIAC
 <h2 id="integracion-en-simplemenu">Integración en SimpleMenu<a class="headerlink" href="#integracion-en-simplemenu" title="Permanent link">&para;</a></h2>
 <p>Vamos a ver cómo realizaríamos la integración en SimpleMenu.</p>
 <p>Empezamos editando el fichero de configuración que contiene los sistemas instalados. En mi caso por ejemplo es un único fichero en la ruta:</p>
-<div class="highlight"><pre><span></span><code>/media/data/local/home/.simplemenu/section_groups/sections.ini
-</code></pre></div>
+<p><code>/media/data/local/home/.simplemenu/section_groups/sections.ini</code></p>
 <p>Allí creamos un bloque como el siguiente:</p>
-<div class="highlight"><pre><span></span><code>[SCUMMVM]
+<p><code>[SCUMMVM]
 execs = /media/data/apps/scummvm-2.2-git-rg350-01132020-params.opk
 romDirs = /media/data/roms/SCUMMVM/
 romExts = .svm
-aliasFile = /media/home/.simplemenu/alias.txt
-</code></pre></div>
+aliasFile = /media/home/.simplemenu/alias.txt</code></p>
 <p>No hay que olvidar añadir el nuevo sistema al parámetro <code>consoleList</code> dentro del bloque <code>[CONSOLES]</code> que hay al principio del fichero.</p>
 <p>Naturalmente habrá que adaptar en cada caso las rutas de OPK y ROMs. Como vemos, hemos incluido en la configuración el fichero <code>alias.txt</code> para que los targets sean convertidos a los nombres largos de los juegos. Para que esto funcione hay que incorporar el listado de targets al fichero. José Javier ha extraído todos los nombres posibles de la <a href="https://www.scummvm.org/compatibility/">web de ScummVM</a> por lo que sólo tenemos que sustituir <a href="files/posts/scummvm-launchers/alias.txt">este fichero</a> en el directorio de home de SimpleMenu, es decir: <code>/media/data/local/home/.simplemenu</code></p>
 <p>Por último hay que comprobar que el theme que estemos utilizando contenga la definición del sistema <code>SCUMMVM</code>. Afortunadamente el theme oficial <code>GBZ35Remix</code> ya lo incorpora. En caso de utilizar uno que no lo contenga habrá que incorporar una entrada en el fichero de definición del theme (<code>theme.ini</code>) y los recursos necesarios.</p>

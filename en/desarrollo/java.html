@@ -2190,6 +2190,63 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Configuración">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-para-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración para LOCAL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nivel-de-trazas-maximo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nivel de trazas máximo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#salida-por-consola-y-fichero" class="md-nav__link">
+    <span class="md-ellipsis">
+      Salida por consola y fichero
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Salida por consola y fichero">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -4209,6 +4266,63 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Configuración">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-para-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración para LOCAL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nivel-de-trazas-maximo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nivel de trazas máximo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#salida-por-consola-y-fichero" class="md-nav__link">
+    <span class="md-ellipsis">
+      Salida por consola y fichero
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Salida por consola y fichero">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -4242,28 +4356,28 @@
 </ul>
 <h2 id="reempaquetar-un-jar">Reempaquetar un jar<a class="headerlink" href="#reempaquetar-un-jar" title="Permanent link">&para;</a></h2>
 <p>Para re-enlatar un jar que hemos explotado para retocar su contendido, hay que ejecutar el siguiente comando desde el directorio raíz donde descomprimimos el jar original:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>jar<span class="w"> </span>cvf<span class="w"> </span>nombre.jar<span class="w"> </span>*
-</code></pre></div>
+<p><code>bash
+$ jar cvf nombre.jar *</code></p>
 <h2 id="contar-lineas">Contar lineas<a class="headerlink" href="#contar-lineas" title="Permanent link">&para;</a></h2>
 <p>Para contar las lineas de un proyecto, lanzar desde la raíz del proyecto ( el directorio src/java de un proyecto NetBeans, por ejemplo):</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.java&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>wc<span class="w"> </span>-l
-</code></pre></div>
+<p><code>bash
+$ find . -name "*.java" | xargs wc -l</code></p>
 <h2 id="imprimir-callstack">Imprimir callstack<a class="headerlink" href="#imprimir-callstack" title="Permanent link">&para;</a></h2>
 <p>Para averiguar la pila de llamadas de funciones que nos permiten llegar a la ejecución del punto que estamos revisando. Viene muy bien cuando la ejecución implica llamadas JNI ya que esa parte del código suele quedar oculta en una librería nativa (.so o .dll).</p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">StackTraceElement</span><span class="w"> </span><span class="n">ste</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getStackTrace</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Log</span><span class="p">.</span><span class="na">w</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="n">ste</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+<p><code>java
+for (StackTraceElement ste : Thread.currentThread().getStackTrace()) {
+    Log.w(TAG, ste);
+}</code></p>
 <h2 id="iterar-un-map">Iterar un Map<a class="headerlink" href="#iterar-un-map" title="Permanent link">&para;</a></h2>
 <p>Para el caso de un <code>Map&lt;String, String&gt;</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Iterator</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mapa</span><span class="p">.</span><span class="na">entrySet</span><span class="p">().</span><span class="na">iterator</span><span class="p">();</span>
-<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="p">)</span><span class="w"> </span><span class="n">it</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
-<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getKey</span><span class="p">();</span>
-<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getValue</span><span class="p">();</span>
-<span class="w">    </span><span class="c1">//...</span>
-<span class="p">}</span>
-</code></pre></div>
+<p><code>java
+Iterator it = mapa.entrySet().iterator();
+while (it.hasNext()) {
+    Map.Entry e = (Map.Entry) it.next();
+    String name = (String) e.getKey();
+    String value = (String) e.getValue();
+    //...
+}</code></p>
 <h2 id="log4j">log4j<a class="headerlink" href="#log4j" title="Permanent link">&para;</a></h2>
 <p>(<a href="http://es.wikipedia.org/wiki/Log4j">Fuente</a>)</p>
 <p>El proyecto FHoSS utiliza la librería log4j como casi todos los proyectos Java actuales. <strong>Log4j</strong>  es una librería open source desarrollada en <a href="http://es.wikipedia.org/wiki/Java platform">Java</a> por la <a href="http://es.wikipedia.org/wiki/Apache_Software_Foundation">Apache Software Foundation</a> que permite a los desarrolladores de software elegir la salida y el nivel de granularidad de los mensajes o “logs” a tiempo de ejecución y no a tiempo de compilación como es comúnmente realizado.  La configuración de salida y granularidad de los mensajes es realizada a tiempo de ejecución mediante el uso de archivos de configuración externos. Log4J ha sido implementado en otros lenguajes como: <a href="http://es.wikipedia.org/wiki/Lenguaje de programación C">C</a>, <a href="http://es.wikipedia.org/wiki/C++">C++</a>, <a href="http://es.wikipedia.org/wiki/C Sostenido">C#</a>, <a href="http://es.wikipedia.org/wiki/Perl">Perl</a>, <a href="http://es.wikipedia.org/wiki/Python">Python</a>, <a href="http://es.wikipedia.org/wiki/Ruby">Ruby</a> y <a href="http://es.wikipedia.org/wiki/Lenguaje de programación Eiffel">Eiffel</a>.</p>
@@ -4296,39 +4410,37 @@
 <li>CONSOLE imprimirá los mensajes en la consola por líneas (%m%n).</li>
 <li>LOGFILE añadirá (append) los mensajes a un fichero (aplicacion.log), reservando los primeros 4 caracteres para los milisegundos en que se generó el mensaje (%-4r), entre corchetes quién generó el mensaje ( [%t]), cinco espacios para la prioridad del mensaje (%-5p), la categoría del mensaje (%c) y finalmente el propio mensaje junto con un retorno de carro (%m%n).</li>
 </ul>
-<div class="highlight"><pre><span></span><code>################################################################
-### Configuración para LOCAL                                 ###
-###   Nivel de trazas máximo                                 ###
-###   Salida por consola y fichero                           ###
-################################################################
-#log4j.rootCategory=DEBUG, LOGFILE, CONSOLE
-
-#log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
-#log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
-#log4j.appender.CONSOLE.layout=org.apache.log4j.PatternLayout
-#log4j.appender.CONSOLE.layout.ConversionPattern=%-5p %c %x - %m%n
-
-################################################################
-### Configuración para DESARROLLO, PREPRODUCCION, PRODUCCION ###
-###   Sólo nos interesa el nivel de ERROR                    ###
-###   No hay salida de consola                               ###
-################################################################
-log4j.rootCategory=ERROR, LOGFILE
-
-log4j.appender.LOGFILE=org.apache.log4j.DailyRollingFileAppender
+<p>```</p>
+<h6 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h6>
+<h3 id="configuracion-para-local">Configuración para LOCAL<a class="headerlink" href="#configuracion-para-local" title="Permanent link">&para;</a></h3>
+<h3 id="nivel-de-trazas-maximo">Nivel de trazas máximo<a class="headerlink" href="#nivel-de-trazas-maximo" title="Permanent link">&para;</a></h3>
+<h3 id="salida-por-consola-y-fichero">Salida por consola y fichero<a class="headerlink" href="#salida-por-consola-y-fichero" title="Permanent link">&para;</a></h3>
+<h6 id="_2"><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h6>
+<h1 id="log4jrootcategorydebug-logfile-console">log4j.rootCategory=DEBUG, LOGFILE, CONSOLE<a class="headerlink" href="#log4jrootcategorydebug-logfile-console" title="Permanent link">&para;</a></h1>
+<h1 id="log4jappenderconsoleorgapachelog4jconsoleappender">log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender<a class="headerlink" href="#log4jappenderconsoleorgapachelog4jconsoleappender" title="Permanent link">&para;</a></h1>
+<h1 id="log4jappenderconsoleorgapachelog4jconsoleappender_1">log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender<a class="headerlink" href="#log4jappenderconsoleorgapachelog4jconsoleappender_1" title="Permanent link">&para;</a></h1>
+<h1 id="log4jappenderconsolelayoutorgapachelog4jpatternlayout">log4j.appender.CONSOLE.layout=org.apache.log4j.PatternLayout<a class="headerlink" href="#log4jappenderconsolelayoutorgapachelog4jpatternlayout" title="Permanent link">&para;</a></h1>
+<h1 id="log4jappenderconsolelayoutconversionpattern-5p-c-x-mn">log4j.appender.CONSOLE.layout.ConversionPattern=%-5p %c %x - %m%n<a class="headerlink" href="#log4jappenderconsolelayoutconversionpattern-5p-c-x-mn" title="Permanent link">&para;</a></h1>
+<h6 id="_3"><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h6>
+<h3 id="configuracion-para-desarrollo-preproduccion-produccion">Configuración para DESARROLLO, PREPRODUCCION, PRODUCCION<a class="headerlink" href="#configuracion-para-desarrollo-preproduccion-produccion" title="Permanent link">&para;</a></h3>
+<h3 id="solo-nos-interesa-el-nivel-de-error">Sólo nos interesa el nivel de ERROR<a class="headerlink" href="#solo-nos-interesa-el-nivel-de-error" title="Permanent link">&para;</a></h3>
+<h3 id="no-hay-salida-de-consola">No hay salida de consola<a class="headerlink" href="#no-hay-salida-de-consola" title="Permanent link">&para;</a></h3>
+<h6 id="_4"><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h6>
+<p>log4j.rootCategory=ERROR, LOGFILE</p>
+<p>log4j.appender.LOGFILE=org.apache.log4j.DailyRollingFileAppender
 log4j.appender.LOGFILE.file=${catalina.base}/logs/aplicacion.log
 log4j.appender.LOGFILE.append=true
-log4j.appender.LOGFILE.DatePattern=&#39;.&#39;yyyy-MM-dd
+log4j.appender.LOGFILE.DatePattern='.'yyyy-MM-dd
 log4j.appender.LOGFILE.layout=org.apache.log4j.PatternLayout
 log4j.appender.LOGFILE.layout.ConversionPattern=%-4r [%t] %-5p %c - %m%n
-</code></pre></div>
+```</p>
 <p>Para el caso de utilizar PatternLayout, la definición de las piezas de información que se pueden incorporar al patrón se encuentra en <a href="http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/PatternLayout.html">esta página</a>.</p>
 <p>Si se desea únicamente log de las clases pertenecientes a un paquete (es una forma de evitar los logs del servidor de aplicación en una aplicación J2EE), se indica de añadiendo esta línea:</p>
-<p><div class="highlight"><pre><span></span><code><span class="n">log4j</span><span class="p">.</span><span class="na">logger</span><span class="p">.</span><span class="o">&lt;</span><span class="n">paquete</span><span class="o">&gt;=&lt;</span><span class="n">nivel_de_trazas</span><span class="o">&gt;</span>
-</code></pre></div>
+<p><code>java
+log4j.logger.&lt;paquete&gt;=&lt;nivel_de_trazas&gt;</code>
 por ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="n">log4j</span><span class="p">.</span><span class="na">logger</span><span class="p">.</span><span class="na">es</span><span class="p">.</span><span class="na">eduardofilo</span><span class="p">.</span><span class="na">ccm</span><span class="o">=</span><span class="n">DEBUG</span>
-</code></pre></div>
+<p><code>java
+log4j.logger.es.eduardofilo.ccm=DEBUG</code></p>
 
 
 

@@ -2309,60 +2309,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#actualizacion-de-version" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actualización de versión
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tareas-rake" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tareas "rake"
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#instalacion-de-version-20" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación de versión 2.0
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuracion-para-enviar-correos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuración para enviar correos
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuracion-segun-entorno" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuración según entorno
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#resetear-base-de-datos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resetear base de datos
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -4163,60 +4109,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#actualizacion-de-version" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actualización de versión
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tareas-rake" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tareas "rake"
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#instalacion-de-version-20" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación de versión 2.0
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuracion-para-enviar-correos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuración para enviar correos
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuracion-segun-entorno" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuración según entorno
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#resetear-base-de-datos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resetear base de datos
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -4296,22 +4188,23 @@
 <h2 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h2>
 <h3 id="override-de-preferencias">Override de preferencias<a class="headerlink" href="#override-de-preferencias" title="Permanent link">&para;</a></h3>
 <p>Crear el fichero <code>config/initializers/spree_config.rb</code> y hacer un set de las propiedades. Por ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#encoding: utf-8</span>
-<span class="no">Spree</span><span class="o">::</span><span class="no">Config</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="ss">logo</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;store/myapp_logo.png&quot;</span><span class="p">)</span>
-<span class="no">Spree</span><span class="o">::</span><span class="no">Config</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="ss">site_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;MyApp&#39;</span><span class="p">)</span>
-<span class="no">Spree</span><span class="o">::</span><span class="no">Config</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="ss">currency</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;EUR&#39;</span><span class="p">)</span>
-<span class="no">Spree</span><span class="o">::</span><span class="no">Config</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="ss">currency_symbol_position</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;after&#39;</span><span class="p">)</span>
-<span class="no">Spree</span><span class="o">::</span><span class="no">Config</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="ss">default_meta_description</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;MyApp&#39;</span><span class="p">)</span>
-<span class="no">Spree</span><span class="o">::</span><span class="no">Config</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="ss">default_meta_keywords</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;mis palabras clave&#39;</span><span class="p">)</span>
-</code></pre></div>
+<p>```ruby</p>
+<h1 id="encoding-utf-8">encoding: utf-8<a class="headerlink" href="#encoding-utf-8" title="Permanent link">&para;</a></h1>
+<p>Spree::Config.set(logo: "store/myapp_logo.png")
+Spree::Config.set(site_name: 'MyApp')
+Spree::Config.set(currency: 'EUR')
+Spree::Config.set(currency_symbol_position: 'after')
+Spree::Config.set(default_meta_description: 'MyApp')
+Spree::Config.set(default_meta_keywords: 'mis palabras clave')
+```</p>
 <p>Todas las preferencias posibles están definidas en el fichero <code>core/app/models/spree/app_configuration.rb</code>.</p>
 <p>Las preferencias ajustadas de esta forma acaban en la base de datos en la tabla <code>spree_preferences</code>. Si se quita alguna de las lineas anteriores, hay que eliminar el registro correspondiente para que deje de hacer efecto. En ocasiones no es suficiente con esto, ya que también puede influir el hecho de que algunas queries son cacheadas. En ese caso hay que borrar el directorio <code>tmp/cache</code>.</p>
 <h3 id="actualizacion-de-version">Actualización de versión<a class="headerlink" href="#actualizacion-de-version" title="Permanent link">&para;</a></h3>
 <p>Cuando aparezca una nueva versión de Spree y se quiera actualizar hay que proceder como sigue:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bundle<span class="w"> </span>update<span class="w"> </span>spree
-$<span class="w"> </span>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>railties:install:migrations
-$<span class="w"> </span>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>db:migrate
-</code></pre></div>
+<p><code>bash
+$ bundle update spree
+$ bundle exec rake railties:install:migrations
+$ bundle exec rake db:migrate</code></p>
 <h3 id="tareas-rake">Tareas "rake"<a class="headerlink" href="#tareas-rake" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>bundle exec rake assets:precompile:nondigest</code>: Mejora el rendimiento en el entorno de desarrollo a costa de no refrescar en tiempo real los cambios en los assets.</li>
@@ -4323,16 +4216,16 @@ $<span class="w"> </span>bundle<span class="w"> </span><span class="nb">exec</sp
 <h3 id="instalacion-de-version-20">Instalación de versión 2.0<a class="headerlink" href="#instalacion-de-version-20" title="Permanent link">&para;</a></h3>
 <p>El instalador de las últimas versiones no es del todo redondo (al menos en el momento de escribir esto) y da algunos errores. Para superarlos hay que proceder como sigue.</p>
 <p>Ejecutar en consola lo siguiente:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rails<span class="w"> </span>new<span class="w"> </span>spapp
-</code></pre></div>
+<p><code>bash
+$ rails new spapp</code></p>
 <p>Modificamos la linea de la gem <code>jquery-rails</code> poniendo:</p>
 <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>gem &#39;jquery-rails&#39;, &#39;~&gt; 2.2.1&#39;
 </code></pre></div></td></tr></table></div>
 
 <p>Ejecutamos:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>spapp
-$<span class="w"> </span>spree<span class="w"> </span>install
-</code></pre></div>
+<p><code>bash
+$ cd spapp
+$ spree install</code></p>
 <p>Decimos "yes" a todas las preguntas. Cuando termine volvemos a modificar Gemfile sustituyendo las versiones de las gems de Spree que ha añadido el script por las siguientes:</p>
 <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
@@ -4342,8 +4235,8 @@ gem &#39;spree_auth_devise&#39;, :github =&gt; &#39;spree/spree_auth_devise&#39;
 </code></pre></div></td></tr></table></div>
 
 <p>Finalmente de nuevo ejecutamos:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bundle<span class="w"> </span>install
-</code></pre></div>
+<p><code>bash
+$ bundle install</code></p>
 <h3 id="configuracion-para-enviar-correos">Configuración para enviar correos<a class="headerlink" href="#configuracion-para-enviar-correos" title="Permanent link">&para;</a></h3>
 <p>Hay dos formas:</p>
 <ol>
@@ -4351,51 +4244,51 @@ gem &#39;spree_auth_devise&#39;, :github =&gt; &#39;spree/spree_auth_devise&#39;
 <li>Usando el override que permite configurar el ActionMailer en el backend</li>
 </ol>
 <p>Para el primer tipo empezamos poniendo las siguientes preferencias en el fichero <code>config/initializers/spree.rb</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">config</span><span class="o">.</span><span class="n">override_actionmailer_config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">false</span>
-<span class="n">config</span><span class="o">.</span><span class="n">mails_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;origen@mail.com&quot;</span>
-</code></pre></div>
+<p><code>ruby
+config.override_actionmailer_config = false
+config.mails_from = "origen@mail.com"</code></p>
 <p>Luego añadimos lo siguiente en el fichero de configuración del entorno, por ejemplo en development sería <code>config/environments/development.rb</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">config</span><span class="o">.</span><span class="n">action_mailer</span><span class="o">.</span><span class="n">delivery_method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">:smtp</span>
-<span class="n">config</span><span class="o">.</span><span class="n">action_mailer</span><span class="o">.</span><span class="n">smtp_settings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="ss">address</span><span class="p">:</span><span class="w">              </span><span class="s1">&#39;smtp.gmail.com&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="ss">port</span><span class="p">:</span><span class="w">                 </span><span class="mi">587</span><span class="p">,</span>
-<span class="w">  </span><span class="ss">domain</span><span class="p">:</span><span class="w">               </span><span class="s1">&#39;gmail.com&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="ss">user_name</span><span class="p">:</span><span class="w">            </span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span><span class="w">  </span><span class="c1"># No es necesario poner @gmail.com</span>
-<span class="w">  </span><span class="ss">password</span><span class="p">:</span><span class="w">             </span><span class="s1">&#39;password&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="ss">authentication</span><span class="p">:</span><span class="w">       </span><span class="s1">&#39;plain&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="ss">enable_starttls_auto</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span><span class="w">  </span><span class="p">}</span>
-</code></pre></div>
+<p><code>ruby
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'gmail.com',
+  user_name:            'user_id',  # No es necesario poner @gmail.com
+  password:             'password',
+  authentication:       'plain',
+  enable_starttls_auto: true  }</code></p>
 <p>En teoría con esto sería suficiente, pero en las primeras pruebas hechas, sólo funcionó con la versión 2.5.3 de la gem <code>mail</code>, por lo que hubo que especificarla en el Gemfile:</p>
-<div class="highlight"><pre><span></span><code><span class="n">gem</span><span class="w"> </span><span class="s1">&#39;mail&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2.5.3&#39;</span>
-</code></pre></div>
+<p><code>ruby
+gem 'mail', '2.5.3'</code></p>
 <p>La última versión de <code>mail</code> es la 2.5.4 que será la que normalmente esté instalada. Para hacer el downgrade hay que ejecutar desde el directorio de nuestro proyecto:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bundle<span class="w"> </span>update<span class="w"> </span>mail
-</code></pre></div>
+<p><code>bash
+$ bundle update mail</code></p>
 <p>En posteriores versiones de las gemas ya funcionaba con la versión 2.5.4 de <code>mail</code> por lo que dejó de ser necesario hacer este apaño.</p>
 <p>Para el segundo tipo de configuración empezamos poniendo las siguientes preferencias en el fichero <code>config/initializers/spree.rb</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">config</span><span class="o">.</span><span class="n">override_actionmailer_config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">true</span>
-<span class="n">config</span><span class="o">.</span><span class="n">mails_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;origen@mail.com&quot;</span>
-</code></pre></div>
+<p><code>ruby
+config.override_actionmailer_config = true
+config.mails_from = "origen@mail.com"</code></p>
 <p>Como siempre que se tocan las preferencias, hay que vigilar si ya existe versión de la misma en la tabla <code>spree_preferences</code> y si está la consulta a esta tabla cacheada, por lo que habrá que borrar el directorio <code>tmp/cache</code>.</p>
 <p>Luego deberemos acudir en el backend a la siguiente ruta: "Configuraciones / Preferencias métodos de email". Hay que tener en cuenta que este grupo de opciones sólo aparece si la opción <code>override_actionmailer_config</code> tiene el valor true. A continuación se muestran pantallazos de un par de configuraciones que se ha probado que funcionan:</p>
 <p><img alt="Conf con GMail" src="../../images/pages/conf_gmail.png" title="Configuración con GMail" /></p>
 <p><img alt="Conf con DH" src="../../images/pages/conf_dh.png" title="Configuración con DinaHosting" /></p>
 <h3 id="configuracion-segun-entorno">Configuración según entorno<a class="headerlink" href="#configuracion-segun-entorno" title="Permanent link">&para;</a></h3>
 <p>Si queremos ajustar algunas preferencias en el initializer <code>config/initializers/spree.rb</code> de manera que su valor dependa del environment, podemos hacer lo siguiente:</p>
-<div class="highlight"><pre><span></span><code><span class="no">Spree</span><span class="o">.</span><span class="n">config</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">config</span><span class="o">|</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="no">Rails</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">production?</span>
-<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">mail_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1025</span>
-<span class="w">    </span><span class="c1"># other configs ..</span>
-<span class="w">  </span><span class="k">else</span>
-<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">mail_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25</span>
-<span class="w">    </span><span class="c1"># other configs ..</span>
-<span class="w">  </span><span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div>
+<p><code>ruby
+Spree.config do |config|
+  if Rails.env.production?
+    config.mail_port = 1025
+    # other configs ..
+  else
+    config.mail_port = 25
+    # other configs ..
+  end
+end</code></p>
 <h3 id="resetear-base-de-datos">Resetear base de datos<a class="headerlink" href="#resetear-base-de-datos" title="Permanent link">&para;</a></h3>
 <p>Si queremos comenzar de nuevo en lo que respecta a la base de datos, se puede hacer fácilmente con el siguiente comando:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>db:reset
-</code></pre></div>
+<p><code>bash
+$ bundle exec rake db:reset</code></p>
 <p>A nivel de ficheros habrá que hacer la limpieza a mano. En el Spree básico, como mínimo habría que borrar el directorio <code>rails_root/public/spree/products</code>.</p>
 
 

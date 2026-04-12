@@ -1246,6 +1246,16 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#chmod-x-mediadatalocalsbinfrontend_start" class="md-nav__link">
+    <span class="md-ellipsis">
+      chmod +x /media/data/local/sbin/frontend_start
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="chmod +x /media/data/local/sbin/frontend_start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#boxart" class="md-nav__link">
     <span class="md-ellipsis">
       Boxart
@@ -1277,8 +1287,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#temas" class="md-nav__link">
     <span class="md-ellipsis">
       Temas
@@ -1319,13 +1329,18 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#personalizacion-de-los-temas" class="md-nav__link">
     <span class="md-ellipsis">
       Personalización de los Temas
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4127,6 +4142,16 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#chmod-x-mediadatalocalsbinfrontend_start" class="md-nav__link">
+    <span class="md-ellipsis">
+      chmod +x /media/data/local/sbin/frontend_start
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="chmod +x /media/data/local/sbin/frontend_start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#boxart" class="md-nav__link">
     <span class="md-ellipsis">
       Boxart
@@ -4158,8 +4183,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#temas" class="md-nav__link">
     <span class="md-ellipsis">
       Temas
@@ -4200,13 +4225,18 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#personalizacion-de-los-temas" class="md-nav__link">
     <span class="md-ellipsis">
       Personalización de los Temas
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4227,8 +4257,6 @@
   
   
 
-
-  <h1>RG350 EmulationStation</h1>
 
 <p><img alt="EmulationStation" src="../images/posts/emulationstation.png" /></p>
 <div class="admonition warning">
@@ -4272,15 +4300,15 @@
 <p>Estamos en una situación muy similar a la de <a href="2020-01-25-rg350_simplemenu.html">SimpleMenu</a>. De hecho el apartado de <a href="2020-01-25-rg350_simplemenu.html#configuracion">Configuración</a> de ese artículo, conceptualmente nos sirve aquí. Sólo cambia el formato concreto de la configuración que necesita EmulationStation. Se recomienda por tanto hacer como en el caso de <a href="2020-01-25-rg350_simplemenu.html#configuracion">SimpleMenu</a>, es decir, transferir el fichero de configuración <code>/usr/local/home/.emulationstation/es_systems.cfg</code> al ordenador para editarlo allí con un editor que soporte directamente el formato de texto de Linux. Por ejemplo <a href="https://notepad-plus-plus.org/">Notepad++</a>. En realidad podemos aprovechar la copia que todavía tendremos en la tarjeta externa que hay dentro de la carpeta <code>.emulationstation</code> que renombramos durante la instalación.</p>
 <p>El fichero <code>es_systems.cfg</code>, aunque no lo indique la extensión, internamente tiene formato XML. Se trata por tanto de una serie de bloques anidados que comienzan y terminan con etiquetas encerradas entre los símbolos <code>&lt;</code> y <code>&gt;</code>. El bloque raíz se define con la etiqueta <code>&lt;systemList&gt;</code> y dentro de él hay un bloque <code>&lt;system&gt;</code> para cada emulador. Dentro de este bloque ya directamente se encuentran los distintos parámetros del emulador. Como vemos la filosofía es muy similar a la del fichero de configuración de SimpleMenu, sólo que en éste último el formato del archivo no era XML, sino el que se utiliza habitualmente para los ficheros de configuración tipo <a href="https://es.wikipedia.org/wiki/INI_(extensi%C3%B3n_de_archivo)">INI</a>. De hecho si ya tenemos SimpleMenu instalado y configurado, podemos utilizar su fichero de configuración como plantilla para transplantar todos los parámetros (que son prácticamente los mismos) a <code>es_systems.cfg</code>.</p>
 <p>Un bloque <code>&lt;system&gt;</code> de un sistema como Game Boy podría ser el siguiente:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;system&gt;</span>
-<span class="w">    </span><span class="nt">&lt;name&gt;</span>gb<span class="nt">&lt;/name&gt;</span>
-<span class="w">    </span><span class="nt">&lt;fullname&gt;</span>Gameboy<span class="nt">&lt;/fullname&gt;</span>
-<span class="w">    </span><span class="nt">&lt;path&gt;</span>/media/sdcard/roms/Gameboy<span class="nt">&lt;/path&gt;</span>
-<span class="w">    </span><span class="nt">&lt;extension&gt;</span>.gb<span class="nt">&lt;/extension&gt;</span>
-<span class="w">    </span><span class="nt">&lt;command&gt;</span>opkrun<span class="w"> </span>&quot;/media/sdcard/apps/gambatte.opk&quot;<span class="w"> </span>%ROM%<span class="nt">&lt;/command&gt;</span>
-<span class="w">    </span><span class="nt">&lt;platform&gt;</span>gb<span class="nt">&lt;/platform&gt;</span>
-<span class="nt">&lt;/system&gt;</span>
-</code></pre></div>
+<p><code>xml
+&lt;system&gt;
+    &lt;name&gt;gb&lt;/name&gt;
+    &lt;fullname&gt;Gameboy&lt;/fullname&gt;
+    &lt;path&gt;/media/sdcard/roms/Gameboy&lt;/path&gt;
+    &lt;extension&gt;.gb&lt;/extension&gt;
+    &lt;command&gt;opkrun "/media/sdcard/apps/gambatte.opk" %ROM%&lt;/command&gt;
+    &lt;platform&gt;gb&lt;/platform&gt;
+&lt;/system&gt;</code></p>
 <p>Es recomendable poner entre comillas la ruta del OPK para así no tener que <em>escapar</em> caracteres especiales como los espacios y los paréntesis.</p>
 <p>Vamos a detallar el significado de cada parámetro (la documentación original puede encontrarse <a href="https://emulationstation.org/gettingstarted.html#config">aquí</a>):</p>
 <ul>
@@ -4308,27 +4336,33 @@
 <li>Abrir <code>DinguxCmdr</code>y copiar el fichero <code>frontend_start</code> a la ruta <code>/media/data/local/sbin</code>.</li>
 <li>
 <p>Hacer ejecutable el fichero instalado. Desafortunadamente DinguxCmdr no nos ayuda en este caso. Tendremos que ejecutar el siguiente comando desde consola, ya sea por SSH o utilizando una aplicación de terminal como <code>ST-SDL</code>:</p>
-<div class="highlight"><pre><span></span><code># chmod +x /media/data/local/sbin/frontend_start
-</code></pre></div>
+<p>```</p>
+<h1 id="chmod-x-mediadatalocalsbinfrontend_start">chmod +x /media/data/local/sbin/frontend_start<a class="headerlink" href="#chmod-x-mediadatalocalsbinfrontend_start" title="Permanent link">&para;</a></h1>
+<p>```</p>
 </li>
 </ol>
 <p>Tal y como está diseñado el script de arranque que acabamos de copiar, si salimos de EmulationStation (tecla <code>Start</code> y luego eligiendo <code>Quit</code> y <code>Quit EmulationStation</code>), se abrirá GMenu2X.</p>
 <p>Para el último paso merece la pena intentar conectar por SSH ya que las últimas versiones de Windows 10 ya incorporan el cliente de forma predeterminada. Para ello, estando la RG350 conectada por USB2 al ordenador, abrir una terminal o consola (buscando en el menú inicio o en Cortana <code>cmd</code>) y teclear lo siguiente:</p>
-<div class="highlight"><pre><span></span><code>ssh root@10.1.1.2
-</code></pre></div>
+<p><code>ssh root@10.1.1.2</code></p>
 <p>Si nos aparece lo siguiente es que hemos conseguido abrir una terminal dentro del sistema de la RG350. Desde allí podremos ejecutar directamente el comando del punto 5 de la lista anterior.</p>
-<div class="highlight"><pre><span></span><code>edumoreno@pceduardo:~$ ssh root@10.1.1.2
- _________________________
-&lt; Welcome to ROGUE resistance ! &gt;
- -------------------------
-           |\
-        &lt;=--===\&gt;   -------
-          ==0=[]=&gt;&gt;
-        &lt;=--===/&gt;   -------
-           |/
+<p>```
+edumoreno@pceduardo:~$ ssh root@10.1.1.2</p>
+<hr />
+<p>&lt; Welcome to ROGUE resistance ! &gt;</p>
+<hr />
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>       |\
+    &lt;=--===\&gt;   -------
+      ==0=[]=&gt;&gt;
+    &lt;=--===/&gt;   -------
+       |/
+</code></pre></div></td></tr></table></div>
 
-RG350:/media/data/local/home # chmod +x /media/data/local/sbin/frontend_start
-</code></pre></div>
+<p>RG350:/media/data/local/home # chmod +x /media/data/local/sbin/frontend_start
+```</p>
 <h2 id="boxart">Boxart<a class="headerlink" href="#boxart" title="Permanent link">&para;</a></h2>
 <p>Una de las funcionalidades más interesantes de EmulationStation es su capacidad para adornar la presentación del listado de ROMs con previsualizaciones de los juegos y con metainformación (fecha de publicación, compañía desarrolladora, número de jugadores, etc.). Esta funcionalidad se basa en un fichero de texto llamado <code>gamelist.xml</code> en formato XML (parecido al que hemos visto antes para la configuración de los sistemas). El fichero puede estar en varios sitios, pero la ubicación más conveniente es el propio directorio de las ROMs. Deberá haber un fichero <code>gamelist.xml</code> por sistema, es decir por directorio de ROMs.</p>
 <p>Como siempre que hablamos de este tema, interesa utilizar una herramienta que automatice el proceso, ya que normalmente tendremos muchas ROMs por cada sistema y aparte de largo y tedioso, escribir manualmente ficheros XML supone casi con toda seguridad introducir errores en su estructura. Así pues será conveniente utilizar un Scraper como los siguientes:</p>
@@ -4424,12 +4458,11 @@ RG350:/media/data/local/home # chmod +x /media/data/local/sbin/frontend_start
 <img alt="EmulationStation Tema 5" src="../images/posts/emulationstation_tema5.png" /></p>
 <h2 id="personalizacion-de-los-temas">Personalización de los Temas<a class="headerlink" href="#personalizacion-de-los-temas" title="Permanent link">&para;</a></h2>
 <p>Los temas se encuentran instalados en la ruta <code>/media/data/local/home/.emulationstation/themes</code>. Dentro de ella encontramos un directorio por cada tema disponible:</p>
-<div class="highlight"><pre><span></span><code>RG350:/media/data/local/home/.emulationstation/themes # ls -l
+<p><code>RG350:/media/data/local/home/.emulationstation/themes # ls -l
 drwx------   69 root     root          4096 Feb 10 21:38 _PixelPerfect (Default)
 drwx------   64 root     root          4096 Feb 10 21:38 pixel
 drwx------   62 root     root          4096 Feb 10 21:38 simple
-drwx------   64 root     root          4096 Feb 10 21:38 simplegcw
-</code></pre></div>
+drwx------   64 root     root          4096 Feb 10 21:38 simplegcw</code></p>
 <p>El nombre del directorio será el que luego aparezca en el listado de temas en los ajustes de ES:</p>
 <p><img alt="EmulationStation Tema 3" src="../images/posts/emulationstation_tema3.png" /></p>
 <p>Dentro de cada uno de los temas encontramos los siguientes elementos:</p>
@@ -4439,7 +4472,7 @@ drwx------   64 root     root          4096 Feb 10 21:38 simplegcw
 <li>Directorios de cada sistema: Por cada sistema que queramos mostrar en ES tendremos un directorio con su nombre. Los nombres de los sistemas pueden ser cualquiera que hayamos utilizado en el parámetro <code>name</code> del fichero <code>es_systems.cfg</code>, aunque se recomienda utilizar los que aparecen en el apartado <strong>Recommended Theme Names</strong> que hay en <a href="https://emulationstation.org/gettingstarted.html#config">esta página</a>:</li>
 </ul>
 <p>En el siguiente listado podemos ver todos estos elementos (se ocultan la mayoría de los sistemas para que no quede muy voluminoso):</p>
-<div class="highlight"><pre><span></span><code>RG350:/media/data/local/home/.emulationstation/themes/simple # ls -l
+<p><code>RG350:/media/data/local/home/.emulationstation/themes/simple # ls -l
 drwx------    3 root     root          4096 Feb 10 21:38 3do
 drwx------    3 root     root          4096 Feb 10 21:38 amiga
 drwx------    3 root     root          4096 Feb 10 21:38 amstradcpc
@@ -4454,17 +4487,15 @@ drwx------    3 root     root          4096 Feb 10 21:38 sfc
 drwx------    3 root     root          4096 Feb 10 21:38 snes
 drwx------    3 root     root          4096 Feb 10 21:38 vectrex
 ...
-drwx------    3 root     root          4096 Feb 10 21:38 zxspectrum
-</code></pre></div>
+drwx------    3 root     root          4096 Feb 10 21:38 zxspectrum</code></p>
 <p>Si por ejemplo queremos añadir un sistema nuevo, tan sólo tendremos que crear un nuevo directorio con un fichero <code>theme.xml</code> y resto de ficheros a los que luego se haga referencia en él. Por ejemplo este es el contenido del directorio correspondiente a Game Boy en el tema <code>Simple</code>:</p>
-<div class="highlight"><pre><span></span><code>RG350:/media/data/local/home/.emulationstation/themes/simple/gb # find .
+<p><code>RG350:/media/data/local/home/.emulationstation/themes/simple/gb # find .
 .
 ./art
 ./art/gb_art.png
 ./art/gb.svg
 ./art/gb_art_blur.jpg
-./theme.xml
-</code></pre></div>
+./theme.xml</code></p>
 <p>Como vemos junto al fichero XML hay un directorio <code>art</code> que contiene tres imágenes. Al igual que con los recursos generales del tema, este directorio se utiliza por organización, no por necesidad. Los recursos que contienen están enlazados dentro de <code>theme.xml</code>, por lo que podrían estar en otro lugar.</p>
 <p>El fichero <code>theme.xml</code> puede contener mucha información. Lo mejor es clonar todo el directorio de otro sistema y adaptar las imágenes y las referencias a éstas dentro de <code>theme.xml</code>.</p>
 

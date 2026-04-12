@@ -4116,12 +4116,11 @@
 </ul>
 <p>Es muy probable que junto a los 4 ficheros anteriores, encontremos otro de tipo <code>juego.dat</code>. Este fichero lo generará el propio Daphne de acuerdo a las características de la pantalla de la consola por lo que aunque nos venga en el lote no lo copiaremos junto al resto.</p>
 <p>Por ejemplo el juego <a href="https://www.youtube.com/watch?v=FB0Wkel_R5Q">Interestellar</a> contiene los siguientes ficheros:</p>
-<div class="highlight"><pre><span></span><code>RG350:/media/data/roms/DAPHNE/Interestellar # ls -l
+<p><code>RG350:/media/data/roms/DAPHNE/Interestellar # ls -l
 -rwxr-xr-x    1 root     root     142239907 May  4 15:49 interstellar.m2v
 -rwxr-xr-x    1 root     root      25741275 May  4 15:49 interstellar.ogg
 -rwxr-xr-x    1 root     root            25 May  4 15:49 interstellar.txt
--rwxr-xr-x    1 root     root         40150 May  4 15:49 interstellar.zip
-</code></pre></div>
+-rwxr-xr-x    1 root     root         40150 May  4 15:49 interstellar.zip</code></p>
 <p>Hay que adaptar el fichero de video (<code>.m2v</code>) a la resolución de la consola (en el caso de la RG350 320x240). En <a href="https://boards.dingoonity.org/gcw-releases/daphne/">este tutorial</a> encontramos instrucciones detalladas para hacerlo mediante la utilidad <code>ffmpeg</code>.</p>
 <p>La primera vez que ejecutemos el juego, Daphne generará el fichero <code>.dat</code> en el directorio del juego. Nos pedirá que pulsemos <code>Y</code> para iniciar el proceso, pero la indicación es incorrecta. Es <code>X</code> o <code>Start</code> lo que debemos pulsar. El proceso tardará unos pocos segundos.</p>
 <p><img alt="Daphne DAT" src="../images/posts/daphne_dat.png" />
@@ -4256,7 +4255,8 @@
 </table>
 <h2 id="previews">Previews<a class="headerlink" href="#previews" title="Permanent link">&para;</a></h2>
 <p>Como hemos comentado, Daphne se comporta como un emulador convencional, por lo que las previews se gestionan de la manera habitual, que como siempre dependerá del frontend que estemos utilizando. Por ejemplo en el caso de GMenu2X, tendremos que poner la imagen <code>.png</code> en un directorio de nombre <code>.previews</code> a la altura donde se encuentre el <code>.zip</code> con las ROMs. El nombre de la imagen será el mismo que el del <code>.zip</code>. Por ejemplo en el caso anterior del juego <code>Interestellar</code>, la imagen iría de esta forma:</p>
-<div class="highlight"><pre><span></span><code>RG350:/media/data/roms/DAPHNE/Interestellar # ls -laR
+<p>```
+RG350:/media/data/roms/DAPHNE/Interestellar # ls -laR
 .:
 drwxr-xr-x    3 root     root          4096 May  4 15:57 .
 drwxr-xr-x    3 root     root          4096 May  4 15:48 ..
@@ -4264,21 +4264,19 @@ drwxr-xr-x    2 root     root          4096 May  4 15:57 .previews
 -rwxr-xr-x    1 root     root     142239907 May  4 15:49 interstellar.m2v
 -rwxr-xr-x    1 root     root      25741275 May  4 15:49 interstellar.ogg
 -rwxr-xr-x    1 root     root            25 May  4 15:49 interstellar.txt
--rwxr-xr-x    1 root     root         40150 May  4 15:49 interstellar.zip
-
-./.previews:
+-rwxr-xr-x    1 root     root         40150 May  4 15:49 interstellar.zip</p>
+<p>./.previews:
 drwxr-xr-x    2 root     root          4096 May  4 15:57 .
 drwxr-xr-x    3 root     root          4096 May  4 15:57 ..
 -rw-r--r--    1 root     root         86709 May  4 15:56 interstellar.png
-</code></pre></div>
+```</p>
 <h2 id="integracion-en-frontends">Integración en frontends<a class="headerlink" href="#integracion-en-frontends" title="Permanent link">&para;</a></h2>
 <p>La integración con frontends también es de la manera convencional. Por ejemplo ésta podría ser la definición de una sección para DAPHNE en SimpleMenu:</p>
-<div class="highlight"><pre><span></span><code>[DAPHNE]
+<p><code>[DAPHNE]
 execs = /media/data/apps/Daphne_2015-05-07.opk
 romDirs = /media/data/roms/DAPHNE/,/media/sdcard/roms/DAPHNE/
 romExts = .zip
-aliasFile = /media/home/.simplemenu/alias.txt
-</code></pre></div>
+aliasFile = /media/home/.simplemenu/alias.txt</code></p>
 <h2 id="controles">Controles<a class="headerlink" href="#controles" title="Permanent link">&para;</a></h2>
 <p>A continuación se muestra una recopilación de controles de Daphne:</p>
 <table>

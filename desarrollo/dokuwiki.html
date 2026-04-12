@@ -4161,61 +4161,55 @@
 <p>Se puede añadir al menú de herramientas el enlace "Cambios recientes" haciendo lo siguiente:</p>
 <ul>
 <li>Añadir las siguientes lineas al fichero <code>$DOKU_BASE/lib/tpl/monobook/context.php</code>:
-    <div class="highlight"><pre><span></span><code><span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;recent&#39;][&#39;href&#39;] = DOKU_BASE.&quot;doku.php?do=recent&quot;;</span>
-<span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;recent&#39;][&#39;text&#39;] = $lang[&#39;monobook_recent&#39;];</span>
-<span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;recent&#39;][&#39;rel&#39;] = &quot;nofollow&quot;;</span>
-</code></pre></div></li>
+    <code>php
+    $monobook['defaulttoolbox']['recent']['href'] = DOKU_BASE."doku.php?do=recent";
+    $monobook['defaulttoolbox']['recent']['text'] = $lang['monobook_recent'];
+    $monobook['defaulttoolbox']['recent']['rel'] = "nofollow";</code></li>
 <li>Inmediatamente antes de la linea (en la versión de 2007-10-03 es la linea #354):
-    <div class="highlight"><pre><span></span><code><span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;whatlinkshere&#39;][&#39;href&#39;] = DOKU_BASE.&quot;doku.php?id=&quot;.$ID.&quot;&amp;amp;do=backlink&quot;;</span>
-</code></pre></div></li>
+    <code>php
+    $monobook['defaulttoolbox']['whatlinkshere']['href'] = DOKU_BASE."doku.php?id=".$ID."&amp;amp;do=backlink";</code></li>
 <li>Añadir la linea siguiente al fichero <code>$DOKU_BASE/lib/tpl/monobook/lang/es/lang.php</code>:
-    <div class="highlight"><pre><span></span><code><span class="x">$lang[&#39;monobook_recent&#39;] = &quot;Cambios recientes&quot;;</span>
-</code></pre></div></li>
+    <code>php
+    $lang['monobook_recent'] = "Cambios recientes";</code></li>
 </ul>
 <h3 id="indice">Índice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h3>
 <p>Se puede añadir al menú de herramientas el enlace "Índice" haciendo lo siguiente:</p>
 <ul>
 <li>Añadir las siguientes lineas al fichero <code>$DOKU_BASE/lib/tpl/monobook/context.php</code>:
-    <div class="highlight"><pre><span></span><code><span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;index&#39;][&#39;href&#39;] = DOKU_BASE.&quot;doku.php?do=index&quot;;</span>
-<span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;index&#39;][&#39;text&#39;] = $lang[&#39;monobook_index&#39;];</span>
-<span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;index&#39;][&#39;rel&#39;] = &quot;nofollow&quot;;</span>
-</code></pre></div></li>
+    <code>php
+    $monobook['defaulttoolbox']['index']['href'] = DOKU_BASE."doku.php?do=index";
+    $monobook['defaulttoolbox']['index']['text'] = $lang['monobook_index'];
+    $monobook['defaulttoolbox']['index']['rel'] = "nofollow";</code></li>
 <li>Inmediatamente antes de la linea (en la versión de 2007-10-03 es la linea #354):
-    <div class="highlight"><pre><span></span><code><span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;whatlinkshere&#39;][&#39;href&#39;] = DOKU_BASE.&quot;doku.php?id=&quot;.$ID.&quot;&amp;amp;do=backlink&quot;;</span>
-</code></pre></div></li>
+    <code>php
+    $monobook['defaulttoolbox']['whatlinkshere']['href'] = DOKU_BASE."doku.php?id=".$ID."&amp;amp;do=backlink";</code></li>
 <li>Añadir la linea siguiente al fichero <code>$DOKU_BASE/lib/tpl/monobook/lang/es/lang.php</code>:
-    <div class="highlight"><pre><span></span><code><span class="x">$lang[&#39;monobook_index&#39;] = &quot;Índice&quot;;</span>
-</code></pre></div></li>
+    <code>php
+    $lang['monobook_index'] = "Índice";</code></li>
 </ul>
 <h3 id="logo">Logo<a class="headerlink" href="#logo" title="Permanent link">&para;</a></h3>
 <p>El logo que aparece arriba a la izquierda es el fichero <code>logo.png</code> que se encuentra en el directorio <code>$DOKU_BASE/lib/tpl/monobook/user</code>. El icono que aparece en la barra de dirección del navegador es el fichero <code>favicon.ico</code> del mismo directorio.</p>
 <h2 id="backup-automatico">Backup automático<a class="headerlink" href="#backup-automatico" title="Permanent link">&para;</a></h2>
 <p>Programar diariamente el script siguiente:</p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-
-<span class="c1"># Backup de IMSWiki.</span>
-
-<span class="c1"># Creamos un identificador con la fecha para diferenciar los backups</span>
-<span class="nv">fecha</span><span class="o">=</span><span class="sb">`</span>date<span class="w"> </span>+%m%d<span class="sb">`</span>
-
-<span class="c1"># Si el fichero ya existe no repetimos el backup</span>
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="nv">$HOME</span>.backupWiki/backupWiki<span class="nv">$fecha</span>.tgz<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;El backup ya existe&quot;</span>
-<span class="w">        </span><span class="nb">exit</span>
-<span class="k">fi</span>
-
-<span class="c1"># Hacemos el backup sobre el servidor</span>
-ssh<span class="w"> </span>aire@192.168.11.3<span class="w"> </span>tar<span class="w"> </span>-czvf<span class="w"> </span>/tmp/backupWiki<span class="nv">$fecha</span>.tgz<span class="w"> </span>/var/www/data/
-
-<span class="c1"># Lo copiamos a nuestra máquina</span>
-scp<span class="w"> </span>aire@192.168.11.3:/tmp/backupWiki<span class="nv">$fecha</span>.tgz<span class="w"> </span><span class="nv">$HOME</span>/.backupWiki
-
-<span class="c1"># Borramos el bote recien creado y que ya ha sido transmitido a nuestra máquina</span>
-ssh<span class="w"> </span>aire@192.168.11.3<span class="w"> </span>rm<span class="w"> </span>/tmp/backupWiki<span class="nv">$fecha</span>.tgz
-
-<span class="c1"># Purgamos los backups de hace más de un mes en nuestra máquina</span>
-find<span class="w"> </span><span class="nv">$HOME</span>/.backupWiki<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;backupWiki*.tgz&#39;</span><span class="w"> </span>-mtime<span class="w"> </span>+30<span class="w"> </span>-type<span class="w"> </span>f<span class="p">|</span>xargs<span class="w"> </span>rm<span class="w"> </span>-rf
-</code></pre></div>
+<p>```bash</p>
+<h1 id="binbash">!/bin/bash<a class="headerlink" href="#binbash" title="Permanent link">&para;</a></h1>
+<h1 id="backup-de-imswiki">Backup de IMSWiki.<a class="headerlink" href="#backup-de-imswiki" title="Permanent link">&para;</a></h1>
+<h1 id="creamos-un-identificador-con-la-fecha-para-diferenciar-los-backups">Creamos un identificador con la fecha para diferenciar los backups<a class="headerlink" href="#creamos-un-identificador-con-la-fecha-para-diferenciar-los-backups" title="Permanent link">&para;</a></h1>
+<p>fecha=<code>date +%m%d</code></p>
+<h1 id="si-el-fichero-ya-existe-no-repetimos-el-backup">Si el fichero ya existe no repetimos el backup<a class="headerlink" href="#si-el-fichero-ya-existe-no-repetimos-el-backup" title="Permanent link">&para;</a></h1>
+<p>if [ -f $HOME.backupWiki/backupWiki$fecha.tgz ]; then
+        echo "El backup ya existe"
+        exit
+fi</p>
+<h1 id="hacemos-el-backup-sobre-el-servidor">Hacemos el backup sobre el servidor<a class="headerlink" href="#hacemos-el-backup-sobre-el-servidor" title="Permanent link">&para;</a></h1>
+<p>ssh aire@192.168.11.3 tar -czvf /tmp/backupWiki$fecha.tgz /var/www/data/</p>
+<h1 id="lo-copiamos-a-nuestra-maquina">Lo copiamos a nuestra máquina<a class="headerlink" href="#lo-copiamos-a-nuestra-maquina" title="Permanent link">&para;</a></h1>
+<p>scp aire@192.168.11.3:/tmp/backupWiki$fecha.tgz $HOME/.backupWiki</p>
+<h1 id="borramos-el-bote-recien-creado-y-que-ya-ha-sido-transmitido-a-nuestra-maquina">Borramos el bote recien creado y que ya ha sido transmitido a nuestra máquina<a class="headerlink" href="#borramos-el-bote-recien-creado-y-que-ya-ha-sido-transmitido-a-nuestra-maquina" title="Permanent link">&para;</a></h1>
+<p>ssh aire@192.168.11.3 rm /tmp/backupWiki$fecha.tgz</p>
+<h1 id="purgamos-los-backups-de-hace-mas-de-un-mes-en-nuestra-maquina">Purgamos los backups de hace más de un mes en nuestra máquina<a class="headerlink" href="#purgamos-los-backups-de-hace-mas-de-un-mes-en-nuestra-maquina" title="Permanent link">&para;</a></h1>
+<p>find $HOME/.backupWiki -name 'backupWiki*.tgz' -mtime +30 -type f|xargs rm -rf
+```</p>
 <p>El script anterior tal y como está diseñado deposita el backup sobre el directorio <code>$HOME/.backupWiki</code> por lo que deberá existir dicho directorio. La programación se puede hacer de muchas maneras (por ejemplo en Gnome añadiendo una entrada al panel de control Sesiones, solapa "Programas de inicio").</p>
 
 

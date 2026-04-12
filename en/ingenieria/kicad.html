@@ -4266,14 +4266,12 @@
 <ol>
 <li>
 <p>Inicializar un repositorio git para el proyecto:</p>
-<div class="highlight"><pre><span></span><code>$ cd mi_proyecto
-$ git init
-</code></pre></div>
+<p><code>$ cd mi_proyecto
+$ git init</code></p>
 </li>
 <li>
 <p>Instalar la librería como un submódulo git en un directorio llamado <code>lib</code>:</p>
-<div class="highlight"><pre><span></span><code>$ git submodule add git@github.com:eduardofilo/kicad_footprints.git lib
-</code></pre></div>
+<p><code>$ git submodule add git@github.com:eduardofilo/kicad_footprints.git lib</code></p>
 </li>
 <li>
 <p>Añadir la librería de símbolos desde <code>Preferences &gt; Manage Symbol Libraries... &gt; Project Specific Libraries</code>:</p>
@@ -4421,15 +4419,15 @@ $ git init
 </ul>
 <h2 id="generacion-modelo-3d-de-la-placa">Generación modelo 3D de la placa<a class="headerlink" href="#generacion-modelo-3d-de-la-placa" title="Permanent link">&para;</a></h2>
 <p>Es recomendable instalar los paquetes recomendados con apt cuando se instala KiCad. Se puede hacer con la siguiente opción en el comando de instalación:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>--install-recommends<span class="w"> </span>kicad
-</code></pre></div>
+<p><code>bash
+$ sudo apt install --install-recommends kicad</code></p>
 <p>En caso de no tener las librerías de paquetes 3D o querer forzar el tener la última versión de Github, se puede proceder como sigue:</p>
 <ol>
 <li>
 <p>Bajar el repositorio con los modelos de los componentes:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/git
-git<span class="w"> </span>clone<span class="w"> </span>git@gitlab.com:kicad/libraries/kicad-packages3D.git
-</code></pre></div>
+<p><code>bash
+cd ~/git
+git clone git@gitlab.com:kicad/libraries/kicad-packages3D.git</code></p>
 </li>
 <li>
 <p>Abrir el menú `Preferencias &gt; Configure Paths...".</p>
@@ -4884,24 +4882,22 @@ git<span class="w"> </span>clone<span class="w"> </span>git@gitlab.com:kicad/lib
 <h2 id="panelizacion">Panelización<a class="headerlink" href="#panelizacion" title="Permanent link">&para;</a></h2>
 <p>Después de una mala experiencia con <a href="https://github.com/ThisIsNotRocketScience/GerberTools">GerberTools</a> descrita en <a href="../2020-02-16-panelizar_pcb.html">este post</a>, se encuentra el pack de utilidades <a href="https://github.com/yaqwsx/KiKit">KiKit</a> que funciona mucho mejor.</p>
 <p>En cuanto a la instalación, sobre la versión 1.7.10 de KiCad, no aparecia el plugin <code>panelize</code> en el menú <code>Tools &gt; External Plugins...</code>, por lo que instalo la versión unstable:</p>
-<div class="highlight"><pre><span></span><code>$ pip3 install git+https://github.com/yaqwsx/KiKit@master
+<p><code>$ pip3 install git+https://github.com/yaqwsx/KiKit@master
 $ kikit-plugin enable --all
-$ kikit-plugin registerlib
-</code></pre></div>
+$ kikit-plugin registerlib</code></p>
 <p>Aunque se puede parametrizar desde la utilidad que hay en el menú mencionado antes, es mejor utilizar directamente la utilidad de línea de comando, para lo que conviene consultar los siguientes documentos:</p>
 <ul>
 <li><a href="https://github.com/yaqwsx/KiKit/blob/master/doc/panelizeCli.md">Panelization CLI</a></li>
 <li><a href="https://github.com/yaqwsx/KiKit/blob/master/doc/examples.md">Examples</a></li>
 </ul>
 <p>Un ejemplo sería:</p>
-<div class="highlight"><pre><span></span><code>kikit panelize \
-    --layout &#39;rows: 1; cols: 2; rotation: 180deg; alternation: cols;&#39; \
-    --source &#39;tolerance: 50mm;&#39; \
-    --post &#39;millradius: 0.5mm&#39; \
+<p><code>kikit panelize \
+    --layout 'rows: 1; cols: 2; rotation: 180deg; alternation: cols;' \
+    --source 'tolerance: 50mm;' \
+    --post 'millradius: 0.5mm' \
     --cuts vcuts \
-    --tabs &#39;type: fixed; hcount: 2; hwidth: 3mm;&#39; \
-    vibrabot.kicad_pcb panel.kicad_pcb
-</code></pre></div>
+    --tabs 'type: fixed; hcount: 2; hwidth: 3mm;' \
+    vibrabot.kicad_pcb panel.kicad_pcb</code></p>
 
 
 

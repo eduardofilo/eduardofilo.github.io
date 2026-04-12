@@ -4991,18 +4991,18 @@
 </ul>
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
 <p>Instalamos el paquete <code>mysql-server</code>:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>mysql-server
-</code></pre></div>
+<p><code>bash
+$ apt-get install mysql-server</code></p>
 <p>En caso de no haberlo configurado durante la instalación del paquete, ajustar el password de root con el comando:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mysql<span class="w"> </span>-u<span class="w"> </span>root
-mysql&gt;<span class="w"> </span>SET<span class="w"> </span>PASSWORD<span class="w"> </span>FOR<span class="w"> </span><span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;localhost&quot; = PASSWORD(&#39;</span>new_password<span class="err">&#39;</span><span class="o">)</span><span class="p">;</span>
-</code></pre></div>
+<p><code>bash
+$ mysql -u root
+mysql&gt; SET PASSWORD FOR 'root'@'localhost" = PASSWORD('new_password');</code></p>
 <p>Por defecto sólo podemos entrar con el usuario root en local. Para permitir el acceso remoto ejecutar el siguiente comando:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mysql<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p
-mysql&gt;<span class="w"> </span>GRANT<span class="w"> </span>ALL<span class="w"> </span>PRIVILEGES<span class="w"> </span>ON<span class="w"> </span>*.*<span class="w"> </span>TO<span class="w"> </span><span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;%&#39;</span><span class="w"> </span>IDENTIFIED<span class="w"> </span>BY<span class="w"> </span><span class="s1">&#39;password&#39;</span><span class="w"> </span>WITH<span class="w"> </span>GRANT<span class="w"> </span>OPTION<span class="p">;</span>
-mysql&gt;<span class="w"> </span>FLUSH<span class="w"> </span>PRIVILEGES<span class="p">;</span>
-mysql&gt;<span class="w"> </span><span class="nb">exit</span>
-</code></pre></div>
+<p><code>bash
+$ mysql -u root -p
+mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password' WITH GRANT OPTION;
+mysql&gt; FLUSH PRIVILEGES;
+mysql&gt; exit</code></p>
 <p>También hay que permitir las conexiones remotas a nivel de red comentando la siguiente linea del fichero de configuración <code>/etc/mysql/my.cnf</code>:</p>
 <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">bind</span><span class="o">-</span><span class="nx">address</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m m-Double">127.0.0.1</span>
 </code></pre></div></td></tr></table></div>
@@ -5012,105 +5012,102 @@ mysql&gt;<span class="w"> </span><span class="nb">exit</span>
 <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>mysql -u &lt;usuario&gt; -h &lt;host&gt; -P &lt;puerto&gt; &lt;database&gt; -p
 </code></pre></div></td></tr></table></div>
 
-<div class="highlight"><pre><span></span><code>$ mysql -u root -p
+<p>```
+$ mysql -u root -p
 Enter password:
 Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 89 to server version: 4.1.11-Debian_4-log
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the buffer.
-
-mysql&gt;  
-</code></pre></div>
+Your MySQL connection id is 89 to server version: 4.1.11-Debian_4-log</p>
+<p>Type 'help;' or '\h' for help. Type '\c' to clear the buffer.</p>
+<p>mysql&gt;<br />
+```</p>
 <h2 id="trabajando-con-bases-de-datos">Trabajando con Bases de Datos<a class="headerlink" href="#trabajando-con-bases-de-datos" title="Permanent link">&para;</a></h2>
 <h3 id="creacion-de-bbdd">Creación de BBDD<a class="headerlink" href="#creacion-de-bbdd" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">irontec_db</span><span class="p">;</span>
-<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">03</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; CREATE DATABASE irontec_db;
+Query OK, 1 row affected (0.03 sec)</code></p>
 <h3 id="seleccion-de-bbdd">Selección de BBDD<a class="headerlink" href="#seleccion-de-bbdd" title="Permanent link">&para;</a></h3>
 <p>Cambiar o elegir base de datos a utilizar:</p>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="n">USE</span><span class="w"> </span><span class="n">irontec_db</span><span class="p">;</span>
-<span class="k">Database</span><span class="w"> </span><span class="n">changed</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; USE irontec_db;
+Database changed</code></p>
 <p>Ver la base de datos seleccionada:</p>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">DATABASE</span><span class="p">();</span>
-<span class="o">+</span><span class="c1">------------+</span>
-<span class="o">|</span><span class="w"> </span><span class="k">database</span><span class="p">()</span><span class="w"> </span><span class="o">|</span>
-<span class="o">+</span><span class="c1">------------+</span>
-<span class="o">|</span><span class="w"> </span><span class="n">irontec_db</span><span class="w"> </span><span class="o">|</span>
-<span class="o">+</span><span class="c1">------------+</span>
-<span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; SELECT DATABASE();
++------------+
+| database() |
++------------+
+| irontec_db |
++------------+
+1 row in set (0.00 sec)</code></p>
 <h3 id="eliminacion-de-bbdd">Eliminación de BBDD<a class="headerlink" href="#eliminacion-de-bbdd" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">DROP</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">irontec_db</span><span class="p">;</span>
-<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">60</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; DROP DATABASE irontec_db;
+Query OK, 0 rows affected (0.60 sec)</code></p>
 <h3 id="eliminacion-de-todas-las-tablas-de-una-bbdd">Eliminación de todas las tablas de una BBDD<a class="headerlink" href="#eliminacion-de-todas-las-tablas-de-una-bbdd" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>mysqldump<span class="w"> </span>-uUSUARIO<span class="w"> </span>-pPASSWORD<span class="w"> </span>--add-drop-table<span class="w"> </span>--no-data<span class="w"> </span>BBDD<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;^DROP \| FOREIGN_KEY_CHECKS&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>mysql<span class="w"> </span>-uUSUARIO<span class="w"> </span>-pPASSWORD<span class="w"> </span>BBDD
-</code></pre></div>
+<p><code>bash
+mysqldump -uUSUARIO -pPASSWORD --add-drop-table --no-data BBDD | grep -e '^DROP \| FOREIGN_KEY_CHECKS' | mysql -uUSUARIO -pPASSWORD BBDD</code></p>
 <h2 id="trabajando-con-usuarios-privilegios">Trabajando con Usuarios / Privilegios<a class="headerlink" href="#trabajando-con-usuarios-privilegios" title="Permanent link">&para;</a></h2>
 <h3 id="creacion-de-usuarios">Creación de Usuarios<a class="headerlink" href="#creacion-de-usuarios" title="Permanent link">&para;</a></h3>
 <p>Primero creamos el usuario:</p>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">&#39;irontec_user_allpriv&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;irontec_pass&#39;</span><span class="p">;</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; CREATE USER 'irontec_user_allpriv'@'localhost' IDENTIFIED BY 'irontec_pass';</code></p>
 <p>Luego otorgamos privilegios:</p>
 <ul>
 <li>
 <p>Con <strong>todos</strong> los privilegios:</p>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">irontec_db</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">irontec_user_allpriv</span><span class="o">@</span><span class="n">localhost</span><span class="p">;</span>
-<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">14</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; GRANT ALL PRIVILEGES ON irontec_db.* TO irontec_user_allpriv@localhost;
+Query OK, 0 rows affected (0.14 sec)</code></p>
 </li>
 <li>
 <p>Con privilegios de <strong>solo lectura</strong> en registros:</p>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">irontec_db</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">irontec_user_ro</span><span class="o">@</span><span class="n">localhost</span><span class="p">;</span>
-<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">02</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; GRANT SELECT ON irontec_db.* TO irontec_user_ro@localhost;
+Query OK, 0 rows affected (0.02 sec)</code></p>
 </li>
 <li>
 <p>Con privilegios de <strong>solo inserción o modificación</strong> de registros:</p>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">INSERT</span><span class="p">,</span><span class="k">UPDATE</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">irontec_db</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">irontec_user_wo</span><span class="o">@</span><span class="n">localhost</span><span class="p">;</span>
-<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; GRANT INSERT,UPDATE on irontec_db.* TO irontec_user_wo@localhost;
+Query OK, 0 rows affected (0.01 sec)</code></p>
 </li>
 </ul>
 <h3 id="seleccion-de-usuarios">Selección de Usuarios<a class="headerlink" href="#seleccion-de-usuarios" title="Permanent link">&para;</a></h3>
 <p>Ver el usuario con el que se está trabajando:</p>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">user</span><span class="p">();</span>
-<span class="o">+</span><span class="c1">------------------------+</span>
-<span class="o">|</span><span class="w"> </span><span class="k">user</span><span class="p">()</span><span class="w">                 </span><span class="o">|</span>
-<span class="o">+</span><span class="c1">------------------------+</span>
-<span class="o">|</span><span class="w"> </span><span class="n">irontec_user</span><span class="o">@</span><span class="n">localhost</span><span class="w"> </span><span class="o">|</span>
-<span class="o">+</span><span class="c1">------------------------+</span>
-<span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; SELECT user();
++------------------------+
+| user()                 |
++------------------------+
+| irontec_user@localhost |
++------------------------+
+1 row in set (0.00 sec)</code></p>
 <h3 id="visualizacion-de-privilegios-de-usuarios">Visualización de Privilegios de Usuarios<a class="headerlink" href="#visualizacion-de-privilegios-de-usuarios" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">grants</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;irontec_user_allpriv&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
-<span class="o">+</span><span class="c1">------------------------------------------------------------------------------------------------+</span>
-<span class="o">|</span><span class="w"> </span><span class="n">Grants</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">irontec_user_allpriv</span><span class="o">@</span><span class="n">localhost</span><span class="w">                                                      </span><span class="o">|</span>
-<span class="o">+</span><span class="c1">------------------------------------------------------------------------------------------------+</span>
-<span class="o">|</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">USAGE</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;irontec_user_allpriv&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">PASSWORD</span><span class="w"> </span><span class="s1">&#39;1a7f0760d48e&#39;</span><span class="w"> </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">`</span><span class="n">irontec_db</span><span class="o">`</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;irontec_user_allpriv&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="w">                   </span><span class="o">|</span>
-<span class="o">+</span><span class="c1">------------------------------------------------------------------------------------------------+</span>
-<span class="mi">2</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; show grants for 'irontec_user_allpriv'@'localhost';
++------------------------------------------------------------------------------------------------+
+| Grants for irontec_user_allpriv@localhost                                                      |
++------------------------------------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO 'irontec_user_allpriv'@'localhost' IDENTIFIED BY PASSWORD '1a7f0760d48e' |
+| GRANT ALL PRIVILEGES ON `irontec_db`.* TO 'irontec_user_allpriv'@'localhost'                   |
++------------------------------------------------------------------------------------------------+
+2 rows in set (0.00 sec)</code></p>
 <h3 id="eliminacion-de-usuarios">Eliminación de Usuarios<a class="headerlink" href="#eliminacion-de-usuarios" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">REVOKE</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">irontec_db</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="s1">&#39;irontec_user_allpriv&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
-<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">grants</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;irontec_user_allpriv&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
-<span class="o">+</span><span class="c1">------------------------------------------------------------------------------------------------+</span>
-<span class="o">|</span><span class="w"> </span><span class="n">Grants</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">irontec_user_allpriv</span><span class="o">@</span><span class="n">localhost</span><span class="w">                                                      </span><span class="o">|</span>
-<span class="o">+</span><span class="c1">------------------------------------------------------------------------------------------------+</span>
-<span class="o">|</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">USAGE</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;irontec_user_allpriv&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">PASSWORD</span><span class="w"> </span><span class="s1">&#39;1a7f0760d48e&#39;</span><span class="w"> </span><span class="o">|</span>
-<span class="o">+</span><span class="c1">------------------------------------------------------------------------------------------------+</span>
-<span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">revoke</span><span class="w"> </span><span class="k">usage</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="s1">&#39;irontec_user_allpriv&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
-<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">drop</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="s1">&#39;irontec_user_allpriv&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
-<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-</code></pre></div>
+<p>```sql
+mysql&gt; REVOKE ALL PRIVILEGES ON irontec_db.* from 'irontec_user_allpriv'@'localhost';
+Query OK, 0 rows affected (0.00 sec)</p>
+<p>mysql&gt; show grants for 'irontec_user_allpriv'@'localhost';
++------------------------------------------------------------------------------------------------+
+| Grants for irontec_user_allpriv@localhost                                                      |
++------------------------------------------------------------------------------------------------+
+| GRANT USAGE ON <em>.</em> TO 'irontec_user_allpriv'@'localhost' IDENTIFIED BY PASSWORD '1a7f0760d48e' |
++------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)</p>
+<p>mysql&gt; revoke usage on <em>.</em> from 'irontec_user_allpriv'@'localhost';
+Query OK, 0 rows affected (0.00 sec)</p>
+<p>mysql&gt; drop user 'irontec_user_allpriv'@'localhost';
+Query OK, 0 rows affected (0.00 sec)
+```</p>
 <h2 id="trabajando-con-tablas">Trabajando con Tablas<a class="headerlink" href="#trabajando-con-tablas" title="Permanent link">&para;</a></h2>
 <h3 id="tipos-de-tablas-y-motores-de-almacenamiento">Tipos de Tablas y Motores de Almacenamiento<a class="headerlink" href="#tipos-de-tablas-y-motores-de-almacenamiento" title="Permanent link">&para;</a></h3>
 <p><a href="http://dev.mysql.com/doc/mysql/en/storage-engines.html">Referencia manual MySQL</a></p>
@@ -5118,159 +5115,159 @@ mysql&gt;
 <p><a href="http://dev.mysql.com/doc/mysql/en/column-types.html">Referencia manual MySQL</a></p>
 <h3 id="creacion-tablas">Creación Tablas<a class="headerlink" href="#creacion-tablas" title="Permanent link">&para;</a></h3>
 <h4 id="myisam">MyISAM<a class="headerlink" href="#myisam" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">clientes</span><span class="w"> </span><span class="p">(</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">id_cliente</span><span class="w"> </span><span class="nb">INT</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">razon_social</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">domicilio</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">nif</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">contacto</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="n">MyISAM</span><span class="p">;</span>
-<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">05</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">presupuestos</span><span class="w"> </span><span class="p">(</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">id_presupuesto</span><span class="w"> </span><span class="nb">INT</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">empresa</span><span class="w"> </span><span class="nb">INT</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">asunto</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="mi">60</span><span class="p">),</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">precio</span><span class="w"> </span><span class="nb">FLOAT</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">fecha</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="n">MyISAM</span><span class="p">;</span>
-<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">20</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-</code></pre></div>
+<p>```sql
+mysql&gt; CREATE TABLE clientes (
+  -&gt; id_cliente INT(8) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  -&gt; razon_social VARCHAR (50) NOT NULL,
+  -&gt; domicilio VARCHAR (100) NOT NULL,
+  -&gt; nif VARCHAR (9) NOT NULL,
+  -&gt; contacto VARCHAR (40)
+  -&gt; ) ENGINE=MyISAM;
+Query OK, 0 rows affected (0.05 sec)</p>
+<p>mysql&gt; CREATE TABLE presupuestos (
+  -&gt; id_presupuesto INT(8) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  -&gt; empresa INT(8) NOT NULL,
+  -&gt; asunto VARCHAR (60),
+  -&gt; precio FLOAT DEFAULT 0.0,
+  -&gt; fecha DATE,
+  -&gt; ) ENGINE=MyISAM;
+Query OK, 0 rows affected (0.20 sec)
+```</p>
 <h4 id="innodb">InnoDB<a class="headerlink" href="#innodb" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">clientes</span><span class="w"> </span><span class="p">(</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">id_cliente</span><span class="w"> </span><span class="nb">INT</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">razon_social</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">domicilio</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">nif</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">contacto</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="p">;</span>
-<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">10</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">presupuestos</span><span class="w"> </span><span class="p">(</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">id_presupuesto</span><span class="w"> </span><span class="nb">INT</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">empresa</span><span class="w"> </span><span class="nb">INT</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">asunto</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="mi">60</span><span class="p">),</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">precio</span><span class="w"> </span><span class="nb">FLOAT</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">fecha</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="p">(</span><span class="n">empresa</span><span class="p">),</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">empresa</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">clientes</span><span class="p">(</span><span class="n">id_cliente</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">UPDATE</span><span class="w"> </span><span class="k">CASCADE</span>
-<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="p">;</span>
-<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">06</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-</code></pre></div>
+<p>```sql
+mysql&gt; CREATE TABLE clientes (
+  -&gt; id_cliente INT(8) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  -&gt; razon_social VARCHAR (50) NOT NULL,
+  -&gt; domicilio VARCHAR (100) NOT NULL,
+  -&gt; nif VARCHAR(9) NOT NULL,
+  -&gt; contacto VARCHAR(40)
+  -&gt; ) ENGINE=InnoDB;
+Query OK, 0 rows affected (0.10 sec)</p>
+<p>mysql&gt; CREATE TABLE presupuestos (
+  -&gt; id_presupuesto INT(8) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  -&gt; empresa INT(8) NOT NULL,
+  -&gt; asunto VARCHAR (60),
+  -&gt; precio FLOAT DEFAULT 0.0,
+  -&gt; fecha DATE,
+  -&gt; index (empresa),
+  -&gt; FOREIGN KEY (empresa) REFERENCES clientes(id_cliente) ON DELETE CASCADE ON UPDATE CASCADE
+  -&gt; ) ENGINE=InnoDB;
+Query OK, 0 rows affected (0.06 sec)
+```</p>
 <h3 id="visualizacion-tablas">Visualización Tablas<a class="headerlink" href="#visualizacion-tablas" title="Permanent link">&para;</a></h3>
 <p>Tablas contenidas en una Base de Datos:</p>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">tables</span><span class="p">;</span>
-<span class="o">+</span><span class="c1">------------------+</span>
-<span class="o">|</span><span class="w"> </span><span class="n">Tables_in_prueba</span><span class="w"> </span><span class="o">|</span>
-<span class="o">+</span><span class="c1">------------------+</span>
-<span class="o">|</span><span class="w"> </span><span class="n">clientes</span><span class="w">         </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="n">presupuestos</span><span class="w">     </span><span class="o">|</span>
-<span class="o">+</span><span class="c1">------------------+</span>
-<span class="mi">2</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; show tables;
++------------------+
+| Tables_in_prueba |
++------------------+
+| clientes         |
+| presupuestos     |
++------------------+
+2 rows in set (0.00 sec)</code></p>
 <p>Estructura de una tabla:</p>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">DESC</span><span class="w"> </span><span class="n">presupuestos</span><span class="p">;</span>
-<span class="o">+</span><span class="c1">----------------+-------------+------+-----+---------+----------------+</span>
-<span class="o">|</span><span class="w"> </span><span class="n">Field</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="k">Type</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="k">Null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">Key</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">Default</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Extra</span><span class="w">          </span><span class="o">|</span>
-<span class="o">+</span><span class="c1">----------------+-------------+------+-----+---------+----------------+</span>
-<span class="o">|</span><span class="w"> </span><span class="n">id_presupuesto</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">int</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="w">      </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="n">PRI</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">NULL</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">auto_increment</span><span class="w"> </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="n">empresa</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w">         </span><span class="o">|</span><span class="w">                </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="n">asunto</span><span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">YES</span><span class="w">  </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="k">NULL</span><span class="w">    </span><span class="o">|</span><span class="w">                </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="n">precio</span><span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="nb">float</span><span class="w">       </span><span class="o">|</span><span class="w"> </span><span class="n">YES</span><span class="w">  </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="mi">0</span><span class="w">       </span><span class="o">|</span><span class="w">                </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="n">fecha</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="nb">date</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="n">YES</span><span class="w">  </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="k">NULL</span><span class="w">    </span><span class="o">|</span><span class="w">                </span><span class="o">|</span>
-<span class="o">+</span><span class="c1">----------------+-------------+------+-----+---------+----------------+</span>
-<span class="mi">5</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; DESC presupuestos;
++----------------+-------------+------+-----+---------+----------------+
+| Field          | Type        | Null | Key | Default | Extra          |
++----------------+-------------+------+-----+---------+----------------+
+| id_presupuesto | int(8)      |      | PRI | NULL    | auto_increment |
+| empresa        | varchar(50) |      |     |         |                |
+| asunto         | varchar(60) | YES  |     | NULL    |                |
+| precio         | float       | YES  |     | 0       |                |
+| fecha          | date        | YES  |     | NULL    |                |
++----------------+-------------+------+-----+---------+----------------+
+5 rows in set (0.01 sec)</code></p>
 <p>Estado de todas las tablas:</p>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">status</span><span class="p">;</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; show table status;</code></p>
 <h3 id="modificacion-tablas">Modificación Tablas<a class="headerlink" href="#modificacion-tablas" title="Permanent link">&para;</a></h3>
 <p><a href="http://dev.mysql.com/doc/mysql/en/alter-table.html">Referencia manual MySQL</a></p>
 <h4 id="anadir-un-nuevo-campo">Añadir un nuevo campo<a class="headerlink" href="#anadir-un-nuevo-campo" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="k">database</span><span class="p">.]</span><span class="n">tabla</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="n">campo_nuevo</span><span class="w"> </span><span class="n">tipo</span><span class="w"> </span><span class="k">AFTER</span><span class="w"> </span><span class="n">campo_viejo</span><span class="p">;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">presupuestos</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="n">adjunto</span><span class="w"> </span><span class="nb">BLOB</span><span class="w"> </span><span class="k">AFTER</span><span class="w"> </span><span class="n">fecha</span><span class="w"> </span><span class="p">;</span>
-<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">06</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-<span class="n">Registros</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">  </span><span class="n">Duplicados</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">  </span><span class="n">Peligros</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; ALTER TABLE [database.]tabla ADD campo_nuevo tipo AFTER campo_viejo;</code></p>
+<p><code>sql
+mysql&gt; ALTER TABLE presupuestos ADD adjunto BLOB AFTER fecha ;
+Query OK, 0 rows affected (0.06 sec)
+Registros: 0  Duplicados: 0  Peligros: 0</code></p>
 <h4 id="cambiar-el-nombre-de-una-tabla">Cambiar el nombre de una tabla<a class="headerlink" href="#cambiar-el-nombre-de-una-tabla" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="k">database</span><span class="p">.]</span><span class="n">tabla</span><span class="w"> </span><span class="k">RENAME</span><span class="w"> </span><span class="n">tabla_nueva</span><span class="p">;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">presupuestos</span><span class="w"> </span><span class="k">RENAME</span><span class="w"> </span><span class="n">proyectos</span><span class="p">;</span>
-<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">03</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; ALTER TABLE [database.]tabla RENAME tabla_nueva;</code></p>
+<p><code>sql
+mysql&gt; ALTER TABLE presupuestos RENAME proyectos;
+Query OK, 0 rows affected (0.03 sec)</code></p>
 <h4 id="cambiar-el-tipo-de-dato-de-un-campo">Cambiar el tipo de dato de un campo<a class="headerlink" href="#cambiar-el-tipo-de-dato-de-un-campo" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="k">database</span><span class="p">.]</span><span class="n">tabla</span><span class="w"> </span><span class="n">CHANGE</span><span class="w"> </span><span class="n">campo</span><span class="w"> </span><span class="n">campo</span><span class="w"> </span><span class="n">nuevo_tipo</span><span class="p">;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">presupuestos</span><span class="w"> </span><span class="n">CHANGE</span><span class="w"> </span><span class="n">asunto</span><span class="w"> </span><span class="n">asunto</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
-<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">23</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-<span class="n">Registros</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">  </span><span class="n">Duplicados</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">  </span><span class="n">Peligros</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; ALTER TABLE [database.]tabla CHANGE campo campo nuevo_tipo;</code></p>
+<p><code>sql
+mysql&gt; ALTER TABLE presupuestos CHANGE asunto asunto VARCHAR(100);
+Query OK, 0 rows affected (0.23 sec)
+Registros: 0  Duplicados: 0  Peligros: 0</code></p>
 <h4 id="eliminar-un-campo-existente">Eliminar un campo existente<a class="headerlink" href="#eliminar-un-campo-existente" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="k">database</span><span class="p">.]</span><span class="n">tabla</span><span class="w"> </span><span class="k">DROP</span><span class="w"> </span><span class="n">campo</span><span class="p">;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">presupuestos</span><span class="w"> </span><span class="k">DROP</span><span class="w"> </span><span class="n">adjunto</span><span class="p">;</span>
-<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">05</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-<span class="n">Registros</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">  </span><span class="n">Duplicados</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">  </span><span class="n">Peligros</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; ALTER TABLE [database.]tabla DROP campo;</code></p>
+<p><code>sql
+mysql&gt; ALTER TABLE presupuestos DROP adjunto;
+Query OK, 0 rows affected (0.05 sec)
+Registros: 0  Duplicados: 0  Peligros: 0</code></p>
 <h3 id="eliminacion-tablas">Eliminación Tablas<a class="headerlink" href="#eliminacion-tablas" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="k">database</span><span class="p">.]</span><span class="n">tabla</span><span class="p">;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">presupuestos</span><span class="p">;</span>
-<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">44</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; DROP TABLE [database.]tabla;</code></p>
+<p><code>sql
+mysql&gt; DROP TABLE presupuestos;
+Query OK, 0 rows affected (0.44 sec)</code></p>
 <h2 id="trabajando-con-registros">Trabajando con Registros<a class="headerlink" href="#trabajando-con-registros" title="Permanent link">&para;</a></h2>
 <p><strong>Nota:</strong> Si no se indica la Base de Datos a la que una tabla hace referencia, es necesario seleccionar previamente dicha BBDD (<code>use database</code>).</p>
 <h3 id="consultas">Consultas<a class="headerlink" href="#consultas" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">campo1</span><span class="p">,</span><span class="n">campo2</span><span class="p">,..</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">[</span><span class="k">database</span><span class="p">.]</span><span class="n">tabla</span><span class="p">;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">proyectos</span><span class="p">;</span>
-<span class="n">Empty</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">10</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; SELECT campo1,campo2,.. FROM [database.]tabla;</code></p>
+<p><code>sql
+mysql&gt; SELECT * FROM proyectos;
+Empty set (0.10 sec)</code></p>
 <h3 id="insercion-de-datos">Inserción de datos<a class="headerlink" href="#insercion-de-datos" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="p">[</span><span class="k">database</span><span class="p">.]</span><span class="n">tabla</span><span class="w"> </span><span class="p">(</span><span class="n">campo1</span><span class="p">,</span><span class="n">campo2</span><span class="p">,..)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;valor_campo1&#39;</span><span class="p">,</span><span class="s1">&#39;valor_campo2&#39;</span><span class="p">,..);</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">presupuestos</span><span class="w"> </span><span class="p">(</span><span class="n">empresa</span><span class="p">,</span><span class="n">asunto</span><span class="p">,</span><span class="n">precio</span><span class="p">,</span><span class="n">fecha</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;UPV&#39;</span><span class="p">,</span><span class="s1">&#39;Formación GNU/Linux&#39;</span><span class="p">,</span><span class="s1">&#39;600&#39;</span><span class="p">,</span><span class="s1">&#39;2005-07-01&#39;</span><span class="p">);</span>
-<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; INSERT INTO [database.]tabla (campo1,campo2,..) VALUES ('valor_campo1','valor_campo2',..);</code></p>
+<p><code>sql
+mysql&gt; INSERT INTO presupuestos (empresa,asunto,precio,fecha) VALUES ('UPV','Formación GNU/Linux','600','2005-07-01');
+Query OK, 1 row affected (0.00 sec)</code></p>
 <h3 id="modificacion-de-datos">Modificación de datos<a class="headerlink" href="#modificacion-de-datos" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">UPDATE</span><span class="w"> </span><span class="p">[</span><span class="k">database</span><span class="p">.]</span><span class="n">tabla</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">campo1</span><span class="o">=</span><span class="s1">&#39;valor_nuevo_campo1&#39;</span><span class="p">,</span><span class="n">campo2</span><span class="o">=</span><span class="s1">&#39;valor_nuevo_campo2&#39;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">condición</span><span class="p">;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">UPDATE</span><span class="w"> </span><span class="n">presupuestos</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">empresa</span><span class="o">=</span><span class="s1">&#39;UPV/EHU&#39;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">empresa</span><span class="o">=</span><span class="s1">&#39;UPV&#39;</span><span class="p">;</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; UPDATE [database.]tabla SET campo1='valor_nuevo_campo1',campo2='valor_nuevo_campo2' WHERE condición;</code></p>
+<p><code>sql
+mysql&gt; UPDATE presupuestos SET empresa='UPV/EHU' WHERE empresa='UPV';</code></p>
 <h3 id="eliminacion-de-datos">Eliminación de datos<a class="headerlink" href="#eliminacion-de-datos" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">[</span><span class="k">database</span><span class="p">.]</span><span class="n">tabla</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">condición</span><span class="p">;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">presupuestos</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">;</span>
-<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">04</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; DELETE FROM [database.]tabla WHERE condición;</code></p>
+<p><code>sql
+mysql&gt; DELETE FROM presupuestos WHERE id='1';
+Query OK, 1 row affected (0.04 sec)</code></p>
 <h2 id="trabajando-con-mysql">Trabajando con MySQL<a class="headerlink" href="#trabajando-con-mysql" title="Permanent link">&para;</a></h2>
 <h3 id="variables-de-sistema">Variables de Sistema<a class="headerlink" href="#variables-de-sistema" title="Permanent link">&para;</a></h3>
 <p>Ver variables de sistema:</p>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SHOW</span><span class="w"> </span><span class="n">VARIABLES</span><span class="p">;</span>
-<span class="o">+</span><span class="c1">---------------------------------+----------------------------------------------------------+</span>
-<span class="o">|</span><span class="w"> </span><span class="n">Variable_name</span><span class="w">                   </span><span class="o">|</span><span class="w"> </span><span class="n">Value</span><span class="w">                                                    </span><span class="o">|</span>
-<span class="o">+</span><span class="c1">---------------------------------+----------------------------------------------------------+</span>
-<span class="o">|</span><span class="w"> </span><span class="n">back_log</span><span class="w">                        </span><span class="o">|</span><span class="w"> </span><span class="mi">50</span><span class="w">                                                       </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="n">basedir</span><span class="w">                         </span><span class="o">|</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="w">                                                    </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="n">bdb_cache_size</span><span class="w">                  </span><span class="o">|</span><span class="w"> </span><span class="mi">8388600</span><span class="w">                                                  </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="n">bdb_home</span><span class="w">                        </span><span class="o">|</span><span class="w"> </span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">mysql</span><span class="o">/</span><span class="w">                                          </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="n">bdb_log_buffer_size</span><span class="w">             </span><span class="o">|</span><span class="w"> </span><span class="mi">32768</span><span class="w">                                                    </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="n">bdb_logdir</span><span class="w">                      </span><span class="o">|</span><span class="w">                                                          </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="n">bdb_max_lock</span><span class="w">                    </span><span class="o">|</span><span class="w"> </span><span class="mi">10000</span><span class="w">                                                    </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="n">bdb_shared_data</span><span class="w">                 </span><span class="o">|</span><span class="w"> </span><span class="k">OFF</span><span class="w">                                                      </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="n">bdb_tmpdir</span><span class="w">                      </span><span class="o">|</span><span class="w"> </span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="w">                                                    </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="n">binlog_cache_size</span><span class="w">               </span><span class="o">|</span><span class="w"> </span><span class="mi">32768</span><span class="w">                                                    </span><span class="o">|</span>
-<span class="p">..............................................................................................</span>
-<span class="o">|</span><span class="w"> </span><span class="k">version</span><span class="w">                         </span><span class="o">|</span><span class="w"> </span><span class="mi">4</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">11</span><span class="o">-</span><span class="n">Debian_4</span><span class="o">-</span><span class="n">log</span><span class="w">                                      </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="n">version_bdb</span><span class="w">                     </span><span class="o">|</span><span class="w"> </span><span class="n">Sleepycat</span><span class="w"> </span><span class="n">Software</span><span class="p">:</span><span class="w"> </span><span class="n">Berkeley</span><span class="w"> </span><span class="n">DB</span><span class="w"> </span><span class="mi">4</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">24</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">April</span><span class="w">  </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2005</span><span class="p">)</span><span class="w"> </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="n">version_comment</span><span class="w">                 </span><span class="o">|</span><span class="w"> </span><span class="k">Source</span><span class="w"> </span><span class="n">distribution</span><span class="w">                                      </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="n">version_compile_machine</span><span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="n">i386</span><span class="w">                                                     </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="n">version_compile_os</span><span class="w">              </span><span class="o">|</span><span class="w"> </span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="w">                                             </span><span class="o">|</span>
-<span class="o">|</span><span class="w"> </span><span class="n">wait_timeout</span><span class="w">                    </span><span class="o">|</span><span class="w"> </span><span class="mi">28800</span><span class="w">                                                    </span><span class="o">|</span>
-<span class="o">+</span><span class="c1">---------------------------------+----------------------------------------------------------+</span>
-<span class="mi">196</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
-</code></pre></div>
+<p><code>sql
+mysql&gt; SHOW VARIABLES;
++---------------------------------+----------------------------------------------------------+
+| Variable_name                   | Value                                                    |
++---------------------------------+----------------------------------------------------------+
+| back_log                        | 50                                                       |
+| basedir                         | /usr/                                                    |
+| bdb_cache_size                  | 8388600                                                  |
+| bdb_home                        | /var/lib/mysql/                                          |
+| bdb_log_buffer_size             | 32768                                                    |
+| bdb_logdir                      |                                                          |
+| bdb_max_lock                    | 10000                                                    |
+| bdb_shared_data                 | OFF                                                      |
+| bdb_tmpdir                      | /tmp/                                                    |
+| binlog_cache_size               | 32768                                                    |
+..............................................................................................
+| version                         | 4.1.11-Debian_4-log                                      |
+| version_bdb                     | Sleepycat Software: Berkeley DB 4.1.24: (April  1, 2005) |
+| version_comment                 | Source distribution                                      |
+| version_compile_machine         | i386                                                     |
+| version_compile_os              | pc-linux-gnu                                             |
+| wait_timeout                    | 28800                                                    |
++---------------------------------+----------------------------------------------------------+
+196 rows in set (0.01 sec)</code></p>
 <h2 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h2>
 <p><code>/etc/mysql/my.cnf</code></p>
 <h3 id="tablas-innodb-por-defecto">Tablas InnoDB por defecto<a class="headerlink" href="#tablas-innodb-por-defecto" title="Permanent link">&para;</a></h3>
@@ -5353,68 +5350,68 @@ character_set_server=utf8
 <p>Programa incluído en el paquete <code>mysql-client</code></p>
 <p><a href="http://dev.mysql.com/doc/mysql/en/mysqldump.html">Referencia manual MySQL</a></p>
 <p>Backup de todas las bases de datos:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mysqldump<span class="w"> </span>--opt<span class="w"> </span>-d<span class="w"> </span>-h<span class="w"> </span>host<span class="w"> </span>--all-databases<span class="w"> </span>--user<span class="o">=</span>root<span class="w"> </span>--password<span class="o">=</span>contraseña<span class="w"> </span>&gt;<span class="w"> </span>backup_irontec_mysql.sql
-</code></pre></div>
+<p><code>bash
+$ mysqldump --opt -d -h host --all-databases --user=root --password=contraseña &gt; backup_irontec_mysql.sql</code></p>
 <p>Para cargar un backup hecho previamente:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mysql<span class="w"> </span>-h<span class="w"> </span>host<span class="w"> </span>--user<span class="o">=</span>root<span class="w"> </span>--password<span class="o">=</span>contraseña<span class="w"> </span>&lt;<span class="w"> </span>backup_irontec_mysql.sql
-</code></pre></div>
+<p><code>bash
+$ mysql -h host --user=root --password=contraseña &lt; backup_irontec_mysql.sql</code></p>
 <p>Backup de una base de datos (<code>database</code>):</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mysqldump<span class="w"> </span>--opt<span class="w"> </span>-d<span class="w"> </span>-h<span class="w"> </span>host<span class="w"> </span>--user<span class="o">=</span>root<span class="w"> </span>--password<span class="o">=</span>contraseña<span class="w"> </span>database<span class="w"> </span>&gt;<span class="w"> </span>backup_irontec_mysql.sql
-</code></pre></div>
+<p><code>bash
+$ mysqldump --opt -d -h host --user=root --password=contraseña database &gt; backup_irontec_mysql.sql</code></p>
 <p>Backup de una lista de tablas (<code>t1</code>, <code>t2</code>) de una base de datos (<code>database</code>):</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mysqldump<span class="w"> </span>--opt<span class="w"> </span>-d<span class="w"> </span>-h<span class="w"> </span>host<span class="w"> </span>--user<span class="o">=</span>root<span class="w"> </span>--password<span class="o">=</span>contraseña<span class="w"> </span>database<span class="w"> </span>t1<span class="w"> </span>t2<span class="w"> </span>&gt;<span class="w"> </span>backup_irontec_mysql.sql
-</code></pre></div>
+<p><code>bash
+$ mysqldump --opt -d -h host --user=root --password=contraseña database t1 t2 &gt; backup_irontec_mysql.sql</code></p>
 <p>Para cargar un backup hecho previamente sobre una base de datos concreta:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mysql<span class="w"> </span>-h<span class="w"> </span>host<span class="w"> </span>--user<span class="o">=</span>root<span class="w"> </span>--password<span class="o">=</span>contraseña<span class="w"> </span>database<span class="w"> </span>&lt;<span class="w"> </span>backup_irontec_mysql.sql
-</code></pre></div>
+<p><code>bash
+$ mysql -h host --user=root --password=contraseña database &lt; backup_irontec_mysql.sql</code></p>
 <p>Si se quita la opción <code>-d</code> en el volcado se incluirán los datos que contengan las tablas. Para tablas muy grandes, para evitar los bloqueos que se producen durante su respaldo, añadir la opción <code>--single-transaction</code>.</p>
 <h2 id="bcps">BCPs<a class="headerlink" href="#bcps" title="Permanent link">&para;</a></h2>
 <p>El comando equivalente al <code>bcp</code> de otros gestores es <code>mysqlimport</code>. <a href="http://dev.mysql.com/doc/refman/5.0/es/mysqlimport.html">Aquí</a> está la página de ayuda del comando.</p>
 <p>Un ejemplo de uso sería:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mysqlimport<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-u<span class="w"> </span>adw<span class="w"> </span>-p<span class="w"> </span>-v<span class="w"> </span>-L<span class="w"> </span>--delete<span class="w"> </span>adw<span class="w"> </span>keywords.csv
-</code></pre></div>
+<p><code>bash
+$ mysqlimport -h localhost -u adw -p -v -L --delete adw keywords.csv</code></p>
 <p>Para que no de errores hay que guardar el fichero en formato UTF8 (revisar con el comando <code>od -c fichero.csv</code> si no hay caracteres extraños al principio). Por defecto se espera el carácter TAB como separador de columnas y el retorno de carro como separador de registros. El fichero será un CSV con las columnas en el mismo orden que la tabla en que se desea cargar los datos. El nombre del fichero sin extensión se debe corresponder con el nombre de la tabla. En el ejemplo anterior, la tabla sería <code>keywords</code>.</p>
 <p>Para indicar un separador de campos y registros diferentes se pueden usar las opciones siguientes (ver man):</p>
 <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>--fields-terminated-by=..., --fields-enclosed-by=..., --fields-optionally-enclosed-by=..., --fields-escaped-by=..
 </code></pre></div></td></tr></table></div>
 
 <p>El mismo efecto se consigue con la siguiente query:</p>
-<div class="highlight"><pre><span></span><code><span class="k">LOAD</span><span class="w"> </span><span class="k">DATA</span><span class="w"> </span><span class="k">LOCAL</span><span class="w"> </span><span class="n">INFILE</span><span class="w"> </span><span class="s1">&#39;keywords_clean.csv&#39;</span>
-<span class="k">INTO</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">keywords</span>
-<span class="n">FIELDS</span>
-<span class="w">  </span><span class="n">TERMINATED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;,&#39;</span>
-<span class="w">  </span><span class="n">ENCLOSED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;\&quot;&#39;</span><span class="p">;</span>
-</code></pre></div>
+<p><code>sql
+LOAD DATA LOCAL INFILE 'keywords_clean.csv'
+INTO TABLE keywords
+FIELDS
+  TERMINATED BY ','
+  ENCLOSED BY '\"';</code></p>
 <p>Para que el cliente acepte la opción <code>LOCAL</code> debe ser ejecutado con la opción <code>--local-infile</code>, por ejemplo:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mysql<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>--local-infile<span class="w"> </span>-u<span class="w"> </span>adw<span class="w"> </span>-p<span class="w"> </span>adw
-</code></pre></div>
+<p><code>bash
+$ mysql -h localhost --local-infile -u adw -p adw</code></p>
 <h2 id="otras-herramientas">Otras Herramientas<a class="headerlink" href="#otras-herramientas" title="Permanent link">&para;</a></h2>
 <h3 id="mysqladmin">mysqladmin<a class="headerlink" href="#mysqladmin" title="Permanent link">&para;</a></h3>
 <p>Para cambiar la contraseña del usuario root:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mysqladmin<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>password<span class="w"> </span><span class="sb">`</span>&lt;nueva_password&gt;<span class="sb">`</span>
-</code></pre></div>
+<p><code>bash
+$ mysqladmin -u root password `&lt;nueva_password&gt;`</code></p>
 <p>Muestra las variables del gestor:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mysqladmin<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p<span class="w"> </span>variables
-</code></pre></div>
+<p><code>bash
+$ mysqladmin -u root -p variables</code></p>
 <h2 id="solucion-de-problemas">Solución de problemas<a class="headerlink" href="#solucion-de-problemas" title="Permanent link">&para;</a></h2>
 <h3 id="tabla-de-schrodinger">Tabla de Schrödinger<a class="headerlink" href="#tabla-de-schrodinger" title="Permanent link">&para;</a></h3>
 <p>La única forma de solucionar un caso de <a href="http://stackoverflow.com/questions/10538908/schrodingers-mysql-table-exists-yet-it-does-not">tablas de Schrödingers</a> fue purgando la instalación de MySQL y borrando el directorio de datos:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>dpkg<span class="w"> </span>--purge<span class="w"> </span>mysql-server-5.5<span class="w"> </span>mysql-server-core-5.5<span class="w"> </span>mysql-server
-$<span class="w"> </span>sudo<span class="w"> </span>mv<span class="w"> </span>/var/lib/mysql<span class="w"> </span>/var/lib/mysql.bak
-$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>mysql-server-5.5<span class="w"> </span>mysql-server-core-5.5<span class="w"> </span>mysql-server
-</code></pre></div>
+<p><code>bash
+$ sudo dpkg --purge mysql-server-5.5 mysql-server-core-5.5 mysql-server
+$ sudo mv /var/lib/mysql /var/lib/mysql.bak
+$ sudo apt-get install mysql-server-5.5 mysql-server-core-5.5 mysql-server</code></p>
 <p>Otra forma menos agresiva fue encontrada <a href="http://www.randombugs.com/linux/crash-innodb-table.html">aquí</a> y consiste en borrar los ficheros siguientes con el servidor parado y luego arrancarlo:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>service<span class="w"> </span>mysql<span class="w"> </span>stop
-$<span class="w"> </span>sudo<span class="w"> </span>rm<span class="w"> </span>/var/lib/mysql/ibdata1
-$<span class="w"> </span>sudo<span class="w"> </span>rm<span class="w"> </span>/var/lib/mysql/ib_logfile0
-$<span class="w"> </span>sudo<span class="w"> </span>rm<span class="w"> </span>/var/lib/mysql/ib_logfile1
-$<span class="w"> </span>sudo<span class="w"> </span>service<span class="w"> </span>mysql<span class="w"> </span>start
-</code></pre></div>
+<p><code>bash
+$ sudo service mysql stop
+$ sudo rm /var/lib/mysql/ibdata1
+$ sudo rm /var/lib/mysql/ib_logfile0
+$ sudo rm /var/lib/mysql/ib_logfile1
+$ sudo service mysql start</code></p>
 <p>La última vez que sucedió borré todas las tablas. Ver si borrando estos ficheros en cuanto ocurre se restituyen todas las tablas.</p>
 <h3 id="informacion-en-error">Información en error<a class="headerlink" href="#informacion-en-error" title="Permanent link">&para;</a></h3>
 <p>Para tener más información de un error, si es sobre tablas InnoDB, se puede lanzar el siguiente comando:</p>
-<div class="highlight"><pre><span></span><code><span class="k">SHOW</span><span class="w"> </span><span class="k">ENGINE</span><span class="w"> </span><span class="n">INNODB</span><span class="w"> </span><span class="k">STATUS</span><span class="p">;</span>
-</code></pre></div>
+<p><code>mysql
+SHOW ENGINE INNODB STATUS;</code></p>
 <p>Concretamente la sección <code>LATEST FOREIGN KEY ERROR</code> muestra más detalle en los errores relacionados con foreign keys.</p>
 
 

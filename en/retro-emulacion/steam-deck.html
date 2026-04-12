@@ -4319,8 +4319,8 @@
 </table>
 <h2 id="bios-backup">BIOS backup<a class="headerlink" href="#bios-backup" title="Permanent link">&para;</a></h2>
 <p>The Steam Deck <a href="https://steamdeckhq.com/news/undervolting-and-overclocking-push-your-steam-deck-beyond-its-limits/#comment-1995">does not have the BIOS settings in a CMOS memory maintained with a battery</a>, but in a Winbond flash that if corrupted, the machine will not boot. It is important to make a backup as soon as possible in case there are problems in the future. The backup can be done with the following command from a terminal in desktop mode:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/share/jupiter_bios_updater/h2offt<span class="w"> </span>/home/deck/biosbkp.fd<span class="w"> </span>-O
-</code></pre></div>
+<p><code>bash
+sudo /usr/share/jupiter_bios_updater/h2offt /home/deck/biosbkp.fd -O</code></p>
 <p>Extract the resulting file to <code>/home/deck/biosbkp.fd</code> and save it in a safe place. The file contains elements particular to each console, so it is not useful to backup another console. That is why it is important to backup our unit.</p>
 <h2 id="interesting-file-system-paths">Interesting file system paths<a class="headerlink" href="#interesting-file-system-paths" title="Permanent link">&para;</a></h2>
 <table>
@@ -4386,18 +4386,18 @@
 <li>Open <code>Konsole</code> in desktop mode.</li>
 <li>
 <p>Change the password of the <code>deck</code> user:</p>
-<div class="highlight"><pre><span></span><code>passwd
-</code></pre></div>
+<p><code>bash
+passwd</code></p>
 </li>
 <li>
 <p>Enable SSHD:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>sshd
-</code></pre></div>
+<p><code>bash
+sudo systemctl start sshd</code></p>
 </li>
 <li>
 <p>Enable SSHD at startup:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>sshd
-</code></pre></div>
+<p><code>bash
+sudo systemctl enable sshd</code></p>
 </li>
 </ol>
 <h2 id="install-any-windows-application">Install any Windows application<a class="headerlink" href="#install-any-windows-application" title="Permanent link">&para;</a></h2>
@@ -4432,8 +4432,8 @@
 <li>Select the game in the Steam library that requires the dependency, click the gear icon (<code>Manage</code>) and select <code>Properties...</code> from the drop-down.</li>
 <li>
 <p>In the <code>Direct Access</code> section, in the <code>Launch Parameters</code> field, enter the following (changing the path to the appropriate path):</p>
-<div class="highlight"><pre><span></span><code><span class="nv">STEAM_COMPAT_DATA_PATH</span><span class="o">=</span><span class="s2">&quot;/home/deck/.steam/steam/steamapps/compatdata/12345678&quot;</span><span class="w"> </span>%command%
-</code></pre></div>
+<p><code>bash
+STEAM_COMPAT_DATA_PATH="/home/deck/.steam/steam/steamapps/compatdata/12345678" %command%</code></p>
 </li>
 <li>
 <p>Close the Properties window and click <code>Play</code>.</p>

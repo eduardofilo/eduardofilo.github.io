@@ -4167,9 +4167,8 @@
 <p>The image is contained in a single file in <code>img.gz</code> format. This means it is a direct dump of the card (<code>img</code>) compressed (<code>gz</code>). The file is around 1GB in size.</p>
 <p>For flashing, it is recommended to use <a href="https://www.balena.io/etcher/">Balena Etcher</a>, which can use this format directly and is also compatible with the three main systems (Windows, MacOS, and Linux). The image can be flashed onto cards of 4GB and above.</p>
 <p>On Linux it is faster and more direct to flash with the following commands (replacing the <code>/dev/mmcblk0</code> device in the example with the one that applies in your case):</p>
-<div class="highlight"><pre><span></span><code>$ sudo umount /dev/mmcblk0*
-$ gunzip panda_v10.1.img.gz -c | sudo dd of=/dev/mmcblk0 bs=2M status=progress conv=fsync
-</code></pre></div>
+<p><code>$ sudo umount /dev/mmcblk0*
+$ gunzip panda_v10.1.img.gz -c | sudo dd of=/dev/mmcblk0 bs=2M status=progress conv=fsync</code></p>
 <p>It is not recommended to flash onto the same Toshiba card that comes with the console from the factory. Performance problems and errors have been observed with it. It is better to use a reliable brand card that is also fast.</p>
 <p>In <a href="http://www.youtube.com/watch?v=VWJU3KR5MW4">this video</a>, you can see the process of opening the console and removing the internal card in the original RG350 (in RG350P/M and RG280V/M this is not necessary), as well as flashing an image with Balena Etcher on Windows. In the video, the image used is a clean ROGUE image (file <code>sd_image.bin</code>), but the process for the image discussed here (file <code>panda_v10.1.img.gz</code>, <code>mapache_v10.1.img.gz</code>, <code>vison_v10.1.img.gz</code>, or <code>musarana_v10.1.img.gz</code> depending on the console version) would be exactly the same, simply by selecting the corresponding file in Balena Etcher. Formatting the card as shown in the video is not actually necessary. You only need to follow the video up to minute 11:20, since from that point on what is done is adding emulators and games to the console, things that are already included in the image.</p>
 <h2 id="default-frontend-selection">Default frontend selection<a class="headerlink" href="#default-frontend-selection" title="Permanent link">&para;</a></h2>

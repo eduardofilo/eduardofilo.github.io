@@ -4352,8 +4352,8 @@
 <li>Pinchar en la RG y cerrarla cuidando de que encajen bien los gatillos L/R.</li>
 </ol>
 <p>Desde Linux el paso 6 de la lista anterior se puede hacer con este comando desde consola (adaptando el nombre del dispositivo si en nuestro sistema es distinto):</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>sd_image.bin<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M
-</code></pre></div>
+<p><code>bash
+$ sudo dd if=sd_image.bin of=/dev/mmcblk0 bs=2M</code></p>
 <h2 id="utilizacion-de-la-tarjeta-externa">Utilización de la tarjeta externa<a class="headerlink" href="#utilizacion-de-la-tarjeta-externa" title="Permanent link">&para;</a></h2>
 <p>Otro aspecto que suele generar dudas es el manejo de la tarjeta externa.</p>
 <p>En primer lugar comentar las capacidades y formatos recomendados. Así como no nos tenemos que preocupar por el formato ni la estructura de directorios de la tarjeta interna, ya que estas dos cosas se construyen adecuadamente durante el proceso de flasheo, en la tarjeta externa somos nosotros los responsables tanto de formato como de contenido. En cuanto a formato, hay que recordar que recién comprada, toda tarjeta suele venir formateada con formatos FAT. Tarjetas pequeñas suelen venir en FAT32 y las más grandes en el formato exFAT más moderno. Esto es importante porque BASE sólo soporta FAT32, por lo que si tenemos este firmware y hemos comprado una tarjeta grande, tendremos que forzar su formato a FAT32. En Windows es posible formatear la tarjeta pulsando con el botón derecho del ratón sobre la unidad y seleccionando <code>Formatear...</code>. Según la versión de Windows, es posible que no nos aparezca FAT32 entre las opciones de formato disponibles. En ese caso deberemos recurrir a utilidades de terceros como <a href="https://www.sdcard.org/downloads/formatter/">SD Memory Card Formatter</a>.</p>

@@ -1507,6 +1507,43 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#binbash" class="md-nav__link">
+    <span class="md-ellipsis">
+      !/bin/bash
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#this-is-the-gpio-pin-connected-to-the-lead-on-switch-labeled-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      this is the GPIO pin connected to the lead on switch labeled OUT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#this-is-the-gpio-pin-connected-to-the-lead-on-switch-labeled-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      this is the GPIO pin connected to the lead on switch labeled IN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enter-the-shutdown-delay-in-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enter the shutdown delay in minutes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enter the shutdown delay in minutes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#montaje-de-raspberry-pi-sobre-pantalla" class="md-nav__link">
     <span class="md-ellipsis">
       Montaje de Raspberry Pi sobre pantalla
@@ -1514,8 +1551,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#cableado" class="md-nav__link">
     <span class="md-ellipsis">
       Cableado
@@ -1523,13 +1560,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#sujeccion-pantalla-a-consola-coche" class="md-nav__link">
     <span class="md-ellipsis">
       Sujección pantalla a consola coche
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4088,6 +4130,43 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#binbash" class="md-nav__link">
+    <span class="md-ellipsis">
+      !/bin/bash
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#this-is-the-gpio-pin-connected-to-the-lead-on-switch-labeled-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      this is the GPIO pin connected to the lead on switch labeled OUT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#this-is-the-gpio-pin-connected-to-the-lead-on-switch-labeled-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      this is the GPIO pin connected to the lead on switch labeled IN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enter-the-shutdown-delay-in-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enter the shutdown delay in minutes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enter the shutdown delay in minutes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#montaje-de-raspberry-pi-sobre-pantalla" class="md-nav__link">
     <span class="md-ellipsis">
       Montaje de Raspberry Pi sobre pantalla
@@ -4095,8 +4174,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#cableado" class="md-nav__link">
     <span class="md-ellipsis">
       Cableado
@@ -4104,13 +4183,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#sujeccion-pantalla-a-consola-coche" class="md-nav__link">
     <span class="md-ellipsis">
       Sujección pantalla a consola coche
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4131,8 +4215,6 @@
   
   
 
-
-  <h1>Crankshaft - AndroidAuto sobre Raspberry Pi</h1>
 
 <div class="admonition info">
 <p class="admonition-title">Actualización 2019-07-07</p>
@@ -4190,59 +4272,51 @@
 <p><img alt="Alimentación Raspberry" src="images/posts/crankshaft_raspberry_alimentacion2.jpg" /></p>
 <p>Para que el circuito Car Switch y la Raspberry Pi se comuniquen, además de situar los dos cables de pin, hay que instalar un script en el sistema de la Raspberry para que monitorice el pin que le informa del estado del contacto del coche. El sistema que instalamos en uno de los primeros apartados (Crankshaft) está basado en Raspbian, así que se puede instalar el script siguiendo las instrucciones correspondientes a este sistema en la sección "Installing the script" de la página <a href="http://mausberrycircuits.com/pages/car-setup">Car Setup</a>.</p>
 <p>También se puede instalar manualmente copiando el script en la ruta <code>/etc/switch.sh</code>, dándole permisos de ejecución y añadiendo lo siguiente al final del fichero <code>/etc/rc.local</code> (justo antes del <code>exit 0</code>) para que se ejecute en el arranque:</p>
-<div class="highlight"><pre><span></span><code>/etc/switch.sh &amp;
-</code></pre></div>
+<p><code>/etc/switch.sh &amp;</code></p>
 <p>El script es éste:</p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-
-<span class="c1">#this is the GPIO pin connected to the lead on switch labeled OUT</span>
-<span class="nv">GPIOpin1</span><span class="o">=</span><span class="m">23</span>
-
-<span class="c1">#this is the GPIO pin connected to the lead on switch labeled IN</span>
-<span class="nv">GPIOpin2</span><span class="o">=</span><span class="m">24</span>
-
-<span class="c1">#Enter the shutdown delay in minutes</span>
-<span class="nv">delay</span><span class="o">=</span><span class="m">0</span>
-
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$GPIOpin1</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/export
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;in&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/gpio<span class="nv">$GPIOpin1</span>/direction
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$GPIOpin2</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/export
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;out&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/gpio<span class="nv">$GPIOpin2</span>/direction
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/gpio<span class="nv">$GPIOpin2</span>/value
-<span class="nb">let</span><span class="w"> </span><span class="nv">minute</span><span class="o">=</span><span class="nv">$delay</span>*60
-<span class="nv">SD</span><span class="o">=</span><span class="m">0</span>
-<span class="nv">SS</span><span class="o">=</span><span class="m">0</span>
-<span class="nv">SS2</span><span class="o">=</span><span class="m">0</span>
-<span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="nv">power</span><span class="o">=</span><span class="k">$(</span>cat<span class="w"> </span>/sys/class/gpio/gpio<span class="nv">$GPIOpin1</span>/value<span class="k">)</span>
-<span class="nv">uptime</span><span class="o">=</span><span class="k">$(</span>&lt;/proc/uptime<span class="k">)</span>
-<span class="nv">uptime</span><span class="o">=</span><span class="si">${</span><span class="nv">uptime</span><span class="p">%%.*</span><span class="si">}</span>
-<span class="nv">current</span><span class="o">=</span><span class="nv">$uptime</span>
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$power</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$SD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span>
-<span class="k">then</span>
-<span class="nv">SD</span><span class="o">=</span><span class="m">1</span>
-<span class="nv">SS</span><span class="o">=</span><span class="si">${</span><span class="nv">uptime</span><span class="p">%%.*</span><span class="si">}</span>
-<span class="k">fi</span>
-
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$power</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$SD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span>
-<span class="k">then</span>
-<span class="nv">SS2</span><span class="o">=</span><span class="si">${</span><span class="nv">uptime</span><span class="p">%%.*</span><span class="si">}</span>
-<span class="k">fi</span>
-
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$((</span><span class="nv">uptime</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">SS</span><span class="k">))</span><span class="s2">&quot;</span><span class="w"> </span>-gt<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$minute</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$SD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$power</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span>
-<span class="k">then</span>
+<p>```bash</p>
+<h1 id="binbash">!/bin/bash<a class="headerlink" href="#binbash" title="Permanent link">&para;</a></h1>
+<h1 id="this-is-the-gpio-pin-connected-to-the-lead-on-switch-labeled-out">this is the GPIO pin connected to the lead on switch labeled OUT<a class="headerlink" href="#this-is-the-gpio-pin-connected-to-the-lead-on-switch-labeled-out" title="Permanent link">&para;</a></h1>
+<p>GPIOpin1=23</p>
+<h1 id="this-is-the-gpio-pin-connected-to-the-lead-on-switch-labeled-in">this is the GPIO pin connected to the lead on switch labeled IN<a class="headerlink" href="#this-is-the-gpio-pin-connected-to-the-lead-on-switch-labeled-in" title="Permanent link">&para;</a></h1>
+<p>GPIOpin2=24</p>
+<h1 id="enter-the-shutdown-delay-in-minutes">Enter the shutdown delay in minutes<a class="headerlink" href="#enter-the-shutdown-delay-in-minutes" title="Permanent link">&para;</a></h1>
+<p>delay=0</p>
+<p>echo "$GPIOpin1" &gt; /sys/class/gpio/export
+echo "in" &gt; /sys/class/gpio/gpio$GPIOpin1/direction
+echo "$GPIOpin2" &gt; /sys/class/gpio/export
+echo "out" &gt; /sys/class/gpio/gpio$GPIOpin2/direction
+echo "1" &gt; /sys/class/gpio/gpio$GPIOpin2/value
+let minute=$delay<em>60
+SD=0
+SS=0
+SS2=0
+while [ 1 = 1 ]; do
+power=$(cat /sys/class/gpio/gpio$GPIOpin1/value)
+uptime=$(&lt;/proc/uptime)
+uptime=${uptime%%.</em>}
+current=$uptime
+if [ $power = 1 ] &amp;&amp; [ $SD = 0 ]
+then
+SD=1
+SS=${uptime%%.*}
+fi</p>
+<p>if [ $power = 1 ] &amp;&amp; [ $SD = 1 ]
+then
+SS2=${uptime%%.*}
+fi</p>
+<p>if [ "$((uptime - SS))" -gt "$minute" ] &amp;&amp; [ $SD = 1 ] &amp;&amp; [ $power = 1 ]
+then
 poweroff
-<span class="nv">SD</span><span class="o">=</span><span class="m">3</span>
-<span class="k">fi</span>
-
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$((</span><span class="nv">uptime</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">SS2</span><span class="k">))</span><span class="s2">&quot;</span><span class="w"> </span>-gt<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$SD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span>
-<span class="k">then</span>
-<span class="nv">SD</span><span class="o">=</span><span class="m">0</span>
-<span class="k">fi</span>
-
-sleep<span class="w"> </span><span class="m">1</span>
-<span class="k">done</span>
-</code></pre></div>
+SD=3
+fi</p>
+<p>if [ "$((uptime - SS2))" -gt 20 ] &amp;&amp; [ $SD = 1 ]
+then
+SD=0
+fi</p>
+<p>sleep 1
+done
+```</p>
 <p>En el script podemos ver los pines del GPIO que utilizaremos y al que por tanto conectaremos los dos cables de pin que vienen del Car Switch:</p>
 <ul>
 <li><code>Car Switch: IN  &lt;-&gt; GPIO24 :Raspberry</code></li>
@@ -4251,9 +4325,9 @@ sleep<span class="w"> </span><span class="m">1</span>
 <p>En el listado anterior hemos indicado los pines del GPIO de Raspberry con su nombre, no con su número (una confusión muy habitual). En la siguiente imágen los nombres están en el exterior del rectángulo rojo y los números en el interior (rodeados a su vez por un círculo).</p>
 <p><img alt="Raspberry Pi GPIO Layout Model B+" src="images/posts/Raspberry-Pi-GPIO-Layout-Model-B-Plus.png" /></p>
 <p>La instalación del script se hizo desde un ordenador con Linux montando la tarjeta en el sistema. Para hacerlo sobre el propio Crankshaft en ejecución hay que tener en cuenta que en las últimas versiones la microSD está montada en modo de sólo lectura para evitar corrupciones de la misma durante apagados repentinos. Para montar en modo escritura hay que ejecutar uno de estos dos comandos en función de la partición que queramos modificar:</p>
-<div class="highlight"><pre><span></span><code>crankshaft<span class="w"> </span>filesystem<span class="w"> </span>boot<span class="w"> </span>unlock
-crankshaft<span class="w"> </span>filesystem<span class="w"> </span>system<span class="w"> </span>unlock
-</code></pre></div>
+<p><code>bash
+crankshaft filesystem boot unlock
+crankshaft filesystem system unlock</code></p>
 <h2 id="montaje-de-raspberry-pi-sobre-pantalla">Montaje de Raspberry Pi sobre pantalla<a class="headerlink" href="#montaje-de-raspberry-pi-sobre-pantalla" title="Permanent link">&para;</a></h2>
 <p>La pantalla que utilizaremos tiene un soporte para la Raspberry Pi en la parte trasera. Atornillaremos los separadores y colocaremos el cable de cinta que une la pantalla con el conector Display de la Raspberry. Falta colocar unos cables de pin para alimentar y comunicar la pantalla con la Raspberry, cosa que se puede hacer con simples cables de pin hembra-hembra (que de hecho vienen con la pantalla). Para evitar desconexiones por las vibraciones de la marcha del coche, en lugar de utilizar los cables de pin preparé un pequeño cable con un par de tiras de pin hembra (una simple para el lado de la pantalla y otra doble para el lado de la Raspberry). El resultado es más compacto y seguro y tiene este aspecto:</p>
 <p><img alt="Cable pantalla" src="images/posts/crankshaft_cable_pantalla1.jpg" /></p>

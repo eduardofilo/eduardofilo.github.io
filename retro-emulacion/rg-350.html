@@ -5229,22 +5229,20 @@
 <p>Existe cierta confusión sobre si hay que formatear la tarjeta interna. En realidad la imagen que se graba o flashea (como se suele decir) incluye el formato. Flashear una tarjeta microSD es reconstruir el formato y el contenido de otra tarjeta, es decir clonarla. La imagen es un volcado bit a bit de la tarjeta original (forma y contenido). Entonces, ¿por qué sugieren muchos videos y procedimientos formatear la microSD a la que luego se le va a flashear una imagen? Sospecho que es para hacer desaparecer las dos particiones de la tarjeta con el firmware que vamos a sobreescribir, para que luego no haya dudas de lo que hay que seleccionar en el programa de flasheo. Eso en Windows. En Linux se puede hacer muy fácilmente referencia a la tarjeta en sí, además de a las particiones, por lo que el formateo previo es redundante. En resumen, que en teoría da igual el formato en que está la tarjeta antes de flashear la imagen. El flasheo "construye" el formato a la vez que le da contenido. Es como estampar un vinilo a partir de un molde master.</p>
 <h4 id="conexion-de-red">Conexión de red<a class="headerlink" href="#conexion-de-red" title="Permanent link">&para;</a></h4>
 <p>El puerto USB2 cuando se conecta al PC se monta como una tarjeta de red adicional. Por ejemplo en una máquina Linux aparece este adaptador al conectar el cable:</p>
-<div class="highlight"><pre><span></span><code>enp0s29u1u2: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+<p><code>enp0s29u1u2: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
         inet 10.1.1.1  netmask 255.255.255.252  broadcast 10.1.1.3
         inet6 fe80::f721:afcb:94:3078  prefixlen 64  scopeid 0x20&lt;link&gt;
         ether a6:7b:58:c5:fe:30  txqueuelen 1000  (Ethernet)
         RX packets 13  bytes 2786 (2.7 KB)
         RX errors 0  dropped 0  overruns 0  frame 0
         TX packets 24  bytes 4097 (4.0 KB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-</code></pre></div>
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</code></p>
 <p>Ahí puede verse que se define una red con un rango de IPs muy reducido (sólo 2 bits). El PC toma la IP <code>10.1.1.1</code> y la consola la <code>10.1.1.2</code>.</p>
 <p>Si hacemos una detección de puertos abiertos en la máquina a través de este adaptador de red veremos que se encuentran abiertos los puertos correspondientes a FTP, SSH (lo que nos permite hacer transmisiones SCP y SFTP) y Telnet:</p>
-<div class="highlight"><pre><span></span><code>PORT   STATE SERVICE
+<p><code>PORT   STATE SERVICE
 21/tcp open  ftp
 22/tcp open  ssh
-23/tcp open  telnet
-</code></pre></div>
+23/tcp open  telnet</code></p>
 <p>Por defecto el sistema de red está configurado para utilizar password. Se desactiva abriendo la aplicación Network que hay en la sección Settings</p>
 <p><img alt="network" src="../images/pages/rg350_network.png" /></p>
 <p>Como el enrutado del adaptador éste no da salida a internet no hay problema de inseguridad por quitar el password. El programa anterior sólo es se utiliza para cambiar esos ajustes, no es necesario que esté abierto para que funcione la conectividad.</p>
@@ -5445,8 +5443,8 @@
 <li>Pinchar en la RG y cerrarla cuidando de que encajen bien los gatillos L/R.</li>
 </ol>
 <p>Desde Linux el paso 6 de la lista anterior se puede hacer con este comando desde consola (adaptando el nombre del dispositivo si en nuestro sistema es distinto):</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>sd_image.bin<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M
-</code></pre></div>
+<p><code>bash
+$ sudo dd if=sd_image.bin of=/dev/mmcblk0 bs=2M</code></p>
 <h2 id="gestion-de-opks">Gestión de OPKs<a class="headerlink" href="#gestion-de-opks" title="Permanent link">&para;</a></h2>
 <p><a href="https://web.archive.org/web/20170312235643/http://wiki.surkow.com/OPK">Este artículo</a> del viejo wiki de la GCW Zero (que afortunadamente se conserva en archive.org), documenta muy bien cómo construir un OPK y algunos de los parámetros que contienen sus ficheros.</p>
 <p>En Linux se puede hacer y deshacer un OPK muy fácilmente con los siguientes comandos:</p>
@@ -6186,12 +6184,12 @@
 </tbody>
 </table>
 <h4 id="gpios">GPIOs<a class="headerlink" href="#gpios" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>rg280v:~ $ sudo cat /sys/kernel/debug/gpio
+<p>```
+rg280v:~ $ sudo cat /sys/kernel/debug/gpio
 Password:
 gpiochip0: GPIOs 0-31, parent: platform/10010000.pin-controller, GPIOA:
- gpio-30  (                    |Power button        ) in  hi IRQ ACTIVE LOW
-
-gpiochip1: GPIOs 32-63, parent: platform/10010000.pin-controller, GPIOB:
+ gpio-30  (                    |Power button        ) in  hi IRQ ACTIVE LOW</p>
+<p>gpiochip1: GPIOs 32-63, parent: platform/10010000.pin-controller, GPIOB:
  gpio-34  (                    |cd                  ) in  lo IRQ ACTIVE LOW
  gpio-37  (                    |vbus                ) in  hi IRQ
  gpio-42  (                    |Left shoulder button) in  hi IRQ ACTIVE LOW
@@ -6200,14 +6198,11 @@ gpiochip1: GPIOs 32-63, parent: platform/10010000.pin-controller, GPIOB:
  gpio-45  (                    |Volume- button      ) in  hi IRQ ACTIVE LOW
  gpio-52  (                    |L2 shoulder button  ) in  hi IRQ ACTIVE LOW
  gpio-53  (                    |Start button        ) in  hi IRQ ACTIVE LOW
- gpio-62  (                    |power               ) out lo ACTIVE LOW
-
-gpiochip2: GPIOs 64-95, parent: platform/10010000.pin-controller, GPIOC:
-
-gpiochip3: GPIOs 96-127, parent: platform/10010000.pin-controller, GPIOD:
- gpio-114 (                    |Select button       ) in  lo IRQ
-
-gpiochip4: GPIOs 128-159, parent: platform/10010000.pin-controller, GPIOE:
+ gpio-62  (                    |power               ) out lo ACTIVE LOW</p>
+<p>gpiochip2: GPIOs 64-95, parent: platform/10010000.pin-controller, GPIOC:</p>
+<p>gpiochip3: GPIOs 96-127, parent: platform/10010000.pin-controller, GPIOD:
+ gpio-114 (                    |Select button       ) in  lo IRQ</p>
+<p>gpiochip4: GPIOs 128-159, parent: platform/10010000.pin-controller, GPIOE:
  gpio-130 (                    |reset               ) out hi ACTIVE LOW
  gpio-137 (                    |regulator@1         ) out lo ACTIVE LOW
  gpio-143 (                    |sck                 ) out lo
@@ -6221,13 +6216,12 @@ gpiochip4: GPIOs 128-159, parent: platform/10010000.pin-controller, GPIOE:
  gpio-154 (                    |Right shoulder butto) in  hi IRQ ACTIVE LOW
  gpio-155 (                    |Button X            ) in  hi IRQ ACTIVE LOW
  gpio-156 (                    |Button Y            ) in  hi IRQ ACTIVE LOW
- gpio-157 (                    |Button A            ) in  hi IRQ ACTIVE LOW
-
-gpiochip5: GPIOs 160-191, parent: platform/10010000.pin-controller, GPIOF:
+ gpio-157 (                    |Button A            ) in  hi IRQ ACTIVE LOW</p>
+<p>gpiochip5: GPIOs 160-191, parent: platform/10010000.pin-controller, GPIOF:
  gpio-163 (                    |enable              ) out hi ACTIVE LOW
  gpio-180 (                    |enable              ) out lo
  gpio-181 (                    |Headphone detection ) in  hi IRQ
-</code></pre></div>
+```</p>
 <h4 id="codigos-teclas-para-mappers-dosbox">Códigos teclas para mappers DOSBOX<a class="headerlink" href="#codigos-teclas-para-mappers-dosbox" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -6453,19 +6447,19 @@ gpiochip5: GPIOs 160-191, parent: platform/10010000.pin-controller, GPIOF:
 </ul>
 <h4 id="corrupcion-de-archivos-de-texto">Corrupción de archivos de texto<a class="headerlink" href="#corrupcion-de-archivos-de-texto" title="Permanent link">&para;</a></h4>
 <p>Linux y Windows utilizan distintos sistemas para codificar los retornos de carro de los ficheros de texto. Si creamos o editamos uno de estos ficheros y luego lo transferimos a la RG350, dependiendo del uso que vaya a tener ese fichero podría no funcionar. Unos ficheros especialmente sensibles son los scripts como el que determina el lanzador de aplicacione predeterminado, es decir <code>/media/data/local/sbin/frontend_start</code>. Para reconvertir los ficheros de texto del formato de Windows al de Linux existe una pequeña utilidad llamada <code>dos2unix</code>. Para utilizarla tenemos que conectar con la RG350 por SSH para tener acceso a una terminal o utilizar la aplicación de terminal <code>ST-SDL</code>. Desde uno de estos terminales ejecutaremos:</p>
-<div class="highlight"><pre><span></span><code>RG350:/media/data/local/home<span class="w"> </span><span class="c1"># dos2unix fichero_a_convertir.txt</span>
-</code></pre></div>
+<p><code>bash
+RG350:/media/data/local/home # dos2unix fichero_a_convertir.txt</code></p>
 <h2 id="backup-de-home">Backup de home<a class="headerlink" href="#backup-de-home" title="Permanent link">&para;</a></h2>
 <p>El directorio <code>/home/data/local/home</code> pertenece a la tarjeta interna y es de los más importantes puesto que es donde la mayoría (por no decir todos) los programas (emuladores, ports, aplicaciones) guardan sus ajustes (como los savestates de los emuladores o las memory cards de pcsx4all). Cuando flasheamos la tarjeta interna (con las opciones 2 y 3 del apartado <a href="#opciones-para-actualizar-el-firmware-rg350-rogue-cfw">Opciones para actualizar el firmware RG350-ROGUE-CFW</a>) el contenido de este directorio se pierde. Una idea sería hacer un respaldo del mismo en la tarjeta externa (que no se altera durante el flasheo) y luego restaurarlo.</p>
 <p>Podemos hacer el backup lanzando un comando de terminal ya sea conectando por SSH o utilizando una aplicación de terminal (como <code>ST-SDL</code>). El comando para realizar el backup es:</p>
-<div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-cf<span class="w"> </span>/media/sdcard/home_backup.tar<span class="w"> </span>-C<span class="w"> </span>/media/data/local<span class="w"> </span>home
-</code></pre></div>
+<p><code>bash
+tar -cf /media/sdcard/home_backup.tar -C /media/data/local home</code></p>
 <p>En caso de querer excluir algún directorio concreto que ocupe mucho y que tengamos respaldado por otro lado (por ejemplo si tuviéramos las ROMs allí), utilizar el parámetro <code>--exclude</code>. Vamos a ver cómo se excluirían por ejemplo las imágenes de previsualización de FBA:</p>
-<div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-cf<span class="w"> </span>/media/sdcard/home_backup.tar<span class="w"> </span>-C<span class="w"> </span>/media/data/local<span class="w"> </span>--exclude<span class="o">=</span>home/.fba/previews<span class="w"> </span>home
-</code></pre></div>
+<p><code>bash
+tar -cf /media/sdcard/home_backup.tar -C /media/data/local --exclude=home/.fba/previews home</code></p>
 <p>Para restaurar:</p>
-<div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-xf<span class="w"> </span>/media/sdcard/home_backup.tar<span class="w"> </span>-C<span class="w"> </span>/media/data/local
-</code></pre></div>
+<p><code>bash
+tar -xf /media/sdcard/home_backup.tar -C /media/data/local</code></p>
 <p>El comando no es sensible a la ruta, es decir puede lanzarse desde cualquier directorio y genera el fichero <code>home_backup.tar</code> en la raíz de la tarjeta externa (ruta <code>/media/sdcard/</code> en el sistema de la consola).</p>
 <p><a href="../2020-03-19-rg350_backup.html">Aquí</a> puede leerse un monográfico sobre el tema.</p>
 <h2 id="monograficos-en-blog">Monográficos en blog<a class="headerlink" href="#monograficos-en-blog" title="Permanent link">&para;</a></h2>
