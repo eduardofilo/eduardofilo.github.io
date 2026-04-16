@@ -4658,6 +4658,14 @@ make docker</p>
 <td><code>PAUSE/SET</code> + <code>POWER</code></td>
 <td>After having done <code>PAUSE/SET</code> and selected <code>Power off</code>, the bootloader will start without calling Retro-go, allowing us to see the bootloader version as well as information about the microSD detection and the state of the internal and external flash memories</td>
 </tr>
+<tr>
+<td><code>PAUSE/SET</code> + <code>GAME</code> + <code>LEFT</code></td>
+<td>From the OFW, it causes the bootloader to start without fully loading retro-go. It is used to see the screen that shows the SD detection, flash chip, and code in bank2 of the internal flash; it is also used to see the bootloader version.</td>
+</tr>
+<tr>
+<td><code>GAME</code> + menu <code>Reset settings</code></td>
+<td>Clears the registration data in the SD of what is cached in the flash; use when changing the SD of the machine or when changing the flash chip. It is equivalent to deleting the file <code>flashcachedata.bin</code> in the <code>data</code> directory of the SD.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
