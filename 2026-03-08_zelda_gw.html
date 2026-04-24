@@ -4438,32 +4438,58 @@
 <h2 id="desbloqueo-del-microcontrolador">Desbloqueo del microcontrolador<a class="headerlink" href="#desbloqueo-del-microcontrolador" title="Permanent link">&para;</a></h2>
 <p>Una vez resuelta la conectividad a la placa, el primer paso en la modificación es el desbloqueo del microcontrolador STM32H7 para que podamos sustituir el firmware que hay en su memoria flash interna así como poder escribir en la memoria flash externa (con código que inyectaremos en el propio microcontrolador).</p>
 <p>Esta tarea se efectúa con el conjunto de utilidades <a href="https://github.com/BrianPugh/gnwmanager">gnwmanager</a>. Este paquete se encuentra registrado en <a href="https://pypi.org/project/gnwmanager/">PyPI</a> por lo que se puede instalar muy fácilmente con <code>pip</code> (preferiblemente dentro de un entorno virtual Python).</p>
-<p><code>bash
-$ pip install gnwmanager
-$ gnwmanager install openocd</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>gnwmanager
+$<span class="w"> </span>gnwmanager<span class="w"> </span>install<span class="w"> </span>openocd
+</code></pre></div></td></tr></table></div>
 <p>Ahora, tras volver a conectar la batería de la consola si la habíamos desconectado, ejecutaremos el siguiente comando:</p>
-<p><code>(gnwmanager) $ gnwmanager unlock</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>(gnwmanager) $ gnwmanager unlock
+</code></pre></div></td></tr></table></div>
 <p>El proceso se interrumpirá en un par de ocasiones dando instrucciones por la terminal que deberemos seguir. Una salida típica sería:</p>
-<p>```
-(gnwmanager) [edu@thinkpad ~]$ gnwmanager unlock</p>
-<p>If interrupted, resume unlocking with:
-    gnwmanager unlock --backup-dir=backups-2025-10-27-19-28-14</p>
-<p>Detected ZELDA game and watch.
-Backing up itcm to "backups-2025-10-27-19-28-14/itcm_backup_zelda.bin"... complete!
-Backing up external flash to "backups-2025-10-27-19-28-14/flash_backup_zelda.bin"... complete!
-Flashing payload to external flash... complete!</p>
-<p>Payload successfully flashed. Perform the following steps:</p>
-<ol>
-<li>Fully remove power, then re-apply power.</li>
-<li>Press the power button to turn on the device; the screen should turn blue.</li>
-</ol>
-<p>Press the "enter" key when the screen is blue: 
-Backing up internal flash to "backups-2025-10-27-19-28-14/internal_flash_backup_zelda.bin"... complete!
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code>(gnwmanager) [edu@thinkpad ~]$ gnwmanager unlock
+
+If interrupted, resume unlocking with:
+    gnwmanager unlock --backup-dir=backups-2025-10-27-19-28-14
+
+Detected ZELDA game and watch.
+Backing up itcm to &quot;backups-2025-10-27-19-28-14/itcm_backup_zelda.bin&quot;... complete!
+Backing up external flash to &quot;backups-2025-10-27-19-28-14/flash_backup_zelda.bin&quot;... complete!
+Flashing payload to external flash... complete!
+
+
+Payload successfully flashed. Perform the following steps:
+
+1. Fully remove power, then re-apply power.
+2. Press the power button to turn on the device; the screen should turn blue.
+
+Press the &quot;enter&quot; key when the screen is blue: 
+Backing up internal flash to &quot;backups-2025-10-27-19-28-14/internal_flash_backup_zelda.bin&quot;... complete!
 Unlocking device... complete!
 Restoring firmware... complete!
 Unlocking complete!
 Pressing the power button should launch the original firmware.
-```</p>
+</code></pre></div></td></tr></table></div>
 <p>Aparecerán los ficheros <code>internal_flash_backup_zelda.bin</code>, <code>flash_backup_zelda.bin</code> y <code>itcm_backup_zelda.bin</code> en un directorio <code>backups-FECHA-HORA</code> que conviene guardar.</p>
 <p>Si encendemos en este momento la consola, no notaremos ningún cambio, es decir ejecutará el firmware original, pero ahora el chip estará desprotegido y podremos flashearle otro firmware.</p>
 <h2 id="modificacion-1-retro-go">Modificación 1: retro-go<a class="headerlink" href="#modificacion-1-retro-go" title="Permanent link">&para;</a></h2>
@@ -4481,60 +4507,91 @@ Pressing the power button should launch the original firmware.
 <p><img alt="Retirar chip flash original 5" src="images/posts/2026-03-08_zelda_gw/mod_flash_5.jpg" /></p>
 <h4 id="flasheo-retro-go">Flasheo retro-go<a class="headerlink" href="#flasheo-retro-go" title="Permanent link">&para;</a></h4>
 <p>Una vez instalado el chip, es hora de flashear el firmware. Para esta modificación, me decanto por no hacer dual boot, es decir no instalar el firmware original parcheado junto a retro-go, para así tener todo el espacio de la memoria flash dedicado a los juegos. Para ello empezamos bajando el repositorio del mismo:</p>
-<p><code>bash
-cd ~/git
-git clone --recursive https://github.com/sylverb/game-and-watch-retro-go -b filesystem_wip
-cd game-and-watch-retro-go</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/git
+git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/sylverb/game-and-watch-retro-go<span class="w"> </span>-b<span class="w"> </span>filesystem_wip
+<span class="nb">cd</span><span class="w"> </span>game-and-watch-retro-go
+</code></pre></div></td></tr></table></div>
 <p>Una vez bajado el código, toca instalar las ROMs en los directorios correspondientes a las distintas máquinas soportadas que encontraremos en <code>~/git/game-and-watch-retro-go/roms/</code>. Por ejemplo, para instalar las ROMs de NES, copiamos las ROMs a <code>~/git/game-and-watch-retro-go/roms/nes/</code>. Si queremos portadillas para los juegos, situaremos en los mismos directorios y con los mismos nombres de fichero de las ROMs correspondientes, las imágenes en formato jpg o png. Por ejemplo, para la ROM <code>zelda.nes</code>, situaremos la portada en <code>~/git/game-and-watch-retro-go/roms/nes/zelda.jpg</code>.</p>
 <p>Tenemos que tener en cuenta que todas las ROMs y sus portadillas tienen que caber en el chip flash de 64 MB que hemos instalado a la consola. La mayoría de las ROMs se comprimen, por lo que como regla de partida, utilizaremos el criterio de elegir ROMs por un tamaño total de aproximadamente el doble (128MB).</p>
 <p>Ahora toca compilar el firmware (si no vamos a utilizar portadillas para aprovechar el espacio de sus ficheros para poder poner más ROMs, no incluir las variables de entorno <code>COVERFLOW</code> y <code>JPG_QUALITY</code> en los comandos de compilación y flasheo):</p>
-<p>```bash
-make docker_build
-make docker</p>
-<p>(docker) gnwmanager install openocd
-(docker) export GNW_TARGET=zelda
-(docker) export ADAPTER=cmsis-dap
-(docker) make clean
-(docker) COVERFLOW=1 JPG_QUALITY=90 EXTFLASH_SIZE_MB=64 make -j$(nproc)
-```</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>make<span class="w"> </span>docker_build
+make<span class="w"> </span>docker
+
+<span class="o">(</span>docker<span class="o">)</span><span class="w"> </span>gnwmanager<span class="w"> </span>install<span class="w"> </span>openocd
+<span class="o">(</span>docker<span class="o">)</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">GNW_TARGET</span><span class="o">=</span>zelda
+<span class="o">(</span>docker<span class="o">)</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">ADAPTER</span><span class="o">=</span>cmsis-dap
+<span class="o">(</span>docker<span class="o">)</span><span class="w"> </span>make<span class="w"> </span>clean
+<span class="o">(</span>docker<span class="o">)</span><span class="w"> </span><span class="nv">COVERFLOW</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">JPG_QUALITY</span><span class="o">=</span><span class="m">90</span><span class="w"> </span><span class="nv">EXTFLASH_SIZE_MB</span><span class="o">=</span><span class="m">64</span><span class="w"> </span>make<span class="w"> </span>-j<span class="k">$(</span>nproc<span class="k">)</span>
+</code></pre></div></td></tr></table></div>
 <p>Al terminar la compilación se nos informará del tamaño resultante del binario que se flasheará en el chip. Por ejemplo:</p>
-<p><code>External flash usage
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>External flash usage
     Capacity:     61050880 Bytes ( 58.223 MB)
     Usage:        54335345 Bytes ( 51.818 MB)
-    Free:          6715535 Bytes (  6.404 MB)</code></p>
+    Free:          6715535 Bytes (  6.404 MB)
+</code></pre></div></td></tr></table></div>
 <p>Con esa información a la vista podremos iterar el proceso añadiendo o retirando ROMs hasta obtener un binario de unos 55MB, ya que hay que prever algo para los savestates de los juegos.</p>
 <p>Una vez que estemos satisfechos con la ocupación del espacio, flashearemos el firmware volviendo a conectar la sonda de programación que comentamos en el apartado <a href="#sonda-de-programacion">Sonda de programación</a>.</p>
-<p><code>bash
-(docker) COVERFLOW=1 JPG_QUALITY=90 EXTFLASH_SIZE_MB=64 make flash</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">(</span>docker<span class="o">)</span><span class="w"> </span><span class="nv">COVERFLOW</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">JPG_QUALITY</span><span class="o">=</span><span class="m">90</span><span class="w"> </span><span class="nv">EXTFLASH_SIZE_MB</span><span class="o">=</span><span class="m">64</span><span class="w"> </span>make<span class="w"> </span>flash
+</code></pre></div></td></tr></table></div>
 <p>Una salida típica sería:</p>
-<p><code>bash
-docker@53335bdd9199:/opt/workdir$ COVERFLOW=1 JPG_QUALITY=90 EXTFLASH_SIZE_MB=64 make flash_gnwmanager
-Entering 'LCD-Game-Emulator'
-Entering 'blueMSX-go'
-Entering 'caprice32-go'
-Entering 'fceumm-go'
-Entering 'gwenesis'
-Entering 'potator'
-Entering 'prosystem-go'
-Entering 'retro-go-stm32'
-Entering 'smw'
-Entering 'tamalib'
-Entering 'zelda3'
-[ BASH ] Checking for updated roms
-100%|█████████████████████████████████████████████████████████████████| 208/208 [04:20&lt;00:00,  1.25s/it]</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>docker@53335bdd9199:/opt/workdir$<span class="w"> </span><span class="nv">COVERFLOW</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">JPG_QUALITY</span><span class="o">=</span><span class="m">90</span><span class="w"> </span><span class="nv">EXTFLASH_SIZE_MB</span><span class="o">=</span><span class="m">64</span><span class="w"> </span>make<span class="w"> </span>flash_gnwmanager
+Entering<span class="w"> </span><span class="s1">&#39;LCD-Game-Emulator&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;blueMSX-go&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;caprice32-go&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;fceumm-go&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;gwenesis&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;potator&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;prosystem-go&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;retro-go-stm32&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;smw&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;tamalib&#39;</span>
+Entering<span class="w"> </span><span class="s1">&#39;zelda3&#39;</span>
+<span class="o">[</span><span class="w"> </span>BASH<span class="w"> </span><span class="o">]</span><span class="w"> </span>Checking<span class="w"> </span><span class="k">for</span><span class="w"> </span>updated<span class="w"> </span>roms
+<span class="m">100</span>%<span class="p">|</span>█████████████████████████████████████████████████████████████████<span class="p">|</span><span class="w"> </span><span class="m">208</span>/208<span class="w"> </span><span class="o">[</span><span class="m">04</span>:20&lt;<span class="m">00</span>:00,<span class="w">  </span><span class="m">1</span>.25s/it<span class="o">]</span>
+</code></pre></div></td></tr></table></div>
 <p>Es importante que guardemos el fichero <code>build/gw_retro_go.elf</code> porque lo necesitaremos para extraer los savestates en el futuro.</p>
 <h4 id="respaldar-savestates-retro-go">Respaldar savestates retro-go<a class="headerlink" href="#respaldar-savestates-retro-go" title="Permanent link">&para;</a></h4>
 <p>Si más adelante queremos extraer los savestates de los juegos, para poder volverlos a instalar tras flashear un nuevo firmware, en primer lugar necesitaremos depositar en el directorio <code>build</code> el fichero <code>gw_retro_go.elf</code> que obtuvimos en el paso anterior. Después podremos arrancar de nuevo el entorno docker y ejecutar el script de backup:</p>
-<p>```bash
-cd ~/git/game-and-watch-retro-go
-make docker</p>
-<p>(docker) export GNW_TARGET=zelda
-(docker) export ADAPTER=cmsis-dap
-(docker) ./scripts/saves_backup.sh build/gw_retro_go.elf
-```</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/git/game-and-watch-retro-go
+make<span class="w"> </span>docker
+
+<span class="o">(</span>docker<span class="o">)</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">GNW_TARGET</span><span class="o">=</span>zelda
+<span class="o">(</span>docker<span class="o">)</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">ADAPTER</span><span class="o">=</span>cmsis-dap
+<span class="o">(</span>docker<span class="o">)</span><span class="w"> </span>./scripts/saves_backup.sh<span class="w"> </span>build/gw_retro_go.elf
+</code></pre></div></td></tr></table></div>
 <p>Los savestates aparecerán en el subdirectorio <code>~/git/game-and-watch-retro-go/save_states</code>. Una vez que hayamos compilado y flasheado un nuevo firmware, podremos restaurarlos ejecutando el script de restauración:</p>
-<p><code>bash
-(docker) ./scripts/saves_restore.sh</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">(</span>docker<span class="o">)</span><span class="w"> </span>./scripts/saves_restore.sh
+</code></pre></div></td></tr></table></div>
 <p>La restauración se hace de forma inteligente, es decir, si tenemos savestates de un juego que no está en el nuevo firmware, dicho savestate no se instalará en la consola, para evitar desperdiciar espacio de la memoria flash.</p>
 <h2 id="modificacion-2-retro-go-sd">Modificación 2: retro-go-sd<a class="headerlink" href="#modificacion-2-retro-go-sd" title="Permanent link">&para;</a></h2>
 <h4 id="instalacion-modulo-slot-microsd">Instalación módulo slot microSD<a class="headerlink" href="#instalacion-modulo-slot-microsd" title="Permanent link">&para;</a></h4>
@@ -4555,19 +4612,46 @@ make docker</p>
 <p><img alt="Módulo microSD" src="images/posts/2026-03-08_zelda_gw/mod_msd_3.jpg" /></p>
 <h4 id="flasheo-bootloader">Flasheo bootloader<a class="headerlink" href="#flasheo-bootloader" title="Permanent link">&para;</a></h4>
 <p>Lo siguiente será flashear el bootloader junto al firmware original parcheado de la consola para permitir el dual boot (esta vez sí merece la pena al contar con espacio prácticamente ilimitado para ROMs en la microSD). Desde el directorio donde estén los ficheros de backup de la consola y con un entorno Python que tenga instalado <code>gnwmanager</code>, ejecutaremos el siguiente comando:</p>
-<p><code>bash
-(gnwmanager) $ gnwmanager flash-patch zelda internal_flash_backup_zelda.bin flash_backup_zelda.bin --bootloader</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">(</span>gnwmanager<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>gnwmanager<span class="w"> </span>flash-patch<span class="w"> </span>zelda<span class="w"> </span>internal_flash_backup_zelda.bin<span class="w"> </span>flash_backup_zelda.bin<span class="w"> </span>--bootloader
+</code></pre></div></td></tr></table></div>
 <p>Una salida típica sería:</p>
-<p><code>bash
-(gnwmanager) $ gnwmanager flash-patch zelda internal_flash_backup_zelda.bin flash_backup_zelda.bin --bootloader
-100%|███████████████████████████████████████████████████████████████████| 16/16 [00:58&lt;00:00,  3.66s/it]</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">(</span>gnwmanager<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>gnwmanager<span class="w"> </span>flash-patch<span class="w"> </span>zelda<span class="w"> </span>internal_flash_backup_zelda.bin<span class="w"> </span>flash_backup_zelda.bin<span class="w"> </span>--bootloader
+<span class="m">100</span>%<span class="p">|</span>███████████████████████████████████████████████████████████████████<span class="p">|</span><span class="w"> </span><span class="m">16</span>/16<span class="w"> </span><span class="o">[</span><span class="m">00</span>:58&lt;<span class="m">00</span>:00,<span class="w">  </span><span class="m">3</span>.66s/it<span class="o">]</span>
+</code></pre></div></td></tr></table></div>
 <p>Si encendemos en ese momento la consola, tras haber retirado la sonda de programación, veremos que arranca el firmware original (parcheado). Tras pulsar <code>GAME + LEFT</code> se ejecutará el bootloader y, como en ese momento Retro-Go SD todavía no estará instalado en la flash interna del STM32, se nos muestrará el siguiente aviso:</p>
 <p><img alt="Aviso del bootloader" src="images/posts/2026-03-08_zelda_gw/bootloader_warning.jpg" /></p>
 <h4 id="instalacion-de-retro-go-sd">Instalación de Retro-Go SD<a class="headerlink" href="#instalacion-de-retro-go-sd" title="Permanent link">&para;</a></h4>
 <p>Solo nos restará instalar el firmware de Retro-Go SD. Para ello, copiaremos el fichero <code>retro-go_update.bin</code> que descargaremos de la última release publicada por Sylverb en el <a href="https://github.com/sylverb/game-and-watch-retro-go-sd/releases">repositorio de Retro-Go SD</a> al directorio raíz de la microSD. Al arrancar por primera vez, veremos en pantalla cómo se copian los ficheros de retro-go y los cores de los emuladores a la misma microSD.</p>
 <p><img alt="Instalación de Retro-Go SD" src="images/posts/2026-03-08_zelda_gw/retro-go_update.jpg" /></p>
 <p>A la vez se creará en la microSD la estructura de directorios siguiente:</p>
-<p><code>retro-go/
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code>retro-go/
 ├── CONFIG
 ├── bios/
 │   ├── coleco/
@@ -4593,7 +4677,8 @@ make docker</p>
     ├── a2600/
     ├── a7800/
     ├── amstrad/
-    └── ...</code></p>
+    └── ...
+</code></pre></div></td></tr></table></div>
 <p>Sólo restará copiar las ROMs que queramos emular en los directorios correspondientes. Si queremos portadillas para los juegos, tendremos que crear el subdirectorio <code>covers</code> con los mismos subdirectorios del directorio <code>roms</code> y colocar allí las imágenes. Estas tienen que estar en un formato especial IMG que generaremos con un <a href="https://github.com/sylverb/game-and-watch-retro-go-sd/blob/main/README.md#cover-art-generator-gencoverspy">script que se incluye en el repositorio de Retro-Go SD</a>. Los nombres de los archivos IMG tendrán que coincidir con los de las ROMs en su correspondiente directorio.</p>
 <h4 id="carcasa-trasera">Carcasa trasera<a class="headerlink" href="#carcasa-trasera" title="Permanent link">&para;</a></h4>
 <p>Al colocar el slot microSD hay que modificar la tapa trasera de la consola puesto que el lector cae sobre unos postes de apoyo de la cruceta. También hay que perforar el lateral para dejar paso a la microSD para poder extraerla e insertarla cuando queramos cambiar los juegos, rescatar savestates o actualizar el firmware. Para realizar la perforación <a href="https://www.printables.com/model/1269910-zelda-game-and-watch-sd-card-drill-jig/files">existen unos utillajes</a> diseñados por el usuario facelesstech que ayudan mucho a que la ranura quede limpia. En el vídeo que hay al final de este artículo, puede verse cómo se realiza esta modificación.</p>

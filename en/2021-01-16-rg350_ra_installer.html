@@ -787,16 +787,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#binsh" class="md-nav__link">
-    <span class="md-ellipsis">
-      !/bin/sh
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="!/bin/sh">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#instalador" class="md-nav__link">
     <span class="md-ellipsis">
       Instalador
@@ -804,8 +794,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#hotkeys" class="md-nav__link">
     <span class="md-ellipsis">
       Hotkeys
@@ -813,18 +803,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#canal-telegram" class="md-nav__link">
     <span class="md-ellipsis">
       Canal Telegram
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4049,16 +4034,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#binsh" class="md-nav__link">
-    <span class="md-ellipsis">
-      !/bin/sh
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="!/bin/sh">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#instalador" class="md-nav__link">
     <span class="md-ellipsis">
       Instalador
@@ -4066,8 +4041,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#hotkeys" class="md-nav__link">
     <span class="md-ellipsis">
       Hotkeys
@@ -4075,18 +4050,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#canal-telegram" class="md-nav__link">
     <span class="md-ellipsis">
       Canal Telegram
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4108,6 +4078,8 @@
   
 
 
+  <h1>RG350 Instalador RA</h1>
+
 <p><img alt="Icono" src="../images/posts/rg350_ra_installer/icon_big.png" /></p>
 <p>A finales de diciembre empezaron a aparecer distribuciones oficiales de RetroArch para RG350 y RG280. De momento en versión beta en forma de nightly builds que pueden obtenerse de <a href="https://buildbot.libretro.com/nightly/dingux/mips32/">este sitio</a> para stock/ROGUE o <a href="https://buildbot.libretro.com/nightly/dingux/mips32-odbeta/">este otro</a> para <a href="http://od.abstraction.se/opendingux/latest/">ODBeta</a>.</p>
 <p>Los zips que distribuyen contienen un único OPK, un binario (opcional) y un directorio (con toda la configuración y los cores) destinado a copiarse al home de la consola:</p>
@@ -4117,14 +4089,24 @@
 <p>Para lograr una integración más completa de RetroArch, que respete la experiencia normal de los frontends habituales en RG350/RG280 (GMenu2X, SimpleMenu, PyMenu, EmulationStation, etc.) se pueden crear unos OPKs tipo wrapper que permitan seleccionar las ROMs y lanzar el core de RetroArch correspondiente, ya que el binario opcional admite los mismos argumentos que RetroArch en otras plataformas.</p>
 <h2 id="wrappers-opk">Wrappers OPK<a class="headerlink" href="#wrappers-opk" title="Permanent link">&para;</a></h2>
 <p>Para lograrlo, primero hubo que averiguar la forma de parametrizar el core y la ROM. Cargar un core y una ROM desde el propio RetroArch no sirve porque no exterioriza estos datos en forma de argumentos sobre el ejecutable. Lo que se hizo fue suponer que serviría el mismo formato de argumentos que utiliza el binario <code>retroarch_rg350</code> (dentro del directorio <code>bin</code>; en la distribución correspondiente a ODBeta, el binario es <code>retroarch_rg350_odbeta</code>) en otros sistemas como EmuELEC en RG351P. Allí el frontend habitual EmulationStation sí que parametriza el core y la ROM a ejecutar por medio de argumentos en la llamada. Por ejemplo ejecutando Tetris de Game Boy con el core gambatte en EmuELEC sobre RG3551P se encuentra que el proceso se invoca de esta forma:</p>
-<p><code>/usr/bin/retroarch -v -L /tmp/cores/gambatte_libretro.so --config /storage/.config/retroarch/retroarch.cfg /storage/roms/gb/Tetris (World) (Rev A).7z</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>/usr/bin/retroarch -v -L /tmp/cores/gambatte_libretro.so --config /storage/.config/retroarch/retroarch.cfg /storage/roms/gb/Tetris (World) (Rev A).7z
+</code></pre></div></td></tr></table></div>
 <p>Por tanto la idea es por un lado instalar el binario opcional <code>retroarch_rg350</code> en una ruta accesible (se elige <code>/media/data/local/bin</code>) y luego construir distintos OPKs que invoque un script al que se le pase como argumento la ROM a ejecutar. Dentro del script podemos montar la llamada completa a <code>retroarch_rg30</code>. Por ejemplo para el sistema Game Boy el script podría ser el siguiente:</p>
-<p>```bash</p>
-<h1 id="binsh">!/bin/sh<a class="headerlink" href="#binsh" title="Permanent link">&para;</a></h1>
-<p>/media/data/local/bin/retroarch_rg350 -v -L /media/data/local/home/.retroarch/cores/gambatte_libretro.so --config /media/data/local/home/.retroarch/retroarch.cfg "$1"
-```</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/bin/sh</span>
+/media/data/local/bin/retroarch_rg350<span class="w"> </span>-v<span class="w"> </span>-L<span class="w"> </span>/media/data/local/home/.retroarch/cores/gambatte_libretro.so<span class="w"> </span>--config<span class="w"> </span>/media/data/local/home/.retroarch/retroarch.cfg<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+</code></pre></div></td></tr></table></div>
 <p>Introducimos el script anterior junto con un icono adecuado al sistema que va a lanzar y un <code>.desktop</code> que invoque el script pasando como argumento la ROM que vamos a lanzar, por ejemplo:</p>
-<p><code>[Desktop Entry]
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>[Desktop Entry]
 Name=Nintendo GB (RA)
 Comment=Nintendo GB in RetroArch
 Exec=exec.sh %f
@@ -4133,7 +4115,8 @@ Type=Application
 StartupNotify=true
 Icon=icon
 Categories=retroarch;
-X-OD-NeedsDownscaling=true</code></p>
+X-OD-NeedsDownscaling=true
+</code></pre></div></td></tr></table></div>
 <p>Los cores que ofrece la última versión de RetroArch publicada en el momento de actualizar este artículo (2021-07-04) son los siguientes:</p>
 <table>
 <thead>

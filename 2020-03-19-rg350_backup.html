@@ -1204,53 +1204,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#binsh" class="md-nav__link">
-    <span class="md-ellipsis">
-      !/bin/sh
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#titlebackup-partial-home-folder" class="md-nav__link">
-    <span class="md-ellipsis">
-      title=Backup partial home folder
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#descbackup-home-folder-to-sd-card-save-all-your-settings-except-fba-previews" class="md-nav__link">
-    <span class="md-ellipsis">
-      desc=Backup home folder to SD card, save all your settings except FBA previews
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#authoreduardofilo" class="md-nav__link">
-    <span class="md-ellipsis">
-      author=eduardofilo
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="author=eduardofilo">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#restauracion" class="md-nav__link">
     <span class="md-ellipsis">
       Restauración
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4094,53 +4052,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#binsh" class="md-nav__link">
-    <span class="md-ellipsis">
-      !/bin/sh
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#titlebackup-partial-home-folder" class="md-nav__link">
-    <span class="md-ellipsis">
-      title=Backup partial home folder
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#descbackup-home-folder-to-sd-card-save-all-your-settings-except-fba-previews" class="md-nav__link">
-    <span class="md-ellipsis">
-      desc=Backup home folder to SD card, save all your settings except FBA previews
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#authoreduardofilo" class="md-nav__link">
-    <span class="md-ellipsis">
-      author=eduardofilo
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="author=eduardofilo">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#restauracion" class="md-nav__link">
     <span class="md-ellipsis">
       Restauración
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4161,6 +4077,8 @@
   
   
 
+
+  <h1>RG350 Backup</h1>
 
 <p><img alt="Backup logo" src="images/posts/backup_logo.png" /></p>
 <div class="admonition tip">
@@ -4184,30 +4102,38 @@
 <h2 id="comando-de-backup">Comando de backup<a class="headerlink" href="#comando-de-backup" title="Permanent link">&para;</a></h2>
 <p>Vamos a empezar conociendo el comando que vamos a utilizar. OpenDingux como sabemos es un sistema Linux. En estos sistemas hay una utilidad y formato de archivo muy popular pensado para realizar backups llamado <code>tar</code>. Proviene de cuando los backups se hacían en cintas y de ahí el nombre (Tape ARchive). Está instalado prácticamente en todos los sitemas Linux existentes, por lo que está muy disponible. La forma habitual de utilizarlo es por línea de comando, pero que nadie se asuste. Vamos a empezar viéndolo de esta forma pero más adelante veremos cómo ejecutar este comando desde una aplicación gráfica disponible en ROGUE.</p>
 <p>Un comando adecuado para "entarar" el directorio Home sería el siguiente ("entarar" es como se dice en la jerga a la acción de respaldar algo con <code>tar</code>):</p>
-<p><code>bash
-tar -cf /media/sdcard/home_backup.tar -C /media/data/local home</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>tar<span class="w"> </span>-cf<span class="w"> </span>/media/sdcard/home_backup.tar<span class="w"> </span>-C<span class="w"> </span>/media/data/local<span class="w"> </span>home
+</code></pre></div></td></tr></table></div>
 <p>Ejecutando esto nos aparecería en la raíz de la tarjeta externa un fichero de nombre <code>home_backup.tar</code> con el contenido del directorio <code>/media/data/local/home</code>. En una consola recién comprada o instalada el comando anterior se ejecuta muy rápidamente y el fichero resultante será pequeño. Si hemos colocado ficheros muy grandes o numerosos en el Home, cosa que es necesario para algunos emuladores, el fichero resultante puede llegar a ser muy grande y el proceso tardar mucho tiempo. En este caso tendremos que recordar o averiguar qué ficheros merece la pena excluir del backup como veremos a continuación.</p>
 <h2 id="excluyendo-ficheros-del-backup">Excluyendo ficheros del backup<a class="headerlink" href="#excluyendo-ficheros-del-backup" title="Permanent link">&para;</a></h2>
 <p>Una vez que sepamos qué directorios o ficheros del Home se pueden excluir del backup las incorporaremos al comando <code>tar</code>. Como ejemplo vamos a utilizar el directorio de previews de FBA que este emulador obliga a que se encuentre en el Home, concretamente en <code>/media/data/local/home/.fba/previews</code>. El comando de backup quedará como sigue:</p>
-<p><code>bash
-tar -cf /media/sdcard/home_backup.tar -C /media/data/local --exclude=home/.fba/previews home</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>tar<span class="w"> </span>-cf<span class="w"> </span>/media/sdcard/home_backup.tar<span class="w"> </span>-C<span class="w"> </span>/media/data/local<span class="w"> </span>--exclude<span class="o">=</span>home/.fba/previews<span class="w"> </span>home
+</code></pre></div></td></tr></table></div>
 <p>Como vemos lo que tenemos que hacer es añadir el parámetro <code>--exclude</code> con el valor de la ruta a excluir a partir de <code>home</code>. Es decir no hay que poner delante <code>/media/data/local</code> ya que la opción <code>-C</code> que está poco antes en el comando establece ese directorio como la raíz. Por cada directorio o archivo que queramos excluir añadiremos un parámetro <code>--exclude</code> como el anterior. Por ejemplo vamos a ver cómo se excluiría la BIOS de PlayStation además de las previews de FBA que hemos indicado antes. No es el mejor ejemplo, porque ganamos poco excluyéndola, ya que sólo ocupa unos 500KB, pero ciertamente ese fichero se puede encontrar fácilmente si lo perdemos:</p>
-<p><code>bash
-tar -cf /media/sdcard/home_backup.tar -C /media/data/local --exclude=home/.fba/previews --exclude=home/.pcsx4all/bios/SCPH1001.BIN home</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>tar<span class="w"> </span>-cf<span class="w"> </span>/media/sdcard/home_backup.tar<span class="w"> </span>-C<span class="w"> </span>/media/data/local<span class="w"> </span>--exclude<span class="o">=</span>home/.fba/previews<span class="w"> </span>--exclude<span class="o">=</span>home/.pcsx4all/bios/SCPH1001.BIN<span class="w"> </span>home
+</code></pre></div></td></tr></table></div>
 <p>Una vez que tengamos identificado lo que merece la pena excluir de nuestro backup para aligerarlo, vamos a ver cómo lanzarlo más cómodamente.</p>
 <h2 id="ejecucion-desde-scriptrunner">Ejecución desde Scriptrunner<a class="headerlink" href="#ejecucion-desde-scriptrunner" title="Permanent link">&para;</a></h2>
 <p>Desde hace unas versiones, ROGUE incluye una utilidad muy práctica de Rafa Vico llamada Scriptrunner que permite ejecutar scripts de comandos desde un listado. De serie trae un script para hacer backup del Home con el comando indicado en un principio (sin los excludes). Los scripts que vienen de serie no se pueden modificar, pero se pueden añadir nuevos sin más que incorporarlos al directorio <code>/media/data/local/home/.scriptrunner</code>. Por ejemplo, vamos a ver cómo incorporaríamos un nuevo script de backup con el exclude del directorio de imágenes de previews de FBA que hemos comentado antes.</p>
 <p>Empezamos creando un fichero de texto con el siguiente contenido y de nombre <code>home_backup_partial.sh</code> (por ejemplo):</p>
-<p>```</p>
-<h1 id="binsh">!/bin/sh<a class="headerlink" href="#binsh" title="Permanent link">&para;</a></h1>
-<h1 id="titlebackup-partial-home-folder">title=Backup partial home folder<a class="headerlink" href="#titlebackup-partial-home-folder" title="Permanent link">&para;</a></h1>
-<h1 id="descbackup-home-folder-to-sd-card-save-all-your-settings-except-fba-previews">desc=Backup home folder to SD card, save all your settings except FBA previews<a class="headerlink" href="#descbackup-home-folder-to-sd-card-save-all-your-settings-except-fba-previews" title="Permanent link">&para;</a></h1>
-<h1 id="authoreduardofilo">author=eduardofilo<a class="headerlink" href="#authoreduardofilo" title="Permanent link">&para;</a></h1>
-<p>echo "Backup home folder."
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>#!/bin/sh
+# title=Backup partial home folder
+# desc=Backup home folder to SD card, save all your settings except FBA previews
+# author=eduardofilo
+
+echo &quot;Backup home folder.&quot;
 tar -cf /media/sdcard/home_backup.tar -C /media/data/local --exclude=home/.fba/previews home
-echo ""
-echo "Backup done."
-```</p>
+echo &quot;&quot;
+echo &quot;Backup done.&quot;
+</code></pre></div></td></tr></table></div>
 <p>Lo que pongamos en las lineaas 2 y 3 serán el título y la descripción del script que luego se mostrará en el listado de Scriptrunner, por lo que podemos adaptarlo a nuestra conveniencia.</p>
 <div class="admonition warning">
 <p class="admonition-title">Advertencia</p>

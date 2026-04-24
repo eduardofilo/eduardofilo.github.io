@@ -4051,22 +4051,20 @@
 <h1 id="javascript">JavaScript<a class="headerlink" href="#javascript" title="Permanent link">&para;</a></h1>
 <h2 id="json">JSON<a class="headerlink" href="#json" title="Permanent link">&para;</a></h2>
 <p>La siguiente sentencia serializa en forma de JSON cualquier objeto. Es muy útil para analizar un objeto:</p>
-<p><code>javascript
-alert(JSON.stringify(object));</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">alert</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">object</span><span class="p">));</span>
+</code></pre></div></td></tr></table></div>
 <p>Es más limpio escribir en la consola del navegador. Aquí por ejemplo se muestra el objeto <code>data</code> de una instancia Vue.js:</p>
-<p><code>javascript
-console.log(JSON.stringify(vm._data));</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">vm</span><span class="p">.</span><span class="nx">_data</span><span class="p">));</span>
+</code></pre></div></td></tr></table></div>
 <p><a href="https://github.com/simeji/jid">Éste paquete</a> es un buen explorador de estructuras JSON.</p>
 <h2 id="npm">NPM<a class="headerlink" href="#npm" title="Permanent link">&para;</a></h2>
 <p>Uso básico del gestor de paquetes de <a href="https://www.npmjs.com/">Node.js</a>.</p>
 <p>Para gestionar las dependencias de paquetes en un proyecto hay que generar un fichero de seguimiento llamado <code>package.json</code>. Se genera con el comando (si añadimos la opción <code>-y</code> dará todos los valores predeterminados automáticamente, incluso recogerá los datos del repositorio git si éste ya está inicializado):</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>npm init
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>npm init
 </code></pre></div></td></tr></table></div>
-
 <p>Para descargar un paquete (por ejemplo <a href="https://www.npmjs.com/package/lodash">lodash</a>) e incorporarlo al fichero <code>package.json</code> ejecutar:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>npm install lodash --save
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>npm install lodash --save
 </code></pre></div></td></tr></table></div>
-
 <p>Encontraremos que el paquete se ha descargado en un subdirectorio llamado <code>node_modules</code> e incorporado a la sección <code>dependencies</code> de <code>packages.json</code> (si no hubiéramos puesto la opción <code>--save</code> sólo se habría descargado). Si la dependencia la queremos sólo para el entorno de desarrollo (típico por ejemplo en los paquetes de testing), en lugar de <code>--save</code> pondremos <code>--save-dev</code>.</p>
 <p>Algunos comandos útiles de npm son:</p>
 <ul>

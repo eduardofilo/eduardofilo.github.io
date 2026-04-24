@@ -4133,7 +4133,7 @@
 <ol>
 <li>
 <p>Instalar Luci:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -4143,18 +4143,16 @@
 # /etc/init.d/uhttpd start
 # /etc/init.d/uhttpd enable
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Descarga de paquetes por HTTPS:</p>
 <ol>
 <li>
 <p>Instalar:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code># opkg update
 # opkg install ca-certificates
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Editar el fichero <code>/etc/opkg/distfeeds.conf</code> y cambiar http por https.</p>
@@ -4166,7 +4164,7 @@
 <ol>
 <li>
 <p>Ejecutar:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -4182,19 +4180,16 @@
 # chown miusuario:miusuario /home/miusuario
 # opkg install sudo
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Editar el fichero <code>/etc/passwd</code> y poner shell al usuario nuevo:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>miusuario:x:1000:1000::/home/miusuario:/bin/ash
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>miusuario:x:1000:1000::/home/miusuario:/bin/ash
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Ejecutar el comando <code>visudo</code> y añadir la siguiente línea bajo la correspondiente a root:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>miusuario ALL=(ALL) ALL
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>miusuario ALL=(ALL) ALL
 </code></pre></div></td></tr></table></div>
-
 </li>
 </ol>
 </li>
@@ -4213,15 +4208,13 @@
 <li>Iniciar sesión SSH.</li>
 <li>
 <p>Hacer backup de fichero hosts:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>cp<span class="w"> </span>/etc/hosts<span class="w"> </span>/etc/hosts.bkp
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ sudo cp /etc/hosts /etc/hosts.bkp
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Editar crontab de root con comando <code>sudo crontab -e</code> y añadir la siguiente línea:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="mf">0</span><span class="w"> </span><span class="o">*/</span><span class="mf">12</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">wget</span><span class="w"> </span><span class="o">-</span><span class="n">O</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">hosts</span><span class="w"> </span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="mf">.</span><span class="n">githubusercontent</span><span class="mf">.</span><span class="n">com</span><span class="o">/</span><span class="n">StevenBlack</span><span class="o">/</span><span class="n">hosts</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">alternates</span><span class="o">/</span><span class="n">fakenews</span><span class="o">/</span><span class="n">hosts</span><span class="p">;</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">hosts</span><span class="mf">.</span><span class="n">bkp</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">hosts</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>0 */12 * * * wget -O /etc/hosts https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews/hosts; cat /etc/hosts.bkp &gt;&gt; /etc/hosts
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Hay varias configuraciones posibles para el fichero hosts descritas <a href="https://github.com/StevenBlack/hosts">aquí</a>.</p>
@@ -4235,9 +4228,8 @@
 <ol>
 <li>
 <p>Instalación de paquetes (el comando siguiente instala además los siguientes paquetes dependientes <code>kmod-tun liblzo zlib libopenssl</code>):</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>opkg<span class="w"> </span>install<span class="w"> </span>luci-app-openvpn<span class="w"> </span>openvpn-openssl
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ sudo opkg install luci-app-openvpn openvpn-openssl
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Creamos un nuevo interface para lo que en Luci vamos a <code>Network &gt; Interfaces</code>.</p>
@@ -4286,9 +4278,8 @@
 </li>
 <li>
 <p>Editar el fichero y modificar la línea que contiene el parámetro <code>auth-user-pass</code> dejándola como sigue:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>auth-user-pass &#39;/etc/openvpn/protonvpn/auth&#39;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>auth-user-pass &#39;/etc/openvpn/protonvpn/auth&#39;
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Transferir el fichero descargado al router y situarlo en la ruta <code>/etc/openvpn/protonvpn</code> (habrá que crear el directorio <code>protonvpn</code>).</p>
@@ -4297,19 +4288,17 @@
 <li>Crear en el router el fichero <code>/etc/openvpn/protonvpn/auth</code>, editarlo y escribir en la primera línea el username anterior y en la segunda el password.</li>
 <li>
 <p>Editar en el router el fichero <code>/etc/config/openvpn</code> y añadir las siguientes líneas:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>config openvpn &#39;protonvpn&#39;
     option config &#39;/etc/openvpn/protonvpn/is-es-01.protonvpn.com.udp.ovpn&#39;
     option enabled &#39;1&#39;
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Reiniciar el servicio openvpn en el router:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>/etc/init.d/openvpn<span class="w"> </span>restart
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ sudo /etc/init.d/openvpn restart
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Ir a <code>Network &gt; Interfaces &gt; LAN</code> y en el parámetro <code>Use custom DNS servers</code> dejar únicamente la IP <code>10.8.8.1</code> (en caso de utilizar OpenVPN por protocolo TCP usar <code>10.7.7.1</code> en su lugar).</p>
@@ -4377,15 +4366,23 @@
 </ol>
 <h2 id="cambio-de-perfil-protonvpn">Cambio de perfil ProtonVPN<a class="headerlink" href="#cambio-de-perfil-protonvpn" title="Permanent link">&para;</a></h2>
 <p>En el router hay instalados un par de perfiles (se descargan de <a href="https://account.protonvpn.com/downloads#openvpn-configuration-files">aquí</a>), los correspondientes a Suiza (ch) y a Islandia (is). Los perfiles están aquí:</p>
-<p><code>edumoreno@OpenWrt:~$ cd /etc/openvpn/protonvpn
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>edumoreno@OpenWrt:~$ cd /etc/openvpn/protonvpn
 edumoreno@OpenWrt:/etc/openvpn/protonvpn$ ls -l
 -rw-r--r--    1 root     root            24 Nov 24  2018 auth
 -rw-r--r--    1 edumoren edumoren      4479 Jan 25 15:16 ch-es-01.protonvpn.com.udp.ovpn
--rw-r--r--    1 root     root          4609 Nov 24  2018 is-es-01.protonvpn.com.udp.ovpn</code></p>
+-rw-r--r--    1 root     root          4609 Nov 24  2018 is-es-01.protonvpn.com.udp.ovpn
+</code></pre></div></td></tr></table></div>
 <p>Y se configuran al principio del fichero <code>/etc/config/openvpn</code>:</p>
-<p><code>config openvpn 'protonvpn'
-        option config '/etc/openvpn/protonvpn/ch-es-01.protonvpn.com.udp.ovpn'
-        option enabled '1'</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>config openvpn &#39;protonvpn&#39;
+        option config &#39;/etc/openvpn/protonvpn/ch-es-01.protonvpn.com.udp.ovpn&#39;
+        option enabled &#39;1&#39;
+</code></pre></div></td></tr></table></div>
 
 
 

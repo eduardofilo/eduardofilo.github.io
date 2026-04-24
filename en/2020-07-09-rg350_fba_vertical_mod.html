@@ -943,15 +943,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#commandline-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      Commandline interface
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#1-nuevo-lanzador-con-explorer" class="md-nav__link">
     <span class="md-ellipsis">
       1. Nuevo lanzador con explorer
@@ -970,26 +961,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#binsh" class="md-nav__link">
-    <span class="md-ellipsis">
-      !/bin/sh
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="!/bin/sh">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#utilizacion-del-mod-de-fba" class="md-nav__link">
     <span class="md-ellipsis">
       Utilización del mod de FBA
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4076,15 +4052,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#commandline-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      Commandline interface
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#1-nuevo-lanzador-con-explorer" class="md-nav__link">
     <span class="md-ellipsis">
       1. Nuevo lanzador con explorer
@@ -4103,26 +4070,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#binsh" class="md-nav__link">
-    <span class="md-ellipsis">
-      !/bin/sh
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="!/bin/sh">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#utilizacion-del-mod-de-fba" class="md-nav__link">
     <span class="md-ellipsis">
       Utilización del mod de FBA
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4144,6 +4096,8 @@
   
 
 
+  <h1>RG350 FBA mod</h1>
+
 <p><img alt="FBA Logo" src="../images/posts/fba_logo.png" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Versión de FBA mejorada</p>
@@ -4163,29 +4117,68 @@
 <p>Como en otros artículos, a partir de aquí voy a mostrar detalles técnicos del problema que hay debajo de lo anterior y cómo se ha hecho la modificación del emulador. Si no te interesan y sólo quieres aprovechar la modificación del emulador puedes saltar hasta el apartado <a href="#utilizacion-del-mod-de-fba">Utilización del mod de FBA</a>.</p>
 <h2 id="descripcion-tecnica-del-problema">Descripción técnica del problema<a class="headerlink" href="#descripcion-tecnica-del-problema" title="Permanent link">&para;</a></h2>
 <p>En el Readme que hay dentro del OPK puede leerse lo siguiente:</p>
-<p>```
-FBA SDL could be used as a standalone application when invoked with
-rom zip with full path as a parameter:</p>
-<p>./fbasdl.dge ./roms/dino.zip</p>
-<p>Full path and extension are obligatory.</p>
-<h2 id="commandline-interface">Commandline interface<a class="headerlink" href="#commandline-interface" title="Permanent link">&para;</a></h2>
-<p>FBA SDL can also be invoked with command line options.
-The options are as follows;</p>
-<p>./fbasdl.dge <game> [<parameters>]</p>
-<p><game>                  - The game's romname with full path and extension.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code>FBA SDL could be used as a standalone application when invoked with
+rom zip with full path as a parameter:
+
+./fbasdl.dge ./roms/dino.zip
+
+Full path and extension are obligatory.
+
+
+Commandline interface
+---------------------
+
+FBA SDL can also be invoked with command line options.
+The options are as follows;
+
+./fbasdl.dge &lt;game&gt; [&lt;parameters&gt;]
+
+&lt;game&gt;                  - The game&#39;s romname with full path and extension.
 --no-sound              - Just be silent
 --sound-sdl             - Use SDL for sound (mutex syncro)
 --sound-sdl-old         - Use SDL for sound
 --sound-ao              - Use libao for sound
---samplerate=<Hz>       - Valid values are: 11025, 16000, 22050, 32000 and 44100
---sense=<value>         - Analog sensitivity: 0..100
+--samplerate=&lt;Hz&gt;       - Valid values are: 11025, 16000, 22050, 32000 and 44100
+--sense=&lt;value&gt;         - Analog sensitivity: 0..100
 --showfps               - Show frames per second while play
 --vsync                 - Syncronize video refresh on 60Hz
---68kcore=<value>       - Choose Motorola 68000 emulation core.
-                          0 - C68k, 1 - Musashi M68k, 2 - A68k</p>
-<p>Example:</p>
-<p>./fbasdl.dge ./roms/dino.zip --sound-sdl --samplerate=44100 --68kcore=0
-```</p>
+--68kcore=&lt;value&gt;       - Choose Motorola 68000 emulation core.
+                          0 - C68k, 1 - Musashi M68k, 2 - A68k
+
+Example:
+
+./fbasdl.dge ./roms/dino.zip --sound-sdl --samplerate=44100 --68kcore=0
+</code></pre></div></td></tr></table></div>
 <p>Así pues como vemos, el ejecutable que hay dentro del OPK (<code>fbasdl.dge</code>) está preparado para aceptar parámetros. Aquí podemos detectar dos problemas:</p>
 <ol>
 <li>El emulador sólo tiene un lanzador (fichero <code>.desktop</code> en el interior del OPK) que es el que sirve para abrir el interfaz propio de FBA. Necesitaríamos el típico lanzador que tienen la mayoría de los emuladores que muestra un explorador de ficheros para seleccionar la ROM que luego se pasa como argumento al ejecutable.</li>
@@ -4195,27 +4188,54 @@ The options are as follows;</p>
 <h2 id="1-nuevo-lanzador-con-explorer">1. Nuevo lanzador con explorer<a class="headerlink" href="#1-nuevo-lanzador-con-explorer" title="Permanent link">&para;</a></h2>
 <p>Lo primero que hacemos es bajar el OPK. Vamos a partir de <a href="https://github.com/nobk/fba-sdl/releases/download/r19/fba-RG350-r19-8e351b8b.opk">éste</a>.</p>
 <p>A continuación lo desenlatamos para ver su interior. En Windows creo que se puede utilizar WinRAR o 7Zip (no lo tengo claro). En Linux lo haremos por linea de comando:</p>
-<p>```
-$ unsquashfs fba-RG350-r19-8e351b8b.opk
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>$ unsquashfs fba-RG350-r19-8e351b8b.opk
 Parallel unsquashfs: Using 4 processors
-9 inodes (241 blocks) to write</p>
-<p>[=====================================================================================================================================|] 241/241 100%</p>
-<p>created 8 files
+9 inodes (241 blocks) to write
+
+[=====================================================================================================================================|] 241/241 100%
+
+created 8 files
 created 2 directories
 created 0 symlinks
 created 0 devices
 created 0 fifos
-```</p>
+</code></pre></div></td></tr></table></div>
 <p>Si miramos lo que hay en el interior del OPK vemos que efectivamente sólo contiene un lanzador:</p>
-<p><code>$ ls -l
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>$ ls -l
 total 29972
 -rw-rw-r-- 1 edumoreno edumoreno      193 ene  4  2020 default.gcw0.desktop
 -rw-rw-r-- 2 edumoreno edumoreno      795 ene  4  2020 fba_icon.png
 -rwxrwxr-x 1 edumoreno edumoreno 30666200 ene 22 03:50 fbasdl.dge
 -rw-rw-r-- 1 edumoreno edumoreno     8819 ene 22 03:46 readme.txt
-drwxrwxr-x 2 edumoreno edumoreno     4096 ene  4  2020 skin</code></p>
+drwxrwxr-x 2 edumoreno edumoreno     4096 ene  4  2020 skin
+</code></pre></div></td></tr></table></div>
 <p>Visualizando el fichero <code>default.gcw0.desktop</code> (es un fichero de texto) el lanzador lo único que hace es ejecutar FBA sin argumentos, es decir el binario <code>fbasdl.dge</code>:</p>
-<p><code>[Desktop Entry]
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>[Desktop Entry]
 Name=FBA-RG350
 Comment=Arcade machine emulator
 Exec=fbasdl.dge
@@ -4224,9 +4244,19 @@ Type=Application
 StartupNotify=true
 Icon=fba_icon
 Categories=emulators;
-X-OD-NeedsDownscaling=true</code></p>
+X-OD-NeedsDownscaling=true
+</code></pre></div></td></tr></table></div>
 <p>Lo primero que haremos es renombrar el fichero para reservar el nombre <code>default.gcw0.desktop</code> para el lanzador que crearemos a continuación. También cambiaremos el parámetro <code>Name</code> por <code>FBA UX</code> para indicar que este lanzador es el que lanza el interfaz (UX = User eXperience) propio de FBA. Así pues terminaremos con un fichero de nombre <code>fba_ux.gcw0.desktop</code> y el siguiente contenido:</p>
-<p><code>[Desktop Entry]
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>[Desktop Entry]
 Name=FBA UX
 Comment=Arcade machine emulator
 Exec=fbasdl.dge
@@ -4235,9 +4265,19 @@ Type=Application
 StartupNotify=true
 Icon=fba_icon
 Categories=emulators;
-X-OD-NeedsDownscaling=true</code></p>
+X-OD-NeedsDownscaling=true
+</code></pre></div></td></tr></table></div>
 <p>Ahora creamos un segundo <code>.desktop</code> para ejecutar FBA como un emulador más convencional con selección previa de ROM. Crearemos un fichero de nombre <code>default.gcw0.desktop</code> y el siguiente contenido:</p>
-<p><code>[Desktop Entry]
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>[Desktop Entry]
 Name=FBA Explorer
 Comment=Arcade machine emulator
 Exec=fbasdl.dge %f
@@ -4246,10 +4286,12 @@ Type=Application
 StartupNotify=true
 Icon=fba_icon
 Categories=emulators;
-X-OD-NeedsDownscaling=true</code></p>
+X-OD-NeedsDownscaling=true
+</code></pre></div></td></tr></table></div>
 <p>En él vemos que el comando a ejecutar tiene previsto el argumento <code>%f</code> donde se insertará el fichero de la ROM seleccionada con el explorador de ficheros.</p>
 <p>Una vez hechos estos cambios volvemos a enlatar el OPK. En Linux lo haremos con el siguiente comando:</p>
-<p><code>$ mksquashfs squashfs-root/ fba-RG350-r19-mod.opk -all-root -noappend -no-exports -no-xattrs</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ mksquashfs squashfs-root/ fba-RG350-r19-mod.opk -all-root -noappend -no-exports -no-xattrs
+</code></pre></div></td></tr></table></div>
 <p>Si sustituimos el OPK original instalado en la consola por el que acabamos de re-ensamblar con el comando anterior, veremos que ahora nos aparecen dos lanzadores en GMenu2X:</p>
 <p><img alt="FBA New launchers" src="../images/posts/fba_mod/fba_new_launchers.png" /></p>
 <p>El que tiene la etiqueta <code>FBA UX</code> se comportará como el original y el nuevo <code>FBA Explorer</code> mostrará un explorador de ficheros como la mayoría de los emuladores:</p>
@@ -4257,33 +4299,60 @@ X-OD-NeedsDownscaling=true</code></p>
 <p>Con esto tendríamos resuelto el primer problema dado que ahora launchers como SimpleMenu, PyMenu o EmulationStation podrán integrar este OPK modificado de FBA para ejecutar los juegos.</p>
 <h2 id="2-localizar-opcion-para-rotar-pantalla">2. Localizar opción para rotar pantalla<a class="headerlink" href="#2-localizar-opcion-para-rotar-pantalla" title="Permanent link">&para;</a></h2>
 <p>El segundo problema podía no haber tenido solución pero hubo suerte. Como veíamos, según el Readme no parecía haber un parámetro que permitiera controlar la rotación de la pantalla por linea de comando. A pesar de ello echando un vistazo al código fuente de FBA encontramos la siguiente estructura en el fichero <a href="https://github.com/nobk/fba-sdl/blob/master/src/sdl-dingux/main.cpp">src/sdl-dingux/main.cpp</a>:</p>
-<p><code>c
-    static struct option long_opts[] = {
-        {"sound-sdl-old", 0, &amp;options.sound, 3},
-        {"sound-sdl", 0, &amp;options.sound, 2},
-        {"sound-ao", 0, &amp;options.sound, 1},
-        {"no-sound", 0, &amp;options.sound, 0},
-        {"samplerate", required_argument, 0, 'r'},
-        {"frameskip", required_argument, 0, 'c'},
-        {"vsync", 0, &amp;options.vsync, 1},
-        {"scaling", required_argument, 0, 'a'},
-        {"rotate", required_argument, 0, 'o'},
-        {"hwscaling", required_argument, 0, 'h'},
-        {"sense", required_argument, 0, 'd'},
-        {"showfps", 0, &amp;options.showfps, 1},
-        {"no-showfps", 0, &amp;options.showfps, 0},
-        {"create-lists", 0, &amp;options.create_lists, 1},
-        {"68kcore", required_argument, 0, 's'},
-        {"z80core", required_argument, 0, 'z'},
-    };</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">option</span><span class="w"> </span><span class="n">long_opts</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">{</span><span class="s">&quot;sound-sdl-old&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">options</span><span class="p">.</span><span class="n">sound</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="s">&quot;sound-sdl&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">options</span><span class="p">.</span><span class="n">sound</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="s">&quot;sound-ao&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">options</span><span class="p">.</span><span class="n">sound</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="s">&quot;no-sound&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">options</span><span class="p">.</span><span class="n">sound</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="s">&quot;samplerate&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">required_argument</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;r&#39;</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="s">&quot;frameskip&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">required_argument</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;c&#39;</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="s">&quot;vsync&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">options</span><span class="p">.</span><span class="n">vsync</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="s">&quot;scaling&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">required_argument</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="s">&quot;rotate&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">required_argument</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;o&#39;</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="s">&quot;hwscaling&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">required_argument</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;h&#39;</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="s">&quot;sense&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">required_argument</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;d&#39;</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="s">&quot;showfps&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">options</span><span class="p">.</span><span class="n">showfps</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="s">&quot;no-showfps&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">options</span><span class="p">.</span><span class="n">showfps</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="s">&quot;create-lists&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">options</span><span class="p">.</span><span class="n">create_lists</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="s">&quot;68kcore&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">required_argument</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;s&#39;</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="s">&quot;z80core&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">required_argument</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;z&#39;</span><span class="p">},</span>
+<span class="w">    </span><span class="p">};</span>
+</code></pre></div></td></tr></table></div>
 <p>Esto parece indicar que hay más opciones sin documentar en el Readme. Así pues sin revisar más a fondo el código, haciendo una prueba incorporando la opción <code>rotate</code> al <code>.desktop</code> de tipo Explorer se comprueba que es efectiva. Concretamente lo que hay que añadir al comando de ejecución es:</p>
-<p><code>Exec=fbasdl.dge %f --rotate=2</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Exec=fbasdl.dge %f --rotate=2
+</code></pre></div></td></tr></table></div>
 <p>El valor 2 se obtiene de observar el valor que toma el parámetro <code>FBA_ROTATE</code> en los ficheros que aparecen en <code>/media/data/local/home/.fba/configs</code> y que son los que aplican cuando ejecutamos los juegos desde el interfaz propio de FBA (<code>FBA UX</code>).</p>
 <p>Ya sabemos cómo podemos indicar por linea de comando cómo rotar la pantalla. Ahora tenemos un último problema y es que este parámetro sólo nos interesa para los juegos en vertical. Si ponemos este argumento en los juegos horizontales, veremos la pantalla de esta forma:</p>
 <p><img alt="Metal Slug" src="../images/posts/fba_mod/metal_slug.png" /></p>
 <p>Una opción sería crear un tercer <code>.desktop</code> con la opción (dejando el que hemos creado antes sin la opción) y utilizar ese lanzador para los juegos verticales pero esto nos obligaría a separar en secciones distintas los juegos verticales de los horizontales en los frontends como SimpleMenu. La solución por la que se ha optado aquí es intercalar un pequeño script que analice si el juego es vertical o no y en función de eso aplique la opción <code>--rotate=2</code> o no. La forma de averiguar si el juego es vertical será declarándolo en un pequeño fichero de texto en el directorio de las ROMs.</p>
 <p>Lo primero que haremos será modificar el <code>default.gcw0.desktop</code> para que en lugar de ejecutar el binario del emulador directamente se ejecute un pequeño script:</p>
-<p><code>[Desktop Entry]
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>[Desktop Entry]
 Name=FBA Explorer
 Comment=Arcade machine emulator
 Exec=v_detector.sh %f
@@ -4292,14 +4361,29 @@ Type=Application
 StartupNotify=true
 Icon=fba_icon
 Categories=emulators;
-X-OD-NeedsDownscaling=true</code></p>
+X-OD-NeedsDownscaling=true
+</code></pre></div></td></tr></table></div>
 <p>Finalmente incorporaremos dentro del OPK el script que discrimina los juegos verticales como hemos comentado. Su nombre será <code>v_detector.sh</code> y su contenido el siguiente:</p>
-<p>```</p>
-<h1 id="binsh">!/bin/sh<a class="headerlink" href="#binsh" title="Permanent link">&para;</a></h1>
-<p>V_GAMES_FILE=$(dirname "$1")/vertical_games.txt
-if [ -f "$V_GAMES_FILE" ]
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code>#!/bin/sh
+
+V_GAMES_FILE=$(dirname &quot;$1&quot;)/vertical_games.txt
+if [ -f &quot;$V_GAMES_FILE&quot; ]
 then
-    V_GAME_NAME=$(basename "$1")
+    V_GAME_NAME=$(basename &quot;$1&quot;)
     if grep -q $V_GAME_NAME $V_GAMES_FILE
     then
         ./fbasdl.dge $1 --rotate=2
@@ -4309,17 +4393,24 @@ then
 else
     ./fbasdl.dge $1
 fi
-```</p>
+</code></pre></div></td></tr></table></div>
 <p>No hay que olvidarse de dar permiso de ejecución (<code>+x</code>) al script anterior.</p>
-<p><code>$ chmod +x v_detector.sh</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ chmod +x v_detector.sh
+</code></pre></div></td></tr></table></div>
 <p>Con todos estos cambios, volvemos a empaquetar el OPK como hemos visto antes:</p>
-<p><code>$ mksquashfs squashfs-root/ fba-RG350-r19-mod.opk -all-root -noappend -no-exports -no-xattrs</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ mksquashfs squashfs-root/ fba-RG350-r19-mod.opk -all-root -noappend -no-exports -no-xattrs
+</code></pre></div></td></tr></table></div>
 <p>Lo instalamos en la consola y a partir de ahora sólo tendremos que incluir el nombre del fichero de la ROM (extensión <code>.zip</code> incluida) en un fichero de nombre <code>vertical_games.txt</code> en el mismo directorio donde se encuentren las ROMs. Por ejemplo algunos de los juegos candidatos a encontrarse en este listado son:</p>
-<p><code>1941.zip
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>1941.zip
 19xx.zip
 dimahoo.zip
 mercs.zip
-varth.zip</code></p>
+varth.zip
+</code></pre></div></td></tr></table></div>
 <h2 id="utilizacion-del-mod-de-fba">Utilización del mod de FBA<a class="headerlink" href="#utilizacion-del-mod-de-fba" title="Permanent link">&para;</a></h2>
 <p>Vamos a dar instrucciones para utilizar el emulador FBA modificado a lo largo de este artículo.</p>
 <p>Una versión empaquetada con todas las modificaciones ya hechas puede descargarse de <a href="../files/posts/fba_mod/fba-RG350-r19-mod.opk">aquí</a>.</p>

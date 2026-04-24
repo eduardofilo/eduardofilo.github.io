@@ -4100,8 +4100,8 @@
 </ol>
 <h2 id="connection">Connection<a class="headerlink" href="#connection" title="Permanent link">&para;</a></h2>
 <p>To connect to the UART port just exposed, we use the typical UART-USB adapter. In my case I use <a href="https://www.amazon.es/dp/B07BBPX8B8">this one</a> which has quite a lot of possibilities. As client I use <code>screen</code> in Linux launched as follows since the port speed is 115200bps:</p>
-<p><code>bash
-sudo screen /dev/ttyUSB0 115200 8N1</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>screen<span class="w"> </span>/dev/ttyUSB0<span class="w"> </span><span class="m">115200</span><span class="w"> </span>8N1
+</code></pre></div></td></tr></table></div>
 <p>We will only use the GND, RX and TX pins, crossing the last two with those of the UART-USB adapter, that is to say wiring the RX of the device to the TX of the adapter and vice versa. Although we do not use the power supply line (2.8V in this device), we will configure the UART-USB adapter to 3.3V so that the signal levels that travel by RX/TX are as similar as possible.</p>
 <p>An example:</p>
 <iframe width="806" height="453" src="https://www.youtube.com/embed/Df2k8gsOvtM" title="Miyoo Mini UART session" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

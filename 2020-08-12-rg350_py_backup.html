@@ -4077,9 +4077,30 @@
 <img alt="SimpleMenu" src="images/posts/rg350_py_backup/simplemenu.png" /></p>
 <h2 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h2>
 <p>La configuración de Py Backup se hace por medio del fichero que se crea en la siguiente ruta la primera vez que se ejecuta:</p>
-<p><code>/media/data/local/home/.py_backup/config.ini</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>/media/data/local/home/.py_backup/config.ini
+</code></pre></div></td></tr></table></div>
 <p>Por defecto viene con las rutas de los directorios de savestate de varios emuladores populares:</p>
-<p><code>[DEFAULT]
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code>[DEFAULT]
 destination_directory = /media/sdcard/backups
 systems =
     Stella (A2600),True,/media/data/local/home/.stella/state
@@ -4099,7 +4120,8 @@ systems =
     xMAME (Arcade),True,/media/data/local/share/xmame/xmame52/sta,/media/data/local/share/xmame/xmame69/sta,/media/data/local/share/xmame/xmame84/sta
     ScummVM,True,/media/data/local/home/.local/share/scummvm/saves
     OpenBOR,True,/media/data/local/home/.OpenBOR/Saves
-    Ports,True,/media/data/local/home/.nxengine,/media/data/local/home/.local/share/VVVVVV/saves,/media/data/local/home/.methane,/media/data/local/home/.sorrv5/savegame</code></p>
+    Ports,True,/media/data/local/home/.nxengine,/media/data/local/home/.local/share/VVVVVV/saves,/media/data/local/home/.methane,/media/data/local/home/.sorrv5/savegame
+</code></pre></div></td></tr></table></div>
 <p>Como vemos dentro del fichero de tipo <a href="https://es.wikipedia.org/wiki/INI_(extensi%C3%B3n_de_archivo)">INI</a> encontramos dos parámetros:</p>
 <ul>
 <li><code>destination_directory</code>: Contiene la ruta sobre la que queremos que se dejen los backups.</li>
@@ -4113,7 +4135,8 @@ systems =
 </ol>
 <p>Es importante que las lineas que contienen las definiciones de los ficheros de backup estén indentados con 4 espacios o un tabulador.</p>
 <p>Por ejemplo vamos a analizar la configuración del fichero de backup siguiente:</p>
-<p><code>PCSX4All (PS),True,/media/data/local/home/.pcsx4all/sstates,/media/data/local/home/.pcsx4all/memcards</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>    PCSX4All (PS),True,/media/data/local/home/.pcsx4all/sstates,/media/data/local/home/.pcsx4all/memcards
+</code></pre></div></td></tr></table></div>
 <p>Al ejecutar el backup, aparecerá un fichero de nombre <code>PCSX4All (PS).tgz</code> en el directorio <code>/media/sdcard/backups</code> y con el contenido de los dos siguientes directorios:</p>
 <ul>
 <li><code>/media/data/local/home/.pcsx4all/sstates</code></li>

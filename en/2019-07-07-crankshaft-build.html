@@ -3975,65 +3975,82 @@
 <li>Mount the microSD, boot the system, find out its IP address (using Fing for example), and connect over SSH (<code>user: pi</code>; <code>pwd: raspberry</code>).</li>
 <li>
 <p>Update the package library and install some required packages:</p>
-<p><code>bash
-$ sudo apt-get update
-$ sudo apt-get upgrade
-$ sudo apt-get install -y libboost-all-dev libusb-1.0.0-dev cmake libprotobuf-dev protobuf-c-compiler protobuf-compiler librtaudio-dev</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>upgrade
+$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>libboost-all-dev<span class="w"> </span>libusb-1.0.0-dev<span class="w"> </span>cmake<span class="w"> </span>libprotobuf-dev<span class="w"> </span>protobuf-c-compiler<span class="w"> </span>protobuf-compiler<span class="w"> </span>librtaudio-dev
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Download the <code>development</code> branch of <a href="https://github.com/abraha2d">abraha2d</a>'s <a href="https://github.com/abraha2d/aasdk">aasdk</a> fork:</p>
-<p><code>bash
-$ cd ~
-$ git clone -b development https://github.com/abraha2d/aasdk.git</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~
+$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>development<span class="w"> </span>https://github.com/abraha2d/aasdk.git
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>(OPTIONAL) At the time of writing this guide I built commit <code>361380e7d74ddeaf17afd8cd89882001bb62c77e</code>. If newer commits cause problems, check out the following revision:</p>
-<p><code>bash
-$ cd aasdk
-$ git checkout 361380e7d74ddeaf17afd8cd89882001bb62c77e</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>aasdk
+$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>361380e7d74ddeaf17afd8cd89882001bb62c77e
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Build <code>aasdk</code>:</p>
-<p><code>bash
-$ cd ~
-$ mkdir aasdk_build
-$ cd aasdk_build
-$ cmake -DCMAKE_BUILD_TYPE=Release ../aasdk
-$ make</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~
+$<span class="w"> </span>mkdir<span class="w"> </span>aasdk_build
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>aasdk_build
+$<span class="w"> </span>cmake<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release<span class="w"> </span>../aasdk
+$<span class="w"> </span>make
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Install some packages required to compile <code>ilclient</code>:</p>
-<p><code>bash
-$ sudo apt-get install -y libraspberrypi-doc libraspberrypi-dev
-$ cd /opt/vc/src/hello_pi/libs/ilclient
-$ make</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>libraspberrypi-doc<span class="w"> </span>libraspberrypi-dev
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/opt/vc/src/hello_pi/libs/ilclient
+$<span class="w"> </span>make
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Download the <code>crankshaft-ng</code> branch of <a href="https://github.com/abraha2d">abraha2d</a>'s <a href="https://github.com/abraha2d/openauto">openauto</a> fork:</p>
-<p><code>bash
-$ cd ~
-$ git clone -b crankshaft-ng https://github.com/abraha2d/openauto.git</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~
+$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>crankshaft-ng<span class="w"> </span>https://github.com/abraha2d/openauto.git
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>(OPTIONAL) At the time of writing this guide I built commit <code>d56417bfd6b2af9beacb104f8659aea8bff94a72</code>. If newer commits cause problems, check out the following revision:</p>
-<p><code>bash
-$ cd openauto
-$ git checkout d56417bfd6b2af9beacb104f8659aea8bff94a72</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>openauto
+$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>d56417bfd6b2af9beacb104f8659aea8bff94a72
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Build <code>openauto</code>:</p>
-<p><code>bash
-$ cd ~
-$ mkdir openauto_build
-$ cd openauto_build
-$ sudo apt-get install -y libtag1-dev libblkid-dev
-$ cmake -DCMAKE_BUILD_TYPE=Release -DRPI3_BUILD=TRUE -DAASDK_INCLUDE_DIRS="/home/pi/aasdk/include" -DAASDK_LIBRARIES="/home/pi/aasdk/lib/libaasdk.so" -DAASDK_PROTO_INCLUDE_DIRS="/home/pi/aasdk_build" -DAASDK_PROTO_LIBRARIES="/home/pi/aasdk/lib/libaasdk_proto.so" ../openauto
-$ make</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~
+$<span class="w"> </span>mkdir<span class="w"> </span>openauto_build
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>openauto_build
+$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>libtag1-dev<span class="w"> </span>libblkid-dev
+$<span class="w"> </span>cmake<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release<span class="w"> </span>-DRPI3_BUILD<span class="o">=</span>TRUE<span class="w"> </span>-DAASDK_INCLUDE_DIRS<span class="o">=</span><span class="s2">&quot;/home/pi/aasdk/include&quot;</span><span class="w"> </span>-DAASDK_LIBRARIES<span class="o">=</span><span class="s2">&quot;/home/pi/aasdk/lib/libaasdk.so&quot;</span><span class="w"> </span>-DAASDK_PROTO_INCLUDE_DIRS<span class="o">=</span><span class="s2">&quot;/home/pi/aasdk_build&quot;</span><span class="w"> </span>-DAASDK_PROTO_LIBRARIES<span class="o">=</span><span class="s2">&quot;/home/pi/aasdk/lib/libaasdk_proto.so&quot;</span><span class="w"> </span>../openauto
+$<span class="w"> </span>make
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Replace the Crankshaft distribution binary with the compiled one:</p>
-<p><code>bash
-$ sudo cp /home/pi/openauto/bin/autoapp /usr/local/bin/autoapp</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>cp<span class="w"> </span>/home/pi/openauto/bin/autoapp<span class="w"> </span>/usr/local/bin/autoapp
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Disable the DEV mode from step 1 and boot normally.</p>

@@ -4111,26 +4111,45 @@
 <p>MAME4All se basa en el <a href="retro-emulacion/rg-350.html#que-es-un-romset">romset</a> 0.37b5, también conocido como 0.41, cuya definición podemos encontrar <a href="http://www.progettosnaps.net/download?tipo=dat_mame&amp;file=/dats/MAME/MAME_Dats_037-52.rar">aquí</a>.</p>
 <h2 id="integracion-en-frontends">Integración en frontends<a class="headerlink" href="#integracion-en-frontends" title="Permanent link">&para;</a></h2>
 <p>Si hemos elegido la variante del OPK con el mod que permite seleccionar las ROMs mediante el explorer, MAME4All se podrá integrar con otros frontends como la mayoría de los emuladores. Por ejemplo esta es la definición como sistema en <a href="2020-01-25-rg350_simplemenu.html">SimpleMenu</a>:</p>
-<p><code>[MAME4ALL]
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>[MAME4ALL]
 execs = /media/data/apps/mame4all-params-5-skipwarnings.opk
 romDirs = /media/data/roms/ARCADE/,/media/sdcard/roms/ARCADE/
 romExts = .zip
-aliasFile = /media/home/.simplemenu/alias.txt</code></p>
+aliasFile = /media/home/.simplemenu/alias.txt
+</code></pre></div></td></tr></table></div>
 <p>Y esta en <a href="2020-03-28-rg350_pymenu.html">PyMenu</a>:</p>
-<p><code>{
-    "description": "MAME4All Arcade EMU",
-    "hideFolders": true,
-    "limitSelection": true,
-    "name": "MAME4All",
-    "overclock": "1080",
-    "previews": "/media/data/roms/ARCADE/.previews",
-    "selectionPath": "/media/data/roms/ARCADE",
-    "system": "mame4all",
-    "type": "emulator",
-    "useFileFilter": true,
-    "useGamelist": false,
-    "useSelection": true
-},</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>{
+    &quot;description&quot;: &quot;MAME4All Arcade EMU&quot;,
+    &quot;hideFolders&quot;: true,
+    &quot;limitSelection&quot;: true,
+    &quot;name&quot;: &quot;MAME4All&quot;,
+    &quot;overclock&quot;: &quot;1080&quot;,
+    &quot;previews&quot;: &quot;/media/data/roms/ARCADE/.previews&quot;,
+    &quot;selectionPath&quot;: &quot;/media/data/roms/ARCADE&quot;,
+    &quot;system&quot;: &quot;mame4all&quot;,
+    &quot;type&quot;: &quot;emulator&quot;,
+    &quot;useFileFilter&quot;: true,
+    &quot;useGamelist&quot;: false,
+    &quot;useSelection&quot;: true
+},
+</code></pre></div></td></tr></table></div>
 <h2 id="controles">Controles<a class="headerlink" href="#controles" title="Permanent link">&para;</a></h2>
 <p>A continuación se muestra una recopilación de controles de MAME4All:</p>
 <table>

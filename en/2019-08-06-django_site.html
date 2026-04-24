@@ -1362,15 +1362,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#vim-syntaxapache-ts4-sw4-sts4-sr-noet" class="md-nav__link">
-    <span class="md-ellipsis">
-      vim: syntax=apache ts=4 sw=4 sts=4 sr noet
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -4033,15 +4024,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#vim-syntaxapache-ts4-sw4-sts4-sr-noet" class="md-nav__link">
-    <span class="md-ellipsis">
-      vim: syntax=apache ts=4 sw=4 sts=4 sr noet
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -4060,6 +4042,8 @@
   
 
 
+  <h1>Creación de un sitio Django desde cero</h1>
+
 <p>Procedimiento de creación de un entorno de desarrollo y producción para un sitio Django.</p>
 <h2 id="entorno-dev">Entorno DEV<a class="headerlink" href="#entorno-dev" title="Permanent link">&para;</a></h2>
 <ol>
@@ -4069,76 +4053,92 @@
 <ul>
 <li>
 <p>Con una versión de Python compilada previamente en nuestra máquina:</p>
-<p><code>bash
-$ cd ~/git/remote_james
-$ pipenv install --python /home/usuario/Python-3.6.5/bin/python3</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/git/remote_james
+$<span class="w"> </span>pipenv<span class="w"> </span>install<span class="w"> </span>--python<span class="w"> </span>/home/usuario/Python-3.6.5/bin/python3
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Con la versión de Python3 instalada en el sistema:</p>
-<p><code>bash
-$ cd ~/git/remote_james
-$ pipenv install --three</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/git/remote_james
+$<span class="w"> </span>pipenv<span class="w"> </span>install<span class="w"> </span>--three
+</code></pre></div></td></tr></table></div>
 </li>
 </ul>
 </li>
 <li>
 <p>Instalo Django, creo proyecto y aplicación:</p>
-<p><code>bash
-$ pipenv shell
-$ pipenv install django
-$ django-admin startproject remote_james .
-$ python manage.py startapp james</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>pipenv<span class="w"> </span>shell
+$<span class="w"> </span>pipenv<span class="w"> </span>install<span class="w"> </span>django
+$<span class="w"> </span>django-admin<span class="w"> </span>startproject<span class="w"> </span>remote_james<span class="w"> </span>.
+$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>startapp<span class="w"> </span>james
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Incorporo nueva app en fichero <code>settings.py</code>:</p>
-<p><code>INSTALLED_APPS = [
-    'james.apps.JamesConfig',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-]</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>INSTALLED_APPS = [
+    &#39;james.apps.JamesConfig&#39;,
+    &#39;django.contrib.admin&#39;,
+    &#39;django.contrib.auth&#39;,
+    &#39;django.contrib.contenttypes&#39;,
+    &#39;django.contrib.sessions&#39;,
+    &#39;django.contrib.messages&#39;,
+    &#39;django.contrib.staticfiles&#39;,
+]
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Ejecuto migraciones, creo superusuario y arranco servidor desarrollo:</p>
-<p><code>bash
-$ python manage.py makemigrations
-$ python manage.py migrate
-$ python manage.py createsuperuser
-$ python manage.py runserver 0.0.0.0:8000</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>makemigrations
+$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>createsuperuser
+$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver<span class="w"> </span><span class="m">0</span>.0.0.0:8000
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <h2 id="entorno-prod">Entorno PROD<a class="headerlink" href="#entorno-prod" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Bajo el repositorio:</p>
-<p><code>bash
-$ cd ~
-$ git clone git@bitbucket.org:eduardofilo/remote_james.git</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~
+$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@bitbucket.org:eduardofilo/remote_james.git
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Creo el entorno (de nuevo existe la opción de utilizar la versión de Python3 del sistema como en el punto 2 del entorno de desarrollo):</p>
-<p><code>bash
-$ cd remote_james
-$ pipenv install --python /home/servidor/Python-3.6.5/bin/python3</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>remote_james
+$<span class="w"> </span>pipenv<span class="w"> </span>install<span class="w"> </span>--python<span class="w"> </span>/home/servidor/Python-3.6.5/bin/python3
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Creo base de datos y usuario admin:</p>
-<p><code>bash
-$ pipenv shell
-$ python manage_ovh.py migrate
-$ python manage_ovh.py createsuperuser</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>pipenv<span class="w"> </span>shell
+$<span class="w"> </span>python<span class="w"> </span>manage_ovh.py<span class="w"> </span>migrate
+$<span class="w"> </span>python<span class="w"> </span>manage_ovh.py<span class="w"> </span>createsuperuser
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Creo sitio en Apache (<code>/etc/apache2/sites-available/008-remote_james.conf</code>):</p>
-<p>```
-<VirtualHost *:80>
-        ServerName remotejames.example.com
-        ServerAdmin webmaster@localhost
-        DocumentRoot /var/www/html</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -4159,39 +4159,52 @@ $ python manage_ovh.py createsuperuser</code></p>
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span>ErrorLog<span class="w"> </span><span class="cp">${</span><span class="n">APACHE_LOG_DIR</span><span class="cp">}</span>/error-remotejames.log
-<span class="w">    </span>CustomLog<span class="w"> </span><span class="cp">${</span><span class="n">APACHE_LOG_DIR</span><span class="cp">}</span>/access-remotejames.log<span class="w"> </span>combined
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;VirtualHost *:80&gt;
+        ServerName remotejames.example.com
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/html
 
-<span class="w">    </span>Alias<span class="w"> </span>/static<span class="w"> </span>/home/servidor/remote_james/static
-<span class="w">    </span><span class="nt">&lt;Directory</span> <span class="err">/home/servidor/remote_james/static</span><span class="nt">&gt;</span>
-<span class="w">            </span>Require<span class="w"> </span>all<span class="w"> </span>granted
-<span class="w">    </span><span class="nt">&lt;/Directory&gt;</span>
+        ErrorLog ${APACHE_LOG_DIR}/error-remotejames.log
+        CustomLog ${APACHE_LOG_DIR}/access-remotejames.log combined
 
-<span class="w">    </span>Alias<span class="w"> </span>/media<span class="w"> </span>/home/servidor/remote_james/media
-<span class="w">    </span><span class="nt">&lt;Directory</span> <span class="err">/home/servidor/remote_james/media</span><span class="nt">&gt;</span>
-<span class="w">            </span>Require<span class="w"> </span>all<span class="w"> </span>granted
-<span class="w">    </span><span class="nt">&lt;/Directory&gt;</span>
+        Alias /static /home/servidor/remote_james/static
+        &lt;Directory /home/servidor/remote_james/static&gt;
+                Require all granted
+        &lt;/Directory&gt;
 
-<span class="w">    </span><span class="nt">&lt;Directory</span> <span class="err">/home/servidor/remote_james/remote_james</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;Files</span> <span class="err">wsgi.py</span><span class="nt">&gt;</span>
-<span class="w">                    </span>Require<span class="w"> </span>all<span class="w"> </span>granted
-<span class="w">            </span><span class="nt">&lt;/Files&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/Directory&gt;</span>
+        Alias /media /home/servidor/remote_james/media
+        &lt;Directory /home/servidor/remote_james/media&gt;
+                Require all granted
+        &lt;/Directory&gt;
 
-<span class="w">    </span>WSGIDaemonProcess<span class="w"> </span>remote_james<span class="w"> </span>python-path=/home/servidor/remote_james<span class="w"> </span>python-home=/home/servidor/.virtualenvs/remote_james-Sjv1LfIa
-<span class="w">    </span>WSGIProcessGroup<span class="w"> </span>remote_james
-<span class="w">    </span>WSGIScriptAlias<span class="w"> </span>/<span class="w"> </span>/home/servidor/remote_james/remote_james/wsgi.py
+        &lt;Directory /home/servidor/remote_james/remote_james&gt;
+                &lt;Files wsgi.py&gt;
+                        Require all granted
+                &lt;/Files&gt;
+        &lt;/Directory&gt;
+
+        WSGIDaemonProcess remote_james python-path=/home/servidor/remote_james python-home=/home/servidor/.virtualenvs/remote_james-Sjv1LfIa
+        WSGIProcessGroup remote_james
+        WSGIScriptAlias / /home/servidor/remote_james/remote_james/wsgi.py
+&lt;/VirtualHost&gt;
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
 </code></pre></div></td></tr></table></div>
-
-<p></VirtualHost></p>
-<h1 id="vim-syntaxapache-ts4-sw4-sts4-sr-noet">vim: syntax=apache ts=4 sw=4 sts=4 sr noet<a class="headerlink" href="#vim-syntaxapache-ts4-sw4-sts4-sr-noet" title="Permanent link">&para;</a></h1>
-<p>```</p>
 </li>
 <li>
 <p>Activo sitio:</p>
-<p><code>bash
-$ sudo a2ensite 008-remote_james.conf
-$ sudo systemctl reload apache2</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>a2ensite<span class="w"> </span><span class="m">008</span>-remote_james.conf
+$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>apache2
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 

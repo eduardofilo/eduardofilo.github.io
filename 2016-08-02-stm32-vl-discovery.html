@@ -3972,17 +3972,15 @@
 <ol>
 <li>
 <p>Instalación de última versión de <a href="https://launchpad.net/gcc-arm-embedded">GCC ARM Embedded</a> siguiendo <a href="http://gnuarmeclipse.livius.net/blog/toolchain-install/#GNULinux">estas instrucciones</a>. Básicamente consiste en bajar <a href="https://launchpad.net/gcc-arm-embedded/5.0/5-2016-q2-update/+download/gcc-arm-none-eabi-5_4-2016q2-20160622-linux.tar.bz2">este archivo</a> y descomprimirlo en /usr/local del siguiente modo:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/usr/local
-$<span class="w"> </span>sudo<span class="w"> </span>tar<span class="w"> </span>xjvf<span class="w"> </span>~/Descargas/gcc-arm-none-eabi-5_4-2016q2-20160622-linux.tar.bz2
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ cd /usr/local
+$ sudo tar xjvf ~/Descargas/gcc-arm-none-eabi-5_4-2016q2-20160622-linux.tar.bz2
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Introducir en la variable PATH del sistema la ruta del directorio bin del compilador GCC ARM recién instalado incorporando al final del fichero ~/.profile:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>PATH=&quot;/usr/local/gcc-arm-none-eabi-5_4-2016q2/bin:$PATH&quot;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>PATH=&quot;/usr/local/gcc-arm-none-eabi-5_4-2016q2/bin:$PATH&quot;
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Descargamos la STM32 Firmware Library de <a href="https://my.st.com/content/my_st_com/en/products/embedded-software/mcus-embedded-software/stm32-embedded-software/stm32-standard-peripheral-libraries/stsw-stm32054.license%3d1469811720442.html">aquí</a>.</p>
@@ -3992,98 +3990,88 @@ $<span class="w"> </span>sudo<span class="w"> </span>tar<span class="w"> </span>
 </li>
 <li>
 <p>Descargamos plantilla para los proyectos de código por ejemplo en <code>~/git/</code>:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/git
-$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/geoffreymbrown/STM32-Template.git
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ cd ~/git
+$ git clone git://github.com/geoffreymbrown/STM32-Template.git
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>La compilación del código se haría así:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/git/STM32-Template/Demo
-$<span class="w"> </span>make
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ cd ~/git/STM32-Template/Demo
+$ make
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Modificamos el fichero <code>~/git/STM32-Template/Makefile.common</code> ajustando las variables <code>TOOLROOT</code> y <code>LIBROOT</code> de la siguiente forma:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>TOOLROOT=/usr/local/gcc-arm-none-eabi-5_4-2016q2/bin
 LIBROOT=~/STM32F10x_StdPeriph_Lib_V3.5.0
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Instalamos el software que nos permitirá hacer uso del interfaz STLink para programar el MCU:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/git
-$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/texane/stlink.git
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ cd ~/git
+$ git clone git://github.com/texane/stlink.git
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Instalamos una serie de paquetes necesarios:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>pkg-config<span class="w"> </span>intltool<span class="w"> </span>build-essential<span class="w"> </span>cmake<span class="w"> </span>libusb-1.0<span class="w"> </span>libgtk-3-dev
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ sudo apt-get install pkg-config intltool build-essential cmake libusb-1.0 libgtk-3-dev
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Tal y como se explica en el <a href="https://github.com/texane/stlink">README del proyecto</a> descargado en el paso 7, el interfaz STLINKv1 que utiliza la STM32VLDISCOVERY, tiene ciertos problemas que para evitar hay que reconfigurar el módulo <code>usb-storage</code>. Para ello ejecutar lo siguiente al principio de una sesión en la que se quiera trabajar con él:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>modprobe<span class="w"> </span>-r<span class="w"> </span>usb-storage<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>modprobe<span class="w"> </span>usb-storage<span class="w"> </span><span class="nv">quirks</span><span class="o">=</span><span class="m">0483</span>:3744:i
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ sudo modprobe -r usb-storage &amp;&amp; sudo modprobe usb-storage quirks=0483:3744:i
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Si se quiere hacer permanente el cambio en su lugar, crear el fichero <code>/etc/modprobe.d/usb-storage.conf</code> con el siguiente contenido:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code># stlink/v1 ignore mass storage
 options usb-storage quirks=0483:3744:i
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Compilamos:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/git/stlink
-$<span class="w"> </span>./autogen.sh
-$<span class="w"> </span>./configure<span class="w"> </span>--with-gtk-gui
-$<span class="w"> </span>make
-$<span class="w"> </span>mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
-$<span class="w"> </span>cmake<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Debug<span class="w"> </span>..
-$<span class="w"> </span>make
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>$ cd ~/git/stlink
+$ ./autogen.sh
+$ ./configure --with-gtk-gui
+$ make
+$ mkdir build &amp;&amp; cd build
+$ cmake -DCMAKE_BUILD_TYPE=Debug ..
+$ make
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Conectar la placa por USB al ordenador.</p>
 </li>
 <li>
 <p>Arrancamos gdbserver:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/git/stlink/build
-$<span class="w"> </span>sudo<span class="w"> </span>./st-util<span class="w"> </span>-1
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ cd ~/git/stlink/build
+$ sudo ./st-util -1
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Conectamos con él desde el directorio donde esté el binario que queremos depurar o ejecutar:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">$</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="o">~/</span><span class="n">git</span><span class="o">/</span><span class="n">STM32</span><span class="o">-</span><span class="n">Template</span><span class="o">/</span><span class="n">Demo</span>
-<span class="o">$</span><span class="w"> </span><span class="n">arm</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="n">eabi</span><span class="o">-</span><span class="n">gdb</span><span class="w"> </span><span class="n">Demo</span><span class="o">.</span><span class="n">elf</span>
-<span class="p">(</span><span class="n">gdb</span><span class="p">)</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="n">extended</span><span class="o">-</span><span class="k">remote</span><span class="w"> </span><span class="n">localhost</span><span class="p">:</span><span class="mi">4242</span>
-<span class="p">(</span><span class="n">gdb</span><span class="p">)</span><span class="w"> </span><span class="nb">load</span>
-<span class="p">(</span><span class="n">gdb</span><span class="p">)</span><span class="w"> </span><span class="n">quit</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>$ cd ~/git/STM32-Template/Demo
+$ arm-none-eabi-gdb Demo.elf
+(gdb) target extended-remote localhost:4242
+(gdb) load
+(gdb) quit
 </code></pre></div></td></tr></table></div>
-
 </li>
 </ol>
 <iframe width="854" height="480" src="https://www.youtube.com/embed/P1yi9i1A8K4" frameborder="0" allowfullscreen></iframe>

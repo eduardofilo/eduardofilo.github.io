@@ -4629,11 +4629,15 @@
 <li>En el primer arranque es posible que aparezca en pantalla el error <code>Err: EEPROM version</code>. En ese caso:<ol>
 <li>Conectar el cable USB (si se ha desconectado el puente entre el puerto serie del microcontrolador y el adaptador USB descrito [aquí], seleccionar el puerto con los jumpers).</li>
 <li>Abrir conexión serie ejecutando lo siguiente en terminal:
-    <code>$ sudo screen /dev/ttyUSB0 115200 8N1</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ sudo screen /dev/ttyUSB0 115200 8N1
+</code></pre></div></td></tr></table></div></li>
 <li>Escribir los siguientes comandos en la consola. Hacerlo uno a uno y con un caracter retorno al final de cada uno. Lo mejor es escribirlos en un editor de texto, copiar cada linea (incluyendo el retorno) y pegarla en la consola. De esta forma se consigue que el comando sea leído como un todo y no que se vayan interpretando sus caracteres sueltos conforme vamos escribiendo:
-    <code>M502
-    M500
-    M501</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>M502
+M500
+M501
+</code></pre></div></td></tr></table></div></li>
 </ol>
 </li>
 </ol>

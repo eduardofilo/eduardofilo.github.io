@@ -1438,53 +1438,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#repository" class="md-nav__link">
-    <span class="md-ellipsis">
-      Repository
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#customization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Customization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extensions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Extensions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Extensions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#enlaces-documentacion" class="md-nav__link">
     <span class="md-ellipsis">
       Enlaces documentación
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4058,53 +4016,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#repository" class="md-nav__link">
-    <span class="md-ellipsis">
-      Repository
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#customization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Customization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extensions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Extensions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Extensions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#enlaces-documentacion" class="md-nav__link">
     <span class="md-ellipsis">
       Enlaces documentación
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4126,57 +4042,113 @@
   
 
 
+  <h1>Conversión del sitio de Apuntes a MkDocs</h1>
+
 <p>Migración del motor de apuntes de Ruby/Jekyll a Python/MkDocs.</p>
 <h2 id="procedimiento">Procedimiento<a class="headerlink" href="#procedimiento" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Renombro el antiguo repositorio construido con Jekyll de <code>eduardofilo.github.io</code> a <code>eduardofilo.jekyll</code> para dejar libre el repositorio que contendrá el nuevo sitio.</li>
 <li>Creo directorio:
-    <code>bashh
-    $ mkdir ~/git/eduardofilo.mkdocs
-    $ cd ~/git/eduardofilo.mkdocs</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ mkdir ~/git/eduardofilo.mkdocs
+$ cd ~/git/eduardofilo.mkdocs
+</code></pre></div></td></tr></table></div></li>
 <li>Creo entorno Python3 con pipenv:
-    <code>bash
-    $ pipenv install --three</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>pipenv<span class="w"> </span>install<span class="w"> </span>--three
+</code></pre></div></td></tr></table></div></li>
 <li>Instalo mkdocs, el tema <a href="https://squidfunk.github.io/mkdocs-material/">Material</a> y algunas <a href="https://squidfunk.github.io/mkdocs-material/extensions/admonition/">extensiones</a>:
-    <code>bash
-    $ pipenv install mkdocs pygments mkdocs-material</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>pipenv<span class="w"> </span>install<span class="w"> </span>mkdocs<span class="w"> </span>pygments<span class="w"> </span>mkdocs-material
+</code></pre></div></td></tr></table></div></li>
 <li>Instalo versión beta de módulo pyyaml por un aviso de seguridad que da GitHub sobre la versión 3.13 que se instala normalmente. Para ello añado lo siguiente al fichero <code>Pipfile</code> en la sección <code>[packages]</code>. Tras ello ejecuto <code>pipenv install</code>:
-    <code>pyyaml = "&gt;=4.2b1"</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pyyaml = &quot;&gt;=4.2b1&quot;
+</code></pre></div></td></tr></table></div></li>
 <li>Arranco shell en el entorno:
-    <code>bash
-    $ pipenv shell</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>pipenv<span class="w"> </span>shell
+</code></pre></div></td></tr></table></div></li>
 <li>Creo el proyecto mkdocs desde el directorio anterior:
-    <code>bash
-    $ cd ..
-    $ mkdocs new eduardofilo.mkdocs
-    $ cd eduardofilo.mkdocs</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+$<span class="w"> </span>mkdocs<span class="w"> </span>new<span class="w"> </span>eduardofilo.mkdocs
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>eduardofilo.mkdocs
+</code></pre></div></td></tr></table></div></li>
 <li>Copio los directorios con los contenidos del sitio Jekyll (<code>cursos</code>, <code>desarrollo</code>, <code>images</code>, <code>proyectos</code>, <code>sistemas</code> y <code>varios</code>) al directorio <code>docs</code>.</li>
-<li>
-<p>Configuro el fichero <code>mkdocs.yml</code> con el siguiente contenido:
-    ```
-    # Project information
-    site_name: Apuntes de eduardofilo
-    site_description: Apuntes varios sobre algunas de las cosas que necesito recordar, principalmente sobre Desarrollo y         Sistemas.
-    site_author: Eduardo Moreno Lamana</p>
-<h1 id="repository">Repository<a class="headerlink" href="#repository" title="Permanent link">&para;</a></h1>
-<p>repo_name: 'eduardofilo.mkdocs'
-repo_url: https://github.com/eduardofilo/eduardofilo.mkdocs</p>
-<h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h1>
-<p>use_directory_urls: false
+<li>Configuro el fichero <code>mkdocs.yml</code> con el siguiente contenido:
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span></pre></div></td><td class="code"><div><pre><span></span><code># Project information
+site_name: Apuntes de eduardofilo
+site_description: Apuntes varios sobre algunas de las cosas que necesito recordar, principalmente sobre Desarrollo y         Sistemas.
+site_author: Eduardo Moreno Lamana
+
+# Repository
+repo_name: &#39;eduardofilo.mkdocs&#39;
+repo_url: https://github.com/eduardofilo/eduardofilo.mkdocs
+
+# Configuration
+use_directory_urls: false
 plugins:
     - search:
-        lang: ['es']
+        lang: [&#39;es&#39;]
 theme:
     name: material
-    logo: 'images/eduardofilo.png'
+    logo: &#39;images/eduardofilo.png&#39;
     language: es
     feature:
         tabs: true
     palette:
-        primary: 'deep orange'
-        accent: 'amber'</p>
-<h1 id="customization">Customization<a class="headerlink" href="#customization" title="Permanent link">&para;</a></h1>
-<p>extra:
+        primary: &#39;deep orange&#39;
+        accent: &#39;amber&#39;
+
+
+# Customization
+extra:
     social:
         - type: github-alt
           link: https://github.com/eduardofilo
@@ -4189,30 +4161,36 @@ theme:
         - type: youtube
           link: https://www.youtube.com/c/EduardoMorenoLamana
     search:
-        language: 'es'
-    manifest: 'manifest.webmanifest'</p>
-<h1 id="extensions">Extensions<a class="headerlink" href="#extensions" title="Permanent link">&para;</a></h1>
-<p>markdown_extensions:
+        language: &#39;es&#39;
+    manifest: &#39;manifest.webmanifest&#39;
+
+# Extensions
+markdown_extensions:
     - codehilite:
         linenums: true
     - toc:
         permalink: True
     - admonition
-<code>10. Copio todos los ficheros del directorio `_posts` de Jekyll al directorio `docs`.
-11. Modifico cada uno de los posts que allí hay de la siguiente manera:
-1. Retiro los delimitadores del YAML, es decir los tres guiones que hay al principio y al final del bloque.
-2. Retiro las propiedad `layout` y `published` y añado una llamada `summary`.
-12. Genero estructura de navegación en bloque `nav:` al final de `mkdocs.yml`
-13. Creo fichero `CNAME` dentro del directorio `docs` con el nombre del dominio personalizado.
-14. Creo repositorio en GitHub con nombre `eduardofilo.github.io`.
-15. Creo copia de trabajo del repsitorio anterior:</code> bash
-$ cd ~/git
-$ git clone git@github.com:eduardofilo/eduardofilo.github.io.git
-<code>16. Finalmente publico el sitio ejecutando el siguiente comando desde el directorio de trabajo del repositorio anterior (hay que recordar que para que funcione el comando `mkdocs` hay que haber iniciado el entorno virtual antes con `pipenv shell` desde el directorio `~/git/eduardofilo.mkdocs`):</code> bash
-$ cd ~/git/eduardofilo.github.io
-$ mkdocs gh-deploy --config-file ../eduardofilo.mkdocs/mkdocs.yml --remote-branch master
-```</p>
+</code></pre></div></td></tr></table></div></li>
+<li>Copio todos los ficheros del directorio <code>_posts</code> de Jekyll al directorio <code>docs</code>.</li>
+<li>Modifico cada uno de los posts que allí hay de la siguiente manera:<ol>
+<li>Retiro los delimitadores del YAML, es decir los tres guiones que hay al principio y al final del bloque.</li>
+<li>Retiro las propiedad <code>layout</code> y <code>published</code> y añado una llamada <code>summary</code>.</li>
+</ol>
 </li>
+<li>Genero estructura de navegación en bloque <code>nav:</code> al final de <code>mkdocs.yml</code></li>
+<li>Creo fichero <code>CNAME</code> dentro del directorio <code>docs</code> con el nombre del dominio personalizado.</li>
+<li>Creo repositorio en GitHub con nombre <code>eduardofilo.github.io</code>.</li>
+<li>Creo copia de trabajo del repsitorio anterior:
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/git
+$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:eduardofilo/eduardofilo.github.io.git
+</code></pre></div></td></tr></table></div></li>
+<li>Finalmente publico el sitio ejecutando el siguiente comando desde el directorio de trabajo del repositorio anterior (hay que recordar que para que funcione el comando <code>mkdocs</code> hay que haber iniciado el entorno virtual antes con <code>pipenv shell</code> desde el directorio <code>~/git/eduardofilo.mkdocs</code>):
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/git/eduardofilo.github.io
+$<span class="w"> </span>mkdocs<span class="w"> </span>gh-deploy<span class="w"> </span>--config-file<span class="w"> </span>../eduardofilo.mkdocs/mkdocs.yml<span class="w"> </span>--remote-branch<span class="w"> </span>master
+</code></pre></div></td></tr></table></div></li>
 </ol>
 <p>Falta crear un RSS con el <a href="http://apuntes.eduardofilo.es/feed.xml">feed</a> que generaba Jekyll antiguamente.</p>
 <h2 id="enlaces-documentacion">Enlaces documentación<a class="headerlink" href="#enlaces-documentacion" title="Permanent link">&para;</a></h2>

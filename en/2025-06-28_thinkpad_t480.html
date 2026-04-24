@@ -565,277 +565,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#loadkeys-es" class="md-nav__link">
-    <span class="md-ellipsis">
-      loadkeys es
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#iwctl" class="md-nav__link">
-    <span class="md-ellipsis">
-      iwctl
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#timedatectl" class="md-nav__link">
-    <span class="md-ellipsis">
-      timedatectl
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fdisk-devsda" class="md-nav__link">
-    <span class="md-ellipsis">
-      fdisk /dev/sda
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mkfsext4-devsda6" class="md-nav__link">
-    <span class="md-ellipsis">
-      mkfs.ext4 /dev/sda6
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mkswap-devsda5" class="md-nav__link">
-    <span class="md-ellipsis">
-      mkswap /dev/sda5
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mount-devsda6-mnt" class="md-nav__link">
-    <span class="md-ellipsis">
-      mount /dev/sda6 /mnt
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mount-mkdir-devsda1-mntbootefi" class="md-nav__link">
-    <span class="md-ellipsis">
-      mount --mkdir /dev/sda1 /mnt/boot/efi
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#swapon-devsda5" class="md-nav__link">
-    <span class="md-ellipsis">
-      swapon /dev/sda5
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pacstrap-k-mnt-base-base-devel-linux-linux-firmware-sudo-vi-ntfs-3g-networkmanager-intel-ucode-grub-efibootmgr-os-prober" class="md-nav__link">
-    <span class="md-ellipsis">
-      pacstrap -K /mnt base base-devel linux linux-firmware sudo vi ntfs-3g networkmanager intel-ucode grub efibootmgr os-prober
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#genfstab-u-mnt-mntetcfstab" class="md-nav__link">
-    <span class="md-ellipsis">
-      genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#arch-chroot-mnt" class="md-nav__link">
-    <span class="md-ellipsis">
-      arch-chroot /mnt
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ln-sf-usrsharezoneinfoeuropemadrid-etclocaltime" class="md-nav__link">
-    <span class="md-ellipsis">
-      ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hwclock-systohc" class="md-nav__link">
-    <span class="md-ellipsis">
-      hwclock --systohc
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vi-etclocalegen-uncomment-en_usutf-8-utf-8-and-es_esutf-8-utf-8" class="md-nav__link">
-    <span class="md-ellipsis">
-      vi /etc/locale.gen # Uncomment 'en_US.UTF-8 UTF-8' and 'es_ES.UTF-8 UTF-8'
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#locale-gen" class="md-nav__link">
-    <span class="md-ellipsis">
-      locale-gen
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#echo-langes_esutf-8-etclocaleconf" class="md-nav__link">
-    <span class="md-ellipsis">
-      echo "LANG=es_ES.UTF-8" &gt; /etc/locale.conf
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#echo-keymapes-etcvconsoleconf" class="md-nav__link">
-    <span class="md-ellipsis">
-      echo "KEYMAP=es" &gt; /etc/vconsole.conf
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#echo-thinkpad-etchostname" class="md-nav__link">
-    <span class="md-ellipsis">
-      echo "thinkpad" &gt; /etc/hostname
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#echo-e-n127001-localhostn1-localhostn127011-thinkpadlocaldomain-thinkpad-etchosts" class="md-nav__link">
-    <span class="md-ellipsis">
-      echo -e "\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 thinkpad.localdomain thinkpad" &gt;&gt; /etc/hosts
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#passwd" class="md-nav__link">
-    <span class="md-ellipsis">
-      passwd
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#useradd-m-g-wheelaudiovideostorage-s-binbash" class="md-nav__link">
-    <span class="md-ellipsis">
-      useradd -m -G wheel,audio,video,storage -s /bin/bash
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#passwd_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      passwd
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visudo-uncomment-wheel-allall-all" class="md-nav__link">
-    <span class="md-ellipsis">
-      visudo # Uncomment '%wheel ALL=(ALL) ALL'
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#systemctl-enable-networkmanager" class="md-nav__link">
-    <span class="md-ellipsis">
-      systemctl enable NetworkManager
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vi-etcdefaultgrub-uncomment-grub_disable_os_proberfalse" class="md-nav__link">
-    <span class="md-ellipsis">
-      vi /etc/default/grub # Uncomment 'GRUB_DISABLE_OS_PROBER=false'
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#os-prober" class="md-nav__link">
-    <span class="md-ellipsis">
-      os-prober
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grub-install-targetx86_64-efi-efi-directorybootefi-bootloader-idgrub" class="md-nav__link">
-    <span class="md-ellipsis">
-      grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grub-mkconfig-o-bootgrubgrubcfg" class="md-nav__link">
-    <span class="md-ellipsis">
-      grub-mkconfig -o /boot/grub/grub.cfg
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#su-" class="md-nav__link">
-    <span class="md-ellipsis">
-      su -
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="su -">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#graphical-environment-installation" class="md-nav__link">
     <span class="md-ellipsis">
       Graphical environment installation
@@ -843,41 +572,8 @@
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#exit" class="md-nav__link">
-    <span class="md-ellipsis">
-      exit
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#umount-r-mnt" class="md-nav__link">
-    <span class="md-ellipsis">
-      umount -R /mnt
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reboot" class="md-nav__link">
-    <span class="md-ellipsis">
-      reboot
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="reboot">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#networkmanager-and-bluetooth-applets" class="md-nav__link">
     <span class="md-ellipsis">
       NetworkManager and Bluetooth Applets
@@ -885,8 +581,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#installing-pamac" class="md-nav__link">
     <span class="md-ellipsis">
       Installing pamac
@@ -894,8 +590,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusion
@@ -903,18 +599,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#links-of-interest" class="md-nav__link">
     <span class="md-ellipsis">
       Links of interest
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4379,277 +4070,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#loadkeys-es" class="md-nav__link">
-    <span class="md-ellipsis">
-      loadkeys es
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#iwctl" class="md-nav__link">
-    <span class="md-ellipsis">
-      iwctl
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#timedatectl" class="md-nav__link">
-    <span class="md-ellipsis">
-      timedatectl
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fdisk-devsda" class="md-nav__link">
-    <span class="md-ellipsis">
-      fdisk /dev/sda
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mkfsext4-devsda6" class="md-nav__link">
-    <span class="md-ellipsis">
-      mkfs.ext4 /dev/sda6
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mkswap-devsda5" class="md-nav__link">
-    <span class="md-ellipsis">
-      mkswap /dev/sda5
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mount-devsda6-mnt" class="md-nav__link">
-    <span class="md-ellipsis">
-      mount /dev/sda6 /mnt
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mount-mkdir-devsda1-mntbootefi" class="md-nav__link">
-    <span class="md-ellipsis">
-      mount --mkdir /dev/sda1 /mnt/boot/efi
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#swapon-devsda5" class="md-nav__link">
-    <span class="md-ellipsis">
-      swapon /dev/sda5
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pacstrap-k-mnt-base-base-devel-linux-linux-firmware-sudo-vi-ntfs-3g-networkmanager-intel-ucode-grub-efibootmgr-os-prober" class="md-nav__link">
-    <span class="md-ellipsis">
-      pacstrap -K /mnt base base-devel linux linux-firmware sudo vi ntfs-3g networkmanager intel-ucode grub efibootmgr os-prober
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#genfstab-u-mnt-mntetcfstab" class="md-nav__link">
-    <span class="md-ellipsis">
-      genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#arch-chroot-mnt" class="md-nav__link">
-    <span class="md-ellipsis">
-      arch-chroot /mnt
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ln-sf-usrsharezoneinfoeuropemadrid-etclocaltime" class="md-nav__link">
-    <span class="md-ellipsis">
-      ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hwclock-systohc" class="md-nav__link">
-    <span class="md-ellipsis">
-      hwclock --systohc
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vi-etclocalegen-uncomment-en_usutf-8-utf-8-and-es_esutf-8-utf-8" class="md-nav__link">
-    <span class="md-ellipsis">
-      vi /etc/locale.gen # Uncomment 'en_US.UTF-8 UTF-8' and 'es_ES.UTF-8 UTF-8'
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#locale-gen" class="md-nav__link">
-    <span class="md-ellipsis">
-      locale-gen
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#echo-langes_esutf-8-etclocaleconf" class="md-nav__link">
-    <span class="md-ellipsis">
-      echo "LANG=es_ES.UTF-8" &gt; /etc/locale.conf
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#echo-keymapes-etcvconsoleconf" class="md-nav__link">
-    <span class="md-ellipsis">
-      echo "KEYMAP=es" &gt; /etc/vconsole.conf
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#echo-thinkpad-etchostname" class="md-nav__link">
-    <span class="md-ellipsis">
-      echo "thinkpad" &gt; /etc/hostname
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#echo-e-n127001-localhostn1-localhostn127011-thinkpadlocaldomain-thinkpad-etchosts" class="md-nav__link">
-    <span class="md-ellipsis">
-      echo -e "\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 thinkpad.localdomain thinkpad" &gt;&gt; /etc/hosts
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#passwd" class="md-nav__link">
-    <span class="md-ellipsis">
-      passwd
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#useradd-m-g-wheelaudiovideostorage-s-binbash" class="md-nav__link">
-    <span class="md-ellipsis">
-      useradd -m -G wheel,audio,video,storage -s /bin/bash
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#passwd_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      passwd
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visudo-uncomment-wheel-allall-all" class="md-nav__link">
-    <span class="md-ellipsis">
-      visudo # Uncomment '%wheel ALL=(ALL) ALL'
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#systemctl-enable-networkmanager" class="md-nav__link">
-    <span class="md-ellipsis">
-      systemctl enable NetworkManager
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vi-etcdefaultgrub-uncomment-grub_disable_os_proberfalse" class="md-nav__link">
-    <span class="md-ellipsis">
-      vi /etc/default/grub # Uncomment 'GRUB_DISABLE_OS_PROBER=false'
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#os-prober" class="md-nav__link">
-    <span class="md-ellipsis">
-      os-prober
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grub-install-targetx86_64-efi-efi-directorybootefi-bootloader-idgrub" class="md-nav__link">
-    <span class="md-ellipsis">
-      grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grub-mkconfig-o-bootgrubgrubcfg" class="md-nav__link">
-    <span class="md-ellipsis">
-      grub-mkconfig -o /boot/grub/grub.cfg
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#su-" class="md-nav__link">
-    <span class="md-ellipsis">
-      su -
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="su -">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#graphical-environment-installation" class="md-nav__link">
     <span class="md-ellipsis">
       Graphical environment installation
@@ -4657,41 +4077,8 @@
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#exit" class="md-nav__link">
-    <span class="md-ellipsis">
-      exit
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#umount-r-mnt" class="md-nav__link">
-    <span class="md-ellipsis">
-      umount -R /mnt
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reboot" class="md-nav__link">
-    <span class="md-ellipsis">
-      reboot
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="reboot">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#networkmanager-and-bluetooth-applets" class="md-nav__link">
     <span class="md-ellipsis">
       NetworkManager and Bluetooth Applets
@@ -4699,8 +4086,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#installing-pamac" class="md-nav__link">
     <span class="md-ellipsis">
       Installing pamac
@@ -4708,8 +4095,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusion
@@ -4717,18 +4104,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#links-of-interest" class="md-nav__link">
     <span class="md-ellipsis">
       Links of interest
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4750,6 +4132,8 @@
   
 
 
+  <h1>Arch Linux Installation on Lenovo ThinkPad T480</h1>
+
 <p><img alt="Lenovo ThinkPad T480 with Arch Linux" src="../images/posts/2025-06-28_thinkpad_t480/thinkpad_t480.png" /></p>
 <p>After stumbling upon several videos praising the Lenovo ThinkPad T480 and feeling slightly dissatisfied with the laptop I bought last summer as my main device, I decided to buy a second-hand one. Specifically, I bought the T480 model with an Intel Core i5-8250U processor, 16GB RAM, and a 1TB SSD. It cost €252 delivered the next day, and I purchased it from a specialized refurbisher whose videos I had also seen, so I expected the machine to be in good condition. And it was. The laptop arrived in impeccable condition, like new, with both its batteries functional (internal and external). The ThinkPad T480 originally had many configuration options available. For this reason, when buying it from a refurbisher, it may come with different hardware features. Here is the full spec sheet where all hardware options can be seen: <a href="https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_T480/ThinkPad_T480_Spec.PDF">PSREF Lenovo ThinkPad T480</a>.</p>
 <p>The Lenovo ThinkPad T480 is a 14" laptop with an excellent keyboard, an IPS FullHD screen (1920x1080), and good connectivity (2 USB-C ports, one of them Thunderbolt, 2 USB-A 3.0 ports, HDMI, Ethernet, SD card reader, and audio/mic jack). Internally it's very customizable, as it has two SODIMM RAM slots, an SSD in a SATA slot that can be converted to M.2, a couple of PCIe ports for additional SSD storage or a 5G modem, and the internal battery is also easily replaceable. Moreover, <a href="https://wiki.archlinux.org/title/Lenovo_ThinkPad_T480">Linux compatibility is excellent</a>, as Lenovo provides Linux drivers and the community has developed drivers for the rest of the components.</p>
@@ -4766,8 +4150,8 @@
 <li>Download the <a href="https://archlinux.org/download/">Arch Linux ISO</a>. I used <a href="https://ftp.rediris.es/mirror/archlinux/iso/2025.06.01/archlinux-2025.06.01-x86_64.iso">this version</a>.</li>
 <li>
 <p>Flash the ISO to a USB stick using <a href="https://www.balena.io/etcher/">Balena Etcher</a> or the <code>dd</code> command in Linux (if you <a href="sistemas/raspi.html#backup-de-la-sd-comprimiendo-al-vuelo">know how to use it</a>):</p>
-<p><code>bash
-sudo dd bs=4M if=archlinux-2025.06.01-x86_64.iso of=/dev/sdX conv=fsync oflag=direct status=progress</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>dd<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>4M<span class="w"> </span><span class="k">if</span><span class="o">=</span>archlinux-2025.06.01-x86_64.iso<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/sdX<span class="w"> </span><span class="nv">conv</span><span class="o">=</span>fsync<span class="w"> </span><span class="nv">oflag</span><span class="o">=</span>direct<span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Boot the laptop with the USB stick inserted. Press <code>Enter</code> when prompted to interrupt normal boot, then press <code>F12</code> to enter the <code>Boot Menu</code>.</p>
@@ -4775,16 +4159,22 @@ sudo dd bs=4M if=archlinux-2025.06.01-x86_64.iso of=/dev/sdX conv=fsync oflag=di
 <li>Select the option to boot from the removable device, listed as <code>USB HDD: Mass Storage Device</code>.</li>
 <li>
 <p>Once the Arch live system boots, run the following commands in order. If using a wired Ethernet connection, you can skip the <code>iwctl</code> session (replace <code>&lt;SSID&gt;</code> with your network name and enter the password when prompted):</p>
-<p>```bash</p>
-<h1 id="loadkeys-es">loadkeys es<a class="headerlink" href="#loadkeys-es" title="Permanent link">&para;</a></h1>
-<h1 id="iwctl">iwctl<a class="headerlink" href="#iwctl" title="Permanent link">&para;</a></h1>
-<p>[iwd]# station wlan0 scan
-[iwd]# station wlan0 get-networks
-[iwd]# station wlan0 connect <SSID>
-[iwd]# exit</p>
-<h1 id="timedatectl">timedatectl<a class="headerlink" href="#timedatectl" title="Permanent link">&para;</a></h1>
-<h1 id="fdisk-devsda">fdisk /dev/sda<a class="headerlink" href="#fdisk-devsda" title="Permanent link">&para;</a></h1>
-<p>```</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># loadkeys es</span>
+<span class="c1"># iwctl</span>
+<span class="o">[</span>iwd<span class="o">]</span><span class="c1"># station wlan0 scan</span>
+<span class="o">[</span>iwd<span class="o">]</span><span class="c1"># station wlan0 get-networks</span>
+<span class="o">[</span>iwd<span class="o">]</span><span class="c1"># station wlan0 connect &lt;SSID&gt;</span>
+<span class="o">[</span>iwd<span class="o">]</span><span class="c1"># exit</span>
+<span class="c1"># timedatectl</span>
+<span class="c1"># fdisk /dev/sda</span>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>In <code>fdisk</code>, create the following partitions:</p>
@@ -4795,34 +4185,58 @@ sudo dd bs=4M if=archlinux-2025.06.01-x86_64.iso of=/dev/sdX conv=fsync oflag=di
 </li>
 <li>
 <p>Exit <code>fdisk</code> by typing <code>w</code> and pressing <code>Enter</code>. Continue with the following commands (replace <code>&lt;USER&gt;</code> with your desired username):</p>
-<p>```</p>
-<h1 id="mkfsext4-devsda6">mkfs.ext4 /dev/sda6<a class="headerlink" href="#mkfsext4-devsda6" title="Permanent link">&para;</a></h1>
-<h1 id="mkswap-devsda5">mkswap /dev/sda5<a class="headerlink" href="#mkswap-devsda5" title="Permanent link">&para;</a></h1>
-<h1 id="mount-devsda6-mnt">mount /dev/sda6 /mnt<a class="headerlink" href="#mount-devsda6-mnt" title="Permanent link">&para;</a></h1>
-<h1 id="mount-mkdir-devsda1-mntbootefi">mount --mkdir /dev/sda1 /mnt/boot/efi<a class="headerlink" href="#mount-mkdir-devsda1-mntbootefi" title="Permanent link">&para;</a></h1>
-<h1 id="swapon-devsda5">swapon /dev/sda5<a class="headerlink" href="#swapon-devsda5" title="Permanent link">&para;</a></h1>
-<h1 id="pacstrap-k-mnt-base-base-devel-linux-linux-firmware-sudo-vi-ntfs-3g-networkmanager-intel-ucode-grub-efibootmgr-os-prober">pacstrap -K /mnt base base-devel linux linux-firmware sudo vi ntfs-3g networkmanager intel-ucode grub efibootmgr os-prober<a class="headerlink" href="#pacstrap-k-mnt-base-base-devel-linux-linux-firmware-sudo-vi-ntfs-3g-networkmanager-intel-ucode-grub-efibootmgr-os-prober" title="Permanent link">&para;</a></h1>
-<h1 id="genfstab-u-mnt-mntetcfstab">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab<a class="headerlink" href="#genfstab-u-mnt-mntetcfstab" title="Permanent link">&para;</a></h1>
-<h1 id="arch-chroot-mnt">arch-chroot /mnt<a class="headerlink" href="#arch-chroot-mnt" title="Permanent link">&para;</a></h1>
-<h1 id="ln-sf-usrsharezoneinfoeuropemadrid-etclocaltime">ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime<a class="headerlink" href="#ln-sf-usrsharezoneinfoeuropemadrid-etclocaltime" title="Permanent link">&para;</a></h1>
-<h1 id="hwclock-systohc">hwclock --systohc<a class="headerlink" href="#hwclock-systohc" title="Permanent link">&para;</a></h1>
-<h1 id="vi-etclocalegen-uncomment-en_usutf-8-utf-8-and-es_esutf-8-utf-8">vi /etc/locale.gen    # Uncomment 'en_US.UTF-8 UTF-8' and 'es_ES.UTF-8 UTF-8'<a class="headerlink" href="#vi-etclocalegen-uncomment-en_usutf-8-utf-8-and-es_esutf-8-utf-8" title="Permanent link">&para;</a></h1>
-<h1 id="locale-gen">locale-gen<a class="headerlink" href="#locale-gen" title="Permanent link">&para;</a></h1>
-<h1 id="echo-langes_esutf-8-etclocaleconf">echo "LANG=es_ES.UTF-8" &gt; /etc/locale.conf<a class="headerlink" href="#echo-langes_esutf-8-etclocaleconf" title="Permanent link">&para;</a></h1>
-<h1 id="echo-keymapes-etcvconsoleconf">echo "KEYMAP=es" &gt; /etc/vconsole.conf<a class="headerlink" href="#echo-keymapes-etcvconsoleconf" title="Permanent link">&para;</a></h1>
-<h1 id="echo-thinkpad-etchostname">echo "thinkpad" &gt; /etc/hostname<a class="headerlink" href="#echo-thinkpad-etchostname" title="Permanent link">&para;</a></h1>
-<h1 id="echo-e-n127001-localhostn1-localhostn127011-thinkpadlocaldomain-thinkpad-etchosts">echo -e "\n127.0.0.1    localhost\n::1    localhost\n127.0.1.1    thinkpad.localdomain thinkpad" &gt;&gt; /etc/hosts<a class="headerlink" href="#echo-e-n127001-localhostn1-localhostn127011-thinkpadlocaldomain-thinkpad-etchosts" title="Permanent link">&para;</a></h1>
-<h1 id="passwd">passwd<a class="headerlink" href="#passwd" title="Permanent link">&para;</a></h1>
-<h1 id="useradd-m-g-wheelaudiovideostorage-s-binbash">useradd -m -G wheel,audio,video,storage -s /bin/bash <USER><a class="headerlink" href="#useradd-m-g-wheelaudiovideostorage-s-binbash" title="Permanent link">&para;</a></h1>
-<h1 id="passwd_1">passwd <USER><a class="headerlink" href="#passwd_1" title="Permanent link">&para;</a></h1>
-<h1 id="visudo-uncomment-wheel-allall-all">visudo                # Uncomment '%wheel ALL=(ALL) ALL'<a class="headerlink" href="#visudo-uncomment-wheel-allall-all" title="Permanent link">&para;</a></h1>
-<h1 id="systemctl-enable-networkmanager">systemctl enable NetworkManager<a class="headerlink" href="#systemctl-enable-networkmanager" title="Permanent link">&para;</a></h1>
-<h1 id="vi-etcdefaultgrub-uncomment-grub_disable_os_proberfalse">vi /etc/default/grub  # Uncomment 'GRUB_DISABLE_OS_PROBER=false'<a class="headerlink" href="#vi-etcdefaultgrub-uncomment-grub_disable_os_proberfalse" title="Permanent link">&para;</a></h1>
-<h1 id="os-prober">os-prober<a class="headerlink" href="#os-prober" title="Permanent link">&para;</a></h1>
-<h1 id="grub-install-targetx86_64-efi-efi-directorybootefi-bootloader-idgrub">grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB<a class="headerlink" href="#grub-install-targetx86_64-efi-efi-directorybootefi-bootloader-idgrub" title="Permanent link">&para;</a></h1>
-<h1 id="grub-mkconfig-o-bootgrubgrubcfg">grub-mkconfig -o /boot/grub/grub.cfg<a class="headerlink" href="#grub-mkconfig-o-bootgrubgrubcfg" title="Permanent link">&para;</a></h1>
-<h1 id="su-">su - <USER><a class="headerlink" href="#su-" title="Permanent link">&para;</a></h1>
-<p>```</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code># mkfs.ext4 /dev/sda6
+# mkswap /dev/sda5
+# mount /dev/sda6 /mnt
+# mount --mkdir /dev/sda1 /mnt/boot/efi
+# swapon /dev/sda5
+# pacstrap -K /mnt base base-devel linux linux-firmware sudo vi ntfs-3g networkmanager intel-ucode grub efibootmgr os-prober
+# genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+# arch-chroot /mnt
+# ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
+# hwclock --systohc
+# vi /etc/locale.gen    # Uncomment &#39;en_US.UTF-8 UTF-8&#39; and &#39;es_ES.UTF-8 UTF-8&#39;
+# locale-gen
+# echo &quot;LANG=es_ES.UTF-8&quot; &gt; /etc/locale.conf
+# echo &quot;KEYMAP=es&quot; &gt; /etc/vconsole.conf
+# echo &quot;thinkpad&quot; &gt; /etc/hostname
+# echo -e &quot;\n127.0.0.1    localhost\n::1    localhost\n127.0.1.1    thinkpad.localdomain thinkpad&quot; &gt;&gt; /etc/hosts
+# passwd
+# useradd -m -G wheel,audio,video,storage -s /bin/bash &lt;USER&gt;
+# passwd &lt;USER&gt;
+# visudo                # Uncomment &#39;%wheel ALL=(ALL) ALL&#39;
+# systemctl enable NetworkManager
+# vi /etc/default/grub  # Uncomment &#39;GRUB_DISABLE_OS_PROBER=false&#39;
+# os-prober
+# grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+# grub-mkconfig -o /boot/grub/grub.cfg
+# su - &lt;USER&gt;
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <h2 id="graphical-environment-installation">Graphical environment installation<a class="headerlink" href="#graphical-environment-installation" title="Permanent link">&para;</a></h2>
@@ -4830,45 +4244,54 @@ sudo dd bs=4M if=archlinux-2025.06.01-x86_64.iso of=/dev/sdX conv=fsync oflag=di
 <ol>
 <li>
 <p>Now install the graphical environment — I chose XFCE4. If you prefer another one, <a href="https://wiki.archlinux.org/title/Desktop_environment#Officially_supported">here</a> is a list of officially supported desktop environments and instructions.</p>
-<p><code>bash
-$ sudo pacman -Syy
-$ sudo pacman -S xfce4 xfce4-goodies xorg xdg-user-dirs pavucontrol gvfs gvfs-smb thunar-archive-plugin unzip unrar lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings pipewire pipewire-pulse pipewire-alsa wireplumber git cmake
-$ sudo systemctl enable lightdm</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-Syy
+$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>xfce4<span class="w"> </span>xfce4-goodies<span class="w"> </span>xorg<span class="w"> </span>xdg-user-dirs<span class="w"> </span>pavucontrol<span class="w"> </span>gvfs<span class="w"> </span>gvfs-smb<span class="w"> </span>thunar-archive-plugin<span class="w"> </span>unzip<span class="w"> </span>unrar<span class="w"> </span>lightdm<span class="w"> </span>lightdm-gtk-greeter<span class="w"> </span>lightdm-gtk-greeter-settings<span class="w"> </span>pipewire<span class="w"> </span>pipewire-pulse<span class="w"> </span>pipewire-alsa<span class="w"> </span>wireplumber<span class="w"> </span>git<span class="w"> </span>cmake
+$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>lightdm
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Install the <code>yay</code> package manager to install packages from AUR:</p>
-<p><code>bash
-$ git clone https://aur.archlinux.org/yay.git
-$ cd yay
-$ makepkg -si</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/yay.git
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>yay
+$<span class="w"> </span>makepkg<span class="w"> </span>-si
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Finally, install some useful applications and packages:</p>
-<p><code>bash
-$ sudo pacman -S firefox firefox-i18n-es libreoffice-fresh gimp vlc vlc-plugins-all usbutils htop btop openssh man-pages-es xdg-user-dirs-gtk alsa-utils network-manager-applet blueman fwupd gparted terminator vlc gimp shutter audacity openshot ghex net-tools sshuttle gucharmap
-$ sudo systemctl enable --now sshd</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>firefox<span class="w"> </span>firefox-i18n-es<span class="w"> </span>libreoffice-fresh<span class="w"> </span>gimp<span class="w"> </span>vlc<span class="w"> </span>vlc-plugins-all<span class="w"> </span>usbutils<span class="w"> </span>htop<span class="w"> </span>btop<span class="w"> </span>openssh<span class="w"> </span>man-pages-es<span class="w"> </span>xdg-user-dirs-gtk<span class="w"> </span>alsa-utils<span class="w"> </span>network-manager-applet<span class="w"> </span>blueman<span class="w"> </span>fwupd<span class="w"> </span>gparted<span class="w"> </span>terminator<span class="w"> </span>vlc<span class="w"> </span>gimp<span class="w"> </span>shutter<span class="w"> </span>audacity<span class="w"> </span>openshot<span class="w"> </span>ghex<span class="w"> </span>net-tools<span class="w"> </span>sshuttle<span class="w"> </span>gucharmap
+$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>sshd
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Exit the chroot session, unmount the partitions, and reboot:</p>
-<p>```bash
-$ exit</p>
-<h1 id="exit">exit<a class="headerlink" href="#exit" title="Permanent link">&para;</a></h1>
-<h1 id="umount-r-mnt">umount -R /mnt<a class="headerlink" href="#umount-r-mnt" title="Permanent link">&para;</a></h1>
-<h1 id="reboot">reboot<a class="headerlink" href="#reboot" title="Permanent link">&para;</a></h1>
-<p>```</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">exit</span>
+<span class="c1"># exit</span>
+<span class="c1"># umount -R /mnt</span>
+<span class="c1"># reboot</span>
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <h2 id="networkmanager-and-bluetooth-applets">NetworkManager and Bluetooth Applets<a class="headerlink" href="#networkmanager-and-bluetooth-applets" title="Permanent link">&para;</a></h2>
 <p>To make the NetworkManager applet work properly, we need to install the <code>network-manager-applet</code> package and add it to XFCE4 autostart. We’ll do something similar for Bluetooth. Once in the graphical environment, run:</p>
-<p><code>bash
-$ sudo pacman -S network-manager-applet blueman
-$ sudo systemctl start bluetooth
-$ sudo systemctl enable --now bluetooth</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>network-manager-applet<span class="w"> </span>blueman
+$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>bluetooth
+$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>bluetooth
+</code></pre></div></td></tr></table></div>
 <p>Now add both applets to XFCE4 autostart. Go to <code>Settings &gt; Session and Startup &gt; Application Autostart</code> and click <code>Add</code>. In <code>Name</code>, enter <code>NetworkManager Applet</code>, in <code>Command</code>, enter <code>nm-applet</code>, and you can leave <code>Comment</code> empty or write something like <code>NetworkManager applet</code>. Do the same for Bluetooth: name <code>Bluetooth</code>, command <code>blueman-applet</code>, optional comment.</p>
 <h2 id="installing-pamac">Installing pamac<a class="headerlink" href="#installing-pamac" title="Permanent link">&para;</a></h2>
 <p>To make graphical package management easier, install <code>pamac</code>:</p>
-<p><code>bash
-$ yay -S pamac-aur</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>yay<span class="w"> </span>-S<span class="w"> </span>pamac-aur
+</code></pre></div></td></tr></table></div>
 <p>Once installed, open it (search for <code>Add/Remove Software</code> in the application menu) and enable AUR support under <code>Preferences &gt; Third Party &gt; Enable AUR support</code>.</p>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
 <p>And that’s it. Now we have a dual boot Arch Linux / Windows system on the ThinkPad T480.</p>

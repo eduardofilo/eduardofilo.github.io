@@ -2675,39 +2675,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Logcat play/pause">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#google-music" class="md-nav__link">
-    <span class="md-ellipsis">
-      Google Music
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pocket-cast" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pocket Cast
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#musica" class="md-nav__link">
-    <span class="md-ellipsis">
-      Música
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -4061,39 +4028,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Logcat play/pause">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#google-music" class="md-nav__link">
-    <span class="md-ellipsis">
-      Google Music
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pocket-cast" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pocket Cast
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#musica" class="md-nav__link">
-    <span class="md-ellipsis">
-      Música
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -4122,41 +4056,76 @@
 <li><a href="http://www.gauntface.co.uk/blog/2010/04/14/using-android-headset-buttons-earphone-buttons/">Using Android Headset Buttons (Earphone Buttons)</a></li>
 </ul>
 <h2 id="logcat-playpause">Logcat play/pause<a class="headerlink" href="#logcat-playpause" title="Permanent link">&para;</a></h2>
-<p>```</p>
-<h4 id="google-music">Google Music<a class="headerlink" href="#google-music" title="Permanent link">&para;</a></h4>
-<p>01-25 18:54:23.960  1226  1226 I AwesomePlayer: play_l
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div><pre><span></span><code>#### Google Music
+01-25 18:54:23.960  1226  1226 I AwesomePlayer: play_l
 01-25 18:54:24.007 19228 19232 I dalvikvm: Jit: resizing JitTable from 4096 to 8192
 01-25 18:54:25.038 19653 19663 D MediaPlaybackService: Event logging MUSIC_PAUSE_PLAYBACK_REQUESTED: [299, DEFAULT]/c10a328e-25f5-36a5-bb2b-8642bc8a8f76
 01-25 18:54:25.053  1226  1779 I AwesomePlayer: pause_l 0
 01-25 18:54:25.061  1373  1388 D NotificationService: turn off LED due to Dock full charging
 01-25 18:54:25.085  1373  1384 D BluetoothA2dpService: received playstatechanged Action
-01-25 18:54:25.085  1373  1384 D BluetoothA2dpService: Received Meta Data Details Track = Fool (If You Think It's Over) Artist = Chris Rea Album = The Best Of Chris Rea Trackno = null no.of track = null TrackDuration = null TrackPosition = null
+01-25 18:54:25.085  1373  1384 D BluetoothA2dpService: Received Meta Data Details Track = Fool (If You Think It&#39;s Over) Artist = Chris Rea Album = The Best Of Chris Rea Trackno = null no.of track = null TrackDuration = null TrackPosition = null
 01-25 18:54:25.085  1373  1384 D BluetoothA2dpService: received playstatechanged Action
-01-25 18:54:25.249  1226  1367 D AudioHardwareMot: AudioStreamOutMot::setParameters() fm_attenuate=0;fm_mute=0</p>
-<h4 id="pocket-cast">Pocket Cast<a class="headerlink" href="#pocket-cast" title="Permanent link">&para;</a></h4>
-<p>01-17 19:41:48.420 12280 12298 I AwesomePlayer: play_l
-01-17 19:41:49.561 12280 12298 I AwesomePlayer: pause_l 0</p>
-<h4 id="musica">Música<a class="headerlink" href="#musica" title="Permanent link">&para;</a></h4>
-<p>01-25 19:03:54.350  1226  1369 I AwesomePlayer: play_l
-01-25 19:03:54.382 19958 19958 D DEBUGDEBUG: ALBUM ART WAS NOT FOUND: <unknown>:WhatsApp Audio
+01-25 18:54:25.249  1226  1367 D AudioHardwareMot: AudioStreamOutMot::setParameters() fm_attenuate=0;fm_mute=0
+
+#### Pocket Cast
+01-17 19:41:48.420 12280 12298 I AwesomePlayer: play_l
+01-17 19:41:49.561 12280 12298 I AwesomePlayer: pause_l 0
+
+#### Música
+01-25 19:03:54.350  1226  1369 I AwesomePlayer: play_l
+01-25 19:03:54.382 19958 19958 D DEBUGDEBUG: ALBUM ART WAS NOT FOUND: &lt;unknown&gt;:WhatsApp Audio
 01-25 19:03:54.421 19958 19958 E TuneWiki: Sending AVRCP command with action: com.android.music.metachanged
 01-25 19:03:54.428  1373  1384 D BluetoothA2dpService: received metachanged Action New Build
 01-25 19:03:54.428  1373  1384 D BluetoothA2dpService: Received Meta Data Details Track = AUD-20110917-WA0004 Artist = Artista desconocido Album = WhatsApp Audio Trackno = 1 no.of track = 144 TrackDuration = 17040 TrackPosition = 9540
 01-25 19:03:54.428 19958 19958 V TuneWiki: MPD - Status Changed: 0
-01-25 19:03:54.483 19958 19958 D DEBUGDEBUG: ALBUM ART WAS NOT FOUND: <unknown>:WhatsApp Audio
+01-25 19:03:54.483 19958 19958 D DEBUGDEBUG: ALBUM ART WAS NOT FOUND: &lt;unknown&gt;:WhatsApp Audio
 01-25 19:03:54.522 19958 19958 D FMControllerService: Starting FMSControllerService, action: tunewiki.intent.action.SWITCH_MPD
 01-25 19:03:55.249 19958 19958 E TuneWiki: Starting TunWikiMPD, action: tunewiki.intent.action.HEADSET_SINGLE_CLICK
 01-25 19:03:55.249 19958 19958 V TuneWiki: MPD - pause() called
 01-25 19:03:55.249 19958 19958 V TuneWiki: MPD - currently playing, so pausing
 01-25 19:03:55.257  1226 15028 I AwesomePlayer: pause_l 0
 01-25 19:03:55.272  1373  1388 D NotificationService: turn off LED due to Dock full charging
-01-25 19:03:55.296 19958 19958 D DEBUGDEBUG: ALBUM ART WAS NOT FOUND: <unknown>:WhatsApp Audio
+01-25 19:03:55.296 19958 19958 D DEBUGDEBUG: ALBUM ART WAS NOT FOUND: &lt;unknown&gt;:WhatsApp Audio
 01-25 19:03:55.311 19958 19958 E TuneWiki: Sending AVRCP command with action: com.android.music.playerpaused
 01-25 19:03:55.311  1373  1384 D BluetoothA2dpService: received paused Action
 01-25 19:03:55.311 19958 19958 V TuneWiki: MPD - Status Changed: 1
-01-25 19:03:55.327 19958 19958 D DEBUGDEBUG: ALBUM ART WAS NOT FOUND: <unknown>:WhatsApp Audio
+01-25 19:03:55.327 19958 19958 D DEBUGDEBUG: ALBUM ART WAS NOT FOUND: &lt;unknown&gt;:WhatsApp Audio
 01-25 19:03:55.455  1226  1367 D AudioHardwareMot: AudioStreamOutMot::setParameters() fm_attenuate=0;fm_mute=0
-```</p>
+</code></pre></div></td></tr></table></div>
 
 
 

@@ -4197,20 +4197,23 @@
 </ul>
 <h2 id="comandos-utiles">Comandos útiles<a class="headerlink" href="#comandos-utiles" title="Permanent link">&para;</a></h2>
 <h3 id="utilidad-de-configuracion">Utilidad de configuración<a class="headerlink" href="#utilidad-de-configuracion" title="Permanent link">&para;</a></h3>
-<p><code>bash
-$ sudo odroid-utility.sh</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>odroid-utility.sh
+</code></pre></div></td></tr></table></div>
 <h3 id="flasheo-de-imagen-ubuntu-oficial">Flasheo de imagen <a href="http://odroid.com/dokuwiki/doku.php?id=en:c1_release_linux_ubuntu">Ubuntu oficial</a><a class="headerlink" href="#flasheo-de-imagen-ubuntu-oficial" title="Permanent link">&para;</a></h3>
-<p><code>bash
-$ xzcat ubuntu-14.04.1lts-lubuntu-odroid-c1-20141211.img.xz | sudo dd of=/dev/mmcblk0 bs=2M</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>xzcat<span class="w"> </span>ubuntu-14.04.1lts-lubuntu-odroid-c1-20141211.img.xz<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M
+</code></pre></div></td></tr></table></div>
 <h3 id="backup-de-la-sd-comprimiendo-al-vuelo">Backup de la SD (comprimiendo al vuelo)<a class="headerlink" href="#backup-de-la-sd-comprimiendo-al-vuelo" title="Permanent link">&para;</a></h3>
-<p><code>bash
-$ #Backup:
-$ sudo dd if=/dev/mmcblk0 bs=2M | gzip -9 - &gt; odroid_8gb_backup.img.gz
-$ #Restauración:
-$ gunzip odroid_8gb_backup.img.gz -c | sudo dd of=/dev/mmcblk0 bs=2M</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="c1">#Backup:</span>
+$<span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M<span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>-9<span class="w"> </span>-<span class="w"> </span>&gt;<span class="w"> </span>odroid_8gb_backup.img.gz
+$<span class="w"> </span><span class="c1">#Restauración:</span>
+$<span class="w"> </span>gunzip<span class="w"> </span>odroid_8gb_backup.img.gz<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M
+</code></pre></div></td></tr></table></div>
 <h3 id="control-de-progreso-durante-flasheo">Control de progreso durante flasheo<a class="headerlink" href="#control-de-progreso-durante-flasheo" title="Permanent link">&para;</a></h3>
-<p><code>bash
-$ sudo pkill -USR1 -n -x dd</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pkill<span class="w"> </span>-USR1<span class="w"> </span>-n<span class="w"> </span>-x<span class="w"> </span>dd
+</code></pre></div></td></tr></table></div>
 
 
 

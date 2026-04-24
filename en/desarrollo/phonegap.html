@@ -5290,18 +5290,19 @@
 <li><a href="https://www.vagrantup.com/">Vagrant</a> (opcional): Empaquetador de entornos de desarrollo</li>
 </ul>
 <h3 id="creacion-de-proyecto-phonegap">Creación de proyecto Phonegap<a class="headerlink" href="#creacion-de-proyecto-phonegap" title="Permanent link">&para;</a></h3>
-<p><code>bash
-$ phonegap create 00HolaMundo --name HolaMundo --id es.eduardofilo.hm</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>phonegap<span class="w"> </span>create<span class="w"> </span>00HolaMundo<span class="w"> </span>--name<span class="w"> </span>HolaMundo<span class="w"> </span>--id<span class="w"> </span>es.eduardofilo.hm
+</code></pre></div></td></tr></table></div>
 <h3 id="compilacion-y-ejecucion-de-proyecto-phonegap">Compilación y ejecución de proyecto Phonegap<a class="headerlink" href="#compilacion-y-ejecucion-de-proyecto-phonegap" title="Permanent link">&para;</a></h3>
-<p><code>bash
-$ cd 00HolaMundo
-$ phonegap build android
-$ phonegap run android</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>00HolaMundo
+$<span class="w"> </span>phonegap<span class="w"> </span>build<span class="w"> </span>android
+$<span class="w"> </span>phonegap<span class="w"> </span>run<span class="w"> </span>android
+</code></pre></div></td></tr></table></div>
 <p>En realidad la tarea <code>run</code> hace <code>build</code>.</p>
 <h3 id="inspeccionar-dispositivos-externos-en-chrome">Inspeccionar dispositivos externos en Chrome<a class="headerlink" href="#inspeccionar-dispositivos-externos-en-chrome" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>about:inspect
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>about:inspect
 </code></pre></div></td></tr></table></div>
-
 <h3 id="rest-webservices">REST WebServices<a class="headerlink" href="#rest-webservices" title="Permanent link">&para;</a></h3>
 <p>Servidor mock (<a href="http://www.mockable.io/">mockable</a>): demo0034470.mockable.io</p>
 <ul>
@@ -5310,68 +5311,111 @@ $ phonegap run android</code></p>
 <li><em>dataType</em>: json</li>
 </ul>
 <p>Respuesta:</p>
-<p><code>json
-{
-    "votosTotal": 6000,
-    "votosPositivos": 3500,
-    "votosNegativos": 2500,
-    "fecha": "2013-04-17T12:32:12"
-}</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;votosTotal&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6000</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;votosPositivos&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3500</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;votosNegativos&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2500</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;fecha&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2013-04-17T12:32:12&quot;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 <h3 id="jquery">jQuery<a class="headerlink" href="#jquery" title="Permanent link">&para;</a></h3>
 <p>Hay una convención por la cual cuando invocamos jQuery ($) para localizar un elemento del DOM, la variable donde se carga se pone con el prefijo $. Por ejemplo:</p>
-<p><code>javascript
-var $paragrafos = $('p');</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">$paragrafos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
 <h4 id="ejemplo1">Ejemplo1<a class="headerlink" href="#ejemplo1" title="Permanent link">&para;</a></h4>
-<p>```javascript
-var $paragraphs = $('p');
-for (var i=0; i &lt; $paragraphs.length ; i++) {
-    console.log(i, $paragraphs[i]);
-}
-$paragraphs.css('color', 'red');
-$paragraphs.css('background-color', 'green');</p>
-<p>$paragraphs.css({'color': 'blue',
-                 'background-color': 'yellow'});</p>
-<p>console.log($paragraphs.css('color'));
-$firstp = $('p:first');
-//$firstp = $('p').first();
-//$firstp = $('p').eq(0);
-$firstp.addClass('importante');
-```</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">$paragraphs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">$paragraphs</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">$paragraphs</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="p">}</span>
+<span class="nx">$paragraphs</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;red&#39;</span><span class="p">);</span>
+<span class="nx">$paragraphs</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;background-color&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;green&#39;</span><span class="p">);</span>
+
+<span class="nx">$paragraphs</span><span class="p">.</span><span class="nx">css</span><span class="p">({</span><span class="s1">&#39;color&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>
+<span class="w">                 </span><span class="s1">&#39;background-color&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;yellow&#39;</span><span class="p">});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$paragraphs</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">));</span>
+<span class="nx">$firstp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;p:first&#39;</span><span class="p">);</span>
+<span class="c1">//$firstp = $(&#39;p&#39;).first();</span>
+<span class="c1">//$firstp = $(&#39;p&#39;).eq(0);</span>
+<span class="nx">$firstp</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;importante&#39;</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
 <h4 id="ejemplo2">Ejemplo2<a class="headerlink" href="#ejemplo2" title="Permanent link">&para;</a></h4>
-<p>```javascript
-var $firstp = $('p:first');
-var texto = $firstp.text();
-$firstp.text(texto.toUpperCase());
-//var $strong = $('<strong>');
-//$strong.text('contenido');
-//$firstp.prepend($strong);</p>
-<p>$('<strong>')
-    .text('contenido')
-    .prependTo($firstp);
-```</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">$firstp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;p:first&#39;</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">texto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$firstp</span><span class="p">.</span><span class="nx">text</span><span class="p">();</span>
+<span class="nx">$firstp</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nx">texto</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span>
+<span class="c1">//var $strong = $(&#39;&lt;strong&gt;&#39;);</span>
+<span class="c1">//$strong.text(&#39;contenido&#39;);</span>
+<span class="c1">//$firstp.prepend($strong);</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;strong&gt;&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s1">&#39;contenido&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">prependTo</span><span class="p">(</span><span class="nx">$firstp</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
 <h4 id="ejemplo3">Ejemplo3<a class="headerlink" href="#ejemplo3" title="Permanent link">&para;</a></h4>
-<p><code>javascript
-var colores = ['Rojo', 'Verde', 'Azul'];
-var $ol = $('ol');
-$ol.empty();
-for (var i=0; i&lt;colores.length; i++) {
-    $ol.append($('&lt;li&gt;').text(colores[i]));
-    //$('&lt;li&gt;').text(colores[i]).appendTo($ol);
-}</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">colores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Rojo&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Verde&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Azul&#39;</span><span class="p">];</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">$ol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;ol&#39;</span><span class="p">);</span>
+<span class="nx">$ol</span><span class="p">.</span><span class="nx">empty</span><span class="p">();</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">colores</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">$ol</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;li&gt;&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">colores</span><span class="p">[</span><span class="nx">i</span><span class="p">]));</span>
+<span class="w">    </span><span class="c1">//$(&#39;&lt;li&gt;&#39;).text(colores[i]).appendTo($ol);</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 <h4 id="ejemplo4">Ejemplo4<a class="headerlink" href="#ejemplo4" title="Permanent link">&para;</a></h4>
-<p><code>javascript
-$('p').on('click', function(evt) {
-    evt.preventDefault();
-    $(this).css('background-color', 'green');
-});</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">evt</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;background-color&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;green&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div>
 <h4 id="ejemplo5">Ejemplo5<a class="headerlink" href="#ejemplo5" title="Permanent link">&para;</a></h4>
-<p><code>javascript
-$('p').on('click', function(evt) {
-    $(this).fadeOut(function() {
-        $(this).text($(this).text().toUpperCase());
-        $(this).fadeIn();
-    });
-});</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">fadeOut</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">text</span><span class="p">().</span><span class="nx">toUpperCase</span><span class="p">());</span>
+<span class="w">        </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">();</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="dia-6-martes-25112014">Día 6: Martes 25/11/2014<a class="headerlink" href="#dia-6-martes-25112014" title="Permanent link">&para;</a></h2>
 <h3 id="enlaces_1">Enlaces<a class="headerlink" href="#enlaces_1" title="Permanent link">&para;</a></h3>
 <ul>
@@ -5389,41 +5433,45 @@ $('p').on('click', function(evt) {
 <ol>
 <li>Bajamos el instalador de git y lo instalamos. Durante la instalación, en una página del asistente, marcamos la tercera opción que lleva una leyenda en rojo.</li>
 <li>Inicializamos el proyecto local:
-    <code>bash
-    mkdir 06YesNoGit
-    cd 06YesNoGit
-    git init</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdir<span class="w"> </span>06YesNoGit
+<span class="nb">cd</span><span class="w"> </span>06YesNoGit
+git<span class="w"> </span>init
+</code></pre></div></td></tr></table></div></li>
 <li>Entramos con nuestra cuenta (o creamos una) en GitHub y creamos un repositorio con el mismo nombre que el local (<code>06YesNoGit</code>).</li>
 <li>Creamos un "remote" desde el git local hacia GitHub:
-    <code>bash
-    git remote add origin https://github.com/eduardofilo/06YesNoGit.git</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/eduardofilo/06YesNoGit.git
+</code></pre></div></td></tr></table></div></li>
 <li>Sincronizamos:
-    <code>bash
-    git pull origin master</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>master
+</code></pre></div></td></tr></table></div></li>
 <li>Modificamos un fichero en local (.gitignore), lo commiteamos en local y sincronizamos con GitHub:
-    <code>bash
-    git add .gitignore
-    git commit -m "Primer commit"
-    git push origin master</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.gitignore
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Primer commit&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master
+</code></pre></div></td></tr></table></div></li>
 <li>Inicializamos gitflow en SourceTree (pulsando el botón de la toolbar).</li>
 <li>Instalamos Bower (la opción g lo instala en global, es decir accesible desde todos los proyectos):
-    <code>bash
-    npm install -g bower</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>bower
+</code></pre></div></td></tr></table></div></li>
 <li>Grunt no se suele instalar de forma global porque cambia mucho de versión. Vamos a instalar algo que ejecuta el grunt local del proyecto:
-    <code>bash
-    npm install -g grunt-cli</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>grunt-cli
+</code></pre></div></td></tr></table></div></li>
 <li>Instalamos Yeoman:
-    <code>bash
-    npm install -g yo</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>yo
+</code></pre></div></td></tr></table></div></li>
 <li>Si falla la descarga de algún paquete, es mejor no reejecutar yeoman. Se habrá generado un fichero <code>package.json</code> que contiene los paquetes npm que necesitamos. Ejecutando lo siguiente se bajará lo que falte:
-    <code>bash
-    npm install</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>npm<span class="w"> </span>install
+</code></pre></div></td></tr></table></div></li>
 <li>Si <code>npm install</code> nos da warnings se puede solucionar inicializando npm (que genera el fichero <code>package.json</code>):
-    <code>bash
-    npm init</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>npm<span class="w"> </span>init
+</code></pre></div></td></tr></table></div></li>
 <li>Instalamos la plantilla webapp de Yeoman:
-    <code>bash
-    npm install -g generator-webapp</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>generator-webapp
+</code></pre></div></td></tr></table></div></li>
 <li>En este punto tenemos todas las herramientas instaladas.</li>
 <li>“Start New Feature” en gitflow@SourceTree. Le damos el nombre “InicializarConYeoman”.</li>
 <li>Generamos un proyecto con la plantilla webapp de Yeoman:<ul>
@@ -5434,15 +5482,15 @@ $('p').on('click', function(evt) {
 </ul>
 </li>
 <li>Lanzamos los tests para probar Grunt:
-    <code>bash
-    grunt test</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>grunt<span class="w"> </span><span class="nb">test</span>
+</code></pre></div></td></tr></table></div></li>
 <li>Compilamos con Grunt:
-    <code>bash
-    grunt build</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>grunt<span class="w"> </span>build
+</code></pre></div></td></tr></table></div></li>
 <li>Aparece el directorio <code>dist</code> con la versión final (lista para desplegar) de nuestro proyecto.</li>
 <li>Arrancamos un servidor web para probar el proyecto:
-    <code>bash
-    grunt serve</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>grunt<span class="w"> </span>serve
+</code></pre></div></td></tr></table></div></li>
 </ol>
 <h2 id="dia-7-miercoles-26112014">Día 7: Miércoles 26/11/2014<a class="headerlink" href="#dia-7-miercoles-26112014" title="Permanent link">&para;</a></h2>
 <h3 id="enlaces_2">Enlaces<a class="headerlink" href="#enlaces_2" title="Permanent link">&para;</a></h3>
@@ -5472,8 +5520,8 @@ $('p').on('click', function(evt) {
 <li>Se instala en el emulador o dispositivo la aplicación.</li>
 <li>Se abre la aplicación “PhoneGap” en el dispositivo o emulador.</li>
 <li>Se configura poniendo la URL que aparece al arrancar el servidor phonegap en la máquina de desarrollo:
-    <code>bash
-    phonegap serve</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>phonegap<span class="w"> </span>serve
+</code></pre></div></td></tr></table></div></li>
 </ol>
 <h2 id="dia-8-jueves-27112014">Día 8: Jueves 27/11/2014<a class="headerlink" href="#dia-8-jueves-27112014" title="Permanent link">&para;</a></h2>
 <h3 id="enlaces_3">Enlaces<a class="headerlink" href="#enlaces_3" title="Permanent link">&para;</a></h3>
@@ -5503,26 +5551,34 @@ $('p').on('click', function(evt) {
 <p><code>top</code> y <code>left</code> no aplican si <code>position</code> es <code>static</code>. El <code>position: absolute</code> toma el origen de coordenadas del primer contenedor que no es <code>static</code>.</p>
 <h4 id="display">Display<a class="headerlink" href="#display" title="Permanent link">&para;</a></h4>
 <p>El <code>display</code> de un <code>div</code> por defecto (useragent stylesheet rules) es <code>block</code>. El de <code>span</code> es <code>inline</code>. Se puede modificar tanto un caso como el otro. Por ejemplo si ponemos <code>display: inline</code> a un <code>div</code>, pasa a comportarse como un <code>span</code>. El <code>display: inline</code> hace que se ignore el <code>width</code>. Con <code>display: inline-block</code> sí que se tiene en cuenta el <code>width</code>. Hay un truco para conservar la indentación en el código HTML mientras se evita que se introduzca un carácter espacio que ocupa sitio y descoloca la maquetación y es introducir un comentario entre líneas de esta forma:</p>
-<p>```html
- <br />
-<section>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>   <span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
    …
-   </section></p>
-<!--
---><section>
+   <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span><span class="cm">&lt;!--</span>
+<span class="cm">--&gt;</span><span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
    …
-   </section>
-<p>```</p>
+   <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
 <h4 id="float">Float<a class="headerlink" href="#float" title="Permanent link">&para;</a></h4>
 <p>La propiedad <code>clear</code> sólo funciona si el <code>display</code> no es <code>inline</code>. Se usa mucho el apaño del clearfix para solucionar la pérdida de dimensión vertical de un contenedor cuando todo su contenido más alto flota. El selector <code>:after</code> selecciona después del contenido al que se aplica el estilo, no el contenido del siguiente elemento en el DOM. El clearfix favorito de Javier es:</p>
-<p><code>css
-.clearfix:after {
-    content: ".";
-    visibility: hidden;
-    display: block;
-    height: 0;
-    clear: both;
-}</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">.</span><span class="nc">clearfix</span><span class="p">:</span><span class="nd">after</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">visibility</span><span class="p">:</span><span class="w"> </span><span class="kc">hidden</span><span class="p">;</span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">clear</span><span class="p">:</span><span class="w"> </span><span class="kc">both</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 <h4 id="viewport">viewport<a class="headerlink" href="#viewport" title="Permanent link">&para;</a></h4>
 <p>Diferencia entre layout-viewport y display-viewport. La relación entre ambos es el nivel de zoom. El layout-viewport predeterminado es 960px. Se definió pixel-ratio cuando apareció iPhone 4, inicialmente con un valor de 2 (pantalla retina de 640px de ancho por los 320px del iPhone original). Terminales con pantallas QuadHD tienen un pixel-ratio de alrededor de 4. Tiene el inconveniente de que hace que las imágenes se redimensionen, lo que en terminales con mucha densidad de pixel produce desenfoque. La solución es enviar la imagen adecuada a cada dispositivo. De momento se hace con condiciones en CSS.</p>
 <h4 id="mediaqueries">mediaqueries<a class="headerlink" href="#mediaqueries" title="Permanent link">&para;</a></h4>
@@ -5572,10 +5628,12 @@ El menú superior del sitio de Bootstrap está bien estructurado en cuanto a la 
 Bootstrap utiliza CDN para minimizar la latencia.<br />
 Si vamos a utilizar Angular, en lugar de poner bootstrap normal hay que integrar UI Bootstrap que no utiliza jQuery.<br />
 Es importante meter en la cabecera lo siguiente (aparece en <a href="http://getbootstrap.com/getting-started/#template">Basic Template</a>):</p>
-<p><code>html
-&lt;meta charset="utf-8"&gt;
-&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
-&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
 <p>Importante leer todo el <a href="http://getbootstrap.com/css/">documento sobre CSS</a>, sobre todo lo relativo al <a href="http://getbootstrap.com/css/#grid">Grid System</a> y a los <a href="http://getbootstrap.com/css/#forms">Forms</a>.<br />
 Los componentes que no encontremos en Bootstrap buscarlos en <a href="http://bootsnipp.com/">Bootsnipp</a>.<br />
 Si utilizamos la parte de JS de Bootstrap hay que integrar jQuery.</p>
@@ -5583,12 +5641,16 @@ Si utilizamos la parte de JS de Bootstrap hay que integrar jQuery.</p>
 <p>Interesa poner siempre un label en los campos de formulario por accesibilidad, pero en pantallas pequeñas se suele usar un placeholder, lo que es redundante. Para evitarlo se oculta añadiendo la clase <code>sr-only</code> (sr de Screen Reader), lo que mantiene el label en el código pero no lo muestra.</p>
 <h3 id="javascript">JavaScript<a class="headerlink" href="#javascript" title="Permanent link">&para;</a></h3>
 <p>Almacenamiento de un conjunto de variables en localStorage:</p>
-<p><code>javascript
-var l1 = ["Alice", "Bob", "Charly"];
-var l2 = [1, 2, 3]
-var listas = { listaPrincipal: l1, listaSecundaria: l2};
-var listasComoCadena = JSON.stringify(listas);
-localStorage.setItem('listas', listasComoCadena);</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">l1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Charly&quot;</span><span class="p">];</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">l2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">listas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">listaPrincipal</span><span class="o">:</span><span class="w"> </span><span class="nx">l1</span><span class="p">,</span><span class="w"> </span><span class="nx">listaSecundaria</span><span class="o">:</span><span class="w"> </span><span class="nx">l2</span><span class="p">};</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">listasComoCadena</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">listas</span><span class="p">);</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;listas&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">listasComoCadena</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
 <h3 id="deberes-para-el-fin-de-semana">Deberes para el fin de semana<a class="headerlink" href="#deberes-para-el-fin-de-semana" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Landing page con tres zonas y call for action superior (= jumbotron).</li>
@@ -5607,13 +5669,15 @@ localStorage.setItem('listas', listasComoCadena);</code></p>
 <p>Vamos a montar el proyecto poniéndolo todo junto desde cero:</p>
 <ol>
 <li>Creamos el proyecto dentro del directorio \curso:
-    <code>bash
-    cd \curso
-    phonegap create 10Votaciones --name Votaciones --id es.eduardofilo.yesno</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="se">\c</span>urso
+phonegap<span class="w"> </span>create<span class="w"> </span>10Votaciones<span class="w"> </span>--name<span class="w"> </span>Votaciones<span class="w"> </span>--id<span class="w"> </span>es.eduardofilo.yesno
+</code></pre></div></td></tr></table></div></li>
 <li>Nos metemos en el directorio y lanzamos Yeoman para instalar la plantilla web:
-    <code>bash
-    cd 10Votaciones
-    yo</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>10Votaciones
+yo
+</code></pre></div></td></tr></table></div></li>
 <li>Durante la configuración de Yeoman indicamos que incluya Bootstrap.</li>
 <li>Configuramos en Gruntile.js (línea 21 del fichero que la carpeta de la aplicación es <code>www</code> en lugar de <code>app</code> que es la que viene por defecto.</li>
 <li>Movemos carpeta <code>10Votaciones\www\res</code> a <code>10Votaciones\res</code>, es decir un nivel hacia arriba. Esta carpeta contiene los recursos que utilizará Phonegap (por ejemplo el icono de escritorio que ajustará en las distintas plataformas). No tiene mucho sentido que esté dentro de <code>www</code> ya que Phonegap duplicará hacia el directorio <code>dist</code> los recursos correspondientes a la plataforma con la que estemos trabajando. Si está en <code>www</code> es porque cuando utilizamos el servidor de compilación de Adobe para montar las aplicaciones nativas, sólo pasamos el directorio <code>www</code> y el que contenga <code>res</code> es una forma de enviar todo de una vez.</li>
@@ -5623,8 +5687,8 @@ localStorage.setItem('listas', listasComoCadena);</code></p>
 <li>Movemos la carpeta <code>bower_components</code> al interior de <code>www</code>.</li>
 <li>Cambiamos la configuración de Bower en el fichero <code>.bowerrc</code> poniendo <code>www/bower_components</code> donde sólo ponía <code>bower_components</code>.</li>
 <li>Finalmente lanzamos la tarea que inyectará las dependencias entre los ficheros de código:
-    <code>bash
-    grunt wiredep</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>grunt<span class="w"> </span>wiredep
+</code></pre></div></td></tr></table></div></li>
 </ol>
 <p>Con esto ya tendríamos la base.</p>
 <p>Vamos a utilizar el patrón MVC. Pondremos tanto el modelo como el controlador en el mismo fichero <code>main.js</code>, aunque sería más correcto separarlo.</p>
@@ -5641,25 +5705,29 @@ localStorage.setItem('listas', listasComoCadena);</code></p>
 </ul>
 <h3 id="proyecto_1">Proyecto<a class="headerlink" href="#proyecto_1" title="Permanent link">&para;</a></h3>
 <p>Vamos a programar el envío del voto al servidor (mockable) en un POST. El voto va en la URL por lo que aunque utilicemos https no ocultamos la información. Sería más correcto enviar el voto en el cuerpo del POST, por ejemplo:</p>
-<p><code>javascript
-var url = this.URL_POST_NUEVO_VOTO.replace('{value}', tipoDeVoto);
-var promesa = $.post(url, {value: ‘yes’});</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">URL_POST_NUEVO_VOTO</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;{value}&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">tipoDeVoto</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">promesa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="err">‘</span><span class="nx">yes</span><span class="err">’</span><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
 <p>En segundo lugar programamos la gestión de la navegación, es decir cómo cambia la aplicación de pantalla, ya sea hacia delante o hacia atrás (incluyendo por ejemplo el evento “Back” del dispositivo que equivale al botón “Atrás” del navegador). Javier nos comenta el truco de añadir anchors (#) a la URL. Con esto se consigue que no se recargue el documento y que sí afecte al historial. Como nuestra app es SPA nos viene muy bien este truco. En Phonegap, la tecla “Atrás” de los dispositivos equivale al Back del WebView. La gestión del historial la vamos a hacer con <a href="https://github.com/browserstate/history.js/">history.js</a>.</p>
 <ol>
 <li>Buscamos/instalamos history.js con Bower (<code>--save</code> actualiza el fichero <code>bower.json</code> con lo que hacemos que la inclusión de este componente sea persistente, es decir, si luego borramos los componentes, para no subirlos al control de versiones por ejemplo, lo podremos recuperar fácilmente):
-    <code>bash
-    bower search history
-    bower install --save history.js</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>bower<span class="w"> </span>search<span class="w"> </span><span class="nb">history</span>
+bower<span class="w"> </span>install<span class="w"> </span>--save<span class="w"> </span>history.js
+</code></pre></div></td></tr></table></div></li>
 <li>Inyectamos dependencias (<code>grunt wiredep</code> no funciona =&gt; hay que mirar en la documentación). Elegimos la librería que nos conviene consultando la documentación. En <code>index.html</code> incluimos la referencia en el bloque <code>scripts/main.js</code> del <code>build.js</code> final:
-    <code>html
-    &lt;script src="bower_components/history.js/scripts/bundled/html4+html5/native.history.js"&gt;&lt;/script&gt;</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;bower_components/history.js/scripts/bundled/html4+html5/native.history.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div></li>
 </ol>
 <p>Con history.js manejamos el historial del navegador/webview por medio del objeto <code>History</code>. El objeto <code>history</code> sería la parte nativa del navegador. En muchas ocasiones se comportan igual.</p>
 <p>Los parámetros de la función <code>pushState</code> tanto de <code>history</code> como de <code>History</code> son:</p>
-<p><code>javascript
-history.pushState({
-    id: idDestino
-}, $('#' + idDestion).attr('data-title'), idDestion);</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">history</span><span class="p">.</span><span class="nx">pushState</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="nx">idDestino</span>
+<span class="p">},</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">idDestion</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-title&#39;</span><span class="p">),</span><span class="w"> </span><span class="nx">idDestion</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
 <ol>
 <li>Objeto arbitrario en el que podemos almacenar datos</li>
 <li>Descripción o Título de esa entrada en el historial</li>
@@ -5686,34 +5754,35 @@ history.pushState({
 <p>Instalamos <a href="https://github.com/jquery/jquery-color/">jQuery-Color</a> para hacer un efecto de transición al jumbotron:</p>
 <ol>
 <li>Buscamos/instalamos:
-    <code>bash
-    bower search jquery-color
-    bower install --save jquery-color</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>bower<span class="w"> </span>search<span class="w"> </span>jquery-color
+bower<span class="w"> </span>install<span class="w"> </span>--save<span class="w"> </span>jquery-color
+</code></pre></div></td></tr></table></div></li>
 <li>Inyectamos la librería a mano al final del index.html ya que Bower no puede:
-    <code>html
-    &lt;script src="bower_components/jquery-color/jquery.color.js"&gt;&lt;/script&gt;</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;bower_components/jquery-color/jquery.color.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div></li>
 </ol>
 <p>Hasta ahora había algo mal en el proyecto. No esperábamos a que cargara el DOM ni jQuery. Para conseguirlo envolvemos la función de inicialización de la siguiente forma:</p>
-<p><code>javascript
-$(document).ready(function () {
-    controlador.inicializar();
-});</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">controlador</span><span class="p">.</span><span class="nx">inicializar</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div>
 <p>Vemos una forma de <a href="http://stackoverflow.com/questions/12665511/eliminate-tap-highlight-in-windows-phone-7">desactivar</a> el highlight en el tap que hace el sistema operativo en WindowsPhone. Se consigue añadiendo la siguiente etiqueta <code>meta</code> en el <code>head</code> del HTML:</p>
-<p><code>html
-&lt;meta name="msapplication-tap-highlight" content="no"/&gt;</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;msapplication-tap-highlight&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">/&gt;</span>
+</code></pre></div></td></tr></table></div>
 <p>Vamos a programar un gesto para volver a la pantalla de votaciones desde resultados.<br />
 Instalamos <a href="https://github.com/mattbryson/TouchSwipe-Jquery-Plugin">TouchSwipe-Jquery-Plugin</a>:</p>
 <ol>
 <li>Buscamos/instalamos:
-    <code>bash
-    bower search touchswipe
-    bower install --save jquery-touchswipe</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>bower<span class="w"> </span>search<span class="w"> </span>touchswipe
+bower<span class="w"> </span>install<span class="w"> </span>--save<span class="w"> </span>jquery-touchswipe
+</code></pre></div></td></tr></table></div></li>
 </ol>
 <p>Sustituimos el servicio votar para que guarde en local. Hay que generar promesa. Se puede hacer con la librería <a href="http://documentup.com/kriskowal/q/">Q</a> o con <a href="http://api.jquery.com/category/deferred-object/">jQuery</a>. Lo hacemos así:</p>
-<p>```javascript
-var servicioPreguntas = {
-    //...</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -5723,21 +5792,26 @@ var servicioPreguntas = {
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">votar</span><span class="p">:</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="p">(</span><span class="n">tipoDeVoto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">localStorage</span><span class="o">.</span><span class="n">setItem</span><span class="p">(</span><span class="s1">&#39;voto&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">tipoDeVoto</span><span class="p">);</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">deferred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$.</span><span class="n">Deferred</span><span class="p">();</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">promesa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">deferred</span><span class="o">.</span><span class="n">promise</span><span class="p">();</span>
-<span class="w">    </span><span class="n">deferred</span><span class="o">.</span><span class="n">resolve</span><span class="p">({</span>
-<span class="w">        </span><span class="n">total</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="n">positives</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="n">negatives</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
-<span class="w">    </span><span class="p">});</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">promesa</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">servicioPreguntas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//...</span>
 
-<p>};
-```</p>
+<span class="w">    </span><span class="nx">votar</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">tipoDeVoto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;voto&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">tipoDeVoto</span><span class="p">);</span>
+<span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">deferred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">.</span><span class="nx">Deferred</span><span class="p">();</span>
+<span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">promesa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">deferred</span><span class="p">.</span><span class="nx">promise</span><span class="p">();</span>
+<span class="w">        </span><span class="nx">deferred</span><span class="p">.</span><span class="nx">resolve</span><span class="p">({</span>
+<span class="w">            </span><span class="nx">total</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">positives</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">negatives</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">promesa</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="dia-13-jueves-4122014">Día 13: Jueves 4/12/2014<a class="headerlink" href="#dia-13-jueves-4122014" title="Permanent link">&para;</a></h2>
 <h3 id="enlaces_8">Enlaces<a class="headerlink" href="#enlaces_8" title="Permanent link">&para;</a></h3>
 <ul>
@@ -5751,26 +5825,30 @@ var servicioPreguntas = {
 <p>Vamos a hacer una pequeña aplicación para consultar la geolocalización:</p>
 <ol>
 <li>Creamos el proyecto:
-    <code>bash
-    cd \curso`
-    phonegap create 13GeoDemo --name GeoDemo --id es.eduardofilo.geodemo</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="se">\c</span>urso<span class="sb">`</span>
+phonegap<span class="w"> </span>create<span class="w"> </span>13GeoDemo<span class="w"> </span>--name<span class="w"> </span>GeoDemo<span class="w"> </span>--id<span class="w"> </span>es.eduardofilo.geodemo
+</code></pre></div></td></tr></table></div></li>
 <li>Añadimos el plugin de geolocalización:
-    <code>bash
-    cd 13GeoDemo
-    phonegap plugin add org.apache.cordova.geolocation</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>13GeoDemo
+phonegap<span class="w"> </span>plugin<span class="w"> </span>add<span class="w"> </span>org.apache.cordova.geolocation
+</code></pre></div></td></tr></table></div></li>
 </ol>
 <p>Buscar el código nativo para Android en <a href="https://git-wip-us.apache.org/repos/asf?p=cordova-plugin-geolocation.git;a=tree;f=src/android;h=d2223b59460ffc4e37333908e5ff0daec1ca1951;hb=7393e84b319fe3dd65d047f23b1051b1067e6b3b">git</a>.</p>
 <p>Javier no recomienda getCurrentPosition porque da timeout rápidamente si estás en HighAccuracy. Mejor con watchPosition.</p>
 <p>Vamos a ver cómo se crearía un plugin. Para ello instalamos un plugin hecho por Javier y estudiamos detenidamente su sencillo código:</p>
 <ol>
 <li>Creamos el proyecto:
-    <code>bash
-    cd \curso
-    phonegap create 13.1DatosTelefono --name DatosTelefono --id es.eduardofilo.datostfn</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="se">\c</span>urso
+phonegap<span class="w"> </span>create<span class="w"> </span><span class="m">13</span>.1DatosTelefono<span class="w"> </span>--name<span class="w"> </span>DatosTelefono<span class="w"> </span>--id<span class="w"> </span>es.eduardofilo.datostfn
+</code></pre></div></td></tr></table></div></li>
 <li>Añadimos el <a href="https://github.com/ciberado/domina-phonegap-infotelefonoplugin">plugin de Javier</a>:
-    <code>bash
-    cd 13.1DatosTelefono
-    phonegap plugin add https://github.com/ciberado/domina-phonegap-infotelefonoplugin.git</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="m">13</span>.1DatosTelefono
+phonegap<span class="w"> </span>plugin<span class="w"> </span>add<span class="w"> </span>https://github.com/ciberado/domina-phonegap-infotelefonoplugin.git
+</code></pre></div></td></tr></table></div></li>
 </ol>
 <h2 id="dia-14-viernes-5122014">Día 14: Viernes 5/12/2014<a class="headerlink" href="#dia-14-viernes-5122014" title="Permanent link">&para;</a></h2>
 <h3 id="enlaces_9">Enlaces<a class="headerlink" href="#enlaces_9" title="Permanent link">&para;</a></h3>
@@ -5786,25 +5864,28 @@ var servicioPreguntas = {
 <p>Continuamos con el proyecto de ayer:</p>
 <ol>
 <li>Comprobamos la instalación:
-    <code>bash
-    phonegap plugin list</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>phonegap<span class="w"> </span>plugin<span class="w"> </span>list
+</code></pre></div></td></tr></table></div></li>
 </ol>
 <h3 id="proyecto-acelerometro">Proyecto Acelerómetro<a class="headerlink" href="#proyecto-acelerometro" title="Permanent link">&para;</a></h3>
 <p>Vamos a hacer un pequeño proyecto que controlará un pequeño cuadrado por pantalla con los acelerómetros del teléfono. En el proyecto haremos uso del <a href="http://plugins.cordova.io/#/package/org.apache.cordova.device-motion">plugin oficial de Phonegap</a> que se encarga de acceder al dispositivo.</p>
 <ol>
 <li>Creamos el proyecto:
-    <code>bash
-    phonegap create 14DemoAcelerometro --name DemoAcelerometro --id es.eduardofilo.demoaccel</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>phonegap<span class="w"> </span>create<span class="w"> </span>14DemoAcelerometro<span class="w"> </span>--name<span class="w"> </span>DemoAcelerometro<span class="w"> </span>--id<span class="w"> </span>es.eduardofilo.demoaccel
+</code></pre></div></td></tr></table></div></li>
 <li>Instalamos plugin:
-    <code>bash
-    phonegap plugin add org.apache.cordova.device-motion</code></li>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>phonegap<span class="w"> </span>plugin<span class="w"> </span>add<span class="w"> </span>org.apache.cordova.device-motion
+</code></pre></div></td></tr></table></div></li>
 </ol>
 <p>Por defecto <code>watchAcceleration</code> llama al callback cada 10 segundos:</p>
-<p><code>javascript
-var watchID = navigator.accelerometer.watchAcceleration(
-      accelerometerSuccess,
-      accelerometerError,
-      accelerometerOptions);</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">watchID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">accelerometer</span><span class="p">.</span><span class="nx">watchAcceleration</span><span class="p">(</span>
+<span class="w">      </span><span class="nx">accelerometerSuccess</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">accelerometerError</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">accelerometerOptions</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
 <ul>
 <li><strong>accelerometerOptions</strong>: An object with the following optional keys:<ul>
 <li><strong>period</strong>: requested period of calls to accelerometerSuccess with acceleration data in Milliseconds.(Number) (Default: 10000)</li>
@@ -5812,31 +5893,38 @@ var watchID = navigator.accelerometer.watchAcceleration(
 </li>
 </ul>
 <p>Para conseguir que la aplicación sea más "responsiva", se puede cambiar el periodo de consulta pasando un objeto con un parámetro de clave frecuency en su interior (aunque la documentación menciona <code>period</code>, es <code>frecuency</code>). Hubiera funcionado cada segundo por ejemplo llamando al watchAcceleration así:</p>
-<p><code>javascript
-var options = { frequency: 1000 };
-var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">frequency</span><span class="o">:</span><span class="w"> </span><span class="mf">1000</span><span class="w"> </span><span class="p">};</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">watchID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">accelerometer</span><span class="p">.</span><span class="nx">watchAcceleration</span><span class="p">(</span><span class="nx">onSuccess</span><span class="p">,</span><span class="w"> </span><span class="nx">onError</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
 <h3 id="subir-a-google-play">Subir a Google Play<a class="headerlink" href="#subir-a-google-play" title="Permanent link">&para;</a></h3>
 <p>Para generar un certificado con que firmar las aplicaciones:</p>
-<p><code>bash
-$ keytool -genkey -alias demoiconos -keyalg RSA -validity 20000 -keystore demoiconos.keystore</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>keytool<span class="w"> </span>-genkey<span class="w"> </span>-alias<span class="w"> </span>demoiconos<span class="w"> </span>-keyalg<span class="w"> </span>RSA<span class="w"> </span>-validity<span class="w"> </span><span class="m">20000</span><span class="w"> </span>-keystore<span class="w"> </span>demoiconos.keystore
+</code></pre></div></td></tr></table></div>
 <h3 id="compilar-en-adobe-phonegap-build">Compilar en Adobe PhoneGap Build<a class="headerlink" href="#compilar-en-adobe-phonegap-build" title="Permanent link">&para;</a></h3>
 <p>Para delegar la construcción del proyecto en el <a href="https://build.phonegap.com/">servicio de compilación de Adobe en la nube</a>:</p>
-<p><code>bash
-$ phonegap remote build android</code>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>phonegap<span class="w"> </span>remote<span class="w"> </span>build<span class="w"> </span>android
+</code></pre></div></td></tr></table></div>
 Se puede firmar la aplicación desde Adobe subiendo el fichero keystore que hemos creado antes.</p>
 <h3 id="inicializacion-del-controlador">Inicialización del controlador<a class="headerlink" href="#inicializacion-del-controlador" title="Permanent link">&para;</a></h3>
 <p>Si usamos jQuery:</p>
-<p><code>javascript
-$(document).ready(function () {
-    document.addEventListener('deviceready', function () {
-        controlador.inicializar();
-    });
-});</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;deviceready&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">controlador</span><span class="p">.</span><span class="nx">inicializar</span><span class="p">();</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div>
 <p>Si no usamos jQuery:</p>
-<p><code>javascript
-document.addEventListener('deviceready', function () {
-    controlador.inicializar();
-});</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;deviceready&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">controlador</span><span class="p">.</span><span class="nx">inicializar</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div>
 <h3 id="pendiente-de-preguntar">Pendiente de preguntar<a class="headerlink" href="#pendiente-de-preguntar" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="http://stackoverflow.com/questions/12296910/so-jsonp-or-cors">JSONP vs CORS</a></li>

@@ -2586,6 +2586,105 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Programación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#8mhz" class="md-nav__link">
+    <span class="md-ellipsis">
+      8MHz
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1mhz" class="md-nav__link">
+    <span class="md-ellipsis">
+      1MHz
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attiny-high-voltage-programmer" class="md-nav__link">
+    <span class="md-ellipsis">
+      ATtiny high voltage programmer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ATtiny high voltage programmer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enlaces_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enlaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      Montaje
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conexion_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programacion_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digispark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digispark
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Digispark">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enlaces_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enlaces
+    </span>
+  </a>
+  
 </li>
         
       </ul>
@@ -4071,6 +4170,105 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Programación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#8mhz" class="md-nav__link">
+    <span class="md-ellipsis">
+      8MHz
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1mhz" class="md-nav__link">
+    <span class="md-ellipsis">
+      1MHz
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attiny-high-voltage-programmer" class="md-nav__link">
+    <span class="md-ellipsis">
+      ATtiny high voltage programmer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ATtiny high voltage programmer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enlaces_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enlaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      Montaje
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conexion_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programacion_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digispark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digispark
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Digispark">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enlaces_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enlaces
+    </span>
+  </a>
+  
 </li>
         
       </ul>
@@ -4113,49 +4311,95 @@
 <li>Reiniciar el IDE.</li>
 </ol>
 <p>Una vez preparado el entorno cargar un programa como el siguiente:</p>
-<p>```c</p>
-<h1 id="include">include <Adafruit_SI5351.h><a class="headerlink" href="#include" title="Permanent link">&para;</a></h1>
-<h1 id="include_1">include <errors.h><a class="headerlink" href="#include_1" title="Permanent link">&para;</a></h1>
-<h1 id="include_2">include <asserts.h><a class="headerlink" href="#include_2" title="Permanent link">&para;</a></h1>
-<h1 id="include_3">include <Wire.h><a class="headerlink" href="#include_3" title="Permanent link">&para;</a></h1>
-<p>Adafruit_SI5351 clockgen = Adafruit_SI5351();</p>
-<p>void setup(void) {
-  if (clockgen.begin() != ERROR_NONE) {
-    // There was a problem detecting the IC ... check your connections
-    while(1);
-  }</p>
-<p>// INTEGER ONLY MODE --&gt; most accurate output
-  // Setup PLLA to integer only mode @ 900MHz (must be 600..900MHz)
-  // Set Multisynth 0 to 112.5MHz using integer only mode (div by 4/6/8)
-  // 25MHz * 36 = 900 MHz, then 900 MHz / 8 = 112.5 MHz
-  clockgen.setupPLLInt(SI5351_PLL_A, 36);
-  clockgen.setupMultisynthInt(0, SI5351_PLL_A, SI5351_MULTISYNTH_DIV_8);</p>
-<p>// FRACTIONAL MODE --&gt; More flexible but introduce clock jitter
-  // Setup PLLB to fractional mode @616.66667MHz (XTAL * (24+2/3))
-  // Setup Multisynth 1 to 13.55311MHz (PLLB/(45+1/2))
-  clockgen.setupPLL(SI5351_PLL_B, 24, 2, 3);
-  clockgen.setupMultisynth(1, SI5351_PLL_B, 45, 1, 2);</p>
-<p>// Multisynth 2 is not yet used and won't be enabled, but can be
-  // Use PLLB @ 616.66667MHz, then divide by (900+0/1) -&gt; 685.185 KHz
-  // then divide by 64 for 10.706 KHz
-  // configured using either PLL in either integer or fractional mode
-  clockgen.setupMultisynth(2, SI5351_PLL_B, 900, 0, 1);
-  clockgen.setupRdiv(2, SI5351_R_DIV_64);</p>
-<p>clockgen.enableOutputs(true);
-}</p>
-<p>void loop(void) {
-}
-```</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Adafruit_SI5351.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;errors.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;asserts.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Wire.h&gt;</span>
+
+<span class="n">Adafruit_SI5351</span><span class="w"> </span><span class="n">clockgen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Adafruit_SI5351</span><span class="p">();</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clockgen</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_NONE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// There was a problem detecting the IC ... check your connections</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// INTEGER ONLY MODE --&gt; most accurate output</span>
+<span class="w">  </span><span class="c1">// Setup PLLA to integer only mode @ 900MHz (must be 600..900MHz)</span>
+<span class="w">  </span><span class="c1">// Set Multisynth 0 to 112.5MHz using integer only mode (div by 4/6/8)</span>
+<span class="w">  </span><span class="c1">// 25MHz * 36 = 900 MHz, then 900 MHz / 8 = 112.5 MHz</span>
+<span class="w">  </span><span class="n">clockgen</span><span class="p">.</span><span class="n">setupPLLInt</span><span class="p">(</span><span class="n">SI5351_PLL_A</span><span class="p">,</span><span class="w"> </span><span class="mi">36</span><span class="p">);</span>
+<span class="w">  </span><span class="n">clockgen</span><span class="p">.</span><span class="n">setupMultisynthInt</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">SI5351_PLL_A</span><span class="p">,</span><span class="w"> </span><span class="n">SI5351_MULTISYNTH_DIV_8</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// FRACTIONAL MODE --&gt; More flexible but introduce clock jitter</span>
+<span class="w">  </span><span class="c1">// Setup PLLB to fractional mode @616.66667MHz (XTAL * (24+2/3))</span>
+<span class="w">  </span><span class="c1">// Setup Multisynth 1 to 13.55311MHz (PLLB/(45+1/2))</span>
+<span class="w">  </span><span class="n">clockgen</span><span class="p">.</span><span class="n">setupPLL</span><span class="p">(</span><span class="n">SI5351_PLL_B</span><span class="p">,</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="w">  </span><span class="n">clockgen</span><span class="p">.</span><span class="n">setupMultisynth</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">SI5351_PLL_B</span><span class="p">,</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Multisynth 2 is not yet used and won&#39;t be enabled, but can be</span>
+<span class="w">  </span><span class="c1">// Use PLLB @ 616.66667MHz, then divide by (900+0/1) -&gt; 685.185 KHz</span>
+<span class="w">  </span><span class="c1">// then divide by 64 for 10.706 KHz</span>
+<span class="w">  </span><span class="c1">// configured using either PLL in either integer or fractional mode</span>
+<span class="w">  </span><span class="n">clockgen</span><span class="p">.</span><span class="n">setupMultisynth</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">SI5351_PLL_B</span><span class="p">,</span><span class="w"> </span><span class="mi">900</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">  </span><span class="n">clockgen</span><span class="p">.</span><span class="n">setupRdiv</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">SI5351_R_DIV_64</span><span class="p">);</span>
+
+<span class="w">  </span><span class="n">clockgen</span><span class="p">.</span><span class="n">enableOutputs</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 <p>A continuación vemos algunos ejemplos.</p>
 <h5 id="8mhz">8MHz<a class="headerlink" href="#8mhz" title="Permanent link">&para;</a></h5>
-<p><code>c
-clockgen.setupPLL(SI5351_PLL_A, 24, 0, 1);
-clockgen.setupMultisynth(0, SI5351_PLL_A, 75, 0, 1);</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">clockgen</span><span class="p">.</span><span class="n">setupPLL</span><span class="p">(</span><span class="n">SI5351_PLL_A</span><span class="p">,</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">clockgen</span><span class="p">.</span><span class="n">setupMultisynth</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">SI5351_PLL_A</span><span class="p">,</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
 <h5 id="1mhz">1MHz<a class="headerlink" href="#1mhz" title="Permanent link">&para;</a></h5>
-<p><code>c
-clockgen.setupPLL(SI5351_PLL_A, 24, 0, 1);
-clockgen.setupMultisynth(0, SI5351_PLL_A, 75, 0, 1);
-clockgen.setupRdiv(0, SI5351_R_DIV_8);</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">clockgen</span><span class="p">.</span><span class="n">setupPLL</span><span class="p">(</span><span class="n">SI5351_PLL_A</span><span class="p">,</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">clockgen</span><span class="p">.</span><span class="n">setupMultisynth</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">SI5351_PLL_A</span><span class="p">,</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">clockgen</span><span class="p">.</span><span class="n">setupRdiv</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">SI5351_R_DIV_8</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="attiny-high-voltage-programmer">ATtiny high voltage programmer<a class="headerlink" href="#attiny-high-voltage-programmer" title="Permanent link">&para;</a></h2>
 <h3 id="enlaces_1">Enlaces<a class="headerlink" href="#enlaces_1" title="Permanent link">&para;</a></h3>
 <ul>

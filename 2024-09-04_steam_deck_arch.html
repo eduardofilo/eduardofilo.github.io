@@ -616,277 +616,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#loadkeys-es" class="md-nav__link">
-    <span class="md-ellipsis">
-      loadkeys es
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#iwctl" class="md-nav__link">
-    <span class="md-ellipsis">
-      iwctl
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mkfsext4-devnvme0n1p10" class="md-nav__link">
-    <span class="md-ellipsis">
-      mkfs.ext4 /dev/nvme0n1p10
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mkswap-devnvme0n1p9" class="md-nav__link">
-    <span class="md-ellipsis">
-      mkswap /dev/nvme0n1p9
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mount-devnvme0n1p10-mnt" class="md-nav__link">
-    <span class="md-ellipsis">
-      mount /dev/nvme0n1p10 /mnt
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mount-mkdir-devnvme0n1p1-mntbootefi" class="md-nav__link">
-    <span class="md-ellipsis">
-      mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#swapon-devnvme0n1p9" class="md-nav__link">
-    <span class="md-ellipsis">
-      swapon /dev/nvme0n1p9
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pacstrap-k-mnt-base-base-devel-linux-linux-firmware-sudo-vi-ntfs-3g-networkmanager-amd-ucode-grub-efibootmgr-git-cmake-qt5-wayland" class="md-nav__link">
-    <span class="md-ellipsis">
-      pacstrap -K /mnt base base-devel linux linux-firmware sudo vi ntfs-3g networkmanager amd-ucode grub efibootmgr git cmake qt5-wayland
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#genfstab-u-mnt-mntetcfstab" class="md-nav__link">
-    <span class="md-ellipsis">
-      genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#arch-chroot-mnt" class="md-nav__link">
-    <span class="md-ellipsis">
-      arch-chroot /mnt
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ln-sf-usrsharezoneinfoeuropemadrid-etclocaltime" class="md-nav__link">
-    <span class="md-ellipsis">
-      ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hwclock-systohc" class="md-nav__link">
-    <span class="md-ellipsis">
-      hwclock --systohc
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vi-etclocalegen-descomentar-en_usutf-8-utf-8-y-es_esutf-8-utf-8" class="md-nav__link">
-    <span class="md-ellipsis">
-      vi /etc/locale.gen # descomentar 'en_US.UTF-8 UTF-8' y 'es_ES.UTF-8 UTF-8'
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#locale-gen" class="md-nav__link">
-    <span class="md-ellipsis">
-      locale-gen
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#echo-langes_esutf-8-etclocaleconf" class="md-nav__link">
-    <span class="md-ellipsis">
-      echo "LANG=es_ES.UTF-8" &gt; /etc/locale.conf
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#echo-keymapes-etcvconsoleconf" class="md-nav__link">
-    <span class="md-ellipsis">
-      echo "KEYMAP=es" &gt; /etc/vconsole.conf
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#echo-deck-etchostname" class="md-nav__link">
-    <span class="md-ellipsis">
-      echo "deck" &gt; /etc/hostname
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#echo-e-n127001-localhostn1-localhostn127011-deck-etchosts" class="md-nav__link">
-    <span class="md-ellipsis">
-      echo -e "\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 deck" &gt;&gt; /etc/hosts
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#passwd" class="md-nav__link">
-    <span class="md-ellipsis">
-      passwd
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grub-install-targetx86_64-efi-efi-directorybootefi-bootloader-idarch" class="md-nav__link">
-    <span class="md-ellipsis">
-      grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grub-mkconfig-o-bootgrubgrubcfg" class="md-nav__link">
-    <span class="md-ellipsis">
-      grub-mkconfig -o /boot/grub/grub.cfg
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#systemctl-enable-networkmanager" class="md-nav__link">
-    <span class="md-ellipsis">
-      systemctl enable NetworkManager
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#useradd-m-g-wheelaudiovideostorage" class="md-nav__link">
-    <span class="md-ellipsis">
-      useradd -m -G wheel,audio,video,storage
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#passwd_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      passwd
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chmod-uw-etcsudoers" class="md-nav__link">
-    <span class="md-ellipsis">
-      chmod u+w /etc/sudoers
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vi-etcsudoers-descomentar-wheel-allall-all" class="md-nav__link">
-    <span class="md-ellipsis">
-      vi /etc/sudoers # Descomentar '%wheel ALL=(ALL) ALL'
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chmod-u-w-etcsudoers" class="md-nav__link">
-    <span class="md-ellipsis">
-      chmod u-w /etc/sudoers
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pacman-syy" class="md-nav__link">
-    <span class="md-ellipsis">
-      pacman -Syy
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pacman-s-xorg-server-xf86-video-amdgpu-maliit-keyboard-qt5-wayland" class="md-nav__link">
-    <span class="md-ellipsis">
-      pacman -S xorg-server xf86-video-amdgpu maliit-keyboard qt5-wayland
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#su-" class="md-nav__link">
-    <span class="md-ellipsis">
-      su -
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="su -">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#instalacion-entorno-grafico" class="md-nav__link">
     <span class="md-ellipsis">
       Instalación entorno gráfico
@@ -927,41 +656,8 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#exit" class="md-nav__link">
-    <span class="md-ellipsis">
-      exit
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#umount-r-mnt" class="md-nav__link">
-    <span class="md-ellipsis">
-      umount -R /mnt
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reboot" class="md-nav__link">
-    <span class="md-ellipsis">
-      reboot
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="reboot">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#configuracion-basica" class="md-nav__link">
     <span class="md-ellipsis">
       Configuración básica
@@ -969,8 +665,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#configuracion-de-sddm" class="md-nav__link">
     <span class="md-ellipsis">
       Configuración de SDDM
@@ -978,8 +674,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#configuracion-sonido" class="md-nav__link">
     <span class="md-ellipsis">
       Configuración sonido
@@ -987,8 +683,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#instalacion-pamac" class="md-nav__link">
     <span class="md-ellipsis">
       Instalación pamac
@@ -996,8 +692,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#instalacion-gestor-dualboot" class="md-nav__link">
     <span class="md-ellipsis">
       Instalación gestor dualboot
@@ -1005,18 +701,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusión
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4448,277 +4139,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#loadkeys-es" class="md-nav__link">
-    <span class="md-ellipsis">
-      loadkeys es
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#iwctl" class="md-nav__link">
-    <span class="md-ellipsis">
-      iwctl
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mkfsext4-devnvme0n1p10" class="md-nav__link">
-    <span class="md-ellipsis">
-      mkfs.ext4 /dev/nvme0n1p10
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mkswap-devnvme0n1p9" class="md-nav__link">
-    <span class="md-ellipsis">
-      mkswap /dev/nvme0n1p9
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mount-devnvme0n1p10-mnt" class="md-nav__link">
-    <span class="md-ellipsis">
-      mount /dev/nvme0n1p10 /mnt
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mount-mkdir-devnvme0n1p1-mntbootefi" class="md-nav__link">
-    <span class="md-ellipsis">
-      mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#swapon-devnvme0n1p9" class="md-nav__link">
-    <span class="md-ellipsis">
-      swapon /dev/nvme0n1p9
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pacstrap-k-mnt-base-base-devel-linux-linux-firmware-sudo-vi-ntfs-3g-networkmanager-amd-ucode-grub-efibootmgr-git-cmake-qt5-wayland" class="md-nav__link">
-    <span class="md-ellipsis">
-      pacstrap -K /mnt base base-devel linux linux-firmware sudo vi ntfs-3g networkmanager amd-ucode grub efibootmgr git cmake qt5-wayland
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#genfstab-u-mnt-mntetcfstab" class="md-nav__link">
-    <span class="md-ellipsis">
-      genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#arch-chroot-mnt" class="md-nav__link">
-    <span class="md-ellipsis">
-      arch-chroot /mnt
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ln-sf-usrsharezoneinfoeuropemadrid-etclocaltime" class="md-nav__link">
-    <span class="md-ellipsis">
-      ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hwclock-systohc" class="md-nav__link">
-    <span class="md-ellipsis">
-      hwclock --systohc
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vi-etclocalegen-descomentar-en_usutf-8-utf-8-y-es_esutf-8-utf-8" class="md-nav__link">
-    <span class="md-ellipsis">
-      vi /etc/locale.gen # descomentar 'en_US.UTF-8 UTF-8' y 'es_ES.UTF-8 UTF-8'
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#locale-gen" class="md-nav__link">
-    <span class="md-ellipsis">
-      locale-gen
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#echo-langes_esutf-8-etclocaleconf" class="md-nav__link">
-    <span class="md-ellipsis">
-      echo "LANG=es_ES.UTF-8" &gt; /etc/locale.conf
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#echo-keymapes-etcvconsoleconf" class="md-nav__link">
-    <span class="md-ellipsis">
-      echo "KEYMAP=es" &gt; /etc/vconsole.conf
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#echo-deck-etchostname" class="md-nav__link">
-    <span class="md-ellipsis">
-      echo "deck" &gt; /etc/hostname
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#echo-e-n127001-localhostn1-localhostn127011-deck-etchosts" class="md-nav__link">
-    <span class="md-ellipsis">
-      echo -e "\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 deck" &gt;&gt; /etc/hosts
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#passwd" class="md-nav__link">
-    <span class="md-ellipsis">
-      passwd
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grub-install-targetx86_64-efi-efi-directorybootefi-bootloader-idarch" class="md-nav__link">
-    <span class="md-ellipsis">
-      grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grub-mkconfig-o-bootgrubgrubcfg" class="md-nav__link">
-    <span class="md-ellipsis">
-      grub-mkconfig -o /boot/grub/grub.cfg
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#systemctl-enable-networkmanager" class="md-nav__link">
-    <span class="md-ellipsis">
-      systemctl enable NetworkManager
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#useradd-m-g-wheelaudiovideostorage" class="md-nav__link">
-    <span class="md-ellipsis">
-      useradd -m -G wheel,audio,video,storage
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#passwd_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      passwd
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chmod-uw-etcsudoers" class="md-nav__link">
-    <span class="md-ellipsis">
-      chmod u+w /etc/sudoers
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vi-etcsudoers-descomentar-wheel-allall-all" class="md-nav__link">
-    <span class="md-ellipsis">
-      vi /etc/sudoers # Descomentar '%wheel ALL=(ALL) ALL'
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chmod-u-w-etcsudoers" class="md-nav__link">
-    <span class="md-ellipsis">
-      chmod u-w /etc/sudoers
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pacman-syy" class="md-nav__link">
-    <span class="md-ellipsis">
-      pacman -Syy
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pacman-s-xorg-server-xf86-video-amdgpu-maliit-keyboard-qt5-wayland" class="md-nav__link">
-    <span class="md-ellipsis">
-      pacman -S xorg-server xf86-video-amdgpu maliit-keyboard qt5-wayland
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#su-" class="md-nav__link">
-    <span class="md-ellipsis">
-      su -
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="su -">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#instalacion-entorno-grafico" class="md-nav__link">
     <span class="md-ellipsis">
       Instalación entorno gráfico
@@ -4759,41 +4179,8 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#exit" class="md-nav__link">
-    <span class="md-ellipsis">
-      exit
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#umount-r-mnt" class="md-nav__link">
-    <span class="md-ellipsis">
-      umount -R /mnt
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reboot" class="md-nav__link">
-    <span class="md-ellipsis">
-      reboot
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="reboot">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#configuracion-basica" class="md-nav__link">
     <span class="md-ellipsis">
       Configuración básica
@@ -4801,8 +4188,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#configuracion-de-sddm" class="md-nav__link">
     <span class="md-ellipsis">
       Configuración de SDDM
@@ -4810,8 +4197,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#configuracion-sonido" class="md-nav__link">
     <span class="md-ellipsis">
       Configuración sonido
@@ -4819,8 +4206,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#instalacion-pamac" class="md-nav__link">
     <span class="md-ellipsis">
       Instalación pamac
@@ -4828,8 +4215,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#instalacion-gestor-dualboot" class="md-nav__link">
     <span class="md-ellipsis">
       Instalación gestor dualboot
@@ -4837,18 +4224,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusión
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4869,6 +4251,8 @@
   
   
 
+
+  <h1>Instalación Arch Linux en Steam Deck</h1>
 
 <p><img alt="Steam Deck con Arch Linux" src="images/posts/2024-09-04_steam_deck_arch/steam_deck_logo.png" /></p>
 <div class="admonition info">
@@ -4915,42 +4299,74 @@
 <li>Seleccionar la opción de arrancar desde el dispositivo extraíble que aparecerá en el menú como <code>EFI USB Device (USB)</code> o <code>EFI SD/MMC Card (XX XXXX XXXX)</code> según si utilizamos un pendrive o una microSD respectivamente.</li>
 <li>
 <p>Una vez que termine de arrancar el sistema live de instalación de Arch, ejecutar los siguiente comandos en orden (en la sesión con <code>iwctl</code> sustituiremos <code>&lt;SSID&gt;</code> por el nuestro e introduciremos la contraseña cuando se nos pida; también sustituiremos el identificador de usuario <code>&lt;USER&gt;</code> por el que queramos utilizar):</p>
-<p>```bash</p>
-<h1 id="loadkeys-es">loadkeys es<a class="headerlink" href="#loadkeys-es" title="Permanent link">&para;</a></h1>
-<h1 id="iwctl">iwctl<a class="headerlink" href="#iwctl" title="Permanent link">&para;</a></h1>
-<p>[iwd]# station wlan0 scan
-[iwd]# station wlan0 get-networks
-[iwd]# station wlan0 connect <SSID>
-[iwd]# exit</p>
-<h1 id="mkfsext4-devnvme0n1p10">mkfs.ext4 /dev/nvme0n1p10<a class="headerlink" href="#mkfsext4-devnvme0n1p10" title="Permanent link">&para;</a></h1>
-<h1 id="mkswap-devnvme0n1p9">mkswap /dev/nvme0n1p9<a class="headerlink" href="#mkswap-devnvme0n1p9" title="Permanent link">&para;</a></h1>
-<h1 id="mount-devnvme0n1p10-mnt">mount /dev/nvme0n1p10 /mnt<a class="headerlink" href="#mount-devnvme0n1p10-mnt" title="Permanent link">&para;</a></h1>
-<h1 id="mount-mkdir-devnvme0n1p1-mntbootefi">mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi<a class="headerlink" href="#mount-mkdir-devnvme0n1p1-mntbootefi" title="Permanent link">&para;</a></h1>
-<h1 id="swapon-devnvme0n1p9">swapon /dev/nvme0n1p9<a class="headerlink" href="#swapon-devnvme0n1p9" title="Permanent link">&para;</a></h1>
-<h1 id="pacstrap-k-mnt-base-base-devel-linux-linux-firmware-sudo-vi-ntfs-3g-networkmanager-amd-ucode-grub-efibootmgr-git-cmake-qt5-wayland">pacstrap -K /mnt base base-devel linux linux-firmware sudo vi ntfs-3g networkmanager amd-ucode grub efibootmgr git cmake qt5-wayland<a class="headerlink" href="#pacstrap-k-mnt-base-base-devel-linux-linux-firmware-sudo-vi-ntfs-3g-networkmanager-amd-ucode-grub-efibootmgr-git-cmake-qt5-wayland" title="Permanent link">&para;</a></h1>
-<h1 id="genfstab-u-mnt-mntetcfstab">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab<a class="headerlink" href="#genfstab-u-mnt-mntetcfstab" title="Permanent link">&para;</a></h1>
-<h1 id="arch-chroot-mnt">arch-chroot /mnt<a class="headerlink" href="#arch-chroot-mnt" title="Permanent link">&para;</a></h1>
-<h1 id="ln-sf-usrsharezoneinfoeuropemadrid-etclocaltime">ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime<a class="headerlink" href="#ln-sf-usrsharezoneinfoeuropemadrid-etclocaltime" title="Permanent link">&para;</a></h1>
-<h1 id="hwclock-systohc">hwclock --systohc<a class="headerlink" href="#hwclock-systohc" title="Permanent link">&para;</a></h1>
-<h1 id="vi-etclocalegen-descomentar-en_usutf-8-utf-8-y-es_esutf-8-utf-8">vi /etc/locale.gen    # descomentar 'en_US.UTF-8 UTF-8' y 'es_ES.UTF-8 UTF-8'<a class="headerlink" href="#vi-etclocalegen-descomentar-en_usutf-8-utf-8-y-es_esutf-8-utf-8" title="Permanent link">&para;</a></h1>
-<h1 id="locale-gen">locale-gen<a class="headerlink" href="#locale-gen" title="Permanent link">&para;</a></h1>
-<h1 id="echo-langes_esutf-8-etclocaleconf">echo "LANG=es_ES.UTF-8" &gt; /etc/locale.conf<a class="headerlink" href="#echo-langes_esutf-8-etclocaleconf" title="Permanent link">&para;</a></h1>
-<h1 id="echo-keymapes-etcvconsoleconf">echo "KEYMAP=es" &gt; /etc/vconsole.conf<a class="headerlink" href="#echo-keymapes-etcvconsoleconf" title="Permanent link">&para;</a></h1>
-<h1 id="echo-deck-etchostname">echo "deck" &gt; /etc/hostname<a class="headerlink" href="#echo-deck-etchostname" title="Permanent link">&para;</a></h1>
-<h1 id="echo-e-n127001-localhostn1-localhostn127011-deck-etchosts">echo -e "\n127.0.0.1    localhost\n::1    localhost\n127.0.1.1    deck" &gt;&gt; /etc/hosts<a class="headerlink" href="#echo-e-n127001-localhostn1-localhostn127011-deck-etchosts" title="Permanent link">&para;</a></h1>
-<h1 id="passwd">passwd<a class="headerlink" href="#passwd" title="Permanent link">&para;</a></h1>
-<h1 id="grub-install-targetx86_64-efi-efi-directorybootefi-bootloader-idarch">grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch<a class="headerlink" href="#grub-install-targetx86_64-efi-efi-directorybootefi-bootloader-idarch" title="Permanent link">&para;</a></h1>
-<h1 id="grub-mkconfig-o-bootgrubgrubcfg">grub-mkconfig -o /boot/grub/grub.cfg<a class="headerlink" href="#grub-mkconfig-o-bootgrubgrubcfg" title="Permanent link">&para;</a></h1>
-<h1 id="systemctl-enable-networkmanager">systemctl enable NetworkManager<a class="headerlink" href="#systemctl-enable-networkmanager" title="Permanent link">&para;</a></h1>
-<h1 id="useradd-m-g-wheelaudiovideostorage">useradd -m -G wheel,audio,video,storage <USER><a class="headerlink" href="#useradd-m-g-wheelaudiovideostorage" title="Permanent link">&para;</a></h1>
-<h1 id="passwd_1">passwd <USER><a class="headerlink" href="#passwd_1" title="Permanent link">&para;</a></h1>
-<h1 id="chmod-uw-etcsudoers">chmod u+w /etc/sudoers<a class="headerlink" href="#chmod-uw-etcsudoers" title="Permanent link">&para;</a></h1>
-<h1 id="vi-etcsudoers-descomentar-wheel-allall-all">vi /etc/sudoers       # Descomentar '%wheel ALL=(ALL) ALL'<a class="headerlink" href="#vi-etcsudoers-descomentar-wheel-allall-all" title="Permanent link">&para;</a></h1>
-<h1 id="chmod-u-w-etcsudoers">chmod u-w /etc/sudoers<a class="headerlink" href="#chmod-u-w-etcsudoers" title="Permanent link">&para;</a></h1>
-<h1 id="pacman-syy">pacman -Syy<a class="headerlink" href="#pacman-syy" title="Permanent link">&para;</a></h1>
-<h1 id="pacman-s-xorg-server-xf86-video-amdgpu-maliit-keyboard-qt5-wayland">pacman -S xorg-server xf86-video-amdgpu maliit-keyboard qt5-wayland<a class="headerlink" href="#pacman-s-xorg-server-xf86-video-amdgpu-maliit-keyboard-qt5-wayland" title="Permanent link">&para;</a></h1>
-<h1 id="su-">su - <USER><a class="headerlink" href="#su-" title="Permanent link">&para;</a></h1>
-<p>```</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># loadkeys es</span>
+<span class="c1"># iwctl</span>
+<span class="o">[</span>iwd<span class="o">]</span><span class="c1"># station wlan0 scan</span>
+<span class="o">[</span>iwd<span class="o">]</span><span class="c1"># station wlan0 get-networks</span>
+<span class="o">[</span>iwd<span class="o">]</span><span class="c1"># station wlan0 connect &lt;SSID&gt;</span>
+<span class="o">[</span>iwd<span class="o">]</span><span class="c1"># exit</span>
+<span class="c1"># mkfs.ext4 /dev/nvme0n1p10</span>
+<span class="c1"># mkswap /dev/nvme0n1p9</span>
+<span class="c1"># mount /dev/nvme0n1p10 /mnt</span>
+<span class="c1"># mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi</span>
+<span class="c1"># swapon /dev/nvme0n1p9</span>
+<span class="c1"># pacstrap -K /mnt base base-devel linux linux-firmware sudo vi ntfs-3g networkmanager amd-ucode grub efibootmgr git cmake qt5-wayland</span>
+<span class="c1"># genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span>
+<span class="c1"># arch-chroot /mnt</span>
+<span class="c1"># ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime</span>
+<span class="c1"># hwclock --systohc</span>
+<span class="c1"># vi /etc/locale.gen    # descomentar &#39;en_US.UTF-8 UTF-8&#39; y &#39;es_ES.UTF-8 UTF-8&#39;</span>
+<span class="c1"># locale-gen</span>
+<span class="c1"># echo &quot;LANG=es_ES.UTF-8&quot; &gt; /etc/locale.conf</span>
+<span class="c1"># echo &quot;KEYMAP=es&quot; &gt; /etc/vconsole.conf</span>
+<span class="c1"># echo &quot;deck&quot; &gt; /etc/hostname</span>
+<span class="c1"># echo -e &quot;\n127.0.0.1    localhost\n::1    localhost\n127.0.1.1    deck&quot; &gt;&gt; /etc/hosts</span>
+<span class="c1"># passwd</span>
+<span class="c1"># grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch</span>
+<span class="c1"># grub-mkconfig -o /boot/grub/grub.cfg</span>
+<span class="c1"># systemctl enable NetworkManager</span>
+<span class="c1"># useradd -m -G wheel,audio,video,storage &lt;USER&gt;</span>
+<span class="c1"># passwd &lt;USER&gt;</span>
+<span class="c1"># chmod u+w /etc/sudoers</span>
+<span class="c1"># vi /etc/sudoers       # Descomentar &#39;%wheel ALL=(ALL) ALL&#39;</span>
+<span class="c1"># chmod u-w /etc/sudoers</span>
+<span class="c1"># pacman -Syy</span>
+<span class="c1"># pacman -S xorg-server xf86-video-amdgpu maliit-keyboard qt5-wayland</span>
+<span class="c1"># su - &lt;USER&gt;</span>
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <p>El password que elegiremos cuando ejecutemos el comando <code>passwd &lt;USER&gt;</code> debe ser numérico si queremos utilizar Plasma Mobile, ya que la pantalla de desbloqueo sólo nos permite introducir un PIN.</p>
@@ -4959,60 +4375,76 @@
 <p>Ahora vamos a instalar los entornos gráficos. Lo digo en plural porque vamos a instalar dos, Plasma y Plasma Mobile. Hago esto porque dependiendo de si vamos a utilizar la Steam Deck con Arch en modo escritorio (con teclado/ratón y posiblemente pantalla) o portátil (sin teclado/ratón), nos convendrá más un sistema u otro, dado que Plasma Mobile presenta un interfaz diseñado para ser manejado con una pantalla táctil (estilo tablet).</p>
 <p>En realidad no es necesario instalar los dos escritorios, por eso se han separado sus pasos de instalación. Podemos instalar uno, el otro o ambos.</p>
 <h4 id="plasma">Plasma<a class="headerlink" href="#plasma" title="Permanent link">&para;</a></h4>
-<p><code>bash
-$ sudo pacman -S plasma-meta</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>plasma-meta
+</code></pre></div></td></tr></table></div>
 <p>Durante la instalación del paquete anterior se nos harán una serie de preguntas. A la tercera pregunta responder <code>2) noto-fonts</code>. En el resto ofrecer la respuesta predeterminada (pulsando retorno).</p>
 <h4 id="plasma-mobile">Plasma Mobile<a class="headerlink" href="#plasma-mobile" title="Permanent link">&para;</a></h4>
 <p>Plasma Mobile no se encuentra todavía en los repositorios oficiales. Tenemos que utilizar <a href="https://aur.archlinux.org/">AUR</a>:</p>
 <ol>
 <li>
 <p>Empezamos instalando algunas dependencias:</p>
-<p><code>bash
-$ sudo pacman -S plasma-workspace kcontacts kirigami2 kpeople libphonenumber</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>plasma-workspace<span class="w"> </span>kcontacts<span class="w"> </span>kirigami2<span class="w"> </span>kpeople<span class="w"> </span>libphonenumber
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Instalamos los paquetes de AUR <code>plasma-nano</code>, <code>plasma-settings</code> y <code>plasma-mobile</code> en este orden:</p>
-<p><code>bash
-$ cd ~
-$ git clone https://aur.archlinux.org/plasma-nano.git
-$ cd plasma-nano
-$ makepkg -si
-$ cd ~
-$ git clone https://aur.archlinux.org/plasma-settings.git
-$ cd plasma-settings
-$ makepkg -si
-$ cd ~
-$ git clone https://aur.archlinux.org/plasma-mobile.git
-$ cd plasma-mobile
-$ makepkg -si</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~
+$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/plasma-nano.git
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>plasma-nano
+$<span class="w"> </span>makepkg<span class="w"> </span>-si
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~
+$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/plasma-settings.git
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>plasma-settings
+$<span class="w"> </span>makepkg<span class="w"> </span>-si
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~
+$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/plasma-mobile.git
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>plasma-mobile
+$<span class="w"> </span>makepkg<span class="w"> </span>-si
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <h4 id="fin-de-instalacion-entorno-grafico">Fin de instalación entorno gráfico<a class="headerlink" href="#fin-de-instalacion-entorno-grafico" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>Instalamos el gestor de sesiones SDDM y algunas aplicaciones que nos harán falta para terminar la instalación desde el modo gráfico:</p>
-<p><code>bash
-$ sudo pacman -S sddm konsole dolphin kwrite partitionmanager power-profiles-daemon
-$ sudo systemctl enable sddm
-$ exit</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>sddm<span class="w"> </span>konsole<span class="w"> </span>dolphin<span class="w"> </span>kwrite<span class="w"> </span>partitionmanager<span class="w"> </span>power-profiles-daemon
+$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>sddm
+$<span class="w"> </span><span class="nb">exit</span>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Cerramos la sesión chroot, desmontamos las particiones y reiniciamos el sistema:</p>
-<p>```bash</p>
-<h1 id="exit">exit<a class="headerlink" href="#exit" title="Permanent link">&para;</a></h1>
-<h1 id="umount-r-mnt">umount -R /mnt<a class="headerlink" href="#umount-r-mnt" title="Permanent link">&para;</a></h1>
-<h1 id="reboot">reboot<a class="headerlink" href="#reboot" title="Permanent link">&para;</a></h1>
-<p>```</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># exit</span>
+<span class="c1"># umount -R /mnt</span>
+<span class="c1"># reboot</span>
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <h2 id="configuracion-basica">Configuración básica<a class="headerlink" href="#configuracion-basica" title="Permanent link">&para;</a></h2>
 <p>Tras reiniciar deberíamos ver el gestor de sesiones SDDM, inicialmente con la pantalla girada y sin posibilidad de utilizar el teclado en pantalla, por lo que todavía continuaremos utilizando el teclado y ratón externos.</p>
 <p>Una vez que hayamos iniciado sesión en Plasma o Plasma Mobile, lo primero que tenemos que hacer es configurar la conexión a internet. Para ello hacemos click sobre el icono correspondiente en la bandeja del sistema abajo a la derecha en Plasma o arriba a la derecha en Plasma Mobile.</p>
 <p>Una vez que tengamos conexión, abrimos la aplicación Konsole y ejecutamos los siguientes comandos para instalar el paquete de aplicaciones básico de KDE, el navegador Firefox y el servidor SSH:</p>
-<p><code>bash
-$ sudo pacman -S firefox kde-applications-meta openssh usbutils lshw man-db htop spectacle
-$ sudo systemctl start sshd
-$ sudo systemctl enable sshd</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>firefox<span class="w"> </span>kde-applications-meta<span class="w"> </span>openssh<span class="w"> </span>usbutils<span class="w"> </span>lshw<span class="w"> </span>man-db<span class="w"> </span>htop<span class="w"> </span>spectacle
+$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>sshd
+$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>sshd
+</code></pre></div></td></tr></table></div>
 <p>Finalmente hacemos las siguientes configuraciones:</p>
 <ul>
 <li><code>Preferencias &gt; Preferencias del sistema &gt; Entrada y salida &gt; Pantalla y monitor &gt; Escalar</code>: Configurar la escala de la pantalla a 110%.</li>
@@ -5041,13 +4473,18 @@ $ sudo systemctl enable sshd</code></p>
 <ol>
 <li>
 <p>Crear fichero <code>/etc/sddm.conf.d/10-wayland.conf</code> con el siguiente contenido:</p>
-<p>```ini
-[General]
-DisplayServer=wayland
-GreeterEnvironment=QT_WAYLAND_SHELL_INTEGRATION=layer-shell</p>
-<p>[Wayland]
-CompositorCommand=kwin_wayland --drm --no-lockscreen --no-global-shortcuts --locale1 --inputmethod maliit-keyboard
-```</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[General]</span>
+<span class="na">DisplayServer</span><span class="o">=</span><span class="s">wayland</span>
+<span class="na">GreeterEnvironment</span><span class="o">=</span><span class="s">QT_WAYLAND_SHELL_INTEGRATION=layer-shell</span>
+
+<span class="k">[Wayland]</span>
+<span class="na">CompositorCommand</span><span class="o">=</span><span class="s">kwin_wayland --drm --no-lockscreen --no-global-shortcuts --locale1 --inputmethod maliit-keyboard</span>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Abrir <code>Preferencias &gt; Pantalla de inicio de sesión (SDDM)</code>, seleccionar Brisa como theme y pulsar el botón <code>Aplicar las preferencias de Plasma...</code> arriba a la derecha.</p>
@@ -5055,9 +4492,10 @@ CompositorCommand=kwin_wayland --drm --no-lockscreen --no-global-shortcuts --loc
 </ol>
 <h2 id="configuracion-sonido">Configuración sonido<a class="headerlink" href="#configuracion-sonido" title="Permanent link">&para;</a></h2>
 <p>Tal y como <a href="https://wiki.archlinux.org/title/Steam_Deck#Audio">comenta el wiki de Arch</a>, el volumen por defecto en la Steam Deck es muy bajo. Para solucionarlo hay que instalar el paquete <code>alsa-utils</code> y ejecutar el comando <code>alsamixer</code> para ajustar el volumen de algunos de los canales.</p>
-<p><code>bash
-$ sudo pacman -S alsa-utils
-$ alsamixer</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>alsa-utils
+$<span class="w"> </span>alsamixer
+</code></pre></div></td></tr></table></div>
 <p>Para acceder a los mismos, una vez en <code>alsamixer</code>, hay que pulsar <code>F6</code> para poder seleccionar el dispositivo de audio <code>acp5x</code> ya que por defecto aparecen seleccionado el dispositivo 0 que es el asociado a la salida HDMI del chip gráfico:</p>
 <p><img alt="alsamixer" src="images/posts/2024-09-04_steam_deck_arch/alsamixer-select-device.png" /></p>
 <p>Una vez seleccionado el dispositivo correcto, veremos todos sus canales que son muy numerosos. Localizaremos los que <a href="https://wiki.archlinux.org/title/Steam_Deck#Audio">menciona el wiki</a> para ajustarlos a los siguientes valores:</p>
@@ -5101,8 +4539,8 @@ $ alsamixer</code></p>
 </table>
 <h2 id="instalacion-pamac">Instalación pamac<a class="headerlink" href="#instalacion-pamac" title="Permanent link">&para;</a></h2>
 <p>Para facilitar la instalación de paquetes desde la interfaz gráfica, vamos a instalar <code>pamac</code>:</p>
-<p><code>bash
-$ yay -S pamac-aur</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>yay<span class="w"> </span>-S<span class="w"> </span>pamac-aur
+</code></pre></div></td></tr></table></div>
 <p>Una vez instalado lo abrimos (buscando <code>Añadir/Quitar software</code> en el cajón de aplicaciones) y activamos el soporte AUR en <code>Preferencias &gt; Terceros &gt; Activar soporte de AUR</code>.</p>
 <h2 id="instalacion-gestor-dualboot">Instalación gestor dualboot<a class="headerlink" href="#instalacion-gestor-dualboot" title="Permanent link">&para;</a></h2>
 <p>El sistema Arch ya está listo y podemos arrancarlo encendiendo la consola en modo Boot Manager (manteniendo pulsada la tecla de bajar volumen) y seleccionando la opción <code>Arch</code>. Pero para facilitar el arranque de SteamOS, vamos a instalar un gestor de arranque dualboot llamado <a href="https://github.com/jlobue10/SteamDeck_rEFInd">rEFInd</a>.</p>
@@ -5110,8 +4548,8 @@ $ yay -S pamac-aur</code></p>
 <li>Arrancar SteamOS (con Volume- + Power).</li>
 <li>
 <p>Desde una terminal en modo escritorio ejecutar:</p>
-<p><code>bash
-cd $HOME &amp;&amp; rm -rf $HOME/SteamDeck_rEFInd/ &amp;&amp; git clone https://github.com/jlobue10/SteamDeck_rEFInd &amp;&amp; cd SteamDeck_rEFInd &amp;&amp; chmod +x install-GUI.sh &amp;&amp; ./install-GUI.sh</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="nv">$HOME</span>/SteamDeck_rEFInd/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/jlobue10/SteamDeck_rEFInd<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>SteamDeck_rEFInd<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>install-GUI.sh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./install-GUI.sh
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Descargar o crear un icono de Arch Linux de 128x128px.</p>
@@ -5126,12 +4564,16 @@ cd $HOME &amp;&amp; rm -rf $HOME/SteamDeck_rEFInd/ &amp;&amp; git clone https://
 </li>
 <li>
 <p>Editar el fichero que encontraremos en <code>~/.local/SteamDeck_rEFInd/GUI/refind.conf</code> y modificar la última entrada de la siguiente forma:</p>
-<p><code>conf
-menuentry "Arch" {
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>menuentry &quot;Arch&quot; {
     icon /EFI/refind/os_icon2.png
     loader /EFI/Arch/grubx64.efi
     graphics on
-}</code></p>
+}
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Pulsar el botón <code>Install rEFInd</code>.</p>

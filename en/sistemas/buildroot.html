@@ -4320,14 +4320,22 @@
 </div>
 <h2 id="stamp-files">Stamp files<a class="headerlink" href="#stamp-files" title="Permanent link">&para;</a></h2>
 <p>Cada vez que se compila un package, se generan unos ficheros ocultos que marcan las distintas fases de la compilación en el directorio <code>output/build/&lt;package&gt;-&lt;version&gt;</code>. Se pueden borrar para provocar la repetición de esas fases, aunque lo habitual es utilizar los comandos <code>make &lt;package&gt;-rebuild</code> o <code>make &lt;package&gt;-reconfigure</code> (de hecho estos comandos precisamente lo que hacen es eliminar estos ficheros stamp). Por ejemplo estos son los ficheros generados en la compilación del paquete <code>sdl_image</code>:</p>
-<p><code>root@04084426cffe:~/git/buildroot-rg350-old-kernel/output/build/sdl2_image-2.0.2# ls -ltra .stamp*
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>root@04084426cffe:~/git/buildroot-rg350-old-kernel/output/build/sdl2_image-2.0.2# ls -ltra .stamp*
 -rw-r--r-- 1 root root 0 Jun  1 18:50 .stamp_downloaded
 -rw-r--r-- 1 root root 0 Jun  1 18:50 .stamp_extracted
 -rw-r--r-- 1 root root 0 Jun  1 18:50 .stamp_patched
 -rw-r--r-- 1 root root 0 Jun  1 18:50 .stamp_configured
 -rw-r--r-- 1 root root 0 Jun  1 18:50 .stamp_built
 -rw-r--r-- 1 root root 0 Jun  1 18:51 .stamp_staging_installed
--rw-r--r-- 1 root root 0 Jun  1 18:51 .stamp_target_installed</code></p>
+-rw-r--r-- 1 root root 0 Jun  1 18:51 .stamp_target_installed
+</code></pre></div></td></tr></table></div>
 <h2 id="parametros-importantes-del-menuconfig">Parámetros importantes del menuconfig<a class="headerlink" href="#parametros-importantes-del-menuconfig" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>Target options</code><ul>

@@ -4089,19 +4089,37 @@
 <p>Instalar VirtualBox de la distribución (<code>virtualbox</code> en Ubuntu) y bajar el instalable de Vagrant de su <a href="https://www.vagrantup.com/downloads.html">sitio web</a>.</p>
 <h2 id="creacion-de-entorno">Creación de entorno<a class="headerlink" href="#creacion-de-entorno" title="Permanent link">&para;</a></h2>
 <p>Desde el directorio raíz de nuestro proyecto de desarrollo, ejecutar:</p>
-<p><code>$ vagrant init</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ vagrant init
+</code></pre></div></td></tr></table></div>
 <p>Esto crea el fichero <code>Vagrantfile</code> que mantendrá la configuración de nuestro entorno. Este fichero conviene incluirlo en el control de versiones.</p>
 <p>Modificamos el fichero <code>Vagrantfile</code> para que use la máquina que nos interesa. En el ejemplo vamos a usar <code>ubuntu/xenial64</code> (consultar <a href="https://app.vagrantup.com/boxes/search">aquí</a> el catálogo completo de máquinas).</p>
-<p><code>Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/xenial64"
-end</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Vagrant.configure(&quot;2&quot;) do |config|
+  config.vm.box = &quot;ubuntu/xenial64&quot;
+end
+</code></pre></div></td></tr></table></div>
 <p>Cuando se levante por primera el entorno configurado en el <code>Vagrantfile</code> se bajará la máquina. Si queremos adelantar este proceso podemos bajar la máquina con el siguiente comando:</p>
-<p><code>$ vagrant box add ubuntu/xenial64</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ vagrant box add ubuntu/xenial64
+</code></pre></div></td></tr></table></div>
 <p>Ahora ya podemos levantar el entorno y conectar con él:</p>
-<p><code>$ vagrant up
-$ vagrant ssh</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ vagrant up
+$ vagrant ssh
+</code></pre></div></td></tr></table></div>
 <p>El comando <code>vagrant ssh</code> automatiza una conexión ssh cuyos parámetros manuales se pueden obtener ejecutando el comando <code>vagrant ssh-config</code>. Por ejemplo, una conexión manual podría lograrse a partir de los siguientes resultados así:</p>
-<p><code>$ vagrant ssh-config
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>$ vagrant ssh-config
 Host default
   HostName 127.0.0.1
   User ubuntu
@@ -4112,36 +4130,55 @@ Host default
   IdentityFile /home/edumoreno/git/django_test/.vagrant/machines/default/virtualbox/private_key
   IdentitiesOnly yes
   LogLevel FATAL
-$ ssh -i /home/edumoreno/git/django_test/.vagrant/machines/default/virtualbox/private_key -p 2222 ubuntu@127.0.0.1</code></p>
+$ ssh -i /home/edumoreno/git/django_test/.vagrant/machines/default/virtualbox/private_key -p 2222 ubuntu@127.0.0.1
+</code></pre></div></td></tr></table></div>
 <p>Tal y como se indica en el log del arranque de la máquina (durante el <code>vagrant up</code>), el directorio del proyecto de la máquina host se monta sobre <code>/vagrant</code> de la máquina guest:</p>
-<p><code>==&gt; default: Mounting shared folders...
-    default: /vagrant =&gt; /home/edumoreno/git/niubit_lms</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>==&gt; default: Mounting shared folders...
+    default: /vagrant =&gt; /home/edumoreno/git/niubit_lms
+</code></pre></div></td></tr></table></div>
 <h2 id="provision-de-componentes">Provisión de componentes<a class="headerlink" href="#provision-de-componentes" title="Permanent link">&para;</a></h2>
 <p>Por ejemplo vamos a configurar la instalación de un entorno Python3/Django. La máquina que hemos instalado (<code>ubuntu/xenial64</code>) viene con Python3 preinstalado. Vamos a instalar Django de forma controlada con Vagrant para que pueda reproducir esa instalación de forma automática si creamos este entorno en otro lugar. Para ello escribimos un script que luego integramos en el <code>Vagrantfile</code> de la siguiente forma:</p>
-<p><code>Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/xenial64"
-  config.vm.provision "shell", inline: &lt;&lt;-SHELL
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Vagrant.configure(&quot;2&quot;) do |config|
+  config.vm.box = &quot;ubuntu/xenial64&quot;
+  config.vm.provision &quot;shell&quot;, inline: &lt;&lt;-SHELL
     #!/usr/bin/env bash
     apt-get update
     apt-get install -y python3-pip
     pip3 install Django
   SHELL
-end</code></p>
+end
+</code></pre></div></td></tr></table></div>
 <p>Si no habíamos arrancado la máquina todavía, el script se ejecutará en el primer arranque. Si ya lo habíamos hecho habrá que decirle a Vagrant que ejecute la configuración de provisioning:</p>
-<p><code>$ vagrant reload --provision</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ vagrant reload --provision
+</code></pre></div></td></tr></table></div>
 <p>En caso de tener que ejecutar muchos scripts o ser muy grandes, tal vez sea mejor escribirlos en archivos separados que luego se pueden referenciar en el <code>Vagrantfile</code> de esta forma (tal y como está en el ejemplo, el script <code>script.sh</code> deberá estar en la misma ruta que el <code>Vagrantfile</code>):</p>
-<p><code>Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/xenial64"
-  config.vm.provision :shell, path: "script.sh"
-end</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Vagrant.configure(&quot;2&quot;) do |config|
+  config.vm.box = &quot;ubuntu/xenial64&quot;
+  config.vm.provision :shell, path: &quot;script.sh&quot;
+end
+</code></pre></div></td></tr></table></div>
 <h2 id="redireccion-de-puertos">Redirección de puertos<a class="headerlink" href="#redireccion-de-puertos" title="Permanent link">&para;</a></h2>
 <p>Aparte del acceso SSH que se consigue fácilmente a través del comando <code>vagrant ssh</code> como hemos visto, será habitual que necesitemos otro tipo de accesos por red hacia la máquina virtual. Por ejemplo en el caso de que estemos desarrollando una aplicación web necesitaremos redireccionar el puerto que sirva la máquina virtual. Por ejemplo, si queremos redireccionar el puerto 8000 de la máquina virtual hacia la host, deberemos añadir la siguiente línea al bloque de configuraciones del <code>Vagrantfile</code>:</p>
-<p><code>config.vm.network :forwarded_port, guest: 8000, host: 8000</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>  config.vm.network :forwarded_port, guest: 8000, host: 8000
+</code></pre></div></td></tr></table></div>
 <p>Tras ello hay que ejecutar <code>vagrant reload</code> o <code>vagrant up</code> dependiendo de si la máquina virtual está arrancada o parada. En Vagrant hay muchas más posibilidades para configurar la red además del nat que acabamos de hacer. Todas estas posibilidades se describen <a href="https://www.vagrantup.com/docs/networking/">aquí</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Para Python/Django</p>
 <p>En caso de querer acceder al miniservidor que se ejecuta con <code>python manage.py runserver</code>, además de la redirección del puerto (precisamente se usa el 8000 de forma predeterminada), tal y como se explica <a href="https://stackoverflow.com/questions/18157353/connection-reset-when-port-forwarding-with-vagrant">aquí</a>, hay que lanzar el miniservidor especificando que se escucha cualquier interfaz de la máquina (por defecto se escucha sólo el interfaz de loopback) ejecutando así:</p>
-<p><code>python manage.py runserver 0.0.0.0:8000</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>python manage.py runserver 0.0.0.0:8000
+</code></pre></div></td></tr></table></div>
 </div>
 
 

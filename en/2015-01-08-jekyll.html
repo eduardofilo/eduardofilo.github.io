@@ -3977,65 +3977,58 @@
 <li>Creamos el repositorio en GitHub. Como hemos dicho el nombre tendrá que ser nuestro identificador de usuario más el sufijo <code>.github.io</code>. No sólo eso, si estamos haciendo una página de usuario (también existe la posibilidad de crear una página de proyecto), tendremos que trabajar obligatoriamente con el branch <code>master</code>. A partir de ahora voy a indicar mi nombre de usuario, es decir <code>eduardofilo</code> en lugar de <code>username</code> para hacerlo más realista.</li>
 <li>
 <p>Clonamos el repositorio en nuestra máquina para trabajar en local y seleccionamos el branch mencionado (aunque en realidad no es necesario porque es el predeterminado):</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/git
-$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/eduardofilo/eduardofilo.github.io.git
-$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>master
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$ cd ~/git
+$ git clone https://github.com/eduardofilo/eduardofilo.github.io.git
+$ git checkout master
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Instalamos Jekyll. Bueno, en realidad instalamos <code>github-pages</code> que lo lleva incluido como dependencia:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>gem<span class="w"> </span>install<span class="w"> </span>github-pages
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ gem install github-pages
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Generamos la estructura del sitio con Jekyll. En este paso el directorio donde vamos a generar la estructura deberá estar vacío o se producirá un error. Si existían ficheros (como el <code>README.md</code> que suele generar GitHub), tendremos que sacar temporalmente esos ficheros del directorio y devolverlos posteriormente:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/git/eduardofilo.github.io
-$<span class="w"> </span>jekyll<span class="w"> </span>new<span class="w"> </span>.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ cd ~/git/eduardofilo.github.io
+$ jekyll new .
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Creamos el fichero <code>Gemfile</code> que gestionará las dependencias del proyecto:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code># ~/git/eduardofilo.github.io/Gemfile
 source &#39;https://rubygems.org&#39;
 gem &#39;github-pages&#39;
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Generamos un fichero <code>.gitignore</code> para que no ser carguen en GitHub un fichero y un par de directorios que se generan dinámicamente a partir del resto:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># ~/git/eduardofilo.github.io/.gitignore</span>
-<span class="nf">_site</span>
-<span class="na">.sass-cache</span>
-<span class="nf">Gemfile.lock</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code># ~/git/eduardofilo.github.io/.gitignore
+_site
+.sass-cache
+Gemfile.lock
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Ejecutamos el siguiente comando para que encajen todas las dependencias:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/git/eduardofilo.github.io
-$<span class="w"> </span>bundle<span class="w"> </span>install
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ cd ~/git/eduardofilo.github.io
+$ bundle install
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Levantamos el servidor web de desarrollo para ir observando los cambios en el sitio mientras generamos o modificamos los ficheros, por defecto estará accesible a través de la URL: http://localhost:4000</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/git/eduardofilo.github.io
-$<span class="w"> </span>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>jekyll<span class="w"> </span>serve
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ cd ~/git/eduardofilo.github.io
+$ bundle exec jekyll serve
 </code></pre></div></td></tr></table></div>
-
 </li>
 </ol>
 <p>Y ya está. A partir de ahora tocará retocar el sitio para dejarlo a nuestro gusto. En mi caso he creado directorios para las distintas secciones de documentación que manejo (Desarrollo, Sistemas, Proyectos y Varios). Dentro de estos directorios mantengo documentos en Markdown que luego enlazo desde el fichero que se sirve de forma predeterminada (<code>index.md</code> aunque también puede ser el más clasico <code>index.html</code>). La función más habitual de <a href="http://jekyllrb.com/">Jekyll</a> es la de gestionar una estructura de Blog. También la he aprovechado, manteniendo los ficheros en el subdirectorio <code>_posts</code>. En este caso los ficheros tienen que tener una nomenclatura especial, ya que de su nombre sale la fecha del post y su URL. En ambos tipos de documentos, es importante el sistema de metainformación llamado FrontMatter. Todos los documentos llevan una pequeña sección al comienzo delimitada por dos líneas de tres guiones en formato YML. Es recomendable leer la <a href="http://jekyllrb.com/docs/frontmatter/">documentación sobre su uso</a> ya que tiene múltiples efectos sobre el funcionamiento de Jekyll. De hecho los documentos que no lleven esta cabecera YML no serán procesados por Jekyll (esto puede servir para dejar de lado algunos ficheros como por ejemplo el <code>README.md</code> en mi caso).</p>

@@ -4157,9 +4157,8 @@
 </ul>
 <p><img alt="Raspberry Pi GPIO Layout Model B+" src="../images/posts/Raspberry-Pi-GPIO-Layout-Model-B-Plus.png" /></p>
 <p>Puede generar confusión ver que las conexiones entre ambos conectores son TX-TX y RX-RX, cuando las conexiones TX y RX deben cruzarse. La confusión viene de que en el conector J3 lo que se indica es a dónde se debe conectar y no el terminal del puerto serie del microcontrolador. Si tiramos del hilo en el esquemático vemos que por ejemplo el pin 1 del conector J3 sigue la secuencia:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>J3_TX - AIFO - RXD0
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>J3_TX - AIFO - RXD0
 </code></pre></div></td></tr></table></div>
-
 <p>Por tanto en realidad sí estamos cruzando las señales.</p>
 <p>El adaptador realizado es el siguiente:</p>
 <p><img alt="Adaptador J3-GPIO" src="../images/posts/octoprint_adaptador1.jpg" /></p>
@@ -4172,9 +4171,11 @@
 <p><img alt="Raspberry sobre PCB impresora" src="../images/posts/octoprint.jpg" /></p>
 <h2 id="desactivacion-de-bt-y-activacion-de-puerto-serie">Desactivación de BT y activación de puerto serie<a class="headerlink" href="#desactivacion-de-bt-y-activacion-de-puerto-serie" title="Permanent link">&para;</a></h2>
 <p>La Raspberry Pi Zero W (en Raspberry Pi 3 sucede lo mismo) trae un adaptador Bluetooth que tanto en la distribución Raspbian como en la imágen OctoPi utilizada está conectado precisamente a los pines #08 y #10 a los que hemos conectado el puerto serie de la impresora. Antes de continuar necesitamos liberar esta conexión. Para ello debemos editar el fichero <code>config.txt</code> que hay en la partición <code>boot</code> y añadir (al final por ejemplo) lo siguiente:</p>
-<p><code>dtoverlay=pi3-disable-bt</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>dtoverlay=pi3-disable-bt
+</code></pre></div></td></tr></table></div>
 <p>Esto podemos hacerlo sin necesidad de arrancar el sistema, montando la microSD en el ordenador. Para el siguiente paso sí necesitamos arrancar el sistema de la tarjeta en la Raspberry. Una vez estemos en la consola (por SSH o conectando una pantalla/teclado/ratón de alguna manera), ejecutaremos:</p>
-<p><code>sudo raspi-config</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo raspi-config
+</code></pre></div></td></tr></table></div>
 <p>Allí acudiremos a la sección <code>Interfacing options &gt; Serial</code> y responderemos de la siguiente forma a las dos preguntas que nos hará:</p>
 <ul>
 <li>Would you like a login shell to be accessible over serial? -&gt; No</li>
@@ -4183,9 +4184,8 @@
 <p>Reiniciaremos y ya podremos pasar a trabajar sobre la consola web de Octoprint a la que accederemos abriendo en un navegador la IP de la Raspberry.</p>
 <h2 id="configuracion-conexion-en-octoprint">Configuración conexión en Octoprint<a class="headerlink" href="#configuracion-conexion-en-octoprint" title="Permanent link">&para;</a></h2>
 <p>Por defecto Octoprint espera encontrar la impresora en un puerto USB de la Raspberry. Al haber cambiado a un puerto serie convencional, tenemos que ayudarle a encontrarlo. Para ello acudimos a Settings (llave inglesa) de Octoprint y en la sección <code>Serial Connection</code> añadimos lo siguiente en el cuadro <code>Additional serial ports</code>:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>/dev/ttyAMA0
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>/dev/ttyAMA0
 </code></pre></div></td></tr></table></div>
-
 <p><img alt="Octoprint Settings" src="../images/posts/octoprint_settings.png" /></p>
 <p>Tras esto podremos volver a la ventana principal y seleccionar dicho puerto en el apartado Connection:</p>
 <p><img alt="Octoprint Connection" src="../images/posts/octoprint_connection.png" /></p>

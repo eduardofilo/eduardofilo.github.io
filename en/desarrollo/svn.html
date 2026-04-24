@@ -4176,27 +4176,27 @@
 
 <h1 id="svn">SVN<a class="headerlink" href="#svn" title="Permanent link">&para;</a></h1>
 <h2 id="diferencia-entre-dos-revisiones-distintas-n-y-m-del-mismo-fichero-con-ruta-path">Diferencia entre dos revisiones distintas (N y M) del mismo fichero (con ruta <code>Path</code>)<a class="headerlink" href="#diferencia-entre-dos-revisiones-distintas-n-y-m-del-mismo-fichero-con-ruta-path" title="Permanent link">&para;</a></h2>
-<p><code>bash
-$ svn diff -r N:M Path</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>svn<span class="w"> </span>diff<span class="w"> </span>-r<span class="w"> </span>N:M<span class="w"> </span>Path
+</code></pre></div></td></tr></table></div>
 <h2 id="limpiar-meta-informacion-svn-en-una-copia-de-trabajo">Limpiar meta-información SVN en una copia de trabajo<a class="headerlink" href="#limpiar-meta-informacion-svn-en-una-copia-de-trabajo" title="Permanent link">&para;</a></h2>
-<p><code>bash
-$ rm -rf `find . -type d -name .svn`</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="sb">`</span>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>d<span class="w"> </span>-name<span class="w"> </span>.svn<span class="sb">`</span>
+</code></pre></div></td></tr></table></div>
 <p>En algunos sistemas lo anterior no funciona bien si los directorios tienen espacios en el nombre. Usar en este caso:</p>
-<p><code>bash
-$ find . -type d -name .svn -exec rm -rf '{}' \;</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>d<span class="w"> </span>-name<span class="w"> </span>.svn<span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="s1">&#39;{}&#39;</span><span class="w"> </span><span class="se">\;</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="informacion-sobre-la-copia-de-trabajo">Información sobre la copia de trabajo<a class="headerlink" href="#informacion-sobre-la-copia-de-trabajo" title="Permanent link">&para;</a></h2>
-<p><code>bash
-$ svn info</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>svn<span class="w"> </span>info
+</code></pre></div></td></tr></table></div>
 <h2 id="redireccionar-una-copia-de-trabajo-tras-movimiento-de-repositorio">Redireccionar una copia de trabajo tras movimiento de repositorio<a class="headerlink" href="#redireccionar-una-copia-de-trabajo-tras-movimiento-de-repositorio" title="Permanent link">&para;</a></h2>
-<p><code>bash
-$ svn switch --relocate FROM TO [Path copia trabajo]</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>svn<span class="w"> </span>switch<span class="w"> </span>--relocate<span class="w"> </span>FROM<span class="w"> </span>TO<span class="w"> </span><span class="o">[</span>Path<span class="w"> </span>copia<span class="w"> </span>trabajo<span class="o">]</span>
+</code></pre></div></td></tr></table></div>
 <p>Por ejemplo:</p>
-<p><code>bash
-edumoreno@walqa347:~/NetBeansProjects/MobileDesktopDemo$ svn switch --relocate svn+ssh://eduardo.moreno@172.22.1.63/var/lib/subversion/ims/MobileDesktopDemo  svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/MobileDesktopDemo .</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>edumoreno@walqa347:~/NetBeansProjects/MobileDesktopDemo$<span class="w"> </span>svn<span class="w"> </span>switch<span class="w"> </span>--relocate<span class="w"> </span>svn+ssh://eduardo.moreno@172.22.1.63/var/lib/subversion/ims/MobileDesktopDemo<span class="w">  </span>svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/MobileDesktopDemo<span class="w"> </span>.
+</code></pre></div></td></tr></table></div>
 <h2 id="creacion-de-un-proyecto-nuevo-en-un-repositorio">Creación de un proyecto nuevo en un repositorio<a class="headerlink" href="#creacion-de-un-proyecto-nuevo-en-un-repositorio" title="Permanent link">&para;</a></h2>
 <p>Vamos a mostrarlo con el ejemplo del proyecto <code>CCM</code> dentro de la ruta <code>svn.servidor.com/var/lib/subversion/ims</code>, siendo la ruta de la copia de trabajo <code>/home/edumoreno/NetBeansProjects/CCM</code>.</p>
-<p><code>bash
-$ svn mkdir svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM -m "Creación directorio."</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>svn<span class="w"> </span>mkdir<span class="w"> </span>svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Creación directorio.&quot;</span>
+</code></pre></div></td></tr></table></div>
 <p>Antes de hacer el import sería interesante eliminar o mover los directorios o ficheros que no se desea que se sincronicen con el repositorio. Por ejemplo, en el caso de un proyecto NetBeans, éstos son:</p>
 <ul>
 <li><code>CCM/build</code></li>
@@ -4204,14 +4204,17 @@ $ svn mkdir svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM
 <li><code>CCM/nbproject/private</code></li>
 </ul>
 <p>Una vez eliminados o movidos hacemos el import:</p>
-<p><code>bash
-$ cd /home/edumoreno/NetBeansProjects/CCM
-$ svn import . svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM -m "Import inicial."</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/edumoreno/NetBeansProjects/CCM
+$<span class="w"> </span>svn<span class="w"> </span>import<span class="w"> </span>.<span class="w"> </span>svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Import inicial.&quot;</span>
+</code></pre></div></td></tr></table></div>
 <p>Ahora habría que hacer un checkout de lo que se ha subido para obtener la meta-información del repositorio:</p>
-<p><code>bash
-$ cd /home/edumoreno/NetBeansProjects
-$ rm -rf CCM
-$ svn checkout svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/edumoreno/NetBeansProjects
+$<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>CCM
+$<span class="w"> </span>svn<span class="w"> </span>checkout<span class="w"> </span>svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/
+</code></pre></div></td></tr></table></div>
 <p>Finalmente hay que hacer ajustes para que se ignoren los siguientes directorios del nuevo repositorio:</p>
 <ul>
 <li>build</li>
@@ -4219,59 +4222,71 @@ $ svn checkout svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/
 <li>nbproject/private</li>
 </ul>
 <p>Esto en teoría se puede hacer con los siguientes comandos, pero aun no se ha probado:</p>
-<p><code>bash
-$ cd /home/edumoreno/NetBeansProjects/CCM
-$ svn propset svn:ignore 'build
-dist' .
-$ svn propset svn:ignore 'private' nbproject/
-$ svn commit -m "Ignoramos una serie de directorios del proyecto."</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/edumoreno/NetBeansProjects/CCM
+$<span class="w"> </span>svn<span class="w"> </span>propset<span class="w"> </span>svn:ignore<span class="w"> </span><span class="s1">&#39;build</span>
+<span class="s1">dist&#39;</span><span class="w"> </span>.
+$<span class="w"> </span>svn<span class="w"> </span>propset<span class="w"> </span>svn:ignore<span class="w"> </span><span class="s1">&#39;private&#39;</span><span class="w"> </span>nbproject/
+$<span class="w"> </span>svn<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Ignoramos una serie de directorios del proyecto.&quot;</span>
+</code></pre></div></td></tr></table></div>
 <p>(Nota: El retorno de carro que hay al final del primer comando <code>svn propset</code> es intencionado)</p>
 <p>Si por algún motivo los directorios hubieran entrado por descuido en el repositorio, habría que borrarlos tanto en el servidor como en local, ya que aunque se haya establecido la propiedad svn:ignore, se seguirían sincronizando:</p>
-<p><code>bash
-$ svn delete build
-$ svn delete dist
-$ svn delete nbproject/private
-$ svn delete svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/build
-$ svn delete svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/dist
-$ svn delete svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/nbproject/private
-$ svn commit -m "Eliminamos una serie de directorios del proyecto."</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>svn<span class="w"> </span>delete<span class="w"> </span>build
+$<span class="w"> </span>svn<span class="w"> </span>delete<span class="w"> </span>dist
+$<span class="w"> </span>svn<span class="w"> </span>delete<span class="w"> </span>nbproject/private
+$<span class="w"> </span>svn<span class="w"> </span>delete<span class="w"> </span>svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/build
+$<span class="w"> </span>svn<span class="w"> </span>delete<span class="w"> </span>svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/dist
+$<span class="w"> </span>svn<span class="w"> </span>delete<span class="w"> </span>svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/nbproject/private
+$<span class="w"> </span>svn<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Eliminamos una serie de directorios del proyecto.&quot;</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="creacion-de-un-branch">Creación de un branch<a class="headerlink" href="#creacion-de-un-branch" title="Permanent link">&para;</a></h2>
 <p>Para crear el branch simplemente hay que hacer una copia del trunk sin salir del repositorio. Para ello utilizar el siguiente comando:</p>
-<p><code>bash
-$ svn copy -m "Creación de branch b1_svg." svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/trunk/ svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>svn<span class="w"> </span>copy<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Creación de branch b1_svg.&quot;</span><span class="w"> </span>svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/trunk/<span class="w"> </span>svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/
+</code></pre></div></td></tr></table></div>
 <p>Luego si se desea trabajar en el branch recién creado habrá que bajar una copia de trabajo con el comando siguiente:</p>
-<p><code>bash
-edumoreno@walqa347:~$ cd ~/NetBeansProjects/
-edumoreno@walqa347:~/NetBeansProjects$ svn checkout svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/ CCM_b1_svg</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>edumoreno@walqa347:~$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/NetBeansProjects/
+edumoreno@walqa347:~/NetBeansProjects$<span class="w"> </span>svn<span class="w"> </span>checkout<span class="w"> </span>svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/<span class="w"> </span>CCM_b1_svg
+</code></pre></div></td></tr></table></div>
 <h2 id="merge-con-el-trunk">Merge con el trunk<a class="headerlink" href="#merge-con-el-trunk" title="Permanent link">&para;</a></h2>
 <p>Cuando llegue el momento de hacer el merge, habrá que proceder de la siguiente forma. Como punto de partida necesitaremos una copia de trabajo del trunk:</p>
 <p>Averiguamos la revisión en que construimos el branch. Esto se puede conseguir haciendo un log con la opción <code>--stop-on-copy</code> (que detiene la salida del comando en cuanto se detecta que la rama fue copiada o renombrada). Así, la entrada más antigua muestra lo que buscamos:</p>
-<p><code>bash
-$ svn log -v --stop-on-copy svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/|tail</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>svn<span class="w"> </span>log<span class="w"> </span>-v<span class="w"> </span>--stop-on-copy<span class="w"> </span>svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/<span class="p">|</span>tail
+</code></pre></div></td></tr></table></div>
 <p>Averiguamos la última revisión que contiene cambios en el branch:</p>
-<p><code>bash
-$ svn log -v --stop-on-copy svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/|head</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>svn<span class="w"> </span>log<span class="w"> </span>-v<span class="w"> </span>--stop-on-copy<span class="w"> </span>svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/<span class="p">|</span>head
+</code></pre></div></td></tr></table></div>
 <p>Nos situamos en el directorio de la copia de trabajo correspondiente al trunk y hacemos <code>update</code>:</p>
-<p><code>bash
-edumoreno@walqa347:~$ cd ~/NetBeansProjects/CCM
-edumoreno@walqa347:~/NetBeansProjects/CCM$ svn update</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>edumoreno@walqa347:~$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/NetBeansProjects/CCM
+edumoreno@walqa347:~/NetBeansProjects/CCM$<span class="w"> </span>svn<span class="w"> </span>update
+</code></pre></div></td></tr></table></div>
 <p>Antes de hacer el <code>merge</code> se puede simular, es decir, lanzarlo sin que aplique los cambios y que sólo muestre lo que va a hacer, incorporando la opción <code>--dry-run</code>. El comando sería:</p>
-<p><code>bash
-$ svn merge --dry-run -r 549:634 svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>svn<span class="w"> </span>merge<span class="w"> </span>--dry-run<span class="w"> </span>-r<span class="w"> </span><span class="m">549</span>:634<span class="w"> </span>svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/
+</code></pre></div></td></tr></table></div>
 <p>Una vez que estemos seguros hacemos el <code>merge</code> indicando la release inicial del branch como origen del intervalo de releases:</p>
-<p><code>bash
-$ svn merge -r 549:634 svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>svn<span class="w"> </span>merge<span class="w"> </span>-r<span class="w"> </span><span class="m">549</span>:634<span class="w"> </span>svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/
+</code></pre></div></td></tr></table></div>
 <p>Resolvemos manualmente los conflictos que inevitablemente existirán.</p>
 <p>Hacemos el commit en el trunk de los cambios del branch recién incorporados:</p>
-<p><code>bash
-$ svn commit -m "Merge de los cambios r549:634 del branch 'b1_svg' sobre el trunk."</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>svn<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Merge de los cambios r549:634 del branch &#39;b1_svg&#39; sobre el trunk.&quot;</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="analisis-de-diferencias-ante-un-conflicto">Análisis de diferencias ante un conflicto<a class="headerlink" href="#analisis-de-diferencias-ante-un-conflicto" title="Permanent link">&para;</a></h2>
 <p>Para listar los ficheros que tienen conflictos:</p>
-<p><code>bash
-$ svn status|grep "^C"</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>svn<span class="w"> </span>status<span class="p">|</span>grep<span class="w"> </span><span class="s2">&quot;^C&quot;</span>
+</code></pre></div></td></tr></table></div>
 <p>Para listar los ficheros diferenciales de un conflicto:</p>
-<p><code>bash
-$ ls -l &lt;fichero_base&gt;*</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>&lt;fichero_base&gt;*
+</code></pre></div></td></tr></table></div>
 <p>La interpretación de los sufijos que se añaden a los ficheros es (siendo MMMM la release de creación del branch y NNNN la del momento del merge):</p>
 <ul>
 <li><code>&lt;fichero_base&gt;</code>: Fichero de merge</li>
@@ -4280,15 +4295,15 @@ $ ls -l &lt;fichero_base&gt;*</code></p>
 <li><code>&lt;fichero_base&gt;.izquierda-fusion.rMMMM</code>: Versión común a ambas ramas, es decir, el punto del tiempo en que empezaron a diferenciarse</li>
 </ul>
 <p>Para obtener una descripción de las diferencias habidas sobre la rama destino (normalmente el trunk):</p>
-<p><code>bash
-$ diff &lt;fichero_base&gt;.izquierda-fusion.rMMMM &lt;fichero_base&gt;.copia-de-trabajo</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>diff<span class="w"> </span>&lt;fichero_base&gt;.izquierda-fusion.rMMMM<span class="w"> </span>&lt;fichero_base&gt;.copia-de-trabajo
+</code></pre></div></td></tr></table></div>
 <p>Para obtener una descripción de las diferencias habidas sobre la rama origen (normalmente el branch):</p>
-<p><code>bash
-$ diff &lt;fichero_base&gt;.izquierda-fusion.rMMMM &lt;fichero_base&gt;.derecha-fusion.rNNNN</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>diff<span class="w"> </span>&lt;fichero_base&gt;.izquierda-fusion.rMMMM<span class="w"> </span>&lt;fichero_base&gt;.derecha-fusion.rNNNN
+</code></pre></div></td></tr></table></div>
 <h2 id="borrado-de-la-rama">Borrado de la rama<a class="headerlink" href="#borrado-de-la-rama" title="Permanent link">&para;</a></h2>
 <p>Si una vez hecho el merge no se va a continuar trabajando en el branch, se puede considerar su borrado. Esto se hace con la simple orden siguiente:</p>
-<p><code>bash
-$ svn delete svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>svn<span class="w"> </span>delete<span class="w"> </span>svn+ssh://eduardo.moreno@svn.servidor.com/var/lib/subversion/ims/CCM/branches/b1_svg/
+</code></pre></div></td></tr></table></div>
 
 
 

@@ -4100,8 +4100,8 @@
 </ol>
 <h2 id="conexion">Conexión<a class="headerlink" href="#conexion" title="Permanent link">&para;</a></h2>
 <p>Para conectar al puerto UART recien expuesto, utilizamos el típico adaptador UART-USB. En mi caso utilizo <a href="https://www.amazon.es/dp/B07BBPX8B8">éste</a> que tiene bastantes posibilidades. Como cliente utilizo <code>screen</code> lanzado de la siguiente forma ya que la velocidad del puerto es 115200bps:</p>
-<p><code>bash
-sudo screen /dev/ttyUSB0 115200 8N1</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>screen<span class="w"> </span>/dev/ttyUSB0<span class="w"> </span><span class="m">115200</span><span class="w"> </span>8N1
+</code></pre></div></td></tr></table></div>
 <p>Sólo utilizaremos los pines GND, RX y TX, cruzando los dos últimos con los del adaptador UART-USB, es decir cableando el RX de la consola al TX del adaptador y viceversa. Aunque no utilizamos la línea de alimentación (2.8V en esta consola), configuraremos el adaptador UART-USB a 3.3V para que los niveles de señal que viajan por RX/TX sean lo más parecidos posible.</p>
 <p>Un ejemplo:</p>
 <iframe width="806" height="453" src="https://www.youtube.com/embed/Df2k8gsOvtM" title="Miyoo Mini UART session" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

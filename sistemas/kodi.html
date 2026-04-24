@@ -4105,28 +4105,32 @@
 <h1 id="kodiopenelec">Kodi/OpenELEC<a class="headerlink" href="#kodiopenelec" title="Permanent link">&para;</a></h1>
 <h2 id="desactivar-un-canal-de-pelisalacarta">Desactivar un canal de PelisALaCarta<a class="headerlink" href="#desactivar-un-canal-de-pelisalacarta" title="Permanent link">&para;</a></h2>
 <p>Si durante las búsquedas, alguno de los canales bloquea el progreso, seguramente habrá habido algún cambio en el código del sitio que el plugin no es capaz de interpretar. Habrá que esperar a que salga una nueva versión del plugin, pero mientras tanto se puede desactivar ese canal acudiendo a la ruta siguiente:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>/storage/.kodi/addons/plugin.video.pelisalacarta/channels
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>/storage/.kodi/addons/plugin.video.pelisalacarta/channels
 </code></pre></div></td></tr></table></div>
-
 <p>Allí localizamos el archivo .xml correspondiente al canal, lo editamos y ponemos a <code>false</code> la propiedad <code>active</code>.</p>
 <h2 id="mapeo-de-teclas-del-mando-a-distancia">Mapeo de teclas del mando a distancia<a class="headerlink" href="#mapeo-de-teclas-del-mando-a-distancia" title="Permanent link">&para;</a></h2>
 <p>En ocasiones alguna de las teclas del mando deja de funcionar. A mi me ha ocurrido varias veces con la tecla Back. Con el tiempo se soluciona solo (algunas veces reiniciar ayuda pero no siempre). Desconozco el mecanismo que estropea el mapeo de esta tecla, pero la solución es modificar el fichero <code>/storage/.kodi/userdata/keymaps/remote.xml</code>. En él, dentro de la sección <code>&lt;keymap&gt;&lt;global&gt;&lt;remote&gt;</code>, cuando deja de funcionar la tecla back me encuentro:</p>
-<p><code>xml
-&lt;back&gt;RunScript(special://userdata/keymaps/test.py)&lt;/back&gt;</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&lt;back&gt;</span>RunScript(special://userdata/keymaps/test.py)<span class="nt">&lt;/back&gt;</span>
+</code></pre></div></td></tr></table></div>
 <p>La solución es reponer el valor:</p>
-<p><code>xml
-&lt;back&gt;Back&lt;/back&gt;</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&lt;back&gt;</span>Back<span class="nt">&lt;/back&gt;</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="scrap-manual-de-una-serie">Scrap manual de una serie<a class="headerlink" href="#scrap-manual-de-una-serie" title="Permanent link">&para;</a></h2>
 <p>Si al intentar forzar el contenido de una carpeta con una serie, no nos localiza la serie y ésta está dada de alta en TheTVDB (me ocurrió por ejemplo con <a href="http://thetvdb.com/?tab=series&amp;id=290587&amp;lid=16">Ramón y Cajal</a>), incluir un fichero en la raíz del directorio de la serie con el nombre <code>tvshow.nfo</code> y el siguiente contenido (<a href="http://kodi.wiki/view/NFO_files/TV_shows#Video_.nfo_files_containing_a_URL">fuente</a>):</p>
-<p><code>http://thetvdb.com/index.php?tab=series&amp;id=290587</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>http://thetvdb.com/index.php?tab=series&amp;id=290587
+</code></pre></div></td></tr></table></div>
 <h2 id="script-autoarranque-para-reproducir-una-lista">Script autoarranque para reproducir una lista<a class="headerlink" href="#script-autoarranque-para-reproducir-una-lista" title="Permanent link">&para;</a></h2>
 <p>Situar en la ruta <code>.kodi/userdata/</code> un fichero con el nombre <code>autoexec.py</code>. Allí insertar el código:</p>
-<p>```python
-import xbmc</p>
-<p>playlist = xbmc.PlayList(xbmc.PLAYLIST_VIDEO)
-playlist.load('/storage/.kodi/userdata/playlists/video/Africa.m3u')
-xbmc.Player().play(item=playlist)
-```</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">xbmc</span>
+
+<span class="n">playlist</span> <span class="o">=</span> <span class="n">xbmc</span><span class="o">.</span><span class="n">PlayList</span><span class="p">(</span><span class="n">xbmc</span><span class="o">.</span><span class="n">PLAYLIST_VIDEO</span><span class="p">)</span>
+<span class="n">playlist</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/storage/.kodi/userdata/playlists/video/Africa.m3u&#39;</span><span class="p">)</span>
+<span class="n">xbmc</span><span class="o">.</span><span class="n">Player</span><span class="p">()</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">item</span><span class="o">=</span><span class="n">playlist</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="emulacion-de-juegos-en-kodi-18">Emulación de juegos en Kodi 18<a class="headerlink" href="#emulacion-de-juegos-en-kodi-18" title="Permanent link">&para;</a></h2>
 <p>Seguir <a href="https://koditips.com/retro-games-kodi/">esta guía</a>.</p>
 

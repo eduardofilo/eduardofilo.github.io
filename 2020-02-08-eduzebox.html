@@ -4317,7 +4317,8 @@
 <ol>
 <li>
 <p>Para tener disponible en el sistema <code>avrdude</code> podemos instalarlo desde el gestor de paquetes de Linux o bien instalar el Arduino IDE y averiguar la ruta donde queda. En mi caso lo instalé desde el gestor de paquetes.</p>
-<p><code>sudo apt install avrdude</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt install avrdude
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Cableo el BusPirate siguiendo la <a href="http://dangerousprototypes.com/docs/Bus_Pirate_AVR_Programming">documentación del protocolo ISP</a> para este aparato.</p>
@@ -4366,15 +4367,18 @@
 </li>
 <li>
 <p>Flasheo primero el bootloader (ya que si empiezo por los fusebits temo perder la capacidad para comunicar con el chip):</p>
-<p><code>sudo avrdude -c buspirate -p m644p -P /dev/ttyUSB0 -v -U flash:w:/home/edumoreno/Bootloader_0_4_5.hex</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo avrdude -c buspirate -p m644p -P /dev/ttyUSB0 -v -U flash:w:/home/edumoreno/Bootloader_0_4_5.hex
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Por último flasheo los fusebits:</p>
-<p><code>sudo avrdude -c buspirate -p m644p -P /dev/ttyUSB0 -v -V -B 1 -U lfuse:w:0xFE:m -U hfuse:w:0xD2:m -U efuse:w:0xFF:m</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo avrdude -c buspirate -p m644p -P /dev/ttyUSB0 -v -V -B 1 -U lfuse:w:0xFE:m -U hfuse:w:0xD2:m -U efuse:w:0xFF:m
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Aunque no es necesario, si queremos verificar el estado en que ha quedado el microcontrolador o testear la comunicación, podemos lanzar simplemente:</p>
-<p><code>sudo avrdude -c buspirate -p m644p -P /dev/ttyUSB0 -v</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo avrdude -c buspirate -p m644p -P /dev/ttyUSB0 -v
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <p>En este momento si conectamos la consola a un televisor deberíamos ver una imágen indicando que la consola <a href="https://youtu.be/1qNeGSJaQ9Q?t=153">ha cobrado vida</a>.</p>

@@ -4256,16 +4256,15 @@
 <li>Abrimos un terminal.</li>
 <li>
 <p>Bajamos la imagen de OpenELEC para Raspberry Pi 2:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>wget<span class="w"> </span>http://releases.openelec.tv/OpenELEC-RPi2.arm-7.0.1.img.gz
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ wget http://releases.openelec.tv/OpenELEC-RPi2.arm-7.0.1.img.gz
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Insertamos la tarjeta microSD en el lector de tarjetas del ordenador.</p>
 </li>
 <li>
 <p>Averiguamos la ruta del dispositivo de la tarjeta:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -4275,38 +4274,35 @@
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>df<span class="w"> </span>-h
-S.ficheros<span class="w">             </span>Tamaño<span class="w"> </span>Usados<span class="w">  </span>Disp<span class="w"> </span>Uso%<span class="w"> </span>Montado<span class="w"> </span>en
-/dev/sda3<span class="w">                 </span>61G<span class="w">    </span>44G<span class="w">   </span>14G<span class="w">  </span><span class="m">76</span>%<span class="w"> </span>/
-none<span class="w">                     </span><span class="m">4</span>,0K<span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="m">4</span>,0K<span class="w">   </span><span class="m">0</span>%<span class="w"> </span>/sys/fs/cgroup
-udev<span class="w">                     </span><span class="m">1</span>,9G<span class="w">    </span>12K<span class="w">  </span><span class="m">1</span>,9G<span class="w">   </span><span class="m">1</span>%<span class="w"> </span>/dev
-tmpfs<span class="w">                    </span>390M<span class="w">   </span><span class="m">1</span>,3M<span class="w">  </span>389M<span class="w">   </span><span class="m">1</span>%<span class="w"> </span>/run
-none<span class="w">                     </span><span class="m">5</span>,0M<span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="m">5</span>,0M<span class="w">   </span><span class="m">0</span>%<span class="w"> </span>/run/lock
-none<span class="w">                     </span><span class="m">2</span>,0G<span class="w">    </span>27M<span class="w">  </span><span class="m">1</span>,9G<span class="w">   </span><span class="m">2</span>%<span class="w"> </span>/run/shm
-none<span class="w">                     </span>100M<span class="w">    </span>84K<span class="w">  </span>100M<span class="w">   </span><span class="m">1</span>%<span class="w"> </span>/run/user
-/dev/mmcblk0p2<span class="w">           </span><span class="m">3</span>,4G<span class="w">   </span><span class="m">1</span>,6M<span class="w">  </span><span class="m">3</span>,4G<span class="w">   </span><span class="m">1</span>%<span class="w"> </span>/media/edumoreno/3f46971c-8bb7-4f8a-9095-2862537e6191
-/dev/mmcblk0p1<span class="w">           </span>256M<span class="w">   </span>104M<span class="w">  </span>153M<span class="w">  </span><span class="m">41</span>%<span class="w"> </span>/media/edumoreno/1765-7DD1
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>$ df -h
+S.ficheros             Tamaño Usados  Disp Uso% Montado en
+/dev/sda3                 61G    44G   14G  76% /
+none                     4,0K      0  4,0K   0% /sys/fs/cgroup
+udev                     1,9G    12K  1,9G   1% /dev
+tmpfs                    390M   1,3M  389M   1% /run
+none                     5,0M      0  5,0M   0% /run/lock
+none                     2,0G    27M  1,9G   2% /run/shm
+none                     100M    84K  100M   1% /run/user
+/dev/mmcblk0p2           3,4G   1,6M  3,4G   1% /media/edumoreno/3f46971c-8bb7-4f8a-9095-2862537e6191
+/dev/mmcblk0p1           256M   104M  153M  41% /media/edumoreno/1765-7DD1
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>La mejor forma de averiguar los dispositivos correctos es ejecutar <code>df -h</code> antes y después de insertar la tarjeta. En mi caso aparecen dos particiones sobre el dispositivo <code>/dev/mmcblk0</code> (p1 y p2 son el sufijo de las particiones; en algunos lectores de tarjetas nos podría aparecer <code>/dev/sdb1</code> y <code>/dev/sdb2</code> por ejemplo, lo que indicaría que el dispositivo es <code>/dev/sdb</code>).</p>
 </li>
 <li>
 <p>Desmontamos las particiones montadas de la tarjeta (en el ejemplo son dos, pero en una tarjeta nueva lo normal es que sólo sea una):</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>umount<span class="w"> </span>/dev/mmcblk0p1
-$<span class="w"> </span>sudo<span class="w"> </span>umount<span class="w"> </span>/dev/mmcblk0p2
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ sudo umount /dev/mmcblk0p1
+$ sudo umount /dev/mmcblk0p2
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Copiamos a la tarjeta la imagen de OpenELEC bajada en el paso 2:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>gunzip<span class="w"> </span>OpenELEC-RPi2.arm-7.0.1.img.gz<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/mmcblk0<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>2M
-$<span class="w"> </span>sudo<span class="w"> </span>sync
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ gunzip OpenELEC-RPi2.arm-7.0.1.img.gz -c | sudo dd of=/dev/mmcblk0 bs=2M
+$ sudo sync
 </code></pre></div></td></tr></table></div>
-
 </li>
 </ol>
 <h3 id="conexion-de-piezas">Conexión de piezas<a class="headerlink" href="#conexion-de-piezas" title="Permanent link">&para;</a></h3>
@@ -4315,12 +4311,11 @@ $<span class="w"> </span>sudo<span class="w"> </span>sync
 <h3 id="configuracion-kodi">Configuración Kodi<a class="headerlink" href="#configuracion-kodi" title="Permanent link">&para;</a></h3>
 <p>El primer arranque muestra un asistente en el que entre otras cosas se selecciona el idioma de los menús, la conexión a internet y si queremos activar los servicios SSH y Samba. Necesitamos activar el primero para poder averiguar más adelante el número de serie de la Raspberry para contratar la licencia MPEG-2.</p>
 <p>Si vamos a conectar por Wifi y no lo hemos hecho durante el asistente inicial, hay que acudir a la siguiente ruta para conectar a nuestro punto de acceso:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Sistema / OpenELEC / Conexiones / engancho mi AP
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Sistema / OpenELEC / Conexiones / engancho mi AP
 </code></pre></div></td></tr></table></div>
-
 <h4 id="instalacion-de-tvheadend">Instalación de TVheadend<a class="headerlink" href="#instalacion-de-tvheadend" title="Permanent link">&para;</a></h4>
 <p>Lo siguientes pasos nos permiten activar el sistema de gestión del TDT:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Sistema / Ajustes / Add-ons / Instalar desde repositorio / OpenELEC Add-ons (official) / Repositorio de Add-ons / OpenELEC Add-ons (unofficial) / Instalar
@@ -4328,13 +4323,11 @@ Sistema / Ajustes / Add-ons / Instalar desde repositorio / Todos los repositorio
 Sistema / Ajustes / Add-ons / Instalar desde repositorio / Todos los repositorios / Clientes PVR / Tvheadend HTSP Client / Instalar
 Sistema / Ajustes / TV / General / Activado
 </code></pre></div></td></tr></table></div>
-
 <h4 id="configuracion-de-tvheadend">Configuración de Tvheadend<a class="headerlink" href="#configuracion-de-tvheadend" title="Permanent link">&para;</a></h4>
 <p>Tvheadend tiene arquitectura cliente/servidor. Lo que manipulamos a través de Kodi es la parte cliente. El servicio se sirve por TCP/IP a través de los puertos 9981 y 9982. El segundo puerto ofrece una API que utilizan los clientes gráficos como el de Kodi o las aplicaciones para dispositivos móviles. Así pues en las configuraciones de estos programas habrá que indicar el puerto 9982. El primero ofrece un interfaz web al que podemos pues entrar con un navegador accediendo a la dirección http://ip-de-raspberry:9981</p>
 <p>La IP de la raspberry la podremos averiguar acudiendo a la ruta:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Sistema / OpenELEC / Conexiones
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Sistema / OpenELEC / Conexiones
 </code></pre></div></td></tr></table></div>
-
 <p>Por cierto que ya que estamos en esta ruta, se recomienda editar la conexión y poner una IP fija en el apartado IPv4, ya que como veremos, el interfaz web de Tvheadend es muy potente y nos convendrá utilizarlo para algunas tareas. También nos conviene tener una IP fija si vamos a consumir el servicio de televisor desde otros dispositivos como un ordenador (en ese caso utilizaremos el interfaz web) o un dispositivo móvil.</p>
 <p>Antes de continuar, comentar que me he encontrado con varios chips dentro del mismo adaptador Conceptronic. En concreto los dos siguientes identificadores:</p>
 <ul>
@@ -4342,25 +4335,23 @@ Sistema / Ajustes / TV / General / Activado
 <li>Siano Mobile Digital MDTV Receiver</li>
 </ul>
 <p>El primero funcionó directamente, pero en el segundo fue necesario modificar un parámetro de uno de los módulos que lo controlan. Para ello tuve que añadir el fichero <code>/etc/modprobe.d/smsmdtv.conf</code> con el siguiente contenido:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>options smsmdtv default_mode=4
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>options smsmdtv default_mode=4
 </code></pre></div></td></tr></table></div>
-
 <p>Una vez dentro de la consola web de Tvheadend seguimos los siguientes pasos para activar el decodificador de TDT y añadir los canales:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Configuration</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">General</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Language</span><span class="w"> </span><span class="n">settings</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Available</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Spanish</span><span class="p">;</span><span class="w"> </span><span class="n">Castilian</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Selected</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Save</span><span class="w"> </span><span class="n">configuration</span>
-<span class="n">Configuration</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">DVB</span><span class="w"> </span><span class="n">Inputs</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">TV</span><span class="w"> </span><span class="n">Adapters</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Realtek</span><span class="w"> </span><span class="n">RTL2832</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Parameters</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Basic</span><span class="w"> </span><span class="n">Settings</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Enabled</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Save</span>
-<span class="n">Configuration</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">DVB</span><span class="w"> </span><span class="n">Inputs</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Networks</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Add</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Type</span><span class="p">:</span><span class="w"> </span><span class="n">DVB</span><span class="o">-</span><span class="n">T</span><span class="w"> </span><span class="n">Network</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Network</span><span class="w"> </span><span class="n">Name</span><span class="p">:</span><span class="w"> </span><span class="n">TDT</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Create</span>
-<span class="n">Configuration</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">DVB</span><span class="w"> </span><span class="n">Inputs</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Muxes</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Add</span><span class="w"> </span><span class="p">(</span><span class="n">ver</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="n">más</span><span class="w"> </span><span class="n">adelante</span><span class="p">)</span>
-<span class="n">Configuration</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">DVB</span><span class="w"> </span><span class="n">Inputs</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">TV</span><span class="w"> </span><span class="n">Adapters</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Realtek</span><span class="w"> </span><span class="n">RTL2832</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Parameters</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Basic</span><span class="w"> </span><span class="n">Settings</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Networks</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">seleccionamos</span><span class="w"> </span><span class="n">TDT</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Save</span>
-<span class="n">Configuration</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">DVB</span><span class="w"> </span><span class="n">Inputs</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Networks</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">TDT</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Force</span><span class="w"> </span><span class="n">Scan</span>
-<span class="n">Configuration</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">DVB</span><span class="w"> </span><span class="n">Inputs</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Muxes</span><span class="w"> </span><span class="p">(</span><span class="n">observar</span><span class="w"> </span><span class="n">evolución</span><span class="w"> </span><span class="n">del</span><span class="w"> </span><span class="n">escaneo</span><span class="p">)</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Configuration / General / Language settings / Available / Spanish; Castilian -&gt; Selected / Save configuration
+Configuration / DVB Inputs / TV Adapters / Realtek RTL2832 / Parameters / Basic Settings / Enabled / Save
+Configuration / DVB Inputs / Networks / Add / Type: DVB-T Network / Network Name: TDT / Create
+Configuration / DVB Inputs / Muxes / Add (ver lista más adelante)
+Configuration / DVB Inputs / TV Adapters / Realtek RTL2832 / Parameters / Basic Settings / Networks / (seleccionamos TDT) / Save
+Configuration / DVB Inputs / Networks / TDT / Force Scan
+Configuration / DVB Inputs / Muxes (observar evolución del escaneo)
 </code></pre></div></td></tr></table></div>
-
 <p>Los muxes o multiplexes son las frecuencias sobre las que viajan empaquetadas los canales y una serie de parámetros de codificación. La tecnología TDT (o DVB-T más propiamente) permite codificar varios canales en una misma frecuencia. Algunos decodificadores de TDT permiten sintonización automática como hacen los televisores, pero el que he elegido para este montaje no. Así, hay que introducir la lista de muxes manualmente. Las frecuencias dependen de la provincia en la que nos encontremos. <a href="http://www.tdt1.com/">Aquí</a> por ejemplo podemos encontrarlas. Los muxes que utilizo en Zaragoza son los siguientes:</p>
 <p><img alt="TDT Muxes" src="images/posts/kodi-muxes.png" /></p>
 <p>Todos ellos se han introducido con los siguientes parámetros:</p>
@@ -4371,30 +4362,26 @@ Sistema / Ajustes / TV / General / Activado
 <li>Resto de parámetros: AUTO</li>
 </ul>
 <p>Una vez introducidos los muxes, hay que esperar a que el sistema los escanee. El proceso suele tardar un buen rato y se observa su evolución en las columnas <code>Scan Status</code> y <code>Scan Result</code> del pantallazo anterior. Una vez que veamos que todos los muxes han sido analizados, tenemos que indicar a Tvheadend que mapee los servicios encontrados con canales. Esto lo haremos pulsando el botón <code>Map All</code> que se encuentra en la ruta:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Configuration / DVB Inputs / Services / Map All / Check availability / Map
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Configuration / DVB Inputs / Services / Map All / Check availability / Map
 </code></pre></div></td></tr></table></div>
-
 <p>Para ordenar la lista de canales, hay que acudir a la siguiente ruta y asignar números correlativos a la columna <code>Number</code>:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Configuration / Channel/EPG / Channels
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Configuration / Channel/EPG / Channels
 </code></pre></div></td></tr></table></div>
-
 <p>Cuando hayamos terminado de numerar los canales pulsaremos el botón <code>Save</code>.</p>
 <h3 id="instalacion-licencia-mpeg-2">Instalación licencia MPEG-2<a class="headerlink" href="#instalacion-licencia-mpeg-2" title="Permanent link">&para;</a></h3>
 <p>Aunque por la arquitectura cliente/servidor de Tvheadend podremos visualizar la señal TDT desde otros dispositivos que tengamos en la misma red (como por ejemplo con nuestro teléfono Android con <a href="https://play.google.com/store/apps/details?id=org.tvheadend.tvhguide">esta aplicación</a> instalada), si queremos ver la televisión en el propio Kodi, vamos a necesitar adquirir la licencia para utilizar el hardware de decodificación MPEG-2 que hay incluido en el procesador Broadcom 2836 de la Raspberry Pi 2. La licencia tiene un coste de £2.40 Para ello necesitamos primero averiguar el número de serie de la Raspberry siguiendo estos pasos:</p>
 <ol>
 <li>
 <p>Conectamos por SSH con la Raspberry (password = <code>openelec</code>):</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>root@ip-de-raspberry
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ ssh root@ip-de-raspberry
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Obtenemos el número de serie:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>OpenELEC:~ # cat /proc/cpuinfo | fgrep Serial
 Serial      : 0000000029bcaeeb
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Adquirimos la licencia acudiendo a la <a href="http://www.raspberrypi.com/mpeg-2-license-key/">Raspberry Pi Store</a>.</p>

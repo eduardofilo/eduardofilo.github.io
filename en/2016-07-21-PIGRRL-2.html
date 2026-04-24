@@ -4190,28 +4190,25 @@
 <li>Bajamos Rasbian Lite: <a href="https://www.raspberrypi.org/downloads/raspbian/">https://www.raspberrypi.org/downloads/raspbian/</a></li>
 <li>
 <p>Instalamos:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>unzip -p 2016-05-27-raspbian-jessie-lite.zip | sudo dd of=/dev/mmcblk0 bs=2M
 sudo sync
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Pinchamos la tarjeta en la Raspberry Pi y conectamos un cable de red para poder acceder por SSH (user: pi; pwd: raspberry).</p>
 </li>
 <li>
 <p>Actualizamos la distribución:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt-get update
 sudo apt-get upgrade
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Hacemos algunos ajustes generales:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo raspi-config
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo raspi-config
 </code></pre></div></td></tr></table></div>
-
 <ol>
 <li>
 <p>Extendemos la partición a toda la SD (opción: <code>1 Expand Filesystem</code>).</p>
@@ -4221,8 +4218,8 @@ sudo apt-get upgrade
 </li>
 <li>
 <p>Ajustar los locales (opción <code>5 Internationalisation Options &gt; I1 Change Locale</code>). Yo por ejemplo elijo <code>en_GB.UTF-8</code>. Es importante que todas las variables que aparecen al ejecutar el comando <code>locale</code> tengan valor correcto e igual en todas ellas. Tras hacer los ajustes es necesario reiniciar, ya que se gestionan mediante variables de entorno de sesión. Tras hacerlo volver a comprobar con el comando <code>locale</code>. Si alguna de las variables sigue con un valor incorrecto (suele ocurrir en LANG, LANGUAGE y LC_ALL), usar el siguiente comando e ir comprobando con sucesivos reinicios hasta que todas las variables tengan el mismo locale:
-    <code>bash
-    sudo update-locale LC_ALL="en_GB.UTF-8"</code></p>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>update-locale<span class="w"> </span><span class="nv">LC_ALL</span><span class="o">=</span><span class="s2">&quot;en_GB.UTF-8&quot;</span>
+</code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>Desactivamos el Overscan (opción <code>9 Advanced Options &gt; A1 Overscan</code>, respondiendo "No").</p>
@@ -4237,25 +4234,22 @@ sudo apt-get upgrade
 <ol>
 <li>
 <p>Instalamos unos paquetes necesarios:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt-get install git dialog xmlstarlet
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt-get install git dialog xmlstarlet
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Bajamos el código de RetroPie-Setup:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>cd ~
 git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Ejecutamos RetroPie-Setup:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>cd RetroPie-Setup
 sudo ./retropie_setup.sh
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Cerramos el cuadro de advertencia que aparece y acudimos a la siguiente ruta: <code>Manage Packages &gt; Quick Install</code></p>
@@ -4268,7 +4262,7 @@ sudo ./retropie_setup.sh
 <ol>
 <li>
 <p>Bajamos, compilamos e instalamos:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -4286,19 +4280,16 @@ cmake ..
 make
 sudo install fbcp /usr/local/bin/fbcp
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Configuramos el sistema para que autoarranque el programa que acabamos de instalar. Para ello editar <code>/etc/rc.local</code> y añadir lo siguiente justo antes de la última línea (<code>exit 0</code>):</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>/usr/local/bin/fbcp &amp;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>/usr/local/bin/fbcp &amp;
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Reconfiguramos la consola para que se vea bien en la pequeña PiTFT (Elegimos las opciones <code>UTF-8</code>, <code>Guess optimal character set</code>, <code>Terminus</code> y <code>6x12 (framebuffer only).</code>):</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo dpkg-reconfigure console-setup
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo dpkg-reconfigure console-setup
 </code></pre></div></td></tr></table></div>
-
 </li>
 </ol>
 <h3 id="configuracion-de-pitft">Configuración de PiTFT<a class="headerlink" href="#configuracion-de-pitft" title="Permanent link">&para;</a></h3>
@@ -4306,32 +4297,29 @@ sudo install fbcp /usr/local/bin/fbcp
 <ol>
 <li>
 <p>Instalamos un repositorio de Adafruit y un par de paquetes:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">cd</span><span class="w"> </span><span class="o">~</span>
-<span class="n">curl</span><span class="w"> </span><span class="o">-</span><span class="n">SLs</span><span class="w"> </span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">apt</span><span class="o">.</span><span class="n">adafruit</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">add</span><span class="o">-</span><span class="n">pin</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">bash</span>
-<span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">raspberrypi</span><span class="o">-</span><span class="n">bootloader</span><span class="w"> </span><span class="n">adafruit</span><span class="o">-</span><span class="n">pitft</span><span class="o">-</span><span class="n">helper</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>cd ~
+curl -SLs https://apt.adafruit.com/add-pin | sudo bash
+sudo apt-get install raspberrypi-bootloader adafruit-pitft-helper
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Ejecutamos el aistente para configurar PiTFT:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo adafruit-pitft-helper -t 28r
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo adafruit-pitft-helper -t 28r
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Responder <code>n</code> a la primera pregunta y <code>y</code> a la segunda. Con esto último asociaremos la tecla vinculada al GPIO23 (la segunda empezando por arriba de las cuatro que tiene la pantalla a la izquierda) a un apagado/encendido de la consola que nos servirá para reiniciarla limpiamente si en algún momento perdemos el control en alguno de los emuladores.</p>
 </li>
 <li>
 <p>Editar el fichero <code>/boot/config.txt</code> y cambiar los valores de la línea que empieza con <code>dtoverlay</code> para dejarla como sigue:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>dtoverlay=pitft28-resistive,rotate=270,speed=80000000,fps=60
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>dtoverlay=pitft28-resistive,rotate=270,speed=80000000,fps=60
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>En el mismo fichero <code>/boot/config.txt</code> añadir las siguientes líneas (si ya existen comentarlas):</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>hdmi_force_hotplug=1
@@ -4339,7 +4327,6 @@ hdmi_group=2
 hdmi_mode=87
 hdmi_cvt=320 240 60 1 0 0 0
 </code></pre></div></td></tr></table></div>
-
 </li>
 </ol>
 <h2 id="configurar-emulationstation">Configurar EmulationStation<a class="headerlink" href="#configurar-emulationstation" title="Permanent link">&para;</a></h2>
@@ -4347,9 +4334,8 @@ hdmi_cvt=320 240 60 1 0 0 0
 <ol>
 <li>
 <p>Añadir lo siguiente al final del fichero <code>/etc/profile</code>:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>[<span class="w"> </span>-n<span class="w"> </span>&quot;<span class="cp">${</span><span class="n">SSH_CONNECTION</span><span class="cp">}</span>&quot;<span class="w"> </span>]<span class="w"> </span>||<span class="w"> </span>emulationstation
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>[ -n &quot;${SSH_CONNECTION}&quot; ] || emulationstation
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Configurar con raspi-config el autologin en consola. Para ello seguir la ruta <code>3 Boot Options &gt; B1 Desktop / CLI &gt; B2 Console Autologin</code>.</p>
@@ -4360,17 +4346,16 @@ hdmi_cvt=320 240 60 1 0 0 0
 <ol>
 <li>
 <p>Bajamos el código:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>cd ~
 git clone https://github.com/adafruit/Adafruit-Retrogame.git
 cd Adafruit-Retrogame
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Editamos el fichero <code>~/Adafruit-Retrogame/retrogame.c</code> y sustituimos la estructura <code>ioStandard</code> que hay a partir de la línea 111 por lo que sigue. Esto hará corresponder algunas de las teclas importantes para manejar los emuladores y el propio EmulationStation con el mapeo de pulsadores del gamepad de PiGRRL 2:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -4392,96 +4377,107 @@ cd Adafruit-Retrogame
 <span class="normal">20</span>
 <span class="normal">21</span>
 <span class="normal">22</span>
-<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ioStandard</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="o">//</span> <span class="n">This</span> <span class="n">pin</span><span class="o">/</span><span class="n">key</span> <span class="n">table</span> <span class="n">is</span> <span class="n">used</span> <span class="n">when</span> <span class="n">the</span> <span class="n">PiTFT</span> <span class="n">isn</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">found</span>
-    <span class="o">//</span> <span class="p">(</span><span class="n">using</span> <span class="n">HDMI</span> <span class="n">or</span> <span class="n">composite</span> <span class="n">instead</span><span class="p">),</span> <span class="n">as</span> <span class="n">with</span> <span class="n">our</span> <span class="n">original</span>
-    <span class="o">//</span> <span class="n">retro</span> <span class="n">gaming</span> <span class="n">guide</span><span class="p">.</span>
-    <span class="o">//</span> <span class="n">Input</span>   <span class="n">Output</span> <span class="p">(</span><span class="n">from</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">linux</span><span class="o">/</span><span class="n">input</span><span class="p">.</span><span class="n">h</span><span class="p">)</span>
-    <span class="p">{</span>  <span class="mi">17</span><span class="p">,</span>     <span class="n">KEY_RIGHTSHIFT</span> <span class="p">},</span>  <span class="o">//</span> <span class="n">PiTFT</span> <span class="mi">17</span>
-    <span class="p">{</span>  <span class="mi">22</span><span class="p">,</span>     <span class="n">KEY_RIGHTCTRL</span>  <span class="p">},</span>  <span class="o">//</span> <span class="n">PiTFT</span> <span class="mi">22</span>
-    <span class="p">{</span>  <span class="mi">27</span><span class="p">,</span>     <span class="n">KEY_ESC</span>        <span class="p">},</span>  <span class="o">//</span> <span class="n">PiTFT</span> <span class="mi">27</span>
-    <span class="p">{</span>   <span class="mi">4</span><span class="p">,</span>     <span class="n">KEY_LEFT</span>       <span class="p">},</span>  <span class="o">//</span> <span class="n">Left</span>
-    <span class="p">{</span>  <span class="mi">16</span><span class="p">,</span>     <span class="n">KEY_UP</span>         <span class="p">},</span>  <span class="o">//</span> <span class="n">Up</span>
-    <span class="p">{</span>  <span class="mi">19</span><span class="p">,</span>     <span class="n">KEY_RIGHT</span>      <span class="p">},</span>  <span class="o">//</span> <span class="n">Right</span>
-    <span class="p">{</span>  <span class="mi">26</span><span class="p">,</span>     <span class="n">KEY_DOWN</span>       <span class="p">},</span>  <span class="o">//</span> <span class="n">Down</span>
-    <span class="p">{</span>   <span class="mi">5</span><span class="p">,</span>     <span class="n">KEY_SPACE</span>      <span class="p">},</span>  <span class="o">//</span> <span class="n">Select</span>
-    <span class="p">{</span>   <span class="mi">6</span><span class="p">,</span>     <span class="n">KEY_ENTER</span>      <span class="p">},</span>  <span class="o">//</span> <span class="n">Start</span>
-    <span class="p">{</span>  <span class="mi">14</span><span class="p">,</span>     <span class="n">KEY_LEFTCTRL</span>   <span class="p">},</span>  <span class="o">//</span> <span class="n">A</span> <span class="n">Button</span>
-    <span class="p">{</span>  <span class="mi">15</span><span class="p">,</span>     <span class="n">KEY_LEFTALT</span>    <span class="p">},</span>  <span class="o">//</span> <span class="n">B</span> <span class="n">Button</span>
-    <span class="p">{</span>  <span class="mi">20</span><span class="p">,</span>     <span class="n">KEY_Z</span>          <span class="p">},</span>  <span class="o">//</span> <span class="n">X</span> <span class="n">Button</span>
-    <span class="p">{</span>  <span class="mi">18</span><span class="p">,</span>     <span class="n">KEY_X</span>          <span class="p">},</span>  <span class="o">//</span> <span class="n">Y</span> <span class="n">Button</span>
-    <span class="p">{</span>  <span class="mi">12</span><span class="p">,</span>     <span class="n">KEY_A</span>          <span class="p">},</span>  <span class="o">//</span> <span class="n">L</span> <span class="n">Shoulder</span>
-    <span class="p">{</span>  <span class="mi">13</span><span class="p">,</span>     <span class="n">KEY_S</span>          <span class="p">},</span>  <span class="o">//</span> <span class="n">R</span> <span class="n">Shoulder</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code>ioStandard[] = {
+    // This pin/key table is used when the PiTFT isn&#39;t found
+    // (using HDMI or composite instead), as with our original
+    // retro gaming guide.
+    // Input   Output (from /usr/include/linux/input.h)
+    {  17,     KEY_RIGHTSHIFT },  // PiTFT 17
+    {  22,     KEY_RIGHTCTRL  },  // PiTFT 22
+    {  27,     KEY_ESC        },  // PiTFT 27
+    {   4,     KEY_LEFT       },  // Left
+    {  16,     KEY_UP         },  // Up
+    {  19,     KEY_RIGHT      },  // Right
+    {  26,     KEY_DOWN       },  // Down
+    {   5,     KEY_SPACE      },  // Select
+    {   6,     KEY_ENTER      },  // Start
+    {  14,     KEY_LEFTCTRL   },  // A Button
+    {  15,     KEY_LEFTALT    },  // B Button
+    {  20,     KEY_Z          },  // X Button
+    {  18,     KEY_X          },  // Y Button
+    {  12,     KEY_A          },  // L Shoulder
+    {  13,     KEY_S          },  // R Shoulder
 
-    <span class="o">//</span> <span class="n">For</span> <span class="n">credit</span><span class="o">/</span><span class="n">start</span><span class="o">/</span><span class="n">etc</span><span class="p">.,</span> <span class="n">use</span> <span class="n">USB</span> <span class="n">keyboard</span> <span class="n">or</span> <span class="n">add</span> <span class="n">more</span> <span class="n">buttons</span><span class="p">.</span>
-    <span class="p">{</span>  <span class="o">-</span><span class="mi">1</span><span class="p">,</span>     <span class="o">-</span><span class="mi">1</span>           <span class="p">}</span> <span class="p">};</span> <span class="o">//</span> <span class="kr">END</span> <span class="kr">OF</span> <span class="n">LIST</span><span class="p">,</span> <span class="kr">DO</span> <span class="n">NOT</span> <span class="n">CHANGE</span>
+    // For credit/start/etc., use USB keyboard or add more buttons.
+    {  -1,     -1           } }; // END OF LIST, DO NOT CHANGE
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Dentro del mismo fichero <code>~/Adafruit-Retrogame/retrogame.c</code> acudir a la línea 300 (tras el cambio anterior) y sustituir:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Select io[] table for Cupcade (TFT) or &#39;normal&#39; project.</span>
-<span class="n">io</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">access</span><span class="p">(</span><span class="s">&quot;/etc/modprobe.d/adafruit.conf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">F_OK</span><span class="p">)</span><span class="w"> </span><span class="o">||</span>
-<span class="w">      </span><span class="n">access</span><span class="p">(</span><span class="s">&quot;/dev/fb1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">F_OK</span><span class="p">))</span><span class="w"> </span>?<span class="w"> </span><span class="n">ioStandard</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ioTFT</span><span class="p">;</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>// Select io[] table for Cupcade (TFT) or &#39;normal&#39; project.
+io = (access(&quot;/etc/modprobe.d/adafruit.conf&quot;, F_OK) ||
+      access(&quot;/dev/fb1&quot;, F_OK)) ? ioStandard : ioTFT;
 </code></pre></div></td></tr></table></div>
-
 <p>por:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>io = ioStandard;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>io = ioStandard;
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Compilamos e instalamos:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>make retrogame
 sudo mv retrogame /usr/local/bin
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Crear el fichero <code>/etc/udev/rules.d/10-retrogame.rules</code> con el siguiente contenido:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>SUBSYSTEM==&quot;input&quot;, ATTRS{name}==&quot;retrogame&quot;, ENV{ID_INPUT_KEYBOARD}=&quot;1&quot;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>SUBSYSTEM==&quot;input&quot;, ATTRS{name}==&quot;retrogame&quot;, ENV{ID_INPUT_KEYBOARD}=&quot;1&quot;
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Añadir lo siguiente al final de <code>/etc/rc.local</code>:</p>
-<p><code>bash
-/usr/local/bin/retrogame &amp;</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>/usr/local/bin/retrogame<span class="w"> </span><span class="p">&amp;</span>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Añadir los siguientes módulos al fichero <code>/etc/modules</code>:</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>uinput
 joydev
 snd-bcm2835
 </code></pre></div></td></tr></table></div>
-
 </li>
 <li>
 <p>Sustituir el contenido del fichero <code>/opt/retropie/configs/all/emulationstation/es_input.cfg</code> por:</p>
-<p><code>xml
-&lt;?xml version="1.0"?&gt;
-&lt;inputList&gt;
-  &lt;inputAction type="onfinish"&gt;
-    &lt;command&gt;/opt/retropie/supplementary/emulationstation/scripts/inputconfiguration.sh&lt;/command&gt;
-  &lt;/inputAction&gt;
-  &lt;inputConfig type="keyboard" deviceName="Keyboard" deviceGUID="-1"&gt;
-    &lt;input name="a" type="key" id="1073742048" value="1" /&gt;
-    &lt;input name="b" type="key" id="1073742050" value="1" /&gt;
-    &lt;input name="down" type="key" id="1073741905" value="1" /&gt;
-    &lt;input name="left" type="key" id="1073741904" value="1" /&gt;
-    &lt;input name="pagedown" type="key" id="120" value="1" /&gt;
-    &lt;input name="pageup" type="key" id="122" value="1" /&gt;
-    &lt;input name="right" type="key" id="1073741903" value="1" /&gt;
-    &lt;input name="select" type="key" id="32" value="1" /&gt;
-    &lt;input name="start" type="key" id="13" value="1" /&gt;
-    &lt;input name="up" type="key" id="1073741906" value="1" /&gt;
-  &lt;/inputConfig&gt;
-&lt;/inputList&gt;</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;inputList&gt;</span>
+<span class="w">  </span><span class="nt">&lt;inputAction</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;onfinish&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;command&gt;</span>/opt/retropie/supplementary/emulationstation/scripts/inputconfiguration.sh<span class="nt">&lt;/command&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/inputAction&gt;</span>
+<span class="w">  </span><span class="nt">&lt;inputConfig</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;keyboard&quot;</span><span class="w"> </span><span class="na">deviceName=</span><span class="s">&quot;Keyboard&quot;</span><span class="w"> </span><span class="na">deviceGUID=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;a&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1073742048&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;b&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1073742050&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;down&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1073741905&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;left&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1073741904&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;pagedown&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;120&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;pageup&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;122&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;right&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1073741903&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;select&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;32&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;start&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;13&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;up&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1073741906&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/inputConfig&gt;</span>
+<span class="nt">&lt;/inputList&gt;</span>
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <h2 id="fin">FIN<a class="headerlink" href="#fin" title="Permanent link">&para;</a></h2>

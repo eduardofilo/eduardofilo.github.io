@@ -4066,22 +4066,37 @@
 <h2 id="a-traves-de-cable-usb">A través de cable USB<a class="headerlink" href="#a-traves-de-cable-usb" title="Permanent link">&para;</a></h2>
 <p>Cuando la RG350 se conecta por USB a través del puerto USB2 al ordenador, se monta como un adaptador de red nuevo en el PC con una configuración de punto a punto. Es decir, se define una nueva red entre los dos equipos, con sólo dos IPs posibles, <code>10.1.1.1</code> para el PC y <code>10.1.1.2</code> para la RG350.</p>
 <p>Así es por ejemplo como se ve el adaptador desde la RG350:</p>
-<p><code>usb0      Link encap:Ethernet  HWaddr 7E:5B:3B:17:C7:7A
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>usb0      Link encap:Ethernet  HWaddr 7E:5B:3B:17:C7:7A
           inet addr:10.1.1.2  Bcast:0.0.0.0  Mask:255.255.255.252
           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
           RX packets:62 errors:0 dropped:12 overruns:0 frame:0
           TX packets:37 errors:0 dropped:0 overruns:0 carrier:0
           collisions:0 txqueuelen:1000
-          RX bytes:9880 (9.6 KiB)  TX bytes:7153 (6.9 KiB)</code></p>
+          RX bytes:9880 (9.6 KiB)  TX bytes:7153 (6.9 KiB)
+</code></pre></div></td></tr></table></div>
 <p>Y así la contraparte en mi máquina Linux:</p>
-<p><code>enp0s29u1u2: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>enp0s29u1u2: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
         inet 10.1.1.1  netmask 255.255.255.252  broadcast 10.1.1.3
         inet6 fe80::fe3:ce72:8963:ca1  prefixlen 64  scopeid 0x20&lt;link&gt;
         ether 1e:fc:4d:c7:bd:b1  txqueuelen 1000  (Ethernet)
         RX packets 55  bytes 9539 (9.5 KB)
         RX errors 0  dropped 0  overruns 0  frame 0
         TX packets 95  bytes 14091 (14.0 KB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</code></p>
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+</code></pre></div></td></tr></table></div>
 <p>Como vemos por la netmask sólo se dejan los dos últimos bits para definir direcciones, lo que sólo permite como IPs posibles las terminadas en 1 y 2 (0 es la dirección de red y 3 la de broadcast).</p>
 <p>En lo que sigue, voy a ilustrar la situación con mi infraestructura, en la que mi PC sale a internet a través del adaptador <code>wlan0</code> con la IP <code>192.168.1.40</code>. Sustituir estos dos datos por los que corresponda.</p>
 <p><img alt="RG350 esquema de red" src="../images/posts/rg350_network.png" /></p>
@@ -4090,31 +4105,46 @@
 <ol>
 <li>
 <p>Activar el IP forward en el sistema:</p>
-<p><code>sudo sh -c "echo 1 &gt; /proc/sys/net/ipv4/ip_forward"</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo sh -c &quot;echo 1 &gt; /proc/sys/net/ipv4/ip_forward&quot;
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Configurar una regla en IPables para hacer NAT de la red entre la RG y el PC (sustituir <code>wlan0</code> por el adaptador de red que dé salida a internet en el PC, en mi caso el adaptador Wifi, y la IP <code>192.168.1.40</code> por la que tenga dicho adaptador en el PC):</p>
-<p><code>sudo iptables -t nat -A POSTROUTING -s 10.1.1.0/2 -o wlan0 -j SNAT --to 192.168.1.40</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo iptables -t nat -A POSTROUTING -s 10.1.1.0/2 -o wlan0 -j SNAT --to 192.168.1.40
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>A partir de este momento ya tendremos salida a internet, pero no se resolverán los nombres de dominio ya que en la RG no hay definido ningún DNS. Para hacerlo crear el fichero <code>/usr/local/etc/resolv.conf</code> y definir dentro de él nuestros DNS preferidos, por ejemplo los de <a href="https://www.opendns.com/">OpenDNS</a>:</p>
-<p><code>nameserver 208.67.222.222
-nameserver 208.67.220.220</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>nameserver 208.67.222.222
+nameserver 208.67.220.220
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <p>Los pasos 1 y 2 no son permanentes en el sistema, por lo que cuando reiniciemos se perderán. Si queremos que se mantengan entre reinicios habrá que escribirlos en un script que se ejecute durante el arranque (por ejemplo añadiéndolos en <code>/etc/rc.local</code>).</p>
 <p>Ya podremos hacer cosas como ésta:</p>
-<p>```
-RG350:/media/data/local/home # wget apuntes.eduardofilo.es
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>RG350:/media/data/local/home # wget apuntes.eduardofilo.es
 --2020-02-09 02:31:03--  http://apuntes.eduardofilo.es/
 Resolving apuntes.eduardofilo.es... 185.199.108.153, 185.199.109.153, 185.199.110.153, ...
 Connecting to apuntes.eduardofilo.es|185.199.108.153|:80... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 45544 (44K) [text/html]
-Saving to: 'index.html'</p>
-<p>100%[============================================================================================================&gt;] 45,544       130KB/s   in 0.3s</p>
-<p>2020-02-09 02:31:05 (130 KB/s) - 'index.html' saved [45544/45544]
-```</p>
+Saving to: &#39;index.html&#39;
+
+100%[============================================================================================================&gt;] 45,544       130KB/s   in 0.3s
+
+2020-02-09 02:31:05 (130 KB/s) - &#39;index.html&#39; saved [45544/45544]
+</code></pre></div></td></tr></table></div>
 <h2 id="a-traves-de-adaptador-wifi">A través de adaptador Wifi<a class="headerlink" href="#a-traves-de-adaptador-wifi" title="Permanent link">&para;</a></h2>
 <p>También podemos conectar la consola a internet directamente y de forma inalámbrica insertando un adaptador Wifi en el puerto USB1. Hay que tener en cuenta que no sirve cualquiera, ya que el sistema operativo sólo da soporte a los adaptadores basados en los siguientes chips:</p>
 <ul>
