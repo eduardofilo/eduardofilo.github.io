@@ -3259,6 +3259,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#modificacion-manual-de-paquetes-aur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificación Manual de Paquetes AUR
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modificación Manual de Paquetes AUR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-clonar-el-repositorio-del-paquete" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Clonar el repositorio del paquete
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-modificar-el-pkgbuild-o-archivos-fuente" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Modificar el PKGBUILD o archivos fuente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-compilar-e-instalar" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Compilar e Instalar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resumen-de-comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen de comandos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-manejar-las-actualizaciones-futuras" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Cómo manejar las actualizaciones futuras?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4048,6 +4108,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#modificacion-manual-de-paquetes-aur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificación Manual de Paquetes AUR
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modificación Manual de Paquetes AUR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-clonar-el-repositorio-del-paquete" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Clonar el repositorio del paquete
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-modificar-el-pkgbuild-o-archivos-fuente" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Modificar el PKGBUILD o archivos fuente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-compilar-e-instalar" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Compilar e Instalar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resumen-de-comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen de comandos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-manejar-las-actualizaciones-futuras" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Cómo manejar las actualizaciones futuras?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4097,6 +4217,72 @@
 <ul>
 <li><code>pamac-aur</code> (AUR): Interfaz gráfica para pacman/yay.</li>
 </ul>
+<h2 id="modificacion-manual-de-paquetes-aur">Modificación Manual de Paquetes AUR<a class="headerlink" href="#modificacion-manual-de-paquetes-aur" title="Permanent link">&para;</a></h2>
+<p>Este es el procedimiento oficial cuando un paquete falla, quieres aplicar un parche personalizado o necesitas cambiar una opción de compilación antes de instalar.</p>
+<h3 id="1-clonar-el-repositorio-del-paquete">1. Clonar el repositorio del paquete<a class="headerlink" href="#1-clonar-el-repositorio-del-paquete" title="Permanent link">&para;</a></h3>
+<p>En lugar de usar un helper (como <code>yay</code>), descargamos el código fuente directamente desde los servidores de AUR usando Git.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/nombre-del-paquete.git
+<span class="nb">cd</span><span class="w"> </span>nombre-del-paquete
+</code></pre></div></td></tr></table></div>
+<h3 id="2-modificar-el-pkgbuild-o-archivos-fuente">2. Modificar el PKGBUILD o archivos fuente<a class="headerlink" href="#2-modificar-el-pkgbuild-o-archivos-fuente" title="Permanent link">&para;</a></h3>
+<p>Aquí es donde editas lo que necesites.</p>
+<ul>
+<li><strong>Para errores de rutas:</strong> Edita las funciones <code>build()</code> o <code>package()</code> dentro del archivo <code>PKGBUILD</code>.</li>
+<li><strong>Para cambiar versiones:</strong> Modifica la variable <code>pkgver</code>.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Si modificas archivos que están listados en el array <code>source()</code> (como un parche <code>.patch</code> o un script <code>.sh</code>), las sumas de verificación (checksums) fallarán. Para arreglarlo automáticamente, ejecuta:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>updpkgsums
+</code></pre></div></td></tr></table></div>
+</div>
+<h3 id="3-compilar-e-instalar">3. Compilar e Instalar<a class="headerlink" href="#3-compilar-e-instalar" title="Permanent link">&para;</a></h3>
+<p>Una vez que el <code>PKGBUILD</code> está a tu gusto, usamos el comando <code>makepkg</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>makepkg<span class="w"> </span>-si
+</code></pre></div></td></tr></table></div>
+<p><strong>Desglose de flags:</strong></p>
+<ul>
+<li><code>-s</code> (<strong>s</strong>ync): Instala automáticamente las dependencias necesarias usando <code>pacman</code>.</li>
+<li><code>-i</code> (<strong>i</strong>nstall): Instala el paquete generado (<code>.pkg.tar.zst</code>) en tu sistema una vez terminada la compilación.</li>
+</ul>
+<h3 id="resumen-de-comandos">Resumen de comandos<a class="headerlink" href="#resumen-de-comandos" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Acción</th>
+<th>Comando</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bajar fuentes</strong></td>
+<td><code>git clone [https://aur.archlinux.org/paquete.git](https://aur.archlinux.org/paquete.git)</code></td>
+</tr>
+<tr>
+<td><strong>Actualizar sumas</strong></td>
+<td><code>updpkgsums</code></td>
+</tr>
+<tr>
+<td><strong>Limpiar y compilar</strong></td>
+<td><code>makepkg -f</code> (el <code>-f</code> fuerza a sobrescribir si ya compilaste antes)</td>
+</tr>
+<tr>
+<td><strong>Compilar e instalar</strong></td>
+<td><code>makepkg -si</code></td>
+</tr>
+<tr>
+<td><strong>Limpiar basura</strong></td>
+<td><code>makepkg -c</code> (borra los directorios temporales <code>src/</code> y <code>pkg/</code> tras terminar)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="como-manejar-las-actualizaciones-futuras">¿Cómo manejar las actualizaciones futuras?<a class="headerlink" href="#como-manejar-las-actualizaciones-futuras" title="Permanent link">&para;</a></h3>
+<p>Si modificaste un paquete manualmente, la próxima vez que uses <code>yay -Syu</code>, el helper verá que hay una versión nueva en AUR e intentará sobrescribir tu versión modificada. Tienes dos opciones:</p>
+<ol>
+<li><strong>Si el error ya se arregló en AUR:</strong> Deja que <code>yay</code> lo actualice normalmente.</li>
+<li><strong>Si quieres mantener tu modificación:</strong> Puedes añadir el paquete a la línea <code>IgnorePkg</code> en <code>/etc/pacman.conf</code> para que pacman no lo toque sin tu permiso.</li>
+</ol>
 
 
 
