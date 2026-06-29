@@ -4285,10 +4285,11 @@ $ git init
 </li>
 </ol>
 <h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>Nota: este workflow está actualizado para KiCad 10. Muchos de los pasos se pueden contrastar con el tutorial oficial <a href="https://docs.kicad.org/10.0/es/getting_started_in_kicad/getting_started_in_kicad.html">Getting Started in KiCad</a>.</p>
-</blockquote>
-<p>KiCad se utiliza fundamentalmente con atajos de teclado. Para listar todos los atajos disponibles en cualquiera de los editores, ir a <code>Help &gt; List Hotkeys...</code> (atajo por defecto <code>Ctrl+F1</code>). Hay que tener en cuenta que algunos botones de las barras de herramientas tienen un pequeño triángulo en la esquina inferior derecha: manteniéndolos pulsados se despliega una paleta con herramientas relacionadas (por ejemplo, los distintos tipos de etiquetas).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Este workflow está actualizado para KiCad 10. Muchos de los pasos se pueden contrastar con el tutorial oficial <a href="https://docs.kicad.org/10.0/es/getting_started_in_kicad/getting_started_in_kicad.html">Getting Started in KiCad</a>.</p>
+</div>
+<p>KiCad se utiliza fundamentalmente con atajos de teclado. Para listar todos los atajos disponibles en cualquiera de los editores, ir a <code>Help &gt; List Hotkeys...</code>. Hay que tener en cuenta que algunos botones de las barras de herramientas tienen un pequeño triángulo en la esquina inferior derecha: manteniéndolos pulsados se despliega una paleta con herramientas relacionadas (por ejemplo, los distintos tipos de etiquetas).</p>
 <ol>
 <li>Crear el proyecto:<ol>
 <li>Desde el KiCad Project Manager, <code>File &gt; New Project...</code>, elegir la plantilla <code>Default</code>, dar un nombre y marcar <code>Create a new folder for the project</code>. Esto crea los ficheros <code>.kicad_pro</code> (proyecto), <code>.kicad_sch</code> (esquemático) y <code>.kicad_pcb</code> (placa), que ahora forman un diseño integrado único.</li>
@@ -4343,6 +4344,16 @@ $ git init
 <li>En el panel central seleccionar un símbolo y en el panel derecho hacer doble clic sobre la huella a asignar. Aprovechar los botones de filtrado (filtrar por los filtros del símbolo, por número de pines, por librería seleccionada) y la caja de texto para acotar la lista. Pulsar <code>OK</code> al terminar. Las huellas también se pueden asignar desde las propiedades del símbolo (campo <code>Footprint</code>).</li>
 </ol>
 </li>
+<li>Comprobar el esquemático con el Electrical Rules Check (ERC):<ol>
+<li>En el <code>Schematic Editor</code>, ejecutar el ERC desde <code>Inspect &gt; Electrical Rules Checker</code> (o el botón <code>ERC</code> de la barra superior) y pulsar <code>Run ERC</code>.</li>
+<li>Revisar y corregir las violaciones reportadas. Una muy habitual es <em>"Input Power pin not driven by any Output Power pins"</em>: añadir un símbolo <code>PWR_FLAG</code> (de la librería <code>Power</code>) a las redes de alimentación y masa para indicarle a KiCad que esas redes están excitadas, y volver a ejecutar el ERC hasta que pase sin errores.</li>
+</ol>
+</li>
+<li>Exportar la BOM:<ol>
+<li>Ejecutar <code>Tools &gt; Generate Bill of Materials...</code>. <img src="../images/pages/kicad/bom.svg" width="30"/></li>
+<li>KiCad cuenta ahora con una GUI integrada para la BOM: configurar los campos exportados y la agrupación en la pestaña <code>Edit</code> y el formato en la pestaña <code>Export</code>, indicar un fichero de salida y pulsar <code>Export</code>.</li>
+</ol>
+</li>
 <li>Diseñar las huellas que no se encuentren en las librerías:<ol>
 <li>Abrir el <code>Footprint Editor</code> desde el Project Manager. <img src="../images/pages/kicad/new_footprint.svg" width="30"/></li>
 <li>Para guardar la nueva huella, escoger uno de estos caminos según se quiera mantener exclusivamente dentro del proyecto o de forma global:<ul>
@@ -4362,11 +4373,6 @@ $ git init
 </li>
 <li>Decorar la huella con las herramientas de dibujo (capas fab, silkscreen y courtyard).</li>
 <li>Guardar los cambios. <img src="../images/pages/kicad/save.svg" width="30"/></li>
-</ol>
-</li>
-<li>Comprobar el esquemático con el Electrical Rules Check (ERC):<ol>
-<li>En el <code>Schematic Editor</code>, ejecutar el ERC desde <code>Inspect &gt; Electrical Rules Checker</code> (o el botón <code>ERC</code> de la barra superior) y pulsar <code>Run ERC</code>.</li>
-<li>Revisar y corregir las violaciones reportadas. Una muy habitual es <em>"Input Power pin not driven by any Output Power pins"</em>: añadir un símbolo <code>PWR_FLAG</code> (de la librería <code>Power</code>) a las redes de alimentación y masa para indicarle a KiCad que esas redes están excitadas, y volver a ejecutar el ERC hasta que pase sin errores.</li>
 </ol>
 </li>
 <li>Diseñar la PCB. Con el esquemático terminado, ya no hace falta generar/importar el netlist manualmente; la placa se actualiza directamente desde el esquemático:<ol>
@@ -4401,11 +4407,6 @@ $ git init
     <img alt="plot" src="../images/pages/kicad/plot.png" /></li>
 <li>Pulsar <code>Plot</code>.</li>
 <li>Pulsar <code>Generate Drill Files...</code> y, en la nueva ventana, pulsar <code>Generate Drill File</code>.</li>
-</ol>
-</li>
-<li>Exportar la BOM:<ol>
-<li>Ejecutar <code>Tools &gt; Generate Bill of Materials...</code>. <img src="../images/pages/kicad/bom.svg" width="30"/></li>
-<li>KiCad cuenta ahora con una GUI integrada para la BOM: configurar los campos exportados y la agrupación en la pestaña <code>Edit</code> y el formato en la pestaña <code>Export</code>, indicar un fichero de salida y pulsar <code>Export</code>.</li>
 </ol>
 </li>
 <li>Cambios en el esquemático y su propagación:<ol>
