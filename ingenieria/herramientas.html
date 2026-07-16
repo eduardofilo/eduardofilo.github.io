@@ -2710,6 +2710,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hot-plate-g3061" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hot plate G3061
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hot plate G3061">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descripcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descripción
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controles-basicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controles básicos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#menu-de-ajustes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Menú de ajustes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enlaces_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enlaces
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4396,6 +4447,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hot-plate-g3061" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hot plate G3061
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hot plate G3061">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descripcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descripción
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controles-basicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controles básicos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#menu-de-ajustes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Menú de ajustes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enlaces_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enlaces
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4732,6 +4834,83 @@ Reflash... OK
 <li>Power pulse: Intensity of power of keep-awake-pulse (watt) # Default: Off</li>
 </ul>
 </li>
+</ul>
+<h2 id="hot-plate-g3061">Hot plate G3061<a class="headerlink" href="#hot-plate-g3061" title="Permanent link">&para;</a></h2>
+<h3 id="descripcion">Descripción<a class="headerlink" href="#descripcion" title="Permanent link">&para;</a></h3>
+<p>El G3061 PD65W es una mini placa calefactora (<em>hot plate</em>) pensada para soldar y desoldar componentes SMD, hacer precalentamiento de PCBs y pequeños trabajos de <em>rework</em>. Es una unidad muy compacta (56mm x 56mm x 36mm) con superficie calefactora de aluminio anodizado, alimentada por USB-C mediante el protocolo USB-PD (negocia hasta 20V y 3,3A, es decir ~65W). No incluye ni el adaptador de corriente ni el cable, por lo que hay que usar un cargador USB-PD de al menos 65W y un cable USB-C con capacidad similar.</p>
+<p>En el frontal tiene una pequeña pantalla OLED y en la parte trasera el puerto USB-C y los dos únicos botones con los que se realizan todas las operaciones.</p>
+<p>Características principales:</p>
+<ul>
+<li>Temperatura máxima configurable entre 200°C y 350°C (temperatura mínima entre 0°C y 200°C).</li>
+<li>Calentamiento rápido (aproximadamente 2 minutos de temperatura ambiente a 200°C).</li>
+<li>Distribución del calor muy uniforme en toda la superficie (salvo pequeñas pérdidas en los tornillos de las esquinas).</li>
+<li>La precisión de la temperatura no es muy buena: la temperatura real de la superficie puede ser bastante inferior a la configurada (p.ej. ~133°C reales con 150°C configurados), por lo que conviene ajustar el valor teniendo esto en cuenta.</li>
+<li>Controlador de temperatura PID con parámetros ajustables.</li>
+</ul>
+<p>Al encenderlo muestra brevemente el mensaje <code>GDCHP</code> y después la pantalla principal, que contiene:</p>
+<ul>
+<li>Temperatura actual de la placa (número grande de 3 dígitos).</li>
+<li>Tensión de entrada.</li>
+<li>Temperatura configurada (objetivo).</li>
+<li>Estado del calentador: <code>SHUT</code> (apagado), <code>HEAT</code> (calentando) o <code>CT</code> (temperatura constante, ya alcanzada).</li>
+<li>Barra de temperatura actual.</li>
+<li>Barra de potencia de entrada.</li>
+</ul>
+<h3 id="controles-basicos">Controles básicos<a class="headerlink" href="#controles-basicos" title="Permanent link">&para;</a></h3>
+<p>Con la pantalla de frente:</p>
+<table>
+<thead>
+<tr>
+<th>Acción</th>
+<th>Función</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Botón derecho</td>
+<td>Aumentar la temperatura objetivo</td>
+</tr>
+<tr>
+<td>Botón izquierdo</td>
+<td>Disminuir la temperatura objetivo</td>
+</tr>
+<tr>
+<td>Mantener pulsado un botón</td>
+<td>Aumentar/disminuir el valor rápidamente</td>
+</tr>
+<tr>
+<td>Pulsación simultánea de ambos botones</td>
+<td>Iniciar el calentamiento (estado pasa de <code>SHUT</code> a <code>HEAT</code>)</td>
+</tr>
+<tr>
+<td>Pulsación simultánea de ambos botones (calentando)</td>
+<td>Detener el calentamiento</td>
+</tr>
+<tr>
+<td>Mantener pulsados ambos botones</td>
+<td>Entrar en el menú de ajustes</td>
+</tr>
+</tbody>
+</table>
+<p>Nota: ajustar la temperatura sólo fija el valor objetivo; el calentador permanece inactivo (<code>SHUT</code>) hasta que se pulsan ambos botones a la vez. Cuando la placa alcanza la temperatura configurada el estado cambia a <code>CT</code>.</p>
+<h3 id="menu-de-ajustes">Menú de ajustes<a class="headerlink" href="#menu-de-ajustes" title="Permanent link">&para;</a></h3>
+<p>Se accede manteniendo pulsados ambos botones simultáneamente. Navegación dentro del menú:</p>
+<ul>
+<li>Botón izquierdo/derecho: navegar entre opciones.</li>
+<li>Pulsación simultánea de ambos botones: entrar en la opción seleccionada.</li>
+<li>Mantener pulsados ambos botones: salir/volver atrás (también hay una opción <code>RETURN</code> en cada submenú).</li>
+</ul>
+<p>Opciones disponibles:</p>
+<ul>
+<li><strong>PID</strong>: ajuste de las componentes proporcional (<code>KP</code>), integral (<code>KI</code>) y derivativa (<code>KD</code>) del controlador de temperatura.</li>
+<li><strong>TEMP</strong>: límites de temperatura máxima (200°C - 350°C) y mínima (0°C - 200°C). Estos límites acotan el rango ajustable en la pantalla principal.</li>
+<li><strong>MODE</strong>: tipo de visualización de la pantalla principal: <code>INFO</code> (por defecto, muestra todos los parámetros) o <code>CURVE</code> (gráficas).</li>
+<li><strong>LANG</strong>: idioma de la interfaz (chino o inglés).</li>
+<li><strong>BACK</strong>: volver a la pantalla principal.</li>
+</ul>
+<h3 id="enlaces_5">Enlaces<a class="headerlink" href="#enlaces_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://junctionbyte.com/g3061-pd65w-mini-hot-plate-review/">G3061 PD65W Mini Hot Plate Review | Soldering, Preheating, Rework Station</a></li>
 </ul>
 
 
