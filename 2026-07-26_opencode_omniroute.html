@@ -1,0 +1,5220 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes varios sobre algunas de las cosas que necesito recordar, principalmente sobre Desarrollo y Sistemas.">
+      
+      
+        <meta name="author" content="Eduardo Moreno Lamana">
+      
+      
+        <link rel="canonical" href="https://apuntes.eduardofilo.es/2026-07-26_opencode_omniroute.html">
+      
+      
+      
+        <link rel="next" href="2026-03-08_zelda_gw.html">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="Fuente RSS" href="feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="Fuente RSS de contenido actualizado" href="feed_rss_updated.xml">
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    
+    
+      
+        <title>Instalación OpenCode, OmniRoute y Ponytail - Apuntes de eduardófilo</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@8.5.1/dist/mermaid.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#descripcion-de-los-productos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="." title="Apuntes de eduardófilo" class="md-header__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+      
+  <img src="images/eduardofilo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apuntes de eduardófilo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Instalación OpenCode, OmniRoute y Ponytail
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="2026-07-26_opencode_omniroute.html" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="en/2026-07-26_opencode_omniroute.html" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="2026-07-26_opencode_omniroute.html" class="md-tabs__link">
+          
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="desarrollo/android.html" class="md-tabs__link">
+          
+  
+  Desarrollo
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="ingenieria/3d_printing.html" class="md-tabs__link">
+          
+  
+  Ingeniería
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="proyectos/headsetcomm.html" class="md-tabs__link">
+          
+  
+  Proyectos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="retro-emulacion/c64.html" class="md-tabs__link">
+          
+  
+  Retro-Emulación
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="sistemas/android_system.html" class="md-tabs__link">
+          
+  
+  Sistemas
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="varios/bici.html" class="md-tabs__link">
+          
+  
+  Varios
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="vr/oculus.html" class="md-tabs__link">
+          
+  
+  VR
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Apuntes de eduardófilo" class="md-nav__button md-logo" aria-label="Apuntes de eduardófilo" data-md-component="logo">
+      
+  <img src="images/eduardofilo.png" alt="logo">
+
+    </a>
+    Apuntes de eduardófilo
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eduardofilo/eduardofilo.mkdocs" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eduardofilo.mkdocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Instalación OpenCode, OmniRoute y Ponytail
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="2026-07-26_opencode_omniroute.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Instalación OpenCode, OmniRoute y Ponytail
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descripcion-de-los-productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descripción de los productos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Descripción de los productos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opencode" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenCode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omniroute" class="md-nav__link">
+    <span class="md-ellipsis">
+      OmniRoute
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ponytail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ponytail
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-valor-de-la-combinacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      El valor de la combinación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-opencode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de OpenCode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-omniroute" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de OmniRoute
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-ponytail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de Ponytail
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-conjunta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración conjunta
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración conjunta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-conectar-proveedores-en-omniroute" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Conectar proveedores en OmniRoute
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Conectar proveedores en OmniRoute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proveedores-con-clave-de-api-gratuita" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proveedores con clave de API gratuita
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proveedores-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proveedores OAuth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#todo-desde-la-linea-de-comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Todo desde la línea de comandos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-crear-una-clave-de-api-de-omniroute" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Crear una clave de API de OmniRoute
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-declarar-omniroute-como-proveedor-en-opencode" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Declarar OmniRoute como proveedor en OpenCode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-ajustar-el-nivel-de-ponytail" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Ajustar el nivel de Ponytail
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-verificar-la-integracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Verificar la integración
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-proyectos-y-operativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de proyectos y operativa
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de proyectos y operativa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operativa-comun" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operativa común
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-sesiones-en-opencode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de sesiones en OpenCode
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de sesiones en OpenCode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retomar-en-lugar-de-crear" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retomar en lugar de crear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cerrar-bien-cada-tarea" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cerrar bien cada tarea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inventariar-y-podar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inventariar y podar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-flujo-que-funciona" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un flujo que funciona
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-de-ponytail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos de Ponytail
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajustes-segun-el-tipo-de-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ajustes según el tipo de proyecto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2026-03-08_zelda_gw.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    G&W Zelda hack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2025-06-28_thinkpad_t480.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalación Arch Linux en Lenovo ThinkPad T480
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2024-09-09_zx_mechtrum.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ZX Mechtrum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2024-09-04_steam_deck_arch.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalación Arch Linux en Steam Deck
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2024-05-31_campus_aula_dei_en_bici.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vías Zaragoza - Campus en bicicleta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2022-10-05_entrevista_podcast_linux.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entrevista en Podcast Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2022-08-08_mmiyoo_uart.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Miyoo Mini UART
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2022-04-17_vr.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aventuras en VR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2021-10-30_raspi_zero_2_upgrade.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raspberry Pi Zero 2 W upgrade
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2021-04-03_RG350_imagen.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350/RG280 Imagen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2021-02-28_pico_fuzix.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FUZIX en Raspberry Pi Pico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2021-01-19-retroconsolas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Retroconsolas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2021-01-16-rg350_ra_installer.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Instalador RA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-12-13-rg351_wifi_mod.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG351P Wifi mod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-09-27-rg350_xmame_sm_bridge.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Interfaz xMAME SimpleMenu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-08-31-cancion_herb_alpert.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    La canción que merece la pena escuchar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-08-15-rg350_scummvm_launchers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 ScummVM en lanzadores
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-08-12-rg350_py_backup.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Py Backup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-07-12-rg350_screen_mod.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Sustitución de pantalla 480p
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-07-09-rg350_fba_vertical_mod.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 FBA mod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-07-02-rg350_primeros_pasos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Primeros pasos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-06-04-rg350_raspi_image.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Raspi Imagen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-05-31-rg350_compile.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Compilar aplicaciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-05-25-rg350_docker_buildroot.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Docker Buildroot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-05-14-rg350_mame4all.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 MAME4All
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-05-08-rg350_dosbox.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 DOSBox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-05-06-rg350_openbor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 OpenBOR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-05-04-rg350_daphne.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Daphne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-04-15-rg350_xmame.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 xMAME
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-04-14-rg350_scummvm.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 ScummVM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-03-28-rg350_pymenu.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 PyMenu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-03-19-rg350_backup.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Backup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-02-16-panelizar_pcb.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Panelizar PCB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-02-13-rg350_emulationstation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 EmulationStation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-02-09-rg350_network.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Conexión a internet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-02-08-eduzebox.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EdUzebox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-01-31-rg350_fba.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 FBA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-01-25-rg350_simplemenu.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 SimpleMenu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2020-01-11-rg350_scraper.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350 Scraper
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2019-08-06-django_site.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creación de un sitio Django desde cero
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2019-07-07-crankshaft-build.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compilación OpenAuto para solucionar touch screen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2019-04-20-pong_composite_mod.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Composite mod en consola Pong
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2019-01-29-bloqueo_telsome.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bloqueo de llamadas entrantes en Telsome
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2019-01-26-conversion_apuntes_mkdocs.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conversión del sitio de Apuntes a MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2018-10-20-Octoprint-en-Anet-A8.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Octoprint en Anet A8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2018-10-19-crankshaft.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crankshaft - AndroidAuto sobre Raspberry Pi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2018-05-05-otto.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Otto DIY
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2017-01-14-raspi2-kodi-16-tvheadend.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raspberry Pi 3 + KODI 16 + Tvheadend
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-12-06-raspi3-kodi.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raspberry Pi 3 + KODI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-10-17-raspi-switch.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interruputor de encendido para Raspberry Pi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-08-17-el-mundo-de-ayer.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    El mundo de ayer - Stefan Zweig
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-08-02-stm32-vl-discovery.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entorno desarrollo STM32 VL Discovery sobre Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-07-21-PIGRRL-2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuración PiGRRL-2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-07-10-wild.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wild - Cheryl Strayed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-07-02-virus-android.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alertas por supuestos virus en Android
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-04-10-un-antropologo-en-marte.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Un antropólogo en Marte - Oliver Sacks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2016-02-25-los-innovadores.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Los Innovadores - Walter Isaacson
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2015-03-14-raspi2-kodi-tvheadend.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raspberry Pi 2 + KODI + Tvheadend
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2015-01-09-moviles.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Móviles recomendables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2015-01-08-jekyll.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jekyll+GitHub Pages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2014-12-26-dokuwiki-raspi.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dokuwiki en Raspberry Pi manteniendo los ficheros en NAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2014-12-20-micro-placas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Micro placas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2014-12-15-presentacion.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Presentación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Desarrollo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Desarrollo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/android.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Android
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/db.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bases de Datos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/diseno.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diseño
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/dokuwiki.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dokuwiki
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/eclipse.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eclipse
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/projects.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestión de Proyectos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/git.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/html.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTML+CSS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/ia.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/java.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/javaee.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JavaEE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/javascript.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JavaScript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/joomla.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Joomla
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/phonegap.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Phonegap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/php.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/python.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python/Django
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/ror.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ruby on Rails
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/spree.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/subl.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sublime Text 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/svn.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SVN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/vagrant.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vagrant
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/vr.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/vscode.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VSCode / VSCodium
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desarrollo/yii.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yii
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ingeniería
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ingeniería
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/3d_printing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Printing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/arduino.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arduino
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/freecad.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FreeCAD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/herramientas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Herramientas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/kicad.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KiCad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/modulos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/radio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingenieria/stm32.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STM32
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyectos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Proyectos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="proyectos/headsetcomm.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Headset Commander
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="proyectos/dicom.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Impresión 3D de ecografías
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="proyectos/minecraft.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minecraft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Retro-Emulación
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Retro-Emulación
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/c64.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commodore 64
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/fpga.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FPGA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/funkey-s.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FunKey S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/general.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/juegos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Juegos destacados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/microconsolas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Micro consolas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/miyoo-mini.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Miyoo Mini
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/retroarch.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RetroArch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/rg-350.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG350/RG280
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/rg-351.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG351
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/rg-503.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RG503
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/rgb2hdmi.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RGBtoHDMI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/steam-deck.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Steam Deck
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/z80-computer.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Z80 Computer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/zx-spectrum.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ZX Spectrum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/zx-spectrum-next.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ZX Spectrum Next / N-GO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="retro-emulacion/zx-uno.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ZX-UNO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sistemas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Sistemas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/android_system.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Android
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/soft_imprescindible.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aplicaciones interesantes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/appletv.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AppleTV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/archlinux.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arch Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/buildroot.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Buildroot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/docker.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/email.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    e-mail
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/impresoras.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Impresoras
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/iot.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IOT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/kodi.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kodi/OpenELEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/macosx.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mac OS X
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/mysql.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MySQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/nas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/odroid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ODROID
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/office.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Office
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/raspi.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raspberry Pi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/raspi_pico.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raspberry Pi Pico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/redes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/router_xiaomi.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Router Xiaomi MiWiFi 3G
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/ubuntu_phone.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubuntu Phone
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/ubuntu.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubuntu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/uconsole.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    uConsole
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/unix.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UNIX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sistemas/trucos_windows.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Varios
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Varios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/bici.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bicicleta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/links.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enlaces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/excursionismo.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Excursionismo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/hogar.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hogar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/english.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inglés
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/corsa_d.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Opel Corsa D
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/recetas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recetas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="varios/viajes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Viajes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    VR
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            VR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vr/oculus.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Oculus Quest 2/3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vr/viture.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Viture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descripcion-de-los-productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descripción de los productos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Descripción de los productos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opencode" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenCode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omniroute" class="md-nav__link">
+    <span class="md-ellipsis">
+      OmniRoute
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ponytail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ponytail
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-valor-de-la-combinacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      El valor de la combinación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-opencode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de OpenCode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-omniroute" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de OmniRoute
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-ponytail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de Ponytail
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-conjunta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración conjunta
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración conjunta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-conectar-proveedores-en-omniroute" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Conectar proveedores en OmniRoute
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Conectar proveedores en OmniRoute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proveedores-con-clave-de-api-gratuita" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proveedores con clave de API gratuita
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proveedores-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proveedores OAuth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#todo-desde-la-linea-de-comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Todo desde la línea de comandos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-crear-una-clave-de-api-de-omniroute" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Crear una clave de API de OmniRoute
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-declarar-omniroute-como-proveedor-en-opencode" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Declarar OmniRoute como proveedor en OpenCode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-ajustar-el-nivel-de-ponytail" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Ajustar el nivel de Ponytail
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-verificar-la-integracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Verificar la integración
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-proyectos-y-operativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de proyectos y operativa
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de proyectos y operativa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operativa-comun" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operativa común
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-sesiones-en-opencode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de sesiones en OpenCode
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de sesiones en OpenCode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retomar-en-lugar-de-crear" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retomar en lugar de crear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cerrar-bien-cada-tarea" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cerrar bien cada tarea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inventariar-y-podar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inventariar y podar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-flujo-que-funciona" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un flujo que funciona
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-de-ponytail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos de Ponytail
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajustes-segun-el-tipo-de-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ajustes según el tipo de proyecto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Instalación OpenCode, OmniRoute y Ponytail</h1>
+
+<p><img alt="OpenCode + OmniRoute" src="images/posts/2026-07-26_opencode_omniroute/opencode_omniroute.png" /></p>
+<p>El desarrollo asistido por IA empezó siendo un autocompletado inteligente del código a nivel de línea. Pasó a ser una "segunda opinión" que revisaba el código a nivel de fichero y sugería cambios. En los últimos dos años se ha dado un importante paso más allá hasta llegar al paradigma actual, el <em>desarrollo agéntico</em>: un agente que lee el repositorio completo, edita ficheros, ejecuta comandos, realiza por sí solo los cambios que antes solo se sugerían, lanza los tests e itera hasta cerrar la tarea. El problema es que todas las herramientas comerciales de este tipo (Claude Code, Cursor, Devin, Copilot, Codex, etc.) comparten dos limitaciones: una suscripción mensual y unas cuotas que se agotan justo cuando la sesión se está poniendo interesante.</p>
+<p>Hay además un tercer problema, más silencioso pero también caro: los agentes tienden a <strong>sobre-construir</strong>. Se les pide un selector de fechas y acaban instalando una librería, escribiendo un componente envoltorio y una hoja de estilos. Cada línea de más se paga dos veces, en tokens al generarla y en tokens cada vez que vuelve a entrar en el contexto.</p>
+<p>En este artículo se describe cómo montar un entorno de desarrollo agéntico completo combinando tres proyectos de código abierto que resuelven precisamente esas limitaciones:</p>
+<ul>
+<li><a href="https://opencode.ai/"><strong>OpenCode</strong></a>: el agente de programación en terminal.</li>
+<li><a href="https://omniroute.online/"><strong>OmniRoute</strong></a>: el router/gateway de modelos que alimenta al agente.</li>
+<li><a href="https://github.com/DietrichGebert/ponytail"><strong>Ponytail</strong></a>: el <em>skill</em> que impone al agente disciplina de código mínimo.</li>
+</ul>
+<h2 id="descripcion-de-los-productos">Descripción de los productos<a class="headerlink" href="#descripcion-de-los-productos" title="Permanent link">&para;</a></h2>
+<h3 id="opencode">OpenCode<a class="headerlink" href="#opencode" title="Permanent link">&para;</a></h3>
+<p>OpenCode es un agente de programación que se ejecuta en la terminal (TUI), de código abierto y, lo más importante para nuestro propósito, <strong>agnóstico respecto al proveedor de modelos</strong>. A diferencia de Claude Code (atado a Anthropic) o Codex (atado a OpenAI), OpenCode permite configurar cualquier proveedor, incluidos los que exponen una API compatible con OpenAI, que a día de hoy son prácticamente todos.</p>
+<p>Sus características principales:</p>
+<ul>
+<li>Interfaz de terminal con sesiones persistentes, gestión de contexto y <em>undo</em> de los cambios aplicados.</li>
+<li>Acceso a herramientas: lectura y escritura de ficheros, ejecución de comandos, búsqueda en el repositorio, control de versiones.</li>
+<li>Fichero de contexto por proyecto (<code>AGENTS.md</code>) que se genera con <code>/init</code> y que sirve para instruir al agente sobre las convenciones del repositorio.</li>
+<li>Soporte de MCP (<em>Model Context Protocol</em>) para añadir herramientas externas.</li>
+<li>Modo no interactivo o CLI (<code>opencode run "..."</code>) para automatizaciones y scripts.</li>
+<li>Agentes especializados y modos de trabajo (por ejemplo un modo <em>plan</em> que no hace cambios pensado para la fase de planificación previa).</li>
+</ul>
+<h3 id="omniroute">OmniRoute<a class="headerlink" href="#omniroute" title="Permanent link">&para;</a></h3>
+<p>OmniRoute es un <em>gateway</em> de IA local y de código abierto. Se instala en la propia máquina (o en un VPS), levanta un endpoint compatible con la API de OpenAI y un panel web de administración, y desde ahí enruta cada petición hacia cualquiera de los cientos de proveedores que tiene catalogados, de los que unos 90 disponen de capa gratuita.</p>
+<p>Lo interesante no es el catálogo en sí, sino lo que hace con él:</p>
+<ul>
+<li><strong>Enrutado automático</strong>: usando el modelo virtual <code>auto</code>, OmniRoute construye un <em>combo</em> con los proveedores que tengamos conectados y elige uno en cada petición según su puntuación en vivo. Existen variantes: <code>auto/coding</code> (calidad para generar código), <code>auto/fast</code> (menor latencia), <code>auto/cheap</code> (menor coste por token) y <code>auto/offline</code> (mayor margen de cuota disponible).</li>
+<li><strong>Fallback en cascada</strong>: cuando un proveedor devuelve un error de cuota, un <em>rate limit</em> o un 5xx, la petición se reintenta contra el siguiente proveedor de la lista de forma transparente para el cliente. Esto es lo que evita el clásico "se acabó tu cuota, vuelve en cinco horas".</li>
+<li><strong>Compresión de contexto</strong>: una batería de motores que recortan el prompt (deduplicación, poda de historial, compactado de ficheros) y que permiten ahorros importantes de tokens, especialmente valiosos cuando se trabaja contra capas gratuitas medidas en tokens/día.</li>
+<li><strong>Panel de control</strong> en <code>http://localhost:20128</code> con estadísticas de uso por proveedor, gestión de claves API y configuración asistida de las herramientas CLI más habituales.</li>
+<li><strong>Local-first</strong>: las claves de los proveedores y el tráfico se quedan en la máquina; OmniRoute no es un servicio en la nube al que haya que suscribirse.</li>
+</ul>
+<h3 id="ponytail">Ponytail<a class="headerlink" href="#ponytail" title="Permanent link">&para;</a></h3>
+<p>Ponytail no es un programa que se ejecute ni un servicio: es un <strong><em>skill</em></strong>, es decir un conjunto de instrucciones que se inyectan en el contexto del agente en cada turno para modificar su comportamiento. Su cometido es uno solo, combatir la sobre-ingeniería, y lo hace obligando al agente a recorrer una escalera de decisión antes de escribir una sola línea, deteniéndose en el primer peldaño que resuelva el problema:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>1. ¿Esto necesita existir?          → no: no lo hagas (YAGNI)
+2. ¿Ya está en este repositorio?    → reutilízalo, no lo reescribas
+3. ¿Lo hace la librería estándar?   → úsala
+4. ¿Es una función nativa de la plataforma? → úsala
+5. ¿Hay una dependencia ya instalada?       → úsala
+6. ¿Cabe en una línea?              → una línea
+7. Sólo entonces: lo mínimo que funcione
+</code></pre></div></td></tr></table></div>
+<p>El ejemplo canónico del proyecto lo resume bien: ante la petición de un selector de fechas, el resultado deja de ser una librería más un componente y pasa a ser, gracias a Ponytail, <code>&lt;input type="date"&gt;</code>.</p>
+<p>Dos matices importantes:</p>
+<ul>
+<li>La escalera se aplica <strong>después</strong> de entender el problema, no en lugar de entenderlo. El agente sigue obligado a leer el código afectado y a seguir el flujo real antes de elegir peldaño. Perezoso con la solución, nunca con la lectura.</li>
+<li>Hay cuatro cosas que nunca se recortan: validación en las fronteras de confianza, gestión de pérdida de datos, seguridad y accesibilidad. La regla no es "menos tokens", es "sólo lo que la tarea necesita".</li>
+</ul>
+<p>Según el <em>benchmark</em> que publica el proyecto (sesiones reales de un agente sobre un repositorio FastAPI + React, con y sin el <em>skill</em>), los resultados frente a la línea base son un 54% menos de líneas de código, un 22% menos de tokens, un 20% menos de coste y un 27% menos de tiempo, sin penalización en las comprobaciones de seguridad. Como siempre con los <em>benchmarks</em>, conviene tomarlos como orden de magnitud y no como promesa: el ahorro es enorme donde hay una trampa clara de sobre-construcción y casi nulo donde el código ya era mínimo.</p>
+<p>Ponytail funciona en un buen número de agentes (Claude Code, Codex, Copilot CLI, Gemini CLI, Cursor, Devin...), y OpenCode es uno de los que tiene soporte de primera clase mediante <em>plugin</em>.</p>
+<h3 id="el-valor-de-la-combinacion">El valor de la combinación<a class="headerlink" href="#el-valor-de-la-combinacion" title="Permanent link">&para;</a></h3>
+<p>Por separado cada pieza es útil, pero es al combinarlas cuando desaparecen las limitaciones que mencionábamos al principio. Cada una cubre una capa distinta y no se solapan: OmniRoute decide <strong>quién</strong> responde, OpenCode decide <strong>qué</strong> se hace, y Ponytail decide <strong>cuánto</strong> código se escribe.</p>
+<table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>Cómo lo resuelve la combinación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Suscripción mensual</td>
+<td>OpenCode es gratuito y OmniRoute se conecta a capas gratuitas de decenas de proveedores. El coste de entrada es 0 €.</td>
+</tr>
+<tr>
+<td>Agotamiento de cuota</td>
+<td>El fallback de OmniRoute salta al siguiente proveedor sin interrumpir la sesión del agente.</td>
+</tr>
+<tr>
+<td>Dependencia de un proveedor</td>
+<td>El agente sólo conoce un endpoint (<code>localhost:20128/v1</code>); cambiar de modelo o de proveedor no requiere tocar el agente.</td>
+</tr>
+<tr>
+<td>Consumo excesivo de tokens</td>
+<td>Los motores de compresión de OmniRoute reducen el tamaño de los prompts que envía el agente, que suelen ser grandes por el contexto del repositorio.</td>
+</tr>
+<tr>
+<td>Falta de visibilidad del gasto</td>
+<td>El panel de OmniRoute centraliza el consumo de todos los proveedores y de todas las herramientas conectadas.</td>
+</tr>
+<tr>
+<td>Código sobredimensionado</td>
+<td>Ponytail recorta lo que el agente construye, lo que a su vez reduce el código a revisar, mantener y volver a meter en el contexto en las siguientes sesiones.</td>
+</tr>
+</tbody>
+</table>
+<p>La combinación de las tres piezas tiene un efecto multiplicador sobre la cuota disponible: Ponytail reduce los tokens de salida (menos código generado), la compresión de OmniRoute reduce los de entrada (menos contexto enviado) y el fallback aprovecha la cuota de todos los proveedores conectados. Con capas gratuitas medidas en tokens/día esto es la diferencia entre trabajar una hora y trabajar toda la tarde.</p>
+<p>Un beneficio adicional: como OmniRoute expone un endpoint estándar, el mismo gateway sirve simultáneamente a OpenCode en la terminal, a una extensión de VSCode o a cualquier otro cliente compatible con la API de OpenAI. Se configura una vez y lo aprovecha todo el entorno.</p>
+<div class="admonition tip">
+<p class="admonition-title">Modelos modestos, mejores resultados</p>
+<p>Un efecto colateral interesante de Ponytail es que hace más viable trabajar con los modelos gratuitos, que suelen ser más pequeños. Cuanto menor es el volumen de código que se le pide generar a un modelo, menos oportunidades tiene de equivocarse; el <em>skill</em> reduce precisamente el tamaño de lo que se le encarga en cada paso.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Sobre las capas gratuitas</p>
+<p>Las condiciones de las capas gratuitas de los proveedores cambian con frecuencia y algunas desaparecen sin previo aviso. La ventaja del enfoque con OmniRoute es que esos cambios se absorben en el gateway (conectando otro proveedor) sin tocar la configuración del agente. Conviene también revisar las políticas de privacidad de cada proveedor gratuito antes de enviarles el código de un proyecto sensible.</p>
+</div>
+<h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
+<p>Todo el procedimiento se ha realizado sobre Linux. En Windows y macOS los pasos son equivalentes, cambiando la forma de instalar los requisitos.</p>
+<p>Los tres proyectos se distribuyen vía npm, así que el único requisito común es disponer de Node.js reciente (versión 22 o superior).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>node<span class="w"> </span>--version
+</code></pre></div></td></tr></table></div>
+<h3 id="instalacion-de-opencode">Instalación de OpenCode<a class="headerlink" href="#instalacion-de-opencode" title="Permanent link">&para;</a></h3>
+<p>La forma recomendada es el script oficial de instalación:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://opencode.ai/install<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</code></pre></div></td></tr></table></div>
+<p>Alternativamente, según el sistema:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>opencode-ai<span class="w">                  </span><span class="c1"># npm (también bun, pnpm o yarn)</span>
+brew<span class="w"> </span>install<span class="w"> </span>anomalyco/tap/opencode<span class="w">         </span><span class="c1"># macOS / Linux con Homebrew</span>
+sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>opencode<span class="w">                     </span><span class="c1"># Arch Linux (repositorios oficiales)</span>
+paru<span class="w"> </span>-S<span class="w"> </span>opencode-bin<span class="w">                        </span><span class="c1"># Arch Linux (AUR, última versión)</span>
+</code></pre></div></td></tr></table></div>
+<p>Comprobamos la instalación lanzando el agente dentro de cualquier directorio:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>opencode
+</code></pre></div></td></tr></table></div>
+<p>En este punto OpenCode arrancará pero pedirá credenciales de algún proveedor. No hace falta darle ninguna todavía: ese hueco lo va a ocupar OmniRoute.</p>
+<h3 id="instalacion-de-omniroute">Instalación de OmniRoute<a class="headerlink" href="#instalacion-de-omniroute" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>omniroute
+omniroute
+</code></pre></div></td></tr></table></div>
+<p>El comando <code>omniroute</code> levanta a la vez la API y el panel web en el puerto <code>20128</code>:</p>
+<ul>
+<li>Panel: <code>http://localhost:20128</code></li>
+<li>API compatible con OpenAI: <code>http://localhost:20128/v1</code></li>
+</ul>
+<p>Existen también otras formas de despliegue, útiles si se quiere dejar el gateway funcionando de forma permanente:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>omniroute<span class="w">                        </span><span class="c1"># contenedor</span>
+</code></pre></div></td></tr></table></div>
+<p>Además del paquete npm y el contenedor, el proyecto distribuye una aplicación de escritorio (Electron), imágenes para arm64 (funciona en una Raspberry Pi) y es ejecutable en Android bajo Termux. Una opción interesante es dejar OmniRoute corriendo en un VPS o en un servidor casero y apuntar contra él desde todos los equipos de desarrollo.</p>
+<h3 id="instalacion-de-ponytail">Instalación de Ponytail<a class="headerlink" href="#instalacion-de-ponytail" title="Permanent link">&para;</a></h3>
+<p>Ponytail no se instala en el sistema, se declara como <em>plugin</em> de OpenCode. Basta con añadir esta entrada al fichero de configuración <code>opencode.json</code> (en el apartado siguiente se muestra el fichero completo con las tres piezas):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;@dietrichgebert/ponytail&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>OpenCode descarga el paquete desde npm la primera vez que arranca con esa configuración. Si se prefiere trabajar sobre una copia local del repositorio, para poder modificar las reglas, se clona y se apunta al fichero del <em>plugin</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/DietrichGebert/ponytail.git<span class="w"> </span>~/ponytail
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/home/usuario/ponytail/.opencode/plugins/ponytail.mjs&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Las rutas relativas (del tipo <code>./.opencode/plugins/ponytail.mjs</code>) se resuelven respecto al <code>opencode.json</code> que las declara, de modo que para compartir un mismo <em>checkout</em> entre varios proyectos hay que usar la ruta absoluta, como en el ejemplo.</p>
+<div class="admonition tip">
+<p class="admonition-title">Sin plugin también funciona</p>
+<p>El repositorio incluye las reglas en formato <code>AGENTS.md</code> y en los formatos de rules de Cursor, Devin, Cline, Kiro, Copilot, etc. Copiando ese fichero al proyecto se obtiene el comportamiento siempre activo en prácticamente cualquier agente. Lo que añade el <em>plugin</em> de OpenCode son los comandos <code>/ponytail</code> y los niveles de intensidad.</p>
+</div>
+<h2 id="configuracion-conjunta">Configuración conjunta<a class="headerlink" href="#configuracion-conjunta" title="Permanent link">&para;</a></h2>
+<p>La integración consiste en que OpenCode deje de hablar con los proveedores y hable únicamente con OmniRoute, y en que Ponytail se inyecte en cada turno de la conversación. Son cinco pasos.</p>
+<h3 id="1-conectar-proveedores-en-omniroute">1. Conectar proveedores en OmniRoute<a class="headerlink" href="#1-conectar-proveedores-en-omniroute" title="Permanent link">&para;</a></h3>
+<p>Con <code>omniroute</code> en marcha, abrimos <code>http://localhost:20128</code> y vamos a la sección <strong>Providers</strong> (recomiendo configurar el interfaz en idioma <code>English</code> ya que si no aparecen numerosas cadenas precedidas de la partícula <code>__MISSING__</code>). Ahí aparece el catálogo con un indicador de cuáles tienen capa gratuita. Conviene conectar <strong>varios</strong>, ya que el valor del sistema está justamente en la redundancia: cuando uno agota su cuota, el resto siguen disponibles. Los proveedores sin necesidad de clave (<code>No Auth</code>) están conectados por defecto.</p>
+<p>El catálogo está clasificado por <strong>categorías</strong>, y la categoría marca el procedimiento de conexión:</p>
+<table>
+<thead>
+<tr>
+<th>Categoría</th>
+<th>Cómo se conecta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>No Auth</em></td>
+<td>Nada que hacer, están activos desde el primer arranque.</td>
+</tr>
+<tr>
+<td><em>Free Tier</em></td>
+<td>Capa gratuita que sí requiere darse de alta en el proveedor y pegar una clave de API.</td>
+</tr>
+<tr>
+<td><em>OAuth</em></td>
+<td>Botón de inicio de sesión para proveedores en los que ya tengamos cuenta: OmniRoute abre el flujo del proveedor y guarda el <em>token</em> resultante.</td>
+</tr>
+<tr>
+<td><em>API Key</em></td>
+<td>Proveedores de pago (algunos con crédito inicial de regalo); se pega la clave.</td>
+</tr>
+<tr>
+<td><em>Local</em></td>
+<td>Modelos que corren en la propia máquina (Ollama, LM Studio, vLLM…); se indica la URL local.</td>
+</tr>
+</tbody>
+</table>
+<p>El filtro de la parte superior de la pantalla permite quedarse sólo con las que interesan, y el buscador acepta el nombre o el identificador del proveedor.</p>
+<h4 id="proveedores-con-clave-de-api-gratuita">Proveedores con clave de API gratuita<a class="headerlink" href="#proveedores-con-clave-de-api-gratuita" title="Permanent link">&para;</a></h4>
+<p>El procedimiento es siempre el mismo, cambiando únicamente el sitio del que se obtiene la clave:</p>
+<ol>
+<li>Darse de alta en el proveedor y generar una clave de API en su panel.</li>
+<li>En OmniRoute, <strong>Providers</strong> → buscar el proveedor → botón de conectar/configurar.</li>
+<li>Pegar la clave en el formulario y guardar.</li>
+<li>Pulsar el botón de <strong>Test</strong> de la tarjeta del proveedor. Si responde correctamente, sus modelos pasan a formar parte del catálogo del gateway y entran automáticamente en el <em>pool</em> del modelo <code>auto</code>.</li>
+</ol>
+<p>Algunos candidatos con capa gratuita y sin tarjeta de crédito pueden encontrarse <a href="https://github.com/diegosouzapw/OmniRoute/wiki/Providers-Guide#best-free-providers">aquí</a> y <a href="https://github.com/diegosouzapw/OmniRoute/blob/release/v3.8.49/docs/getting-started/FREE-TIERS-GUIDE.md">aquí</a>.</p>
+<h4 id="proveedores-oauth">Proveedores OAuth<a class="headerlink" href="#proveedores-oauth" title="Permanent link">&para;</a></h4>
+<p>Con estos no hay clave que copiar: se pulsa el botón de conexión de la tarjeta, se abre el flujo de inicio de sesión del proveedor en el navegador, y al terminar OmniRoute guarda las credenciales cifradas en su base de datos local. Es el caso de las cuentas de herramientas que ya se estén usando (Copilot, Cursor, Kilo Code, Qoder, etc.).</p>
+<div class="admonition warning">
+<p class="admonition-title">Revisa los términos de servicio</p>
+<p>Varios de estos proveedores son en realidad servicios pensados para consumirse desde su propio cliente, y algunos prohíben expresamente en sus condiciones el uso a través de <em>proxies</em> o clientes de terceros. La ficha del proveedor en OmniRoute lo advierte cuando es el caso. Conviene leer esos avisos antes de conectar una cuenta que interese conservar.</p>
+</div>
+<h4 id="todo-desde-la-linea-de-comandos">Todo desde la línea de comandos<a class="headerlink" href="#todo-desde-la-linea-de-comandos" title="Permanent link">&para;</a></h4>
+<p>Si se prefiere no pasar por el navegador, los proveedores de clave de API se pueden gestionar íntegramente desde la CLI, lo que resulta muy práctico para reproducir la configuración en otra máquina o dejarla en un script:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>omniroute<span class="w"> </span>providers<span class="w"> </span>available<span class="w"> </span>--category<span class="w"> </span>free<span class="w">      </span><span class="c1"># ver el catálogo de capa gratuita</span>
+omniroute<span class="w"> </span>providers<span class="w"> </span>available<span class="w"> </span>--search<span class="w"> </span>cerebras<span class="w">    </span><span class="c1"># buscar uno concreto</span>
+
+omniroute<span class="w"> </span>setup<span class="w"> </span>--add-provider<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--provider<span class="w"> </span>cerebras<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--api-key<span class="w"> </span><span class="s1">&#39;csk-...&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--test-provider<span class="w">                                  </span><span class="c1"># añadirlo y probarlo de una vez</span>
+
+omniroute<span class="w"> </span>providers<span class="w"> </span>list<span class="w">                           </span><span class="c1"># conexiones ya configuradas</span>
+omniroute<span class="w"> </span>providers<span class="w"> </span>test-all<span class="w">                       </span><span class="c1"># probar todas de golpe</span>
+</code></pre></div></td></tr></table></div>
+<p><code>providers test-all</code> es el comando que conviene lanzar de vez en cuando: informa de un vistazo sobre qué proveedores han dejado de responder, ya sea por cuota agotada, por credenciales caducadas o porque el servicio ha cambiado sus condiciones.</p>
+<h3 id="2-crear-una-clave-de-api-de-omniroute">2. Crear una clave de API de OmniRoute<a class="headerlink" href="#2-crear-una-clave-de-api-de-omniroute" title="Permanent link">&para;</a></h3>
+<p>En el panel, sección <strong>API Manager</strong> → <strong>Create API Key</strong>. Le damos un nombre descriptivo (por ejemplo <code>opencode</code>) y copiamos la clave generada, con formato <code>sk-xxxxxxxx-xxxxxxxx</code>.</p>
+<p>Esta clave es local: es la que usarán nuestros clientes para autenticarse contra el gateway, y no tiene nada que ver con las claves de los proveedores, que quedan custodiadas por OmniRoute.</p>
+<p>Podemos verificar que el gateway responde y ver qué modelos ofrece:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>curl<span class="w"> </span>http://localhost:20128/v1/models<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer sk-tu-clave-omniroute&quot;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="3-declarar-omniroute-como-proveedor-en-opencode">3. Declarar OmniRoute como proveedor en OpenCode<a class="headerlink" href="#3-declarar-omniroute-como-proveedor-en-opencode" title="Permanent link">&para;</a></h3>
+<p>OpenCode admite cualquier proveedor compatible con OpenAI declarándolo en su fichero de configuración. Para que la configuración aplique a todos los proyectos, la escribimos en <code>~/.config/opencode/opencode.json</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://opencode.ai/config.json&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;@dietrichgebert/ponytail&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;omniroute&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;npm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@ai-sdk/openai-compatible&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OmniRoute&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;baseURL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:20128/v1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sk-tu-clave-omniroute&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;auto&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Auto (equilibrado)&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;auto/coding&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Auto (calidad para código)&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;auto/cheap&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Auto (menor coste)&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;auto/fast&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Auto (menor latencia)&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;auto/offline&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Auto (máxima cuota disponible)&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;omniroute/auto/coding&quot;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Los puntos importantes de esta configuración:</p>
+<ul>
+<li><code>npm</code>: el adaptador <code>@ai-sdk/openai-compatible</code> es el que se usa con endpoints <code>/v1/chat/completions</code>, que es el caso de OmniRoute.</li>
+<li><code>options.baseURL</code>: el endpoint del gateway. Si OmniRoute está en otra máquina, aquí va su IP o dominio.</li>
+<li><code>options.apiKey</code>: la clave de API que creamos en OmniRoute.</li>
+<li><code>models</code>: no hace falta enumerar modelos concretos de proveedores; basta con declarar los modelos virtuales <code>auto</code>, que son los que activan el enrutado inteligente y el fallback. Si se quiere fijar un modelo concreto, se puede añadir con el identificador que devuelve <code>/v1/models</code>, la consulta del <a href="#2-crear-una-clave-de-api-de-omniroute">punto anterior</a>.</li>
+<li><code>model</code>: modelo por defecto al arrancar. <code>auto/coding</code> es una buena elección para desarrollo; <code>auto/offline</code> resulta útil cuando lo prioritario es no quedarse sin cuota.</li>
+<li><code>plugin</code>: la lista de <em>plugins</em> de OpenCode, donde entra Ponytail.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Clave fuera del fichero de configuración</p>
+<p>Si el fichero de configuración se va a versionar (por ejemplo en un repositorio de <em>dotfiles</em>), es preferible no escribir la clave en él. OpenCode permite almacenar credenciales con el comando <code>/connect</code> (opción <em>Other</em>, id <code>omniroute</code>), en cuyo caso se puede omitir <code>options.apiKey</code> del JSON.</p>
+</div>
+<p>También es posible ubicar el fichero como <code>opencode.json</code> en la raíz de un proyecto concreto, en cuyo caso su configuración se combina con la global. Esto resulta práctico para forzar un modelo distinto en un proyecto determinado.</p>
+<h3 id="4-ajustar-el-nivel-de-ponytail">4. Ajustar el nivel de Ponytail<a class="headerlink" href="#4-ajustar-el-nivel-de-ponytail" title="Permanent link">&para;</a></h3>
+<p>Ponytail no necesita fichero de configuración: funciona nada más declararlo como <em>plugin</em>. Lo único que conviene decidir es el <strong>nivel de intensidad</strong>, que se cambia en caliente desde la TUI:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>/ponytail            → informa del nivel actual
+/ponytail lite       → recorte suave
+/ponytail full       → nivel por defecto
+/ponytail ultra      → recorte agresivo
+/ponytail off        → desactivado para esta sesión
+</code></pre></div></td></tr></table></div>
+<p>El nivel por defecto es <code>full</code>. Para fijar otro en todas las sesiones nuevas se usa la variable de entorno <code>PONYTAIL_DEFAULT_MODE</code> o el campo <code>defaultMode</code> de <code>~/.config/ponytail/config.json</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PONYTAIL_DEFAULT_MODE</span><span class="o">=</span><span class="s2">&quot;full&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p>Mientras está activo, el conjunto de reglas se inyecta también en los subagentes que lance el agente principal. Si interesa excluir a alguno (por ejemplo los subagentes de búsqueda, que no escriben código), se puede acotar con una expresión regular contra el tipo de subagente:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PONYTAIL_SUBAGENT_MATCHER</span><span class="o">=</span><span class="s2">&quot;build|code&quot;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="5-verificar-la-integracion">5. Verificar la integración<a class="headerlink" href="#5-verificar-la-integracion" title="Permanent link">&para;</a></h3>
+<p>Arrancamos el agente y comprobamos que aparece el proveedor:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>opencode
+</code></pre></div></td></tr></table></div>
+<p>Dentro de la TUI, el comando <code>/models</code> debe mostrar las entradas de OmniRoute. Una prueba rápida en modo no interactivo o CLI:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>opencode<span class="w"> </span>run<span class="w"> </span><span class="s2">&quot;Resume en tres líneas qué hace este repositorio&quot;</span><span class="w"> </span>--model<span class="w"> </span>omniroute/auto/coding
+</code></pre></div></td></tr></table></div>
+<p>Mientras se ejecuta, en el panel de OmniRoute puede verse en tiempo real qué proveedor ha atendido la petición (<code>Monitoring &gt; Logs</code>), cuántos tokens se han consumido y cuántos ha ahorrado la compresión. Si un proveedor falla, en el registro se aprecia el salto automático al siguiente.</p>
+<p>Para comprobar que Ponytail está cargado basta con ejecutar <code>/ponytail</code> en la TUI, que responde con el nivel activo, o <code>/ponytail-help</code>, que lista sus comandos. El propio arranque de la sesión muestra también el modo actual.</p>
+<div class="admonition tip">
+<p class="admonition-title">Variables de entorno para el resto de herramientas</p>
+<p>Exportando estas variables en el <code>.bashrc</code> o <code>.zshrc</code>, cualquier otra herramienta que respete la convención de OpenAI usará también el gateway sin configuración adicional:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_BASE_URL</span><span class="o">=</span><span class="s2">&quot;http://localhost:20128/v1&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s2">&quot;sk-tu-clave-omniroute&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<h2 id="tipos-de-proyectos-y-operativa">Tipos de proyectos y operativa<a class="headerlink" href="#tipos-de-proyectos-y-operativa" title="Permanent link">&para;</a></h2>
+<p>Una vez montado el entorno, la operativa es esencialmente la misma con independencia del lenguaje, del tamaño del proyecto o de la naturaleza de la tarea. Lo que cambia entre unos casos y otros no es el procedimiento, sino el modelo que conviene seleccionar, el nivel de recorte que interesa y la cantidad de contexto que hay que preparar. Por eso describimos primero el flujo común y después los ajustes por tipo de proyecto.</p>
+<h3 id="operativa-comun">Operativa común<a class="headerlink" href="#operativa-comun" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Situarse en el repositorio y arrancar el agente</strong>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>mi-proyecto
+opencode
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong>Generar el fichero de contexto</strong> la primera vez, con el comando <code>/init</code> dentro de la TUI. OpenCode explora el repositorio y escribe un <code>AGENTS.md</code> con la descripción del proyecto, los comandos de compilación y test y las convenciones detectadas. Merece la pena revisarlo y completarlo a mano: es el documento que más influye en la calidad de los resultados posteriores, y conviene versionarlo con el proyecto.</p>
+</li>
+<li>
+<p><strong>Planificar antes de ejecutar</strong>. Para cualquier cambio que no sea trivial, pedir primero un plan en lugar de la implementación directa. OpenCode dispone de un modo de planificación que no escribe en disco, y revisar el plan cuesta mucho menos que revisar un <em>diff</em> equivocado de 400 líneas.</p>
+</li>
+<li>
+<p><strong>Iterar en pasos pequeños</strong>, validando con las herramientas del propio proyecto (compilador, <em>linter</em>, tests) tras cada paso. El agente puede ejecutar esos comandos por sí mismo si están documentados en <code>AGENTS.md</code>.</p>
+</li>
+<li>
+<p><strong>Pasar la revisión de Ponytail</strong> antes de dar la tarea por buena, con <code>/ponytail-review</code>. Analiza el <em>diff</em> actual buscando sobre-ingeniería y devuelve una lista de cosas a borrar. Es el paso que más rápido amortiza el tiempo invertido.</p>
+</li>
+<li>
+<p><strong>Revisar el <code>diff</code> y confirmar</strong> con el control de versiones. Conviene trabajar siempre sobre una rama y hacer <em>commits</em> pequeños: es la red de seguridad natural cuando quien escribe el código es un agente.</p>
+</li>
+<li>
+<p><strong>Limpiar el contexto entre tareas</strong> con <code>/new</code>. Arrastrar el contexto de una tarea terminada empeora los resultados y dispara el consumo de tokens. En el apartado siguiente se detalla la gestión de sesiones.</p>
+</li>
+<li>
+<p><strong>Vigilar el panel de OmniRoute</strong> de vez en cuando para ver qué proveedores se están usando, cuáles se han agotado y si el ahorro por compresión es el esperado.</p>
+</li>
+</ol>
+<h3 id="gestion-de-sesiones-en-opencode">Gestión de sesiones en OpenCode<a class="headerlink" href="#gestion-de-sesiones-en-opencode" title="Permanent link">&para;</a></h3>
+<p>Al empezar a trabajar con OpenCode sorprende comprobar que, por mucho que se salga de la TUI con <code>Ctrl-D</code> o con <code>/exit</code>, las sesiones siguen apareciendo en el listado. No es un problema de cierre incompleto ni un proceso que se quede colgado: es que <strong>una sesión no es un proceso, es una conversación persistida</strong>. Salir de la TUI termina la interfaz, pero el historial de la conversación (mensajes, herramientas ejecutadas, ficheros tocados, consumo de tokens) se guarda en la base de datos local de OpenCode para poder retomarlo después. Y como cada invocación de <code>opencode</code> sin argumentos abre una sesión nueva, en un par de días de uso el listado tiene decenas de entradas.</p>
+<p>Dicho de otra forma: "cerrar" no significa "borrar". Lo que hay que adquirir es la costumbre de reutilizar y de podar.</p>
+<h4 id="retomar-en-lugar-de-crear">Retomar en lugar de crear<a class="headerlink" href="#retomar-en-lugar-de-crear" title="Permanent link">&para;</a></h4>
+<p>Lo primero es dejar de arrancar siempre en blanco. Estas son las tres formas de continuar un trabajo previo:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>opencode<span class="w"> </span>--continue<span class="w">                  </span><span class="c1"># retoma la última sesión del proyecto actual (-c)</span>
+opencode<span class="w"> </span>--session<span class="w"> </span>&lt;sessionID&gt;<span class="w">       </span><span class="c1"># retoma una sesión concreta (-s)</span>
+opencode<span class="w"> </span>--session<span class="w"> </span>&lt;sessionID&gt;<span class="w"> </span>--fork<span class="w"> </span><span class="c1"># la bifurca en una copia, dejando la original intacta</span>
+</code></pre></div></td></tr></table></div>
+<p>Y desde dentro de la TUI, el comando <code>/sessions</code> (alias <code>/resume</code> y <code>/continue</code>, atajo <code>Ctrl-X L</code>) abre el selector para saltar de una sesión a otra sin salir del programa.</p>
+<p>La opción <code>--fork</code> es especialmente útil cuando una conversación ha llegado a un punto interesante y se quiere probar dos caminos distintos: se bifurca y cada rama sigue por su lado, igual que con <code>git branch</code>.</p>
+<h4 id="cerrar-bien-cada-tarea">Cerrar bien cada tarea<a class="headerlink" href="#cerrar-bien-cada-tarea" title="Permanent link">&para;</a></h4>
+<p>Dentro de la TUI hay dos comandos que marcan el final de una tarea:</p>
+<ul>
+<li><code>/new</code> (alias <code>/clear</code>, atajo <code>Ctrl-X N</code>): abre una sesión nueva y limpia. Es lo que hay que usar al cambiar de tarea, en lugar de seguir escribiendo en la conversación anterior.</li>
+<li><code>/compact</code> (alias <code>/summarize</code>, atajo <code>Ctrl-X C</code>): resume la conversación actual para liberar ventana de contexto sin perder el hilo. Es la alternativa cuando se quiere continuar con la misma tarea pero el contexto se ha vuelto pesado.</li>
+</ul>
+<p>Si de una sesión interesa conservar el resultado, <code>/export</code> vuelca la conversación a Markdown y la abre en el editor, y <code>opencode export &lt;sessionID&gt;</code> hace lo propio en JSON desde la línea de comandos.</p>
+<h4 id="inventariar-y-podar">Inventariar y podar<a class="headerlink" href="#inventariar-y-podar" title="Permanent link">&para;</a></h4>
+<p>Desde fuera de la TUI se gestiona el inventario completo:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>opencode<span class="w"> </span>session<span class="w"> </span>list<span class="w">                </span><span class="c1"># listado de sesiones</span>
+opencode<span class="w"> </span>session<span class="w"> </span>list<span class="w"> </span>-n<span class="w"> </span><span class="m">20</span><span class="w">          </span><span class="c1"># limitar el número de entradas</span>
+opencode<span class="w"> </span>session<span class="w"> </span>list<span class="w"> </span>--format<span class="w"> </span>json<span class="w">  </span><span class="c1"># salida procesable por script</span>
+opencode<span class="w"> </span>session<span class="w"> </span>delete<span class="w"> </span>&lt;sessionID&gt;<span class="w">  </span><span class="c1"># eliminar una sesión</span>
+</code></pre></div></td></tr></table></div>
+<p>Y para ver el coste de lo acumulado, que en este montaje es lo que determina cuánta cuota gratuita se está quemando:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>opencode<span class="w"> </span>stats<span class="w">                       </span><span class="c1"># consumo de tokens y coste</span>
+opencode<span class="w"> </span>stats<span class="w"> </span>--days<span class="w"> </span><span class="m">7</span><span class="w"> </span>--models<span class="w">     </span><span class="c1"># últimos 7 días, desglosado por modelo</span>
+opencode<span class="w"> </span>stats<span class="w"> </span>--project<span class="w">             </span><span class="c1"># sólo el proyecto actual</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="un-flujo-que-funciona">Un flujo que funciona<a class="headerlink" href="#un-flujo-que-funciona" title="Permanent link">&para;</a></h4>
+<p>Reuniendo lo anterior, la rutina que mantiene el listado bajo control es:</p>
+<ol>
+<li><strong>Una sesión por tarea</strong>, no por jornada ni por proyecto. La unidad natural es lo que acaba en un <em>commit</em>.</li>
+<li><strong>Retomar con <code>-c</code></strong> cuando se vuelve a una tarea a medias, en vez de arrancar <code>opencode</code> a secas y volver a explicar el contexto (que además se paga en tokens).</li>
+<li><strong><code>/new</code> al cambiar de tarea</strong> y <code>/compact</code> si la tarea se alarga pero sigue siendo la misma.</li>
+<li><strong>Exportar lo que merezca la pena</strong> antes de dar por cerrada una sesión con conclusiones valiosas.</li>
+<li><strong>Poda periódica</strong>, por ejemplo semanal, revisando <code>opencode session list</code> y borrando con <code>opencode session delete</code> todo lo que ya esté commiteado y no aporte nada.</li>
+<li><strong>Revisar <code>opencode stats</code></strong> en esa misma poda, para tener la foto del consumo junto a la del panel de OmniRoute.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Las sesiones van por proyecto</p>
+<p>OpenCode asocia las sesiones al directorio de trabajo desde el que se lanzó, así que <code>--continue</code> retoma la última sesión <em>de ese proyecto</em>, no la última en términos absolutos. Es un detalle que ayuda: trabajar siempre desde la raíz del repositorio mantiene los listados ordenados por proyecto de forma natural.</p>
+</div>
+<h3 id="comandos-de-ponytail">Comandos de Ponytail<a class="headerlink" href="#comandos-de-ponytail" title="Permanent link">&para;</a></h3>
+<p>Más allá del nivel de intensidad, el <em>skill</em> aporta un puñado de comandos que encajan en distintos momentos del flujo anterior:</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Para qué sirve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/ponytail [lite \| full \| ultra \| off]</code></td>
+<td>Ajusta la intensidad o la desactiva. Sin argumento informa del nivel actual.</td>
+</tr>
+<tr>
+<td><code>/ponytail-review</code></td>
+<td>Revisa el <em>diff</em> actual en busca de sobre-ingeniería y devuelve una lista de borrado.</td>
+</tr>
+<tr>
+<td><code>/ponytail-audit</code></td>
+<td>Lo mismo, pero sobre todo el repositorio en lugar de sobre el <em>diff</em>.</td>
+</tr>
+<tr>
+<td><code>/ponytail-debt</code></td>
+<td>Recopila en un registro los atajos marcados con <code>ponytail:</code> que se hayan ido aplazando.</td>
+</tr>
+<tr>
+<td><code>/ponytail-gain</code></td>
+<td>Muestra el marcador de impacto medido (menos código, menos coste, más velocidad).</td>
+</tr>
+<tr>
+<td><code>/ponytail-help</code></td>
+<td>Referencia rápida de los comandos anteriores.</td>
+</tr>
+</tbody>
+</table>
+<p>Cuando el agente decide no construir algo, deja un comentario del tipo <code>ponytail: browser has one</code> explicando el peldaño de la escalera en el que se detuvo. Esos comentarios son los que después recoge <code>/ponytail-debt</code>, de forma que las decisiones de "esto ya se hará si hace falta" quedan registradas en lugar de perderse.</p>
+<h3 id="ajustes-segun-el-tipo-de-proyecto">Ajustes según el tipo de proyecto<a class="headerlink" href="#ajustes-segun-el-tipo-de-proyecto" title="Permanent link">&para;</a></h3>
+<p>Lo único que varía de forma apreciable entre escenarios es la elección de modelo y la preparación del contexto:</p>
+<ul>
+<li>
+<p><strong>Proyectos nuevos desde cero (<em>greenfield</em>)</strong>. Hay poco contexto que cargar y mucho código que generar. Es el escenario ideal para las capas gratuitas: <code>auto/cheap</code> o <code>auto/offline</code> dan buen resultado y el consumo de tokens de entrada es bajo. Conviene empezar pidiendo el andamiaje del proyecto y el fichero de dependencias, y sólo después las funcionalidades. También es donde más se nota Ponytail, porque es donde el agente tiene más libertad para inventar estructura de más.</p>
+</li>
+<li>
+<p><strong>Mantenimiento y evolución de código existente</strong>. Aquí el cuello de botella es el contexto: el agente necesita leer bastante código antes de tocar nada. Interesa un <code>AGENTS.md</code> detallado, activar la compresión de contexto de OmniRoute y usar <code>auto/coding</code> para las tareas de modificación. Es también el caso donde más se nota el fallback, porque las sesiones son largas. El peldaño "¿ya está en este repositorio?" de Ponytail resulta especialmente valioso, ya que evita el clásico duplicado de un helper que ya existía tres directorios más allá.</p>
+</li>
+<li>
+<p><strong>Depuración de errores</strong>. El flujo es el mismo, pero funciona mucho mejor si se le proporciona al agente una forma de reproducir el fallo (un test que falle, la traza completa, el comando exacto). Modelos con capacidad de razonamiento explícito dan mejores resultados; en OmniRoute se pueden seleccionar las variantes <em>thinking</em> de los modelos que las ofrezcan. Un nivel <code>lite</code> de Ponytail, o incluso <code>off</code>, puede ser preferible aquí: al depurar interesa entender, no recortar.</p>
+</li>
+<li>
+<p><strong>Scripting y automatización</strong>. Aquí interesa el modo no interactivo, que permite integrar el agente en scripts, <em>hooks</em> de git o tareas programadas:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>opencode<span class="w"> </span>run<span class="w"> </span><span class="s2">&quot;Actualiza el CHANGELOG con los commits desde la última etiqueta&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>omniroute/auto/fast
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong>Refactorizaciones amplias y repetitivas</strong>. Trocear el trabajo en tareas independientes y lanzarlas por separado, en lugar de pedir un cambio masivo en una sola sesión. Además de dar mejores resultados, evita agotar la ventana de contexto y la cuota de un proveedor de una sentada. Si lo que se busca es precisamente adelgazar código heredado, <code>/ponytail-audit</code> sobre el repositorio completo y <code>/ponytail ultra</code> son el punto de partida natural.</p>
+</li>
+<li>
+<p><strong>Proyectos con código sensible</strong>. Si no se puede enviar el código a terceros, la misma configuración sirve conectando en OmniRoute un proveedor local (Ollama o LM Studio en la propia máquina) en lugar de los servicios gratuitos. Cambia el proveedor conectado en el panel; ni OpenCode ni el flujo de trabajo se tocan.</p>
+</li>
+</ul>
+<h2 id="conclusion">Conclusión<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>La combinación de OpenCode, OmniRoute y Ponytail proporciona un entorno de desarrollo agéntico completo con coste de entrada nulo y sin las interrupciones por cuota agotada que caracterizan a las alternativas comerciales. Cada pieza ataca un frente distinto: el agente aporta las capacidades, el gateway la cuota y la independencia de proveedor, y el <em>skill</em> la disciplina para que el código generado sea el mínimo necesario. Y las tres se declaran en un único fichero de configuración de unas veinte líneas.</p>
+<p>El precio a pagar es una configuración inicial algo más laboriosa que la de un producto cerrado y la necesidad de revisar de vez en cuando qué proveedores gratuitos siguen operativos. A cambio se obtiene algo que las suscripciones no dan: independencia respecto al proveedor, visibilidad completa de lo que consume el agente y menos código del que arrepentirse.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/eduardofilo" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://mastodon.social/@eduardofilo" target="_blank" rel="noopener me" title="mastodon.social" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/eduardofilo" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/edumoreno/" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="http://eduardofilo.es" target="_blank" rel="noopener" title="eduardofilo.es" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M309.8 480.3c-13.6 14.5-50 31.7-97.4 31.7-120.8 0-147-88.8-147-140.6v-144H17.9c-5.5 0-10-4.5-10-10v-68c0-7.2 4.5-13.6 11.3-16 62-21.8 81.5-76 84.3-117.1.8-11 6.5-16.3 16.1-16.3h70.9c5.5 0 10 4.5 10 10v115.2h83c5.5 0 10 4.4 10 9.9v81.7c0 5.5-4.5 10-10 10h-83.4V360c0 34.2 23.7 53.6 68 35.8 4.8-1.9 9-3.2 12.7-2.2 3.5.9 5.8 3.4 7.4 7.9l22 64.3c1.8 5 3.3 10.6-.4 14.5z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/c/EduardoMorenoLamana" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="rss.xml" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64zm0 352a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm32-256c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tracking", "navigation.tabs"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
