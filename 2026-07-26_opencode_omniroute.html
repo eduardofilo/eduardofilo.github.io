@@ -4877,7 +4877,7 @@ omniroute
 <h4 id="proveedores-sin-autenticacion">Proveedores sin autenticación<a class="headerlink" href="#proveedores-sin-autenticacion" title="Permanent link">&para;</a></h4>
 <p>En general la elección y configuración de los proveedores es la parte más complicada, farragosa y que más tiempo consume de todo el proceso descrito en este artículo.</p>
 <p>No solo eso, algunos de los proveedores activados por defecto como los de la categoría "No Auth", pueden provocar problemas. Durante las primeras sesiones de uso de OpenCode observé que la mayoría de las peticiones obtenían una respuesta vacía. Tras investigar encontré que el problema era la intervención de proveedor "Augment (Auggie CLI)" que por tanto recomiendo desactivar.</p>
-<p>Además mirando los logs de la consola de OmniRoute (<code>Monitoring &gt; Logs</code>), encontré que los proveedores "Chipotle Pepper AI (Free)" y "DuckDuckGo AI Chat" fallaban siempre, por lo que aunque no introducen respuestas incorrectas como "Augment (Auggie CLI)", retrasan el recorrido de la cascada de proveedores, por lo que recomiendo desactivarlos también.</p>
+<p>Además mirando los logs de la consola de OmniRoute (<code>Monitoring &gt; Logs</code>), encontré que los proveedores "Chipotle Pepper AI (Free)" y "DuckDuckGo AI Chat" fallaban siempre, por lo que aunque no introducen respuestas incorrectas como "Augment (Auggie CLI)", retrasan el recorrido de la cascada de proveedores, por lo que recomiendo desactivarlos también. El proveedor "Veo AI Free" también recomiendo desactivarlo, dado que sólo ofrece modelos de vídeo que no nos van a servir para codificar.</p>
 <h4 id="proveedores-con-clave-de-api-gratuita">Proveedores con clave de API gratuita<a class="headerlink" href="#proveedores-con-clave-de-api-gratuita" title="Permanent link">&para;</a></h4>
 <p>El procedimiento es siempre el mismo, cambiando únicamente el sitio del que se obtiene la clave:</p>
 <ol>
@@ -4895,11 +4895,9 @@ omniroute
 </ul>
 <p>Algunos de los proveedores de este tipo que me parecen recomendables en el momento de escribir este artículo son:</p>
 <ul>
-<li><a href="https://chat.cerebras.ai/">Cerebras</a></li>
 <li><a href="https://aistudio.google.com/api-keys">Gemini (Google AI Studio)</a></li>
 <li><a href="https://groq.com/">Groq</a></li>
 <li><a href="https://console.mistral.ai/">Mistral</a></li>
-<li><a href="https://longcat.chat/platform/">LongCat AI</a>: Necesario traductor de pantalla.</li>
 <li><a href="https://dash.cloudflare.com/">Cloudflare Workers AI</a>: Tras introducir la API Key, se produce el intento de conexión con los modelos que fallará indicando que hace falta un "Account ID" además. El "Account ID" es el hash que aparece a continuación de la URL <code>https://dash.cloudflare.com</code> una vez creada e iniciada la sesión. Introduciremos ese hash en el campo "Account ID" de los ajustes del provider.</li>
 </ul>
 <h4 id="proveedores-oauth">Proveedores OAuth<a class="headerlink" href="#proveedores-oauth" title="Permanent link">&para;</a></h4>
@@ -4941,15 +4939,21 @@ omniroute<span class="w"> </span>providers<span class="w"> </span>test-all<span 
 <p>El síntoma es desconcertante, porque el agente no da ningún error: simplemente devuelve una respuesta vacía, o un texto en el que el modelo explica que no ha podido explorar el repositorio y nos pide que le peguemos nosotros el contenido de los ficheros.</p>
 <h5 id="un-test-de-admision">Un test de admisión<a class="headerlink" href="#un-test-de-admision" title="Permanent link">&para;</a></h5>
 <p>La forma fiable de decidir si un proveedor entra o no en el pool es preguntárselo al gateway. Esta petición envía una herramienta y comprueba si el modelo la invoca:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>http://localhost:20128/v1/chat/completions<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer sk-tu-clave-omniroute&quot;</span><span class="w"> </span><span class="se">\</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">API</span><span class="o">=</span><span class="s2">&quot;http://localhost:20128/v1&quot;</span>
+<span class="nv">KEY</span><span class="o">=</span><span class="s2">&quot;sk-tu-clave-omniroute&quot;</span>
+
+curl<span class="w"> </span>-s<span class="w"> </span><span class="nv">$API</span>/chat/completions<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">    &quot;model&quot;: &quot;auto/coding&quot;,</span>
@@ -4958,26 +4962,34 @@ omniroute<span class="w"> </span>providers<span class="w"> </span>test-all<span 
 <span class="s1">  }&#39;</span>
 </code></pre></div></td></tr></table></div>
 <p>La respuesta debe contener un bloque <code>tool_calls</code> con el nombre de la herramienta y sus argumentos. Si en su lugar llega prosa, ese proveedor no sirve. Al final del volcado, las cabeceras <code>x-omniroute-provider</code> y <code>x-omniroute-model</code> nos dicen quién ha respondido.</p>
-<p>Como el modelo virtual <code>auto</code> elige un proveedor distinto en cada petición, conviene repetir la prueba unas cuantas veces para tener una foto del pool completo:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">15</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">  </span><span class="nv">r</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>http://localhost:20128/v1/chat/completions<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer sk-tu-clave-omniroute&quot;</span><span class="w"> </span><span class="se">\</span>
+<p>Para testear el pool completo, lo más fiable es consultar los modelos disponibles en el gateway y lanzar una petición a cada uno. Esto evita depender del enrutamiento de <code>auto</code>, que tiende a pegarse al último proveedor que funcionó y no garantiza que todos los candidatos reciban tráfico. El filtro de <code>jq</code> excluye los modelos virtuales <code>auto/*</code>, los de Pollinations (catálogo masivo de modelos de imagen, vídeo y audio que no soportan <em>tools</em>) y los de la categoría <code>tllm</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">API</span><span class="o">=</span><span class="s2">&quot;http://localhost:20128/v1&quot;</span>
+<span class="nv">KEY</span><span class="o">=</span><span class="s2">&quot;sk-tu-clave-omniroute&quot;</span>
+
+<span class="k">for</span><span class="w"> </span>model<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$API</span><span class="s2">/models&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.data[].id | select(test(&quot;^auto/|^(pol|pollinations|no-think)/|tllm/|^veo-free/|embed|whisper|moderation&quot;) | not)&#39;</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="nv">r</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$API</span><span class="s2">/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;auto/coding&quot;,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;Lee el fichero /etc/hostname&quot;}],&quot;tools&quot;:[{&quot;type&quot;:&quot;function&quot;,&quot;function&quot;:{&quot;name&quot;:&quot;read&quot;,&quot;description&quot;:&quot;Lee un fichero&quot;,&quot;parameters&quot;:{&quot;type&quot;:&quot;object&quot;,&quot;properties&quot;:{&quot;path&quot;:{&quot;type&quot;:&quot;string&quot;}},&quot;required&quot;:[&quot;path&quot;]}}}]}&#39;</span><span class="k">)</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s2">&quot;{\&quot;model\&quot;:\&quot;</span><span class="nv">$model</span><span class="s2">\&quot;,\&quot;messages\&quot;:[{\&quot;role\&quot;:\&quot;user\&quot;,\&quot;content\&quot;:\&quot;Lee el fichero /etc/hostname\&quot;}],\&quot;tools\&quot;:[{\&quot;type\&quot;:\&quot;function\&quot;,\&quot;function\&quot;:{\&quot;name\&quot;:\&quot;read\&quot;,\&quot;description\&quot;:\&quot;Lee un fichero\&quot;,\&quot;parameters\&quot;:{\&quot;type\&quot;:\&quot;object\&quot;,\&quot;properties\&quot;:{\&quot;path\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;}},\&quot;required\&quot;:[\&quot;path\&quot;]}}}]}&quot;</span><span class="k">)</span>
 <span class="w">  </span><span class="nv">prov</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%s&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$r</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-o<span class="w"> </span><span class="s1">&#39;x-omniroute-provider=.*&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-1<span class="k">)</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%s&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$r</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span>tool_calls<span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nv">res</span><span class="o">=</span>OK<span class="p">;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="nv">res</span><span class="o">=</span>FALLA<span class="p">;</span><span class="w"> </span><span class="k">fi</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$res</span><span class="s2">  </span><span class="nv">$prov</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$res</span><span class="s2">  </span><span class="nv">$model</span><span class="s2">  </span><span class="nv">$prov</span><span class="s2">&quot;</span>
 <span class="k">done</span>
 </code></pre></div></td></tr></table></div>
-<p>Todo lo que salga <code>FALLA</code> sobra: se desconecta en <strong>Providers</strong> y el pool queda saneado. Es un trabajo que se hace una vez, y que hay que repetir sólo al conectar un proveedor nuevo.</p>
+<p>Requiere <code>jq</code>. Todo lo que salga <code>FALLA</code> sobra: se desconecta en <strong>Providers</strong> y el pool queda saneado. Es un trabajo que se hace una vez, y que hay que repetir sólo al conectar un proveedor nuevo.</p>
 <h5 id="dos-sintomas-que-reconocer-en-los-logs">Dos síntomas que reconocer en los logs<a class="headerlink" href="#dos-sintomas-que-reconocer-en-los-logs" title="Permanent link">&para;</a></h5>
 <p>En <code>Monitoring &gt; Logs</code> hay dos patrones que delatan a un proveedor que conviene retirar:</p>
 <ul>
