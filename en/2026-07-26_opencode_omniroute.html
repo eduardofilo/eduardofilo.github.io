@@ -4956,6 +4956,13 @@ omniroute<span class="w"> </span>providers<span class="w"> </span>test-all<span 
 </code></pre></div></td></tr></table></div>
 <p>While it runs, the OmniRoute panel (<code>Monitoring &gt; Logs</code>) shows in real-time which provider handled the request, tokens consumed, and compression savings. If a provider fails, the log shows the automatic jump to the next.</p>
 <p>To check if Ponytail is loaded, simply run <code>/ponytail</code> in the TUI (it returns the active level) or <code>/ponytail-help</code> (lists its commands). The session startup also displays the current mode.</p>
+<div class="admonition warning">
+<p class="admonition-title">A misleading startup ERROR</p>
+<p>If OpenCode is started with <code>--print-logs</code>, this line may appear when loading the configuration:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ERROR message=&quot;failed to load plugin&quot; path=@dietrichgebert/ponytail error=&quot;path must be a string or a file descriptor&quot;
+</code></pre></div></td></tr></table></div>
+<p>It's misleading: OpenCode tries to load the plugin by two paths and one of them fails, but the other loads it correctly. The reliable test that Ponytail is operational is the absence of that ERROR, not that <code>/ponytail</code> responds with the active level. Note that the level is <strong>persisted</strong> between sessions (in <code>~/.config/opencode/.ponytail-active</code>): a <code>/ponytail off</code> from a previous test leaves the plugin loaded but muted, an indistinguishable state from "not working". When in doubt: <code>/ponytail full</code> and ask the agent what its <em>system prompt</em> says about <code>PONYTAIL</code>.</p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Environment Variables for Other Tools</p>
 <p>Exporting these variables in your <code>.bashrc</code> or <code>.zshrc</code> makes any other OpenAI-convention-respecting tool use the gateway without further configuration:</p>

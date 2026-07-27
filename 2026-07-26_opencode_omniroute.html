@@ -4956,6 +4956,13 @@ omniroute<span class="w"> </span>providers<span class="w"> </span>test-all<span 
 </code></pre></div></td></tr></table></div>
 <p>Mientras se ejecuta, en el panel de OmniRoute puede verse en tiempo real qué proveedor ha atendido la petición (<code>Monitoring &gt; Logs</code>), cuántos tokens se han consumido y cuántos ha ahorrado la compresión. Si un proveedor falla, en el registro se aprecia el salto automático al siguiente.</p>
 <p>Para comprobar que Ponytail está cargado basta con ejecutar <code>/ponytail</code> en la TUI, que responde con el nivel activo, o <code>/ponytail-help</code>, que lista sus comandos. El propio arranque de la sesión muestra también el modo actual.</p>
+<div class="admonition warning">
+<p class="admonition-title">Un ERROR de arranque que no es lo que parece</p>
+<p>Si se arranca OpenCode con <code>--print-logs</code> puede aparecer esta línea al cargar la configuración:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ERROR message=&quot;failed to load plugin&quot; path=@dietrichgebert/ponytail error=&quot;path must be a string or a file descriptor&quot;
+</code></pre></div></td></tr></table></div>
+<p>Es engañosa: OpenCode intenta cargar el plugin por dos rutas y una de ellas falla, pero la otra lo carga correctamente. La prueba fiable de que Ponytail está operativo no es la ausencia de ese ERROR sino que <code>/ponytail</code> responda con el nivel activo. Hay que tener en cuenta además que el nivel se <strong>persiste</strong> entre sesiones (en <code>~/.config/opencode/.ponytail-active</code>): un <code>/ponytail off</code> de una prueba anterior deja el plugin cargado pero mudo, un estado indistinguible de "no funciona". Ante la duda: <code>/ponytail full</code> y preguntar al agente qué dice su <em>system prompt</em> sobre <code>PONYTAIL</code>.</p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Variables de entorno para el resto de herramientas</p>
 <p>Exportando estas variables en el <code>.bashrc</code> o <code>.zshrc</code>, cualquier otra herramienta que respete la convención de OpenAI usará también el gateway sin configuración adicional:</p>
