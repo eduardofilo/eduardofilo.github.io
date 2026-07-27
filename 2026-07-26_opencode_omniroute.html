@@ -637,6 +637,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#proveedores-sin-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proveedores sin autenticación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#proveedores-con-clave-de-api-gratuita" class="md-nav__link">
     <span class="md-ellipsis">
       Proveedores con clave de API gratuita
@@ -4409,6 +4418,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#proveedores-sin-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proveedores sin autenticación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#proveedores-con-clave-de-api-gratuita" class="md-nav__link">
     <span class="md-ellipsis">
       Proveedores con clave de API gratuita
@@ -4790,6 +4808,8 @@ omniroute
 </tbody>
 </table>
 <p>El filtro de la parte superior de la pantalla permite quedarse sólo con las que interesan, y el buscador acepta el nombre o el identificador del proveedor.</p>
+<h4 id="proveedores-sin-autenticacion">Proveedores sin autenticación<a class="headerlink" href="#proveedores-sin-autenticacion" title="Permanent link">&para;</a></h4>
+<p>En general la elección y configuración de los proveedores es la parte más complicada, farragosa y que más tiempo consume de todo el proceso descrito en este artículo. No solo eso, algunos de los proveedores activados por defecto como los de la categoría "No Auth", pueden provocar problemas. Durante las primeras sesiones de uso de OpenCode observé que la mayoría de las peticiones obtenían una respuesta vacía. Tras investigar encontré que el problema era la intervención de proveedor "Augment (Auggie CLI)" que por tanto recomiendo desactivar.</p>
 <h4 id="proveedores-con-clave-de-api-gratuita">Proveedores con clave de API gratuita<a class="headerlink" href="#proveedores-con-clave-de-api-gratuita" title="Permanent link">&para;</a></h4>
 <p>El procedimiento es siempre el mismo, cambiando únicamente el sitio del que se obtiene la clave:</p>
 <ol>
@@ -4798,7 +4818,13 @@ omniroute
 <li>Pegar la clave en el formulario y guardar.</li>
 <li>Pulsar el botón de <strong>Test</strong> de la tarjeta del proveedor. Si responde correctamente, sus modelos pasan a formar parte del catálogo del gateway y entran automáticamente en el <em>pool</em> del modelo <code>auto</code>.</li>
 </ol>
-<p>Algunos candidatos con capa gratuita y sin tarjeta de crédito pueden encontrarse <a href="https://github.com/diegosouzapw/OmniRoute/wiki/Providers-Guide#best-free-providers">aquí</a>, <a href="https://github.com/diegosouzapw/OmniRoute/blob/release/v3.8.49/docs/getting-started/FREE-TIERS-GUIDE.md">aquí</a> y <a href="https://github.com/diegosouzapw/OmniRoute/blob/release/v3.8.49/docs/reference/FREE_TIERS.md">aquí</a>.</p>
+<p>Los proveedores de esta categoría son los que más nos van a permitir aprovechar las ventajas de OmniRoute. Son numerosos, pero como se comentaba en el apartado anterior, requiere bsatante trabajo configurarlos (obtención de API Keys de distintos proveedores) y mantenerse al día de cuáles suben/bajan en operativa o son más o menos recomendables en un momento dado.</p>
+<p>Algunos documentos que seguir para mantener en buena forma la lista de proveedores gratuitos son los siguientes:</p>
+<ul>
+<li><a href="https://github.com/diegosouzapw/OmniRoute/wiki/Providers-Guide#best-free-providers">Providers Guide - Best Free Providers</a></li>
+<li><a href="https://github.com/diegosouzapw/OmniRoute/blob/release/v3.8.49/docs/getting-started/FREE-TIERS-GUIDE.md">FREE TIERS GUIDE</a></li>
+<li><a href="https://github.com/diegosouzapw/OmniRoute/blob/release/v3.8.49/docs/reference/FREE_TIERS.md">FREE TIERS</a></li>
+</ul>
 <h4 id="proveedores-oauth">Proveedores OAuth<a class="headerlink" href="#proveedores-oauth" title="Permanent link">&para;</a></h4>
 <p>Con estos no hay clave que copiar: se pulsa el botón de conexión de la tarjeta, se abre el flujo de inicio de sesión del proveedor en el navegador, y al terminar OmniRoute guarda las credenciales cifradas en su base de datos local. Es el caso de las cuentas de herramientas que ya se estén usando (Copilot, Cursor, Kilo Code, Qoder, etc.).</p>
 <div class="admonition warning">
