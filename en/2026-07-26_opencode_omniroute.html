@@ -4957,7 +4957,7 @@ omniroute<span class="w"> </span>providers<span class="w"> </span>test-all<span 
 <p>While it runs, the OmniRoute panel (<code>Monitoring &gt; Logs</code>) shows in real-time which provider handled the request, tokens consumed, and compression savings. If a provider fails, the log shows the automatic jump to the next.</p>
 <p>To check if Ponytail is loaded, simply run <code>/ponytail</code> in the TUI (it returns the active level) or <code>/ponytail-help</code> (lists its commands). The session startup also displays the current mode.</p>
 <div class="admonition warning">
-<p class="admonition-title">A misleading startup ERROR</p>
+<p class="admonition-title">Apparent Ponytail Startup ERROR</p>
 <p>If OpenCode is started with <code>--print-logs</code>, this line may appear when loading the configuration:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ERROR message=&quot;failed to load plugin&quot; path=@dietrichgebert/ponytail error=&quot;path must be a string or a file descriptor&quot;
 </code></pre></div></td></tr></table></div>
