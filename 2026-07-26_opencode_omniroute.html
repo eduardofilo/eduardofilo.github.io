@@ -672,6 +672,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#depurar-el-pool-para-uso-agentico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Depurar el pool para uso agéntico
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Depurar el pool para uso agéntico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#un-test-de-admision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un test de admisión
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dos-sintomas-que-reconocer-en-los-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dos síntomas que reconocer en los logs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4453,6 +4486,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#depurar-el-pool-para-uso-agentico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Depurar el pool para uso agéntico
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Depurar el pool para uso agéntico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#un-test-de-admision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un test de admisión
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dos-sintomas-que-reconocer-en-los-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dos síntomas que reconocer en los logs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4835,7 +4901,6 @@ omniroute
 <li><a href="https://console.mistral.ai/">Mistral</a></li>
 <li><a href="https://longcat.chat/platform/">LongCat AI</a>: Necesario traductor de pantalla.</li>
 <li><a href="https://dash.cloudflare.com/">Cloudflare Workers AI</a>: Tras introducir la API Key, se produce el intento de conexión con los modelos que fallará indicando que hace falta un "Account ID" además. El "Account ID" es el hash que aparece a continuación de la URL <code>https://dash.cloudflare.com</code> una vez creada e iniciada la sesión. Introduciremos ese hash en el campo "Account ID" de los ajustes del provider.</li>
-<li><a href="https://chat.qwen.ai/">Qwen Web (Free)</a>: Aquí no hay que proporcionar una API Key sino el valor de la cookie que mantiene la sesión en las conversaciones desde la web de chat de Qwen. Al añadir la conexión con este proveedor se nos dan detalles de como lograrlo.</li>
 </ul>
 <h4 id="proveedores-oauth">Proveedores OAuth<a class="headerlink" href="#proveedores-oauth" title="Permanent link">&para;</a></h4>
 <p>Con estos no hay clave que copiar: se pulsa el botón de conexión de la tarjeta, se abre el flujo de inicio de sesión del proveedor en el navegador, y al terminar OmniRoute guarda las credenciales cifradas en su base de datos local. Es el caso de las cuentas de herramientas que ya se estén usando (Copilot, Cursor, Kilo Code, Qoder, etc.).</p>
@@ -4866,6 +4931,64 @@ omniroute<span class="w"> </span>providers<span class="w"> </span>list<span clas
 omniroute<span class="w"> </span>providers<span class="w"> </span>test-all<span class="w">                       </span><span class="c1"># probar todas de golpe</span>
 </code></pre></div></td></tr></table></div>
 <p><code>providers test-all</code> es el comando que conviene lanzar de vez en cuando: informa de un vistazo sobre qué proveedores han dejado de responder, ya sea por cuota agotada, por credenciales caducadas o porque el servicio ha cambiado sus condiciones.</p>
+<h4 id="depurar-el-pool-para-uso-agentico">Depurar el pool para uso agéntico<a class="headerlink" href="#depurar-el-pool-para-uso-agentico" title="Permanent link">&para;</a></h4>
+<p>Hay un paso que no aparece en la documentación de OmniRoute y que, sin embargo, es el que marca la diferencia entre un entorno que funciona y uno que falla de forma aparentemente aleatoria: <strong>no todos los proveedores del catálogo sirven para alimentar a un agente</strong>.</p>
+<p>La razón es que un agente como OpenCode no se limita a pedir texto: envía en cada petición la lista de <em>herramientas</em> de las que dispone (leer ficheros, ejecutar comandos, buscar en el repositorio…) y espera que el modelo responda con llamadas a esas herramientas. Los proveedores que son la API oficial de un modelo devuelven esas llamadas al cliente, que es lo correcto. Pero el catálogo incluye también dos tipos de entradas que no se comportan así:</p>
+<ul>
+<li><strong>Proxies de un cliente web</strong> (los que se conectan con la cookie de sesión de un chat, en lugar de con una clave de API). El servicio del otro lado tiene su propio motor de herramientas e intenta ejecutarlas él, en su entorno, en lugar de devolverlas.</li>
+<li><strong>Front-ends de agentes</strong> (servicios pensados para consumirse desde su propia herramienta de línea de comandos). Traen su propio catálogo de herramientas y no encajan como motor de otro agente.</li>
+</ul>
+<p>El síntoma es desconcertante, porque el agente no da ningún error: simplemente devuelve una respuesta vacía, o un texto en el que el modelo explica que no ha podido explorar el repositorio y nos pide que le peguemos nosotros el contenido de los ficheros.</p>
+<h5 id="un-test-de-admision">Un test de admisión<a class="headerlink" href="#un-test-de-admision" title="Permanent link">&para;</a></h5>
+<p>La forma fiable de decidir si un proveedor entra o no en el pool es preguntárselo al gateway. Esta petición envía una herramienta y comprueba si el modelo la invoca:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>http://localhost:20128/v1/chat/completions<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer sk-tu-clave-omniroute&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;model&quot;: &quot;auto/coding&quot;,</span>
+<span class="s1">    &quot;messages&quot;: [{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;Lee el fichero /etc/hostname&quot;}],</span>
+<span class="s1">    &quot;tools&quot;: [{&quot;type&quot;:&quot;function&quot;,&quot;function&quot;:{&quot;name&quot;:&quot;read&quot;,&quot;description&quot;:&quot;Lee un fichero&quot;,&quot;parameters&quot;:{&quot;type&quot;:&quot;object&quot;,&quot;properties&quot;:{&quot;path&quot;:{&quot;type&quot;:&quot;string&quot;}},&quot;required&quot;:[&quot;path&quot;]}}}]</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div></td></tr></table></div>
+<p>La respuesta debe contener un bloque <code>tool_calls</code> con el nombre de la herramienta y sus argumentos. Si en su lugar llega prosa, ese proveedor no sirve. Al final del volcado, las cabeceras <code>x-omniroute-provider</code> y <code>x-omniroute-model</code> nos dicen quién ha respondido.</p>
+<p>Como el modelo virtual <code>auto</code> elige un proveedor distinto en cada petición, conviene repetir la prueba unas cuantas veces para tener una foto del pool completo:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">15</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="nv">r</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>http://localhost:20128/v1/chat/completions<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer sk-tu-clave-omniroute&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;auto/coding&quot;,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;Lee el fichero /etc/hostname&quot;}],&quot;tools&quot;:[{&quot;type&quot;:&quot;function&quot;,&quot;function&quot;:{&quot;name&quot;:&quot;read&quot;,&quot;description&quot;:&quot;Lee un fichero&quot;,&quot;parameters&quot;:{&quot;type&quot;:&quot;object&quot;,&quot;properties&quot;:{&quot;path&quot;:{&quot;type&quot;:&quot;string&quot;}},&quot;required&quot;:[&quot;path&quot;]}}}]}&#39;</span><span class="k">)</span>
+<span class="w">  </span><span class="nv">prov</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%s&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$r</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-o<span class="w"> </span><span class="s1">&#39;x-omniroute-provider=.*&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-1<span class="k">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%s&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$r</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span>tool_calls<span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nv">res</span><span class="o">=</span>OK<span class="p">;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="nv">res</span><span class="o">=</span>FALLA<span class="p">;</span><span class="w"> </span><span class="k">fi</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$res</span><span class="s2">  </span><span class="nv">$prov</span><span class="s2">&quot;</span>
+<span class="k">done</span>
+</code></pre></div></td></tr></table></div>
+<p>Todo lo que salga <code>FALLA</code> sobra: se desconecta en <strong>Providers</strong> y el pool queda saneado. Es un trabajo que se hace una vez, y que hay que repetir sólo al conectar un proveedor nuevo.</p>
+<h5 id="dos-sintomas-que-reconocer-en-los-logs">Dos síntomas que reconocer en los logs<a class="headerlink" href="#dos-sintomas-que-reconocer-en-los-logs" title="Permanent link">&para;</a></h5>
+<p>En <code>Monitoring &gt; Logs</code> hay dos patrones que delatan a un proveedor que conviene retirar:</p>
+<ul>
+<li><strong><code>200</code> con <code>TO: 0</code></strong> en unos pocos milisegundos: el proveedor ha devuelto una respuesta vacía con estado de éxito. Una inferencia real nunca tarda 15 ms.</li>
+<li><strong>Respuestas lentas cuyo contenido es texto</strong> donde debería haber <code>tool_calls</code>, a menudo con mensajes de error del propio servicio remoto explicando que las herramientas no existen.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">El fallback no salta con los fallos disfrazados de éxito</p>
+<p>Conviene entender bien el límite del sistema. La cascada de reintentos de OmniRoute funciona con los fallos <strong>explícitos</strong>: un 429 por cuota, un 502 o un timeout hacen que la petición se reintente contra el siguiente proveedor, y eso se aprecia perfectamente en el registro. Pero los dos casos anteriores llegan al gateway como respuestas correctas: un <code>200</code> con un cuerpo vacío es, para un router, una respuesta válida. Ningún <em>gateway</em> puede arbitrar eso sin inspeccionar semánticamente el contenido de cada respuesta.</p>
+<p>De ahí que la curación del pool sea responsabilidad nuestra, y que sea el paso que conviene no saltarse. Dicho de otro modo: <strong>el enrutado automático es tan bueno como el peor proveedor aparentemente sano del pool</strong>.</p>
+</div>
 <h3 id="2-crear-una-clave-de-api-de-omniroute">2. Crear una clave de API de OmniRoute<a class="headerlink" href="#2-crear-una-clave-de-api-de-omniroute" title="Permanent link">&para;</a></h3>
 <p>En el panel, sección <strong>API Manager</strong> → <strong>Create API Key</strong>. Le damos un nombre descriptivo (por ejemplo <code>opencode</code>) y copiamos la clave generada, con formato <code>sk-xxxxxxxx-xxxxxxxx</code>.</p>
 <p>Esta clave es local: es la que usarán nuestros clientes para autenticarse contra el gateway, y no tiene nada que ver con las claves de los proveedores, que quedan custodiadas por OmniRoute.</p>
