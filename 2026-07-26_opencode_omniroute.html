@@ -5142,7 +5142,7 @@ opencode
 </li>
 </ol>
 <h3 id="gestion-de-sesiones-en-opencode">Gestión de sesiones en OpenCode<a class="headerlink" href="#gestion-de-sesiones-en-opencode" title="Permanent link">&para;</a></h3>
-<p>Al empezar a trabajar con OpenCode sorprende comprobar que, por mucho que se salga de la TUI con <code>Ctrl-D</code> o con <code>/exit</code>, las sesiones siguen apareciendo en el listado. No es un problema de cierre incompleto ni un proceso que se quede colgado: es que <strong>una sesión no es un proceso, es una conversación persistida</strong>. Salir de la TUI termina la interfaz, pero el historial de la conversación (mensajes, herramientas ejecutadas, ficheros tocados, consumo de tokens) se guarda en la base de datos local de OpenCode para poder retomarlo después. Y como cada invocación de <code>opencode</code> sin argumentos abre una sesión nueva, en un par de días de uso el listado tiene decenas de entradas.</p>
+<p>Al empezar a trabajar con OpenCode sorprende comprobar que, por mucho que se salga de la TUI con <code>Ctrl-d</code> o con <code>/exit</code>, las sesiones siguen apareciendo en el listado. No es un problema de cierre incompleto ni un proceso que se quede colgado: es que <strong>una sesión no es un proceso, es una conversación persistida</strong>. Salir de la TUI termina la interfaz, pero el historial de la conversación (mensajes, herramientas ejecutadas, ficheros tocados, consumo de tokens) se guarda en la base de datos local de OpenCode para poder retomarlo después. Y como cada invocación de <code>opencode</code> sin argumentos abre una sesión nueva, en un par de días de uso el listado tiene decenas de entradas.</p>
 <p>Dicho de otra forma: "cerrar" no significa "borrar". Lo que hay que adquirir es la costumbre de reutilizar y de podar.</p>
 <h4 id="retomar-en-lugar-de-crear">Retomar en lugar de crear<a class="headerlink" href="#retomar-en-lugar-de-crear" title="Permanent link">&para;</a></h4>
 <p>Lo primero es dejar de arrancar siempre en blanco. Estas son las tres formas de continuar un trabajo previo:</p>
@@ -5152,13 +5152,13 @@ opencode
 opencode<span class="w"> </span>--session<span class="w"> </span>&lt;sessionID&gt;<span class="w">       </span><span class="c1"># retoma una sesión concreta (-s)</span>
 opencode<span class="w"> </span>--session<span class="w"> </span>&lt;sessionID&gt;<span class="w"> </span>--fork<span class="w"> </span><span class="c1"># la bifurca en una copia, dejando la original intacta</span>
 </code></pre></div></td></tr></table></div>
-<p>Y desde dentro de la TUI, el comando <code>/sessions</code> (alias <code>/resume</code> y <code>/continue</code>, atajo <code>Ctrl-X L</code>) abre el selector para saltar de una sesión a otra sin salir del programa.</p>
+<p>Y desde dentro de la TUI, el comando <code>/sessions</code> (alias <code>/resume</code> y <code>/continue</code>, atajo <code>Ctrl-x l</code>) abre el selector para saltar de una sesión a otra sin salir del programa.</p>
 <p>La opción <code>--fork</code> es especialmente útil cuando una conversación ha llegado a un punto interesante y se quiere probar dos caminos distintos: se bifurca y cada rama sigue por su lado, igual que con <code>git branch</code>.</p>
 <h4 id="cerrar-bien-cada-tarea">Cerrar bien cada tarea<a class="headerlink" href="#cerrar-bien-cada-tarea" title="Permanent link">&para;</a></h4>
 <p>Dentro de la TUI hay dos comandos que marcan el final de una tarea:</p>
 <ul>
-<li><code>/new</code> (alias <code>/clear</code>, atajo <code>Ctrl-X N</code>): abre una sesión nueva y limpia. Es lo que hay que usar al cambiar de tarea, en lugar de seguir escribiendo en la conversación anterior.</li>
-<li><code>/compact</code> (alias <code>/summarize</code>, atajo <code>Ctrl-X C</code>): resume la conversación actual para liberar ventana de contexto sin perder el hilo. Es la alternativa cuando se quiere continuar con la misma tarea pero el contexto se ha vuelto pesado.</li>
+<li><code>/new</code> (alias <code>/clear</code>, atajo <code>Ctrl-x n</code>): abre una sesión nueva y limpia. Es lo que hay que usar al cambiar de tarea, en lugar de seguir escribiendo en la conversación anterior.</li>
+<li><code>/compact</code> (alias <code>/summarize</code>, atajo <code>Ctrl-x c</code>): resume la conversación actual para liberar ventana de contexto sin perder el hilo. Es la alternativa cuando se quiere continuar con la misma tarea pero el contexto se ha vuelto pesado.</li>
 </ul>
 <p>Si de una sesión interesa conservar el resultado, <code>/export</code> vuelca la conversación a Markdown y la abre en el editor, y <code>opencode export &lt;sessionID&gt;</code> hace lo propio en JSON desde la línea de comandos.</p>
 <h4 id="inventariar-y-podar">Inventariar y podar<a class="headerlink" href="#inventariar-y-podar" title="Permanent link">&para;</a></h4>
