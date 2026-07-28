@@ -4789,7 +4789,7 @@
 <p>Provider free tier conditions change frequently and some disappear without notice. The advantage of the OmniRoute approach is that these changes are absorbed by the gateway (by connecting another provider) without touching the agent's configuration. It's also wise to review each free provider's privacy policy before sending them code from a sensitive project.</p>
 </div>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>The entire procedure was performed on Linux. On Windows and macOS, the steps are equivalent, only the method of installing requirements changes.</p>
+<p>The entire procedure was performed on Linux. On Windows and MacOS, the steps are equivalent, only the method of installing requirements changes.</p>
 <p>All three projects are distributed via npm, so the only common requirement is a recent version of Node.js (v22 or higher).</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>node<span class="w"> </span>--version
 </code></pre></div></td></tr></table></div>
@@ -4802,14 +4802,14 @@
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>opencode-ai<span class="w">                  </span><span class="c1"># npm (also bun, pnpm, or yarn)</span>
-brew<span class="w"> </span>install<span class="w"> </span>anomalyco/tap/opencode<span class="w">         </span><span class="c1"># macOS / Linux with Homebrew</span>
+brew<span class="w"> </span>install<span class="w"> </span>anomalyco/tap/opencode<span class="w">         </span><span class="c1"># MacOS / Linux with Homebrew</span>
 sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>opencode<span class="w">                     </span><span class="c1"># Arch Linux (official repos)</span>
 paru<span class="w"> </span>-S<span class="w"> </span>opencode-bin<span class="w">                        </span><span class="c1"># Arch Linux (AUR, latest version)</span>
 </code></pre></div></td></tr></table></div>
 <p>Verify the installation by launching the agent in any directory:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>opencode
 </code></pre></div></td></tr></table></div>
-<p>At this point, OpenCode will start but ask for provider credentials. No need to provide any yet: OmniRoute will fill that gap.</p>
+<p>At this point, OpenCode will start but ask for provider credentials. No need to provide any yet: OmniRoute will fill that gap. For now, simply exit the program.</p>
 <h3 id="omniroute-installation">OmniRoute Installation<a class="headerlink" href="#omniroute-installation" title="Permanent link">&para;</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>omniroute
@@ -4825,7 +4825,7 @@ omniroute
 </code></pre></div></td></tr></table></div>
 <p>Besides the npm package and container, the project distributes a desktop app (Electron), arm64 images (works on a Raspberry Pi), and is executable on Android via Termux. An interesting option is to leave OmniRoute running on a VPS or home server and point all development machines at it.</p>
 <h3 id="ponytail-installation">Ponytail Installation<a class="headerlink" href="#ponytail-installation" title="Permanent link">&para;</a></h3>
-<p>Ponytail isn't installed on the system; it's declared as an OpenCode <em>plugin</em>. Simply add this entry to your <code>opencode.json</code> configuration file (the next section shows the full file with all three pieces):</p>
+<p>Ponytail isn't installed on the system; it's declared as an OpenCode <em>plugin</em>. Simply add this entry to your <code>opencode.json</code> configuration file (the next section shows the full file with this and the other pieces):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;@dietrichgebert/ponytail&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>OpenCode downloads the package from npm the first time it starts with this configuration. If you prefer working with a local repo copy to modify rules, clone it and point to the <em>plugin</em> file:</p>
