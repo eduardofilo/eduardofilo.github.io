@@ -4841,7 +4841,7 @@ omniroute
 <h2 id="configuracion-conjunta">Configuración conjunta<a class="headerlink" href="#configuracion-conjunta" title="Permanent link">&para;</a></h2>
 <p>La integración consiste en que OpenCode deje de hablar con los proveedores y hable únicamente con OmniRoute, y en que Ponytail se inyecte en cada turno de la conversación. Son cinco pasos.</p>
 <h3 id="1-conectar-proveedores-en-omniroute">1. Conectar proveedores en OmniRoute<a class="headerlink" href="#1-conectar-proveedores-en-omniroute" title="Permanent link">&para;</a></h3>
-<p>Con <code>omniroute</code> en marcha, abrimos <code>http://localhost:20128</code> y vamos a la sección <strong>Providers</strong> (recomiendo configurar el interfaz en idioma <code>English</code> ya que si no aparecen numerosas cadenas precedidas de la partícula <code>__MISSING__</code>). Ahí aparece el catálogo con un indicador de cuáles tienen capa gratuita. Conviene conectar <strong>varios</strong>, ya que el valor del sistema está justamente en la redundancia: cuando uno agota su cuota, el resto siguen disponibles. Los proveedores sin necesidad de clave (<code>No Auth</code>) están conectados por defecto.</p>
+<p>Con <code>omniroute</code> en marcha, abrimos <code>http://localhost:20128</code> y vamos a la sección <strong>Providers</strong> (recomiendo configurar el interfaz en idioma <code>English</code> ya que si no aparecen numerosas cadenas precedidas de la partícula <code>__MISSING__</code>; también utilizar el campo de búsqueda, ya que el número de grupos de configuración de OmniRoute es enorme). Ahí aparece el catálogo con un indicador de cuáles tienen capa gratuita. Conviene conectar <strong>varios</strong>, ya que el valor del sistema está justamente en la redundancia: cuando uno agota su cuota, el resto siguen disponibles. Los proveedores sin necesidad de clave (<code>No Auth</code>) están conectados por defecto.</p>
 <p>El catálogo está clasificado por <strong>categorías</strong>, y la categoría marca el procedimiento de conexión:</p>
 <table>
 <thead>
@@ -4853,7 +4853,7 @@ omniroute
 <tbody>
 <tr>
 <td><em>No Auth</em></td>
-<td>Nada que hacer, están activos desde el primer arranque.</td>
+<td>Están activos desde el primer arranque. Aunque desactivaremos algunos como luego veremos.</td>
 </tr>
 <tr>
 <td><em>Free Tier</em></td>
@@ -4877,7 +4877,7 @@ omniroute
 <h4 id="proveedores-sin-autenticacion">Proveedores sin autenticación<a class="headerlink" href="#proveedores-sin-autenticacion" title="Permanent link">&para;</a></h4>
 <p>En general la elección y configuración de los proveedores es la parte más complicada, farragosa y que más tiempo consume de todo el proceso descrito en este artículo.</p>
 <p>No solo eso, algunos de los proveedores activados por defecto como los de la categoría "No Auth", pueden provocar problemas. Durante las primeras sesiones de uso de OpenCode observé que la mayoría de las peticiones obtenían una respuesta vacía. Tras investigar encontré que el problema era la intervención de proveedor "Augment (Auggie CLI)" que por tanto recomiendo desactivar.</p>
-<p>Además mirando los logs de la consola de OmniRoute (<code>Monitoring &gt; Logs</code>), encontré que los proveedores "Chipotle Pepper AI (Free)" y "DuckDuckGo AI Chat" fallaban siempre, por lo que aunque no introducen respuestas incorrectas como "Augment (Auggie CLI)", retrasan el recorrido de la cascada de proveedores, por lo que recomiendo desactivarlos también. El proveedor "Veo AI Free" también recomiendo desactivarlo, dado que sólo ofrece modelos de vídeo que no nos van a servir para codificar.</p>
+<p>Además mirando los logs de la consola de OmniRoute (<code>Monitoring &gt; Logs</code>), encontré que los proveedores "Chipotle Pepper AI (Free)" y "DuckDuckGo AI Chat" fallaban siempre, por lo que aunque no introducen respuestas incorrectas como "Augment (Auggie CLI)", retrasan el recorrido de la cascada de proveedores, por lo que recomiendo desactivarlos también. El proveedor "Veo AI Free" lo desactivaremos, dado que sólo ofrece modelos de vídeo que no nos van a servir para codificar.</p>
 <h4 id="proveedores-con-clave-de-api-gratuita">Proveedores con clave de API gratuita<a class="headerlink" href="#proveedores-con-clave-de-api-gratuita" title="Permanent link">&para;</a></h4>
 <p>El procedimiento es siempre el mismo, cambiando únicamente el sitio del que se obtiene la clave:</p>
 <ol>

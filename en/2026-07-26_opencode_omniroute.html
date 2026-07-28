@@ -4841,7 +4841,7 @@ omniroute
 <h2 id="joint-configuration">Joint Configuration<a class="headerlink" href="#joint-configuration" title="Permanent link">&para;</a></h2>
 <p>The integration involves OpenCode stopping direct talk to providers to speak only to OmniRoute, while Ponytail is injected at every turn of the conversation. There are five steps.</p>
 <h3 id="1-connect-providers-in-omniroute">1. Connect Providers in OmniRoute<a class="headerlink" href="#1-connect-providers-in-omniroute" title="Permanent link">&para;</a></h3>
-<p>With <code>omniroute</code> running, open <code>http://localhost:20128</code> and go to the <strong>Providers</strong> section (I recommend setting the interface to <code>English</code>, otherwise you'll see many strings prefixed with <code>__MISSING__</code>). The catalog appears there with an indicator for free tiers. Connect <strong>several</strong>, as the system's value lies in redundancy: when one runs out of quota, the others remain available. Providers requiring no key (<code>No Auth</code>) are connected by default.</p>
+<p>With <code>omniroute</code> running, open <code>http://localhost:20128</code> and go to the <strong>Providers</strong> section (I recommend setting the interface to <code>English</code>, otherwise you'll see many strings prefixed with <code>__MISSING__</code>; also use the search field, as the number of configuration groups in OmniRoute is huge). The catalog appears there with an indicator for free tiers. Connect <strong>several</strong>, as the system's value lies in redundancy: when one runs out of quota, the others remain available. Providers requiring no key (<code>No Auth</code>) are connected by default.</p>
 <p>The catalog is classified by <strong>categories</strong>, and the category determines the connection procedure:</p>
 <table>
 <thead>
@@ -4853,7 +4853,7 @@ omniroute
 <tbody>
 <tr>
 <td><em>No Auth</em></td>
-<td>Nothing to do; they are active from the start.</td>
+<td>They are active from the start. Although we will deactivate some as we see later.</td>
 </tr>
 <tr>
 <td><em>Free Tier</em></td>
@@ -4877,7 +4877,7 @@ omniroute
 <h4 id="no-auth-providers">No Auth Providers<a class="headerlink" href="#no-auth-providers" title="Permanent link">&para;</a></h4>
 <p>In general, the selection and configuration of providers is the most complicated, cumbersome, and time-consuming part of the entire process described in this article.</p>
 <p>Not only that, but some of the providers activated by default, such as those in the "No Auth" category, can cause problems. During the first sessions of using OpenCode, I observed that most requests returned empty responses. After investigating, I found that the issue was caused by the intervention of the "Augment (Auggie CLI)" provider, which I therefore recommend deactivating.</p>
-<p>Additionally, checking the logs in the OmniRoute console (<code>Monitoring &gt; Logs</code>), I found that the providers "Chipotle Pepper AI (Free)" and "DuckDuckGo AI Chat" always failed, so although they don't introduce incorrect responses like "Augment (Auggie CLI)", they delay the provider cascade traversal, so I recommend deactivating them as well. The "Veo AI Free" provider is also recommended to be disabled, as it only offers video models that we won't use for coding.</p>
+<p>Additionally, checking the logs in the OmniRoute console (<code>Monitoring &gt; Logs</code>), I found that the providers "Chipotle Pepper AI (Free)" and "DuckDuckGo AI Chat" always failed, so although they don't introduce incorrect responses like "Augment (Auggie CLI)", they delay the provider cascade traversal, so I recommend deactivating them as well. We will deactivate the "Veo AI Free" provider, as it only offers video models that we won't use for coding.</p>
 <h4 id="free-api-key-providers">Free API Key Providers<a class="headerlink" href="#free-api-key-providers" title="Permanent link">&para;</a></h4>
 <p>The procedure is always the same, only the site for obtaining the key changes:</p>
 <ol>
