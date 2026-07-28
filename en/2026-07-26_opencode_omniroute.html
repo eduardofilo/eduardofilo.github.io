@@ -4987,7 +4987,7 @@ omniroute
 <li><strong><code>FAIL (auth 401/403)</code></strong>: the provider's key is expired, misconfigured, or out of quota. This is not a <em>tools</em> problem but a configuration one. =&gt; Fix the connection in <strong>Providers</strong> (or disconnect it if there's no remedy).</li>
 <li><strong><code>FAIL (no valid models)</code></strong>: every model tested returned 404 or 400. The provider is down or its catalog has changed. =&gt; Review it in <strong>Providers</strong>.</li>
 </ul>
-<p>The right-hand column shows the model that produced the result. This is a one-time setup step that you only need to repeat when adding a new provider.</p>
+<p>In the output, the right-hand column shows the model that produced the result. This is a one-time setup step that you only need to repeat when adding a new provider.</p>
 <h5 id="two-symptoms-to-spot-in-the-logs">Two Symptoms to Spot in the Logs<a class="headerlink" href="#two-symptoms-to-spot-in-the-logs" title="Permanent link">&para;</a></h5>
 <p>In <code>Monitoring &gt; Logs</code> there are two patterns that give away a provider worth retiring:</p>
 <ul>
@@ -4997,11 +4997,11 @@ omniroute
 <div class="admonition warning">
 <p class="admonition-title">Fallback doesn't trigger on failures disguised as success</p>
 <p>It's worth understanding the limits of the system. OmniRoute's retry cascade works with <strong>explicit</strong> failures: a 429 for quota, a 502 or a timeout cause the request to be retried against the next provider, and this is perfectly visible in the log. But the two cases above reach the gateway as correct responses: a <code>200</code> with an empty body is, to a router, a valid response. No gateway can arbitrate that without semantically inspecting the content of every response.</p>
-<p>Hence curating the pool is our responsibility, and it's the step not to skip. Put another way: <strong>automatic routing is only as good as the worst apparently healthy provider in the pool</strong>.</p>
+<p>Hence curating the pool is our responsibility, and it's a step that shouldn't be skipped. Put another way: <strong>automatic routing is only as good as the worst apparently healthy provider in the pool</strong>.</p>
 </div>
 <h3 id="2-create-an-omniroute-api-key">2. Create an OmniRoute API Key<a class="headerlink" href="#2-create-an-omniroute-api-key" title="Permanent link">&para;</a></h3>
 <p>In the panel, go to <strong>API Manager</strong> → <strong>Create API Key</strong>. Give it a descriptive name (e.g., <code>opencode</code>) and copy the generated key, which looks like <code>sk-xxxxxxxx-xxxxxxxx</code>.</p>
-<p>This is a local key: it's used by your clients to authenticate against the gateway and has nothing to do with provider keys, which are held by OmniRoute.</p>
+<p>This is a local key: it's used by your clients (OpenCode in this case) to authenticate against OmniRoute and has nothing to do with provider keys, which are held by OmniRoute.</p>
 <p>You can verify the gateway is responding and see available models:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>curl<span class="w"> </span>http://localhost:20128/v1/models<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer sk-your-omniroute-key&quot;</span>
 </code></pre></div></td></tr></table></div>
@@ -5080,7 +5080,7 @@ omniroute
 <p>The default level is <code>full</code>. To set a different default for all new sessions, use the <code>PONYTAIL_DEFAULT_MODE</code> environment variable or the <code>defaultMode</code> field in <code>~/.config/ponytail/config.json</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PONYTAIL_DEFAULT_MODE</span><span class="o">=</span><span class="s2">&quot;full&quot;</span>
 </code></pre></div></td></tr></table></div>
-<p>While active, the ruleset is also injected into subagents spawned by the main agent. To exclude some (e.g., read-only search agents), use a regex against the subagent type:</p>
+<p>While active, the ruleset is also injected into subagents spawned by the main agent. To exclude some (e.g., read-only search agents), use a regex against the subagent type defined in the following environment variable:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PONYTAIL_SUBAGENT_MATCHER</span><span class="o">=</span><span class="s2">&quot;build|code&quot;</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="5-verify-integration">5. Verify Integration<a class="headerlink" href="#5-verify-integration" title="Permanent link">&para;</a></h3>

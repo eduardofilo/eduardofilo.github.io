@@ -4987,7 +4987,7 @@ omniroute
 <li><strong><code>FALLA (auth 401/403)</code></strong>: la clave del proveedor está caducada, mal configurada o sin cuota. No es un problema de <em>tools</em>, sino de configuración. =&gt; Hay que arreglar la conexión en <strong>Providers</strong> (o desconectarla si ya no tiene remedio).</li>
 <li><strong><code>FALLA (sin modelos válidos)</code></strong>: todos los modelos probados devolvieron 404 o 400. El proveedor está caído o su catálogo ha cambiado. =&gt; Revisar en <strong>Providers</strong>.</li>
 </ul>
-<p>La columna de la derecha muestra el modelo con el que se obtuvo el resultado. Es un trabajo que se hace una vez, y que hay que repetir sólo al conectar un proveedor nuevo.</p>
+<p>En la salida, la columna de la derecha muestra el modelo con el que se obtuvo el resultado. Es un trabajo que se hace una vez, y que hay que repetir sólo al conectar un proveedor nuevo.</p>
 <h5 id="dos-sintomas-que-reconocer-en-los-logs">Dos síntomas que reconocer en los logs<a class="headerlink" href="#dos-sintomas-que-reconocer-en-los-logs" title="Permanent link">&para;</a></h5>
 <p>En <code>Monitoring &gt; Logs</code> hay dos patrones que delatan a un proveedor que conviene retirar:</p>
 <ul>
@@ -4997,11 +4997,11 @@ omniroute
 <div class="admonition warning">
 <p class="admonition-title">El fallback no salta con los fallos disfrazados de éxito</p>
 <p>Conviene entender bien el límite del sistema. La cascada de reintentos de OmniRoute funciona con los fallos <strong>explícitos</strong>: un 429 por cuota, un 502 o un timeout hacen que la petición se reintente contra el siguiente proveedor, y eso se aprecia perfectamente en el registro. Pero los dos casos anteriores llegan al gateway como respuestas correctas: un <code>200</code> con un cuerpo vacío es, para un router, una respuesta válida. Ningún <em>gateway</em> puede arbitrar eso sin inspeccionar semánticamente el contenido de cada respuesta.</p>
-<p>De ahí que la curación del pool sea responsabilidad nuestra, y que sea el paso que conviene no saltarse. Dicho de otro modo: <strong>el enrutado automático es tan bueno como el peor proveedor aparentemente sano del pool</strong>.</p>
+<p>De ahí que la curación del pool sea responsabilidad nuestra, y que sea un paso que conviene no saltarse. Dicho de otro modo: <strong>el enrutado automático es tan bueno como el peor proveedor aparentemente sano del pool</strong>.</p>
 </div>
 <h3 id="2-crear-una-clave-de-api-de-omniroute">2. Crear una clave de API de OmniRoute<a class="headerlink" href="#2-crear-una-clave-de-api-de-omniroute" title="Permanent link">&para;</a></h3>
 <p>En el panel, sección <strong>API Manager</strong> → <strong>Create API Key</strong>. Le damos un nombre descriptivo (por ejemplo <code>opencode</code>) y copiamos la clave generada, con formato <code>sk-xxxxxxxx-xxxxxxxx</code>.</p>
-<p>Esta clave es local: es la que usarán nuestros clientes para autenticarse contra el gateway, y no tiene nada que ver con las claves de los proveedores, que quedan custodiadas por OmniRoute.</p>
+<p>Esta clave es local: es la que usarán nuestros clientes (OpenCode en este caso) para autenticarse contra OmniRoute, y no tiene nada que ver con las claves de los proveedores, que quedan custodiadas por OmniRoute.</p>
 <p>Podemos verificar que el gateway responde y ver qué modelos ofrece:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>curl<span class="w"> </span>http://localhost:20128/v1/models<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer sk-tu-clave-omniroute&quot;</span>
 </code></pre></div></td></tr></table></div>
@@ -5080,7 +5080,7 @@ omniroute
 <p>El nivel por defecto es <code>full</code>. Para fijar otro en todas las sesiones nuevas se usa la variable de entorno <code>PONYTAIL_DEFAULT_MODE</code> o el campo <code>defaultMode</code> de <code>~/.config/ponytail/config.json</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PONYTAIL_DEFAULT_MODE</span><span class="o">=</span><span class="s2">&quot;full&quot;</span>
 </code></pre></div></td></tr></table></div>
-<p>Mientras está activo, el conjunto de reglas se inyecta también en los subagentes que lance el agente principal. Si interesa excluir a alguno (por ejemplo los subagentes de búsqueda, que no escriben código), se puede acotar con una expresión regular contra el tipo de subagente:</p>
+<p>Mientras está activo, el conjunto de reglas se inyecta también en los subagentes que lance el agente principal. Si interesa excluir a alguno (por ejemplo los subagentes de búsqueda, que no escriben código), se puede acotar con una expresión regular contra el tipo de subagente definida en la siguiente variable de entorno:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PONYTAIL_SUBAGENT_MATCHER</span><span class="o">=</span><span class="s2">&quot;build|code&quot;</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="5-verificar-la-integracion">5. Verificar la integración<a class="headerlink" href="#5-verificar-la-integracion" title="Permanent link">&para;</a></h3>
