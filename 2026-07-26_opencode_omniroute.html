@@ -799,9 +799,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#un-flujo-que-funciona" class="md-nav__link">
+  <a href="#flujo-de-trabajo" class="md-nav__link">
     <span class="md-ellipsis">
-      Un flujo que funciona
+      Flujo de trabajo
     </span>
   </a>
   
@@ -4604,9 +4604,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#un-flujo-que-funciona" class="md-nav__link">
+  <a href="#flujo-de-trabajo" class="md-nav__link">
     <span class="md-ellipsis">
-      Un flujo que funciona
+      Flujo de trabajo
     </span>
   </a>
   
@@ -5178,7 +5178,7 @@ opencode<span class="w"> </span>session<span class="w"> </span>delete<span class
 opencode<span class="w"> </span>stats<span class="w"> </span>--days<span class="w"> </span><span class="m">7</span><span class="w"> </span>--models<span class="w">     </span><span class="c1"># últimos 7 días, desglosado por modelo</span>
 opencode<span class="w"> </span>stats<span class="w"> </span>--project<span class="w">             </span><span class="c1"># sólo el proyecto actual</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="un-flujo-que-funciona">Un flujo que funciona<a class="headerlink" href="#un-flujo-que-funciona" title="Permanent link">&para;</a></h4>
+<h4 id="flujo-de-trabajo">Flujo de trabajo<a class="headerlink" href="#flujo-de-trabajo" title="Permanent link">&para;</a></h4>
 <p>Reuniendo lo anterior, la rutina que mantiene el listado bajo control es:</p>
 <ol>
 <li><strong>Una sesión por tarea</strong>, no por jornada ni por proyecto. La unidad natural es lo que acaba en un <em>commit</em>.</li>
@@ -5190,7 +5190,7 @@ opencode<span class="w"> </span>stats<span class="w"> </span>--project<span clas
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Las sesiones van por proyecto</p>
-<p>OpenCode asocia las sesiones al directorio de trabajo desde el que se lanzó, así que <code>--continue</code> retoma la última sesión <em>de ese proyecto</em>, no la última en términos absolutos. Es un detalle que ayuda: trabajar siempre desde la raíz del repositorio mantiene los listados ordenados por proyecto de forma natural.</p>
+<p>OpenCode asocia las sesiones al directorio de trabajo desde el que se lanzó, así que <code>--continue</code> o <code>-c</code> retoma la última sesión <em>de ese proyecto</em>, no la última en términos absolutos. Es un detalle que ayuda: trabajar siempre desde la raíz del repositorio mantiene los listados ordenados por proyecto de forma natural.</p>
 </div>
 <h3 id="comandos-de-ponytail">Comandos de Ponytail<a class="headerlink" href="#comandos-de-ponytail" title="Permanent link">&para;</a></h3>
 <p>Más allá del nivel de intensidad, el <em>skill</em> aporta un puñado de comandos que encajan en distintos momentos del flujo anterior:</p>
@@ -5242,7 +5242,7 @@ opencode<span class="w"> </span>stats<span class="w"> </span>--project<span clas
 <p><strong>Depuración de errores</strong>. El flujo es el mismo, pero funciona mucho mejor si se le proporciona al agente una forma de reproducir el fallo (un test que falle, la traza completa, el comando exacto). Modelos con capacidad de razonamiento explícito dan mejores resultados; en OmniRoute se pueden seleccionar las variantes <em>thinking</em> de los modelos que las ofrezcan. Un nivel <code>lite</code> de Ponytail, o incluso <code>off</code>, puede ser preferible aquí: al depurar interesa entender, no recortar.</p>
 </li>
 <li>
-<p><strong>Scripting y automatización</strong>. Aquí interesa el modo no interactivo, que permite integrar el agente en scripts, <em>hooks</em> de git o tareas programadas:</p>
+<p><strong>Scripting y automatización</strong>. Aquí interesa el modo CLI no interactivo, que permite integrar el agente en scripts, <em>hooks</em> de git o tareas programadas:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>opencode<span class="w"> </span>run<span class="w"> </span><span class="s2">&quot;Actualiza el CHANGELOG con los commits desde la última etiqueta&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model<span class="w"> </span>omniroute/auto/fast
