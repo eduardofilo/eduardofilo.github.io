@@ -4705,7 +4705,7 @@
 <li>Access to tools: file reading and writing, command execution, repository search, version control.</li>
 <li>Per-project context file (<code>AGENTS.md</code>) generated with <code>/init</code> to instruct the agent on repository conventions.</li>
 <li>MCP (<em>Model Context Protocol</em>) support to add external tools.</li>
-<li>Non-interactive or CLI mode (<code>opencode run "..."</code>) for automations and scripts.</li>
+<li>Non-interactive CLI mode (<code>opencode run "..."</code>) for automations and scripts.</li>
 <li>Specialized agents and work modes (e.g., a <em>plan</em> mode that makes no changes, designed for the pre-planning phase).</li>
 </ul>
 <h3 id="omniroute">OmniRoute<a class="headerlink" href="#omniroute" title="Permanent link">&para;</a></h3>
@@ -4713,13 +4713,13 @@
 <p>The interesting thing is not the catalog itself, but what it does with it:</p>
 <ul>
 <li><strong>Automatic routing</strong>: using the <code>auto</code> virtual model, OmniRoute builds a <em>combo</em> of your connected providers and chooses one for each request based on live scoring. Variants exist: <code>auto/coding</code> (quality for code generation), <code>auto/fast</code> (lowest latency), <code>auto/cheap</code> (cheapest per token), and <code>auto/offline</code> (most available quota margin).</li>
-<li><strong>Cascading fallback</strong>: when a provider returns a quota error, rate limit, or 5xx, the request is transparently retried against the next provider in the list. This prevents the classic "quota exceeded, come back in five hours" message.</li>
+<li><strong>Cascading fallback</strong>: when a provider returns a quota error, rate limit, or 4xx-5xx, the request is transparently retried against the next provider in the list. This prevents the classic "quota exceeded, come back in five hours" message.</li>
 <li><strong>Context compression</strong>: a set of engines that trim the prompt (deduplication, history pruning, file compacting), enabling significant token savings, especially valuable when working with free tiers measured in tokens/day.</li>
 <li><strong>Control panel</strong> at <code>http://localhost:20128</code> with per-provider usage stats, API key management, and assisted configuration for common CLI tools.</li>
 <li><strong>Local-first</strong>: provider keys and traffic stay on your machine; OmniRoute is not a cloud service requiring a subscription.</li>
 </ul>
 <h3 id="ponytail">Ponytail<a class="headerlink" href="#ponytail" title="Permanent link">&para;</a></h3>
-<p>Ponytail is not an executable program or service: it is a <strong><em>skill</em></strong>, a set of instructions injected into the agent's context every turn to modify its behavior. Its sole mission is to combat over-engineering by forcing the agent to go through a decision ladder before writing a single line, stopping at the first rung that solves the problem:</p>
+<p>Ponytail is a <strong><em>skill</em></strong>, a set of instructions injected into the agent's context every turn to modify its behavior. Its sole mission is to combat over-engineering by forcing the agent to go through a decision ladder before writing a single line, stopping at the first rung that solves the problem:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>

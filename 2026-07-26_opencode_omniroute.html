@@ -4690,7 +4690,7 @@
 <p><img alt="OpenCode + OmniRoute" src="images/posts/2026-07-26_opencode_omniroute/opencode_omniroute.png" /></p>
 <p>El desarrollo asistido por IA empezó siendo un autocompletado inteligente del código a nivel de línea. Pasó a ser una "segunda opinión" que revisaba el código a nivel de fichero y sugería cambios. En los últimos dos años se ha dado un importante paso más allá hasta llegar al paradigma actual, el <em>desarrollo agéntico</em>: un agente que trabaja a nivel de proyecto, edita ficheros, ejecuta comandos, realiza por sí solo los cambios que antes solo se sugerían, lanza los tests e itera hasta cerrar la tarea. El problema es que todas las herramientas comerciales de este tipo (Claude Code, Cursor, Devin, Copilot, Codex, etc.) comparten dos limitaciones: una suscripción mensual y unas cuotas que se agotan justo cuando la sesión se está poniendo interesante. Porque aquí no consideramos el uso por medio de API que para el ámbito personal resulta inasequible.</p>
 <p>Hay además un tercer problema, más silencioso pero también caro: los agentes tienden a <strong>sobre-construir</strong>. Se les pide un selector de fechas y acaban instalando una librería, escribiendo un componente envoltorio y una hoja de estilos. Cada línea de más se paga dos veces, en tokens al generarla y en tokens cada vez que vuelve a entrar en el contexto.</p>
-<p>En este artículo se describe cómo montar un entorno de desarrollo agéntico completo combinando tres proyectos de código abierto que resuelven precisamente esas limitaciones:</p>
+<p>En este artículo se describe cómo montar un entorno de desarrollo agéntico completo combinando tres proyectos de código abierto que resuelven precisamente estas limitaciones:</p>
 <ul>
 <li><a href="https://opencode.ai/"><strong>OpenCode</strong></a>: el agente de programación en terminal.</li>
 <li><a href="https://omniroute.online/"><strong>OmniRoute</strong></a>: el router/gateway de modelos que alimenta al agente.</li>
@@ -4705,7 +4705,7 @@
 <li>Acceso a herramientas: lectura y escritura de ficheros, ejecución de comandos, búsqueda en el repositorio, control de versiones.</li>
 <li>Fichero de contexto por proyecto (<code>AGENTS.md</code>) que se genera con <code>/init</code> y que sirve para instruir al agente sobre las convenciones del repositorio.</li>
 <li>Soporte de MCP (<em>Model Context Protocol</em>) para añadir herramientas externas.</li>
-<li>Modo no interactivo o CLI (<code>opencode run "..."</code>) para automatizaciones y scripts.</li>
+<li>Modo CLI no interactivo (<code>opencode run "..."</code>) para automatizaciones y scripts.</li>
 <li>Agentes especializados y modos de trabajo (por ejemplo un modo <em>plan</em> que no hace cambios pensado para la fase de planificación previa).</li>
 </ul>
 <h3 id="omniroute">OmniRoute<a class="headerlink" href="#omniroute" title="Permanent link">&para;</a></h3>
@@ -4713,13 +4713,13 @@
 <p>Lo interesante no es el catálogo en sí, sino lo que hace con él:</p>
 <ul>
 <li><strong>Enrutado automático</strong>: usando el modelo virtual <code>auto</code>, OmniRoute construye un <em>combo</em> con los proveedores que tengamos conectados y elige uno en cada petición según su puntuación en vivo. Existen variantes: <code>auto/coding</code> (calidad para generar código), <code>auto/fast</code> (menor latencia), <code>auto/cheap</code> (menor coste por token) y <code>auto/offline</code> (mayor margen de cuota disponible).</li>
-<li><strong>Fallback en cascada</strong>: cuando un proveedor devuelve un error de cuota, un <em>rate limit</em> o un 5xx, la petición se reintenta contra el siguiente proveedor de la lista de forma transparente para el cliente. Esto es lo que evita el clásico "se acabó tu cuota, vuelve en cinco horas".</li>
+<li><strong>Fallback en cascada</strong>: cuando un proveedor devuelve un error de cuota, un <em>rate limit</em> o un 4xx-5xx, la petición se reintenta contra el siguiente proveedor de la lista de forma transparente para el cliente. Esto es lo que evita el clásico "se acabó tu cuota, vuelve en cinco horas".</li>
 <li><strong>Compresión de contexto</strong>: una batería de motores que recortan el prompt (deduplicación, poda de historial, compactado de ficheros) y que permiten ahorros importantes de tokens, especialmente valiosos cuando se trabaja contra capas gratuitas medidas en tokens/día.</li>
 <li><strong>Panel de control</strong> en <code>http://localhost:20128</code> con estadísticas de uso por proveedor, gestión de claves API y configuración asistida de las herramientas CLI más habituales.</li>
 <li><strong>Local-first</strong>: las claves de los proveedores y el tráfico se quedan en la máquina; OmniRoute no es un servicio en la nube al que haya que suscribirse.</li>
 </ul>
 <h3 id="ponytail">Ponytail<a class="headerlink" href="#ponytail" title="Permanent link">&para;</a></h3>
-<p>Ponytail no es un programa que se ejecute ni un servicio: es un <strong><em>skill</em></strong>, es decir un conjunto de instrucciones que se inyectan en el contexto del agente en cada turno para modificar su comportamiento. Su cometido es uno solo, combatir la sobre-ingeniería, y lo hace obligando al agente a recorrer una escalera de decisión antes de escribir una sola línea, deteniéndose en el primer peldaño que resuelva el problema:</p>
+<p>Ponytail es un <strong><em>skill</em></strong>, es decir un conjunto de instrucciones que se inyectan en el contexto del agente en cada turno para modificar su comportamiento. Su cometido es uno solo, combatir la sobre-ingeniería, y lo hace obligando al agente a recorrer una escalera de decisión antes de escribir una sola línea, deteniéndose en el primer peldaño que resuelva el problema:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
