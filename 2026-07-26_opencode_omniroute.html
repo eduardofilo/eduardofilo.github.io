@@ -664,15 +664,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#todo-desde-la-linea-de-comandos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Todo desde la línea de comandos
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#depurar-el-pool-para-uso-agentico" class="md-nav__link">
     <span class="md-ellipsis">
       Depurar el pool para uso agéntico
@@ -4478,15 +4469,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#todo-desde-la-linea-de-comandos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Todo desde la línea de comandos
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#depurar-el-pool-para-uso-agentico" class="md-nav__link">
     <span class="md-ellipsis">
       Depurar el pool para uso agéntico
@@ -4899,7 +4881,7 @@ omniroute
 <li><a href="https://groq.com/">Groq</a></li>
 <li><a href="https://console.mistral.ai/">Mistral</a></li>
 <li><a href="https://dash.cloudflare.com/">Cloudflare Workers AI</a>: Tras introducir la API Key, se produce el intento de conexión con los modelos que fallará indicando que hace falta un "Account ID" además. El "Account ID" es el hash que aparece a continuación de la URL <code>https://dash.cloudflare.com</code> una vez creada e iniciada la sesión. Introduciremos ese hash en el campo "Account ID" de los ajustes del provider.</li>
-<li><a href="https://enter.pollinations.ai/">Pollinations AI</a>: Aunque en el cuadro de conexión se indica que la API Key es opcional, crear una.</li>
+<li><a href="https://enter.pollinations.ai/">Pollinations AI</a>: Aunque en el cuadro de conexión se indica que la API Key es opcional, es mejor crear una.</li>
 </ul>
 <h4 id="proveedores-oauth">Proveedores OAuth<a class="headerlink" href="#proveedores-oauth" title="Permanent link">&para;</a></h4>
 <p>Con estos no hay clave que copiar: se pulsa el botón de conexión de la tarjeta, se abre el flujo de inicio de sesión del proveedor en el navegador, y al terminar OmniRoute guarda las credenciales cifradas en su base de datos local. Es el caso de las cuentas de herramientas que ya se estén usando (Copilot, Cursor, Kilo Code, Qoder, etc.).</p>
@@ -4907,29 +4889,6 @@ omniroute
 <p class="admonition-title">Revisa los términos de servicio</p>
 <p>Varios de estos proveedores son en realidad servicios pensados para consumirse desde su propio cliente, y algunos prohíben expresamente en sus condiciones el uso a través de <em>proxies</em> o clientes de terceros. La ficha del proveedor en OmniRoute lo advierte cuando es el caso. Conviene leer esos avisos antes de conectar una cuenta que interese conservar.</p>
 </div>
-<h4 id="todo-desde-la-linea-de-comandos">Todo desde la línea de comandos<a class="headerlink" href="#todo-desde-la-linea-de-comandos" title="Permanent link">&para;</a></h4>
-<p>Si se prefiere no pasar por el navegador, los proveedores de clave de API se pueden gestionar íntegramente desde la CLI, lo que resulta muy práctico para reproducir la configuración en otra máquina o dejarla en un script:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>omniroute<span class="w"> </span>providers<span class="w"> </span>available<span class="w"> </span>--category<span class="w"> </span>free<span class="w">      </span><span class="c1"># ver el catálogo de capa gratuita</span>
-omniroute<span class="w"> </span>providers<span class="w"> </span>available<span class="w"> </span>--search<span class="w"> </span>cerebras<span class="w">    </span><span class="c1"># buscar uno concreto</span>
-
-omniroute<span class="w"> </span>setup<span class="w"> </span>--add-provider<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--provider<span class="w"> </span>cerebras<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--api-key<span class="w"> </span><span class="s1">&#39;csk-...&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--test-provider<span class="w">                                  </span><span class="c1"># añadirlo y probarlo de una vez</span>
-
-omniroute<span class="w"> </span>providers<span class="w"> </span>list<span class="w">                           </span><span class="c1"># conexiones ya configuradas</span>
-omniroute<span class="w"> </span>providers<span class="w"> </span>test-all<span class="w">                       </span><span class="c1"># probar todas de golpe</span>
-</code></pre></div></td></tr></table></div>
-<p><code>providers test-all</code> es el comando que conviene lanzar de vez en cuando: informa de un vistazo sobre qué proveedores han dejado de responder, ya sea por cuota agotada, por credenciales caducadas o porque el servicio ha cambiado sus condiciones.</p>
 <h4 id="depurar-el-pool-para-uso-agentico">Depurar el pool para uso agéntico<a class="headerlink" href="#depurar-el-pool-para-uso-agentico" title="Permanent link">&para;</a></h4>
 <p>Hay un paso que no aparece en la documentación de OmniRoute y que, sin embargo, es el que marca la diferencia entre un entorno que funciona y uno que falla de forma aparentemente aleatoria: <strong>no todos los proveedores del catálogo sirven para alimentar a un agente</strong>.</p>
 <p>La razón es que un agente como OpenCode no se limita a pedir texto: envía en cada petición la lista de <em>herramientas</em> de las que dispone (leer ficheros, ejecutar comandos, buscar en el repositorio…) y espera que el modelo responda con llamadas a esas herramientas. Los proveedores que son la API oficial de un modelo devuelven esas llamadas al cliente, que es lo correcto. Pero el catálogo incluye también dos tipos de entradas que no se comportan así:</p>
