@@ -5024,9 +5024,9 @@ omniroute<span class="w"> </span>providers<span class="w"> </span>test-all<span 
 </code></pre></div></td></tr></table></div>
 <p>Requiere <code>jq</code>. El script distingue tres causas de fallo:</p>
 <ul>
-<li><strong><code>FALLA (sin tool_calls)</code></strong>: el proveedor respondió con un 200 pero devolvió prosa en lugar de una llamada a la herramienta. Es el problema que venimos buscando: proxy que se ejecuta las tools él mismo o front-end con su propio catálogo. Sobras: desconectar.</li>
-<li><strong><code>FALLA (auth 401/403)</code></strong>: la clave del proveedor está caducada, mal configurada o sin cuota. No es un problema de <em>tools</em>, sino de configuración. Hay que arreglar la conexión en <strong>Providers</strong> (o desconectarla si ya no tiene remedio).</li>
-<li><strong><code>FALLA (sin modelos válidos)</code></strong>: todos los modelos probados devolvieron 404 o 400. El proveedor está caído o su catálogo ha cambiado. Revisar en <strong>Providers</strong>.</li>
+<li><strong><code>FALLA (sin tool_calls)</code></strong>: el proveedor respondió con un 200 pero devolvió prosa en lugar de una llamada a la herramienta. Es el problema que venimos buscando: proxy que se ejecuta las tools él mismo o front-end con su propio catálogo. =&gt; Desconectar.</li>
+<li><strong><code>FALLA (auth 401/403)</code></strong>: la clave del proveedor está caducada, mal configurada o sin cuota. No es un problema de <em>tools</em>, sino de configuración. =&gt; Hay que arreglar la conexión en <strong>Providers</strong> (o desconectarla si ya no tiene remedio).</li>
+<li><strong><code>FALLA (sin modelos válidos)</code></strong>: todos los modelos probados devolvieron 404 o 400. El proveedor está caído o su catálogo ha cambiado. =&gt; Revisar en <strong>Providers</strong>.</li>
 </ul>
 <p>La columna de la derecha muestra el modelo con el que se obtuvo el resultado. Es un trabajo que se hace una vez, y que hay que repetir sólo al conectar un proveedor nuevo.</p>
 <h5 id="dos-sintomas-que-reconocer-en-los-logs">Dos síntomas que reconocer en los logs<a class="headerlink" href="#dos-sintomas-que-reconocer-en-los-logs" title="Permanent link">&para;</a></h5>
