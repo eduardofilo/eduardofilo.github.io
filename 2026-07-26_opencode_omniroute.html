@@ -4734,7 +4734,7 @@
 6. ¿Cabe en una línea?              → una línea
 7. Sólo entonces: lo mínimo que funcione
 </code></pre></div></td></tr></table></div>
-<p>El ejemplo canónico del proyecto lo resume bien: ante la petición de un selector de fechas, el resultado deja de ser una librería más un componente y pasa a ser, gracias a Ponytail, <code>&lt;input type="date"&gt;</code>.</p>
+<p>El ejemplo canónico del proyecto, al que hacíamos referencia en la introducción, lo resume bien: ante la petición de un selector de fechas, el resultado deja de ser una librería más un componente y pasa a ser, gracias a Ponytail, <code>&lt;input type="date"&gt;</code>.</p>
 <p>Dos matices importantes:</p>
 <ul>
 <li>La escalera se aplica <strong>después</strong> de entender el problema, no en lugar de entenderlo. El agente sigue obligado a leer el código afectado y a seguir el flujo real antes de elegir peldaño. Perezoso con la solución, nunca con la lectura.</li>
@@ -4778,7 +4778,7 @@
 </tr>
 </tbody>
 </table>
-<p>La combinación de las tres piezas tiene un efecto multiplicador sobre la cuota disponible: Ponytail reduce los tokens de salida (menos código generado), la compresión de OmniRoute reduce los de entrada (menos contexto enviado) y el fallback aprovecha la cuota de todos los proveedores conectados. Con capas gratuitas medidas en tokens/día esto es la diferencia entre trabajar una hora y trabajar toda la tarde.</p>
+<p>La combinación de las tres piezas tiene un efecto multiplicador sobre la cuota disponible: Ponytail reduce los tokens de salida (menos código generado), la compresión de OmniRoute reduce los de entrada (menos contexto enviado) y el fallback aprovecha la cuota de todos los proveedores conectados.</p>
 <p>Un beneficio adicional: como OmniRoute expone un endpoint estándar, el mismo gateway sirve simultáneamente a OpenCode en la terminal, a una extensión de VSCode o a cualquier otro cliente compatible con la API de OpenAI. Se configura una vez y lo aprovecha todo el entorno.</p>
 <div class="admonition tip">
 <p class="admonition-title">Modelos modestos, mejores resultados</p>
