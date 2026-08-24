@@ -650,6 +650,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="The desktop app">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-to-the-vps-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting to the VPS gateway
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-desktop-launcher-and-a-linux-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The .desktop launcher and a Linux issue
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -5394,6 +5433,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="The desktop app">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-to-the-vps-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting to the VPS gateway
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-desktop-launcher-and-a-linux-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The .desktop launcher and a Linux issue
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -5581,10 +5659,55 @@ sudo<span class="w"> </span>loginctl<span class="w"> </span>enable-linger<span c
 <p>With Firefox, typing accented vowels in the dashboard chat produced detached accents (the accent without combining). It was a keyboard composition (dead keys) problem with xterm.js, not the agent. Using Brave fixed it reliably with the Spanish layout. Later I started using Hermes Desktop, so it wasn't a problem anymore.</p>
 </div>
 <h3 id="the-desktop-app">The desktop app<a class="headerlink" href="#the-desktop-app" title="Permanent link">&para;</a></h3>
-<p>Beyond the browser, there is <strong>Hermes Desktop</strong>, a native (Electron) application with chat, a session list, and drag-and-drop file support. It connects to the same server that serves the web dashboard, entering the remote URL and signing in with the same credentials.</p>
+<p>Beyond the browser, there is <strong>Hermes Desktop</strong>, a native (Electron) application with chat, a session list, a file browser, and drag-and-drop support. It acts as a client: it connects to the same backend that serves the VPS web dashboard and inherits the session and credentials, so it is not an isolated install but one more window onto the same agent.</p>
 <div class="admonition warning">
 <p class="admonition-title">A touch of terminology</p>
 <p>In Hermes, "gateway" is used in two senses worth not confusing. The <em>messaging gateway</em> (<code>hermes gateway</code>) is what integrates Telegram, Discord, WhatsApp, etc. On the other hand, when Hermes Desktop talks about a <em>Remote gateway</em> it refers to the very backend that serves the web dashboard. The desktop app connects to the <strong>same host and port</strong> as the dashboard; there is no separate port.</p>
+</div>
+<h4 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h4>
+<p>Installation is the same as the agent itself, using the official installer:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://hermes-agent.nousresearch.com/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</code></pre></div></td></tr></table></div>
+<p>The installer manages the <em>venv</em> and Python dependencies, and leaves the <code>hermes</code> executable in <code>~/.local/bin</code>. One detail worth watching is the <strong>Node.js</strong> version required by the application dependencies: they need <strong>22.18 or newer, or 24</strong>, and Node 23 does not work. If the machine provides an unsuitable Node (e.g. the one <code>nvm</code> installs by default), the installer may fail with an <code>EBADENGINE</code> error; the fix is to pin a valid version with <code>nvm</code> before continuing:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>nvm<span class="w"> </span>install<span class="w"> </span><span class="m">22</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nvm<span class="w"> </span>use<span class="w"> </span><span class="m">22</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="connecting-to-the-vps-gateway">Connecting to the VPS gateway<a class="headerlink" href="#connecting-to-the-vps-gateway" title="Permanent link">&para;</a></h4>
+<p>Once launched with <code>hermes desktop</code>, the connection is declared from <strong>Settings → Gateways → Add connection → Remote gateway</strong>. Fill in:</p>
+<ul>
+<li><strong>Name</strong>: a unique name, e.g. <code>VPS Contabo</code>.</li>
+<li><strong>Gateway URL</strong>: <code>http://&lt;Tailscale-IP-of-VPS&gt;:9119</code>.</li>
+</ul>
+<p>The advantage of going over Tailscale is that this URL is only reachable from your <em>tailnet</em>; no port needs to be opened to the outside. After pressing <strong>Test</strong> (it should answer "Reachable") you sign in with the same dashboard credentials.</p>
+<h4 id="the-desktop-launcher-and-a-linux-issue">The <code>.desktop</code> launcher and a Linux issue<a class="headerlink" href="#the-desktop-launcher-and-a-linux-issue" title="Permanent link">&para;</a></h4>
+<p>Hermes Desktop installs a launcher entry in the application menu (<code>~/.local/share/applications/hermes.desktop</code>) with an icon, so you can start it from the application dock instead of the terminal. On Linux installs this launcher gave me two problems that I had to fix by hand, and which at the time of writing are still present in the version I use (they may be resolved in the future, so it is worth documenting them in case they come back).</p>
+<p>The first: the <code>.desktop</code> generated by Hermes itself pointed to the Python interpreter that <code>uv</code> installs (<code>~/.local/share/uv/python/...</code>), which <strong>does not have the dependencies</strong>, instead of to the <em>venv</em> that does; running it failed with <code>ModuleNotFoundError</code>. And because Hermes <strong>regenerates the <code>.desktop</code> on every launch</strong>, any manual edit was lost. The fix was to remove the execute bit from the <em>script</em> <code>hermes</code> in the repository so the generator picks the persistent <code>~/.local/bin</code> <em>wrapper</em> (which already resolves the correct <em>venv</em>):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>chmod<span class="w"> </span>-x<span class="w"> </span>~/.hermes/hermes-agent/hermes
+</code></pre></div></td></tr></table></div>
+<p>The second: the menu launcher runs the application <strong>without loading your shell</strong>, so the <code>PATH</code> had no Node (the one provided by <code>nvm</code>). Hermes Desktop needed Node and aborted silently. The fix was to make the <code>hermes</code> <em>wrapper</em> load <code>nvm</code> (and pin version 22) before calling its interpreter:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>~/.local/bin/hermes<span class="w"> </span><span class="s">&lt;&lt;&#39;EOF&#39;</span>
+<span class="s">#!/usr/bin/env bash</span>
+<span class="s">unset PYTHONPATH</span>
+<span class="s">unset PYTHONHOME</span>
+<span class="s">export NVM_DIR=&quot;$HOME/.nvm&quot;</span>
+<span class="s">[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;</span>
+<span class="s">nvm use 22 --silent &gt;/dev/null 2&gt;&amp;1 || true</span>
+<span class="s">exec &quot;$HOME/.hermes/hermes-agent/venv/bin/python&quot; &quot;$HOME/.hermes/hermes-agent/hermes&quot; &quot;$@&quot;</span>
+<span class="s">EOF</span>
+chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>~/.local/bin/hermes
+</code></pre></div></td></tr></table></div>
+<p>After those two steps the <code>Exec=</code> of the <code>.desktop</code> ends up pointing at the <em>wrapper</em> (visible with <code>cat ~/.local/share/applications/hermes.desktop</code>), which is what makes the menu launcher work just like the terminal.</p>
+<div class="admonition warning">
+<p class="admonition-title">After every <code>hermes update</code></p>
+<p>The update does a <code>git checkout</code> and restores the execute bit of the <code>hermes</code> script in the repository, so the <code>Exec</code> problem can return. Simply repeat <code>chmod -x ~/.hermes/hermes-agent/hermes</code>.</p>
 </div>
 <h2 id="what-you-can-do-with-it">What you can do with it<a class="headerlink" href="#what-you-can-do-with-it" title="Permanent link">&para;</a></h2>
 <p>Once set up, the agent stops being a curiosity you ask about everything and becomes a workmate that:</p>

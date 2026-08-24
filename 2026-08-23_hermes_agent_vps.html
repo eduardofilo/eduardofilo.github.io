@@ -650,6 +650,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="La app de escritorio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instalación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conexion-al-gateway-del-vps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conexión al gateway del VPS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-lanzador-desktop-y-un-problema-en-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El lanzador .desktop y un problema en Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -5394,6 +5433,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="La app de escritorio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instalación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conexion-al-gateway-del-vps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conexión al gateway del VPS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-lanzador-desktop-y-un-problema-en-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El lanzador .desktop y un problema en Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -5581,10 +5659,55 @@ sudo<span class="w"> </span>loginctl<span class="w"> </span>enable-linger<span c
 <p>Con Firefox, al escribir en el chat del dashboard las vocales acentuadas aparecían sueltas (el acento sin combinarse). Era un problema de composición de teclado (dead keys) con xterm.js, no del agente. Usar Brave resolvió el tema de forma fiable con el teclado español. Aunque poco después empecé a utilizar Hermes Desktop, así que tampoco fue un problema.</p>
 </div>
 <h3 id="la-app-de-escritorio">La app de escritorio<a class="headerlink" href="#la-app-de-escritorio" title="Permanent link">&para;</a></h3>
-<p>Además del navegador, existe <strong>Hermes Desktop</strong>, una aplicación nativa (Electron) con chat, lista de sesiones y soporte de arrastrar y soltar ficheros. Se conecta al mismo servidor que sirve el dashboard web, indicando la URL remota y estableciendo sesión con las mismas credenciales.</p>
+<p>Además del navegador, existe <strong>Hermes Desktop</strong>, una aplicación nativa (Electron) con chat, lista de sesiones, explorador de ficheros y soporte de arrastrar y soltar. Actúa como un cliente: se conecta al mismo backend que sirve el dashboard web del VPS y hereda la sesión y las credenciales, de modo que no es una instalación aislada sino una ventana más hacia el mismo agente.</p>
 <div class="admonition warning">
 <p class="admonition-title">Un poco de terminología</p>
 <p>En Hermes, "gateway" se usa en dos sentidos que conviene no confundir. El <em>gateway de mensajería</em> (<code>hermes gateway</code>) es el que integra Telegram, Discord, WhatsApp, etc. En cambio, cuando en Hermes Desktop se habla de <em>Remote gateway</em> se refiere al propio backend que sirve el dashboard web. La app de escritorio se conecta al <strong>mismo host y puerto</strong> del dashboard; no hay un puerto separado.</p>
+</div>
+<h4 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h4>
+<p>La instalación es la misma que la del agente, con el instalador oficial:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://hermes-agent.nousresearch.com/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</code></pre></div></td></tr></table></div>
+<p>El instalador gestiona el <em>venv</em> y las dependencias de Python, y deja el ejecutable <code>hermes</code> en <code>~/.local/bin</code>. Un detalle que conviene vigilar es la versión de <strong>Node.js</strong> que exigen las dependencias de la aplicación: deben ser <strong>22.18 o superior, o 24</strong>, y Node 23 no vale. Si el equipo aporta un Node inadecuado (p. ej. el que instala <code>nvm</code> por defecto), el instalador puede fallar con un error <code>EBADENGINE</code>; la solución es fijar la versión válida con <code>nvm</code> antes de proseguir:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>nvm<span class="w"> </span>install<span class="w"> </span><span class="m">22</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nvm<span class="w"> </span>use<span class="w"> </span><span class="m">22</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="conexion-al-gateway-del-vps">Conexión al gateway del VPS<a class="headerlink" href="#conexion-al-gateway-del-vps" title="Permanent link">&para;</a></h4>
+<p>Una vez arrancada con <code>hermes desktop</code>, la conexión se declara desde <strong>Settings → Gateways → Add connection → Remote gateway</strong>. Se rellena:</p>
+<ul>
+<li><strong>Name</strong>: un nombre único, p. ej. <code>VPS Contabo</code>.</li>
+<li><strong>Gateway URL</strong>: <code>http://&lt;IP-de-Tailscale-del-VPS&gt;:9119</code>.</li>
+</ul>
+<p>La ventaja de ir sobre Tailscale es que esa URL solo es alcanzable desde tu <em>tailnet</em>; no hay que abrir ningún puerto al exterior. Tras pulsar <strong>Test</strong> (debe responder "Reachable") se inicia sesión con las mismas credenciales del dashboard.</p>
+<h4 id="el-lanzador-desktop-y-un-problema-en-linux">El lanzador <code>.desktop</code> y un problema en Linux<a class="headerlink" href="#el-lanzador-desktop-y-un-problema-en-linux" title="Permanent link">&para;</a></h4>
+<p>Hermes Desktop instala una entrada en el menú de aplicaciones (<code>~/.local/share/applications/hermes.desktop</code>) con un icono, para poder arrancarla desde el cajón en lugar de la terminal. En las instalaciones Linux este lanzador me dio dos problemas que he tenido que corregir a mano, y que en el momento de escribir estas líneas siguen presentes en la versión que uso (quizá se resuelvan en el futuro, de modo que conviene documentarlos por si reaparecen).</p>
+<p>El primero: el <code>.desktop</code> que genera el propio Hermes apuntaba al intérprete de Python que instala <code>uv</code> (<code>~/.local/share/uv/python/...</code>), que <strong>no tiene las dependencias</strong>, en lugar de al <em>venv</em> que sí las tiene; al ejecutarlo fallaba con <code>ModuleNotFoundError</code>. Y como Hermes <strong>regenera el <code>.desktop</code> en cada arranque</strong>, cualquier edición manual se perdía. La solución fue quitar el bit de ejecución del <em>script</em> <code>hermes</code> del repositorio para que el generador escogiera el <em>wrapper</em> de <code>~/.local/bin</code> (persistente, que ya resuelve el <code>venv</code> correcto):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>chmod<span class="w"> </span>-x<span class="w"> </span>~/.hermes/hermes-agent/hermes
+</code></pre></div></td></tr></table></div>
+<p>El segundo: el lanzador del menú ejecuta la aplicación <strong>sin cargar tu shell</strong>, así que el <code>PATH</code> no tenía Node (el que aporta <code>nvm</code>). Hermes Desktop necesitaba Node y abortaba en silencio. La corrección fue hacer que el <em>wrapper</em> <code>hermes</code> cargara <code>nvm</code> (y fijara la versión 22) antes de invocar su intérprete:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>~/.local/bin/hermes<span class="w"> </span><span class="s">&lt;&lt;&#39;EOF&#39;</span>
+<span class="s">#!/usr/bin/env bash</span>
+<span class="s">unset PYTHONPATH</span>
+<span class="s">unset PYTHONHOME</span>
+<span class="s">export NVM_DIR=&quot;$HOME/.nvm&quot;</span>
+<span class="s">[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;</span>
+<span class="s">nvm use 22 --silent &gt;/dev/null 2&gt;&amp;1 || true</span>
+<span class="s">exec &quot;$HOME/.hermes/hermes-agent/venv/bin/python&quot; &quot;$HOME/.hermes/hermes-agent/hermes&quot; &quot;$@&quot;</span>
+<span class="s">EOF</span>
+chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>~/.local/bin/hermes
+</code></pre></div></td></tr></table></div>
+<p>Tras esos dos pasos, el <code>Exec=</code> del <code>.desktop</code> queda apuntando al <em>wrapper</em> (visible con <code>cat ~/.local/share/applications/hermes.desktop</code>), que es lo que hace que el lanzador del menú funcione igual que la terminal.</p>
+<div class="admonition warning">
+<p class="admonition-title">Tras cada <code>hermes update</code></p>
+<p>La actualización hace <code>git checkout</code> y restaura el bit de ejecución del <em>script</em> <code>hermes</code> del repositorio, con lo que el problema del <code>Exec</code> puede volver. Basta con repetir el <code>chmod -x ~/.hermes/hermes-agent/hermes</code>.</p>
 </div>
 <h2 id="que-puedes-hacer-con-el">Qué puedes hacer con él<a class="headerlink" href="#que-puedes-hacer-con-el" title="Permanent link">&para;</a></h2>
 <p>Una vez montado, el agente deja de ser una curiosidad a la que se le pregunta de todo y pasa a ser un compañero de trabajo que:</p>
