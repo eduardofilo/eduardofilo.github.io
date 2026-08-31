@@ -2043,7 +2043,7 @@
   <span class="md-ellipsis">
     
   
-    Interruputor de encendido para Raspberry Pi
+    Interruptor de encendido para Raspberry Pi
   
 
     
@@ -5345,7 +5345,7 @@
 </ul>
 <p>Si en algún momento perdemos el contenido de la tarjeta interna (ya sea por descuido o por fallo de la misma), perderemos todo lo anterior. Por tanto es conveniente resguardar al menos los ficheros más valiosos como los savestates para evitar disgustos futuros. Una manera es copiar manualmente los ficheros que más nos importen. Podemos hacerlo copiándolos a la tarjeta externa con DinguxCmdr o conectando con la consola por cable y abriendo una sesión SSH o FTP. Aquí vamos a ver una alternativa más fácil y que respaldará el contenido completo del directorio Home.</p>
 <h2 id="comando-de-backup">Comando de backup<a class="headerlink" href="#comando-de-backup" title="Permanent link">&para;</a></h2>
-<p>Vamos a empezar conociendo el comando que vamos a utilizar. OpenDingux como sabemos es un sistema Linux. En estos sistemas hay una utilidad y formato de archivo muy popular pensado para realizar backups llamado <code>tar</code>. Proviene de cuando los backups se hacían en cintas y de ahí el nombre (Tape ARchive). Está instalado prácticamente en todos los sitemas Linux existentes, por lo que está muy disponible. La forma habitual de utilizarlo es por línea de comando, pero que nadie se asuste. Vamos a empezar viéndolo de esta forma pero más adelante veremos cómo ejecutar este comando desde una aplicación gráfica disponible en ROGUE.</p>
+<p>Vamos a empezar conociendo el comando que vamos a utilizar. OpenDingux como sabemos es un sistema Linux. En estos sistemas hay una utilidad y formato de archivo muy popular pensado para realizar backups llamado <code>tar</code>. Proviene de cuando los backups se hacían en cintas y de ahí el nombre (Tape ARchive). Está instalado prácticamente en todos los sistemas Linux existentes, por lo que está muy disponible. La forma habitual de utilizarlo es por línea de comando, pero que nadie se asuste. Vamos a empezar viéndolo de esta forma pero más adelante veremos cómo ejecutar este comando desde una aplicación gráfica disponible en ROGUE.</p>
 <p>Un comando adecuado para "entarar" el directorio Home sería el siguiente ("entarar" es como se dice en la jerga a la acción de respaldar algo con <code>tar</code>):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>tar<span class="w"> </span>-cf<span class="w"> </span>/media/sdcard/home_backup.tar<span class="w"> </span>-C<span class="w"> </span>/media/data/local<span class="w"> </span>home
 </code></pre></div></td></tr></table></div>
@@ -5379,7 +5379,7 @@ tar -cf /media/sdcard/home_backup.tar -C /media/data/local --exclude=home/.fba/p
 echo &quot;&quot;
 echo &quot;Backup done.&quot;
 </code></pre></div></td></tr></table></div>
-<p>Lo que pongamos en las lineaas 2 y 3 serán el título y la descripción del script que luego se mostrará en el listado de Scriptrunner, por lo que podemos adaptarlo a nuestra conveniencia.</p>
+<p>Lo que pongamos en las líneas 2 y 3 serán el título y la descripción del script que luego se mostrará en el listado de Scriptrunner, por lo que podemos adaptarlo a nuestra conveniencia.</p>
 <div class="admonition warning">
 <p class="admonition-title">Advertencia</p>
 <p>Si creamos el fichero desde Windows es recomendable que sea con un editor potente como <a href="https://notepad-plus-plus.org/">Notepad++</a> y guardarlo con retornos de carro UNIX y codificación UTF8.</p>

@@ -2104,7 +2104,7 @@
   <span class="md-ellipsis">
     
   
-    Interruputor de encendido para Raspberry Pi
+    Interruptor de encendido para Raspberry Pi
   
 
     
@@ -5555,9 +5555,9 @@
 <li>En Arduino existe además otro chip que implementa el estándar USB y conecta el microcontrolador al PC.</li>
 <li>El microcontrolador lleva preflasheado un pequeño firmware llamado bootloader que atiende a este puerto en busca de unos comandos especiales para flashear desde el PC por USB.</li>
 </ol>
-<p>Aquí ni tenemos USB ni bootloader, por lo que necesitamos un mecanismo de más bajo nivel previsto en todos los microcontrolador de la famila AVR de Atmel. Este mecanismo se denomina <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_en_el_sistema">ISP</a> y básicamente consiste en un protocolo basado en la variedad SPI de puerto serie. En las placas que incorporan un microcontrolador programable mediante este sistema solemos encontrar un conector típico de 2x3 o 2x5 pines. En EdUzebox es el conector J3 que se encuentra justo encima del pulsador de reset.</p>
+<p>Aquí ni tenemos USB ni bootloader, por lo que necesitamos un mecanismo de más bajo nivel previsto en todos los microcontrolador de la familia AVR de Atmel. Este mecanismo se denomina <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_en_el_sistema">ISP</a> y básicamente consiste en un protocolo basado en la variedad SPI de puerto serie. En las placas que incorporan un microcontrolador programable mediante este sistema solemos encontrar un conector típico de 2x3 o 2x5 pines. En EdUzebox es el conector J3 que se encuentra justo encima del pulsador de reset.</p>
 <p><img alt="ISP" src="../images/posts/eduzebox/isp.png" /></p>
-<p>Para poder programar el microcontrolador a través de este puerto necesitamos un programador ISP. Hay muchas opciones. Podemos por ejemplo <a href="ingenieria/arduino.html#programacion-de-attiny85">utilizar un Arduino UNO</a> con el scketch <code>ArduinoISP</code> que viene entre los ejemplos del Arduino IDE. Sin embargo por algún motivo que desconozco (a pesar de que creo que utilicé las opciones correctas), no tuve éxito utilizando esta alternativa.</p>
+<p>Para poder programar el microcontrolador a través de este puerto necesitamos un programador ISP. Hay muchas opciones. Podemos por ejemplo <a href="ingenieria/arduino.html#programacion-de-attiny85">utilizar un Arduino UNO</a> con el sketch <code>ArduinoISP</code> que viene entre los ejemplos del Arduino IDE. Sin embargo por algún motivo que desconozco (a pesar de que creo que utilicé las opciones correctas), no tuve éxito utilizando esta alternativa.</p>
 <p>Una opción seguramente más fiable es adquirir un programador ISP. De entre los muchos que hay en el mercado, seguramente uno de los más equilibrados es el <a href="https://learn.adafruit.com/usbtinyisp">USBtiny</a> que además es hardware libre, por lo que se encuentran <a href="https://es.aliexpress.com/item/32648952028.html">clones muy económicos</a>.</p>
 <p>Sin embargo cuando ya estaba a punto de adquirir uno de esos clónicos, descubrí que otra opción es utilizar la placa <a href="ingenieria/herramientas.html#bus-pirate">BusPirate</a> de la que tengo una unidad hace tiempo. Realmente BusPirate es una navaja suiza en lo que a uso y depuración de transmisiones serie se refiere que ya me ha dado muy buen servicio en unas cuantas ocasiones.</p>
 <p>Además del programador o adaptador ISP que elijamos, necesitamos un programa que implemente este protocolo. Aquí, aparte de las herramientas oficiales, en mi mano tenía dos opciones:</p>
@@ -5646,7 +5646,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<p>En este momento si conectamos la consola a un televisor deberíamos ver una imágen indicando que la consola <a href="https://youtu.be/1qNeGSJaQ9Q?t=153">ha cobrado vida</a>.</p>
+<p>En este momento si conectamos la consola a un televisor deberíamos ver una imagen indicando que la consola <a href="https://youtu.be/1qNeGSJaQ9Q?t=153">ha cobrado vida</a>.</p>
 <h2 id="juegos">Juegos<a class="headerlink" href="#juegos" title="Permanent link">&para;</a></h2>
 <p>Lo primero que haremos será copiar a la SD juegos. El directorio de los mismos podemos encontrarlo en <a href="http://uzebox.org/wiki/index.php?title=Games_and_Demos">este enlace</a> del <a href="http://uzebox.org/wiki/Main_Page">wiki</a>. Allí por cada juego se nos suele proporcionar el código y el binario en dos formatos:</p>
 <ul>

@@ -2127,7 +2127,7 @@
   <span class="md-ellipsis">
     
   
-    Interruputor de encendido para Raspberry Pi
+    Interruptor de encendido para Raspberry Pi
   
 
     
@@ -5613,7 +5613,7 @@ $ sudo rm zero.txt &amp;&amp; sudo sync
 total 14632M
 -rwxrwxrwx 1 edumoreno edumoreno 14632M jun  4 00:44 imagen.img
 </code></pre></div></td></tr></table></div>
-<p>Suele ser conveniente <a href="#compresion-y-troceo-de-la-imagen">comprimir</a> el dump (ya que <a href="#informacion-residual-en-espacio-libre">como sabemos</a> contendrá mucho espacio vacío que se comprimirá bien). Además la mayoría de las aplicaciones de flasheo aceptan imagenes comprimidas directamente.</p>
+<p>Suele ser conveniente <a href="#compresion-y-troceo-de-la-imagen">comprimir</a> el dump (ya que <a href="#informacion-residual-en-espacio-libre">como sabemos</a> contendrá mucho espacio vacío que se comprimirá bien). Además la mayoría de las aplicaciones de flasheo aceptan imágenes comprimidas directamente.</p>
 <p>Los comandos para rellenar con ceros del punto 3, en el caso de hacerse sobre particiones Linux (ext4, ext3, ext2), hay un comando específico para esa tarea. Se trata del <code>zerofree</code>. Así se aplicaría sobre la segunda partición del ejemplo que es de tipo Linux. En este caso hay que utilizarlo con la partición desmontada. El valor que va detrás de la opción <code>-f</code> es el que se utilizará para rellenar el espacio no asignado. En el ejemplo siguiente utilizamos el valor <code>0xFF</code> (255) ya que las unidades de tipo flash suelen utilizar el estado alto (1) como natural:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ sudo umount /dev/mmcblk0p2

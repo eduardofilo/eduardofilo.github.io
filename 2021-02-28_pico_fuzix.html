@@ -2043,7 +2043,7 @@
   <span class="md-ellipsis">
     
   
-    Interruputor de encendido para Raspberry Pi
+    Interruptor de encendido para Raspberry Pi
   
 
     
@@ -5414,7 +5414,7 @@
 </blockquote>
 <p>La forma de cargar el firmware en Raspberry Pi Pico es conectar por USB al ordenador mientras se mantiene pulsada la tecla <code>BOOTSEL</code>. En ese momento se montará una unidad de almacenamiento externa en el ordenador donde copiaremos el fichero anterior.</p>
 <h2 id="conexion-serie">Conexión serie<a class="headerlink" href="#conexion-serie" title="Permanent link">&para;</a></h2>
-<p>Ya tenemos todo instalado y preparado. Tan sólo necesitamos una manera de conectar con el sistema. El único medio para conectar con él es por medio del puerto serie que hay en los pines 1 y 2 (GP0 y GP1 respectivamente) de Raspberry Pi Pico. Desconzco si hay algún motivo que haya impedido utilizar el puerto USB de Pico para este propósito. Desde luego hubiera sido mucho más cómodo.</p>
+<p>Ya tenemos todo instalado y preparado. Tan sólo necesitamos una manera de conectar con el sistema. El único medio para conectar con él es por medio del puerto serie que hay en los pines 1 y 2 (GP0 y GP1 respectivamente) de Raspberry Pi Pico. Desconozco si hay algún motivo que haya impedido utilizar el puerto USB de Pico para este propósito. Desde luego hubiera sido mucho más cómodo.</p>
 <p>Para conectar el puerto serie de Pico al ordenador, lo mejor es utilizar un módulo adaptador USB como <a href="https://www.banggood.com/RobotDyn-USB-TTL-UART-Serial-Adapter-CP2102-5V-3_3V-USB-A-Module-p-1244766.html">éste</a>. Al no tener uno a mano utilicé el típico <a href="ingenieria/arduino.html#adaptador-serie">truco de usar un Arduino en modo RESET permanente</a>. Si utilizamos esta técnica nos tocará montar un divisor de tensión con un par de resistencias para adaptar el nivel de tensión para que la linea RX de Pico no reciba directamente los 5V con que trabaja Arduino. En la linea TX no será necesario, ya que los 3,3V de Pico son suficientes para que Arduino interprete ese nivel de tensión como un 1 digital en 5V.</p>
 <p>El siguiente esquema completo muestra el divisor de tensión así como la forma de alimentar Raspberry Pi Pico desde los 5V de salida que ofrece Arduino en uno de sus pins. Llevaremos esos 5V hasta el pin VSYS de Pico que admite entre 1,8V y 5,5V. Las resistencias del divisor de tensión pueden ser prácticamente de cualquier valor con tal de que la que está en serie en la linea RX tenga aproximadamente la mitad de valor que la que deriva a GND.</p>
 <p><img alt="Esquema" src="images/posts/fuzix/fuzix_bb.png" /></p>

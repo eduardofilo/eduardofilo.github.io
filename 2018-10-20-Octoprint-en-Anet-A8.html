@@ -1868,7 +1868,7 @@
   <a href="#imagen-de-sistema" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Imágen de sistema
+        Imagen de sistema
       
     </span>
   </a>
@@ -2065,7 +2065,7 @@
   <span class="md-ellipsis">
     
   
-    Interruputor de encendido para Raspberry Pi
+    Interruptor de encendido para Raspberry Pi
   
 
     
@@ -5285,7 +5285,7 @@
   <a href="#imagen-de-sistema" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Imágen de sistema
+        Imagen de sistema
       
     </span>
   </a>
@@ -5371,8 +5371,8 @@
 
 <p><img alt="Octoprint" src="images/posts/octoprint.jpg" /></p>
 <p>Instalación de Raspberry Pi sobre impresora 3D Anet A8 para ejecutar Octoprint.</p>
-<h2 id="imagen-de-sistema">Imágen de sistema<a class="headerlink" href="#imagen-de-sistema" title="Permanent link">&para;</a></h2>
-<p>Aunque es posible <a href="https://discourse.octoprint.org/t/setting-up-octoprint-on-a-raspberry-pi-running-raspbian/2337">instalar manualmente Octoprint</a> sobre una instalación Raspbian estándar, existe una <a href="https://octoprint.org/download/">imágen para grabar directamente sobre la tarjeta microSD llamada OctoPi</a>. Dado que la Raspberry Pi y por tanto su sistema se va dedicar exclusivamente para esta función, se prefiere esta alternativa.</p>
+<h2 id="imagen-de-sistema">Imagen de sistema<a class="headerlink" href="#imagen-de-sistema" title="Permanent link">&para;</a></h2>
+<p>Aunque es posible <a href="https://discourse.octoprint.org/t/setting-up-octoprint-on-a-raspberry-pi-running-raspbian/2337">instalar manualmente Octoprint</a> sobre una instalación Raspbian estándar, existe una <a href="https://octoprint.org/download/">imagen para grabar directamente sobre la tarjeta microSD llamada OctoPi</a>. Dado que la Raspberry Pi y por tanto su sistema se va dedicar exclusivamente para esta función, se prefiere esta alternativa.</p>
 <h2 id="modelo-de-raspberry-pi-elegido">Modelo de Raspberry Pi elegido<a class="headerlink" href="#modelo-de-raspberry-pi-elegido" title="Permanent link">&para;</a></h2>
 <p>A pesar de que la utilización de una Raspberry Pi Zero no está recomendada por problemas de rendimiento que pueden terminar afectando a las impresiones, en mi experiencia no he sufrido ningún percance y la forma y bajo consumo de la Raspberry Pi Zero (que permite alimentarla desde la misma fuente de la impresora) resulta perfecta para esta instalación.</p>
 <p>Sospecho que los posibles problemas están relacionados con el uso de la webcam. Eligiendo la cámara adecuada (que soporte MJPG de forma nativa) y no abusando del vídeo en streaming creo que se deja un margen de seguridad adecuado para poder aprovechar las ventajas de la versión Zero W de la Raspberry Pi.</p>
@@ -5396,7 +5396,7 @@
 <p>Como la orientación de la PCB en la impresora es distinta a la del esquemático, se muestra ahora con claridad el resultado final, es decir cómo deben disponerse los dos jumpers para que el puerto serie aparezca en el conector J3 y el hueco dejado por las resistencias R52 y R53:</p>
 <p><img alt="Puentes" src="images/posts/octoprint_puentes.jpg" /></p>
 <p>Como vemos los puentes deben apuntar hacia el rótulo BLE. Seguramente se designa así porque la sustitución habitual del puerto USB sería un adaptador Bluetooth que podría adaptarse al conector J3.</p>
-<p>Sólo queda localizar en el conector J3 los pines del puerto serie del microcontrolador recien redirijidos y los de alimentación (5V y GND). En este punto podríamos conectar la Raspberry Pi con simples cables de pin, pero dada la cercanía en el GPIO de la Raspberry Pi del puerto serie y de los terminales de alimentación, me decidí a preparar una pequeña placa adaptadora para el conector J3 de la PCB de la impresora.</p>
+<p>Sólo queda localizar en el conector J3 los pines del puerto serie del microcontrolador recién redirigidos y los de alimentación (5V y GND). En este punto podríamos conectar la Raspberry Pi con simples cables de pin, pero dada la cercanía en el GPIO de la Raspberry Pi del puerto serie y de los terminales de alimentación, me decidí a preparar una pequeña placa adaptadora para el conector J3 de la PCB de la impresora.</p>
 <p>El conector J3 de la impresora según el <a href="images/posts/octoprint_ANET3D_Board_Schematic.png">esquemático</a> tiene el siguiente pineado:</p>
 <p><img alt="Esquemático Conector J3" src="images/posts/octoprint_j3.png" /></p>
 <p>De nuevo es necesario orientar el conector correctamente para interpretar el esquemático. Para evitar confusiones se indica a continuación la numeración de los pines sobre el conector:</p>
@@ -5423,7 +5423,7 @@
 <p>Finalmente montado sobre la PCB de la impresora queda así:</p>
 <p><img alt="Raspberry sobre PCB impresora" src="images/posts/octoprint.jpg" /></p>
 <h2 id="desactivacion-de-bt-y-activacion-de-puerto-serie">Desactivación de BT y activación de puerto serie<a class="headerlink" href="#desactivacion-de-bt-y-activacion-de-puerto-serie" title="Permanent link">&para;</a></h2>
-<p>La Raspberry Pi Zero W (en Raspberry Pi 3 sucede lo mismo) trae un adaptador Bluetooth que tanto en la distribución Raspbian como en la imágen OctoPi utilizada está conectado precisamente a los pines #08 y #10 a los que hemos conectado el puerto serie de la impresora. Antes de continuar necesitamos liberar esta conexión. Para ello debemos editar el fichero <code>config.txt</code> que hay en la partición <code>boot</code> y añadir (al final por ejemplo) lo siguiente:</p>
+<p>La Raspberry Pi Zero W (en Raspberry Pi 3 sucede lo mismo) trae un adaptador Bluetooth que tanto en la distribución Raspbian como en la imagen OctoPi utilizada está conectado precisamente a los pines #08 y #10 a los que hemos conectado el puerto serie de la impresora. Antes de continuar necesitamos liberar esta conexión. Para ello debemos editar el fichero <code>config.txt</code> que hay en la partición <code>boot</code> y añadir (al final por ejemplo) lo siguiente:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>dtoverlay=pi3-disable-bt
 </code></pre></div></td></tr></table></div>
 <p>Esto podemos hacerlo sin necesidad de arrancar el sistema, montando la microSD en el ordenador. Para el siguiente paso sí necesitamos arrancar el sistema de la tarjeta en la Raspberry. Una vez estemos en la consola (por SSH o conectando una pantalla/teclado/ratón de alguna manera), ejecutaremos:</p>
