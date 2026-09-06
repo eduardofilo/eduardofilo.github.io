@@ -5286,10 +5286,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#localizar-paquete-que-contiene-un-fichero" class="md-nav__link">
+  <a href="#comandos-apt-utiles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Localizar paquete que contiene un fichero
+        Comandos apt útiles
       
     </span>
   </a>
@@ -5312,17 +5312,6 @@
     <span class="md-ellipsis">
       
         Configuración de SWAP en disco SSD
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#buscar-paquetes-y-ficheros-de-los-mismos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Buscar paquetes y ficheros de los mismos
       
     </span>
   </a>
@@ -6467,10 +6456,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#localizar-paquete-que-contiene-un-fichero" class="md-nav__link">
+  <a href="#comandos-apt-utiles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Localizar paquete que contiene un fichero
+        Comandos apt útiles
       
     </span>
   </a>
@@ -6493,17 +6482,6 @@
     <span class="md-ellipsis">
       
         Configuración de SWAP en disco SSD
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#buscar-paquetes-y-ficheros-de-los-mismos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Buscar paquetes y ficheros de los mismos
       
     </span>
   </a>
@@ -7199,34 +7177,8 @@ gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 <p>Otro ajuste interesante es el del wrap mode. Se puede hacer con (puede valer 'none', 'word', 'char', o 'word-char'):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>gsettings set org.gnome.gedit.preferences.editor wrap-mode &#39;word&#39;
 </code></pre></div></td></tr></table></div>
-<h2 id="localizar-paquete-que-contiene-un-fichero">Localizar paquete que contiene un fichero<a class="headerlink" href="#localizar-paquete-que-contiene-un-fichero" title="Permanent link">&para;</a></h2>
-<p>(<a href="https://www.cyberciti.biz/faq/equivalent-of-rpm-qf-command/">Fuente</a>)</p>
-<ol>
-<li>
-<p>Instalar <code>apt-file</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>apt-file
-</code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p>Actualizar su base de datos:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt-file<span class="w"> </span>update
-</code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p>Hacer la búsqueda:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>apt-file<span class="w"> </span>search<span class="w"> </span>&lt;fichero_con_ruta&gt;
-</code></pre></div></td></tr></table></div>
-</li>
-</ol>
-<h2 id="configuracion-de-idiomas-del-sistema-locales">Configuración de idiomas del sistema (locales)<a class="headerlink" href="#configuracion-de-idiomas-del-sistema-locales" title="Permanent link">&para;</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>dpkg-reconfigure<span class="w"> </span>locales
-</code></pre></div></td></tr></table></div>
-<h2 id="configuracion-de-swap-en-disco-ssd">Configuración de SWAP en disco SSD<a class="headerlink" href="#configuracion-de-swap-en-disco-ssd" title="Permanent link">&para;</a></h2>
-<p>Siguiendo <a href="https://ubunlog.com/swappiness-como-ajustar-el-uso-de-la-memoria-virtual/">esta página</a>, añado lo siguiente al fichero <code>/etc/sysctl.conf</code> para bajar el 60% que usa Ubuntu por defecto a 10%:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>vm.swappiness=10
-</code></pre></div></td></tr></table></div>
-<h2 id="buscar-paquetes-y-ficheros-de-los-mismos">Buscar paquetes y ficheros de los mismos<a class="headerlink" href="#buscar-paquetes-y-ficheros-de-los-mismos" title="Permanent link">&para;</a></h2>
-<p><a href="https://serverfault.com/questions/96964/list-of-files-installed-from-apt-package/96965#96965">Fuente</a></p>
+<h2 id="comandos-apt-utiles">Comandos apt útiles<a class="headerlink" href="#comandos-apt-utiles" title="Permanent link">&para;</a></h2>
+<p>(Fuentes: <a href="https://serverfault.com/questions/96964/list-of-files-installed-from-apt-package/96965#96965">1</a>, <a href="https://www.cyberciti.biz/faq/equivalent-of-rpm-qf-command/">2</a>)</p>
 <ul>
 <li>Encontrar un paquete por su nombre: <code>apt-cache search 'cadena'</code></li>
 <li>Encontrar un paquete ya instalado que contiene un fichero: <code>dpkg -S 'fichero'</code></li>
@@ -7235,7 +7187,20 @@ gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 <li>Listar los ficheros que contiene un paquete ya instalado: <code>dpkg -L paquete</code></li>
 <li>Listar los ficheros que contiene un paquete no instalado: <code>apt-file list paquete</code> (antes hay que hacer <code>apt-file update</code>)</li>
 <li>Listar los ficheros de un fichero .deb: <code>dpkg -c paquete.deb</code></li>
+<li>Purgar los paquetes que quedaron en estado <code>rc</code> tras eliminarse (configuración residual): <code>sudo apt purge ~c</code></li>
 </ul>
+<p>Para usar <code>apt-file</code> hay que instalarlo y actualizar su base de datos previamente:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>apt-file
+$<span class="w"> </span>sudo<span class="w"> </span>apt-file<span class="w"> </span>update
+</code></pre></div></td></tr></table></div>
+<h2 id="configuracion-de-idiomas-del-sistema-locales">Configuración de idiomas del sistema (locales)<a class="headerlink" href="#configuracion-de-idiomas-del-sistema-locales" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>dpkg-reconfigure<span class="w"> </span>locales
+</code></pre></div></td></tr></table></div>
+<h2 id="configuracion-de-swap-en-disco-ssd">Configuración de SWAP en disco SSD<a class="headerlink" href="#configuracion-de-swap-en-disco-ssd" title="Permanent link">&para;</a></h2>
+<p>Siguiendo <a href="https://ubunlog.com/swappiness-como-ajustar-el-uso-de-la-memoria-virtual/">esta página</a>, añado lo siguiente al fichero <code>/etc/sysctl.conf</code> para bajar el 60% que usa Ubuntu por defecto a 10%:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>vm.swappiness=10
+</code></pre></div></td></tr></table></div>
 <h2 id="limpieza-de-paquetes-snap">Limpieza de paquetes snap<a class="headerlink" href="#limpieza-de-paquetes-snap" title="Permanent link">&para;</a></h2>
 <p>Localizar los paquetes desactivados con:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ snap list --all|fgrep desactivado
