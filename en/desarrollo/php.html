@@ -5361,7 +5361,7 @@
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="nv">$cadena</span> <span class="o">=</span> <span class="s1">&#39;Esto es una cadena.&#39;</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
-<p>Para incluir el caracter comilla simple hay que escaparlo:</p>
+<p>Para incluir el carácter comilla simple hay que escaparlo:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="nv">$cadena</span> <span class="o">=</span> <span class="s1">&#39;Esto es una comilla: \&#39;.&#39;</span><span class="p">;</span>
@@ -5379,7 +5379,7 @@
 <li>\": Comilla doble</li>
 <li>\n: Retorno de carro</li>
 <li>\t: Tabulador</li>
-<li>\$: Símbolo de dolar</li>
+<li>\$: Símbolo de dólar</li>
 </ul>
 <h5 id="en-bloque">En bloque<a class="headerlink" href="#en-bloque" title="Permanent link">&para;</a></h5>
 <p>Ejemplo:</p>
@@ -5405,7 +5405,7 @@
 <ul>
 <li><code>var_dump($var);</code>: Para variables normales</li>
 <li><code>print_r($array);</code>: Para arrays</li>
-<li><code>CVarDumper::dump($param, 10, true);</code>: Sólo en Yii</li>
+<li><code>CVarDumper::dump($param, 10, true);</code>: Solo en Yii</li>
 </ul>
 <h2 id="comparadores">Comparadores<a class="headerlink" href="#comparadores" title="Permanent link">&para;</a></h2>
 <p>Debido a la flexibilidad de PHP con los tipos de datos, los comparadores normales (<code>==</code> por ejemplo) pueden producir resultados erróneos si no forzamos que además del valor se compare el tipo. Por ejemplo la función <code>strpos()</code> devuelve 0 si se encuentra la subcadena al principio y FALSE si no lo encuentra, pero en PHP, ambos tienen el mismo significado. El operador <code>==</code> compara si la expresión de la izquierda y la derecha tienen el mismo valor, mientras que <code>===</code> compara además que sean del mismo tipo. Así se distingue 0 (entero) de FALSE (lógico). <a href="http://php.net/manual/es/language.operators.comparison.php">Aquí</a> se encuentra la documentación completa de los operadores de comparación.</p>

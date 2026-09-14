@@ -6523,7 +6523,7 @@
 <li><a href="http://www.yiiframeworkenespanol.org/foro/showthread.php?tid=60">Usando Ajax en Yii, Facil</a></li>
 <li><a href="http://www.yiiframework.com/doc/guide/1.1/en/database.ar#c2395">Class Level Methods vs Static Methods</a></li>
 <li><a href="http://www.yiiframework.com/wiki/285">Accessing data in a join table with the related models (tabla intermedia en relación many_many con información adicional)</a></li>
-<li><a href="http://www.yiiframework.com/forum/index.php/topic/8581-selecting-join-table-with-mant-to-many">Selecting join table with mant to many? (tabla intermedia en relación many_many con información adicional)</a></li>
+<li><a href="http://www.yiiframework.com/forum/index.php/topic/8581-selecting-join-table-with-mant-to-many">Selecting join table with many to many? (tabla intermedia en relación many_many con información adicional)</a></li>
 <li><a href="http://www.yiiframework.com/wiki/252/special-variables-in-cgridview-and-clistview/">Special $variables in CGridView and CListView</a></li>
 <li><a href="http://www.ramirezcobos.com/2010/11/30/custom-page-size-for-cgridview/">Custom Page Size for CGridView</a></li>
 <li><a href="http://www.yiiframework.com/wiki/106/using-cbuttoncolumn-to-customize-buttons-in-cgridview/">Using CButtonColumn to customize buttons in CGridView</a></li>
@@ -6586,7 +6586,7 @@ RewriteRule . index.php
 </code></pre></div></td></tr></table></div>
 <h3 id="fundamentos">Fundamentos<a class="headerlink" href="#fundamentos" title="Permanent link">&para;</a></h3>
 <h4 id="development-mode">Development mode<a class="headerlink" href="#development-mode" title="Permanent link">&para;</a></h4>
-<p>En el fichero index.php el modo DEBUG se ajusta en la linea siguiente:</p>
+<p>En el fichero index.php el modo DEBUG se ajusta en la línea siguiente:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;YII_DEBUG&#39;</span><span class="p">)</span> <span class="k">or</span> <span class="nb">define</span><span class="p">(</span><span class="s1">&#39;YII_DEBUG&#39;</span><span class="p">,</span><span class="k">true</span><span class="p">);</span>
@@ -6664,7 +6664,7 @@ RewriteRule . index.php
 <h4 id="component">Component<a class="headerlink" href="#component" title="Permanent link">&para;</a></h4>
 <p>Los componentes se utilizan para encapsular funcionalidad. Soportan propiedades, eventos y behaviors. Estos últimos se utilizan para implementar herencia múltiple (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.component#component-behavior">fuente</a>).</p>
 <h4 id="module">Module<a class="headerlink" href="#module" title="Permanent link">&para;</a></h4>
-<p>Un módulo es una unidad de código autocontenida que engloba modelos, vistas, controllers y componentes. Es en cierto modo una aplicación, sólo que no puede ser desplegada por separado. Los módulos se pueden anidar en varios niveles. De la misma forma que una aplicación puede contener módulos, éstos pueden contener a su vez otros módulos. Se configuran de la misma forma con el fichero de configuración de la aplicación, indicando la propiedad <code>modules</code> en el módulo contenedor.</p>
+<p>Un módulo es una unidad de código autocontenida que engloba modelos, vistas, controllers y componentes. Es en cierto modo una aplicación, solo que no puede ser desplegada por separado. Los módulos se pueden anidar en varios niveles. De la misma forma que una aplicación puede contener módulos, éstos pueden contener a su vez otros módulos. Se configuran de la misma forma con el fichero de configuración de la aplicación, indicando la propiedad <code>modules</code> en el módulo contenedor.</p>
 <h4 id="path-alias-e-importacion-de-clases">Path Alias e importación de clases<a class="headerlink" href="#path-alias-e-importacion-de-clases" title="Permanent link">&para;</a></h4>
 <p>De forma predeterminada están definidos los siguientes path alias:</p>
 <ul>
@@ -6678,7 +6678,7 @@ RewriteRule . index.php
 <h4 id="convenciones">Convenciones<a class="headerlink" href="#convenciones" title="Permanent link">&para;</a></h4>
 <h5 id="del-framework">Del framework<a class="headerlink" href="#del-framework" title="Permanent link">&para;</a></h5>
 <ul>
-<li>Si no se especifica en la URL el ID del action se ejecutará el action predeterminada. Si no se cambia (con <code>CController::defaultAction</code>) se ejecutará el action <code>index</code>.</li>
+<li>Si no se especifica en la URL el ID del action se ejecutará el action predeterminado. Si no se cambia (con <code>CController::defaultAction</code>) se ejecutará el action <code>index</code>.</li>
 <li>Si no se especifica en la URL el ID del controller se ejecutará el controller predeterminado. Si no se cambia (con <code>CWebApplication::defaultController</code>) se ejecutará el controller <code>site</code>.</li>
 </ul>
 <h5 id="nomenclatura-para-codigo">Nomenclatura para código<a class="headerlink" href="#nomenclatura-para-codigo" title="Permanent link">&para;</a></h5>
@@ -6727,7 +6727,7 @@ RewriteRule . index.php
 <li><code>Validador</code> puede ser una de las clases de validación predefinidas en Yii (<a href="http://www.yiiframework.com/doc/guide/1.1/en/form.model#declaring-validation-rules">lista</a>).</li>
 </ul>
 <h5 id="asignacion-de-atributos">Asignación de atributos<a class="headerlink" href="#asignacion-de-atributos" title="Permanent link">&para;</a></h5>
-<p>Las asignaciones de atributos entre formulario y modelo se pueden hacer en bloque por medio de la función de PHP <code>$_POST[&lt;clase_modelo&gt;]</code>. Sólo se asignan los atributos considerados seguros, es decir los que tienen asociada una regla de validación. Hay que tener en cuenta que las reglas de validación se pueden asociar a escenarios por lo que se asignarán unos atributos u otros según el escenario declarado al instanciar el modelo. Por ejemplo:</p>
+<p>Las asignaciones de atributos entre formulario y modelo se pueden hacer en bloque por medio de la función de PHP <code>$_POST[&lt;clase_modelo&gt;]</code>. Solo se asignan los atributos considerados seguros, es decir los que tienen asociada una regla de validación. Hay que tener en cuenta que las reglas de validación se pueden asociar a escenarios por lo que se asignarán unos atributos u otros según el escenario declarado al instanciar el modelo. Por ejemplo:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -6751,7 +6751,7 @@ RewriteRule . index.php
 <p>Es importante recordar que las reglas de validación se usan para chequear los datos introducidos por los usuarios y no los datos generados por código (timestamps o primary keys). Por lo tanto <strong>no hay que definir reglas de validación en los atributos que no esperamos que sean introducidos por el usuario</strong>. Por ejemplo, si marcamos como seguro el atributo <code>id</code> de un modelo (por medio del validador <code>safe</code> por ejemplo), aunque inicialmente no incluyamos el campo en el formulario, un atacante podría enviarlo y la asignación en bloque sobre el modelo lo incluiría y podría permitir cambiar el ID del registro en base de datos.</p>
 <h5 id="provocando-la-validacion">Provocando la validación<a class="headerlink" href="#provocando-la-validacion" title="Permanent link">&para;</a></h5>
 <p>Una vez que el modelo recibe los atributos (normalmente procedentes del usuario por medio de un formulario) la validación se puede desencadenar invocando el método <code>CModel::validate()</code>. Retornará <code>true</code> o <code>false</code> en función del resultado. En los modelos tipo <code>CActiveRecord</code> de forma predeterminada se desencadena también al invocar el método <code>save()</code>. Antes de invocar la validación se puede indicar el escenario (ajustando la propiedad <code>scenario</code> del modelo) para elegir el conjunto de reglas de validación que se desean.</p>
-<p>Una vez que la validación se ha hecho, los posibles errores se almacenan en el propio modelo. Se pueden obtener con las funciones <code>CModel::getErrors()</code> (devuelve todos los errores) y <code>CModel::getError()</code> (devuelve sólo el primero).</p>
+<p>Una vez que la validación se ha hecho, los posibles errores se almacenan en el propio modelo. Se pueden obtener con las funciones <code>CModel::getErrors()</code> (devuelve todos los errores) y <code>CModel::getError()</code> (devuelve solo el primero).</p>
 <h4 id="recogiendo-varios-modelos-a-la-vez">Recogiendo varios modelos a la vez<a class="headerlink" href="#recogiendo-varios-modelos-a-la-vez" title="Permanent link">&para;</a></h4>
 <p>Para recoger varios modelos o registros de un tipo simultáneamente (o entrada tabular) necesitamos crear o rellenar un array de instancias del modelo, dependiendo de si queremos insertar o modificar registros. Luego recogeremos los datos de entrada del usuario de la variable <code>$_POST</code> y los asignaremos a cada modelo. Cuando recogíamos un solo modelo hacíamos <code>$_POST[&lt;clase_modelo&gt;]</code>, ahora haremos <code>$_POST[&lt;clase_modelo&gt;][$i]</code>. El action de modificación tendrá el siguiente aspecto:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -6842,7 +6842,7 @@ RewriteRule . index.php
 <li>queryScalar(): Devuelve el primer campo del primer registro del resultado de la consulta. Útil para una consulta tipo count.</li>
 </ul>
 </li>
-<li>CDbDataReader: Representa un conjunto de registros que se lee sólo hacia adelante resultado de una consulta. Normalmente el objeto se recorre ejecutando sucesivamente el método <code>read()</code> hasta que devuelve <code>false</code>. A continuación se muestran tres formas de extraer los datos de CDbDataReader:
+<li>CDbDataReader: Representa un conjunto de registros que se lee solo hacia adelante resultado de una consulta. Normalmente el objeto se recorre ejecutando sucesivamente el método <code>read()</code> hasta que devuelve <code>false</code>. A continuación se muestran tres formas de extraer los datos de CDbDataReader:
     <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -6934,7 +6934,7 @@ RewriteRule . index.php
 <p>Active Record (AR) es una popular técnica de mapeo Objeto-Relacional (ORM) que permite manipular una tabla de manera orientada a objeto. De forma dinámica se genera una entidad modelo a partir de una tabla con prácticamente nada de código. Se recomienda que todos los nombres de los campos de las tablas estén en minúsculas para no tener problemas con el cambio de gestor de base de datos, ya que algunos son sensibles a mayúsculas y otros no.</p>
 <h5 id="creando-registros">Creando registros<a class="headerlink" href="#creando-registros" title="Permanent link">&para;</a></h5>
 <p>Simplemente creando un objeto AR, asignando valores a sus propiedades y llamando al método <code>CActiveRecord::save()</code>.</p>
-<p>Para asignar expresiones SQL a algunos de los campos o propiedades de los objetos AR, hay que utilizar el objero <code>CDbExpression</code>, por ejemplo:</p>
+<p>Para asignar expresiones SQL a algunos de los campos o propiedades de los objetos AR, hay que utilizar el objeto <code>CDbExpression</code>, por ejemplo:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -7134,14 +7134,14 @@ RewriteRule . index.php
 <p>Las relaciones entre dos clases AR tienen que ver con la relación entre las tablas en base de datos. En base de datos tendremos las relaciones:</p>
 <ul>
 <li>one-to-many: entre tbl_user y tbl_post por ejemplo.</li>
-<li>ono-to-one: entre tbl_user y tbl_profile por ejemplo.</li>
+<li>one-to-one: entre tbl_user y tbl_profile por ejemplo.</li>
 <li>many-to-many: entre tbl_category y tbl_post por ejemplo.</li>
 </ul>
 <p>En el lado AR hay cuatro tipos posibles:</p>
 <ul>
 <li>BELONGS_TO: Si la relación entre las tablas A y B es one-to-many, entonces B belongs_to A. En el ejemplo A=tbl_user y B=tbl_post.</li>
 <li>HAS_MANY: Si la relación entre las tablas A y B es one-to-many, entonces A has_many B. En el ejemplo A=tbl_user y B=tbl_post.</li>
-<li>HAS_ONE: Si la relación entre las tablas A y B es ono-to-one. Es un caso especial de HAS_MANY en el que A tiene al menos un B. En el ejemplo A=tbl_user y B=tbl_profile.</li>
+<li>HAS_ONE: Si la relación entre las tablas A y B es one-to-one. Es un caso especial de HAS_MANY en el que A tiene al menos un B. En el ejemplo A=tbl_user y B=tbl_profile.</li>
 <li>MANY_MANY: Si la relación entre las tablas A y B es many-to-many. Se necesita una tabla intermedia que descomponga la relación en dos relaciones 1:n con la tabla intermedia (C). En el ejemplo A=tbl_post, B=tbl_category y C=tbl_post_category.</li>
 </ul>
 <p>Estas relaciones se declaran en el método <code>CActiveRecord::relations()</code> definiendo un array en el que cada elemento representa una relación de la siguiente forma:</p>
@@ -7300,7 +7300,7 @@ RewriteRule . index.php
 <h5 id="rendimiento-de-consultas-relacionales">Rendimiento de consultas relacionales<a class="headerlink" href="#rendimiento-de-consultas-relacionales" title="Permanent link">&para;</a></h5>
 <p>Existe una opción que permite elegir entre dos métodos para realizar consultas <em>eager loading</em>. Se trata de la opción <code>together</code> que determina si se realizará una única consulta con el join de las tablas relacionadas (más rendimiento) o una consulta por cada tabla (menos información redundante). Consultar <a href="http://www.yiiframework.com/doc/guide/1.1/en/database.arr#relational-query-performance">documentación completa</a>.</p>
 <h5 id="consulta-estadistica">Consulta estadística<a class="headerlink" href="#consulta-estadistica" title="Permanent link">&para;</a></h5>
-<p>Existe un tipo de relación especializado en obtener datos estadísticos entre tablas. Sólo se puede aplicar sobre tablas relacionadas con <code>HAS_MANY</code> y <code>MANY_MANY</code> y el tipo de relación se designa con <code>self::STAT</code>. Por ejemplo:</p>
+<p>Existe un tipo de relación especializado en obtener datos estadísticos entre tablas. Solo se puede aplicar sobre tablas relacionadas con <code>HAS_MANY</code> y <code>MANY_MANY</code> y el tipo de relación se designa con <code>self::STAT</code>. Por ejemplo:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -7339,7 +7339,7 @@ RewriteRule . index.php
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="nv">$posts</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">published</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">recently</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;comments&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
 </code></pre></div></td></tr></table></div>
-<p>Aplicar <em>named scopes</em> a los modelos relacionados se hace indicandolos detrás de la relación separándolos con ":". Por ejemplo:</p>
+<p>Aplicar <em>named scopes</em> a los modelos relacionados se hace indicándolos detrás de la relación separándolos con ":". Por ejemplo:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="nv">$posts</span><span class="o">=</span><span class="nx">Post</span><span class="o">::</span><span class="na">model</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;comments:recently:approved&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
@@ -7496,7 +7496,7 @@ RewriteRule . index.php
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h5 id="tabla-de-relacion-many_many-con-datos-adicionales">Tabla de relación MANY_MANY con datos adicionales<a class="headerlink" href="#tabla-de-relacion-many_many-con-datos-adicionales" title="Permanent link">&para;</a></h5>
-<p>Para el caso en que la tabla intermedia que desarrolla una relación MANY_MANY entre otras dos tablas contenga campos con información adicional a los dos foreign keys que apuntan a las dos tablas, seguir <a href="http://www.yiiframework.com/wiki/285">este artículo</a> del wiki y <a href="http://www.yiiframework.com/forum/index.php/topic/8581-selecting-join-table-with-mant-to-many/">éste</a> del foro (ignorar las respuestas más viejas que son de cuando no existía el mecanismo <code>through</code>).</p>
+<p>Para el caso en que la tabla intermedia que desarrolla una relación MANY_MANY entre otras dos tablas contenga campos con información adicional a los dos foreign keys que apuntan a las dos tablas, seguir <a href="http://www.yiiframework.com/wiki/285">este artículo</a> del wiki y <a href="http://www.yiiframework.com/forum/index.php/topic/8581-selecting-join-table-with-mant-to-many/">este</a> del foro (ignorar las respuestas más viejas que son de cuando no existía el mecanismo <code>through</code>).</p>
 <h3 id="cosas-interesantes">Cosas interesantes<a class="headerlink" href="#cosas-interesantes" title="Permanent link">&para;</a></h3>
 <h5 id="application-singleton">Application Singleton<a class="headerlink" href="#application-singleton" title="Permanent link">&para;</a></h5>
 <p><code>Yii:app()</code> Sirve como almacén central de ajustes de configuración a nivel de aplicación (<a href="http://www.yiiframework.com/doc/guide/1.1/en/basics.application">fuente</a>).</p>

@@ -4947,7 +4947,7 @@
   <a href="#reparacion-del-sistema-de-archivos-cuando-se-pone-en-modo-solo-lectura" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reparación del sistema de archivos cuando se pone en modo "sólo lectura"
+        Reparación del sistema de archivos cuando se pone en modo "solo lectura"
       
     </span>
   </a>
@@ -6978,7 +6978,7 @@
   <a href="#reparacion-del-sistema-de-archivos-cuando-se-pone-en-modo-solo-lectura" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reparación del sistema de archivos cuando se pone en modo "sólo lectura"
+        Reparación del sistema de archivos cuando se pone en modo "solo lectura"
       
     </span>
   </a>
@@ -7943,7 +7943,7 @@ $<span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span>
 </code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p>Para cerrar la sesión screen que acabamos de abrir, tan sólo hay que lanzar el comando <code>exit</code> (en este ejemplo, parando previamente el comando <code>top</code> que habíamos lanzado). Ahora sin embargo pretendemos dejarla abierta, con el comando <code>top</code> en ejecución, para volver a ella más adelante. Es lo que se llama un detach (sirve para recordar la tecla que se pulsa al final de la combinación de teclas). Para ello pulsamos la combinación de teclas:</p>
+<p>Para cerrar la sesión screen que acabamos de abrir, tan solo hay que lanzar el comando <code>exit</code> (en este ejemplo, parando previamente el comando <code>top</code> que habíamos lanzado). Ahora sin embargo pretendemos dejarla abierta, con el comando <code>top</code> en ejecución, para volver a ella más adelante. Es lo que se llama un detach (sirve para recordar la tecla que se pulsa al final de la combinación de teclas). Para ello pulsamos la combinación de teclas:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>&quot;Ctrl-a&quot; &quot;d&quot;
 </code></pre></div></td></tr></table></div>
 </li>
@@ -8151,7 +8151,7 @@ WantedBy=multi-user.target
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>%sudo ALL=NOPASSWD: ALL
 </code></pre></div></td></tr></table></div>
 <p>Hay que fijarse que la linea anterior normalmente ya aparece en el fichero pero comentada con una almohadilla. Se puede aprovechar la linea quitando el carácter almohadilla del principio, pero hay que tener en cuenta que no es suficiente con eso. Hay que mover la linea al final del fichero ya que las lineas siguientes pueden sobreescribir su efecto.</p>
-<p><strong>Importante</strong>: La edición del fichero <code>/etc/sudoers</code> sólo se puede hacer con el comando <code>visudo</code>. Este comando hay que lanzarlo con <code>sudo</code> a su vez, por lo que se hará de la siguiente forma:</p>
+<p><strong>Importante</strong>: La edición del fichero <code>/etc/sudoers</code> solo se puede hacer con el comando <code>visudo</code>. Este comando hay que lanzarlo con <code>sudo</code> a su vez, por lo que se hará de la siguiente forma:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>visudo
 </code></pre></div></td></tr></table></div>
 <h3 id="migracion-masiva-de-usuarios">Migración masiva de usuarios<a class="headerlink" href="#migracion-masiva-de-usuarios" title="Permanent link">&para;</a></h3>
@@ -8216,7 +8216,7 @@ nitsuga2:$1$635CQht0$rFIbilzKqfc1zStqeOwlk/:501:501::/home/nitsuga2:/bin/bash
 nitsuga3:$1$635CQht0$rFIbilzKqfc1zStqeOwlk/:502:502::/home/nitsuga3:/bin/bash
 </code></pre></div></td></tr></table></div>
 <h4 id="depuracion-de-etcpasswd">Depuración de /etc/passwd<a class="headerlink" href="#depuracion-de-etcpasswd" title="Permanent link">&para;</a></h4>
-<p>Se copiará el archivo <code>/etc/passwd</code> a uno de trabajo <code>/etc/passwd.migracion</code>. Ahora se editará el archivo y se quitarán todos los usuarios propios del sistema (root, usuarios de demonios, etcétera) dejando sólo los usuarios que van a ser autenticados.</p>
+<p>Se copiará el archivo <code>/etc/passwd</code> a uno de trabajo <code>/etc/passwd.migracion</code>. Ahora se editará el archivo y se quitarán todos los usuarios propios del sistema (root, usuarios de demonios, etcétera) dejando solo los usuarios que van a ser autenticados.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>nitsuga:$1$QwPqN0Vc$dn9OIyE3HQUh5W4Yh/.aQ.:500:500::/home/nitsuga:/bin/bash
@@ -8242,7 +8242,7 @@ nitsuga2:x:501:
 nitsuga3:x:502:
 nitsuga8:x:507:
 </code></pre></div></td></tr></table></div>
-<p>Y se editará para dejar sólo los grupos de los usuarios:</p>
+<p>Y se editará para dejar solo los grupos de los usuarios:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>nitsuga:x:500:
@@ -8371,7 +8371,7 @@ $<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-t
 <h3 id="bits-suid-sgid-y-sticky">Bits SUID, SGID y sticky<a class="headerlink" href="#bits-suid-sgid-y-sticky" title="Permanent link">&para;</a></h3>
 <p><a href="http://lucas.olea.org/Manuales-LuCAS/doc-unixsec/unixsec-html/node56.html">Manual de LuCAS</a></p>
 <h2 id="discos-particiones-y-montaje">Discos, particiones y montaje<a class="headerlink" href="#discos-particiones-y-montaje" title="Permanent link">&para;</a></h2>
-<h3 id="reparacion-del-sistema-de-archivos-cuando-se-pone-en-modo-solo-lectura">Reparación del sistema de archivos cuando se pone en modo "sólo lectura"<a class="headerlink" href="#reparacion-del-sistema-de-archivos-cuando-se-pone-en-modo-solo-lectura" title="Permanent link">&para;</a></h3>
+<h3 id="reparacion-del-sistema-de-archivos-cuando-se-pone-en-modo-solo-lectura">Reparación del sistema de archivos cuando se pone en modo "solo lectura"<a class="headerlink" href="#reparacion-del-sistema-de-archivos-cuando-se-pone-en-modo-solo-lectura" title="Permanent link">&para;</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>fsck
 </code></pre></div></td></tr></table></div>
 <h3 id="recuperacion-de-pendrive-o-tarjeta-de-memoria-corrupta">Recuperación de pendrive o tarjeta de memoria corrupta<a class="headerlink" href="#recuperacion-de-pendrive-o-tarjeta-de-memoria-corrupta" title="Permanent link">&para;</a></h3>
@@ -8464,7 +8464,7 @@ password=password
 </code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p>Crear fichero <code>/etc/auto.red</code> con el siguiente contenido (cambiar rw por ro si se desea acceso de sólo lectura):</p>
+<p>Crear fichero <code>/etc/auto.red</code> con el siguiente contenido (cambiar rw por ro si se desea acceso de solo lectura):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>montaje  -fstype=nfs4,rw 192.168.1.100:/path/directory
 </code></pre></div></td></tr></table></div>
 </li>

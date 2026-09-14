@@ -5361,34 +5361,34 @@
 <h3 id="cambios-recientes">Cambios recientes<a class="headerlink" href="#cambios-recientes" title="Permanent link">&para;</a></h3>
 <p>Se puede añadir al menú de herramientas el enlace "Cambios recientes" haciendo lo siguiente:</p>
 <ul>
-<li>Añadir las siguientes lineas al fichero <code>$DOKU_BASE/lib/tpl/monobook/context.php</code>:
+<li>Añadir las siguientes líneas al fichero <code>$DOKU_BASE/lib/tpl/monobook/context.php</code>:
     <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;recent&#39;][&#39;href&#39;] = DOKU_BASE.&quot;doku.php?do=recent&quot;;</span>
 <span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;recent&#39;][&#39;text&#39;] = $lang[&#39;monobook_recent&#39;];</span>
 <span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;recent&#39;][&#39;rel&#39;] = &quot;nofollow&quot;;</span>
 </code></pre></div></td></tr></table></div></li>
-<li>Inmediatamente antes de la linea (en la versión de 2007-10-03 es la linea #354):
+<li>Inmediatamente antes de la línea (en la versión de 2007-10-03 es la línea #354):
     <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;whatlinkshere&#39;][&#39;href&#39;] = DOKU_BASE.&quot;doku.php?id=&quot;.$ID.&quot;&amp;amp;do=backlink&quot;;</span>
 </code></pre></div></td></tr></table></div></li>
-<li>Añadir la linea siguiente al fichero <code>$DOKU_BASE/lib/tpl/monobook/lang/es/lang.php</code>:
+<li>Añadir la línea siguiente al fichero <code>$DOKU_BASE/lib/tpl/monobook/lang/es/lang.php</code>:
     <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">$lang[&#39;monobook_recent&#39;] = &quot;Cambios recientes&quot;;</span>
 </code></pre></div></td></tr></table></div></li>
 </ul>
 <h3 id="indice">Índice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h3>
 <p>Se puede añadir al menú de herramientas el enlace "Índice" haciendo lo siguiente:</p>
 <ul>
-<li>Añadir las siguientes lineas al fichero <code>$DOKU_BASE/lib/tpl/monobook/context.php</code>:
+<li>Añadir las siguientes líneas al fichero <code>$DOKU_BASE/lib/tpl/monobook/context.php</code>:
     <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;index&#39;][&#39;href&#39;] = DOKU_BASE.&quot;doku.php?do=index&quot;;</span>
 <span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;index&#39;][&#39;text&#39;] = $lang[&#39;monobook_index&#39;];</span>
 <span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;index&#39;][&#39;rel&#39;] = &quot;nofollow&quot;;</span>
 </code></pre></div></td></tr></table></div></li>
-<li>Inmediatamente antes de la linea (en la versión de 2007-10-03 es la linea #354):
+<li>Inmediatamente antes de la línea (en la versión de 2007-10-03 es la línea #354):
     <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">$monobook[&#39;defaulttoolbox&#39;][&#39;whatlinkshere&#39;][&#39;href&#39;] = DOKU_BASE.&quot;doku.php?id=&quot;.$ID.&quot;&amp;amp;do=backlink&quot;;</span>
 </code></pre></div></td></tr></table></div></li>
-<li>Añadir la linea siguiente al fichero <code>$DOKU_BASE/lib/tpl/monobook/lang/es/lang.php</code>:
+<li>Añadir la línea siguiente al fichero <code>$DOKU_BASE/lib/tpl/monobook/lang/es/lang.php</code>:
     <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">$lang[&#39;monobook_index&#39;] = &quot;Índice&quot;;</span>
 </code></pre></div></td></tr></table></div></li>
 </ul>

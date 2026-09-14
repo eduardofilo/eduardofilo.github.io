@@ -5566,8 +5566,8 @@ Esta utilidad junto a todas las del kit de recursos de Windows 2000 se puede obt
 <li>Una vez que se activa Windows XP por primera vez, se guarda un archivo en nuestro PC, este archivo debemos copiarlo y guardarlo muy bien para la siguiente vez que borremos el disco duro y así evitaremos la activación nuevamente.</li>
 <li>Sigue estos pasos para buscar y guardar el archivo que guarda las configuraciones del hardware y la activación de tu copia de Windows XP.</li>
 <li>Haces clic con el botón Inicio y a continuación en Ejecutar.</li>
-<li>Escribe wpa.dbl y pulsa el boton Aceptar, después de unos segundos aparecerá el archivo en el cuadro buscar.</li>
-<li>Ahora fijate bien donde está el archivo (normalmente estará en el directorio C:\Windows\System32), copia este archivo en un disquete o en cualquier otro lugar del disco duro donde esté a salvo de errores y lo puedas conservar hasta que lo necesites.</li>
+<li>Escribe wpa.dbl y pulsar el botón Aceptar, después de unos segundos aparecerá el archivo en el cuadro buscar.</li>
+<li>Ahora fíjate bien dónde está el archivo (normalmente estará en el directorio C:\Windows\System32), copia este archivo en un disquete o en cualquier otro lugar del disco duro donde esté a salvo de errores y lo puedas conservar hasta que lo necesites.</li>
 <li>La próxima vez que formatees el disco duro, o por cualquier otra causa necesites activar tu copia de Windows XP simplemente copia el archivo que acabas de guardar al directorio Windows, reinicias y listo ya está activada nuevamente tu copia de Windows XP</li>
 </ol>
 <h2 id="evitar-colapsos-de-conexion-de-red">Evitar colapsos de conexión de red<a class="headerlink" href="#evitar-colapsos-de-conexion-de-red" title="Permanent link">&para;</a></h2>
@@ -5617,12 +5617,12 @@ _REGISTRY_MACHINE_SAM -&gt; sam
 </ul>
 <h2 id="clonado-de-equipos">Clonado de equipos<a class="headerlink" href="#clonado-de-equipos" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Instalar un equipo el cual servira de modelo, una vez instalado el sistema operativo y sus parches vamos al paso 2.</li>
+<li>Instalar un equipo el cual servirá de modelo, una vez instalado el sistema operativo y sus parches vamos al paso 2.</li>
 <li>Extraer el archivo DEPLOY.CAB de [CD_WIN]:\support\tools\ en directorio C:\sysprep</li>
 <li>Ejecutar sysprep.exe para crear el sysprep.inf. Existen unos botones al ejecutar sysprep. Darle a Factory.</li>
-<li>Instalar los programas y todo lo que utilizaran los PCs, una vez terminado esta parte le damos en la opcion de Sellar equipo en sysprep.</li>
+<li>Instalar los programas y todo lo que utilizaran los PCs, una vez terminada esta parte le damos en la opción de Sellar equipo en sysprep.</li>
 <li>Hacemos la imagen con Ghost, g4u o similar.</li>
-<li>Volcamos esta imagen en los demas PCs y sin poner el disquete de sysprep, alli vuelve a pedir los datos del Key de Windows, Nombre de PC y todo lo demas, dejando los programas listos e incluso con sus acesos directos y con el escritorio como en la imagen.</li>
+<li>Volcamos esta imagen en los demas PCs y sin poner el disquete de sysprep, allí vuelve a pedir los datos del Key de Windows, Nombre de PC y todo lo demás, dejando los programas listos e incluso con sus accesos directos y con el escritorio como en la imagen.</li>
 </ol>
 <h3 id="enlaces">Enlaces:<a class="headerlink" href="#enlaces" title="Permanent link">&para;</a></h3>
 <ul>
@@ -5666,7 +5666,7 @@ Una vez realizada esta operación, nadie podrá acceder a él hasta que no lo vo
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\system] &quot;DisableRegistryTools&quot;=dword:00000000
 </code></pre></div></td></tr></table></div>
-<p>Ahora, guardamos el archivo con el nombre unlock.reg y, a partir de ese momento, cuando queramos activar el Registro de Windows, después de haberlo deshabilitado, sólo tendremos que hacer doble clic sobre el archivo que acabamos de crear.</p>
+<p>Ahora, guardamos el archivo con el nombre unlock.reg y, a partir de ese momento, cuando queramos activar el Registro de Windows, después de haberlo deshabilitado, solo tendremos que hacer doble clic sobre el archivo que acabamos de crear.</p>
 <h2 id="escritorio-remoto-editar-registro-con-comandos">Escritorio Remoto / Editar registro con comandos<a class="headerlink" href="#escritorio-remoto-editar-registro-con-comandos" title="Permanent link">&para;</a></h2>
 <p>La funcionalidad "Escritorio Remoto" se encuentra desactivada por defecto. Se puede activar editando el registro del ordenador que nos interese. Esto se puede hacer remotamente por medio del siguiente comando:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>reg add \\[NombreEquipo]\HKLM\SYSTEM\CurrentControlSet\Services\PolicyAgent /V EnableRemoteMgmt /T REG_DWORD /F /D 1
@@ -5708,7 +5708,7 @@ C:\Documents and Settings\All Users\Menú Inicio\Programas\Inicio
 </code></pre></div></td></tr></table></div>
 <p>(<a href="http://www.trucoswindows.net/explicapro.html">Fuente</a>)</p>
 <h2 id="ajustes-tras-instalacion-windows-10">Ajustes tras instalación Windows 10<a class="headerlink" href="#ajustes-tras-instalacion-windows-10" title="Permanent link">&para;</a></h2>
-<p>Recien instalado, Windows 10 trae preconfiguradas unas cuantas cosas que estarían mejor desactivadas. <a href="http://www.adslzone.net/2016/06/14/9-cosas-desactivar-windows-10/">Aquí</a> tenemos una lista de ajustes a efectuar tras la instalación o actualización.</p>
+<p>Recién instalado, Windows 10 trae preconfiguradas unas cuantas cosas que estarían mejor desactivadas. <a href="http://www.adslzone.net/2016/06/14/9-cosas-desactivar-windows-10/">Aquí</a> tenemos una lista de ajustes a efectuar tras la instalación o actualización.</p>
 
 
 

@@ -5258,10 +5258,10 @@
 </ul>
 <h2 id="codificacion-de-la-pagina">Codificación de la página<a class="headerlink" href="#codificacion-de-la-pagina" title="Permanent link">&para;</a></h2>
 <ul>
-<li>La codificación de caracteres que se usa para enviar la página al navegador se ajusta en el fichero globals.php añadiendo la siguiente linea:
+<li>La codificación de caracteres que se usa para enviar la página al navegador se ajusta en el fichero globals.php añadiendo la siguiente línea:
     <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">header( &#39;Content-Type: text/html; charset=UTF-8&#39;);</span>
 </code></pre></div></td></tr></table></div></li>
-<li>La codificación que se informa en la sección header del código fuente html de la página se ajusta en el fichero language/spanish.php en la linea que dice:
+<li>La codificación que se informa en la sección header del código fuente html de la página se ajusta en el fichero language/spanish.php en la línea que dice:
     <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">DEFINE(&#39;_ISO&#39;,&#39;charset=utf-8&#39;);</span>
 </code></pre></div></td></tr></table></div></li>
 </ul>
@@ -5273,8 +5273,8 @@
 <p>El problema es seguramente del servidor, ya que el archivo php.ini tiene el parámetro allow_url_fopen deshabilitado. La solución es utilizar la librería cURL para evitar el uso de la función file_get_contents().</p>
 <ul>
 <li>Localizar el archivo que está en la carpeta donde esté alojado el Joomla en la siguiente ruta: /includes/domit/xml_domit_parser.php</li>
-<li>Editarlo e ir a la linea 1645</li>
-<li>En esa linea pone: return file_get_contents($filename);</li>
+<li>Editarlo e ir a la línea 1645</li>
+<li>En esa línea pone: return file_get_contents($filename);</li>
 <li>Eliminamos la línea y ponemos esto en su lugar:
     <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>

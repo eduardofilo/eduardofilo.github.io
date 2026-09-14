@@ -5815,7 +5815,7 @@
 <p>Los ficheros de preferencias de las distintas versiones se encuentran en la ruta (Linux) <code>~/.config/cura</code> y los de settings en <code>~/.local/share/cura</code>. (<a href="https://github.com/Ultimaker/Cura/wiki/Cura-Preferences-and-Settings-Locations">Fuente</a>)</p>
 <ul>
 <li><code>Quality &gt; Layer Height</code>: 0.2 mm [0.1-0.3] Altura de Capa.</li>
-<li><code>Quality &gt; Initial Layer Height</code>: 0.2 mm [0.1-0.3] Altura de la capa inicial. Una capa inicial más final mejora la adherencia a la cama.</li>
+<li><code>Quality &gt; Initial Layer Height</code>: 0.2 mm [0.1-0.3] Altura de la capa inicial. Una capa inicial más fina mejora la adherencia a la cama.</li>
 <li><code>Quality &gt; Initial Layer Line Width</code>: 100 %. Permite aumentar ligeramente la anchura de las líneas de la primera capa para aumentar la adherencia a la cama. Básicamente inyecta un poco más de material.</li>
 <li><code>Shell &gt; Wall Thickness</code>: 1.2 mm [0.8-2.0] Grosor de la piel. Debe ser múltiplo de <code>Layer Height</code>.</li>
 <li><code>Shell &gt; Top/Bottom Thickness</code>: 1.2 mm [0.8-2.0] Grosor de la piel superior e inferior. Cuando la densidad de relleno es menor que 20%, se puede producir caída de la capa superior. En ese caso se recomienda un mínimo de 1.2mm.</li>
@@ -5853,13 +5853,13 @@
 <li><code>Cooling &gt; Lift Head</code>: Desmarcado. Aparta la cabeza cuando no se alcanza el tiempo mínimo de impresión de la capa para evitar que el extrusor gotee sobre la misma. Es mejor bajar la velocidad de impresión en este tipo de piezas pequeñas en las que no se alcance el tiempo mínimo de impresión de capa.</li>
 <li><code>Support &gt; Generate Support</code>: Marcado. Generar soporte para partes en voladizo.</li>
 <li><code>Support &gt; Support Placement</code>: Everywhere<ul>
-<li><code>Touching Builplate</code>: Sólo hace soportes en las partes en voladizo sobre la cama.</li>
+<li><code>Touching Builplate</code>: Solo hace soportes en las partes en voladizo sobre la cama.</li>
 <li><code>Everywhere</code>: Hace soportes en todas las partes que lo necesiten.</li>
 </ul>
 </li>
 <li><code>Build Plate Adhesion Type</code>: Skirt<ul>
-<li><code>Skirt</code>: Hace una línea alrededor de la piza en la primera capa. Básicamente sirve para cebar el extrusor.</li>
-<li><code>Brim</code>: Hace más amplia la primera capa para aumetar la adhesión a la cama.</li>
+<li><code>Skirt</code>: Hace una línea alrededor de la pieza en la primera capa. Básicamente sirve para cebar el extrusor.</li>
+<li><code>Brim</code>: Hace más amplia la primera capa para aumentar la adhesión a la cama.</li>
 <li><code>Raft</code>: Hace una malla alrededor y debajo de la pieza para aumentar la adhesión a la cama. Puede ser difícil de despegar.</li>
 </ul>
 </li>
@@ -5870,7 +5870,7 @@
 <p>Los parámetros que casi siempre merece la pena revisar entre distintas impresiones son:</p>
 <ul>
 <li><code>Quality &gt; Layer Height</code>: 0.2 mm [0.1-0.3] Altura de Capa.</li>
-<li><code>Quality &gt; Initial Layer Height</code>: 0.2 mm [0.1-0.3] Altura de la capa inicial. Una capa inicial más final mejora la adherencia a la cama.</li>
+<li><code>Quality &gt; Initial Layer Height</code>: 0.2 mm [0.1-0.3] Altura de la capa inicial. Una capa inicial más fina mejora la adherencia a la cama.</li>
 <li><code>Shell &gt; Horizontal Expansion</code>: 0 mm. Expansión o contracción en el plano XY para ajustar la tolerancia entre piezas que tienen que encajar, por ejemplo agujeros y pasadores. Valores negativos contraen (por tanto se aplicarán a los pasadores) y positivos expanden (por tanto a los agujeros). Con una expansión de 0.1mm será suficiente la mayoría de las veces.</li>
 <li><code>Infill &gt; Infill Density</code>: 20 % [0-100] Tanto por ciento de relleno en el interior. Dependerá de la resistencia deseada para la pieza. Si no va a recibir cargas se puede utilizar 10 o incluso 0%.</li>
 <li><code>Material &gt; Printing Temperature</code>: 220 ºC [170 - 230] en PLA; [230-250] en ABS. Temperatura de extrusión del material.</li>
@@ -5888,13 +5888,13 @@
 </li>
 <li><code>Support &gt; Generate Support</code>: Marcado. Generar soporte para partes en voladizo.</li>
 <li><code>Support &gt; Support Placement</code>: Everywhere<ul>
-<li><code>Touching Builplate</code>: Sólo hace soportes en las partes en voladizo sobre la cama.</li>
+<li><code>Touching Builplate</code>: Solo hace soportes en las partes en voladizo sobre la cama.</li>
 <li><code>Everywhere</code>: Hace soportes en todas las partes que lo necesiten.</li>
 </ul>
 </li>
 <li><code>Build Plate Adhesion</code>: Skirt<ul>
-<li><code>Skirt</code>: Hace una línea alrededor de la piza en la primera capa. Básicamente sirve para cebar el extrusor.</li>
-<li><code>Brim</code>: Hace más amplia la primera capa para aumetar la adhesión a la cama.</li>
+<li><code>Skirt</code>: Hace una línea alrededor de la pieza en la primera capa. Básicamente sirve para cebar el extrusor.</li>
+<li><code>Brim</code>: Hace más amplia la primera capa para aumentar la adhesión a la cama.</li>
 <li><code>Raft</code>: Hace una malla alrededor y debajo de la pieza para aumentar la adhesión a la cama. Puede ser difícil de despegar.</li>
 </ul>
 </li>
@@ -5913,7 +5913,7 @@
 <li>Abrir conexión serie ejecutando lo siguiente en terminal:
     <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ sudo screen /dev/ttyUSB0 115200 8N1
 </code></pre></div></td></tr></table></div></li>
-<li>Escribir los siguientes comandos en la consola. Hacerlo uno a uno y con un caracter retorno al final de cada uno. Lo mejor es escribirlos en un editor de texto, copiar cada linea (incluyendo el retorno) y pegarla en la consola. De esta forma se consigue que el comando sea leído como un todo y no que se vayan interpretando sus caracteres sueltos conforme vamos escribiendo:
+<li>Escribir los siguientes comandos en la consola. Hacerlo uno a uno y con un carácter retorno al final de cada uno. Lo mejor es escribirlos en un editor de texto, copiar cada línea (incluyendo el retorno) y pegarla en la consola. De esta forma se consigue que el comando sea leído como un todo y no que se vayan interpretando sus caracteres sueltos conforme vamos escribiendo:
     <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>M502

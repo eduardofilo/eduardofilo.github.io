@@ -3482,15 +3482,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#instrospeccion" class="md-nav__link">
+  <a href="#introspeccion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instrospección
+        Introspección
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Instrospección">
+    <nav class="md-nav" aria-label="Introspección">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -6646,15 +6646,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#instrospeccion" class="md-nav__link">
+  <a href="#introspeccion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instrospección
+        Introspección
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Instrospección">
+    <nav class="md-nav" aria-label="Introspección">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -7116,7 +7116,7 @@ $ pipenv shell
 </li>
 </ol>
 <h2 id="ejemplo-de-creacion-de-entorno-django-desde-cero-con-pipenv">Ejemplo de creación de entorno Django desde cero con pipenv<a class="headerlink" href="#ejemplo-de-creacion-de-entorno-django-desde-cero-con-pipenv" title="Permanent link">&para;</a></h2>
-<p>Actualización: A partir de haber tenido problemas de dependencias entre paquetes y de leer <a href="https://chriswarrick.com/blog/2018/07/17/pipenv-promises-a-lot-delivers-very-little/">este artículo</a>, abandono la utilizaión de Pipenv en favor de virtualenvwrapper+pip.</p>
+<p>Actualización: A partir de haber tenido problemas de dependencias entre paquetes y de leer <a href="https://chriswarrick.com/blog/2018/07/17/pipenv-promises-a-lot-delivers-very-little/">este artículo</a>, abandono la utilización de Pipenv en favor de virtualenvwrapper+pip.</p>
 <p>Creamos repositorio git (por ejemplo <code>remote_james</code>) y lo sincronizamos (por ejemplo con <code>/home/edumoreno/git/remote_james</code>).</p>
 <p>Ejecutamos (en el ejemplo se usa una versión de Python específica compilada anteriormente en la máquina):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -7398,7 +7398,7 @@ $ python manage.py runserver 0.0.0.0:8000
 <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">MyUserAdmin</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="gestion-de-migraciones">Gestión de migraciones<a class="headerlink" href="#gestion-de-migraciones" title="Permanent link">&para;</a></h2>
-<p>Una vez generadas las migraciones, si queremos obtener el código SQL a que equivalen hay que ejecutar el comando (en el ejemploo solicitamos el código correspondiente a la migración <code>0008</code>):</p>
+<p>Una vez generadas las migraciones, si queremos obtener el código SQL a que equivalen hay que ejecutar el comando (en el ejemplo solicitamos el código correspondiente a la migración <code>0008</code>):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>(djangodev) $ python manage.py sqlmigrate app01 0008
 </code></pre></div></td></tr></table></div>
 <p>Para situarnos en un punto concreto de la serie de migraciones (deshaciendo por tanto las posteriores cuyos ficheros se podrán borrar):</p>
@@ -7473,14 +7473,14 @@ $ python manage.py runserver 0.0.0.0:8000
 </ul>
 <h2 id="temas-interesantes">Temas interesantes<a class="headerlink" href="#temas-interesantes" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://stackoverflow.com/questions/1205375/filter-by-property">filter, list comprehension y generators</a>. Para filtrar por ejemplo una lista de objetos se pueden utilizar estos tres elementos. Hay que tener en cuenta que <code>filter</code> devuelve un iterator. Si por eejemplo sólo queremos el número de elementos habrá que generar una lista o set con él.</li>
+<li><a href="https://stackoverflow.com/questions/1205375/filter-by-property">filter, list comprehension y generators</a>. Para filtrar por ejemplo una lista de objetos se pueden utilizar estos tres elementos. Hay que tener en cuenta que <code>filter</code> devuelve un iterator. Si por eejemplo solo queremos el número de elementos habrá que generar una lista o set con él.</li>
 <li><a href="https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#abstractuser">How to Extend Django User Model</a>. <a href="https://stackoverflow.com/questions/30495979/django-1-8-multiple-custom-user-types">Este</a> artículo es un ejemplo del caso 4.</li>
 </ul>
 <h2 id="uso-de-class-views">Uso de Class Views<a class="headerlink" href="#uso-de-class-views" title="Permanent link">&para;</a></h2>
 <h3 id="basicas">Básicas<a class="headerlink" href="#basicas" title="Permanent link">&para;</a></h3>
 <p>Documentadas <a href="https://docs.djangoproject.com/es/1.11/ref/class-based-views/base/">aquí</a>.</p>
 <h4 id="templateview">TemplateView<a class="headerlink" href="#templateview" title="Permanent link">&para;</a></h4>
-<p>La más sencilla. Sólo necesita definir la propiedad <code>template_name</code> apuntando a la plantilla. Para añadir datos al contexto (esto funciona en todas las view classes) se puede definir la función <code>get_context_data</code> (ver ejemplo e apartado <code>Passing variables to the template</code> <a href="https://hellowebbooks.com/news/introduction-to-class-based-views/">aquí</a>)</p>
+<p>La más sencilla. Solo necesita definir la propiedad <code>template_name</code> apuntando a la plantilla. Para añadir datos al contexto (esto funciona en todas las view classes) se puede definir la función <code>get_context_data</code> (ver ejemplo en el apartado <code>Passing variables to the template</code> <a href="https://hellowebbooks.com/news/introduction-to-class-based-views/">aquí</a>)</p>
 <h4 id="redirectview">RedirectView<a class="headerlink" href="#redirectview" title="Permanent link">&para;</a></h4>
 <p>Se puede usar tal cual para definir redirecciones en los ficheros <code>url.py</code>. Por ejemplo:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -7494,7 +7494,7 @@ $ python manage.py runserver 0.0.0.0:8000
 <p>Pero también se puede heredar de ella para por ejemplo hacer una vista "proxy" para actualizar un contador de visitas a otra vista, como el ejemplo que hay <a href="https://docs.djangoproject.com/es/1.11/ref/class-based-views/base/#redirectview">aquí</a>.</p>
 <h3 id="genericas-para-visualizacion-de-modelos">Genéricas para visualización de modelos<a class="headerlink" href="#genericas-para-visualizacion-de-modelos" title="Permanent link">&para;</a></h3>
 <p>Son las diseñadas para generar listados y vistas de detalle de un modelo. Son más adecuadas para visualización, como la que se haría por ejemplo en un blog. Documentadas <a href="https://docs.djangoproject.com/en/1.11/ref/class-based-views/generic-display/">aquí</a>.</p>
-<p>En las dos clases de este tipo, sólo se necesita definir la propiedad <code>model</code>.</p>
+<p>En las dos clases de este tipo, solo se necesita definir la propiedad <code>model</code>.</p>
 <h4 id="detailview">DetailView<a class="headerlink" href="#detailview" title="Permanent link">&para;</a></h4>
 <p>La plantilla se define por convención añadiendo <code>_detail.html</code> al nombre del modelo. Dentro de la plantilla, el objeto que se quiere representar aparece en la variable de contexto <code>object</code>.</p>
 <h4 id="listview">ListView<a class="headerlink" href="#listview" title="Permanent link">&para;</a></h4>
@@ -7518,11 +7518,11 @@ $ python manage.py runserver 0.0.0.0:8000
 </ul>
 <p>Para máximo control siempre podemos generar cada campo del formulario por separado o incluso escribir el formulario completo a mano (ver documentación <a href="https://docs.djangoproject.com/es/1.11/topics/forms/">Working with forms</a>).</p>
 <h4 id="formview">FormView<a class="headerlink" href="#formview" title="Permanent link">&para;</a></h4>
-<p>Gestiona la vista con un formulario genérico. Si se produce error en la validación, vuelve a cargar la misma URL con los campos rellenos e información sobre los errores; Si se supera la validación se redirije a otra URL. En el contexto de la plantilla tendremos el formulario bajo la variable <code>form</code>.</p>
+<p>Gestiona la vista con un formulario genérico. Si se produce error en la validación, vuelve a cargar la misma URL con los campos rellenos e información sobre los errores; Si se supera la validación se redirige a otra URL. En el contexto de la plantilla tendremos el formulario bajo la variable <code>form</code>.</p>
 <p>Necesita definir las propiedades siguientes:</p>
 <ul>
 <li><code>form_class</code>: Clase formulario.</li>
-<li><code>success_url</code>: URL a la que se redirije en caso de superar la validación.</li>
+<li><code>success_url</code>: URL a la que se redirige en caso de superar la validación.</li>
 <li><code>template_name</code>: Plantilla.</li>
 </ul>
 <p>También es interesante definir el método siguiente:</p>
@@ -7698,7 +7698,7 @@ $ python manage.py runserver 0.0.0.0:8000
         <span class="o">&lt;/</span><span class="n">select</span><span class="o">&gt;</span>
     <span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="instrospeccion">Instrospección<a class="headerlink" href="#instrospeccion" title="Permanent link">&para;</a></h2>
+<h2 id="introspeccion">Introspección<a class="headerlink" href="#introspeccion" title="Permanent link">&para;</a></h2>
 <h3 id="lista-de-atributos">Lista de atributos<a class="headerlink" href="#lista-de-atributos" title="Permanent link">&para;</a></h3>
 <p>Podemos obtenerlos de dos maneras:</p>
 <ul>
@@ -7759,7 +7759,7 @@ $ python manage.py runserver 0.0.0.0:8000
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;lo que sea&#39;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="log-a-consola">Log a consola<a class="headerlink" href="#log-a-consola" title="Permanent link">&para;</a></h3>
-<p>Si sólo queremos imprimir en consola una traza rápida, es más fácil escribiendo simplemente:</p>
+<p>Si solo queremos imprimir en consola una traza rápida, es más fácil escribiendo simplemente:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lo que sea&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="traza-de-queries-a-consola">Traza de queries a consola<a class="headerlink" href="#traza-de-queries-a-consola" title="Permanent link">&para;</a></h3>

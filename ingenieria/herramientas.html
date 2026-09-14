@@ -3343,15 +3343,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#logic-analizer" class="md-nav__link">
+  <a href="#logic-analyzer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Logic Analizer
+        Logic Analyzer
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Logic Analizer">
+    <nav class="md-nav" aria-label="Logic Analyzer">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3394,10 +3394,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#enumeracion-funciones" class="md-nav__link">
+  <a href="#enumeracion-de-funciones" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Enumeración funciones
+        Enumeración de funciones
       
     </span>
   </a>
@@ -3458,7 +3458,7 @@
   <a href="#uso-de-utilidad-minipro-de-linea-de-comando" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Uso de utilidad minipro de linea de comando
+        Uso de utilidad minipro de línea de comando
       
     </span>
   </a>
@@ -5538,15 +5538,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#logic-analizer" class="md-nav__link">
+  <a href="#logic-analyzer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Logic Analizer
+        Logic Analyzer
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Logic Analizer">
+    <nav class="md-nav" aria-label="Logic Analyzer">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5589,10 +5589,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#enumeracion-funciones" class="md-nav__link">
+  <a href="#enumeracion-de-funciones" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Enumeración funciones
+        Enumeración de funciones
       
     </span>
   </a>
@@ -5653,7 +5653,7 @@
   <a href="#uso-de-utilidad-minipro-de-linea-de-comando" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Uso de utilidad minipro de linea de comando
+        Uso de utilidad minipro de línea de comando
       
     </span>
   </a>
@@ -5933,11 +5933,11 @@ Reset to exit
 Are you sure? y
 </code></pre></div></td></tr></table></div>
 <h3 id="adaptador-usb-uart-modo-debug">Adaptador USB-UART (modo debug)<a class="headerlink" href="#adaptador-usb-uart-modo-debug" title="Permanent link">&para;</a></h3>
-<p>Cuando utilizamos el modo UART en modo debug, tal y como se describe <a href="http://dangerousprototypes.com/blog/bus-pirate-manual/bus-pirate-uart-guide/">aquí</a>, sólo tenemos un buffer de 4 bytes, por lo que es fácil obtener un overrun del mismo. En ese caso, al leer (comando <code>r</code>) se nos mostrará el error:</p>
+<p>Cuando utilizamos el modo UART en modo debug, tal y como se describe <a href="http://dangerousprototypes.com/blog/bus-pirate-manual/bus-pirate-uart-guide/">aquí</a>, solo tenemos un buffer de 4 bytes, por lo que es fácil obtener un overrun del mismo. En ese caso, al leer (comando <code>r</code>) se nos mostrará el error:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>READ: 0x40 *Bytes dropped*&lt;&lt;&lt;bytes dropped error
 </code></pre></div></td></tr></table></div>
 <p>En esas situaciones usar el modo transparente o usar el comando 'start' (<code>[</code>).</p>
-<h2 id="logic-analizer">Logic Analizer<a class="headerlink" href="#logic-analizer" title="Permanent link">&para;</a></h2>
+<h2 id="logic-analyzer">Logic Analyzer<a class="headerlink" href="#logic-analyzer" title="Permanent link">&para;</a></h2>
 <h3 id="enlaces_1">Enlaces<a class="headerlink" href="#enlaces_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://sigrok.org/">sigrok</a>: Portable, cross-platform, Free/Libre/Open-Source signal analysis software suite that supports various device types (e.g. logic analyzers, oscilloscopes, and many more).</li>
@@ -5951,14 +5951,14 @@ Are you sure? y
 <li><a href="https://es.aliexpress.com/item/2016-DIY-KITS-ATMEAG328P-M328-Transistor-Tester-LCR-Diode-Capacitance-ESR-meter-PWM-Square-wave-Signal/32808555770.html">2016 DIY KITS ATMEAG328P M328 Transistor Tester LCR Diode Capacitance ESR meter PWM Square wave Signal Generator with case</a>: ~12€</li>
 <li><a href="../files/pages/ttester.pdf">M328 Transistor Tester manual</a></li>
 </ul>
-<h3 id="enumeracion-funciones">Enumeración funciones<a class="headerlink" href="#enumeracion-funciones" title="Permanent link">&para;</a></h3>
+<h3 id="enumeracion-de-funciones">Enumeración de funciones<a class="headerlink" href="#enumeracion-de-funciones" title="Permanent link">&para;</a></h3>
 <p>Firmware 1.12k</p>
 <ul>
 <li><strong>Transistor</strong>: Medidor de transistores.</li>
 <li><strong>Frecuency</strong>: Medidor de frecuencias. Conectar las puntas en la entrada PWM (superior).</li>
 <li><strong>f-Generator</strong>: Generador de frecuencias. Conectar las puntas en la salida PWM (inferior).</li>
 <li><strong>10-bit PWM</strong>: Generador de señal PWM. Conectar las puntas en la salida PWM (inferior).</li>
-<li><strong>C+ESR@TP1:3</strong>: Capacímetro con posibilidad de medir en placa ya que genera tensiones de ~300mV. Aunque es recomendable medir antes con un osciloscópio si es así (mi unidad aplicaba 5V igual que el capacímetro normal). Conectar un par de puntas en las entradas 1 y 3.</li>
+<li><strong>C+ESR@TP1:3</strong>: Capacímetro con posibilidad de medir en placa ya que genera tensiones de ~300mV. Aunque es recomendable medir antes con un osciloscopio si es así (mi unidad aplicaba 5V igual que el capacímetro normal). Conectar un par de puntas en las entradas 1 y 3.</li>
 <li><strong>Medidor de inductancias</strong>:</li>
 <li><strong>Capacímetro</strong>: No sirve para medir en placa ya que genera tensiones de 5V. Descargar los condensadores antes de aplicarlos al medidor.</li>
 <li><strong>DS18B20</strong>:</li>
@@ -6023,7 +6023,7 @@ Reflash... OK
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="uso-de-utilidad-minipro-de-linea-de-comando">Uso de utilidad <a href="https://gitlab.com/DavidGriffith/minipro">minipro</a> de linea de comando<a class="headerlink" href="#uso-de-utilidad-minipro-de-linea-de-comando" title="Permanent link">&para;</a></h3>
+<h3 id="uso-de-utilidad-minipro-de-linea-de-comando">Uso de utilidad <a href="https://gitlab.com/DavidGriffith/minipro">minipro</a> de línea de comando<a class="headerlink" href="#uso-de-utilidad-minipro-de-linea-de-comando" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Versión firmware y utilidad: <code>minipro -V</code></li>
 <li>Testeo dispositivo: <code>minipro -t</code></li>
@@ -6161,7 +6161,7 @@ Reflash... OK
 </tr>
 </tbody>
 </table>
-<p>Nota: ajustar la temperatura sólo fija el valor objetivo; el calentador permanece inactivo (<code>SHUT</code>) hasta que se pulsan ambos botones a la vez. Cuando la placa alcanza la temperatura configurada el estado cambia a <code>CT</code>.</p>
+<p>Nota: ajustar la temperatura solo fija el valor objetivo; el calentador permanece inactivo (<code>SHUT</code>) hasta que se pulsan ambos botones a la vez. Cuando la placa alcanza la temperatura configurada el estado cambia a <code>CT</code>.</p>
 <h3 id="menu-de-ajustes">Menú de ajustes<a class="headerlink" href="#menu-de-ajustes" title="Permanent link">&para;</a></h3>
 <p>Se accede manteniendo pulsados ambos botones simultáneamente. Navegación dentro del menú:</p>
 <ul>

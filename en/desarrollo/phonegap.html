@@ -6939,7 +6939,7 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 <h2 id="dia-8-jueves-27112014">Día 8: Jueves 27/11/2014<a class="headerlink" href="#dia-8-jueves-27112014" title="Permanent link">&para;</a></h2>
 <h3 id="enlaces_3">Enlaces<a class="headerlink" href="#enlaces_3" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="http://foundation.zurb.com/">Fundation</a>: Framework CSS basado en em. Bootstrap está basado en px.</li>
+<li><a href="http://foundation.zurb.com/">Foundation</a>: Framework CSS basado en em. Bootstrap está basado en px.</li>
 <li><a href="http://www.quirksmode.org/about/">QuirksMode</a>: Peter Paul Koch. Buscar sus conferencias sobre display.</li>
 <li><a href="http://mediaqueri.es/">Media Queries</a>: Catálogo de sitios responsive.</li>
 <li><a href="http://www.swwweet.com/">Swwweet</a>: Estudio de Barcelona con buena filosofía web.</li>
@@ -6977,7 +6977,7 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
    <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="float">Float<a class="headerlink" href="#float" title="Permanent link">&para;</a></h4>
-<p>La propiedad <code>clear</code> sólo funciona si el <code>display</code> no es <code>inline</code>. Se usa mucho el apaño del clearfix para solucionar la pérdida de dimensión vertical de un contenedor cuando todo su contenido más alto flota. El selector <code>:after</code> selecciona después del contenido al que se aplica el estilo, no el contenido del siguiente elemento en el DOM. El clearfix favorito de Javier es:</p>
+<p>La propiedad <code>clear</code> solo funciona si el <code>display</code> no es <code>inline</code>. Se usa mucho el apaño del clearfix para solucionar la pérdida de dimensión vertical de un contenedor cuando todo su contenido más alto flota. El selector <code>:after</code> selecciona después del contenido al que se aplica el estilo, no el contenido del siguiente elemento en el DOM. El clearfix favorito de Javier es:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -7016,7 +7016,7 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 </ul>
 <p>Nos describe el uso de <a href="http://www.google.com/fonts">Google Fonts</a> usando el sitio para definir un paquete con dos fuentes.</p>
 <h3 id="frameworks">Frameworks<a class="headerlink" href="#frameworks" title="Permanent link">&para;</a></h3>
-<p>Algunos framewoks:</p>
+<p>Algunos frameworks:</p>
 <ul>
 <li><a href="http://getbootstrap.com/">Bootstrap</a>: es el más importante ahora mismo. El favorito de Javier, sobre todo por su ecosistema.</li>
 <li><a href="http://bootsnipp.com/">Bootsnipp</a>: Componentes para bootstrap.</li>
@@ -7035,7 +7035,7 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 <li><a href="http://www.couchbase.com/nosql-databases/couchbase-mobile">Couchbase Mobile</a>: Plugin Phonegap para tener una base de datos noSQL local con opción de sincronizar con el servidor.</li>
 </ul>
 <h3 id="bootstrap">Bootstrap<a class="headerlink" href="#bootstrap" title="Permanent link">&para;</a></h3>
-<p>En <a href="http://getbootstrap.com/customize/">Customize</a> se puede compilar una versión personalizada (sólo con los componentes que vayamos a utilizar, lo que además hace más pequeña la librería). Dentro de este Customize se pueden cambiar por ejemplo los Media queries breakpoints que son los que hacen que el diseño cambie entre los distintos tamaños de pantalla.<br />
+<p>En <a href="http://getbootstrap.com/customize/">Customize</a> se puede compilar una versión personalizada (solo con los componentes que vayamos a utilizar, lo que además hace más pequeña la librería). Dentro de este Customize se pueden cambiar por ejemplo los Media queries breakpoints que son los que hacen que el diseño cambie entre los distintos tamaños de pantalla.
 Es recomendable instalarlo con Bower si se va a integrar en Phonegap (para tenerlo en local y minimizar la latencia que supondría el descargarlo).<br />
 El menú superior del sitio de Bootstrap está bien estructurado en cuanto a la dificultad de menor a mayor de izquierda a derecha. Conviene leer por lo menos la sección <a href="http://getbootstrap.com/getting-started/">Getting Started</a>.<br />
 Bootstrap utiliza CDN para minimizar la latencia.<br />
@@ -7093,19 +7093,19 @@ yo
 </code></pre></div></td></tr></table></div></li>
 <li>Durante la configuración de Yeoman indicamos que incluya Bootstrap.</li>
 <li>Configuramos en Gruntile.js (línea 21 del fichero que la carpeta de la aplicación es <code>www</code> en lugar de <code>app</code> que es la que viene por defecto.</li>
-<li>Movemos carpeta <code>10Votaciones\www\res</code> a <code>10Votaciones\res</code>, es decir un nivel hacia arriba. Esta carpeta contiene los recursos que utilizará Phonegap (por ejemplo el icono de escritorio que ajustará en las distintas plataformas). No tiene mucho sentido que esté dentro de <code>www</code> ya que Phonegap duplicará hacia el directorio <code>dist</code> los recursos correspondientes a la plataforma con la que estemos trabajando. Si está en <code>www</code> es porque cuando utilizamos el servidor de compilación de Adobe para montar las aplicaciones nativas, sólo pasamos el directorio <code>www</code> y el que contenga <code>res</code> es una forma de enviar todo de una vez.</li>
+<li>Movemos carpeta <code>10Votaciones\www\res</code> a <code>10Votaciones\res</code>, es decir un nivel hacia arriba. Esta carpeta contiene los recursos que utilizará Phonegap (por ejemplo el icono de escritorio que ajustará en las distintas plataformas). No tiene mucho sentido que esté dentro de <code>www</code> ya que Phonegap duplicará hacia el directorio <code>dist</code> los recursos correspondientes a la plataforma con la que estemos trabajando. Si está en <code>www</code> es porque cuando utilizamos el servidor de compilación de Adobe para montar las aplicaciones nativas, solo pasamos el directorio <code>www</code> y el que contenga <code>res</code> es una forma de enviar todo de una vez.</li>
 <li>Configuramos en <code>config.xml</code> el movimiento del directorio <code>res</code> que acabamos de hacer. Para ello sustituimos las rutas de los recursos, es decir <code>www/res</code> por <code>res</code>.</li>
 <li>Borramos el contenido de <code>www</code> y lo sustituimos por el de <code>app</code>.</li>
 <li>Borramos la carpeta <code>app</code> que ha quedado vacía.</li>
 <li>Movemos la carpeta <code>bower_components</code> al interior de <code>www</code>.</li>
-<li>Cambiamos la configuración de Bower en el fichero <code>.bowerrc</code> poniendo <code>www/bower_components</code> donde sólo ponía <code>bower_components</code>.</li>
+<li>Cambiamos la configuración de Bower en el fichero <code>.bowerrc</code> poniendo <code>www/bower_components</code> donde solo ponía <code>bower_components</code>.</li>
 <li>Finalmente lanzamos la tarea que inyectará las dependencias entre los ficheros de código:
     <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>grunt<span class="w"> </span>wiredep
 </code></pre></div></td></tr></table></div></li>
 </ol>
 <p>Con esto ya tendríamos la base.</p>
 <p>Vamos a utilizar el patrón MVC. Pondremos tanto el modelo como el controlador en el mismo fichero <code>main.js</code>, aunque sería más correcto separarlo.</p>
-<p>Vamos a hacer una Single Page Application. Cada página “virtual” de la app lo vamos a codificar mediante un <code>div</code> de clase <code>pagina</code>. Ese div tendrá un atributo personalizado “data-title” que contendrá el título de la página. El controlador sólo va a hacer:</p>
+<p>Vamos a hacer una Single Page Application. Cada página “virtual” de la app lo vamos a codificar mediante un <code>div</code> de clase <code>pagina</code>. Ese div tendrá un atributo personalizado “data-title” que contendrá el título de la página. El controlador solo va a hacer:</p>
 <ul>
 <li>Reacciona a la pantalla</li>
 <li>Modifica la pantalla</li>
@@ -7305,7 +7305,7 @@ phonegap<span class="w"> </span>plugin<span class="w"> </span>add<span class="w"
 </ul>
 </li>
 </ul>
-<p>Para conseguir que la aplicación sea más "responsiva", se puede cambiar el periodo de consulta pasando un objeto con un parámetro de clave frecuency en su interior (aunque la documentación menciona <code>period</code>, es <code>frecuency</code>). Hubiera funcionado cada segundo por ejemplo llamando al watchAcceleration así:</p>
+<p>Para conseguir que la aplicación sea más "responsiva", se puede cambiar el periodo de consulta pasando un objeto con un parámetro de clave frequency en su interior (aunque la documentación menciona <code>period</code>, es <code>frecuency</code>). Hubiera funcionado cada segundo por ejemplo llamando al watchAcceleration así:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">frequency</span><span class="o">:</span><span class="w"> </span><span class="mf">1000</span><span class="w"> </span><span class="p">};</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">watchID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">accelerometer</span><span class="p">.</span><span class="nx">watchAcceleration</span><span class="p">(</span><span class="nx">onSuccess</span><span class="p">,</span><span class="w"> </span><span class="nx">onError</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span>

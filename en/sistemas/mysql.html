@@ -6355,7 +6355,7 @@
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>mysql<span class="w"> </span>-u<span class="w"> </span>root
 mysql&gt;<span class="w"> </span>SET<span class="w"> </span>PASSWORD<span class="w"> </span>FOR<span class="w"> </span><span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;localhost&quot; = PASSWORD(&#39;</span>new_password<span class="err">&#39;</span><span class="o">)</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
-<p>Por defecto sólo podemos entrar con el usuario root en local. Para permitir el acceso remoto ejecutar el siguiente comando:</p>
+<p>Por defecto solo podemos entrar con el usuario root en local. Para permitir el acceso remoto ejecutar el siguiente comando:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -6364,7 +6364,7 @@ mysql&gt;<span class="w"> </span>GRANT<span class="w"> </span>ALL<span class="w"
 mysql&gt;<span class="w"> </span>FLUSH<span class="w"> </span>PRIVILEGES<span class="p">;</span>
 mysql&gt;<span class="w"> </span><span class="nb">exit</span>
 </code></pre></div></td></tr></table></div>
-<p>También hay que permitir las conexiones remotas a nivel de red comentando la siguiente linea del fichero de configuración <code>/etc/mysql/my.cnf</code>:</p>
+<p>También hay que permitir las conexiones remotas a nivel de red comentando la siguiente línea del fichero de configuración <code>/etc/mysql/my.cnf</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>bind-address = 127.0.0.1
 </code></pre></div></td></tr></table></div>
 <h2 id="conexion">Conexión<a class="headerlink" href="#conexion" title="Permanent link">&para;</a></h2>
@@ -6775,7 +6775,7 @@ language  = /usr/share/mysql/spanish
 </code></pre></div></td></tr></table></div>
 <h3 id="utf8-por-defecto">UTF8 por defecto<a class="headerlink" href="#utf8-por-defecto" title="Permanent link">&para;</a></h3>
 <p>Como cabrea tener bases de datos en latin1 y cosas así que siempre dan problemas al cambiarlas de servidor o de versión de BDD, o con los programas. Cuando aprendes eso empiezas a configurar todo en UTF8, el apache, el mysql, las locales del sistema, etc...</p>
-<p>Y cada vez que creas una BDD en mysql este se empeña en ponerte "latin1" o "unicode_swedish_ci" ¿Swedish? ¿Que es esto? ¿Un rollo chovinista?</p>
+<p>Y cada vez que creas una BDD en mysql este se empeña en ponerte "latin1" o "unicode_swedish_ci" ¿Swedish? ¿Qué es esto? ¿Un rollo chovinista?</p>
 <p>Después para cada tabla, incomprensiblemente, también tienes que especificar que es "utf8_unicode_ci".</p>
 <p>Para evitar esto lo que podemos hacer es configurar mysql añadiendo estas líneas en la sección <strong>[mysqld]</strong> de <code>/etc/mysql/my.cnf</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -6833,7 +6833,7 @@ Uptime:                 11 min 21 sec
 Threads: 1  Questions: 86  Slow queries: 0  Opens: 23  Flush tables: 1  Open tables: 17  Queries per second avg: 0.126
 --------------
 </code></pre></div></td></tr></table></div>
-<p>Ahora si, ya podemos dormir tranquilos.</p>
+<p>Ahora sí, ya podemos dormir tranquilos.</p>
 <h2 id="backups">Backups<a class="headerlink" href="#backups" title="Permanent link">&para;</a></h2>
 <h3 id="mysqldump">mysqldump<a class="headerlink" href="#mysqldump" title="Permanent link">&para;</a></h3>
 <p>Programa incluído en el paquete <code>mysql-client</code></p>

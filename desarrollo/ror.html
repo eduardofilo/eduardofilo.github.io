@@ -2917,10 +2917,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#performance-tunning" class="md-nav__link">
+  <a href="#performance-tuning" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Performance Tunning
+        Performance Tuning
       
     </span>
   </a>
@@ -5585,10 +5585,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#performance-tunning" class="md-nav__link">
+  <a href="#performance-tuning" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Performance Tunning
+        Performance Tuning
       
     </span>
   </a>
@@ -6020,7 +6020,7 @@
 <li><a href="http://yehudakatz.com/2009/11/15/metaprogramming-in-ruby-its-all-about-the-self/">Metaprogramming in Ruby: It’s All About the Self</a></li>
 <li><a href="http://stackoverflow.com/questions/9297446/how-to-use-a-route-helper-method-from-a-file-in-the-lib-directory">Comprobación de entorno de ejecución en código</a> :exclamation:</li>
 </ul>
-<h2 id="performance-tunning">Performance Tunning<a class="headerlink" href="#performance-tunning" title="Permanent link">&para;</a></h2>
+<h2 id="performance-tuning">Performance Tuning<a class="headerlink" href="#performance-tuning" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="http://www.alfajango.com/blog/performance-tuning-for-phusion-passenger-an-introduction/">Performance Tuning for Phusion Passenger (an Introduction)</a> :exclamation:</li>
 <li><a href="http://blog.phusion.nl/2013/03/12/tuning-phusion-passengers-concurrency-settings/">Phusion Corporate Blog - Tuning Phusion Passenger’s concurrency settings</a></li>
@@ -6136,7 +6136,7 @@ PassengerRuby /usr/bin/ruby1.9.1
 </ul>
 <h2 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h2>
 <h3 id="visibilidad-de-helpers">Visibilidad de Helpers<a class="headerlink" href="#visibilidad-de-helpers" title="Permanent link">&para;</a></h3>
-<p>Los métodos definidos en los módulos Helper (<code>app/helpers/&lt;controller&gt;_helper.rb</code>) son visibles en las vistas por defecto. Para que estén disponibles en los controllers hay que hacer un <code>include</code>. Si lo hacemos en el controller base (<code>ApplicationController</code>) estará disponibles en todos los controllers dado que éstos heredan de <code>ApplicationController</code>.</p>
+<p>Los métodos definidos en los módulos Helper (<code>app/helpers/&lt;controller&gt;_helper.rb</code>) son visibles en las vistas por defecto. Para que estén disponibles en los controllers hay que hacer un <code>include</code>. Si lo hacemos en el controller base (<code>ApplicationController</code>) estarán disponibles en todos los controllers dado que éstos heredan de <code>ApplicationController</code>.</p>
 <h3 id="mejora-en-rendimiento-en-desarrollo">Mejora en rendimiento en Desarrollo<a class="headerlink" href="#mejora-en-rendimiento-en-desarrollo" title="Permanent link">&para;</a></h3>
 <p>Rails 3.1 introdujo el concepto del <a href="http://guides.rubyonrails.org/asset_pipeline.html">asset pipeline</a>. Desafortunadamente esto causa problemas de rendimiento en el entorno de desarrollo. Para mejorarlo se puede utilizar la tarea de precompilador siguiente:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>assets:precompile:nondigest
@@ -6175,7 +6175,7 @@ $<span class="w"> </span>rake<span class="w"> </span>db:migrate
 <p>Instalar primero la gem <code>debugger</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>gem<span class="w"> </span>install<span class="w"> </span>debugger
 </code></pre></div></td></tr></table></div>
-<p>Añadir al Gemfile lo siguiente (probablemente sólo sea necesario en el entorno de desarrollo):</p>
+<p>Añadir al Gemfile lo siguiente (probablemente solo sea necesario en el entorno de desarrollo):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>group :development do
@@ -6306,7 +6306,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>gem<span class="w"> </span>
 <h3 id="listar-gems-instalados">Listar gems instalados<a class="headerlink" href="#listar-gems-instalados" title="Permanent link">&para;</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>gem<span class="w"> </span>list<span class="w"> </span>--local
 </code></pre></div></td></tr></table></div>
-<p>Si queremos sólo las versiones de una gem, de <code>rails</code> por ejemplo:</p>
+<p>Si queremos solo las versiones de una gem, de <code>rails</code> por ejemplo:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>gem<span class="w"> </span>list<span class="w"> </span>--local<span class="w"> </span>rails
 </code></pre></div></td></tr></table></div>
 <h3 id="generar-el-api-de-rails">Generar el API de rails<a class="headerlink" href="#generar-el-api-de-rails" title="Permanent link">&para;</a></h3>

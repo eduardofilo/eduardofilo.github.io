@@ -5753,7 +5753,7 @@ $<span class="w"> </span>docker<span class="w"> </span>system<span class="w"> </
 <p>Algunos ejemplos:</p>
 <ul>
 <li><code>docker create --name test-ubuntu ubuntu</code>: Crea un contenedor con una imagen de ubuntu y la nombra <code>test-ubuntu</code>.</li>
-<li><code>docker run -it --name test-ubuntu ubuntu</code>: Crea un contenedor con una imagen de ubuntu, lo nombra <code>test-ubuntu</code> y la arranca en modo interactivo (devuelve prompt).</li>
+<li><code>docker run -it --name test-ubuntu ubuntu</code>: Crea un contenedor con una imagen de ubuntu, lo nombra <code>test-ubuntu</code> y lo arranca en modo interactivo (devuelve prompt).</li>
 <li><code>docker run -it --rm --name test-ubuntu ubuntu</code>: Igual que el anterior pero borrando el contenedor al terminar la sesión interactiva.</li>
 <li><code>docker start -i test-ubuntu</code>: Arranca el contenedor de nombre <code>test-ubuntu</code> en modo interactivo (devuelve prompt). El contenedor debe existir previamente y debe estar parado.</li>
 <li><code>docker exec -it test-ubuntu /bin/bash</code>: Ejecuta el proceso bash en el contenedor de nombre <code>test-ubuntu</code> que debe estar previamente arrancado.</li>
