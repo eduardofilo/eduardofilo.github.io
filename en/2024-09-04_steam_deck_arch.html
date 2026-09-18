@@ -855,6 +855,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#september-2026-update-back-to-single-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        September 2026 update: back to single boot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="September 2026 update: back to single boot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagnosis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnosis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uninstalling-refind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uninstalling rEFInd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-the-arch-partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting the Arch partitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5447,6 +5497,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#september-2026-update-back-to-single-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        September 2026 update: back to single boot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="September 2026 update: back to single boot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagnosis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnosis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uninstalling-refind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uninstalling rEFInd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-the-arch-partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting the Arch partitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5480,9 +5580,9 @@
   <h1>Installing Arch Linux on Steam Deck</h1>
 
 <p><img alt="Steam Deck with Arch Linux" src="../images/posts/2024-09-04_steam_deck_arch/steam_deck_logo.png" /></p>
-<div class="admonition info">
-<p class="admonition-title">Loss of dual boot after updating SteamOS</p>
-<p>In the update of SteamOS to the 3.6 branch (specifically, the first stable version of that branch was 3.6.19), the dual-boot configuration was lost, so the machine would only boot into SteamOS. The solution was to follow the steps in <a href="#dual-boot-manager-installation">Dual Boot manager installation</a> starting from step 4.</p>
+<div class="admonition warning">
+<p class="admonition-title">SteamOS updates break the dual boot configuration</p>
+<p>SteamOS updates rebuild its boot manager and rewrite the machine's EFI entries, so <strong>any dual boot configuration is lost</strong>. It has happened to me twice: in the update to the 3.6 branch (the first stable version of that branch was 3.6.19) the console only booted SteamOS, and in September 2026, after redoing the same steps, the opposite happened: it only booted Arch. In <a href="#september-2026-update-back-to-single-boot">September 2026 update: back to single boot</a> I describe the diagnosis, how I uninstalled the boot manager and how I recovered the space the second system was using.</p>
 </div>
 <p>In July 2024, the 512GB LCD model of the Steam Deck was available for under €400 for a few weeks. This price was very appealing for a <a href="https://www.steamdeck.com/es/tech/deck">decent machine</a> with an AMD processor based on x86 (AMD64) architecture, 16GB of RAM, an NVMe SSD of the mentioned capacity, a touchscreen, and integrated gaming controls. Essentially, it's a handheld PC, but still a PC. What makes this machine especially attractive to me is its full Linux support, making it an ideal platform for tinkering with Linux distributions or using it as a secondary portable PC. Of course, this is in addition to its conventional use for gaming and <a href="https://www.emudeck.com/">emulating</a> video games.</p>
 <p>SteamOS, the default operating system, is based on Arch Linux, and in desktop mode, it can be used almost like a regular Arch Linux system. The main restriction is that it's built in immutable mode. While this type of system configuration has its virtues and it's understandable why Valve chose it for their machine, I still prefer a normal (mutable) system. So, I decided to install a regular Arch Linux and learn how to install this distribution. According to the <a href="https://wiki.archlinux.org/title/Steam_Deck">Arch wiki</a>, the hardware of the Steam Deck LCD model is 100% supported by Arch.</p>
@@ -5513,6 +5613,10 @@
 </li>
 </ol>
 <p>Note, when looking at the partitions used by SteamOS, that it uses an <a href="https://blog.davidbyrne.dev/2018/08/16/linux-ab-partitions">A/B partition system</a>, common in Android, where most of the system partitions (except the user space one) are duplicated. This system is designed to facilitate updates, or rather to roll back in case of problems during them.</p>
+<div class="admonition tip">
+<p class="admonition-title">gparted on the Steam Deck</p>
+<p>Booting the <code>gparted</code> live image on the Steam Deck has its quirks: the internal screen is actually a vertical 800x1280 panel, so the live environment shows up rotated, and with the recent versions of the live image the graphical interface does not even show up with the default options. The 1.6.0-3 version I link above works fine. If there were still problems, you can choose the <code>Other modes of GParted Live &gt; GParted Live (Safe graphic settings, vga=normal)</code> entry or, as I ended up doing, boot the live image with the dock and an external monitor connected.</p>
+</div>
 <h2 id="base-installation">Base installation<a class="headerlink" href="#base-installation" title="Permanent link">&para;</a></h2>
 <p>For the base system installation, I opted for the conventional method following the instructions in the <a href="https://wiki.archlinux.org/title/Installation_guide">installation guide</a> on the Arch wiki. This installation uses an Arch system ISO that we can boot from a removable drive (USB or microSD) to install the basic packages needed for a bootable and very basic system.</p>
 <p>Before starting, note that due to the dynamic nature of the Arch Linux distribution, it's very likely that this guide will become outdated soon. Therefore, I recommend checking the <a href="https://wiki.archlinux.org/title/Installation_guide">official guide</a> if something doesn't go as expected.</p>
@@ -5806,9 +5910,42 @@ $<span class="w"> </span>alsamixer
 <li>Click the <code>Install Config</code> button.</li>
 </ol>
 <p>The path <code>/EFI/Arch/grubx64.efi</code> in step 6 may change if you chose a different identifier than <code>Arch</code> during the <code>grub-install</code> command executed during the <a href="#base-installation">base system installation</a>. In that case, you'll need to adapt the path.</p>
+<h2 id="september-2026-update-back-to-single-boot">September 2026 update: back to single boot<a class="headerlink" href="#september-2026-update-back-to-single-boot" title="Permanent link">&para;</a></h2>
+<p>Nearly two years after writing this guide the dual boot was still working fine, so I had stopped paying attention to it. Several months went by without updating SteamOS, and the September 2026 update wiped out the rEFInd menu, once again: the machine booted straight into SteamOS. I redid the <a href="#dual-boot-manager-installation">Dual Boot manager installation</a> steps as I had done the previous time, but the result was the opposite: <strong>it only booted Arch</strong> and SteamOS was no longer reachable from the menu.</p>
+<h3 id="diagnosis">Diagnosis<a class="headerlink" href="#diagnosis" title="Permanent link">&para;</a></h3>
+<p>The first thing I checked was that SteamOS was not broken, it had just lost its boot priority:</p>
+<ul>
+<li>To boot SteamOS manually, power off the console and turn it on while holding down the volume+ button. In the <code>Boot Manager</code> menu, select <code>Boot From File</code> and navigate through <code>efi</code> &gt; <code>steamos</code> &gt; <code>steamcl.efi</code>.</li>
+<li>Once the system is booted (in Desktop mode), <code>sudo efibootmgr -v</code> shows the machine's boot entries and their order. The SteamOS entry was still there, intact, but the order pointed to rEFInd.</li>
+</ul>
+<p>The fault, then, was not in the operating system but in the boot entries.</p>
+<h3 id="uninstalling-refind">Uninstalling rEFInd<a class="headerlink" href="#uninstalling-refind" title="Permanent link">&para;</a></h3>
+<p>The Arch I installed that summer was more of an experiment to learn with than a system I was actually going to use, so I decided not to leave the boot in the hands of a manager that every update was going to break. The <a href="https://github.com/jlobue10/SteamDeck_rEFInd">SteamDeck_rEFInd</a> repository includes an uninstall script (<code>~/.local/SteamDeck_rEFInd/scripts/uninstall_rEFInd.sh</code>) that completely reverses its installation, and after running it the console booted cleanly into SteamOS again.</p>
+<p>With the entries cleaned up, <code>sudo efibootmgr -v</code> only shows the SteamOS one (<code>\EFI\steamos\steamcl.efi</code>) and the ones the firmware adds by itself (hard drive, USB, DVD and network). In the EFI partition the leftover was the <code>/efi/EFI/refind/</code> directory with the boot manager's files (icons, fonts, backgrounds), which is no longer referenced by any entry and can be deleted.</p>
+<h3 id="deleting-the-arch-partitions">Deleting the Arch partitions<a class="headerlink" href="#deleting-the-arch-partitions" title="Permanent link">&para;</a></h3>
+<p>The last step was to recover the space Arch was using: delete partitions 9 (swap) and 10 (Arch root system) and extend partition 8 (the SteamOS user partition) to the end of the disk. Since that partition is in use while SteamOS is running, this has to be done from a live system, and in the process another problem appeared: the <code>gparted</code> graphical interface would not start on the Steam Deck with the recent versions of the live image. I solved it by booting the live image with the dock and an external monitor connected and partitioning from the terminal:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>parted<span class="w"> </span>/dev/nvme0n1<span class="w"> </span>print<span class="w">                </span><span class="c1"># check the partitions before touching anything</span>
+$<span class="w"> </span>sudo<span class="w"> </span>parted<span class="w"> </span>/dev/nvme0n1<span class="w"> </span>rm<span class="w"> </span><span class="m">10</span>
+$<span class="w"> </span>sudo<span class="w"> </span>parted<span class="w"> </span>/dev/nvme0n1<span class="w"> </span>rm<span class="w"> </span><span class="m">9</span>
+$<span class="w"> </span>sudo<span class="w"> </span>parted<span class="w"> </span>/dev/nvme0n1<span class="w"> </span>resizepart<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">100</span>%<span class="w">    </span><span class="c1"># extend partition 8 to the end of the disk</span>
+$<span class="w"> </span>sudo<span class="w"> </span>resize2fs<span class="w"> </span>/dev/nvme0n1p8<span class="w">                 </span><span class="c1"># grow the file system</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Watch out for the PARTUUID</p>
+<p>To extend a partition it is better to use tools that modify the entry in place, such as <code>parted resizepart</code>, and <strong>not</strong> <code>fdisk</code> with <code>d</code> + <code>n</code>, because the latter recreates the partition with a new PARTUUID, which is the identifier SteamOS uses to reference its user partition.</p>
+</div>
+<p>With the space recovered, the machine is back to a single system with the whole disk available.</p>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
 <p>And that's it. Now we have an Arch Linux system on our Steam Deck with a dual boot manager that allows us to boot into SteamOS as well. From here, we have a machine with a dual nature, one (SteamOS) for gaming and another (Arch) to be used as a PC (Plasma) or tablet PC (Plasma Mobile).</p>
 <p>To choose between the normal Plasma or Plasma Mobile graphical environment, use the dropdown menu that appears at the bottom left in the SDDM login manager.</p>
+<div class="admonition note">
+<p class="admonition-title">September 2026</p>
+<p>The dual system approach I describe here is no longer the one I have, because SteamOS broke the dual boot again with an update and I ended up uninstalling rEFInd and removing Arch from the Steam Deck. I tell the story in <a href="#september-2026-update-back-to-single-boot">September 2026 update: back to single boot</a>.</p>
+</div>
 <iframe width="688" height="387" src="https://www.youtube.com/embed/hColcI3rv38" title="Arch Linux on Steam Deck" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <p>Some interesting links consulted during the creation of this guide:</p>

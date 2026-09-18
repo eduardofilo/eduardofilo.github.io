@@ -5284,7 +5284,7 @@ lrwxrwxrwx 1 root root      17 may 29 00:19 mipsel-linux-gcc-5.4.0 -&gt; toolcha
 <p>Veamos pues algunos ejemplos de compilación de distintos programas.</p>
 <h2 id="invoker">invoker<a class="headerlink" href="#invoker" title="Permanent link">&para;</a></h2>
 <p>Se trata de un pequeño programa utilizado por el frontend SimpleMenu para ejecutar los emuladores.
-El código de invoker se encuentra en <a href="https://github.com/fgl82/invoker">este repositorio</a>. Analizando los ficheros vemos que el proyecto tiene ya hecho un sencillo Makefile. Al ser un programa muy pequeño y simple resulta muy educativo. Tampoco tiene dependencias con ninguno de los paquetes de Buildroot por lo que no será necesario compilar antes ninguno de ellos, tan sólo el toolchain. Vamos a ver cómo compilarlo con nuestro recién construido toolchain paso a paso:</p>
+El código de invoker se encuentra en <a href="https://github.com/fgl82/invoker">este repositorio</a>. Analizando los ficheros vemos que el proyecto tiene ya hecho un sencillo Makefile. Al ser un programa muy pequeño y simple resulta muy educativo. Tampoco tiene dependencias con ninguno de los paquetes de Buildroot por lo que no será necesario compilar antes ninguno de ellos, tan solo el toolchain. Vamos a ver cómo compilarlo con nuestro recién construido toolchain paso a paso:</p>
 <ol>
 <li>
 <p>Bajamos el código dentro del directorio <code>git</code> de la máquina host que es el que tenemos conectado con el contenedor:</p>
@@ -5395,7 +5395,7 @@ $ docker exec -it RG350_buildroot /bin/bash
 </code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p>Sólo queda empaquetar el binario y sus recursos (gráficos, sonidos, fichero <code>.desktop</code> para el lanzador, etc.). Existe un pequeño script que lo hace por nosotros, así que lo utilizamos:</p>
+<p>Solo queda empaquetar el binario y sus recursos (gráficos, sonidos, fichero <code>.desktop</code> para el lanzador, etc.). Existe un pequeño script que lo hace por nosotros, así que lo utilizamos:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code># cd ~/git/tetris_rg350/build
 # ./make_opk.sh

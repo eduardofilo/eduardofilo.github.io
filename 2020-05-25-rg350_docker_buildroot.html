@@ -5378,7 +5378,7 @@
 </tr>
 </tbody>
 </table>
-<p>Vamos a empezar bajando una de estas distribuciones Buildroot de RG350 a un directorio de nuestra máquina (la que actuará de host para Docker). Es habitual utilizar un directorio <code>git</code> en el home del usuario donde descargar los repositorios y nosotros seguiremos esta costumbre. Más adelante, al arrancar el contenedor, indicaremos ese directorio como volumen para conectar el sistema de archivos de nuestra máquina (host) con el contenedor. Así conseguimos que nuestra máquina (host) sólo sirva de almacén de las fuentes y los binarios resultantes, utilizando Docker para encapsular las dependencias que tiene la versión de Buildroot que vamos a utilizar que son muy numerosas y con frecuencia no coinciden con lo que nuestro sistema tiene instalado.</p>
+<p>Vamos a empezar bajando una de estas distribuciones Buildroot de RG350 a un directorio de nuestra máquina (la que actuará de host para Docker). Es habitual utilizar un directorio <code>git</code> en el home del usuario donde descargar los repositorios y nosotros seguiremos esta costumbre. Más adelante, al arrancar el contenedor, indicaremos ese directorio como volumen para conectar el sistema de archivos de nuestra máquina (host) con el contenedor. Así conseguimos que nuestra máquina (host) solo sirva de almacén de las fuentes y los binarios resultantes, utilizando Docker para encapsular las dependencias que tiene la versión de Buildroot que vamos a utilizar que son muy numerosas y con frecuencia no coinciden con lo que nuestro sistema tiene instalado.</p>
 <p>Por ejemplo vamos a utilizar la distribución de <a href="https://github.com/tonyjih/RG350_buildroot">Tonyjih</a>. Bajamos pues el repositorio en nuestra máquina. Con los siguientes comandos quedará en <code>~/git/RG350_buildroot</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ cd ~/git
@@ -5434,7 +5434,7 @@ $ docker build -t eduardofilo/rg350_buildroot .
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code># cd ~/git/RG350_buildroot
 # make rg350_defconfig BR2_EXTERNAL=board/opendingux
 </code></pre></div></td></tr></table></div>
-<p>Si ahora queremos repasar o cambiar algo de esta configuración lo haremos por medio de una herramienta similar a la que se utiliza para configurar un kernel Linux antes de compilarlo. Para ello utilizaremos uno de los dos comandos <code>make</code> siguientes (sólo uno):</p>
+<p>Si ahora queremos repasar o cambiar algo de esta configuración lo haremos por medio de una herramienta similar a la que se utiliza para configurar un kernel Linux antes de compilarlo. Para ello utilizaremos uno de los dos comandos <code>make</code> siguientes (solo uno):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code># cd ~/git/RG350_buildroot
@@ -5487,7 +5487,7 @@ $ docker build -t eduardofilo/rg350_buildroot .
 <p>Una vez que tenemos preparado el entorno podremos realizar las tareas y compilaciones previstas en el mismo. Por ejemplo en el entorno preparado por <a href="https://github.com/tonyjih/RG350_buildroot">Tonyjih</a> vemos que podemos realizar las siguientes operaciones:</p>
 <ul>
 <li>
-<p>Si se quiere que la imagen incluya emuladores y aplicaciones, ejecutar antes lo siguiente (sólo es necesario hacerlo una vez):</p>
+<p>Si se quiere que la imagen incluya emuladores y aplicaciones, ejecutar antes lo siguiente (solo es necesario hacerlo una vez):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code># cd ~/git/RG350_buildroot
 # board/opendingux/gcw0/download_local_pack.sh

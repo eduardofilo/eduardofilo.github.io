@@ -855,6 +855,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#actualizacion-de-septiembre-de-2026-vuelta-al-arranque-unico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actualización de septiembre de 2026: vuelta al arranque único
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actualización de septiembre de 2026: vuelta al arranque único">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagnostico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnóstico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desinstalacion-de-refind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desinstalación de rEFInd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminacion-de-las-particiones-de-arch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eliminación de las particiones de Arch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5447,6 +5497,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#actualizacion-de-septiembre-de-2026-vuelta-al-arranque-unico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actualización de septiembre de 2026: vuelta al arranque único
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actualización de septiembre de 2026: vuelta al arranque único">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagnostico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnóstico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desinstalacion-de-refind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desinstalación de rEFInd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminacion-de-las-particiones-de-arch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eliminación de las particiones de Arch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5480,15 +5580,15 @@
   <h1>Instalación Arch Linux en Steam Deck</h1>
 
 <p><img alt="Steam Deck con Arch Linux" src="images/posts/2024-09-04_steam_deck_arch/steam_deck_logo.png" /></p>
-<div class="admonition info">
-<p class="admonition-title">Pérdida de dual boot al actualizar SteamOS</p>
-<p>En la actualización de SteamOS a la rama 3.6 (en concreto la primera versión estable de esa rama fue la 3.6.19) se perdió la configuración del dualboot por lo que la máquina sólo arrancaba en SteamOS. La solución fue volver a seguir los pasos de <a href="#instalacion-gestor-dualboot">Instalación gestor dualboot</a> a partir del paso 4.</p>
+<div class="admonition warning">
+<p class="admonition-title">Las actualizaciones de SteamOS rompen la configuración del dual boot</p>
+<p>Las actualizaciones de SteamOS rehacen su gestor de arranque y reescriben las entradas EFI de la máquina, así que <strong>cualquier configuración de dual boot se pierde</strong>. Me ha ocurrido dos veces: en la actualización a la rama 3.6 (la primera versión estable de esa rama fue la 3.6.19) la consola solo arrancaba SteamOS, y en septiembre de 2026, al rehacer los mismos pasos, pasó justo lo contrario: solo arrancaba Arch. En <a href="#actualizacion-de-septiembre-de-2026-vuelta-al-arranque-unico">Actualización de septiembre de 2026: vuelta al arranque único</a> cuento el diagnóstico, cómo desinstalé el gestor y cómo recuperé el espacio que ocupaba el segundo sistema.</p>
 </div>
 <p>En julio de 2024 durante unas semanas, el modelo de 512GB de la Steam Deck LCD pudo adquirirse por debajo de los 400€. Un precio muy atractivo para una <a href="https://www.steamdeck.com/es/tech/deck">máquina decente</a> con procesador AMD de arquitectura x86 (AMD64), 16GB de RAM, disco SSD tipo NVMe de la capacidad mencionada antes, pantalla táctil y controles de juego integrados. Es decir un PC consolizado, pero un PC al fin y al cabo. Pero sobre todo lo que hace para mi especialmente atractiva la máquina es su soporte Linux completo, lo que la convierte en una plataforma ideal para cacharrear con distribuciones Linux o utilizarlo como PC portátil secundario. Todo esto naturalmente además de su uso convencional para jugar y <a href="https://www.emudeck.com/">emular</a> videojuegos.</p>
 <p>SteamOS, el sistema operativo que trae de serie, está basado en Arch Linux, y en su modo escritorio, puede utilizarse prácticamente como un Arch Linux normal. La principal restricción es que está construido en modo inmutable y a pesar de que este tipo de configuración de sistema tiene sus virtudes y se entiende perfectamente que Valve lo haya escogido para su máquina, todavía prefiero un sistema normal (mutable), por lo que me decidí por instalar un Arch normal y aprender a instalar de paso esta distribución. Según el <a href="https://wiki.archlinux.org/title/Steam_Deck">wiki de Arch</a>, el hardware del modelo LCD de la Steam Deck está soportado al 100% en Arch.</p>
 <p>Lo que sigue es el procedimiento completo que he utilizado.</p>
 <h2 id="tecladoraton">Teclado/ratón<a class="headerlink" href="#tecladoraton" title="Permanent link">&para;</a></h2>
-<p>Aunque gran parte de las operaciones pueden hacerse utilizando la pantalla táctil y los trackpads de la Steam Deck, es muy recomendable conectar un teclado y ratón a la consola para facilitar la instalación, sobre todo durante la sesión de terminal con la que instalaremos el sistema base. La Steam Deck sólo posee un puerto USB-C, por lo que lo más práctico es utilizar un dock. También puede ser suficiente (sobre todo si ejecutamos los sistemas live desde una microSD) con un dongle de teclado/ratón inalámbricos conectados con un adaptador USB&lt;-&gt;USB-C, aunque en ese caso conviene asegurarse de que la Steam Deck tiene la batería completamente cargada.</p>
+<p>Aunque gran parte de las operaciones pueden hacerse utilizando la pantalla táctil y los trackpads de la Steam Deck, es muy recomendable conectar un teclado y ratón a la consola para facilitar la instalación, sobre todo durante la sesión de terminal con la que instalaremos el sistema base. La Steam Deck solo posee un puerto USB-C, por lo que lo más práctico es utilizar un dock. También puede ser suficiente (sobre todo si ejecutamos los sistemas live desde una microSD) con un dongle de teclado/ratón inalámbricos conectados con un adaptador USB&lt;-&gt;USB-C, aunque en ese caso conviene asegurarse de que la Steam Deck tiene la batería completamente cargada.</p>
 <p>En mi caso utilicé un dock <a href="https://www.dell.com/es-es/shop/adaptador-multipuerto-usb-c-de-dell-7-en-1-da310/apd/470-aeup/conexi%C3%B3n-wifi-y-redes">DA310z</a> de Dell.</p>
 <h2 id="reparticionado-del-disco">Reparticionado del disco<a class="headerlink" href="#reparticionado-del-disco" title="Permanent link">&para;</a></h2>
 <p>El disco SSD de la Steam Deck que adquirí es de 512GB y de tipo NVMe. Es el tamaño mínimo si queremos instalar otro sistema junto a SteamOS.</p>
@@ -5513,6 +5613,10 @@
 </li>
 </ol>
 <p>Destacar a la vista de las particiones que utiliza SteamOS que hace uso de un <a href="https://blog.davidbyrne.dev/2018/08/16/linux-ab-partitions">sistema de particiones A/B</a>, habitual en Android, por el cual la mayoría de las particiones del sistema (excepto la de usuario) están duplicadas. Dicho sistema está pensado para facilitar las actualizaciones, o más bien para volver atrás en caso de problemas durante las mismas.</p>
+<div class="admonition tip">
+<p class="admonition-title">gparted en la Steam Deck</p>
+<p>Arrancar el live de <code>gparted</code> en la Steam Deck tiene su miga: la pantalla interna es en realidad un panel vertical de 800x1280, así que el entorno live se ve girado, y con las versiones recientes del live la interfaz gráfica ni siquiera llega a mostrarse con las opciones por defecto. La versión 1.6.0-3 que enlazo arriba funciona bien. Si aun así hubiera problemas, se puede elegir la entrada <code>Other modes of GParted Live &gt; GParted Live (Safe graphic settings, vga=normal)</code> o, como acabé haciendo yo, arrancar el live con el dock y un monitor externo conectados.</p>
+</div>
 <h2 id="instalacion-base">Instalación base<a class="headerlink" href="#instalacion-base" title="Permanent link">&para;</a></h2>
 <p>Para el proceso de instalación del sistema base me decanté por el camino convencional siguiendo las instrucciones de la <a href="https://wiki.archlinux.org/title/Installation_guide">guía de instalación</a> en el wiki de Arch. Dicha instalación utiliza una ISO de un sistema Arch que podremos arrancar desde una unidad extraíble (USB o microSD) con el que instalaremos los paquetes básicos para tener un sistema arrancable y muy básico.</p>
 <p>Antes de comenzar, comentar que por las características tan dinámicas de la distribución Arch Linux, es muy posible que esta guía quede desactualizada en poco tiempo. Por lo que recomiendo consultar la <a href="https://wiki.archlinux.org/title/Installation_guide">guía oficial</a> en caso de encontrar que algo no sale como se supone.</p>
@@ -5594,7 +5698,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<p>El password que elegiremos cuando ejecutemos el comando <code>passwd &lt;USER&gt;</code> debe ser numérico si queremos utilizar Plasma Mobile, ya que la pantalla de desbloqueo sólo nos permite introducir un PIN.</p>
+<p>El password que elegiremos cuando ejecutemos el comando <code>passwd &lt;USER&gt;</code> debe ser numérico si queremos utilizar Plasma Mobile, ya que la pantalla de desbloqueo solo nos permite introducir un PIN.</p>
 <h2 id="instalacion-entorno-grafico">Instalación entorno gráfico<a class="headerlink" href="#instalacion-entorno-grafico" title="Permanent link">&para;</a></h2>
 <p>Continuamos donde nos habíamos quedado, es decir en la sesión chroot desde el sistema live de instalación de Arch Linux. Lo haremos ya con el usuario normal (no root) por lo que a partir de ahora haremos uso con frecuencia de <code>sudo</code>.</p>
 <p>Ahora vamos a instalar los entornos gráficos. Lo digo en plural porque vamos a instalar dos, Plasma y Plasma Mobile. Hago esto porque dependiendo de si vamos a utilizar la Steam Deck con Arch en modo escritorio (con teclado/ratón y posiblemente pantalla) o portátil (sin teclado/ratón), nos convendrá más un sistema u otro, dado que Plasma Mobile presenta un interfaz diseñado para ser manejado con una pantalla táctil (estilo tablet).</p>
@@ -5806,9 +5910,42 @@ $<span class="w"> </span>alsamixer
 <li>Pulsar el botón <code>Install Config</code></li>
 </ol>
 <p>La ruta <code>/EFI/Arch/grubx64.efi</code> del paso 6 puede cambiar si en el comando <code>grub-install</code> ejecutado durante la <a href="#instalacion-base">instalación del sistema base</a> se eligió otro identificador que no fuera <code>Arch</code>. En ese caso habría que adaptar la ruta.</p>
+<h2 id="actualizacion-de-septiembre-de-2026-vuelta-al-arranque-unico">Actualización de septiembre de 2026: vuelta al arranque único<a class="headerlink" href="#actualizacion-de-septiembre-de-2026-vuelta-al-arranque-unico" title="Permanent link">&para;</a></h2>
+<p>Casi dos años después de escribir esta guía el dual boot seguía funcionando sin problemas, así que había dejado de prestarle atención. Se acumularon varios meses sin actualizar SteamOS, y la actualización de septiembre de 2026 se llevó por delante, otra vez, el menú de rEFInd: la máquina arrancaba directamente en SteamOS. Volví a rehacer los pasos de <a href="#instalacion-gestor-dualboot">Instalación gestor dualboot</a> como la otra vez, pero el resultado fue el contrario: <strong>solo arrancaba Arch</strong> y SteamOS había dejado de ser accesible desde el menú.</p>
+<h3 id="diagnostico">Diagnóstico<a class="headerlink" href="#diagnostico" title="Permanent link">&para;</a></h3>
+<p>Lo primero que comprobé es que SteamOS no estaba roto, solo había perdido la prioridad de arranque:</p>
+<ul>
+<li>Para arrancar SteamOS a mano hay que apagar la consola y encenderla manteniendo pulsada la tecla de subir volumen. En el menú <code>Boot Manager</code> seleccionamos <code>Boot From File</code> y navegamos por <code>efi</code> &gt; <code>steamos</code> &gt; <code>steamcl.efi</code>.</li>
+<li>Ya con el sistema arrancado (en modo Escritorio), <code>sudo efibootmgr -v</code> muestra las entradas de arranque de la máquina y su orden. La entrada de SteamOS seguía ahí, intacta, pero el orden apuntaba a rEFInd.</li>
+</ul>
+<p>La avería, por tanto, no estaba en el sistema operativo sino en las entradas de arranque.</p>
+<h3 id="desinstalacion-de-refind">Desinstalación de rEFInd<a class="headerlink" href="#desinstalacion-de-refind" title="Permanent link">&para;</a></h3>
+<p>El Arch que instalé aquel verano fue más un experimento para aprender que un sistema que fuera a utilizar de verdad, así que decidí no volver a dejar el arranque en manos de un gestor que cada actualización se podía desconfigurar. El repositorio de <a href="https://github.com/jlobue10/SteamDeck_rEFInd">SteamDeck_rEFInd</a> incluye un script de desinstalación (<code>~/.local/SteamDeck_rEFInd/scripts/uninstall_rEFInd.sh</code>) que deshace su instalación por completo, y tras ejecutarlo la consola volvió a arrancar limpiamente en SteamOS.</p>
+<p>Con las entradas limpias, <code>sudo efibootmgr -v</code> solo muestra la de SteamOS (<code>\EFI\steamos\steamcl.efi</code>) y las que añade el propio firmware (disco duro, USB, DVD y red). En la partición EFI quedó como residuo el directorio <code>/efi/EFI/refind/</code> con los ficheros del gestor (iconos, fuentes, fondos), que ya no referencia ninguna entrada y se puede borrar sin más.</p>
+<h3 id="eliminacion-de-las-particiones-de-arch">Eliminación de las particiones de Arch<a class="headerlink" href="#eliminacion-de-las-particiones-de-arch" title="Permanent link">&para;</a></h3>
+<p>El último paso era recuperar el espacio que ocupaba Arch: borrar las particiones 9 (swap) y 10 (sistema raíz de Arch) y ampliar la 8 (la de usuario de SteamOS) hasta el final del disco. Como esa partición está en uso mientras SteamOS está arrancado, hay que hacerlo desde un sistema live, y en ese trámite apareció otro problema: la interfaz gráfica de <code>gparted</code> no llegaba a arrancar en la Steam Deck con las versiones recientes del live. Lo resolví arrancando el live con el dock y un monitor externo conectados y particionando desde la terminal:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>parted<span class="w"> </span>/dev/nvme0n1<span class="w"> </span>print<span class="w">                </span><span class="c1"># comprobar las particiones antes de tocar nada</span>
+$<span class="w"> </span>sudo<span class="w"> </span>parted<span class="w"> </span>/dev/nvme0n1<span class="w"> </span>rm<span class="w"> </span><span class="m">10</span>
+$<span class="w"> </span>sudo<span class="w"> </span>parted<span class="w"> </span>/dev/nvme0n1<span class="w"> </span>rm<span class="w"> </span><span class="m">9</span>
+$<span class="w"> </span>sudo<span class="w"> </span>parted<span class="w"> </span>/dev/nvme0n1<span class="w"> </span>resizepart<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">100</span>%<span class="w">    </span><span class="c1"># ampliar la 8 hasta el final del disco</span>
+$<span class="w"> </span>sudo<span class="w"> </span>resize2fs<span class="w"> </span>/dev/nvme0n1p8<span class="w">                 </span><span class="c1"># ampliar el sistema de ficheros</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Cuidado con el PARTUUID</p>
+<p>Para ampliar la partición conviene usar herramientas que modifiquen la entrada en sitio, como <code>parted resizepart</code>, y <strong>no</strong> <code>fdisk</code> con <code>d</code> + <code>n</code>, porque esto último recrea la partición con un PARTUUID nuevo, que es el identificador que usa SteamOS para referenciar su partición de usuario.</p>
+</div>
+<p>Con el espacio recuperado, la máquina ha quedado de nuevo con un único sistema y todo el disco disponible.</p>
 <h2 id="conclusion">Conclusión<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
 <p>Y esto sería todo. Ahora tenemos un sistema Arch Linux en nuestra Steam Deck con un gestor de arranque dualboot que nos permite arrancar también SteamOS. A partir de aquí tendremos una máquina con una naturaleza doble, una (SteamOS) para jugar y otra (Arch) para ser utilizada como un PC (Plasma) o tabletPC (Plasma Mobile).</p>
 <p>Para elegir el entorno gráfico Plasma normal o el Plasma Mobile, utilizaremos el menú desplegable que aparece abajo a la izquierda en el gestor de inicios de sesión SDDM.</p>
+<div class="admonition note">
+<p class="admonition-title">Septiembre de 2026</p>
+<p>El planteamiento de doble sistema que describo aquí ya no es el que tengo, porque SteamOS volvió a romper el dual boot al actualizarse y acabé desinstalando rEFInd y eliminando Arch de la Steam Deck. Lo cuento en <a href="#actualizacion-de-septiembre-de-2026-vuelta-al-arranque-unico">Actualización de septiembre de 2026: vuelta al arranque único</a>.</p>
+</div>
 <iframe width="688" height="387" src="https://www.youtube.com/embed/hColcI3rv38" title="Arch Linux en Steam Deck" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <p>Algunos enlaces de interés consultados durante la elaboración de esta guía:</p>

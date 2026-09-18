@@ -5251,7 +5251,7 @@
 <p><img alt="Pines doblados" src="images/posts/2022-08-08_mmiyoo_uart/pines_doblados.jpg" /></p>
 </li>
 <li>
-<p>Comienza la fase más complicada del proceso. Como hemos comentado ya, hay muy poco espacio libre en el interior de la consola. Por ejemplo la carcasa a la que acabamos de pegar el mini zócalo está completamente apoyada en la PCB en toda la superficie del hueco donde se aloja la batería. Vamos pues a rutear las conexiones rodeando este hueco. Aún así el espacio es reducido, por lo que optamos por utilizar cables barnizados en lugar de hilos con envoltura PVC tradicional. El cable barnizado además al ser de un sólo hilo, nos ayudará a enrutarlo, ya que una vez deformado, conserva su forma. Buscamos el cable barnizado por ejemplo en un viejo alimentador de portátil estropeado. Es seguro que al menos contendrá cable barnizado en el transformador, pero al abrirlo encontramos los tres bobinados que señalamos en la foto (el transformador es el de la derecha).</p>
+<p>Comienza la fase más complicada del proceso. Como hemos comentado ya, hay muy poco espacio libre en el interior de la consola. Por ejemplo la carcasa a la que acabamos de pegar el mini zócalo está completamente apoyada en la PCB en toda la superficie del hueco donde se aloja la batería. Vamos pues a rutear las conexiones rodeando este hueco. Aún así el espacio es reducido, por lo que optamos por utilizar cables barnizados en lugar de hilos con envoltura PVC tradicional. El cable barnizado además al ser de un solo hilo, nos ayudará a enrutarlo, ya que una vez deformado, conserva su forma. Buscamos el cable barnizado por ejemplo en un viejo alimentador de portátil estropeado. Es seguro que al menos contendrá cable barnizado en el transformador, pero al abrirlo encontramos los tres bobinados que señalamos en la foto (el transformador es el de la derecha).</p>
 <p><img alt="Bobinados alimentador estropeado" src="images/posts/2022-08-08_mmiyoo_uart/alimentador_estropeado.jpg" /></p>
 </li>
 <li>
@@ -5271,7 +5271,7 @@
 <p><img alt="Recortando cables" src="images/posts/2022-08-08_mmiyoo_uart/recortando.jpg" /></p>
 </li>
 <li>
-<p>Sólo resta hacer las soldaduras en la PCB.</p>
+<p>Solo resta hacer las soldaduras en la PCB.</p>
 <p><img alt="Soldadura cables a PCB" src="images/posts/2022-08-08_mmiyoo_uart/soldadura_pcb.jpg" /></p>
 </li>
 <li>
@@ -5283,7 +5283,7 @@
 <p>Para conectar al puerto UART recién expuesto, utilizamos el típico adaptador UART-USB. En mi caso utilizo <a href="https://www.amazon.es/dp/B07BBPX8B8">éste</a> que tiene bastantes posibilidades. Como cliente utilizo <code>screen</code> lanzado de la siguiente forma ya que la velocidad del puerto es 115200bps:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>screen<span class="w"> </span>/dev/ttyUSB0<span class="w"> </span><span class="m">115200</span><span class="w"> </span>8N1
 </code></pre></div></td></tr></table></div>
-<p>Sólo utilizaremos los pines GND, RX y TX, cruzando los dos últimos con los del adaptador UART-USB, es decir cableando el RX de la consola al TX del adaptador y viceversa. Aunque no utilizamos la línea de alimentación (2.8V en esta consola), configuraremos el adaptador UART-USB a 3.3V para que los niveles de señal que viajan por RX/TX sean lo más parecidos posible.</p>
+<p>Solo utilizaremos los pines GND, RX y TX, cruzando los dos últimos con los del adaptador UART-USB, es decir cableando el RX de la consola al TX del adaptador y viceversa. Aunque no utilizamos la línea de alimentación (2.8V en esta consola), configuraremos el adaptador UART-USB a 3.3V para que los niveles de señal que viajan por RX/TX sean lo más parecidos posible.</p>
 <p>Un ejemplo:</p>
 <iframe width="806" height="453" src="https://www.youtube.com/embed/Df2k8gsOvtM" title="Miyoo Mini UART session" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

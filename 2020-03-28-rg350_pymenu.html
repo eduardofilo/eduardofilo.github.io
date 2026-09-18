@@ -5456,14 +5456,14 @@
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
 <p>La instalación es sencilla ya que el programador ofrece un OPK para ello en las <a href="https://github.com/JackD83/PyMenu/releases">releases del repositorio</a>. En concreto el OPK adecuado para instalar en RG350 es éste:</p>
 <p><a href="https://github.com/JackD83/PyMenu/releases/download/2.0.0-PRE/PyMenu-Installer-2.0.0.opk">https://github.com/JackD83/PyMenu/releases/download/2.0.0-PRE/PyMenu-Installer-2.0.0.opk</a></p>
-<p>Como con todos los OPKs sólo tenemos que copiarlo a uno de estos dos directorios:</p>
+<p>Como con todos los OPKs solo tenemos que copiarlo a uno de estos dos directorios:</p>
 <ul>
 <li><code>/media/data/apps</code></li>
 <li><code>/media/sdcard/apps</code></li>
 </ul>
 <p>Preferiblemente en el segundo que corresponde al directorio <code>apps</code> de la tarjeta externa, ya que el OPK lo podremos borrar una vez hecha la instalación. En GMenu2X nos aparecerá este lanzador:</p>
 <p><img alt="PyMenu Installer" src="images/posts/pymenu_installer.png" /></p>
-<p>Lo abriremos y veremos una pantalla de terminal en la que es posible que aparezcan algunos errores. Al principio creía que se trataba del proceso de búsqueda de OPKs para la autoconfiguración, pero analizando el script de instalación veo que sólo las últimas 4 líneas corresponden a la verdadera instalación:</p>
+<p>Lo abriremos y veremos una pantalla de terminal en la que es posible que aparezcan algunos errores. Al principio creía que se trataba del proceso de búsqueda de OPKs para la autoconfiguración, pero analizando el script de instalación veo que solo las últimas 4 líneas corresponden a la verdadera instalación:</p>
 <p><img alt="PyMenu Installing" src="images/posts/pymenu_installing.png" /></p>
 <p>Las líneas anteriores pertenecen a GMenu2X y en mi caso indicaban que tenía ficheros residuales en <code>/media/data/local/home/.gmenu2x/sections</code>. Son lanzadores de aplicaciones que en su día instalé y borré. Haciendo limpieza de los ficheros correspondientes consigo un log de instalación más limpio:</p>
 <p><img alt="PyMenu Installing Clean" src="images/posts/pymenu_installing_clean.png" /></p>
@@ -5526,8 +5526,8 @@
 <li>El parámetro <code>Name</code> de los ficheros <code>.desktop</code> que contienen los OPKs.</li>
 <li>El parámetro <code>title</code> de los ficheros que hay en las distintas secciones que hay en <code>/media/data/local/home/.gmenu2x/sections</code>, a lo que PyMenu llama <em>links</em>.</li>
 </ul>
-<p>No estoy seguro, pero creo que en el caso de emuladores en los que hay que seleccionar una ROM para lanzarlo (la mayoría), sólo sirve el primero de los dos tipos. Para aplicaciones sueltas o Ports pueden servir cualquiera de los dos.</p>
-<p>Ahora la cosa se complica un poco. Por una parte el fichero <code>.desktop</code> (casi siempre se llama <code>default.gcw0.desktop</code>) se encuentra enterrado en el OPK que es una especie de ZIP (en realidad una especie de imagen de sistema de ficheros). Vamos a ver por ejemplo cómo accederíamos a él siguiendo con el ejemplo de Game Boy. En mi máquina el OPK de este emulador es <code>gambatte-multi-r572u4-20200127.opk</code>. Lo descargamos al PC y ejecutamos lo siguiente (sólo sé hacerlo con Linux):</p>
+<p>No estoy seguro, pero creo que en el caso de emuladores en los que hay que seleccionar una ROM para lanzarlo (la mayoría), solo sirve el primero de los dos tipos. Para aplicaciones sueltas o Ports pueden servir cualquiera de los dos.</p>
+<p>Ahora la cosa se complica un poco. Por una parte el fichero <code>.desktop</code> (casi siempre se llama <code>default.gcw0.desktop</code>) se encuentra enterrado en el OPK que es una especie de ZIP (en realidad una especie de imagen de sistema de ficheros). Vamos a ver por ejemplo cómo accederíamos a él siguiendo con el ejemplo de Game Boy. En mi máquina el OPK de este emulador es <code>gambatte-multi-r572u4-20200127.opk</code>. Lo descargamos al PC y ejecutamos lo siguiente (solo sé hacerlo con Linux):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$ unsquashfs gambatte-multi-r572u4-20200127.opk
 </code></pre></div></td></tr></table></div>
 <p>Nos aparecerá un directorio de nombre <code>squashfs-root</code> con el contenido del OPK. Dentro de él encontramos un fichero llamado <code>default.gcw0.desktop</code> con el siguiente contenido:</p>

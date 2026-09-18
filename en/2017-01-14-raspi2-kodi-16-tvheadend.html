@@ -5504,7 +5504,7 @@ none                     100M    84K  100M   1% /run/user
 <p>La mejor forma de averiguar los dispositivos correctos es ejecutar <code>df -h</code> antes y después de insertar la tarjeta. En mi caso aparecen dos particiones sobre el dispositivo <code>/dev/mmcblk0</code> (p1 y p2 son el sufijo de las particiones; en algunos lectores de tarjetas nos podría aparecer <code>/dev/sdb1</code> y <code>/dev/sdb2</code> por ejemplo, lo que indicaría que el dispositivo es <code>/dev/sdb</code>).</p>
 </li>
 <li>
-<p>Desmontamos las particiones montadas de la tarjeta (en el ejemplo son dos, pero en una tarjeta nueva lo normal es que sólo sea una):</p>
+<p>Desmontamos las particiones montadas de la tarjeta (en el ejemplo son dos, pero en una tarjeta nueva lo normal es que solo sea una):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ sudo umount /dev/mmcblk0p1
 $ sudo umount /dev/mmcblk0p2

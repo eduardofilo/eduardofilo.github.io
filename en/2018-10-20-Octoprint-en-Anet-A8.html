@@ -5327,7 +5327,7 @@
 <p>Podemos ver cómo el puerto serie del microcontrolador (pines <code>AOFI</code> y <code>AIFO</code>) está puenteado al chip CH340G (U6) por medio de un par de resistencias de 0Ω que actúan como puente. Tendremos que retirar de la placa dichas resistencias R52 y R53.</p>
 <p>Una vez hecho, soldaremos unos pines en la ubicación J8 de la placa (al menos la mía venía con los agujeros en la PCB sin los pines soldados). En esta <a href="../images/posts/octoprint_hires_pcb.jpg">foto de alta resolución de la placa</a> podemos ver bien tanto la ubicación de los puentes J8 como las resistencias que hay que retirar:</p>
 <p><img alt="Sección de la PCB" src="../images/posts/octoprint_hires_pcb_subsection.jpg" /></p>
-<p>Sólo queda poner un par de jumpers entre los pines siguientes de J8:</p>
+<p>Solo queda poner un par de jumpers entre los pines siguientes de J8:</p>
 <ul>
 <li>3-5</li>
 <li>4-6</li>
@@ -5340,7 +5340,7 @@
 <p>Como la orientación de la PCB en la impresora es distinta a la del esquemático, se muestra ahora con claridad el resultado final, es decir cómo deben disponerse los dos jumpers para que el puerto serie aparezca en el conector J3 y el hueco dejado por las resistencias R52 y R53:</p>
 <p><img alt="Puentes" src="../images/posts/octoprint_puentes.jpg" /></p>
 <p>Como vemos los puentes deben apuntar hacia el rótulo BLE. Seguramente se designa así porque la sustitución habitual del puerto USB sería un adaptador Bluetooth que podría adaptarse al conector J3.</p>
-<p>Sólo queda localizar en el conector J3 los pines del puerto serie del microcontrolador recién redirigidos y los de alimentación (5V y GND). En este punto podríamos conectar la Raspberry Pi con simples cables de pin, pero dada la cercanía en el GPIO de la Raspberry Pi del puerto serie y de los terminales de alimentación, me decidí a preparar una pequeña placa adaptadora para el conector J3 de la PCB de la impresora.</p>
+<p>Solo queda localizar en el conector J3 los pines del puerto serie del microcontrolador recién redirigidos y los de alimentación (5V y GND). En este punto podríamos conectar la Raspberry Pi con simples cables de pin, pero dada la cercanía en el GPIO de la Raspberry Pi del puerto serie y de los terminales de alimentación, me decidí a preparar una pequeña placa adaptadora para el conector J3 de la PCB de la impresora.</p>
 <p>El conector J3 de la impresora según el <a href="../images/posts/octoprint_ANET3D_Board_Schematic.png">esquemático</a> tiene el siguiente pineado:</p>
 <p><img alt="Esquemático Conector J3" src="../images/posts/octoprint_j3.png" /></p>
 <p>De nuevo es necesario orientar el conector correctamente para interpretar el esquemático. Para evitar confusiones se indica a continuación la numeración de los pines sobre el conector:</p>
