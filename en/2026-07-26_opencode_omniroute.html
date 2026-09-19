@@ -263,7 +263,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="2026-08-23_hermes_agent_vps.html" class="md-tabs__link">
+        <a href="2026-09-19_llm_wiki_obsidian.html" class="md-tabs__link">
           
   
   
@@ -513,6 +513,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2026-09-19_llm_wiki_obsidian.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Second brain in Obsidian with the LLM Wiki pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -5948,7 +5976,11 @@
   <h1>OpenCode, OmniRoute, and Ponytail Installation</h1>
 
 <p><img alt="OpenCode + OmniRoute" src="../images/posts/2026-07-26_opencode_omniroute/opencode_omniroute.png" /></p>
-<p>AI-assisted development began as intelligent line-level code completion. It evolved into a "second opinion" that reviewed file-level code and suggested changes. In the last two years, a major step forward has been taken to reach the current paradigm, <em>agentic development</em>: an agent that works at the project-level, edits files, executes commands, performs changes that were previously only suggested, runs tests, and iterates until the task is complete. The problem is that all commercial tools of this type (Claude Code, Cursor, Devin, Copilot, Codex, etc.) share two limitations: a monthly subscription and quotas that run out just when the session is getting interesting. Because here we don't consider the use via API, which for the personal scope is unaffordable.</p>
+<div class="admonition note">
+<p class="admonition-title">FreeLLMAPI</p>
+<p>An alternative, also runnable on our own machine, discovered after the article was written and specialized in routing free models, is <a href="https://freellmapi.co/es/">FreeLLMAPI</a>.</p>
+</div>
+<p>AI-assisted development began as intelligent line-level code completion. It evolved into a "second opinion" that reviewed file-level code and suggested changes. In the last two years the field has moved on again to what we call <em>agentic development</em>: an agent that works at the project-level, edits files, executes commands, performs changes that were previously only suggested, runs tests, and iterates until the task is complete. The problem is that all commercial tools of this type (Claude Code, Cursor, Devin, Copilot, Codex, etc.) share two limitations: a monthly subscription and quotas that run out just when the session is getting interesting. Because here we don't consider the use via API, which for the personal scope is unaffordable.</p>
 <p>There is also a third, quieter but also expensive problem: agents tend to <strong>over-build</strong>. They are asked for a date picker and end up installing a library, writing a wrapper component, and adding a stylesheet. Every extra line is paid for twice: in tokens when generating it and in tokens every time it re-enters the context.</p>
 <p>This article describes how to set up a complete agentic development environment by combining three open-source projects that address these exact limitations:</p>
 <ul>
@@ -5958,8 +5990,8 @@
 </ul>
 <h2 id="product-description">Product Description<a class="headerlink" href="#product-description" title="Permanent link">&para;</a></h2>
 <h3 id="opencode">OpenCode<a class="headerlink" href="#opencode" title="Permanent link">&para;</a></h3>
-<p>OpenCode is an open-source programming agent that runs in the terminal (TUI) and, most importantly for our purpose, is <strong>model-provider agnostic</strong>. Unlike Claude Code (tied to Anthropic) or Codex (tied to OpenAI), OpenCode allows configuring any provider, including those exposing an OpenAI-compatible API, which today is practically all of them.</p>
-<p>Its main features:</p>
+<p>OpenCode is an open-source programming agent that runs in the terminal (TUI) and, most importantly for our purpose, is model-provider agnostic. Unlike Claude Code (tied to Anthropic) or Codex (tied to OpenAI), OpenCode allows configuring any provider, including those exposing an OpenAI-compatible API, which today is practically all of them.</p>
+<p>Main capabilities:</p>
 <ul>
 <li>Terminal interface with persistent sessions, context management, and <em>undo</em> for applied changes.</li>
 <li>Access to tools: file reading and writing, command execution, repository search, version control.</li>
@@ -5970,7 +6002,7 @@
 </ul>
 <h3 id="omniroute">OmniRoute<a class="headerlink" href="#omniroute" title="Permanent link">&para;</a></h3>
 <p>OmniRoute is a local, open-source AI <em>gateway</em>. It is installed on your own machine (or a VPS), sets up an OpenAI-compatible API endpoint and a web administration panel, and from there routes each request to any of the hundreds of cataloged providers, about 90 of which have a free tier.</p>
-<p>The interesting thing is not the catalog itself, but what it does with it:</p>
+<p>The interesting thing is what it does with the catalog:</p>
 <ul>
 <li><strong>Automatic routing</strong>: using the <code>auto</code> virtual model, OmniRoute builds a <em>combo</em> of your connected providers and chooses one for each request based on live scoring. Variants exist: <code>auto/coding</code> (quality for code generation), <code>auto/fast</code> (lowest latency), <code>auto/cheap</code> (cheapest per token), and <code>auto/offline</code> (most available quota margin).</li>
 <li><strong>Cascading fallback</strong>: when a provider returns a quota error, rate limit, or 4xx-5xx, the request is transparently retried against the next provider in the list. This prevents the classic "quota exceeded, come back in five hours" message.</li>
@@ -5995,15 +6027,15 @@
 7. Only then: the minimum that works
 </code></pre></div></td></tr></table></div>
 <p>The project's canonical example, which we referenced in the introduction, sums it up well: when asked for a date picker, the result is no longer a library plus a component but, thanks to Ponytail, <code>&lt;input type="date"&gt;</code>.</p>
-<p>Two important nuances:</p>
+<p>Two nuances:</p>
 <ul>
 <li>The ladder is applied <strong>after</strong> understanding the problem, not instead of it. The agent is still required to read the affected code and trace the actual flow before picking a rung. Lazy about the solution, never about reading.</li>
-<li>Four things are never cut: trust-boundary validation, data-loss handling, security, and accessibility. The rule is not "fewer tokens," it's "only what the task needs."</li>
+<li>Four things are never cut: trust-boundary validation, data-loss handling, security, and accessibility. The rule is "only what the task needs."</li>
 </ul>
 <p>According to the project's published <em>benchmark</em> (real agent sessions on a FastAPI + React repo, with and without the <em>skill</em>), results vs. the baseline show 54% fewer lines of code, 22% fewer tokens, 20% lower cost, and 27% less time, with no penalty to security checks. As always with <em>benchmarks</em>, take them as an order of magnitude rather than a promise: savings are huge where there's a clear over-build trap and near zero where code was already minimal.</p>
 <p>Ponytail works with a good number of agents (Claude Code, Codex, Copilot CLI, Gemini CLI, Cursor, Devin...), and OpenCode is one of those with first-class <em>plugin</em> support.</p>
 <h3 id="the-value-of-the-combination">The Value of the Combination<a class="headerlink" href="#the-value-of-the-combination" title="Permanent link">&para;</a></h3>
-<p>Separately each piece is useful, but combined, the limitations mentioned at the beginning vanish. Each covers a different layer and they don't overlap: OmniRoute decides <strong>who</strong> responds, OpenCode decides <strong>what</strong> is done, and Ponytail decides <strong>how much</strong> code is written.</p>
+<p>Separately each piece is useful, but combined, the limitations mentioned at the beginning vanish. Each covers a different layer and they don't overlap: OmniRoute decides who responds, OpenCode decides what is done, and Ponytail decides how much code is written.</p>
 <table>
 <thead>
 <tr>
@@ -6038,7 +6070,7 @@
 </tr>
 </tbody>
 </table>
-<p>The combination of these three pieces has a multiplier effect on available quota: Ponytail reduces output tokens (less code generated), OmniRoute compression reduces input tokens (less context sent), and fallback utilizes every connected provider's quota.</p>
+<p>The three pieces reinforce each other on available quota: Ponytail reduces output tokens (less code generated), OmniRoute compression reduces input tokens (less context sent), and the fallback draws on the quota of every connected provider.</p>
 <p>An additional benefit: since OmniRoute exposes a standard endpoint, the same gateway simultaneously serves OpenCode in the terminal, a VSCode extension, or any other OpenAI-compatible client. Configure once, use everywhere.</p>
 <div class="admonition tip">
 <p class="admonition-title">Modest models, better results</p>
@@ -6101,8 +6133,8 @@ omniroute
 <h2 id="joint-configuration">Joint Configuration<a class="headerlink" href="#joint-configuration" title="Permanent link">&para;</a></h2>
 <p>The integration involves OpenCode stopping direct talk to providers to speak only to OmniRoute, while Ponytail is injected at every turn of the conversation. There are five steps.</p>
 <h3 id="1-connect-providers-in-omniroute">1. Connect Providers in OmniRoute<a class="headerlink" href="#1-connect-providers-in-omniroute" title="Permanent link">&para;</a></h3>
-<p>With <code>omniroute</code> running, open <code>http://localhost:20128</code> and go to the <strong>Providers</strong> section (I recommend setting the interface to <code>English</code>, otherwise you'll see many strings prefixed with <code>__MISSING__</code>; also use the search field, as the number of configuration groups in OmniRoute is huge). The catalog appears there with an indicator for free tiers. Connect <strong>several</strong>, as the system's value lies in redundancy: when one runs out of quota, the others remain available. Providers requiring no key (<code>No Auth</code>) are connected by default.</p>
-<p>The catalog is classified by <strong>categories</strong>, and the category determines the connection procedure:</p>
+<p>With <code>omniroute</code> running, open <code>http://localhost:20128</code> and go to the <strong>Providers</strong> section (I recommend setting the interface to <code>English</code>, otherwise you'll see many strings prefixed with <code>__MISSING__</code>; also use the search field, as the number of configuration groups in OmniRoute is huge). The catalog appears there with an indicator for free tiers. Connect several, as the system's value lies in redundancy: when one runs out of quota, the others remain available. Providers requiring no key (<code>No Auth</code>) are connected by default.</p>
+<p>The catalog is classified by categories, and the category determines the connection procedure:</p>
 <table>
 <thead>
 <tr>
@@ -6136,8 +6168,8 @@ omniroute
 <p>The top filter allows you to narrow down to your interests, and the search bar accepts the provider's name or ID.</p>
 <h4 id="no-auth-providers">No Auth Providers<a class="headerlink" href="#no-auth-providers" title="Permanent link">&para;</a></h4>
 <p>In general, the selection and configuration of providers is the most complicated, cumbersome, and time-consuming part of the entire process described in this article.</p>
-<p>Not only that, but some of the providers activated by default, such as those in the "No Auth" category, can cause problems. During the first sessions of using OpenCode, I observed that most requests returned empty responses. After investigating, I found that the issue was caused by the intervention of the "Augment (Auggie CLI)" provider, which I therefore recommend deactivating.</p>
-<p>Additionally, checking the logs in the OmniRoute console (<code>Monitoring &gt; Logs</code>), I found that the providers "Chipotle Pepper AI (Free)" and "DuckDuckGo AI Chat" always failed, so although they don't introduce incorrect responses like "Augment (Auggie CLI)", they delay the provider cascade traversal, so I recommend deactivating them as well. We will deactivate the "Veo AI Free" provider, as it only offers video models that we won't use for coding.</p>
+<p>Some of the providers activated by default, such as those in the "No Auth" category, can cause problems. During the first sessions of using OpenCode, I observed that most requests returned empty responses. After investigating, I found that the issue was caused by the intervention of the "Augment (Auggie CLI)" provider, which I therefore recommend deactivating.</p>
+<p>Checking the logs in the OmniRoute console (<code>Monitoring &gt; Logs</code>) I found that the providers "Chipotle Pepper AI (Free)" and "DuckDuckGo AI Chat" always failed, so although they don't introduce incorrect responses like "Augment (Auggie CLI)", they delay the provider cascade traversal, so I recommend deactivating them as well. We will deactivate the "Veo AI Free" provider, as it only offers video models that we won't use for coding.</p>
 <h4 id="free-api-key-providers">Free API Key Providers<a class="headerlink" href="#free-api-key-providers" title="Permanent link">&para;</a></h4>
 <p>The procedure is always the same, only the site for obtaining the key changes:</p>
 <ol>
@@ -6168,7 +6200,7 @@ omniroute
 <p>Several of these providers are services designed for their own clients; some expressly prohibit use via proxies or third-party clients. The OmniRoute provider card includes a warning when this is the case. It's wise to read these notices before connecting an account you want to keep.</p>
 </div>
 <h4 id="curating-the-pool-for-agentic-use">Curating the Pool for Agentic Use<a class="headerlink" href="#curating-the-pool-for-agentic-use" title="Permanent link">&para;</a></h4>
-<p>There is one issue that isn't mentioned in the OmniRoute documentation and that, in my experience, has been essential to getting the setup up and running. The point is that <strong>not all vendors in the catalog are suitable for assigning to an agent</strong>.</p>
+<p>There is one issue that isn't mentioned in the OmniRoute documentation and that, in my experience, has been essential to getting the setup up and running. The point is that not all providers in the catalog are suitable for feeding an agent.</p>
 <p>The reason is that an agent like OpenCode doesn't just ask for text: every request carries the list of <em>tools</em> at its disposal (read files, run commands, search the repository…) and it expects the model to reply with calls to those tools. Providers that are the official API of a model return those calls to the client, which is the correct behaviour. But the catalog also includes two kinds of entries that behave differently:</p>
 <ul>
 <li><strong>Proxies of a web client</strong> (those you connect to with a chat session cookie rather than an API key). The service on the other end has its own tool engine and tries to execute the tools itself, in its own environment, instead of returning them.</li>
@@ -6178,7 +6210,7 @@ omniroute
 <h5 id="an-admission-test">An Admission Test<a class="headerlink" href="#an-admission-test" title="Permanent link">&para;</a></h5>
 <p>The reliable way to decide whether a provider belongs in the pool is to ask the gateway: send a request with a tool and check whether the model invokes it. The response must contain a <code>tool_calls</code> block with the tool name and its arguments; if prose arrives instead, that provider is no good.</p>
 <p>A single request against <code>auto/coding</code> is not enough to validate the pool. <code>auto</code> routing tends to stick to the last working provider and does not guarantee that all candidates receive traffic. Each provider must be tested separately.</p>
-<p>The problematic behavior we want to detect (proxies that execute tools themselves, front-ends with their own tool catalog) is a property <strong>of the provider</strong>, not of the individual model: a proxy either passes <code>tool_calls</code> back to the client or it doesn't, regardless of which model sits behind it. That is why it is enough to test <strong>one representative model per provider</strong>, identified by the prefix before the slash (<code>groq/</code>, <code>mistral/</code>, <code>cf/</code>...), instead of the hundreds of models in the catalog. In reality we will test the first 5 models of each provider in case one fails for some specific reason. The <code>jq</code> filter excludes only the virtual <code>auto/*</code> models:</p>
+<p>The problematic behavior we want to detect (proxies that execute tools themselves, front-ends with their own tool catalog) is a property of the provider, not of the individual model: a proxy either passes <code>tool_calls</code> back to the client or it doesn't, regardless of which model sits behind it. That is why it is enough to test one representative model per provider, identified by the prefix before the slash (<code>groq/</code>, <code>mistral/</code>, <code>cf/</code>...), instead of the hundreds of models in the catalog. In reality we will test the first 5 models of each provider in case one fails for some specific reason. The <code>jq</code> filter excludes only the virtual <code>auto/*</code> models:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -6274,8 +6306,8 @@ omniroute
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Fallback doesn't trigger on failures disguised as success</p>
-<p>It's worth understanding the limits of the system. OmniRoute's retry cascade works with <strong>explicit</strong> failures: a 429 for quota, a 502 or a timeout cause the request to be retried against the next provider, and this is perfectly visible in the log. But the two cases above reach the gateway as correct responses: a <code>200</code> with an empty body is, to a router, a valid response. No gateway can arbitrate that without semantically inspecting the content of every response.</p>
-<p>Hence curating the pool is our responsibility, and it's a step that shouldn't be skipped. Put another way: <strong>automatic routing is only as good as the worst apparently healthy provider in the pool</strong>.</p>
+<p>It's worth understanding the limits of the system. OmniRoute's retry cascade works with explicit failures: a 429 for quota, a 502 or a timeout cause the request to be retried against the next provider, and this is perfectly visible in the log. But the two cases above reach the gateway as correct responses: a <code>200</code> with an empty body is, to a router, a valid response. No gateway can arbitrate that without semantically inspecting the content of every response.</p>
+<p>Hence curating the pool is our responsibility, and it's a step that shouldn't be skipped. Put another way: automatic routing is only as good as the worst apparently healthy provider in the pool.</p>
 </div>
 <h3 id="2-create-an-omniroute-api-key">2. Create an OmniRoute API Key<a class="headerlink" href="#2-create-an-omniroute-api-key" title="Permanent link">&para;</a></h3>
 <p>In the panel, go to <strong>API Manager</strong> → <strong>Create API Key</strong>. Give it a descriptive name (e.g., <code>opencode</code>) and copy the generated key, which looks like <code>sk-xxxxxxxx-xxxxxxxx</code>.</p>
@@ -6344,7 +6376,7 @@ omniroute
 </div>
 <p>You can also place an <code>opencode.json</code> file in a specific project's root, merging its settings with the global ones. This is practical for forcing a different model for a specific project.</p>
 <h3 id="4-adjust-ponytail-level">4. Adjust Ponytail Level<a class="headerlink" href="#4-adjust-ponytail-level" title="Permanent link">&para;</a></h3>
-<p>Ponytail needs no config file: it works as soon as it's declared as a <em>plugin</em>. The only thing to decide is the <strong>intensity level</strong>, which can be changed on the fly from the TUI:</p>
+<p>Ponytail needs no config file: it works as soon as it's declared as a <em>plugin</em>. The only thing to decide is the intensity level, which can be changed on the fly from the TUI:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -6376,7 +6408,7 @@ omniroute
 <p>If OpenCode is started with <code>--print-logs</code>, this line may appear when loading the configuration:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ERROR message=&quot;failed to load plugin&quot; path=@dietrichgebert/ponytail error=&quot;path must be a string or a file descriptor&quot;
 </code></pre></div></td></tr></table></div>
-<p>It's misleading: OpenCode tries to load the plugin by two paths and one of them fails, but the other loads it correctly. The test that Ponytail is operational is that <code>/ponytail</code> responds with the active level. Note that the level is <strong>persisted</strong> between sessions (in <code>~/.config/opencode/.ponytail-active</code>): a <code>/ponytail off</code> from a previous test leaves the plugin loaded but disabled. When in doubt: <code>/ponytail full</code> and ask the agent what its <em>system prompt</em> says about <code>PONYTAIL</code>.</p>
+<p>It's misleading: OpenCode tries to load the plugin by two paths and one of them fails, but the other loads it correctly. The test that Ponytail is operational is that <code>/ponytail</code> responds with the active level. Note that the level is persisted between sessions (in <code>~/.config/opencode/.ponytail-active</code>): a <code>/ponytail off</code> from a previous test leaves the plugin loaded but disabled. When in doubt: <code>/ponytail full</code> and ask the agent what its <em>system prompt</em> says about <code>PONYTAIL</code>.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Environment Variables for Other Tools</p>
@@ -6387,7 +6419,7 @@ omniroute
 </code></pre></div></td></tr></table></div>
 </div>
 <h2 id="project-types-and-operations">Project Types and Operations<a class="headerlink" href="#project-types-and-operations" title="Permanent link">&para;</a></h2>
-<p>Once the environment is set up, the workflow is essentially the same regardless of language, project size, or task nature. What changes between cases is not the procedure, but the choice of model, trimming level, and context preparation. Thus, we first describe the common flow and then the adjustments per project type.</p>
+<p>Once the environment is set up, the workflow is essentially the same regardless of language, project size, or task nature. What changes between cases is the choice of model, trimming level, and context preparation. Thus, we first describe the common flow and then the adjustments per project type.</p>
 <h3 id="common-operations">Common Operations<a class="headerlink" href="#common-operations" title="Permanent link">&para;</a></h3>
 <ol>
 <li>

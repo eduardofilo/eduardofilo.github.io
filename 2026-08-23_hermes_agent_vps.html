@@ -15,6 +15,8 @@
         <link rel="canonical" href="https://apuntes.eduardofilo.es/2026-08-23_hermes_agent_vps.html">
       
       
+        <link rel="prev" href="2026-09-19_llm_wiki_obsidian.html">
+      
       
         <link rel="next" href="2026-07-26_opencode_omniroute.html">
       
@@ -261,7 +263,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="2026-08-23_hermes_agent_vps.html" class="md-tabs__link">
+        <a href="2026-09-19_llm_wiki_obsidian.html" class="md-tabs__link">
           
   
   
@@ -511,6 +513,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2026-09-19_llm_wiki_obsidian.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Segundo cerebro en Obsidian con el patrón LLM Wiki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -5469,7 +5499,7 @@
 
 <p><img alt="Hermes Agent en VPS" src="images/posts/2026-08-23_hermes_agent_vps/hermes_agent.png" /></p>
 <p>El artículo anterior de este blog describía cómo montar un entorno de desarrollo agéntico con OpenCode, OmniRoute y Ponytail. Ese montaje te daba un agente de programación en la terminal, alimentado por un <em>router</em> de modelos que aprovechaba las capas gratuitas de decenas de proveedores y amansado por un <em>skill</em> que recorta la sobre-ingeniería. Pero un agente que se conecta a un proveedor de modelos por API sigue teniendo un punto débil: depende de tu equipo de desarrollo y de que esté encendido.</p>
-<p>Ese, precisamente, es el hueco que viene a cubrir <a href="https://hermes-agent.nousresearch.com/"><strong>Hermes Agent</strong></a>. No es una herramienta más de autocompletado ni un chatbot encerrado en una API: es un <strong>agente autónomo de uso general</strong> que vive donde tú decidas (un VPS, tu servidor casero, una Raspberry Pi) y al que te comunicas desde cualquier lugar. En este artículo voy a explicar qué es, por qué merece la pena probarlo y cómo lo hemos instalado y configurado en un VPS accesible por una red privada Tailscale.</p>
+<p>Ese, precisamente, es el hueco que viene a cubrir <a href="https://hermes-agent.nousresearch.com/"><strong>Hermes Agent</strong></a>. Es un <strong>agente autónomo de uso general</strong> que vive donde tú decidas (un VPS, tu servidor casero, una Raspberry Pi) y al que te comunicas desde cualquier lugar. En este artículo voy a explicar qué es, por qué merece la pena probarlo y cómo lo hemos instalado y configurado en un VPS accesible por una red privada Tailscale.</p>
 <h2 id="que-es-hermes-agent">Qué es Hermes Agent<a class="headerlink" href="#que-es-hermes-agent" title="Permanent link">&para;</a></h2>
 <p>Hermes Agent es un marco de agente de IA de código abierto creado por <strong>Nous Research</strong>, el laboratorio detrás de los modelos Hermes. Se ejecuta en la terminal, en una aplicación de escritorio, en un panel web y en plataformas de mensajería, siempre con el mismo núcleo agéntico. A lo largo de una conversación es capaz de leer y editar ficheros, ejecutar comandos, buscar en tu historial de sesiones, lanzar tareas programadas o delegar subtareas a subagentes, y todo ello usando herramientas reales sobre el sistema donde corre.</p>
 <p>Tres propiedades lo distinguen de la mayoría de alternativas:</p>
@@ -5508,7 +5538,7 @@
 <h2 id="como-se-ha-configurado">Cómo se ha configurado<a class="headerlink" href="#como-se-ha-configurado" title="Permanent link">&para;</a></h2>
 <p>En este apartado resumo lo esencial del montaje. En mi experiencia la parte más delicada no es instalar, sino entender qué pieza habla con quién.</p>
 <h3 id="el-modelo-principal-y-las-tools">El modelo principal y las <em>tools</em><a class="headerlink" href="#el-modelo-principal-y-las-tools" title="Permanent link">&para;</a></h3>
-<p>Un punto que conviene tener claro desde el principio: <strong>el modelo de razonamiento y las herramientas delegadas son dos cosas separadas</strong>. El agente usa un modelo para razonar, pero muchas de sus herramientas (búsqueda web, generación de imágenes, texto a voz, automatización de navegador) se sirven a través de servicios externos.</p>
+<p>Un punto que conviene tener claro desde el principio: el modelo de razonamiento y las herramientas delegadas son dos cosas separadas. El agente usa un modelo para razonar, pero muchas de sus herramientas (búsqueda web, generación de imágenes, texto a voz, automatización de navegador) se sirven a través de servicios externos.</p>
 <p>En esta configuración:</p>
 <table>
 <thead>
@@ -5530,7 +5560,7 @@
 </table>
 <p>Ambas conviven sin conflicto: el modelo razona desde un sitio y las herramientas se sirven desde otro. Es un matiz que merece la pena conocer porque, si se prescinde de la cuenta de Nous, las herramientas delegadas dejan de funcionar y hay que reconfigurarlas con otros servicios. Es posible, pero obliga a explorar numerosas alternativas gratuitas que en mi experiencia no han rendido tan bien (sobre todo el TTS) como las tools predeterminadas que carga la cuenta Free de Nous.</p>
 <h3 id="los-pasos-en-una-sola-pasada">Los pasos, en una sola pasada<a class="headerlink" href="#los-pasos-en-una-sola-pasada" title="Permanent link">&para;</a></h3>
-<p>Además de la explicación, me gusta dejar el procedimiento condensado para poder repetirlo en otra máquina sin pensarlo dos veces:</p>
+<p>Me gusta dejar también el procedimiento condensado para poder repetirlo en otra máquina sin pensarlo dos veces:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -5606,7 +5636,7 @@ sudo<span class="w"> </span>loginctl<span class="w"> </span>enable-linger<span c
 <p>Además del navegador, existe <strong>Hermes Desktop</strong>, una aplicación nativa (Electron) con chat, lista de sesiones, explorador de ficheros y soporte de arrastrar y soltar. Actúa como un cliente: se conecta al mismo backend que sirve el dashboard web del VPS y hereda la sesión y las credenciales, de modo que no es una instalación aislada sino una ventana más hacia el mismo agente.</p>
 <div class="admonition warning">
 <p class="admonition-title">Un poco de terminología</p>
-<p>En Hermes, "gateway" se usa en dos sentidos que conviene no confundir. El <em>gateway de mensajería</em> (<code>hermes gateway</code>) es el que integra Telegram, Discord, WhatsApp, etc. En cambio, cuando en Hermes Desktop se habla de <em>Remote gateway</em> se refiere al propio backend que sirve el dashboard web. La app de escritorio se conecta al <strong>mismo host y puerto</strong> del dashboard; no hay un puerto separado.</p>
+<p>En Hermes, "gateway" se usa en dos sentidos que conviene no confundir. El <em>gateway de mensajería</em> (<code>hermes gateway</code>) es el que integra Telegram, Discord, WhatsApp, etc. En cambio, cuando en Hermes Desktop se habla de <em>Remote gateway</em> se refiere al propio backend que sirve el dashboard web. La app de escritorio se conecta al mismo host y puerto del dashboard; no hay un puerto separado.</p>
 </div>
 <h4 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h4>
 <p>La instalación es la misma que la del agente, con el instalador oficial:</p>
@@ -5624,10 +5654,10 @@ sudo<span class="w"> </span>loginctl<span class="w"> </span>enable-linger<span c
 <p>La ventaja de ir sobre Tailscale es que esa URL solo es alcanzable desde tu <em>tailnet</em>; no hay que abrir ningún puerto al exterior. Tras pulsar <strong>Test</strong> (debe responder "Reachable") se inicia sesión con las mismas credenciales del dashboard.</p>
 <h4 id="el-lanzador-desktop-y-un-problema-en-linux">El lanzador <code>.desktop</code> y un problema en Linux<a class="headerlink" href="#el-lanzador-desktop-y-un-problema-en-linux" title="Permanent link">&para;</a></h4>
 <p>Hermes Desktop instala una entrada en el menú de aplicaciones (<code>~/.local/share/applications/hermes.desktop</code>) con un icono, para poder arrancarla desde el cajón en lugar de la terminal. En las instalaciones Linux este lanzador me dio dos problemas que he tenido que corregir a mano, y que en el momento de escribir estas líneas siguen presentes en la versión que uso (quizá se resuelvan en el futuro, de modo que conviene documentarlos por si reaparecen).</p>
-<p>El primero: el <code>.desktop</code> que genera el propio Hermes apuntaba al intérprete de Python que instala <code>uv</code> (<code>~/.local/share/uv/python/...</code>), que <strong>no tiene las dependencias</strong>, en lugar de al <em>venv</em> que sí las tiene; al ejecutarlo fallaba con <code>ModuleNotFoundError</code>. Y como Hermes <strong>regenera el <code>.desktop</code> en cada arranque</strong>, cualquier edición manual se perdía. La solución fue quitar el bit de ejecución del <em>script</em> <code>hermes</code> del repositorio para que el generador escogiera el <em>wrapper</em> de <code>~/.local/bin</code> (persistente, que ya resuelve el <code>venv</code> correcto):</p>
+<p>El primero: el <code>.desktop</code> que genera el propio Hermes apuntaba al intérprete de Python que instala <code>uv</code> (<code>~/.local/share/uv/python/...</code>), que no tiene las dependencias, en lugar de al <em>venv</em> que sí las tiene; al ejecutarlo fallaba con <code>ModuleNotFoundError</code>. Y como Hermes regenera el <code>.desktop</code> en cada arranque, cualquier edición manual se perdía. La solución fue quitar el bit de ejecución del <em>script</em> <code>hermes</code> del repositorio para que el generador escogiera el <em>wrapper</em> de <code>~/.local/bin</code> (persistente, que ya resuelve el <code>venv</code> correcto):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>chmod<span class="w"> </span>-x<span class="w"> </span>~/.hermes/hermes-agent/hermes
 </code></pre></div></td></tr></table></div>
-<p>El segundo: el lanzador del menú ejecuta la aplicación <strong>sin cargar tu shell</strong>, así que el <code>PATH</code> no tenía Node (el que aporta <code>nvm</code>). Hermes Desktop necesitaba Node y abortaba en silencio. La corrección fue hacer que el <em>wrapper</em> <code>hermes</code> cargara <code>nvm</code> (y fijara la versión 22) antes de invocar su intérprete:</p>
+<p>El segundo: el lanzador del menú ejecuta la aplicación sin cargar tu shell, así que el <code>PATH</code> no tenía Node (el que aporta <code>nvm</code>). Hermes Desktop necesitaba Node y abortaba en silencio. La corrección fue hacer que el <em>wrapper</em> <code>hermes</code> cargara <code>nvm</code> (y fijara la versión 22) antes de invocar su intérprete:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
